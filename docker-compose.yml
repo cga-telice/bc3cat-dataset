@@ -1,0 +1,35 @@
+networks:
+    default:
+        name: bc3cat-dataset
+        driver: bridge
+
+services:
+    jupyter-pytorch:
+        image: quay.io/jupyter/pytorch-notebook:cuda12-python-3.11.8
+        container_name: jupyter-pytorch
+        user: root
+        volumes:
+            #- "d:/users/cesar/dev/phd/bc3cat-dataset:/work"
+            - ".:/work"
+        environment:
+            - NVIDIA_VISIBLE_DEVICES=all
+            - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+            - JUPYTER_TOKEN=j # Set your own simple token here
+        ports:
+            - "8888:8888" # Maps port 8888 on the host to port 8888 in the container
+            - "8050:8050" # Dash
+        networks:
+            - default
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                        - driver: nvidia
+                          capabilities: [ gpu ]
+        command: >
+            bash -lc "start-notebook.py --ServerApp.notebook_dir=/work --ServerApp.iopub_data_rate_limit=1000000000"
+
+
+
+
+
