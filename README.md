@@ -145,7 +145,7 @@ Converts processed data into LlamaIndex `Document` objects with metadata:
 
 ```bash
 # Clone the repository
-git clone https://github.com/[username]/bc3cat-dataset.git
+git clone https://github.com/cga-telice/bc3cat-dataset.git
 cd bc3cat-dataset
 
 # Start Jupyter environment
@@ -254,9 +254,17 @@ If you use this dataset in your research, please cite:
 
 ## Acknowledgments
 
-- **ADIF** (Administrador de Infraestructuras Ferroviarias) for the source catalog data
-- **Telice S.A.** for providing resources and data access
-- **FIEBDC** for the BC3 format specification
+## Acknowledgments
+
+This work was conducted at the Group for Vision and Intelligent Systems (GVIS), I4 Institute, Universidad de León, Spain.
+
+The authors gratefully acknowledge **Telice S.A.** for providing resources and data access that made this research possible, and **ADIF** for making their price catalog (Base de Precios ADIF) publicly available and **FIEBDC** for the BC3 format specification.
+
+This research did not receive any specific grant from funding agencies in the public, commercial, or not-for-profit sectors.
+
+### AI Disclosure
+
+The authors used generative AI tools to assist with code development, data analysis, and manuscript preparation. All AI-assisted outputs were reviewed and verified by the authors, who take full responsibility for the content of this work.
 
 ## License
 
