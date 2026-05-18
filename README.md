@@ -1,5 +1,7 @@
 # BC3CAT Dataset: A Benchmark for Retrieval on Parametric Construction Catalogs
 
+DOI: 10.5281/zenodo.20277801
+
 This repository contains the data processing pipeline for creating a retrieval evaluation benchmark from ADIF's parametric construction price catalog. The dataset is part of the research presented in:
 
 > **A Systematic Comparative Study of Retrieval Methods for Parametric Construction Catalogs: From Lexical to Neural Approaches**  
