@@ -1,0 +1,139 @@
+BC3CAT-Dataset — Data Licensing Notice
+======================================
+
+Copyright (c) 2026 Cesáreo González-Alvarez, Laura Fernández-Robles,
+Enrique Alegre, Manuel Castejón-Limas, Universidad de León.
+
+This file governs the licensing of files distributed under the `data/`
+directory of this repository and any companion Zenodo deposit. Three
+distinct tiers exist, with different terms.
+
+----------------------------------------------------------------------
+
+TIER 1 — `data/raw/`  (verbatim ADIF material)
+
+  Files: `BPA_2024_v2_OEB_mod_utf8.txt` and any other raw BC3 file
+  redistributed in unaltered form (apart from character-encoding
+  transcoding to UTF-8).
+
+  These files are *verbatim copies* of ADIF's BPA catalog records.
+  They are redistributed here for reproducibility of the parsing
+  pipeline. The authors of this repository do **not** claim copyright
+  over the underlying construction items, parameter values, or
+  technical specifications, which remain the intellectual property
+  of ADIF (Administrador de Infraestructuras Ferroviarias).
+
+  The applicable license is whichever terms ADIF imposes on the
+  BPA catalog at https://bpa.adif.es/bp1/ — see the
+  "ATTRIBUTION TO THE UPSTREAM SOURCE" section below.
+
+  If you redistribute or transform large portions of this raw data,
+  please contact ADIF (info@adif.es) to confirm the applicable terms.
+
+----------------------------------------------------------------------
+
+TIER 2 — `data/intermediate/`  (derived JSON dumps)
+
+  Files: chapter-level JSON exports produced by stages s01–s02 of the
+  pipeline (e.g. `BPA_2024_v2_OEB_mod_utf8.json`, `OBRA CIVIL/*.json`).
+
+  These files are structural reformulations of the raw catalog into
+  a JSON schema designed by the authors. The schema, key naming, and
+  organization are original contributions. The underlying field
+  values still derive from ADIF (see Tier 1).
+
+  License: **Creative Commons Attribution 4.0 International (CC-BY-4.0)**.
+
+----------------------------------------------------------------------
+
+TIER 3 — `data/processed/`  (final query/document pairs)
+
+  Files: `OEB_resumen.pkl`, `OEB_texto.pkl`, `OEB_resumen.json`,
+  `OEB_texto.json`, and any analogous artifacts produced by stages
+  s03–s08 of the pipeline (parametric expansion, formula evaluation,
+  deduplication, LlamaIndex document creation, etc.).
+
+  These are the curated retrieval benchmark artifacts. They reflect
+  substantial authorial work: parametric combination, formula
+  resolution, duplicate filtering, and structural annotation
+  (`item_key`, `parent_key`, `ud`).
+
+  License: **Creative Commons Attribution 4.0 International (CC-BY-4.0)**.
+
+----------------------------------------------------------------------
+
+TIER 2 + TIER 3 LICENSE TEXT (CC-BY-4.0)
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format.
+  - Adapt — remix, transform, and build upon the material for any
+    purpose, even commercially.
+
+Under the following terms:
+  - Attribution — You must give appropriate credit, provide a link to
+    the license, and indicate if changes were made. You may do so in
+    any reasonable manner, but not in any way that suggests the licensor
+    endorses you or your use.
+  - No additional restrictions — You may not apply legal terms or
+    technological measures that legally restrict others from doing
+    anything the license permits.
+
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+
+When citing this dataset, please cite the Zenodo deposit:
+
+  González-Alvarez, C., Fernández-Robles, L., Alegre, E., &
+  Castejón-Limas, M. (2026). BC3CAT-Dataset: A processing pipeline and
+  parametric construction catalog derived from ADIF BC3 records
+  [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
+
+A manuscript describing the methodology and findings is currently
+under review at Automation in Construction:
+
+  González-Alvarez, C., Fernández-Robles, L., Alegre, E., &
+  Castejón-Limas, M. (2026). A Systematic Comparative Study of
+  Retrieval Methods for Parametric Construction Catalogs: From Lexical
+  to Neural Approaches. Manuscript submitted for publication.
+
+A companion data-paper manuscript is also in preparation for
+submission to Elsevier Data in Brief.
+
+Once any of these manuscripts is accepted, please cite the published
+version instead; this notice will be updated accordingly.
+
+----------------------------------------------------------------------
+
+ATTRIBUTION TO THE UPSTREAM SOURCE (ADIF BPA)
+
+The data in this repository derives from the publicly available price
+catalog of ADIF (Administrador de Infraestructuras Ferroviarias),
+published through the BPA portal at https://bpa.adif.es/bp1/. The raw
+BC3 (Base de Costes de la Construcción, version 3) format is maintained
+by FIEBDC (https://www.fiebdc.es/) and standardized under
+FIEBDC-3/2016.
+
+The terms under which ADIF publishes the BPA catalog have not been
+verified at the time of this release. The authors release the Tier 2
+and Tier 3 artifacts under CC-BY-4.0 under the good-faith assumption
+that the BPA catalog is made available for public reuse with
+attribution, consistent with Spanish Law 37/2007 on the reuse of
+public-sector information (BOE-A-2007-19814) and its successors.
+
+If you redistribute or transform substantial portions of any tier,
+the authors recommend contacting ADIF (info@adif.es) to confirm the
+applicable terms for Tier 1 (raw) content.
+
+----------------------------------------------------------------------
+
+DISCLAIMER
+
+THE DATA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF FITNESS FOR A
+PARTICULAR PURPOSE, ACCURACY OR COMPLETENESS. THE AUTHORS AND THE
+UNIVERSIDAD DE LEÓN SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY ARISING FROM THE USE OF THE DATA.
+
+The catalog values do not constitute pricing advice, a recommendation,
+endorsement, or official statement by ADIF, FIEBDC, Telice S.A., or
+any other entity referenced in the accompanying paper.
