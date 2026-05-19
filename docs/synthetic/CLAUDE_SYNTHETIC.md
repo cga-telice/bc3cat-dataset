@@ -237,7 +237,21 @@ Existing files extended in this branch (not new, but load-bearing for the synthe
                                                               `BC3CAT_SYNTHETIC_DATA_ROOT`. Legacy `Config` shim kept.
   src/s01_parse_fiebdc.ipynb                     ✅ Sprint 02 — Task A4 part 1 — `os.chdir('/work/...')` → `config.RAW_DIR`
                                                               / `config.DATA_ROOT`; `from utils import config` added.
-  src/s02…s07 notebooks + s08 + Generate_OEB_dataset  ❌ Task A4 part 2 — Sprint 03 (s03–s07 critical path) + Sprint 04 (s08, Generate_OEB).
+  src/s02_split_chapters.ipynb                   ✅ Sprint 03 — Task A4 part 2 — `/work/...` literal → `config.INTERMEDIATE_DIR`;
+                                                              `from utils import config` added (cell 2).
+  src/s03_generate_parametric_combinations.ipynb ✅ Sprint 03 — Task A4 part 2 — `/work/...` literal → `config.chapter_path("OBRA CIVIL")`;
+                                                              `from utils import config` added (cell 2).
+  src/s04_evaluate_text_variables.ipynb          ✅ Sprint 03 — Task A4 part 2 — `/work/...` literal → `config.chapter_path("OBRA CIVIL")`;
+                                                              `from utils import config` added (cell 3).
+  src/s05_evaluate_resumen_texto.ipynb           ✅ Sprint 03 — Task A4 part 2 — `/work/...` literal → `config.chapter_path("OBRA CIVIL")`;
+                                                              `from utils import config` added (cell 3).
+  src/s06_data_analysis.ipynb                    ✅ Sprint 03 — Task A4 part 2 — `/work/...` literal → `config.stage_path("OBRA CIVIL", 5)`;
+                                                              `from utils import config` added (cell 2).
+  src/s07_Filter_duplicates.ipynb                ✅ Sprint 03 — Task A4 part 2 — 9 site rewrites across cells 2/3/8/11 →
+                                                              `config.stage_path(...)` / `config.INTERMEDIATE_DIR / chapter / f"..."`;
+                                                              two `project_root = Path('/work'); sys.path.append(...)` bootstraps deleted from cells 3 + 8;
+                                                              `from utils import config` added to each touched cell.
+  src/s08_Llamaindex_Doc_Creation.ipynb + Generate_OEB_dataset.ipynb  ❌ Task A4 part 3 — Sprint 04 (final main-pipeline artifact emitters; not on the synthetic critical path).
 ```
 
 Cross-check: every ❌ above corresponds to an unbuilt component listed in [`RESEARCH_PROTOCOL.md §3.5`](RESEARCH_PROTOCOL.md).
@@ -266,6 +280,30 @@ Cross-check: every ❌ above corresponds to an unbuilt component listed in [`RES
 ## Sprint History
 
 *Newest entries at the top. New entries follow the template: title, date, what changed (bullets), key results (table or bullets), known issues.*
+
+### After Sprint 03 — Path refactor: s02–s07 notebook migration
+**Date:** 2026-05-19
+**What changed:**
+- Fanned the Sprint 02 migration pattern across the six remaining synthetic-critical-path notebooks: [`s02_split_chapters.ipynb`](../../src/s02_split_chapters.ipynb), [`s03_generate_parametric_combinations.ipynb`](../../src/s03_generate_parametric_combinations.ipynb), [`s04_evaluate_text_variables.ipynb`](../../src/s04_evaluate_text_variables.ipynb), [`s05_evaluate_resumen_texto.ipynb`](../../src/s05_evaluate_resumen_texto.ipynb), [`s06_data_analysis.ipynb`](../../src/s06_data_analysis.ipynb), [`s07_Filter_duplicates.ipynb`](../../src/s07_Filter_duplicates.ipynb). 14 hardcoded `/work/...` source-cell literals were rewritten to route through `config.INTERMEDIATE_DIR`, `config.chapter_path(...)`, or `config.stage_path(...)`. s07's three `_duplicate_*.json` side-artifacts inline as `config.INTERMEDIATE_DIR / chapter / f"{chapter}_..."` per the YAGNI decision noted below.
+- Removed the two `project_root = Path('/work'); sys.path.append(str(project_root))` bootstrap pairs from `s07_Filter_duplicates.ipynb` cells 3 and 8 — −4 dead-code lines. They were redundant once the cells gain `from utils import config` and Jupyter's per-notebook kernel cwd is `src/` (Sprint 02 finding).
+- Added [`tests/utils/test_notebooks_no_work_literal.py`](../../tests/utils/test_notebooks_no_work_literal.py) — a parametrised regression guard scanning the `source` arrays of all seven s01–s07 notebooks for `/work/` literals. Sprint 04 extends the notebook list to include `s08_Llamaindex_Doc_Creation.ipynb` + `Generate_OEB_dataset.ipynb`.
+
+**Key results:**
+- `pytest tests -q` → **49 passed in 0.07s** (Sprint 01's 30 + Sprint 02's 12 + 7 new notebook-guard cases). No regressions.
+- Both Sprint-03 smoke checks pass: all 7 notebooks parse via `json.load`; `source-cell /work/ hits across s01-s07: 0`.
+- `git diff --numstat`: s02 +3/−1, s03 +3/−1, s04 +3/−1, s05 +3/−1, s06 +3/−1, s07 +14/−13. End-of-sprint `git status --short` matches the sprint plan's expected file list exactly — six modified notebooks + the new test file + this file + `RESEARCH_LOG.md` + the already-untracked `SPRINT_03.md`.
+
+**Decisions confirmed:**
+- **Path objects passed bare** to the user functions inside the notebook cells (`marcar_duplicados(path_entrada=config.stage_path(...))`, `main(config.chapter_path(...))`). No `str(...)` wrapping. Mirrors Sprint 02's `os.chdir(config.RAW_DIR)` pattern; the runtime-behaviour gate is the future end-to-end-validation sprint after Sprint 04.
+- **Side-artifact paths inlined, not helper-promoted.** s07's three `_duplicate_*.json` and one `_either_duplicate.json` artifacts use the literal `config.INTERMEDIATE_DIR / chapter / f"..."` shape — no new helper added to `config.py`. YAGNI: three callers in one cell. Sprint 04+ can promote a `chapter_artifact(chapter, suffix)` helper if a third site for this pattern surfaces (e.g. inside the LlamaIndex notebook's pickle path).
+- **Single load/edit/write cycle per notebook.** For s07 (9 sites across 4 cells), the helper applied all edits in one `json.load` → patch → `json.dumps(indent=1, ensure_ascii=False)` cycle to keep pretty-printing stable across cells. Migration script was authored under `scripts/sprint03_migrate_notebooks.py` for traceability and removed after the patch landed cleanly — the durable artifact is the regression test, not the helper.
+- **LF line endings preserved on Windows.** Notebooks written via `Path.write_bytes(text.encode("utf-8") + b"\n")` to bypass Python's text-mode newline translation. git's `core.autocrlf` produces a soft "LF will be replaced by CRLF" warning on each touched file, but the in-repo bytes are LF — matching the existing convention for s02–s07.
+
+**Known issues:**
+- s08 + `Generate_OEB_dataset` still hardcode `/work/...` (5 + 3 source-cell hits respectively). They are off the synthetic critical path (they only emit the final main-pipeline artifacts: the LlamaIndex pickle and the OEB Parquet release). Their migration is Sprint 04, A4 part 3.
+- The atexit `cleanup_dead_symlinks` PermissionError on Windows after pytest exits is unchanged from Sprint 02 (49 passed prints before the traceback). Cosmetic; no action.
+
+**Next step:** Draft `sprints/SPRINT_04.md` for A4 part 3 — fan the same migration pattern across `s08_Llamaindex_Doc_Creation.ipynb` and `Generate_OEB_dataset.ipynb`, and extend the notebook-guard test's `NOTEBOOKS` list to cover them. After Sprint 04 lands, the natural follow-up is the end-to-end-validation sprint: rerun s01 → s07 against the existing `data/intermediate/...` and byte-diff the outputs against the in-repo `OEB_*.parquet` to confirm the refactor is behaviour-preserving.
 
 ### After Sprint 02 — Path refactor: config core + s01 migration
 **Date:** 2026-05-19

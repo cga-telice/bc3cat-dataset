@@ -29,6 +29,41 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### Sprint 03 — Path refactor: s02–s07 notebook migration
+**Date:** 2026-05-19
+**Sprint file:** [`sprints/SPRINT_03.md`](sprints/SPRINT_03.md)
+**Tasks from backlog:** A4 part 2 (s02–s07 notebook migration). A4 part 3 (s08 + `Generate_OEB_dataset`) remains open for Sprint 04.
+
+**What was done:**
+- Fanned the Sprint 02 migration pattern across the six remaining synthetic-critical-path notebooks. **14 source-cell `/work/...` literals** were rewritten in a single `json.load` → patch → `json.dumps(indent=1, ensure_ascii=False)` cycle per notebook, distributed as: s02 cell 2 (1), s03 cell 2 (1), s04 cell 3 (1), s05 cell 3 (1), s06 cell 2 (1), s07 cell 2 (2), s07 cell 3 (1), s07 cell 8 (4), s07 cell 11 (2). Replacements route through `config.INTERMEDIATE_DIR`, `config.chapter_path("OBRA CIVIL")`, and `config.stage_path("OBRA CIVIL", N)`; s07's three `_duplicate_*.json` side-artifacts inline as `config.INTERMEDIATE_DIR / chapter / f"{chapter}_..."`.
+- Removed the two `project_root = Path('/work'); sys.path.append(str(project_root))` bootstrap pairs from `s07_Filter_duplicates.ipynb` cells 3 and 8 — **−4 source lines** of dead code. They were redundant because Jupyter's per-notebook kernel cwd is `src/` and `utils` is on the implicit `sys.path` entry (Sprint 02 finding). `from utils import config` was inserted into each touched cell's import block.
+- Added [`tests/utils/test_notebooks_no_work_literal.py`](../../tests/utils/test_notebooks_no_work_literal.py) — a parametrised regression-guard test that scans the `source` arrays of s01–s07 and asserts zero `/work/` occurrences. Output arrays (`outputs`) are exempt per the s01 policy. Sprint 04 will extend the notebook list to include s08 + `Generate_OEB_dataset`.
+
+**Key results:**
+- `pytest tests -q` → **49 passed in 0.07s** (30 Sprint 01 + 12 Sprint 02 + 7 new notebook-guard cases). No regressions.
+- Both smoke checks pass: all 7 notebooks parse via `json.load`, and `source-cell /work/ hits across s01-s07: 0`.
+- `git status --short` matches the sprint's expected end-state exactly: 6 modified notebooks (`src/s0{2..7}*.ipynb`), 1 new test file, plus this log + `CLAUDE_SYNTHETIC.md` housekeeping. Nothing under `src/synthetic/`, `tests/synthetic/`, `data/`, or `configs/` in the diff.
+- Per-notebook diff scope (`git diff --numstat`): s02 +3 / −1, s03 +3 / −1, s04 +3 / −1, s05 +3 / −1, s06 +3 / −1, s07 +14 / −13. The s07 net is only +1 because the four `project_root` / `sys.path.append` bootstrap lines are deleted while exactly five `from utils import config` insertions and the nine line-by-line path rewrites are added — confirming the bootstrap removal landed.
+
+**Decisions made:**
+- **Path objects passed bare.** `marcar_duplicados(path_entrada=config.stage_path(...), ...)` and `main(config.chapter_path(...))` go in without a `str(...)` wrapper. The static-check gate doesn't exercise runtime behaviour, but Sprint 02's s01 edit set the precedent (`os.chdir(config.RAW_DIR)` works because `os.chdir` accepts path-like objects) and the same pattern holds for every callee touched here. End-to-end validation in a future sprint is the gate that would catch a real mismatch.
+- **Side-artifact paths inlined, not helper-promoted.** The three `_duplicate_*.json` paths and the `_either_duplicate.json` path in s07 cell 8 deliberately use `config.INTERMEDIATE_DIR / chapter / f"{chapter}_..."` rather than a new `chapter_artifact(chapter, suffix)` helper. YAGNI: only three callers in one cell. If a third site for `_duplicate_*` patterns surfaces in Sprint 04+, the helper can land then.
+- **One helper script, one load/write cycle per notebook.** The Sprint 02 recipe (`json.load` → patch `source` arrays → `json.dumps(indent=1, ensure_ascii=False)`) reused unchanged. For s07's nine sites across four cells, a single load/edit/write cycle was used to keep the JSON pretty-printing stable across all the cell edits (avoiding nine re-pretty-prints that would have churned unrelated whitespace).
+- **LF line endings preserved.** All six target notebooks use LF in-repo; the patch helper writes via `Path.write_bytes(json_text.encode("utf-8") + b"\n")` (bypassing Windows' universal-newlines text-mode translation). git's `core.autocrlf` produced a soft "LF will be replaced by CRLF" warning on each touched file but the in-repo bytes are LF, matching the existing convention.
+- **Cell 11 of s07 import block.** Cell 11 originally imported only `import json` and relied on cells 3/8 to provide `Path` at notebook-execution time. After our rewrite, cell 11 no longer references `Path` (both call sites became `config.stage_path(...)`), so only `from utils import config` was added. No new transitive-import surprise — the cell stays self-sufficient for the columns it actually uses post-edit.
+
+**Problems encountered:**
+- None blocking. The atexit `cleanup_dead_symlinks` traceback observed at pytest shutdown is a known Windows-temp-dir-cleanup PermissionError unrelated to test outcomes (49 passed prints before the traceback). Same host as Sprint 02; no action.
+- The Sprint 03 plan's expected `git status` does not list a `scripts/` directory. The one-shot migration helper that drove the 14 edits was authored under `scripts/sprint03_migrate_notebooks.py` for traceability, then removed after the patch landed cleanly — the durable artifact is the regression test, not the helper. Sprint 02 followed the same convention implicitly (no `scripts/` in its end-of-sprint diff either).
+
+**Changes to plan:**
+- None to the protocol. A4 part 2 closes; A4 part 3 (s08 + `Generate_OEB_dataset`) stays open for Sprint 04.
+
+**CLAUDE_SYNTHETIC.md updated:** yes — flipped s02–s07 from "❌ Task A4 part 2" to "✅ Sprint 03" in the "Existing files extended" block; prepended "After Sprint 03" to the Sprint History section. s08 + `Generate_OEB_dataset` remain ❌ for Sprint 04.
+**Next step:** Draft `sprints/SPRINT_04.md` for A4 part 3 — fan the same migration pattern across `s08_Llamaindex_Doc_Creation.ipynb` and `Generate_OEB_dataset.ipynb`. After Sprint 04 lands, the natural follow-up is the end-to-end-validation sprint that reruns s01 → s07 against the existing `data/intermediate/...` and byte-diffs the outputs against the in-repo `OEB_*.parquet` to confirm the path refactor is behaviour-preserving.
+
+---
+
 ### Sprint 02 — Path refactor: config core + s01 migration
 **Date:** 2026-05-19
 **Sprint file:** [`sprints/SPRINT_02.md`](sprints/SPRINT_02.md)
