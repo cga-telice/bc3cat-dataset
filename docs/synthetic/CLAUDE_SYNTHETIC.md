@@ -4,6 +4,8 @@
 **Goal:** Rule-modification synthetic benchmark — mutate the BC3 three-layer grammar at the JSON-intermediate level between pipeline stages, producing variants with full traceability metadata for robustness evaluation of retrieval methods.
 **Do not modify existing files from `main`.** All new work lives in **new files** under `src/synthetic/`, `configs/synthetic/`, `data/synthetic/`, `docs/synthetic/`. The existing s01…s07 notebooks must keep running unchanged on the original BC3 input.
 
+> ⚠ **Never merge `synthetic` back to `main`.** This branch is BC3CAT-Syn's permanent home — the research lives here in isolation by design. Never propose, suggest, perform, or accept a merge / fast-forward / rebase of `synthetic` (or any of its child branches) into `main`. If a pull request is opened from work on this branch, its base must be `synthetic` (or another sub-branch of it), never `main`. The original BC3CAT pipeline on `main` is the published artifact and must stay byte-identical regardless of what happens here.
+
 ---
 
 ## The Problem in One Paragraph
@@ -225,8 +227,17 @@ data/synthetic/                                   ❌ Phases C–G
     BC3CAT_Syn_items.parquet                      ❌
     BC3CAT_Syn_modifications.jsonl                ❌
 
-Top-level scaffolding (depends on existing pipeline):
-  Path refactor in s01 + downstream notebooks    ❌ Task A4 — un-hardcode `/work/data/raw/`
+Existing files extended in this branch (not new, but load-bearing for the synthetic engine):
+  src/utils/config.py                            ✅ Sprint 02 — Task A4 part 1 — added `REPO_ROOT`, `DATA_ROOT`,
+                                                              `RAW_DIR`, `INTERMEDIATE_DIR`, `PROCESSED_DIR`,
+                                                              `LLAMAINDEX_DIR`, `SYNTHETIC_DATA_ROOT`,
+                                                              `SYNTHETIC_INTERMEDIATE_DIR`, `SYNTHETIC_PROCESSED_DIR`,
+                                                              `SYNTHETIC_VARIANTS_DIR`, `chapter_path()`, `stage_path()`,
+                                                              and env-var overrides `BC3CAT_DATA_ROOT` /
+                                                              `BC3CAT_SYNTHETIC_DATA_ROOT`. Legacy `Config` shim kept.
+  src/s01_parse_fiebdc.ipynb                     ✅ Sprint 02 — Task A4 part 1 — `os.chdir('/work/...')` → `config.RAW_DIR`
+                                                              / `config.DATA_ROOT`; `from utils import config` added.
+  src/s02…s07 notebooks + s08 + Generate_OEB_dataset  ❌ Task A4 part 2 — Sprint 03 (s03–s07 critical path) + Sprint 04 (s08, Generate_OEB).
 ```
 
 Cross-check: every ❌ above corresponds to an unbuilt component listed in [`RESEARCH_PROTOCOL.md §3.5`](RESEARCH_PROTOCOL.md).
@@ -255,6 +266,29 @@ Cross-check: every ❌ above corresponds to an unbuilt component listed in [`RES
 ## Sprint History
 
 *Newest entries at the top. New entries follow the template: title, date, what changed (bullets), key results (table or bullets), known issues.*
+
+### After Sprint 02 — Path refactor: config core + s01 migration
+**Date:** 2026-05-19
+**What changed:**
+- Rewrote [`src/utils/config.py`](../../src/utils/config.py) into the single-source-of-truth paths module: `REPO_ROOT`, `DATA_ROOT`, `RAW_DIR`, `INTERMEDIATE_DIR`, `PROCESSED_DIR`, `LLAMAINDEX_DIR`, plus the synthetic sub-tree `SYNTHETIC_DATA_ROOT` / `SYNTHETIC_INTERMEDIATE_DIR` / `SYNTHETIC_PROCESSED_DIR` / `SYNTHETIC_VARIANTS_DIR`, plus the helpers `chapter_path(chapter, *, root=INTERMEDIATE_DIR)` and `stage_path(chapter, stage_n, *, root=INTERMEDIATE_DIR)`. Env-var overrides `BC3CAT_DATA_ROOT` and `BC3CAT_SYNTHETIC_DATA_ROOT` are read at import time. Legacy `Config` shim preserved — its `DATA_DIR` / `TEXTO_PATH` / `RESUMEN_PATH` now route through `LLAMAINDEX_DIR`, removing the `/work/data/llamaindex` literal without touching `Config`'s public surface.
+- Refactored [`src/s01_parse_fiebdc.ipynb`](../../src/s01_parse_fiebdc.ipynb): two `os.chdir('/work/...')` sites swapped for `os.chdir(config.RAW_DIR)` / `os.chdir(config.DATA_ROOT)`; `from utils import config` added in cell 1. Diff scope: +4 / −2.
+- Added [`tests/utils/`](../../tests/utils) with `conftest.py` and `test_config.py` (12 tests covering the eight Task-1 acceptance bullets, including env-var overrides with `monkeypatch.setenv` + `importlib.reload`).
+
+**Key results:**
+- `pytest tests -q` → 42 passed in 0.08s (Sprint 01's 30 + Sprint 02's 12). No regressions.
+- All four smoke checks from `sprints/SPRINT_02.md`'s verification runbook pass.
+- `Grep '/work/' src/utils/config.py` returns zero hits. Cell-source `/work/` audit on `s01_parse_fiebdc.ipynb` returns zero hits.
+
+**Decisions confirmed:**
+- Env-var names locked: `BC3CAT_DATA_ROOT` and `BC3CAT_SYNTHETIC_DATA_ROOT`. Sprint 03+ will consume these unchanged.
+- Notebook bootstrap: minimal `from utils import config` — Jupyter's per-notebook kernel cwd is `src/` both in Docker (`/work/src`) and on the Windows host, so `utils` resolves without a `sys.path` bootstrap. Sprint 03's downstream-notebook fan-out reuses this pattern.
+- Notebook editing: `Edit` refuses `.ipynb`; full-cell `NotebookEdit` would balloon the diff for the 300-line parser cell. Pattern adopted: byte-precise string replacements on cell `source` arrays via a `json.load` → patch → `json.dumps(..., indent=1)` script, preserving the existing JSON indent style and keeping the diff to the two target lines.
+
+**Known issues:**
+- s02–s07 (and s08, `Generate_OEB_dataset`) still hardcode `/work/...`. A4 part 2 is Sprint 03's focus (s03–s07 are the synthetic critical path); s08 + `Generate_OEB_dataset` deferred to Sprint 04.
+- `nbformat` not installed on this host's system Python — substituted `json.load(...)` for the JSON-well-formedness smoke check. Equivalent signal; no action needed.
+
+**Next step:** Draft `sprints/SPRINT_03.md` for A4 part 2 — fan the s01 migration pattern across `s02_split_chapters.ipynb` → `s07_Filter_duplicates.ipynb`.
 
 ### After Sprint 01 — Taxonomy module + injection harness skeleton
 **Date:** 2026-05-19

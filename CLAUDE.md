@@ -4,6 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Branch note:** If working on the `synthetic` branch, read [`docs/synthetic/CLAUDE_SYNTHETIC.md`](docs/synthetic/CLAUDE_SYNTHETIC.md) for branch-specific context before doing anything else.
 
+> ⚠ **Never merge `synthetic` back to `main`.** BC3CAT-Syn research is a permanent parallel branch: it lives in isolation so the original BC3CAT pipeline on `main` stays byte-identical. Do not propose merges, fast-forwards, or rebases of `synthetic` into `main` — neither locally nor via pull request. If a PR is opened for `synthetic` work, its base must be `synthetic` (or another sub-branch of it), never `main`.
+
 ## Project Summary
 
 BC3CAT Dataset is the **data-generation pipeline** that turns ADIF's BC3/FIEBDC parametric construction price catalog into the retrieval benchmark consumed downstream by the [`bc3cat-retrieval`](../bc3cat-retrieval) project. The pipeline expands ~30 base templates from the OEB chapter of the BPA 2024 v2 catalog into **47,513 OEB items** through parametric Cartesian expansion, formula evaluation, and template instantiation.

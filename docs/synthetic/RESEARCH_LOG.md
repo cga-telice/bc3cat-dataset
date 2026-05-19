@@ -29,6 +29,39 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### Sprint 02 — Path refactor: config core + s01 migration
+**Date:** 2026-05-19
+**Sprint file:** [`sprints/SPRINT_02.md`](sprints/SPRINT_02.md)
+**Tasks from backlog:** A4 part 1 (config core + s01). A4 part 2 (s03–s07 notebook migration) remains open for Sprint 03.
+
+**What was done:**
+- Rewrote [`src/utils/config.py`](../../src/utils/config.py) into the single-source-of-truth paths module. New public surface: `REPO_ROOT`, `DATA_ROOT`, `RAW_DIR`, `INTERMEDIATE_DIR`, `PROCESSED_DIR`, `LLAMAINDEX_DIR`, `SYNTHETIC_DATA_ROOT`, `SYNTHETIC_INTERMEDIATE_DIR`, `SYNTHETIC_PROCESSED_DIR`, `SYNTHETIC_VARIANTS_DIR`, plus the helpers `chapter_path(chapter, *, root=INTERMEDIATE_DIR)` and `stage_path(chapter, stage_n, *, root=INTERMEDIATE_DIR)`. Env-var overrides `BC3CAT_DATA_ROOT` and `BC3CAT_SYNTHETIC_DATA_ROOT` are read at import time. The legacy `Config` class is preserved; its `DATA_DIR` / `TEXTO_PATH` / `RESUMEN_PATH` now route through `LLAMAINDEX_DIR`, so the `/work/data/llamaindex` literal disappears without touching `Config`'s public surface.
+- Refactored [`src/s01_parse_fiebdc.ipynb`](../../src/s01_parse_fiebdc.ipynb): the two `os.chdir('/work/...')` sites (cell 1's `/work/data/raw` and `main()`'s `/work/data`) become `os.chdir(config.RAW_DIR)` / `os.chdir(config.DATA_ROOT)`. Cell 1 now does `from utils import config`. Jupyter's per-notebook kernel cwd is `src/` both inside Docker (`/work/src`) and on the Windows host, so `utils` resolves without a `sys.path` bootstrap. Diff scope: +4 / −2 across two cell `source` arrays, no metadata churn.
+- Added [`tests/utils/`](../../tests/utils) with `conftest.py` (clone of `tests/synthetic/conftest.py` — prepends `src/` to `sys.path`) and `test_config.py` — 12 tests covering the eight Task-1 acceptance bullets: import surface, `Path` instance types, default `DATA_ROOT`, env-var override + sub-dir propagation, `SYNTHETIC_DATA_ROOT` default + env override, `chapter_path` / `stage_path` under both default and `SYNTHETIC_INTERMEDIATE_DIR` roots, `Config` back-compat, and the "no `/work/` literal in the module source" check. An autouse fixture with no fixture deps reloads the module after every test so env-var mutations don't bleed across tests in the same session.
+
+**Key results:**
+- `pytest tests -q` → **42 passed in 0.08s** (Sprint 01's 30 synthetic tests + 12 new utils tests). No regressions.
+- All four smoke checks from the verification runbook pass: default paths, synthetic paths, `chapter_path`/`stage_path` helpers (default + synthetic root), `Config` back-compat. `Grep '/work/' src/utils/config.py` returns zero hits.
+- Cell-source `/work/` audit on `s01_parse_fiebdc.ipynb` returns zero hits. `git diff` is exactly the two target lines plus the two-line `from utils import config` / blank-line insert in cell 1.
+
+**Decisions made:**
+- Env-var names locked: `BC3CAT_DATA_ROOT` and `BC3CAT_SYNTHETIC_DATA_ROOT`. Sprint 03+ will consume these as-is.
+- Notebook bootstrap: chose the minimal `from utils import config` form over the `_REPO_ROOT` walker suggested as a fallback in the sprint plan. Verified that Jupyter's per-notebook kernel cwd is `src/` both inside the Docker container (`/work/src`) and on the Windows host (`…\bc3cat-dataset\src`), so `utils` is on the implicit notebook-dir `sys.path` entry without any bootstrap. Sprint 03's downstream-notebook fan-out will reuse this pattern.
+- Notebook editing: `Edit` refuses `.ipynb` files, and full-cell `NotebookEdit` replaces would balloon the diff for the 300-line parser cell. Did byte-precise string replacements on the cell `source` arrays via a one-off `json.load` → patch → `json.dumps(..., indent=1)` script — preserves cell 2 verbatim and keeps the diff to +4 / −2.
+- Test cleanup strategy: autouse fixture with no fixture dependencies, so its teardown runs after `monkeypatch`'s teardown — at which point one final `importlib.reload(config)` returns the module to defaults for any later test.
+
+**Problems encountered:**
+- The `nbformat`-based JSON-validity smoke check from the verification runbook is unavailable on this host's system Python. Substituted `json.load(...)` for the same well-formedness signal (acceptable because the rewriter emits JSON via `json.dumps`, so syntactic invalidity isn't a realistic failure mode).
+- Otherwise none. Sprint plan's per-step acceptance criteria were tight enough that no clarifying questions surfaced.
+
+**Changes to plan:**
+- None to the protocol. A4 is split into two halves as the sprint plan anticipated; A4 part 2 (s03–s07 notebooks) is Sprint 03's focus.
+
+**CLAUDE_SYNTHETIC.md updated:** yes — flipped the s01 line in the "Top-level scaffolding" block to ✅ (part 1); noted the new `src/utils/config.py` surface; prepended "After Sprint 02" to the Sprint History section.
+**Next step:** Draft `sprints/SPRINT_03.md` for A4 part 2 — fan the same migration pattern across `s02_split_chapters.ipynb` → `s07_Filter_duplicates.ipynb`. Defer `s08_Llamaindex_Doc_Creation.ipynb` and `Generate_OEB_dataset.ipynb` to Sprint 04 since they only emit the final main-pipeline artifacts and are not on the synthetic critical path.
+
+---
+
 ### Sprint 01 — Taxonomy module + injection harness skeleton
 **Date:** 2026-05-19
 **Sprint file:** [`sprints/SPRINT_01.md`](sprints/SPRINT_01.md)
