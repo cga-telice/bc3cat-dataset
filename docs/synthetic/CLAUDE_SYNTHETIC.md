@@ -251,7 +251,14 @@ Existing files extended in this branch (not new, but load-bearing for the synthe
                                                               `config.stage_path(...)` / `config.INTERMEDIATE_DIR / chapter / f"..."`;
                                                               two `project_root = Path('/work'); sys.path.append(...)` bootstraps deleted from cells 3 + 8;
                                                               `from utils import config` added to each touched cell.
-  src/s08_Llamaindex_Doc_Creation.ipynb + Generate_OEB_dataset.ipynb  ❌ Task A4 part 3 — Sprint 04 (final main-pipeline artifact emitters; not on the synthetic critical path).
+  src/s08_Llamaindex_Doc_Creation.ipynb          ✅ Sprint 04 — Task A4 part 3 — 3 `/work/data/...` literals → `config.stage_path(file, 7)` +
+                                                              `config.PROCESSED_DIR / f"{file}_{texto,resumen}.pkl"`;
+                                                              `from utils import config` added (cell 2).
+  src/Generate_OEB_dataset.ipynb                 ✅ Sprint 04 — Task A4 part 3 — 4 path-literal rewrites (cells 3/4/8 + cell 2 bootstrap retarget) +
+                                                              1 stale-comment deletion. `Path('/work')` → `config.REPO_ROOT`;
+                                                              `'/work/data/processed/...' → config.PROCESSED_DIR / "..."`; cell 4 collapsed to bare
+                                                              relative `"OEB_texto.pkl"`. `sys.path.append(...)` + `from src.utils.data_utils import load_documents`
+                                                              kept intact (repo-rooted import chain — Sprint 05 / 04.5 follow-up).
 ```
 
 Cross-check: every ❌ above corresponds to an unbuilt component listed in [`RESEARCH_PROTOCOL.md §3.5`](RESEARCH_PROTOCOL.md).
@@ -280,6 +287,32 @@ Cross-check: every ❌ above corresponds to an unbuilt component listed in [`RES
 ## Sprint History
 
 *Newest entries at the top. New entries follow the template: title, date, what changed (bullets), key results (table or bullets), known issues.*
+
+### After Sprint 04 — Path refactor: s08 + `Generate_OEB_dataset` notebook migration
+**Date:** 2026-05-19
+**What changed:**
+- Migrated [`src/s08_Llamaindex_Doc_Creation.ipynb`](../../src/s08_Llamaindex_Doc_Creation.ipynb) cell 2: 3 `Path('/work/data/...')` literals inside `main(file)` rewritten to `config.stage_path(file, 7)` and `config.PROCESSED_DIR / f"{file}_{texto,resumen}.pkl"`; `from utils import config` added beside `from llama_index.core import Document`.
+- Migrated [`src/Generate_OEB_dataset.ipynb`](../../src/Generate_OEB_dataset.ipynb) across cells 2, 3, 4, 8 in one `json.load` → patch → `json.dumps(indent=1, ensure_ascii=False)` cycle: cell 2 bootstrap retargeted (`Path('/work')` → `config.REPO_ROOT`) and two-line stale `# Assuming … /work` comment block deleted, with `sys.path.append(str(project_root))` and `from src.utils.data_utils import load_documents` deliberately preserved; cells 3/8 pickle-path literals → `config.PROCESSED_DIR / "..."`; cell 4 collapsed from `'/work/src/OEB_texto.pkl'` to bare relative `"OEB_texto.pkl"` (symmetric with cell 3's save side). `from utils import config` added once in cell 2 — cells 3/4/8 inherit transitively.
+- Extended [`tests/utils/test_notebooks_no_work_literal.py`](../../tests/utils/test_notebooks_no_work_literal.py): `s08_Llamaindex_Doc_Creation.ipynb` and `Generate_OEB_dataset.ipynb` appended to the `NOTEBOOKS` list, and the substring check widened from `"/work/"` to bare `"/work"` so the `Path('/work')` bootstrap shape is also caught. Docstring updated to match. The widened gate stays green on s01–s07.
+
+**Key results:**
+- `pytest tests -q` → **51 passed in 0.08s** (49 from Sprint 03 + 2 new notebook-guard cases). No regressions.
+- Both smoke checks pass: all 9 pipeline notebooks (s01–s08 + `Generate_OEB_dataset`) parse via `json.load`; `source-cell /work hits across s01-s08 + Generate_OEB: 0`.
+- `git diff --numstat`: s08 +4/−3 (cell 2 only), `Generate_OEB_dataset` +5/−6 (cells 2/3/4/8 only), test file ~+5/−5. End-of-sprint `git status --short` matches the sprint plan's expected file list exactly.
+
+**Decisions confirmed:**
+- **Generate_OEB cell 2 bootstrap retargeted, not deleted.** `sys.path.append(str(project_root))` stays because the next line `from src.utils.data_utils import load_documents` is a *repo-rooted* import requiring `REPO_ROOT` (not `src/`) on `sys.path`. Only the literal swaps (`Path('/work')` → `config.REPO_ROOT`). Cleaning up the import shape inside [`src/utils/data_utils.py`](../../src/utils/data_utils.py), [`src/utils/index_classes.py`](../../src/utils/index_classes.py), and [`src/utils/evaluation.py`](../../src/utils/evaluation.py) — swapping `from src.utils.X` → relative `from .X` so the bootstrap can finally retire — is a Sprint 05 (or "Sprint 04.5") candidate. Requires a cross-repo coupling check against `bc3cat-retrieval` before merging.
+- **Cell 4 collapsed to bare relative `"OEB_texto.pkl"`.** Symmetric with cell 3's save side, which already writes the file as a bare relative path resolved against the notebook cwd of `src/`. No `config.SRC_DIR` helper introduced — YAGNI for two callers in one notebook.
+- **Single `from utils import config` per notebook in the shared imports cell.** Cells 3/4/8 of `Generate_OEB_dataset` inherit transitively via notebook globals. Sprinkling per-cell imports would clutter the diff with no behavioural change.
+- **Regression-guard literal widened from `/work/` to `/work`.** Catches the `Path('/work')` bootstrap shape (no trailing slash) while staying green on s01–s07 — verified by hand and by the parametrised test (9 passed). Net effect: one stricter regression-prevention rule, zero false positives.
+- **LF line endings preserved** via `Path.write_bytes(...)` per the Sprint 03 recipe.
+
+**Known issues:**
+- The `Generate_OEB_dataset.ipynb` cell 2 bootstrap is the last in-repo `sys.path.append(...)` shim. It cannot retire until [`src/utils/data_utils.py`](../../src/utils/data_utils.py), [`src/utils/index_classes.py`](../../src/utils/index_classes.py), and [`src/utils/evaluation.py`](../../src/utils/evaluation.py) switch from absolute `from src.utils.X` to relative `from .X` imports. Tracked as the Sprint 05 / 04.5 candidate above.
+- End-to-end behaviour-preserving validation across the full main pipeline (s01 → s08 → `Generate_OEB_dataset`, byte-diff against in-repo `OEB_*.parquet` / `*.pkl`) still pending — requires a Docker / `pandas` / `llama_index` env. Static-check gate only across Sprints 02–04.
+- The atexit `cleanup_dead_symlinks` PermissionError on Windows after pytest exits is unchanged from Sprints 02 + 03 (51 passed prints before the traceback). Cosmetic; no action.
+
+**Next step:** Either the import-shape cleanup (Sprint 05 / 04.5 candidate above) — lower-risk, lands the path refactor's final cleanup and unblocks the Generate_OEB cell 2 bootstrap deletion — or the end-to-end-validation sprint that reruns the full main pipeline against `data/intermediate/...` and byte-diffs `data/processed/OEB_*.parquet` / `*.pkl` against the in-repo originals. Recommendation: do the import-shape cleanup first.
 
 ### After Sprint 03 — Path refactor: s02–s07 notebook migration
 **Date:** 2026-05-19

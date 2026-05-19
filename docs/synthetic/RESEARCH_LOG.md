@@ -29,6 +29,42 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### Sprint 04 — Path refactor: s08 + `Generate_OEB_dataset` notebook migration
+**Date:** 2026-05-19
+**Sprint file:** [`sprints/SPRINT_04.md`](sprints/SPRINT_04.md)
+**Tasks from backlog:** A4 part 3 (s08 + `Generate_OEB_dataset` notebook migration). With this sprint, **task A4 closes in full**.
+
+**What was done:**
+- Migrated [`src/s08_Llamaindex_Doc_Creation.ipynb`](../../src/s08_Llamaindex_Doc_Creation.ipynb) cell 2: added `from utils import config` and rewrote the three `Path('/work/data/...')` path literals inside `main(file)` to route through `config.stage_path(file, 7)` (the `_stage7.json` read) and `config.PROCESSED_DIR / f"{file}_{texto,resumen}.pkl"` (the two pickle writes). Diff scope: +4 / −3 in cell 2 only.
+- Migrated [`src/Generate_OEB_dataset.ipynb`](../../src/Generate_OEB_dataset.ipynb) cells 2, 3, 4, 8: **4 path-literal rewrites + 1 bootstrap retarget + 1 stale-comment deletion** in a single `json.load` → patch → `json.dumps(indent=1, ensure_ascii=False)` cycle. Cell 2: `from utils import config` added beside `from llama_index.core import Document`, the two-line stale `# Assuming … /work` comment block deleted, and `project_root = Path('/work')` rewritten to `project_root = config.REPO_ROOT`. **The `sys.path.append(str(project_root))` line and the `from src.utils.data_utils import load_documents` import stay intact** — both are load-bearing for the repo-rooted import chain. Cell 3: `'/work/data/processed/OBRA CIVIL_texto.pkl'` → `config.PROCESSED_DIR / "OBRA CIVIL_texto.pkl"`. Cell 4: `'/work/src/OEB_texto.pkl'` collapsed to a bare relative `"OEB_texto.pkl"` (symmetric with cell 3's save side, no `config.SRC_DIR` helper introduced). Cell 8: `'/work/data/processed/OEB_resumen.pkl'` → `config.PROCESSED_DIR / "OEB_resumen.pkl"`. Diff scope: +5 / −6 across the four cells, no metadata churn.
+- Extended the regression-guard test [`tests/utils/test_notebooks_no_work_literal.py`](../../tests/utils/test_notebooks_no_work_literal.py): appended `s08_Llamaindex_Doc_Creation.ipynb` and `Generate_OEB_dataset.ipynb` to the `NOTEBOOKS` list, and **widened the substring check** from `"/work/"` to bare `"/work"` so the `Path('/work')` bootstrap (no trailing slash) is also caught. Module docstring updated to match.
+
+**Key results:**
+- `pytest tests -q` → **51 passed in 0.08s** (49 from Sprint 03 + 2 new parametrised notebook-guard cases for s08 and Generate_OEB). No regressions.
+- Both smoke checks pass: all 9 pipeline notebooks (s01–s08 + `Generate_OEB_dataset`) parse via `json.load`, and `source-cell /work hits across s01-s08 + Generate_OEB: 0`.
+- The widened literal check (`"/work/"` → `"/work"`) stays green on s01–s07 — confirmed by the parametrised test: 9 passed. The Sprint 03 deletions of the s07 cells 3/8 bootstraps were the only bare-`/work` sites in those notebooks, so the tighter gate carries no false positives.
+- `git status --short` matches the sprint's expected end-state: 2 modified notebooks (`src/s08_Llamaindex_Doc_Creation.ipynb`, `src/Generate_OEB_dataset.ipynb`), 1 modified test file (`tests/utils/test_notebooks_no_work_literal.py`), plus this log + `CLAUDE_SYNTHETIC.md` housekeeping and the new `docs/synthetic/sprints/SPRINT_04.md` itself. Nothing under `src/synthetic/`, `tests/synthetic/`, `data/`, `configs/`, or `src/utils/*.py` in the diff.
+
+**Decisions made:**
+- **Generate_OEB cell 2 bootstrap retargeted, not deleted.** The `sys.path.append(str(project_root))` line stays because `from src.utils.data_utils import load_documents` on the next line is a *repo-rooted* import — it requires `REPO_ROOT` (parent of `src/`) on `sys.path`, not `src/` itself. The bootstrap's purpose is unchanged; only its target literal swaps from `Path('/work')` to `config.REPO_ROOT`. **Cleaning up the import shape inside [`src/utils/data_utils.py`](../../src/utils/data_utils.py), [`src/utils/index_classes.py`](../../src/utils/index_classes.py), and [`src/utils/evaluation.py`](../../src/utils/evaluation.py) — swapping `from src.utils.X` to relative `from .X` so the bootstrap can finally retire — is a self-contained follow-up.** Doing it here would also force a cross-repo coupling check against `bc3cat-retrieval`, expanding the Sprint 04 blast radius unnecessarily. Tracked as a Sprint 05 (or "Sprint 04.5") candidate.
+- **Cell 4 collapsed to a bare relative path, not promoted to a helper.** `'/work/src/OEB_texto.pkl'` → `"OEB_texto.pkl"`. Symmetric with cell 3's save side (`with open("OEB_texto.pkl", "wb") as f: pickle.dump(filtered_docs, f)`), which already saves relative to the notebook cwd of `src/`. Introducing a `config.SRC_DIR` helper for two callers in one notebook would be premature; the bare-relative form makes it obvious the file lives where cell 3 just wrote it.
+- **Single `from utils import config` per notebook in the shared imports cell.** Cells 3, 4, 8 of `Generate_OEB_dataset.ipynb` inherit the import transitively through the notebook globals namespace populated by cell 2's execution. Sprinkling per-cell imports would clutter the diff without changing behaviour.
+- **Regression-guard literal widened from `/work/` to `/work`.** Verified by hand that s01–s07 contain no bare-`/work` tokens after Sprint 03 — the deleted s07 cells 3/8 bootstraps (`Path('/work')`) were the only such occurrences. Sprint 04's `Generate_OEB_dataset.ipynb` cell 2 originally had the same `Path('/work')` shape (which the old `/work/` gate would have missed); the widened gate catches it. Net effect: one stricter regression-prevention rule, zero false positives.
+- **LF line endings preserved.** Same recipe as Sprint 03: `Path.write_bytes(json_text.encode("utf-8") + b"\n")` bypasses Windows' text-mode CRLF translation. git's `core.autocrlf` produces the soft "LF will be replaced by CRLF" warning on both touched notebooks but the in-repo bytes are LF, matching the existing convention.
+
+**Problems encountered:**
+- The site-survey cell IDs in the sprint plan (`78375313`, `80529a1b`, `3348009c`, `a64e60f9`, `b9f644bb`) are 8-char prefixes; the actual `cell["id"]` values in the JSON are full UUIDs (e.g. `78375313-6bce-4626-bc8c-653fe1d5a8bb`). The first migration-script run tripped a strict equality assertion; relaxing to `cid.startswith(prefix)` resolved it on the second try. No notebook content was touched on the failed run (the assertion fired before any patching). Trivial; logged for future sprint authors writing similar helpers.
+- Same Windows-temp-dir-cleanup `PermissionError` traceback at pytest shutdown observed in Sprints 02 + 03 still prints; 51 passed prints before the traceback. Unrelated to test outcomes.
+
+**Changes to plan:**
+- **Task A4 closes in full.** A4 part 3 (s08 + `Generate_OEB_dataset`) is the last sub-task; the path refactor across the main pipeline is complete.
+- **New follow-up: import-shape cleanup of `src/utils/{data_utils,index_classes,evaluation}.py`.** Listed as a Sprint 05 / "Sprint 04.5" candidate. Scope: swap each `from src.utils.X` to a relative `from .X` (one-line edits in three files), then the `Generate_OEB_dataset.ipynb` cell 2 bootstrap (`sys.path.append(str(project_root))`) can finally retire. Requires a cross-repo coupling check against `bc3cat-retrieval`'s consumers of those modules before merging.
+
+**CLAUDE_SYNTHETIC.md updated:** yes — flipped s08 + `Generate_OEB_dataset` from "❌ Task A4 part 3" to "✅ Sprint 04" in the "Existing files extended" block (task A4 closes); prepended "After Sprint 04" to the Sprint History section.
+**Next step:** Either the import-shape cleanup (Sprint 05 / 04.5 candidate above) or the end-to-end-validation sprint that reruns s01 → s08 → `Generate_OEB_dataset` against `data/intermediate/...` and byte-diffs `data/processed/OEB_*.parquet` / `*.pkl` against the in-repo originals to confirm the full path refactor is behaviour-preserving. The import-shape cleanup is the lower-risk pick to land first because the end-to-end rerun is gated on a Docker / `pandas` / `llama_index` env that the static-check sprints have not exercised.
+
+---
+
 ### Sprint 03 — Path refactor: s02–s07 notebook migration
 **Date:** 2026-05-19
 **Sprint file:** [`sprints/SPRINT_03.md`](sprints/SPRINT_03.md)
