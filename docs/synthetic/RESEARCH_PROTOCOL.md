@@ -3,7 +3,7 @@
 **Branch:** `synthetic`
 **Repo:** `bc3cat-dataset`
 **Author:** César · May 2026
-**Target:** SEPLN Congress / Data-in-Brief companion submission
+**Target:** New paper 
 
 ---
 

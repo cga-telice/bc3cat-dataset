@@ -29,6 +29,41 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### Sprint 01 — Taxonomy module + injection harness skeleton
+**Date:** 2026-05-19
+**Sprint file:** [`sprints/SPRINT_01.md`](sprints/SPRINT_01.md)
+**Tasks from backlog:** A2 (taxonomy), A5 (injection harness). A4 (path refactor) and A3 (LLM proposer spike) were deliberately deferred per the sprint's "Out of scope" block.
+
+**What was done:**
+- Created [`src/synthetic/__init__.py`](../../src/synthetic/__init__.py) — package scaffold with `__version__ = "0.1.0"`.
+- Created [`src/synthetic/taxonomy.py`](../../src/synthetic/taxonomy.py) — `Layer` (4 members) and `ModificationType` (12 members) as `str, Enum`; `Modification` `@dataclass(frozen=True)` with the proposal §2.3 schema (`type`, `layer`, plus `param`, `var`, `condition`, `field`, `value`, `original`, `new`, `status`, `reason`); `to_dict()` / `from_dict()` JSON-friendly helpers; `TYPE_TO_LAYER` map covering all 12 → all 4 layers.
+- Created [`src/synthetic/mutator.py`](../../src/synthetic/mutator.py) — `apply_l1` / `apply_l2` / `apply_l3` / `apply_new_param` public API with the signatures fixed by [`../CLAUDE_SYNTHETIC.md`](CLAUDE_SYNTHETIC.md) "Stage-Hook Integration Note". Internal `_DISPATCH` registers exactly 12 stubs (`_stub_synonym_label` … `_stub_new_param`), each raising `NotImplementedError(f"Phase B: {type_code} mutator not yet implemented")`. Wrong-layer rules and unknown type codes raise `ValueError`; all four entry points deep-copy their input before any mutation.
+- Created [`tests/synthetic/`](../../tests/synthetic) with `conftest.py` (prepends `src/` to `sys.path`), `test_taxonomy.py`, and `test_mutator.py` — 30 tests in total covering every acceptance bullet from Tasks 2–3.
+
+**Key results:**
+- `pytest tests/synthetic -q` → **30 passed in 0.10s**.
+- All three smoke checks from the verification runbook (taxonomy invariants, four `inspect.signature` checks, `_DISPATCH` shape) pass.
+- Round-trip via `json.dumps`/`json.loads` of `Modification.to_dict()` preserves all set fields; `None` fields are omitted from the serialised form.
+- Stub-raise message uses the type-code string verbatim (e.g. `"Phase B: synonym_label mutator not yet implemented"`), so the parameterised 12-type test matches by substring.
+- Deep-copy purity verified: snapshot-before / snapshot-after of the input JSON inside a `pytest.raises(NotImplementedError)` block compares byte-identical.
+
+**Decisions made:**
+- `to_dict()` omits `None` fields rather than emitting nulls. Cleaner JSON and round-trips fine because `from_dict()` defaults missing optional fields to `None` via the dataclass.
+- Spelled out all 12 stubs as explicit named functions rather than generating them through a factory — the sprint pinned the names (`_stub_synonym_label` … `_stub_new_param`) and Phase B will physically relocate the bodies; named functions make that move mechanical.
+- Routed the per-layer entry points through a single internal `_apply_rules(stage_json, concept_key, rules, expected_layer)` helper so the layer gate + deepcopy logic is in one place; `apply_new_param` has its own variant because it takes a single `rule` not a `list[dict]`.
+- Test file skips optional `__init__.py` markers under `tests/` and `tests/synthetic/`. `conftest.py` alone is enough for pytest to discover and add `src/` to `sys.path`.
+
+**Problems encountered:**
+- None blocking. The sprint's signature and acceptance criteria were precise enough that no clarifying questions surfaced during implementation.
+
+**Changes to plan:**
+- None. Backlog A2 + A5 close cleanly; A4 (path refactor) remains the natural Sprint 02 candidate as suggested at the bottom of Sprint 00.
+
+**CLAUDE_SYNTHETIC.md updated:** yes — three ❌ → ✅ flips for the new `src/synthetic/` files; new "After Sprint 01" entry prepended to the Sprint History section.
+**Next step:** Draft `sprints/SPRINT_02.md` for Task A4 — un-hardcode `/work/data/raw/` in `s01_parse_fiebdc.ipynb` and route through [`src/utils/config.py`](../../src/utils/config.py). This is the precondition for pipeline reruns from `data/synthetic/intermediate/`.
+
+---
+
 ### Sprint 00 — Documentation scaffolding
 **Date:** 2026-05-19
 **Sprint file:** *(none — pre-sprint scaffolding work)*

@@ -185,10 +185,10 @@ docs/synthetic/
   QUALITY_REPORT.md                               ❌ Phase F — pilot + full-validation quality report
   HANDOFF.md                                      ❌ Phase G — cross-repo memo to bc3cat-retrieval
 
-src/synthetic/                                    ❌ Phase A–G
-  __init__.py                                     ❌ Phase A
-  taxonomy.py                                     ❌ Task A2 — 12-type enum + Modification dataclass
-  mutator.py                                      ❌ Task A5 — apply_l1/l2/l3/new_param harness
+src/synthetic/                                    🚧 Phase A–G
+  __init__.py                                     ✅ Sprint 01
+  taxonomy.py                                     ✅ Sprint 01 — Task A2 — 12-type enum + Modification dataclass
+  mutator.py                                      ✅ Sprint 01 — Task A5 — apply_l1/l2/l3/new_param harness (stubs)
   layer_l1.py                                     ❌ Task B1 — param-value mutators
   layer_l2.py                                     ❌ Task B2 — text-variable mutators
   layer_l3.py                                     ❌ Task B3 — template mutators
@@ -255,6 +255,28 @@ Cross-check: every ❌ above corresponds to an unbuilt component listed in [`RES
 ## Sprint History
 
 *Newest entries at the top. New entries follow the template: title, date, what changed (bullets), key results (table or bullets), known issues.*
+
+### After Sprint 01 — Taxonomy module + injection harness skeleton
+**Date:** 2026-05-19
+**What changed:**
+- Created [`src/synthetic/__init__.py`](../../src/synthetic/__init__.py), [`src/synthetic/taxonomy.py`](../../src/synthetic/taxonomy.py), [`src/synthetic/mutator.py`](../../src/synthetic/mutator.py).
+- `taxonomy.py` exports `Layer` (4), `ModificationType` (12), `TYPE_TO_LAYER`, and `Modification` (frozen dataclass with `to_dict()` / `from_dict()`).
+- `mutator.py` exposes `apply_l1` / `apply_l2` / `apply_l3` / `apply_new_param`. Internal `_DISPATCH` registers 12 named stubs; each raises `NotImplementedError("Phase B: <type_code> mutator not yet implemented")`. Wrong-layer and unknown-type rules raise `ValueError`. All four entry points `copy.deepcopy` their input before any mutation, so the caller's dict stays byte-identical even when a stub raises.
+- Added the test suite under [`tests/synthetic/`](../../tests/synthetic) — `conftest.py` + `test_taxonomy.py` + `test_mutator.py`.
+
+**Key results:**
+- `pytest tests/synthetic -q` → 30 passed in 0.10s.
+- All three verification-runbook smoke checks pass (taxonomy invariants, four signature checks, `_DISPATCH` shape).
+
+**Decisions confirmed:**
+- `to_dict()` omits `None` fields (cleaner JSON; round-trips via `from_dict()` defaulting).
+- 12 stubs spelled out explicitly rather than factory-generated — Phase B will physically relocate them to `layer_l1.py` / `_l2.py` / `_l3.py` / `_pd.py` and re-register through the same dispatcher, so named functions make that move mechanical.
+
+**Known issues:**
+- All 12 mutator bodies are still stubs. Real bodies land in Phase B (B1–B4).
+- `s01_parse_fiebdc.ipynb` still hardcodes `/work/data/raw/`. Path refactor (A4) is the next sprint.
+
+**Next step:** Draft `sprints/SPRINT_02.md` for Task A4 — un-hardcode `/work/data/raw/` in `s01_parse_fiebdc.ipynb` and route through [`src/utils/config.py`](../../src/utils/config.py).
 
 ### After Sprint 00 — Documentation scaffolding
 **Date:** 2026-05-19
