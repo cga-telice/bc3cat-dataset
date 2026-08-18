@@ -70,7 +70,7 @@ The branch's last commit is `a7d51b9 Sprint 04`. Everything since (20 modified f
 **Files:**
 - Modify: `.gitignore`
 
-- [ ] **Step 1: Extend `.gitignore`** so the 1.5 GB of derived data and the tracked `.pyc` files stay out:
+- [x] **Step 1: Extend `.gitignore`** so the 1.5 GB of derived data and the tracked `.pyc` files stay out:
 
 ```gitignore
 data_validation/
@@ -79,13 +79,13 @@ data/synthetic/_archive/
 data/synthetic/intermediate/
 ```
 
-- [ ] **Step 2: Untrack the already-committed `.pyc` files**
+- [x] **Step 2: Untrack the already-committed `.pyc` files**
 
 ```bash
 git rm --cached -r src/utils/__pycache__
 ```
 
-- [ ] **Step 3: Stage everything else and inspect**
+- [x] **Step 3: Stage everything else and inspect**
 
 ```bash
 git add -A
@@ -93,7 +93,7 @@ git status --short | grep -v "^A  \|^M  \|^D  " ; echo "--- sizes of staged blob
 ```
 Expected: no lines from the first grep (everything staged); the `--stat` summary should be a few thousand insertions, and `git count-objects -vH` afterwards should not jump by more than ~30 MB. If `data/synthetic/review/` (6.9 MB) or `data/synthetic/variants/` (0.6 MB) look wrong to keep, add them to `.gitignore` too and re-run — **César's call**; default is to keep them (they are the F1 pilot audit trail).
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git commit -m "Sprints 05-38: synthetic pipeline, menu builder, phi4 pilot menus + transcript cache
@@ -109,7 +109,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 - Modify: `src/synthetic/menu_proposer.py:405-423` (`_parse_json_list`)
 - Test: `tests/synthetic/test_menu_builder.py`
 
-- [ ] **Step 1: Write the failing tests** — append to `tests/synthetic/test_menu_builder.py` (the file already imports `pytest` and `from synthetic.menu_proposer import (...)`; add `_parse_json_list` and `_repair_invalid_escapes` to that import list):
+- [x] **Step 1: Write the failing tests** — append to `tests/synthetic/test_menu_builder.py` (the file already imports `pytest` and `from synthetic.menu_proposer import (...)`; add `_parse_json_list` and `_repair_invalid_escapes` to that import list):
 
 ```python
 # ===========================================================================
@@ -145,14 +145,14 @@ class TestParseJsonListRepair:
         assert _repair_invalid_escapes(r'\C \S \" \\ \n \/ end\\') == r'C S \" \\ \n \/ end\\'
 ```
 
-- [ ] **Step 2: Run to verify they fail**
+- [x] **Step 2: Run to verify they fail**
 
 ```bash
 pytest tests/synthetic/test_menu_builder.py::TestParseJsonListRepair -q
 ```
 Expected: `ImportError: cannot import name '_repair_invalid_escapes'`.
 
-- [ ] **Step 3: Implement** — in `src/synthetic/menu_proposer.py`, add `import re` next to `import json` (line 51), then add the helper and change `_parse_json_list`:
+- [x] **Step 3: Implement** — in `src/synthetic/menu_proposer.py`, add `import re` next to `import json` (line 51), then add the helper and change `_parse_json_list`:
 
 ```python
 # Alternation: a *valid* escape pair (\" \\ \/ \b \f \n \r \t \u) is matched
@@ -198,14 +198,14 @@ def _parse_json_list(text: str) -> list:
     return obj
 ```
 
-- [ ] **Step 4: Run tests**
+- [x] **Step 4: Run tests**
 
 ```bash
 pytest tests/synthetic/test_menu_builder.py -q
 ```
 Expected: all pass (previous count + 4).
 
-- [ ] **Step 5: Verify against the real cache** — this is the whole point; check the recovery number before committing:
+- [x] **Step 5: Verify against the real cache** — this is the whole point; check the recovery number before committing:
 
 ```bash
 python - <<'EOF'
@@ -222,7 +222,7 @@ EOF
 ```
 Expected: `parseable=502 unparseable=0` (before this task ≈ 369 / 133 — the 133 transcripts carrying `\C`, `\S`, … escapes). This exact regex was verified against the cache on 2026-08-18: 502/502. Anything less means the regex was transcribed wrongly — stop and compare with the plan. (Run with `$env:PYTHONPATH="src"` if the import fails.)
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/synthetic/menu_proposer.py tests/synthetic/test_menu_builder.py
@@ -239,7 +239,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 - Modify: `src/synthetic/menu_proposer.py` (`_propose_l1` line ~173, `_propose_single_target` line ~277)
 - Test: `tests/synthetic/test_menu_builder.py`
 
-- [ ] **Step 1: Write the failing tests** — append to `tests/synthetic/test_menu_builder.py`; add `MENU_CAP_BY_TYPE`, `_cap_candidates`, `CandidateProposal` to the `menu_proposer` import list if not already there:
+- [x] **Step 1: Write the failing tests** — append to `tests/synthetic/test_menu_builder.py`; add `MENU_CAP_BY_TYPE`, `_cap_candidates`, `CandidateProposal` to the `menu_proposer` import list if not already there:
 
 ```python
 # ===========================================================================
@@ -275,14 +275,14 @@ class TestMenuCap:
         assert [c.payload["new"] for c in sets[("PROFUNDIDAD", "1")].candidates] == ["uno", "un", "una unidad"]
 ```
 
-- [ ] **Step 2: Run to verify they fail**
+- [x] **Step 2: Run to verify they fail**
 
 ```bash
 pytest tests/synthetic/test_menu_builder.py::TestMenuCap -q
 ```
 Expected: `ImportError: cannot import name 'MENU_CAP_BY_TYPE'`.
 
-- [ ] **Step 3: Implement** — in `src/synthetic/menu_proposer.py`, directly under `DEFAULT_N_CANDIDATES: int = 10`:
+- [x] **Step 3: Implement** — in `src/synthetic/menu_proposer.py`, directly under `DEFAULT_N_CANDIDATES: int = 10`:
 
 ```python
 # Sprint 38.5. Low-entropy rewrite types: the model's 10 alternatives are
@@ -329,14 +329,14 @@ with
             candidates = _cap_candidates(_dedupe_non_l1(variants, mtype), mtype)
 ```
 
-- [ ] **Step 4: Run tests**
+- [x] **Step 4: Run tests**
 
 ```bash
 pytest tests/synthetic/test_menu_builder.py tests/synthetic/test_menu_runner.py -q
 ```
 Expected: all pass. (`test_menu_runner` exercises SYNONYM_LABEL/PARAPHRASE only — uncapped — so no expectation shifts.)
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/synthetic/menu_proposer.py tests/synthetic/test_menu_builder.py
@@ -354,7 +354,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 - Modify: `src/synthetic/target_scanner.py:239-256` (L1 per-value loop)
 - Test: `tests/synthetic/test_slot_extractor.py`, `tests/synthetic/test_menu_builder.py`
 
-- [ ] **Step 1: Write the failing tests** — append to `tests/synthetic/test_slot_extractor.py` (add `value_applies`, `MIN_COMPRESSION_WORDS` to the `from synthetic.slot_extractor import (...)` list):
+- [x] **Step 1: Write the failing tests** — append to `tests/synthetic/test_slot_extractor.py` (add `value_applies`, `MIN_COMPRESSION_WORDS` to the `from synthetic.slot_extractor import (...)` list):
 
 ```python
 # ---- Sprint 38.5: per-value gates -------------------------------------
@@ -410,14 +410,14 @@ class TestScannerValueGate:
         assert ("TIPO", "Rocoso 2 m") not in keys
 ```
 
-- [ ] **Step 2: Run to verify they fail**
+- [x] **Step 2: Run to verify they fail**
 
 ```bash
 pytest tests/synthetic/test_slot_extractor.py tests/synthetic/test_menu_builder.py::TestScannerValueGate -q
 ```
 Expected: `ImportError: cannot import name 'value_applies'`.
 
-- [ ] **Step 3: Implement in `slot_extractor.py`** — add after `_ABBREV_RE` (line 73):
+- [x] **Step 3: Implement in `slot_extractor.py`** — add after `_ABBREV_RE` (line 73):
 
 ```python
 _HAS_DIGIT_RE = re.compile(r"\d")
@@ -474,21 +474,21 @@ In `enumerate_targets`, change the L2 branch loop (lines 173-174) to:
                 yield (var_key, condition)
 ```
 
-- [ ] **Step 4: Implement in `target_scanner.py`** — in `_emit_entries`, L1 branch, after `value_text = _norm(str(entry.get("value", "")))` / `if not value_text: continue` (line 247), add:
+- [x] **Step 4: Implement in `target_scanner.py`** — in `_emit_entries`, L1 branch, after `value_text = _norm(str(entry.get("value", "")))` / `if not value_text: continue` (line 247), add:
 
 ```python
                 if not slot_extractor.value_applies(value_text, mtype):
                     continue  # Sprint 38.5: per-value gate (e.g. digits under SYNONYM_LABEL)
 ```
 
-- [ ] **Step 5: Run the whole synthetic suite**
+- [x] **Step 5: Run the whole synthetic suite**
 
 ```bash
 pytest tests/synthetic -q
 ```
 Expected: all pass. The only pre-existing expectation that legitimately changes is the one edited in Step 1 (`SYNONYM_LABEL → ["B"]`). If anything else fails, it is a real regression — investigate, don't edit expectations.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/synthetic/slot_extractor.py src/synthetic/target_scanner.py tests/synthetic/test_slot_extractor.py tests/synthetic/test_menu_builder.py
@@ -507,7 +507,7 @@ Makes the assessment measurable before/after (and reusable in Sprint 40 F3 QC).
 - Create: `src/synthetic/menu_profile.py`
 - Test: `tests/synthetic/test_menu_profile.py`
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```python
 """Sprint 38.5 — hermetic test for :mod:`synthetic.menu_profile`."""
@@ -545,14 +545,14 @@ def test_profile_counts_targets_candidates_noops_and_skips(tmp_path):
     assert "paraphrase" in text and "uniq/tgt" in text
 ```
 
-- [ ] **Step 2: Run to verify it fails**
+- [x] **Step 2: Run to verify it fails**
 
 ```bash
 pytest tests/synthetic/test_menu_profile.py -q
 ```
 Expected: `ModuleNotFoundError: No module named 'synthetic.menu_profile'`.
 
-- [ ] **Step 3: Implement `src/synthetic/menu_profile.py`**
+- [x] **Step 3: Implement `src/synthetic/menu_profile.py`**
 
 ```python
 """Per-type mechanical scorecard over the menu JSONL artefacts.
@@ -672,7 +672,7 @@ if __name__ == "__main__":  # pragma: no cover
     raise SystemExit(main())
 ```
 
-- [ ] **Step 4: Run test, then run it for real to capture the BEFORE baseline**
+- [x] **Step 4: Run test, then run it for real to capture the BEFORE baseline**
 
 ```bash
 pytest tests/synthetic/test_menu_profile.py -q
@@ -681,7 +681,7 @@ cat docs/synthetic/sprints/SPRINT_385_profile_before.txt
 ```
 Expected test: PASS. Expected profile: matches the Context table above (`omission 212 100 …`, `reorder 49 19 …`, `template_paraphrase 49 15 …`). (Run with `PYTHONPATH=src` if the module isn't found: `set PYTHONPATH=src` in PowerShell → `$env:PYTHONPATH="src"`.)
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/synthetic/menu_profile.py tests/synthetic/test_menu_profile.py docs/synthetic/sprints/SPRINT_385_profile_before.txt
@@ -700,14 +700,14 @@ No LLM, no GPU. `replay` fails loud on any cache miss — that is the proof that
 - Regenerated: `data/synthetic/menus/*.jsonl`, `docs/synthetic/menus/*.md`
 - Create: `docs/synthetic/sprints/SPRINT_385_profile_after.txt`
 
-- [ ] **Step 1: Replay**
+- [x] **Step 1: Replay**
 
 ```bash
 python -m synthetic.menu_runner replay --stage-json "data/intermediate/OBRA CIVIL/OBRA CIVIL.json" --concept-filter OEB --n 10 --seed 7 --chapter-label OEB
 ```
 Expected: completes in well under a minute, prints the scorecard, **no** `LLMTransportError` (a transport error here means a prompt changed → cache miss → stop; do not switch to `run`). Scorecard expectations: `omission` skipped ≈ 3 (was 100; the residual is `all_elements_rejected_by_schema`), `reorder` skipped ≈ 4 (was 19), `template_paraphrase` skipped 0 (was 15), `synonym_label` targets < 49 (every digit-bearing value gone — e.g. no `BANDA DE MANTENIMIENTO / …` or `PROFUNDIDAD / 1,10 m` headings left in `synonym_label.md`), `compression` targets < 46 (no ≤3-word fragments such as `Diurno excepcional` left in `compression.md`).
 
-- [ ] **Step 2: Profile AFTER and diff**
+- [x] **Step 2: Profile AFTER and diff**
 
 ```bash
 python -m synthetic.menu_profile > docs/synthetic/sprints/SPRINT_385_profile_after.txt
@@ -715,21 +715,21 @@ diff docs/synthetic/sprints/SPRINT_385_profile_before.txt docs/synthetic/sprints
 ```
 Expected changes: `empty` and `skip` columns drop sharply on the three L3 types; `cands` on omission/reorder/unit_*/num_to_text ≤ 3 × populated targets; `synonym_label`/`compression` target counts down; `paraphrase`, `expansion`, `new_param` **byte-identical** rows (they are untouched — if they moved, something is wrong).
 
-- [ ] **Step 3: Eyeball one recovered TEXTO omission menu**
+- [x] **Step 3: Eyeball one recovered TEXTO omission menu**
 
 ```bash
 grep -n "TEXTO" docs/synthetic/menus/omission.md | head -5
 ```
-Expected: TEXTO headings now followed by `- [ ] 1.` candidate lines whose text starts `Canalización…` (no leading `\`).
+Expected: TEXTO headings now followed by `- [x] 1.` candidate lines whose text starts `Canalización…` (no leading `\`).
 
-- [ ] **Step 4: Confirm nothing but the menus + profile changed**
+- [x] **Step 4: Confirm nothing but the menus + profile changed**
 
 ```bash
 git status --short
 ```
 Expected: only `data/synthetic/menus/*.jsonl`, `docs/synthetic/menus/*.md`, and the new `SPRINT_385_profile_after.txt`. The `llm_cache/` directory must be untouched (replay never writes).
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add data/synthetic/menus docs/synthetic/menus docs/synthetic/sprints/SPRINT_385_profile_after.txt
@@ -747,7 +747,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 - Create: `docs/synthetic/STATUS_2026-08-18.md` (supersedes `STATUS_2026-07-09.md`; leave the old one in place)
 - Modify: `docs/synthetic/CLAUDE_SYNTHETIC.md` — the "Known issues / next" line (~line 378) and the module table (add `menu_profile.py`)
 
-- [ ] **Step 1: RESEARCH_LOG entry** — append under the Sprint 38 entries:
+- [x] **Step 1: RESEARCH_LOG entry** — append under the Sprint 38 entries:
 
 ```markdown
 ### 2026-08-18 — Sprint 38.5, F3-prep-2-fix (assessment + offline recovery)
@@ -774,7 +774,7 @@ hashes → do it when the full chapter is generated fresh); deterministic `unit_
 high-fan-out targets (e.g. `BANDA DE MANTENIMIENTO / i >= 5 horas`, 21 concepts, 1 candidate).
 ```
 
-- [ ] **Step 2: `STATUS_2026-08-18.md`** — copy `STATUS_2026-07-09.md`, update the date, replace the "Progress" section's counts with the AFTER profile totals, and replace "Next actions" item 1 with:
+- [x] **Step 2: `STATUS_2026-08-18.md`** — copy `STATUS_2026-07-09.md`, update the date, replace the "Progress" section's counts with the AFTER profile totals, and replace "Next actions" item 1 with:
 
 ```markdown
 1. **Manual review of the regenerated menus** (César). Reject-by-default: tick `[x]` to approve.
@@ -789,13 +789,13 @@ high-fan-out targets (e.g. `BANDA DE MANTENIMIENTO / i >= 5 horas`, 21 concepts,
 ```
 Keep items 2–6 unchanged.
 
-- [ ] **Step 3: `CLAUDE_SYNTHETIC.md`** — replace the "Known issues / next" line so it points at F3-prep-2-review on the regenerated menus, and add one row to the module table:
+- [x] **Step 3: `CLAUDE_SYNTHETIC.md`** — replace the "Known issues / next" line so it points at F3-prep-2-review on the regenerated menus, and add one row to the module table:
 
 ```markdown
   menu_profile.py                                 ✅ Sprint 38.5 — read-only per-type scorecard over `data/synthetic/menus/*.jsonl` (targets / empty / candidates / no-ops / dups / skips). `python -m synthetic.menu_profile`. Stdlib only.
 ```
 
-- [ ] **Step 4: Full suite, then commit**
+- [x] **Step 4: Full suite, then commit**
 
 ```bash
 pytest tests -q
@@ -816,3 +816,4 @@ Expected pytest: previous total (1 018) + ~12 new, 0 failures.
 | F2 | Deterministic `unit_conversion` (m/cm/mm, h/min) and `num_to_text` (`num2words`-style) instead of LLM | Architecture change in `layer_l1` / prompts | Sprint 39 or 40 |
 | F3 | Scale `n` with `len(usages)` for high-fan-out targets | Prompt change; small gain | Sprint 40 |
 | F4 | Mechanical `expansion` fact-injection guard | No good heuristic; reviewer gate suffices for the pilot | revisit after review acceptance rates |
+| F6 | Abbreviation-only values (`PVC`, `IPN`) still pass `SYNONYM_LABEL` — consider `not _ABBREV_RE.fullmatch(value)` in `slot_extractor.value_applies` | Raised in review (2026-08-18); left to the reviewer to judge on the pilot menus | after F3-prep-2-review |

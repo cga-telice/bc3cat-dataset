@@ -250,6 +250,7 @@ src/synthetic/                                    🚧 Phase A–G
   menu_artefacts.py                               ✅ Sprint 37 — Task F3-prep-1-C — writer for both menu artefacts. `write_menu(inventory, sets_by_type, *, machine_dir, review_dir, chapter_label) -> tuple[WriteReport, ...]` writes **two parallel files per rewrite type from one call**: machine-readable JSONL under `data/synthetic/menus/{mtype}.jsonl` (one line per unique target, `approved: null` on every candidate for Sprint 38's parser to flip); human-review Markdown under `docs/synthetic/menus/{mtype}.md` (one `##` heading per target, `_Used in N concept(s): …_` line, numbered `- [ ] i. <candidate>` checkboxes up to *n* per target, skipped targets show `_Skipped: <reason>_` instead of checkboxes). Deterministic ordering by dedup key + candidate index. Atomic write via `.tmp` + `os.replace`. Imports `target_scanner` + `menu_proposer` + `taxonomy` + stdlib only.
   menu_runner.py                                  ✅ Sprint 38 — Task F3-prep-2-code-A — CLI driver above the frozen seam (sibling of `spike.py`/`f1_pilot.py`). `MenuRun` + `TypeStat` frozen dataclasses; `run_menu(stage_json, *, concept_filter, n, client, chapter_label, out_dir_machine, out_dir_review, clock) -> MenuRun` composes `target_scanner.scan_chapter → menu_proposer.propose_type (per mtype) → menu_artefacts.write_menu`; `default_client(chapter_label, replay=False)` wires `RecordingClient(HttpLLMClient(LLMConfig.from_env()), store)` for live and `ReplayClient(store)` for offline replay; `default_store_dir(chapter_label) = LLM_CACHE_DIR / f"menu_{chapter_label}"` + `default_out_machine_dir()` (SYNTHETIC_DATA_ROOT / "menus") + `default_out_review_dir()` (REPO_ROOT / "docs" / "synthetic" / "menus"); internal `_CountingClient` attributes LLM calls per rewrite type without touching the client interface; `format_scorecard(run)` emits a Markdown-table generation report for `RESEARCH_LOG.md`; `main(argv)` with `run` (live) / `replay` (offline) subcommands. Imports `target_scanner`/`menu_proposer`/`menu_artefacts`/`llm_client`/`taxonomy`/`utils.config` + stdlib. Never imported by any seam module (asserted).
   menu_review_parser.py                           ✅ Sprint 38 — Task F3-prep-2-code-B — reads ticked Markdown menus (Sprint 37 output) back into structured verdict JSONL for the Sprint 39 sampler to consume. `MenuVerdict` + `CandidateVerdict` + `ParseReport` + `TypeParseStat` frozen dataclasses; `ParseError` (distinguishes structural drift from review verdicts). Regex-based Markdown scan (`_HEADING_RE`, `_TICK_RE = r"^- \[([ xX])\] (\d+)\. "`). **Machine JSONL is source of truth; Markdown contributes only tick state.** `parse_review_file(md_path, jsonl_path)` fails loud on heading-count mismatch / canonical drift / out-of-range tick index. `write_verdicts` / `read_verdicts` atomic JSONL round-trip. `parse_all(machine_dir, review_dir, out_dir)` sweeps every rewrite type; falls back to *reject-all* when review file is missing (never fabricates approvals). `format_parse_report` coverage-summary Markdown. `main(argv)` with `parse` subcommand. **Reject-by-default review contract:** anything not `- [x]` (case-insensitive) rejects. Imports `menu_runner` (default paths only) + `taxonomy` + `utils.config` + stdlib; never any forbidden seam.
+  menu_profile.py                                 ✅ Sprint 38.5 — read-only per-type scorecard over `data/synthetic/menus/*.jsonl` (targets / empty / candidates / no-ops / dups / skips). `python -m synthetic.menu_profile`. Stdlib + `utils.config`.
 
 configs/synthetic/                                ❌ Phase A–B
   variant_budgets.yaml                            ❌ Sprint 39 — Task F3-prep-3 — flat 50 per concept (César's 2026-07-08 decision)
@@ -340,6 +341,35 @@ Cross-check: every ❌ above corresponds to an unbuilt component listed in [`RES
 
 *Newest entries at the top. New entries follow the template: title, date, what changed (bullets), key results (table or bullets), known issues.*
 
+### After Sprint 38.5 — Phase F Task F3-prep-2-fix (menu recovery: parser repair, per-type caps, targeting gates — offline replay)
+**Date:** 2026-08-18
+**Sprint file:** [`sprints/SPRINT_385.md`](sprints/SPRINT_385.md) · log entry in [`RESEARCH_LOG.md`](RESEARCH_LOG.md) (`2026-08-18 — Sprint 38.5`).
+**What changed:** a pre-review profile of the Sprint 38 menus showed 127 template targets (almost all TEXTO) silently skipped as `malformed_json: Invalid \escape` — the raw stage-2 `texto` begins with `\` / `resumen` ends with `\` (FIEBDC delimiters s01 leaves in) and phi4 echoes it inside its JSON string. Three cache-neutral fixes above the frozen seam (no prompt text changed → all 502 recorded transcripts still hit), then the menus were regenerated offline:
+- **`menu_proposer._parse_json_list`** retries after `_repair_invalid_escapes` (drops backslashes that don't open a valid JSON escape; only after a strict parse fails). 502/502 cached transcripts parse (was 369).
+- **`MENU_CAP_BY_TYPE`** — post-parse cap of 3 for omission / reorder / num_to_text / unit_conversion / unit_expansion (`n = 10` request unchanged; head of the deduped best→worst list kept).
+- **`slot_extractor.value_applies`** per-value gate (`SYNONYM_LABEL` excludes digit-bearing values; `_axis_applies` delegates) + `MIN_COMPRESSION_WORDS = 4`; `target_scanner._emit_entries` applies the per-value gate. Real-data synonym_label unique targets 49 → 34.
+- **[`menu_profile.py`](../../src/synthetic/menu_profile.py)** (new) — read-only per-type scorecard over the menu JSONL; before/after frozen in `sprints/SPRINT_385_profile_{before,after}.txt`.
+- `python -m synthetic.menu_runner replay … --concept-filter OEB --n 10 --seed 7 --chapter-label OEB` — 484 calls served from cache in 0.2 s, no misses (`sprints/SPRINT_385_replay_scorecard.txt`).
+
+**Key results (from the profile files):**
+
+| type | targets | empty (before → after) | candidates (before → after) |
+|---|---:|---:|---:|
+| omission | 212 | 100 → 8 | 590 → 496 (drop 51 → 119: recovered TEXTO responses now reach schema validation — expected) |
+| reorder | 49 | 19 → 5 | 215 → 132 |
+| template_paraphrase | 49 | 15 → 0 | 286 → 406 |
+| synonym_label | 49 → 34 | 6 → 2 | 236 → 158 |
+| compression | 46 → 22 | 0 | 291 → 107 |
+| num_to_text / unit_conversion / unit_expansion | 12 → 11 / 14 → 12 / 14 → 12 | 0 / 7 → 5 / 2 → 0 | 105 → 33 / 21 → 18 / 49 → 33 |
+| paraphrase / expansion / new_param | 46 / 46 / 25 | 0 | 420 / 454 / 251 — **byte-identical** |
+| **TOTAL candidates** | | | **2 918 → 2 508** |
+
+- TEXTO targets with candidates: omission 18 → 110, reorder 9 → 23, template_paraphrase 9 → 24.
+- `pytest tests/synthetic -q` → **1014 passed, 2 skipped**; `pytest tests -q` → **1038 passed, 2 skipped**. Zero LLM calls, zero GPU.
+- Cosmetic residue: 16 candidate lines in `docs/synthetic/menus/template_paraphrase.md` start with a literal `\` (phi4 double-escaped the delimiter; valid JSON) — harmless downstream (`layer_l3` substring replace; s05 strips the delimiter). Follow-up F1 (strip `\` at prompt-build) lands before Sprint 40.
+
+**Known issues / next:** Sprint 38.5 (2026-08-18) recovered the menus offline. **Next is F3-prep-2-review (César, ~5–6 h)** on the regenerated `docs/synthetic/menus/*.md` — reject-by-default, review guidance in [`STATUS_2026-08-18.md`](STATUS_2026-08-18.md). Then F3-prep-2-parse (Claude: `python -m synthetic.menu_review_parser parse`), then Sprint 39 (F3-prep-3: budgets + sampler + chapter driver). Deferred follow-ups F1–F4 + F6 are tabled in `sprints/SPRINT_385.md`.
+
 ### After Sprint 38 (cont.) — Phase F Task F3-prep-2-generate (live phi4 menu build on OEB subset)
 **Date:** 2026-07-09
 **What changed:** first real menu build against `phi4:latest`, live. Two crashes uncovered real-data bugs before third-time success — each fix landed with a regression test.
@@ -362,7 +392,7 @@ Cross-check: every ❌ above corresponds to an unbuilt component listed in [`RES
 - **Dedup at scale confirmed** — e.g. `BANDA DE MANTENIMIENTO / i >= 5 horas` reviewed once for 21 concepts.
 - 11 machine JSONL + 11 Markdown files landed under `data/synthetic/menus/` and `docs/synthetic/menus/`. 502-prompt recorded store under `data/synthetic/llm_cache/menu_OEB/` makes every subsequent re-run offline and free.
 
-**Known issues / next:** F3-prep-2-review (César, ~7-9 h) — tick the 5 600 candidate lines. Then F3-prep-2-parse writes verdict JSONL and F3-prep-3 (Sprint 39) builds the sampler.
+**Known issues / next:** *(superseded by Sprint 38.5 above — these menus were regenerated offline on 2026-08-18; the review starts from the regenerated files, ~5–6 h.)* F3-prep-2-review (César, ~7-9 h) — tick the 5 600 candidate lines. Then F3-prep-2-parse writes verdict JSONL and F3-prep-3 (Sprint 39) builds the sampler.
 
 ### After Sprint 38 — Phase F Task F3-prep-2-code (menu builder: live driver + review parser)
 **Date:** 2026-07-09
@@ -375,7 +405,7 @@ Cross-check: every ❌ above corresponds to an unbuilt component listed in [`RES
 - `pytest tests -q` → **1015 passed, 2 skipped** (Sprint 37 baseline 990 + 25 new). Zero regressions, zero sockets.
 - **Zero seam edits.** The driver + parser compose Sprint 37's frozen library trio without touching it, and don't touch any older seam module either. `git diff` against every seam file returns empty.
 
-**Known issues / next:** F3-prep-2-generate (Claude, live) — the live phi4 pass that produces the real menu artefacts. Ollama serving `phi4:latest`; `python -m synthetic.menu_runner run --stage-json "data/intermediate/OBRA CIVIL/OBRA CIVIL.json" --concept-filter OEB --n 10 --seed 7 --chapter-label OEB`. Then F3-prep-2-review (César, ~7-9 h) → F3-prep-2-parse (Claude) → Sprint 39 (F3-prep-3).
+**Known issues / next:** *(historical — F3-prep-2-generate ran 2026-07-09, see the entry above; Sprint 38.5 then recovered the menus offline on 2026-08-18. Current next step is F3-prep-2-review (César, ~5–6 h) on the regenerated `docs/synthetic/menus/*.md`, then F3-prep-2-parse, then Sprint 39.)* Original text: F3-prep-2-generate (Claude, live) — the live phi4 pass that produces the real menu artefacts. Ollama serving `phi4:latest`; `python -m synthetic.menu_runner run --stage-json "data/intermediate/OBRA CIVIL/OBRA CIVIL.json" --concept-filter OEB --n 10 --seed 7 --chapter-label OEB`. Then F3-prep-2-review (César, ~7-9 h) → F3-prep-2-parse (Claude) → Sprint 39 (F3-prep-3).
 
 ### After Sprint 37 — Phase F Task F3-prep-1 (menu builder: dedup-first target scan + N-candidate proposer + human-review artefact)
 **Date:** 2026-07-08

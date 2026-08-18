@@ -29,6 +29,74 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### 2026-08-18 — Sprint 38.5, F3-prep-2-fix (assessment + offline recovery)
+**Date:** 2026-08-18
+**Sprint file:** [`sprints/SPRINT_385.md`](sprints/SPRINT_385.md)
+**Backlog IDs:** F3-prep-2-fix — closed (inserted between Sprint 38 and Sprint 39). F3-prep-2-review (César, manual) + F3-prep-2-parse (Claude, post-review) still open; the review had **not** started, so no ticks were lost.
+
+**Why this sprint exists.** Before handing the Sprint 38 menus over for the 7–9 h manual review, the menus were profiled mechanically. The profile showed the menus were incomplete and skewed in ways that would have wasted review effort — worth a short fix-and-regenerate sprint *before* anyone reads 2 918 lines of Spanish.
+
+**Assessment findings** (`python -m synthetic.menu_profile`; baseline frozen in [`sprints/SPRINT_385_profile_before.txt`](sprints/SPRINT_385_profile_before.txt)):
+- **127 template targets silently skipped as `malformed_json: Invalid \escape`, concentrated on TEXTO** — omission 97/115 TEXTO targets, reorder 15/24, template_paraphrase 15/24 (plus a few RESUMEN). Root cause: every raw OEB `texto` template in the stage-2 JSON (`data/intermediate/OBRA CIVIL/OBRA CIVIL.json`) *begins* with `\` and every `resumen` *ends* with `\` — the FIEBDC `\TEXTO\…\` field delimiters that s01 leaves in place (the main pipeline strips them later, but the synthetic prompt builder reads the raw field). phi4 echoes the backslash inside its JSON string (`"original": "\Canalización …"`), which is not a valid JSON escape, so `json.loads` failed and the whole target was skipped. Of the 502 recorded transcripts, 133 carried this defect (369 parsed cleanly).
+- **`synonym_label` on digit-bearing values loses the digits** — every candidate on values such as `3 <= i < 5 horas` (→ `Mantenimiento Moderado`) or `1,10 m` (→ `Profunda`) is meaning-changing, not a synonym.
+- **`compression` on 2–3-word fragments** has no room to compress: no-ops and junk (`Diurno excepcional → Diurno +E`).
+- **Low-entropy types waste the 10-slot menu** — omission's 10 alternatives differ only in a connective (pairwise token-Jaccard 0.86); reorder / num_to_text / unit_* likewise have 2–3 legitimate forms.
+- (Reviewer-facing observations recorded for `STATUS_2026-08-18.md`: `expansion` frequently *adds facts* despite the prompt forbidding it; one `unit_conversion` arithmetic error `0,80 m → 8000 mm`; `synonym_label` domain slips such as `Con topo → Topográfico`.)
+
+**Fixes — three surgical changes above the frozen seam, all cache-neutral (no prompt text changed, so every one of the 502 recorded transcripts still hits):**
+1. `menu_proposer._parse_json_list` retries `json.loads` after `_repair_invalid_escapes` (drops any backslash that does not open a valid JSON escape; applied only after a strict parse fails, so well-formed responses parse byte-identically). Verified against the cache: **502/502 transcripts parse (was 369/502)**. Commit `c82552d`.
+2. `MENU_CAP_BY_TYPE` — post-parse truncation to 3 candidates for omission / reorder / num_to_text / unit_conversion / unit_expansion. The request still asks for `n = 10` (the `{n}` is inside the cache-keyed prompt); only the head of the deduped list is kept, per the prompt's best→worst ordering. Commits `7900cc1`, `a3b04b9`.
+3. Targeting gates — `slot_extractor.value_applies` (per-value predicate; `SYNONYM_LABEL` now excludes digit-bearing values, `_axis_applies` delegates to it), `MIN_COMPRESSION_WORDS = 4` in `enumerate_targets`, and `target_scanner._emit_entries` applies the per-value gate. Four Sprint-31 test expectations updated, incl. the real-data synonym_label unique-target count 49 → 34. Commits `8cf2bd9`, `5608bde`.
+4. Tooling: `src/synthetic/menu_profile.py` — read-only per-type scorecard over `data/synthetic/menus/*.jsonl` (`python -m synthetic.menu_profile`), so before/after is measurable and Sprint 40 QC can reuse it. Commits `90f0d47`, `7e03731`.
+
+**Regeneration — offline, zero GPU:**
+```
+python -m synthetic.menu_runner replay --stage-json "data/intermediate/OBRA CIVIL/OBRA CIVIL.json" --concept-filter OEB --n 10 --seed 7 --chapter-label OEB
+```
+484 calls served from `data/synthetic/llm_cache/menu_OEB/` in **0.2 s, no cache misses** — the proof that no prompt changed (`replay` fails loud on a miss). Scorecard in [`sprints/SPRINT_385_replay_scorecard.txt`](sprints/SPRINT_385_replay_scorecard.txt); profile in [`sprints/SPRINT_385_profile_after.txt`](sprints/SPRINT_385_profile_after.txt). Commit `7658b16`.
+
+**Before → after** (rows quoted from the two profile files; columns `tgt / empty / cands / noop / dup / uniq-per-tgt / skip / drop`):
+
+| type | before | after |
+|---|---|---|
+| omission | 212 / 100 / 590 / 4 / 0 / 5.3 / 100 / 51 | 212 / **8** / 496 / 3 / 0 / 2.4 / **8** / **119** |
+| reorder | 49 / 19 / 215 / 6 / 0 / 7.2 / 19 / 1 | 49 / **5** / 132 / 0 / 0 / 3.0 / **5** / 1 |
+| template_paraphrase | 49 / 15 / 286 / 0 / 0 / 8.4 / 15 / 0 | 49 / **0** / 406 / 0 / 0 / 8.3 / **0** / 0 |
+| synonym_label | 49 / 6 / 236 / 2 / 0 / 5.5 / 0 / 0 | **34** / 2 / 158 / 2 / 0 / 4.9 / 0 / 0 |
+| compression | 46 / 0 / 291 / 4 / 0 / 6.3 / 0 / 0 | **22** / 0 / 107 / 0 / 0 / 4.9 / 0 / 0 |
+| num_to_text | 12 / 0 / 105 / 0 / 0 / 8.8 / 0 / 0 | 11 / 0 / 33 / 0 / 0 / 3.0 / 0 / 0 |
+| unit_conversion | 14 / 7 / 21 / 0 / 0 / 3.0 / 0 / 0 | 12 / 5 / 18 / 0 / 0 / 2.6 / 0 / 0 |
+| unit_expansion | 14 / 2 / 49 / 0 / 0 / 4.1 / 0 / 0 | 12 / 0 / 33 / 0 / 0 / 2.8 / 0 / 0 |
+| paraphrase / expansion / new_param | 46 / 46 / 25 targets — 420 / 454 / 251 cands | **byte-identical** |
+
+- TEXTO targets *with candidates*: omission 18 → **110** (of 115), reorder 9 → **23** (of 24), template_paraphrase 9 → **24** (of 24). The residual omission `empty = 8` / reorder `empty = 5` are `all_elements_rejected_by_schema`, not parse failures.
+- omission `drop` 51 → 119 is **expected, not a regression**: the recovered TEXTO responses now reach per-element schema validation, so more `placeholders_not_preserved_after_omission` rejections are recorded per element.
+- `synonym_label` 49 → 34 targets: the 15 gated values are digit-bearing (`BANDA DE MANTENIMIENTO` hour bands, `DIÁMETRO` mm values, `PROFUNDIDAD` m values, `Nº TUBOS` `1 o 2`). `compression` 46 → 22: fragments under 4 words gated. `num_to_text` 12 → 11 and `unit_conversion` / `unit_expansion` 14 → 12 are a side effect of the scanner now gating *per value* instead of per axis: `Nº TUBOS / 1 o 2` (not numeric) and `BANDA DE MANTENIMIENTO / No aplica`, `No necesita intervalo` (no unit token) were never sensible targets for those types.
+- Candidates total **2 918 → 2 508**; review is now complete over all 11 populated types (TEXTO L3 targets present) and shorter (fewer, less redundant candidates on the low-entropy types).
+- Test suite: `pytest tests/synthetic -q` → **1014 passed, 2 skipped**; full `pytest tests -q` (incl. `tests/utils`) → **1038 passed, 2 skipped** (Sprint 38's full-suite figure was 1015 / 2). No LLM call was made in this sprint; no prompt text changed.
+
+**Known cosmetic residue.** 16 candidate lines in `docs/synthetic/menus/template_paraphrase.md` start with a literal `\` — phi4 double-escaped the FIEBDC delimiter (valid JSON `\\`), so the parser legitimately keeps one backslash. Harmless downstream: `layer_l3` replaces by substring of `original` and s05 strips the delimiter. Reviewers should judge the text and ignore the backslash; the prompt-side strip (F1 below) removes it before Sprint 40.
+
+**Decisions (see `SPRINT_385.md` D1–D4):** no prompt changes this sprint (would invalidate ~310 L3 prompt hashes → ~60–80 min live phi4 for a fix the parser repair delivers offline); caps are post-parse truncation, not a smaller `n`; `expansion` fact-injection is left to the reviewer; `unit_conversion` / `num_to_text` stay LLM-driven for the pilot.
+
+**Deferred follow-ups (recorded, not done here):**
+
+| # | Item | Why deferred | Where it lands |
+|---|---|---|---|
+| F1 | Strip FIEBDC `\` from `template`/`concept` slots at prompt-build (`slot_extractor._field_text`, `concept_resumen`) | Changes every prompt hash → full live re-run; only worth it when generating fresh | Sprint 40 pre-task |
+| F2 | Deterministic `unit_conversion` (m/cm/mm, h/min) and `num_to_text` (`num2words`-style) instead of LLM | Architecture change in `layer_l1` / prompts | Sprint 39 or 40 |
+| F3 | Scale `n` with `len(usages)` for high-fan-out targets | Prompt change; small gain | Sprint 40 |
+| F4 | Mechanical `expansion` fact-injection guard | No good heuristic; reviewer gate suffices for the pilot | revisit after review acceptance rates |
+| F6 | Abbreviation-only values (`PVC`, `IPN`) still pass `SYNONYM_LABEL` — consider `not _ABBREV_RE.fullmatch(value)` in `value_applies` | Raised in review; left to the reviewer to judge on the pilot menus | after F3-prep-2-review |
+
+**Changes to plan:** none to the sprint sequence — F3-prep-2-review (César) now starts from the regenerated menus; estimated review time ~5–6 h (was 7–9 h). Then F3-prep-2-parse → Sprint 39 (F3-prep-3: budgets + sampler + chapter driver) → Sprint 40 (F3, with F1 landed first).
+
+**CLAUDE_SYNTHETIC.md updated:** yes — `menu_profile.py` file-map row; Sprint History entry prepended; "next" pointer moved to F3-prep-2-review on the regenerated menus. `STATUS_2026-08-18.md` supersedes `STATUS_2026-07-09.md` (old file kept).
+
+**Next step:** F3-prep-2-review (César, manual, ~5–6 h) on `docs/synthetic/menus/*.md` — see the review guidance in `STATUS_2026-08-18.md`. No Claude action needed until the ticks land.
+
+---
+
 ### Sprint 38 (cont.) — Phase F Task F3-prep-2-generate (live phi4 menu build on OEB subset)
 **Date:** 2026-07-09
 **Backlog IDs:** F3-prep-2-generate — closed. F3-prep-2-review (César, manual) + F3-prep-2-parse (Claude, post-review) still open.
