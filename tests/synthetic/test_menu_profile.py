@@ -31,3 +31,31 @@ def test_profile_counts_targets_candidates_noops_and_skips(tmp_path):
     assert r.uniq_per_target == 2.0  # 2 unique of 3 on the one populated target
     text = format_profile(rows)
     assert "paraphrase" in text and "uniq/tgt" in text
+
+
+def test_new_param_dedup_is_label_level_not_value_set_level(tmp_path):
+    _write(tmp_path / "new_param.jsonl", [
+        {"modification_type": "new_param", "skipped_reason": None, "dropped_reasons": [],
+         "usages": [{"concept_key": "A$"}],
+         "candidates": [
+             {"payload": {"new_axis_label": "Acabado superficial", "values": ["liso", "rugoso"]}},
+             {"payload": {"new_axis_label": "Acabado superficial", "values": ["pulido", "mate"]}},
+         ]},
+    ])
+    rows = profile_dir(tmp_path)
+    assert len(rows) == 1
+    r = rows[0]
+    # No `original` on new_param payloads, so nothing can be a no-op; the
+    # second candidate repeats the first's label and counts as a dup even
+    # though the value sets differ.
+    assert r.n_noop == 0
+    assert r.n_dup == 1
+
+
+def test_profile_dir_empty_dir_yields_empty_list_and_header_only_table(tmp_path):
+    assert profile_dir(tmp_path) == []
+    text = format_profile([])
+    lines = text.splitlines()
+    assert len(lines) == 2
+    assert "uniq/tgt" in lines[0]
+    assert lines[1] == "-" * len(lines[0])

@@ -22,6 +22,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional, Sequence
 
+from utils import config
+
 _WS_RE = re.compile(r"\s+")
 
 
@@ -37,8 +39,20 @@ class TypeProfile:
     n_targets: int
     n_empty: int
     n_candidates: int
+    # n_noop and n_dup are NOT mutually exclusive: a candidate that
+    # normalises back to `original` can also be a repeat of an earlier
+    # candidate on the same target, and is counted in both totals.
     n_noop: int          # candidate == original after accent/case/space normalisation
-    n_dup: int           # candidate == an earlier candidate on the same target
+    # candidate == an earlier candidate on the same target, keyed on the
+    # normalised candidate text alone (see _candidate_text). For new_param
+    # (no `original`) this text is `new_axis_label`, so dedup is
+    # label-level only — two candidates with the same label but different
+    # `values` still count as one dup, since the value set is not part of
+    # the key.
+    n_dup: int
+    # Mean of `len(seen)` over populated targets only (targets with zero
+    # candidates are excluded from both the sum and the divisor, not
+    # counted as 0) — see n_empty for the count of targets skipped here.
     uniq_per_target: float
     n_skipped: int
     n_dropped: int
@@ -104,8 +118,13 @@ def format_profile(rows: Sequence[TypeProfile]) -> str:
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
+    # Same path menu_runner.default_out_machine_dir() derives (config.SYNTHETIC_DATA_ROOT / "menus"),
+    # reused directly here rather than via menu_runner to avoid pulling in its
+    # LLM-client import chain — menu_runner's docstring asserts it is never
+    # imported by a seam module, and this read-only profiler stays consistent
+    # with that by importing the config constant instead of the module.
     parser = argparse.ArgumentParser(prog="synthetic.menu_profile")
-    parser.add_argument("--menus-dir", default="data/synthetic/menus")
+    parser.add_argument("--menus-dir", default=str(config.SYNTHETIC_DATA_ROOT / "menus"))
     args = parser.parse_args(argv)
     sys.stdout.write(format_profile(profile_dir(Path(args.menus_dir))))
     return 0
