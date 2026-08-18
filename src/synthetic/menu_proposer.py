@@ -117,7 +117,10 @@ class CandidateSet:
         family).
     candidates
         Zero-or-more surviving :class:`CandidateProposal` records,
-        already deduplicated by normalised text.
+        already deduplicated by normalised text, and, for the types
+        listed in :data:`MENU_CAP_BY_TYPE`, truncated to that cap
+        (Sprint 38.5) — the tuple can be shorter than the number of
+        survivors.
     reason
         Non-``None`` iff the whole target was skipped (malformed list
         after retry / empty list / etc.); prefixed with a stable
