@@ -65,7 +65,10 @@ _L2_TYPES = frozenset({
 #   * CODE_EXPANSION    — same as ABBREV_EXPANSION.
 #
 # Heuristics err on the side of being permissive — a value need only match
-# the predicate once for the axis to be considered applicable.
+# the predicate once for the axis to be considered applicable. Since Sprint
+# 38.5 `value_applies` is also consumed per-value by
+# `target_scanner._emit_entries`, so mixed axes yield only their applicable
+# values as menu targets.
 
 _NUMERIC_RE = re.compile(r"^\s*-?\d+(?:[.,]\d+)?\s*$")
 _HAS_LETTER_RE = re.compile(r"[A-Za-zÁÉÍÓÚÑáéíóúñÜü]")

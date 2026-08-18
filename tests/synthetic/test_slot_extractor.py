@@ -419,6 +419,9 @@ def test_value_applies_other_l1_types_unchanged():
     assert value_applies("Hasta 1 m", ModificationType.UNIT_CONVERSION)
     assert value_applies("PVC", ModificationType.ABBREV_EXPANSION)
     assert value_applies("anything", ModificationType.PARAPHRASE)
+    assert value_applies("36mm", ModificationType.UNIT_EXPANSION)          # digits + unit must survive
+    assert value_applies("HE-20", ModificationType.CODE_EXPANSION)          # digit-bearing code stays a code target
+    assert not value_applies("HE-20", ModificationType.SYNONYM_LABEL)       # ...but is not a synonym target
 
 
 def test_enumerate_targets_compression_skips_short_fragments():
