@@ -31,6 +31,8 @@ from synthetic.menu_proposer import (
     DEFAULT_N_CANDIDATES,
     CandidateProposal,
     CandidateSet,
+    _parse_json_list,
+    _repair_invalid_escapes,
     propose_type,
 )
 from synthetic.target_scanner import (
@@ -704,3 +706,36 @@ class TestObraCivilDedup:
         assert diurno is not None
         # Preflight scan: 20 of 25 OEB concepts use TRABAJO / Diurno.
         assert len(diurno.usages) == 20
+
+
+# ===========================================================================
+# Sprint 38.5 — parser repair for the FIEBDC backslash echo
+# ===========================================================================
+
+
+class TestParseJsonListRepair:
+    def test_repairs_fiebdc_backslash_echo(self):
+        # Raw \TEXTO\ templates start with "\"; phi4 echoes it inside the JSON
+        # string, which is an invalid escape. Recover by dropping the backslash.
+        text = (
+            '[{"original": "\\Canalización de $A tubos", '
+            '"new": "Canalización de $A tubos", "omitted_var": "A"}]'
+        )
+        assert _parse_json_list(text) == [
+            {
+                "original": "Canalización de $A tubos",
+                "new": "Canalización de $A tubos",
+                "omitted_var": "A",
+            }
+        ]
+
+    def test_leaves_valid_escapes_alone(self):
+        text = '[{"original": "a\\"b", "new": "línea\\nnueva"}]'
+        assert _parse_json_list(text) == [{"original": 'a"b', "new": "línea\nnueva"}]
+
+    def test_still_rejects_unrecoverable_json(self):
+        with pytest.raises(ValueError, match="malformed_json"):
+            _parse_json_list('[{"original": "x", "new": ]')
+
+    def test_repair_helper_drops_only_invalid_escapes(self):
+        assert _repair_invalid_escapes(r'\C \S \" \\ \n \/ end\\') == r'C S \" \\ \n \/ end\\'

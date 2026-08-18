@@ -49,6 +49,7 @@ Does NOT own:
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from typing import Optional
 
@@ -402,20 +403,42 @@ def _wrap_multi_candidate(rendered_prompt: str, *, n: int) -> str:
     )
 
 
+# Alternation: a *valid* escape pair (\" \\ \/ \b \f \n \r \t \u) is matched
+# as a unit and kept; any other lone backslash is matched by the second
+# branch and dropped. Consuming valid pairs whole is what keeps "\\" intact.
+# Real BC3 text never contains a backslash; the only source is phi4 echoing the
+# FIEBDC "\TEXTO\ ... \" field delimiter that s01 leaves on the raw templates.
+_ESCAPE_RE = re.compile(r'\\([\\"/bfnrtu])|\\')
+
+
+def _repair_invalid_escapes(s: str) -> str:
+    """Drop backslashes that do not begin a valid JSON escape sequence.
+
+    Sprint 38.5. Applied only *after* a strict ``json.loads`` has failed,
+    so well-formed responses are parsed byte-identically to before.
+    """
+    return _ESCAPE_RE.sub(lambda m: m.group(0) if m.group(1) is not None else "", s)
+
+
 def _parse_json_list(text: str) -> list:
     """List-level counterpart to :func:`llm_proposer._parse_json_object`.
 
     Recovers the outermost JSON array from prose/fence-wrapped output;
     tolerates the same shape flexibility (leading commentary, code
-    fences). Raises ``ValueError`` on unrecoverable input.
+    fences). On a decode error, retries once with
+    :func:`_repair_invalid_escapes`. Raises ``ValueError`` on
+    unrecoverable input.
     """
     s = _recover_json_array(text)
     if not s:
         raise ValueError("empty_response")
     try:
         obj = json.loads(s)
-    except json.JSONDecodeError as err:
-        raise ValueError(f"malformed_json: {err.msg}") from err
+    except json.JSONDecodeError as first_err:
+        try:
+            obj = json.loads(_repair_invalid_escapes(s))
+        except json.JSONDecodeError:
+            raise ValueError(f"malformed_json: {first_err.msg}") from first_err
     if not isinstance(obj, list):
         raise ValueError(f"top_level_not_list: type={type(obj).__name__}")
     if not obj:
