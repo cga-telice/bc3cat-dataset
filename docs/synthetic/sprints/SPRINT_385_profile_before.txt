@@ -1,0 +1,13 @@
+type                  tgt empty cands noop  dup uniq/tgt skip drop usages
+-------------------------------------------------------------------------
+compression            46     0   291    4    0      6.3    0    0    358
+expansion              46     0   454    0    0      9.9    0    0    358
+new_param              25     0   251    0    6      9.8    0    0     25
+num_to_text            12     0   105    0    0      8.8    0    0     87
+omission              212   100   590    4    0      5.3  100   51    218
+paraphrase             46     0   420    0    0      9.1    0    0    358
+reorder                49    19   215    6    0      7.2   19    1     50
+synonym_label          49     6   236    2    0      5.5    0    0    369
+template_paraphrase    49    15   286    0    0      8.4   15    0     50
+unit_conversion        14     7    21    0    0      3.0    0    0     96
+unit_expansion         14     2    49    0    0      4.1    0    0     96
