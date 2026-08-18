@@ -56,7 +56,7 @@ _L2_TYPES = frozenset({
 # (abbrev/code_expansion on time-band axes with nothing to expand).
 # `_axis_applies` gates axis enumeration by content-driven applicability:
 #
-#   * SYNONYM_LABEL     — needs any textual value (letters present).
+#   * SYNONYM_LABEL     — needs a value with letters and no digits (38.5).
 #   * NUM_TO_TEXT       — needs any purely-numeric value.
 #   * UNIT_CONVERSION   — needs any value carrying a unit token.
 #   * UNIT_EXPANSION    — same as UNIT_CONVERSION.
@@ -71,6 +71,11 @@ _NUMERIC_RE = re.compile(r"^\s*-?\d+(?:[.,]\d+)?\s*$")
 _HAS_LETTER_RE = re.compile(r"[A-Za-zÁÉÍÓÚÑáéíóúñÜü]")
 _WORD_RE = re.compile(r"[A-Za-zÁÉÍÓÚÑáéíóúñÜü°²³]+\.?|%")
 _ABBREV_RE = re.compile(r"\b[A-Z]{2,6}(?:-\d+[A-Z]?)?\b")
+_HAS_DIGIT_RE = re.compile(r"\d")
+
+# Sprint 38.5. L2 compression needs room to compress: 2-3-word fragments
+# produced no-ops and junk ("Diurno excepcional" → "Diurno +E").
+MIN_COMPRESSION_WORDS: int = 4
 
 _UNIT_TOKENS: frozenset[str] = frozenset({
     # length
@@ -125,21 +130,36 @@ def _has_abbrev(value: str) -> bool:
     return bool(_ABBREV_RE.search(value))
 
 
-def _axis_applies(block: dict, mtype: ModificationType) -> bool:
-    """Return True if `block`'s values make `mtype` a semantically sensible
-    modification. Sprint 31 gate — see module docstring above."""
-    values = _values(block)
-    if not values:
-        return False
+def value_applies(value: str, mtype: ModificationType) -> bool:
+    """Per-value applicability of an L1 rewrite type (Sprint 38.5; the
+    Sprint 31 axis gate now delegates here).
+
+    * SYNONYM_LABEL — needs letters and **no digits**: synonymising a
+      numeric band (``3 <= i < 5 horas``) or a dimension (``1,10 m``)
+      loses the number, which changes meaning; those values are the
+      domain of NUM_TO_TEXT / UNIT_* instead.
+    * NUM_TO_TEXT — purely numeric.
+    * UNIT_CONVERSION / UNIT_EXPANSION — carries a unit token.
+    * ABBREV_EXPANSION / CODE_EXPANSION — carries an abbreviation.
+    * anything else — always applies (non-L1 types don't gate per value).
+    """
     if mtype is ModificationType.SYNONYM_LABEL:
-        return any(_has_letters(v) for v in values)
+        return _has_letters(value) and not _HAS_DIGIT_RE.search(value)
     if mtype is ModificationType.NUM_TO_TEXT:
-        return any(_is_numeric(v) for v in values)
+        return _is_numeric(value)
     if mtype in (ModificationType.UNIT_CONVERSION, ModificationType.UNIT_EXPANSION):
-        return any(_has_unit(v) for v in values)
+        return _has_unit(value)
     if mtype in (ModificationType.ABBREV_EXPANSION, ModificationType.CODE_EXPANSION):
-        return any(_has_abbrev(v) for v in values)
+        return _has_abbrev(value)
     return True
+
+
+def _axis_applies(block: dict, mtype: ModificationType) -> bool:
+    """Return True if at least one of `block`'s values makes `mtype` a
+    semantically sensible modification. Sprint 31 gate — see module
+    docstring above; per-value logic lives in :func:`value_applies`."""
+    values = _values(block)
+    return bool(values) and any(value_applies(v, mtype) for v in values)
 
 
 def concept_resumen(stage_json: dict, concept_key: str) -> str:
@@ -170,7 +190,12 @@ def enumerate_targets(
                 pairs = _parse_l2_formula(formula)
             except ValueError:
                 continue
-            for condition, _fragment in pairs:
+            for condition, fragment in pairs:
+                if (
+                    modification_type is ModificationType.COMPRESSION
+                    and len(fragment.split()) < MIN_COMPRESSION_WORDS
+                ):
+                    continue
                 yield (var_key, condition)
     elif modification_type is ModificationType.OMISSION:
         for field in ("RESUMEN", "TEXTO"):

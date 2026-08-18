@@ -14,9 +14,11 @@ import pytest
 
 from synthetic import slot_extractor
 from synthetic.slot_extractor import (
+    MIN_COMPRESSION_WORDS,
     concept_resumen,
     enumerate_targets,
     extract_slots,
+    value_applies,
 )
 from synthetic.taxonomy import ModificationType
 from synthetic.variant_proposer import EXPECTED_SLOTS
@@ -114,7 +116,7 @@ def test_concept_resumen_missing_raises_keyerror():
 # ---- enumerate_targets -------------------------------------------------
 
 @pytest.mark.parametrize("mtype,expected", [
-    (ModificationType.SYNONYM_LABEL, ["B", "D"]),      # textual values → applies to B and D (A is pure numeric)
+    (ModificationType.SYNONYM_LABEL, ["B"]),           # textual, digit-free values → B only (D carries "1 m", A is numeric)
     (ModificationType.NUM_TO_TEXT, ["A"]),             # numeric values only on A
     (ModificationType.UNIT_CONVERSION, ["D"]),         # "m" unit token on D
     (ModificationType.UNIT_EXPANSION, ["D"]),
@@ -314,7 +316,7 @@ _AXIS_CODE = {"values": [{"label": "a", "value": "HE-20"}, {"label": "b", "value
     (_AXIS_B_TEXT_LABELS, ModificationType.ABBREV_EXPANSION, False),
     (_AXIS_B_TEXT_LABELS, ModificationType.CODE_EXPANSION, False),
     # OEB070 axis C — time bands with "horas" unit
-    (_AXIS_C_TIME_UNIT, ModificationType.SYNONYM_LABEL, True),
+    (_AXIS_C_TIME_UNIT, ModificationType.SYNONYM_LABEL, False),  # 38.5: digit-bearing bands are not synonym targets
     (_AXIS_C_TIME_UNIT, ModificationType.UNIT_CONVERSION, True),
     (_AXIS_C_TIME_UNIT, ModificationType.UNIT_EXPANSION, True),
     (_AXIS_C_TIME_UNIT, ModificationType.NUM_TO_TEXT, False),
@@ -365,7 +367,7 @@ def test_enumerate_targets_gates_l1_on_oeb070_shaped_stage():
         return list(enumerate_targets(stage, "OEB070aaaa", mt))
 
     assert targets(ModificationType.NUM_TO_TEXT) == ["A"]
-    assert targets(ModificationType.SYNONYM_LABEL) == ["B", "C", "D"]
+    assert targets(ModificationType.SYNONYM_LABEL) == ["B", "D"]  # 38.5: axis C is the digit-bearing time band
     assert targets(ModificationType.UNIT_CONVERSION) == ["C"]
     assert targets(ModificationType.UNIT_EXPANSION) == ["C"]
     assert targets(ModificationType.ABBREV_EXPANSION) == []
@@ -395,3 +397,33 @@ def test_module_has_no_side_effects_at_import():
     importlib.reload(slot_extractor)
     assert callable(slot_extractor.enumerate_targets)
     assert callable(slot_extractor.extract_slots)
+
+
+# ---- Sprint 38.5: per-value gates -------------------------------------
+
+@pytest.mark.parametrize("value,expected", [
+    ("Diurno", True),
+    ("Cualquier franja horaria", True),
+    ("3 <= i < 5 horas", False),   # numeric band — synonymising drops the numbers
+    ("1,10 m", False),
+    ("PVC 110 mm", False),
+    ("1", False),                  # pure numeric (already excluded pre-38.5)
+])
+def test_value_applies_synonym_label_rejects_digits(value, expected):
+    assert value_applies(value, ModificationType.SYNONYM_LABEL) is expected
+
+
+def test_value_applies_other_l1_types_unchanged():
+    assert value_applies("1", ModificationType.NUM_TO_TEXT)
+    assert not value_applies("uno", ModificationType.NUM_TO_TEXT)
+    assert value_applies("Hasta 1 m", ModificationType.UNIT_CONVERSION)
+    assert value_applies("PVC", ModificationType.ABBREV_EXPANSION)
+    assert value_applies("anything", ModificationType.PARAPHRASE)
+
+
+def test_enumerate_targets_compression_skips_short_fragments():
+    # Fixture fragments: K "normal"(1) "PVC"(1); L "hasta 1 m"(3) "más de 1 m"(4); N "por metro lineal"(3)
+    assert MIN_COMPRESSION_WORDS == 4
+    stage = _fixture()
+    got = list(enumerate_targets(stage, "OEB020aa", ModificationType.COMPRESSION))
+    assert got == [("L", "%D=b")]

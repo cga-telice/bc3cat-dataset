@@ -682,7 +682,8 @@ class TestObraCivilDedup:
         # are gated out for synonym_label; only axes with ≥1 letter-bearing
         # value survive. Preflight scan (2026-07-08) reported 67 which was
         # the pre-gate upper bound.
-        assert len(targets) == 49
+        # Sprint 38.5: 49 → 34 — 15 digit-bearing values gated out.
+        assert len(targets) == 34
 
     def test_paraphrase_unique_target_count(self, inventory):
         targets = inventory.by_type[ModificationType.PARAPHRASE]
@@ -774,3 +775,17 @@ class TestMenuCap:
         sets = propose_type(stage, inv, ModificationType.NUM_TO_TEXT, client, n=5)
         assert len(sets[("PROFUNDIDAD", "1")].candidates) == 3
         assert [c.payload["new"] for c in sets[("PROFUNDIDAD", "1")].candidates] == ["uno", "un", "una unidad"]
+
+
+class TestScannerValueGate:
+    def test_synonym_label_skips_digit_values_per_value(self):
+        # An axis mixing a clean label with a digit-bearing one: only the
+        # clean one becomes a review target.
+        stage = _load_tiny()
+        stage["CTEST010$"]["parameters"]["B"]["values"].append(
+            {"label": "c", "value": "Rocoso 2 m"},
+        )
+        inv = scan_chapter(stage)
+        keys = {t.dedup_key for t in inv.by_type[ModificationType.SYNONYM_LABEL]}
+        assert ("TIPO", "Rocoso") in keys
+        assert ("TIPO", "Rocoso 2 m") not in keys

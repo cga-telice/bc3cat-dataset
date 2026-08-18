@@ -246,6 +246,8 @@ def _emit_entries(
                 value_text = _norm(str(entry.get("value", "")))
                 if not value_text:
                     continue
+                if not slot_extractor.value_applies(value_text, mtype):
+                    continue  # Sprint 38.5: per-value gate (e.g. digits under SYNONYM_LABEL)
                 dedup_key = (axis_label, value_text)
                 canonical = f"{axis_label} / {value_text}"
                 usage = TargetUsage(
