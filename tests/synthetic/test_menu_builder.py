@@ -29,8 +29,10 @@ from synthetic import (
 from synthetic.menu_artefacts import WriteReport, write_menu
 from synthetic.menu_proposer import (
     DEFAULT_N_CANDIDATES,
+    MENU_CAP_BY_TYPE,
     CandidateProposal,
     CandidateSet,
+    _cap_candidates,
     _parse_json_list,
     _repair_invalid_escapes,
     propose_type,
@@ -739,3 +741,36 @@ class TestParseJsonListRepair:
 
     def test_repair_helper_drops_only_invalid_escapes(self):
         assert _repair_invalid_escapes(r'\C \S \" \\ \n \/ end\\') == r'C S \" \\ \n \/ end\\'
+
+
+# ===========================================================================
+# Sprint 38.5 — per-type menu cap
+# ===========================================================================
+
+
+class TestMenuCap:
+    def test_cap_table_covers_low_entropy_types_only(self):
+        assert MENU_CAP_BY_TYPE == {
+            ModificationType.OMISSION: 3,
+            ModificationType.REORDER: 3,
+            ModificationType.NUM_TO_TEXT: 3,
+            ModificationType.UNIT_CONVERSION: 3,
+            ModificationType.UNIT_EXPANSION: 3,
+        }
+
+    def test_cap_candidates_truncates_only_capped_types(self):
+        cands = tuple(CandidateProposal(payload={"new": str(i)}) for i in range(5))
+        assert len(_cap_candidates(cands, ModificationType.OMISSION)) == 3
+        assert _cap_candidates(cands, ModificationType.PARAPHRASE) == cands
+        # Keeps the head — candidates are ordered best→worst by the prompt.
+        assert [c.payload["new"] for c in _cap_candidates(cands, ModificationType.REORDER)] == ["0", "1", "2"]
+
+    def test_propose_type_l1_applies_cap(self):
+        # tiny_chapter.json: CTEST020$ axis C "PROFUNDIDAD" values 1, 2 → NUM_TO_TEXT.
+        stage = _load_tiny()
+        inv = scan_chapter(stage)
+        five = [[("1", w)] for w in ("uno", "un", "una unidad", "un tubo", "uno solo")]
+        client = _StubLLMClient([_l1_list_response(five, list_key="numerals")])
+        sets = propose_type(stage, inv, ModificationType.NUM_TO_TEXT, client, n=5)
+        assert len(sets[("PROFUNDIDAD", "1")].candidates) == 3
+        assert [c.payload["new"] for c in sets[("PROFUNDIDAD", "1")].candidates] == ["uno", "un", "una unidad"]

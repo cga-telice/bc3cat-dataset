@@ -63,6 +63,27 @@ from .variant_proposer import EXPECTED_SLOTS, _render_prompt, _validate_payload
 
 DEFAULT_N_CANDIDATES: int = 10
 
+# Sprint 38.5. Low-entropy rewrite types: the model's 10 alternatives are
+# near-duplicates (omission differs by a connective, reorder by which clause
+# moves, unit/number rewrites have 2-3 legitimate forms). Keep the request at
+# ``n`` (prompt text is cache-keyed) but present only the first ``cap`` after
+# dedup — candidates are ordered best→worst by the prompt contract.
+MENU_CAP_BY_TYPE: dict[ModificationType, int] = {
+    ModificationType.OMISSION: 3,
+    ModificationType.REORDER: 3,
+    ModificationType.NUM_TO_TEXT: 3,
+    ModificationType.UNIT_CONVERSION: 3,
+    ModificationType.UNIT_EXPANSION: 3,
+}
+
+
+def _cap_candidates(
+    candidates: tuple["CandidateProposal", ...],
+    mtype: ModificationType,
+) -> tuple["CandidateProposal", ...]:
+    cap = MENU_CAP_BY_TYPE.get(mtype)
+    return candidates if cap is None else candidates[:cap]
+
 
 # ---------------------------------------------------------------------------
 # Result dataclasses
@@ -171,8 +192,8 @@ def _propose_l1(
         )
         for target in axis_targets:
             _, value_norm = target.dedup_key
-            candidates = _extract_l1_candidates_for_value(
-                variants, value_norm,
+            candidates = _cap_candidates(
+                _extract_l1_candidates_for_value(variants, value_norm), mtype,
             )
             out[target.dedup_key] = CandidateSet(
                 target=target,
@@ -275,7 +296,7 @@ def _propose_single_target(
             stage_json, first, mtype, client, n=n,
         )
         if variants:
-            candidates = _dedupe_non_l1(variants, mtype)
+            candidates = _cap_candidates(_dedupe_non_l1(variants, mtype), mtype)
             out[target.dedup_key] = CandidateSet(
                 target=target,
                 mtype=mtype,
