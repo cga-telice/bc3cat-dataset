@@ -379,31 +379,90 @@ _Used in 1 concept(s): OEB020$_
 
 ## TEXTO template (OEB030$)
 _Used in 1 concept(s): OEB030$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Conducción enterrada de $A conductos de polietileno libre de halógenos de diámetro nominal 110 mm $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 2. "Conducción enterrada de $A conductos de polietileno sin halógenos de 110 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 3. "Conducción enterrada de $A conductos de polietileno sin halógenos de diámetro 110 mm $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 4. "Conducción enterrada de $A conductos de polietileno sin halógenos de diámetro nominal 110 mm $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
 
 ## TEXTO template (OEB040$)
 _Used in 1 concept(s): OEB040$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 160 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 2. "Conducción enterrada de $A conductos de polietileno sin halógenos de 160 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 3. "Conducción subterránea de $A conductos de polietileno sin halógenos de 160 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 4. "Conducción enterrada de $A conductos de polietileno sin halógenos de 160 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la comprobación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 5. "Conducción subterránea de $A conductos de polietileno sin halógenos de 160 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la comprobación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 6. "Conducción enterrada de $A conductos de polietileno sin halógenos de 160 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 7. "Conducción subterránea de $A conductos de polietileno sin halógenos de 160 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 8. "Conducción enterrada de $A conductos de polietileno sin halógenos de 160 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la evaluación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 9. "Conducción subterránea de $A conductos de polietileno sin halógenos de 160 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la evaluación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 10. "Conducción enterrada de $A conductos de polietileno sin halógenos de 160 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la revisión de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
 
 ## TEXTO template (OEB230$)
 _Used in 1 concept(s): OEB230$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 2. "Conducción enterrada de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 3. "Conducción subterránea de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 4. "Conducción enterrada de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la comprobación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 5. "Conducción subterránea de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la comprobación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 6. "Conducción enterrada de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 7. "Conducción subterránea de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 8. "Conducción enterrada de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la evaluación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 9. "Conducción subterránea de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la evaluación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 10. "Conducción enterrada de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la revisión de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
 
 ## TEXTO template (OEB280$)
 _Used in 1 concept(s): OEB280$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 40 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 2. "Conducción enterrada de $A conductos de polietileno sin halógenos de 40 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 3. "Conducción enterrada de $A conductos de polietileno sin halógenos de 40 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 4. "Conducción enterrada de $A conductos de polietileno sin halógenos de 40 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la comprobación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 5. "Conducción enterrada de $A conductos de polietileno sin halógenos de 40 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la evaluación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 6. "Conducción enterrada de $A conductos de polietileno sin halógenos de 40 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el traslado y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 7. "Conducción enterrada de $A conductos de polietileno sin halógenos de 40 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la comprobación de los conductos, el traslado y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 8. "Conducción enterrada de $A conductos de polietileno sin halógenos de 40 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la evaluación de los conductos, el traslado y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 9. "Conducción enterrada de $A conductos de polietileno sin halógenos de 40 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el traslado y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 10. "Conducción enterrada de $A conductos de polietileno sin halógenos de 40 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el desplazamiento y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
 
 ## TEXTO template (OEB290$)
 _Used in 1 concept(s): OEB290$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 50 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 2. "Conducción enterrada de $A conductos de polietileno sin halógenos de 50 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 3. "Conducción subterránea de $A conductos de polietileno sin halógenos de 50 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 4. "Conducción enterrada de $A conductos de polietileno sin halógenos de 50 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la comprobación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 5. "Conducción subterránea de $A conductos de polietileno sin halógenos de 50 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la comprobación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 6. "Conducción enterrada de $A conductos de polietileno sin halógenos de 50 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 7. "Conducción subterránea de $A conductos de polietileno sin halógenos de 50 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 8. "Conducción enterrada de $A conductos de polietileno sin halógenos de 50 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la evaluación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 9. "Conducción subterránea de $A conductos de polietileno sin halógenos de 50 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la evaluación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 10. "Conducción enterrada de $A conductos de polietileno sin halógenos de 50 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la revisión de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
 
 ## TEXTO template (OEB300$)
 _Used in 1 concept(s): OEB300$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 90 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 2. "Conducción enterrada de $A conductos de polietileno sin halógenos de 90 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 3. "Conducción subterránea de $A conductos de polietileno sin halógenos de 90 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 4. "Conducción enterrada de $A conductos de polietileno sin halógenos de 90 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la comprobación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 5. "Conducción subterránea de $A conductos de polietileno sin halógenos de 90 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la comprobación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 6. "Conducción enterrada de $A conductos de polietileno sin halógenos de 90 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 7. "Conducción subterránea de $A conductos de polietileno sin halógenos de 90 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 8. "Conducción enterrada de $A conductos de polietileno sin halógenos de 90 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la evaluación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 9. "Conducción subterránea de $A conductos de polietileno sin halógenos de 90 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la evaluación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 10. "Conducción enterrada de $A conductos de polietileno sin halógenos de 90 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la revisión de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
 
 ## TEXTO template (OEB170$)
 _Used in 1 concept(s): OEB170$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Conducción metálica superficial compuesta por $A conductos de acero galvanizado de $B de diámetro interior, instalada en taludes con pendientes pronunciadas o en terrenos rocosos, sobre el hastial de túneles o puentes, incluyendo el sellado de sus extremos, así como las herramientas y medios auxiliares necesarios para su correcta instalación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 2. "Conjunto de canalización metálica superficial formado por $A conductos de acero galvanizado de $B de diámetro interior, destinado a taludes con pendientes elevadas o terrenos rocosos, sobre el hastial de túneles o puentes, incluyendo el sellado de sus extremos, así como las herramientas y medios auxiliares necesarios para su correcta instalación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 3. "Sistema de canalización metálica superficial compuesto por $A conductos de acero galvanizado de $B de diámetro interior, instalado en taludes con pendientes pronunciadas o en terrenos rocosos, sobre el hastial de túneles o puentes, incluyendo el sellado de sus extremos, así como las herramientas y medios auxiliares necesarios para su correcta instalación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 4. "Instalación de canalización metálica superficial que incluye $A conductos de acero galvanizado de $B de diámetro interior, destinada a taludes con pendientes pronunciadas o terrenos rocosos, sobre el hastial de túneles o puentes, incluyendo el sellado de sus extremos, así como las herramientas y medios auxiliares necesarios para su correcta instalación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 5. "Sistema de canalización metálica superficial formado por $A conductos de acero galvanizado de $B de diámetro interior, destinado a taludes con pendientes elevadas o terrenos rocosos, sobre el hastial de túneles o puentes, incluyendo el sellado de sus extremos, así como las herramientas y medios auxiliares necesarios para su correcta instalación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
 
 ## TEXTO template (OEB080$)
 _Used in 1 concept(s): OEB080$_
@@ -418,15 +477,36 @@ _Used in 1 concept(s): OEB080$_
 
 ## TEXTO template (OEB130$)
 _Used in 1 concept(s): OEB130$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Realización de los trabajos de conexión de conducción enterrada de conductos de diámetro nominal 110 mm con una cámara o arqueta de registro existente, incluyendo la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 2. "Implementación de los trabajos de unión de conducción enterrada de conductos de 110 mm de diámetro con una cámara o arqueta de registro existente, incluyendo la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 3. "Desarrollo de los trabajos de conexión de conducción enterrada de conductos de diámetro 110 mm con una cámara o arqueta de registro existente, incluyendo la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 4. "Realización de los trabajos de enlace de conducción enterrada de conductos de 110 mm de diámetro con una cámara o arqueta de registro existente, incluyendo la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 5. "Implementación de los trabajos de conexión de conducción enterrada de conductos de 110 mm con una cámara o arqueta de registro existente, incluyendo la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 6. "Desarrollo de los trabajos de unión de conducción enterrada de conductos de diámetro 110 mm con una cámara o arqueta de registro existente, incluyendo la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 7. "Realización de los trabajos de conexión de conducción enterrada de conductos de 110 mm de diámetro con una cámara o arqueta de registro existente, incluyendo la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 8. "Implementación de los trabajos de enlace de conducción enterrada de conductos de diámetro nominal 110 mm con una cámara o arqueta de registro existente, incluyendo la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 9. "Desarrollo de los trabajos de conexión de conducción enterrada de conductos de 110 mm con una cámara o arqueta de registro existente, incluyendo la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 10. "Realización de los trabajos de unión de conducción enterrada de conductos de diámetro 110 mm con una cámara o arqueta de registro existente, incluyendo la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
 
 ## TEXTO template (OEB180$)
 _Used in 1 concept(s): OEB180$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Hincas con cable tensor de acero para el tendido de cables en una trinchera de tierra. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
 
 ## TEXTO template (OEB150$)
 _Used in 1 concept(s): OEB150$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Limpieza de conductos de canalización existentes, incluyendo la identificación y eliminación de obstrucciones, antes de instalar nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 2. "Limpieza de conductos de canalización preexistentes, incluyendo la detección y desobstrucción de bloqueos, antes de la colocación de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 3. "Limpieza de conductos de canalización ya instalados, incluyendo la identificación y eliminación de bloqueos, antes de la instalación de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 4. "Limpieza de conductos de canalización existentes, incluyendo la localización y desobstrucción de atascos, antes de la colocación de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 5. "Limpieza de conductos de canalización ya existentes, incluyendo la identificación y eliminación de obstrucciones, antes de instalar nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 6. "Limpieza de conductos de canalización preexistentes, incluyendo la detección y eliminación de bloqueos, antes de la instalación de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 7. "Limpieza de conductos de canalización ya instalados, incluyendo la identificación y desobstrucción de atascos, antes de colocar nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 8. "Limpieza de conductos de canalización existentes, incluyendo la detección y eliminación de bloqueos, antes de la instalación de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 9. "Limpieza de conductos de canalización preexistentes, incluyendo la identificación y desobstrucción de atascos, antes de la colocación de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 10. "Limpieza de conductos de canalización ya existentes, incluyendo la detección y eliminación de bloqueos, antes de instalar nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
 
 ## TEXTO template (OEB160$)
 _Used in 1 concept(s): OEB160$_
@@ -452,7 +532,17 @@ _Used in 1 concept(s): OEB240$_
 
 ## TEXTO template (OEB110$)
 _Used in 1 concept(s): OEB110$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Instalación y suministro de conductos de PVC de diámetro nominal 110 mm para evacuación de arquetas desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y compactación del terreno. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 2. "Provisión e instalación de conductos de PVC de 110 mm de diámetro para el drenaje de arquetas desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y compactación del suelo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 3. "Suministro e instalación de tuberías de PVC de diámetro 110 mm para el drenaje de arquetas desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y compactación del terreno. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 4. "Provisión y colocación de conductos de PVC de 110 mm de diámetro para evacuación de arquetas desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y compactación del suelo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 5. "Instalación y provisión de tuberías de PVC de diámetro 110 mm para el drenaje de arquetas desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y compactación del terreno. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 6. "Suministro e instalación de conductos de PVC de diámetro nominal 110 mm para evacuación de arquetas desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y compactación del suelo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 7. "Provisión e instalación de tuberías de PVC de 110 mm de diámetro para el drenaje de arquetas desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y compactación del terreno. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 8. "Instalación y provisión de conductos de PVC de diámetro 110 mm para evacuación de arquetas desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y compactación del suelo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 9. "Suministro e instalación de tuberías de PVC de diámetro nominal 110 mm para el drenaje de arquetas desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y compactación del terreno. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 10. "Provisión e instalación de conductos de PVC de diámetro 110 mm para evacuación de arquetas desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y compactación del suelo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
 
 ## TEXTO template (OEB070$)
 _Used in 1 concept(s): OEB070$_
@@ -470,17 +560,47 @@ _Used in 1 concept(s): OEB070$_
 
 ## TEXTO template (OEB100$)
 _Used in 1 concept(s): OEB100$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Instalación y puesta en marcha de conducción enterrada en túnel para acceso a interfonía desde canaleta de hormigón usando conducto de acero hasta el repartidor Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 2. "Provisión y montaje de conducción subterránea en túnel para acceso a interfonía desde canaleta de hormigón con conducto de acero hasta el repartidor Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 3. "Suministro y montaje de conducción enterrada en túnel para acceso a interfonía desde canaleta de hormigón usando conducto de acero hasta el repartidor Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 4. "Suministro y ejecución de conducción subterránea en túnel para acceso a interfonía desde canaleta de hormigón con conducto de acero hasta el repartidor Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 5. "Provisión y puesta en marcha de conducción enterrada en túnel para acceso a interfonía desde canaleta de hormigón usando conducto de acero hasta el repartidor Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 6. "Instalación y suministro de conducción subterránea en túnel para acceso a interfonía desde canaleta de hormigón con conducto de acero hasta el repartidor Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 7. "Suministro y montaje de conducción enterrada en túnel para acceso a interfonía desde canaleta de hormigón con conducto de acero hasta el repartidor Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 8. "Provisión y ejecución de conducción subterránea en túnel para acceso a interfonía desde canaleta de hormigón usando conducto de acero hasta el repartidor Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 9. "Instalación y suministro de conducción enterrada en túnel para acceso a interfonía desde canaleta de hormigón con conducto de acero hasta el repartidor Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
+- [ ] 10. "Provisión y montaje de conducción subterránea en túnel para acceso a interfonía desde canaleta de hormigón usando conducto de acero hasta el repartidor Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
 
 ## TEXTO template (OEB120$)
 _Used in 1 concept(s): OEB120$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Provisión y montaje de entrada de conductos de $A en arqueta o cámara ya existente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 2. "Suministro y colocación de entrada de tubería de $A en arqueta o cámara preexistente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 3. "Provisión y montaje de acceso de conductos de $A en arqueta o cámara ya instalada. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 4. "Suministro y ejecución de entrada de tubería de $A en arqueta o cámara preexistente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 5. "Provisión y colocación de entrada de conductos de $A en arqueta o cámara ya existente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 6. "Suministro y montaje de acceso de tubería de $A en arqueta o cámara preinstalada. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 7. "Provisión y ejecución de entrada de conductos de $A en arqueta o cámara ya existente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 8. "Suministro y ejecución de entrada de tubería de $A en arqueta o cámara preinstalada. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
 
 ## TEXTO template (OEB090$)
 _Used in 1 concept(s): OEB090$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Provisión e instalación de conducto de acero galvanizado de $A, incluyendo herrajes de sujeción y caja de registro en proporción adecuada, con mandrilado incluido. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 2. "Suministro e instalación de tubería de acero galvanizado de $A, con herrajes de sujeción y caja de registro proporcionales, incluyendo mandrilado. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 3. "Entrega e instalación de tubo de acero galvanizado de $A, con herrajes de sujeción y caja de registro en proporción adecuada, incluyendo mandrilado. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 4. "Provisión e instalación de conducto de acero galvanizado de $A, con herrajes de sujeción y caja de registro proporcionales, incluyendo mandrilado. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 5. "Suministro e instalación de tubería de acero galvanizado de $A, incluyendo herrajes de sujeción y caja de registro en proporción adecuada, con mandrilado incluido. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 6. "Entrega e instalación de tubo de acero galvanizado de $A, con herrajes de sujeción y caja de registro proporcionales, incluyendo mandrilado. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 7. "Provisión e instalación de tubería de acero galvanizado de $A, con herrajes de sujeción y caja de registro en proporción adecuada, incluyendo mandrilado. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 8. "Suministro e instalación de conducto de acero galvanizado de $A, incluyendo herrajes de sujeción y caja de registro proporcionales, con mandrilado incluido. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 9. "Entrega e instalación de tubería de acero galvanizado de $A, con herrajes de sujeción y caja de registro en proporción adecuada, incluyendo mandrilado. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 10. "Provisión e instalación de tubo de acero galvanizado de $A, con herrajes de sujeción y caja de registro proporcionales, incluyendo mandrilado. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
 
 ## TEXTO template (OEB190$)
 _Used in 2 concept(s): OEB190$, OEB200$_
-_Skipped: malformed_list_after_retry: malformed_json: Invalid \escape_
+
+- [ ] 1. "Excavación para cables de $A de profundidad y 0,60 m de anchura máxima, $R(%B), con relleno compactado de material escogido de la excavación, capa de arena de $X(%A) de espesor, malla plástica identificadora, carga, descarga y transporte al lugar designado en la obra. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 2. "Excavación para cableado de $A de profundidad y 0,60 m de anchura máxima, $R(%B), con relleno compactado de material elegido de la excavación, capa de arena de $X(%A) de espesor, malla plástica identificadora, carga, descarga y transporte al lugar designado en la obra. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
 
