@@ -5,8 +5,9 @@ import pytest
 from synthetic.taxonomy import Layer, Modification, ModificationType, TYPE_TO_LAYER
 
 
-def test_modification_type_has_12_members():
-    assert len(list(ModificationType)) == 12
+def test_modification_type_has_13_members():
+    # Sprint 36: TEMPLATE_PARAPHRASE joined the taxonomy (13th type).
+    assert len(list(ModificationType)) == 13
 
 
 def test_modification_type_value_roundtrip():

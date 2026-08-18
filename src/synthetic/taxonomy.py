@@ -31,6 +31,11 @@ class ModificationType(str, Enum):
     COMPRESSION = "compression"
     OMISSION = "omission"
     REORDER = "reorder"
+    # Sprint 36 — full-surface paraphrase of the RESUMEN or TEXTO template.
+    # Adds real-world query-drift variability that fragment-level L2 alone
+    # cannot produce. See F1_FINDINGS §6.2.1 addendum and Sprint 35 review
+    # question ("are we paraphrasing templates?").
+    TEMPLATE_PARAPHRASE = "template_paraphrase"
     NEW_PARAM = "new_param"
 
 
@@ -46,6 +51,7 @@ TYPE_TO_LAYER: dict[ModificationType, Layer] = {
     ModificationType.COMPRESSION: Layer.TEXT_VARIABLE,
     ModificationType.OMISSION: Layer.TEMPLATE,
     ModificationType.REORDER: Layer.TEMPLATE,
+    ModificationType.TEMPLATE_PARAPHRASE: Layer.TEMPLATE,
     ModificationType.NEW_PARAM: Layer.PARAM_DEFINITION,
 }
 

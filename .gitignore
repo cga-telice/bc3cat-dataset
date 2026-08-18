@@ -1,0 +1,4 @@
+data_validation/
+__pycache__/
+data/synthetic/_archive/
+data/synthetic/intermediate/

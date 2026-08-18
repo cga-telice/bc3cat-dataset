@@ -3,12 +3,10 @@
 Public API matches `CLAUDE_SYNTHETIC.md` "Stage-Hook Integration Note":
 `apply_l1` / `apply_l2` / `apply_l3` / `apply_new_param`. Each function
 deep-copies its input stage JSON, validates the rule(s)' declared layer,
-and routes through `_DISPATCH` to the matching per-type stub.
+and routes through `_DISPATCH` to the matching per-type mutator.
 
-All 12 stubs currently raise `NotImplementedError`. Real bodies arrive in
-Phase B (B1–B4) and will be physically relocated to `layer_l1.py` /
-`_l2.py` / `_l3.py` / `_pd.py`; the dispatcher's surface is the stable
-boundary.
+All 12 (6 L1 + 3 L2 + 2 L3 + 1 PD) mutators live; dispatcher fully
+promoted from stubs.
 """
 
 from __future__ import annotations
@@ -16,97 +14,45 @@ from __future__ import annotations
 import copy
 from typing import Any, Callable
 
+from .layer_l1 import (
+    apply_abbrev_expansion,
+    apply_code_expansion,
+    apply_num_to_text,
+    apply_synonym_label,
+    apply_unit_conversion,
+    apply_unit_expansion,
+)
+from .layer_l2 import (
+    apply_compression,
+    apply_expansion,
+    apply_paraphrase,
+)
+from .layer_l3 import (
+    apply_omission,
+    apply_reorder,
+    apply_template_paraphrase,
+)
+from .layer_pd import apply_new_param as _layer_pd_apply_new_param
 from .taxonomy import Layer, Modification, ModificationType, TYPE_TO_LAYER
 
 
 _StubResult = tuple[dict, list[Modification]]
 
 
-def _stub_synonym_label(stage_json: dict, concept_key: str, rule: dict) -> _StubResult:
-    raise NotImplementedError(
-        f"Phase B: {ModificationType.SYNONYM_LABEL.value} mutator not yet implemented"
-    )
-
-
-def _stub_num_to_text(stage_json: dict, concept_key: str, rule: dict) -> _StubResult:
-    raise NotImplementedError(
-        f"Phase B: {ModificationType.NUM_TO_TEXT.value} mutator not yet implemented"
-    )
-
-
-def _stub_unit_conversion(stage_json: dict, concept_key: str, rule: dict) -> _StubResult:
-    raise NotImplementedError(
-        f"Phase B: {ModificationType.UNIT_CONVERSION.value} mutator not yet implemented"
-    )
-
-
-def _stub_unit_expansion(stage_json: dict, concept_key: str, rule: dict) -> _StubResult:
-    raise NotImplementedError(
-        f"Phase B: {ModificationType.UNIT_EXPANSION.value} mutator not yet implemented"
-    )
-
-
-def _stub_abbrev_expansion(stage_json: dict, concept_key: str, rule: dict) -> _StubResult:
-    raise NotImplementedError(
-        f"Phase B: {ModificationType.ABBREV_EXPANSION.value} mutator not yet implemented"
-    )
-
-
-def _stub_code_expansion(stage_json: dict, concept_key: str, rule: dict) -> _StubResult:
-    raise NotImplementedError(
-        f"Phase B: {ModificationType.CODE_EXPANSION.value} mutator not yet implemented"
-    )
-
-
-def _stub_paraphrase(stage_json: dict, concept_key: str, rule: dict) -> _StubResult:
-    raise NotImplementedError(
-        f"Phase B: {ModificationType.PARAPHRASE.value} mutator not yet implemented"
-    )
-
-
-def _stub_expansion(stage_json: dict, concept_key: str, rule: dict) -> _StubResult:
-    raise NotImplementedError(
-        f"Phase B: {ModificationType.EXPANSION.value} mutator not yet implemented"
-    )
-
-
-def _stub_compression(stage_json: dict, concept_key: str, rule: dict) -> _StubResult:
-    raise NotImplementedError(
-        f"Phase B: {ModificationType.COMPRESSION.value} mutator not yet implemented"
-    )
-
-
-def _stub_omission(stage_json: dict, concept_key: str, rule: dict) -> _StubResult:
-    raise NotImplementedError(
-        f"Phase B: {ModificationType.OMISSION.value} mutator not yet implemented"
-    )
-
-
-def _stub_reorder(stage_json: dict, concept_key: str, rule: dict) -> _StubResult:
-    raise NotImplementedError(
-        f"Phase B: {ModificationType.REORDER.value} mutator not yet implemented"
-    )
-
-
-def _stub_new_param(stage_json: dict, concept_key: str, rule: dict) -> _StubResult:
-    raise NotImplementedError(
-        f"Phase B: {ModificationType.NEW_PARAM.value} mutator not yet implemented"
-    )
-
-
 _DISPATCH: dict[ModificationType, Callable[[dict, str, dict], _StubResult]] = {
-    ModificationType.SYNONYM_LABEL: _stub_synonym_label,
-    ModificationType.NUM_TO_TEXT: _stub_num_to_text,
-    ModificationType.UNIT_CONVERSION: _stub_unit_conversion,
-    ModificationType.UNIT_EXPANSION: _stub_unit_expansion,
-    ModificationType.ABBREV_EXPANSION: _stub_abbrev_expansion,
-    ModificationType.CODE_EXPANSION: _stub_code_expansion,
-    ModificationType.PARAPHRASE: _stub_paraphrase,
-    ModificationType.EXPANSION: _stub_expansion,
-    ModificationType.COMPRESSION: _stub_compression,
-    ModificationType.OMISSION: _stub_omission,
-    ModificationType.REORDER: _stub_reorder,
-    ModificationType.NEW_PARAM: _stub_new_param,
+    ModificationType.SYNONYM_LABEL: apply_synonym_label,
+    ModificationType.NUM_TO_TEXT: apply_num_to_text,
+    ModificationType.UNIT_CONVERSION: apply_unit_conversion,
+    ModificationType.UNIT_EXPANSION: apply_unit_expansion,
+    ModificationType.ABBREV_EXPANSION: apply_abbrev_expansion,
+    ModificationType.CODE_EXPANSION: apply_code_expansion,
+    ModificationType.PARAPHRASE: apply_paraphrase,
+    ModificationType.EXPANSION: apply_expansion,
+    ModificationType.COMPRESSION: apply_compression,
+    ModificationType.OMISSION: apply_omission,
+    ModificationType.REORDER: apply_reorder,
+    ModificationType.TEMPLATE_PARAPHRASE: apply_template_paraphrase,
+    ModificationType.NEW_PARAM: _layer_pd_apply_new_param,
 }
 
 

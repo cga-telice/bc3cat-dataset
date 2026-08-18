@@ -1,0 +1,1849 @@
+{
+  "concept_key": "OEB070$",
+  "concept_resumen": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\",
+  "parent_key": "",
+  "variants": [
+    {
+      "condition": "full_random_mix",
+      "modification_type": "expansion",
+      "target_id_repr": "(('L', '%B=a'), ('TEXTO', '$B'), 'D', ('L', '%B=d'))",
+      "rules": [
+        {
+          "type": "synonym_label",
+          "param": "D",
+          "value": "a",
+          "original": "Volumen relevante",
+          "new": "Alto volumen"
+        },
+        {
+          "type": "synonym_label",
+          "param": "D",
+          "value": "b",
+          "original": "Volumen escaso",
+          "new": "Bajo volumen"
+        },
+        {
+          "type": "synonym_label",
+          "param": "D",
+          "value": "c",
+          "original": "Cualquier condición de ejecución",
+          "new": "Sin restricciones"
+        },
+        {
+          "type": "expansion",
+          "var": "L",
+          "condition": "%B=a",
+          "new": "Diurno, es decir, durante las horas de luz natural, excluyendo las horas nocturnas, para minimizar el impacto en el tráfico ferroviario y garantizar la seguridad en la ejecución de la obra."
+        },
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%B=d",
+          "new": "Nocturno Especial"
+        }
+      ]
+    },
+    {
+      "condition": "new_param_only",
+      "modification_type": "new_param",
+      "target_id_repr": "(None,)",
+      "rules": [
+        {
+          "type": "new_param",
+          "param": "E",
+          "label": "MATERIAL DE AISLAMIENTO",
+          "values": [
+            {
+              "label": "a",
+              "value": "Polietileno"
+            },
+            {
+              "label": "b",
+              "value": "PVC"
+            },
+            {
+              "label": "c",
+              "value": "GRP"
+            },
+            {
+              "label": "d",
+              "value": "Cobre"
+            },
+            {
+              "label": "e",
+              "value": "Acero"
+            }
+          ],
+          "metadata": {
+            "var_definition": "$X = \"Polietileno\" * (%G=a) + \"PVC\" * (%G=b) + \"GRP\" * (%G=c) + \"Cobre\" * (%G=d) + \"Acero\" * (%G=e)",
+            "template_patch": "Suministro y ejecución de canalización de $A tubo(s) de $X 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D)), con $X, ..."
+          }
+        }
+      ]
+    },
+    {
+      "condition": "single_L1_num_to_text",
+      "modification_type": "num_to_text",
+      "target_id_repr": "('A',)",
+      "rules": [
+        {
+          "type": "num_to_text",
+          "param": "A",
+          "value": "a",
+          "original": "1",
+          "new": "un tubo"
+        },
+        {
+          "type": "num_to_text",
+          "param": "A",
+          "value": "b",
+          "original": "2",
+          "new": "dos tubos"
+        }
+      ]
+    },
+    {
+      "condition": "single_L1_synonym_label",
+      "modification_type": "synonym_label",
+      "target_id_repr": "('B',)",
+      "rules": [
+        {
+          "type": "synonym_label",
+          "param": "B",
+          "value": "a",
+          "original": "Diurno",
+          "new": "Horario Diurno"
+        },
+        {
+          "type": "synonym_label",
+          "param": "B",
+          "value": "b",
+          "original": "Nocturno",
+          "new": "Horario Nocturno"
+        },
+        {
+          "type": "synonym_label",
+          "param": "B",
+          "value": "c",
+          "original": "Diurno Excepcional",
+          "new": "Horario Diurno Especial"
+        },
+        {
+          "type": "synonym_label",
+          "param": "B",
+          "value": "d",
+          "original": "Nocturno Excepcional",
+          "new": "Horario Nocturno Especial"
+        },
+        {
+          "type": "synonym_label",
+          "param": "B",
+          "value": "e",
+          "original": "Cualquier franja horaria",
+          "new": "Horario Flexible"
+        },
+        {
+          "type": "synonym_label",
+          "param": "B",
+          "value": "f",
+          "original": "Cualquier franja horaria excepcional",
+          "new": "Horario Flexible Especial"
+        }
+      ]
+    },
+    {
+      "condition": "single_L1_synonym_label",
+      "modification_type": "synonym_label",
+      "target_id_repr": "('C',)",
+      "rules": [
+        {
+          "type": "synonym_label",
+          "param": "C",
+          "value": "d",
+          "original": "No necesita intervalo",
+          "new": "Sin Mantenimiento"
+        }
+      ]
+    },
+    {
+      "condition": "single_L1_synonym_label",
+      "modification_type": "synonym_label",
+      "target_id_repr": "('D',)",
+      "rules": [
+        {
+          "type": "synonym_label",
+          "param": "D",
+          "value": "a",
+          "original": "Volumen relevante",
+          "new": "Alto volumen"
+        },
+        {
+          "type": "synonym_label",
+          "param": "D",
+          "value": "b",
+          "original": "Volumen escaso",
+          "new": "Bajo volumen"
+        },
+        {
+          "type": "synonym_label",
+          "param": "D",
+          "value": "c",
+          "original": "Cualquier condición de ejecución",
+          "new": "Sin restricciones"
+        }
+      ]
+    },
+    {
+      "condition": "single_L1_unit_conversion",
+      "modification_type": "unit_conversion",
+      "target_id_repr": "('C',)",
+      "rules": [
+        {
+          "type": "unit_conversion",
+          "param": "C",
+          "value": "b",
+          "original": "3 <= i < 5 horas",
+          "new": "3 a 5 horas"
+        },
+        {
+          "type": "unit_conversion",
+          "param": "C",
+          "value": "c",
+          "original": "i < 3 horas",
+          "new": "menos de 3 horas"
+        },
+        {
+          "type": "unit_conversion",
+          "param": "C",
+          "value": "d",
+          "original": "No necesita intervalo",
+          "new": "sin intervalo"
+        }
+      ]
+    },
+    {
+      "condition": "single_L1_unit_expansion",
+      "modification_type": "unit_expansion",
+      "target_id_repr": "('C',)",
+      "rules": [
+        {
+          "type": "unit_expansion",
+          "param": "C",
+          "value": "b",
+          "original": "3 <= i < 5 horas",
+          "new": "Intervalo entre tres y cinco horas"
+        },
+        {
+          "type": "unit_expansion",
+          "param": "C",
+          "value": "c",
+          "original": "i < 3 horas",
+          "new": "Intervalo menor a tres horas"
+        },
+        {
+          "type": "unit_expansion",
+          "param": "C",
+          "value": "d",
+          "original": "No necesita intervalo",
+          "new": "Sin intervalo requerido"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_compression",
+      "modification_type": "compression",
+      "target_id_repr": "(('L', '%B=a'),)",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%B=a",
+          "new": "Horario Diurno"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_compression",
+      "modification_type": "compression",
+      "target_id_repr": "(('L', '%B=b'),)",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%B=b",
+          "new": "Noche"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_compression",
+      "modification_type": "compression",
+      "target_id_repr": "(('L', '%B=c'),)",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%B=c",
+          "new": "Diurno Especial"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_compression",
+      "modification_type": "compression",
+      "target_id_repr": "(('L', '%B=d'),)",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%B=d",
+          "new": "Nocturno Especial"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_compression",
+      "modification_type": "compression",
+      "target_id_repr": "(('L', '%B=e'),)",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%B=e",
+          "new": "Horario flexible"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_compression",
+      "modification_type": "compression",
+      "target_id_repr": "(('L', '%B=f'),)",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%B=f",
+          "new": "Horario Excepcional"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_compression",
+      "modification_type": "compression",
+      "target_id_repr": "(('N', '%D=a'),)",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "N",
+          "condition": "%D=a",
+          "new": "Volumen alto"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_compression",
+      "modification_type": "compression",
+      "target_id_repr": "(('N', '%D=b'),)",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "N",
+          "condition": "%D=b",
+          "new": "Volumen bajo"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_compression",
+      "modification_type": "compression",
+      "target_id_repr": "(('N', '%D=c'),)",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "N",
+          "condition": "%D=c",
+          "new": "Ejecución variable"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_expansion",
+      "modification_type": "expansion",
+      "target_id_repr": "(('L', '%B=a'),)",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "L",
+          "condition": "%B=a",
+          "new": "Durante las horas de luz natural, excluyendo las horas nocturnas, para minimizar el impacto en el tráfico ferroviario y garantizar condiciones de seguridad óptimas."
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_expansion",
+      "modification_type": "expansion",
+      "target_id_repr": "(('L', '%B=b'),)",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "L",
+          "condition": "%B=b",
+          "new": "Ejecución durante la noche, evitando interrupciones en el tráfico ferroviario y minimizando el impacto en la operación diaria."
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_expansion",
+      "modification_type": "expansion",
+      "target_id_repr": "(('L', '%B=c'),)",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "L",
+          "condition": "%B=c",
+          "new": "Diurno Excepcional, que implica trabajos realizados durante el horario diurno pero con condiciones especiales que permiten excepciones a las normas habituales de operación."
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_expansion",
+      "modification_type": "expansion",
+      "target_id_repr": "(('L', '%B=d'),)",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "L",
+          "condition": "%B=d",
+          "new": "Ejecución programada durante horas nocturnas, con condiciones excepcionales para minimizar el impacto en el tráfico ferroviario y garantizar la seguridad."
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_expansion",
+      "modification_type": "expansion",
+      "target_id_repr": "(('L', '%B=e'),)",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "L",
+          "condition": "%B=e",
+          "new": "Cualquier franja horaria, permitiendo flexibilidad en la programación de trabajos para adaptarse a las necesidades operativas y logísticas del proyecto."
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_expansion",
+      "modification_type": "expansion",
+      "target_id_repr": "(('L', '%B=f'),)",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "L",
+          "condition": "%B=f",
+          "new": "Cualquier franja horaria excepcional, incluyendo aquellas que no se ajustan a los horarios estándar de trabajo diurno o nocturno, permitiendo flexibilidad en la programación de actividades."
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_expansion",
+      "modification_type": "expansion",
+      "target_id_repr": "(('N', '%D=a'),)",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "N",
+          "condition": "%D=a",
+          "new": "Volumen relevante, indicando una cantidad significativa que requiere una planificación y ejecución cuidadosa para asegurar la eficiencia y cumplimiento de los estándares de construcción."
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_expansion",
+      "modification_type": "expansion",
+      "target_id_repr": "(('N', '%D=b'),)",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "N",
+          "condition": "%D=b",
+          "new": "Volumen escaso, indicando una cantidad mínima de tubos necesarios para la ejecución del proyecto bajo las condiciones especificadas."
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_expansion",
+      "modification_type": "expansion",
+      "target_id_repr": "(('N', '%D=c'),)",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "N",
+          "condition": "%D=c",
+          "new": "Cualquier condición de ejecución, incluyendo variaciones en el terreno o condiciones climáticas adversas, que puedan afectar la instalación."
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_paraphrase",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('L', '%B=a'),)",
+      "rules": [
+        {
+          "type": "paraphrase",
+          "var": "L",
+          "condition": "%B=a",
+          "new": "Horario de día"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_paraphrase",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('L', '%B=b'),)",
+      "rules": [
+        {
+          "type": "paraphrase",
+          "var": "L",
+          "condition": "%B=b",
+          "new": "Horario nocturno"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_paraphrase",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('L', '%B=c'),)",
+      "rules": [
+        {
+          "type": "paraphrase",
+          "var": "L",
+          "condition": "%B=c",
+          "new": "Horario Diurno Especial"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_paraphrase",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('L', '%B=d'),)",
+      "rules": [
+        {
+          "type": "paraphrase",
+          "var": "L",
+          "condition": "%B=d",
+          "new": "Nocturno Especial"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_paraphrase",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('L', '%B=e'),)",
+      "rules": [
+        {
+          "type": "paraphrase",
+          "var": "L",
+          "condition": "%B=e",
+          "new": "En cualquier franja horaria"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_paraphrase",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('L', '%B=f'),)",
+      "rules": [
+        {
+          "type": "paraphrase",
+          "var": "L",
+          "condition": "%B=f",
+          "new": "Horario extraordinario"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_paraphrase",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('N', '%D=a'),)",
+      "rules": [
+        {
+          "type": "paraphrase",
+          "var": "N",
+          "condition": "%D=a",
+          "new": "Volumen considerable"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_paraphrase",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('N', '%D=b'),)",
+      "rules": [
+        {
+          "type": "paraphrase",
+          "var": "N",
+          "condition": "%D=b",
+          "new": "Cantidad reducida"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_paraphrase",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('N', '%D=c'),)",
+      "rules": [
+        {
+          "type": "paraphrase",
+          "var": "N",
+          "condition": "%D=c",
+          "new": "Condiciones diversas de ejecución"
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_omission",
+      "modification_type": "omission",
+      "target_id_repr": "(('RESUMEN', '$A'),)",
+      "rules": [
+        {
+          "type": "omission",
+          "field": "RESUMEN",
+          "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+          "new": "Suministro y ejecución de canalización de tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))"
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_omission",
+      "modification_type": "omission",
+      "target_id_repr": "(('RESUMEN', '$L'),)",
+      "rules": [
+        {
+          "type": "omission",
+          "field": "RESUMEN",
+          "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+          "new": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($M(%C)/$N(%D))"
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_omission",
+      "modification_type": "omission",
+      "target_id_repr": "(('RESUMEN', '$M'),)",
+      "rules": [
+        {
+          "type": "omission",
+          "field": "RESUMEN",
+          "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+          "new": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$N(%D))"
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_omission",
+      "modification_type": "omission",
+      "target_id_repr": "(('RESUMEN', '$N'),)",
+      "rules": [
+        {
+          "type": "omission",
+          "field": "RESUMEN",
+          "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+          "new": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C))"
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_reorder",
+      "modification_type": "reorder",
+      "target_id_repr": "('RESUMEN',)",
+      "rules": [
+        {
+          "type": "reorder",
+          "field": "RESUMEN",
+          "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+          "new": "Suministro y ejecución de canalización de ($L(%B)/$M(%C)/$N(%D)) $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías"
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_reorder",
+      "modification_type": "reorder",
+      "target_id_repr": "('TEXTO',)",
+      "rules": [
+        {
+          "type": "reorder",
+          "field": "TEXTO",
+          "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+          "new": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Condiciones de ejecución: $D Banda de mantenimiento: $C Trabajo: $B"
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_template_paraphrase",
+      "modification_type": "template_paraphrase",
+      "target_id_repr": "('RESUMEN',)",
+      "rules": [
+        {
+          "type": "template_paraphrase",
+          "field": "RESUMEN",
+          "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+          "new": "Provisión y colocación de $A conducto(s) de polietileno de diámetro nominal 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))"
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_template_paraphrase",
+      "modification_type": "template_paraphrase",
+      "target_id_repr": "('TEXTO',)",
+      "rules": [
+        {
+          "type": "template_paraphrase",
+          "field": "TEXTO",
+          "original": "\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+          "new": "Provisión y colocación de $A conducto(s) de polietileno de diámetro nominal 110 mm 5 At. con topo bajo vías. Labor: $B Zona de mantenimiento: $C Circunstancias de ejecución: $D"
+        }
+      ]
+    },
+    {
+      "condition": "stacked_2",
+      "modification_type": "compression",
+      "target_id_repr": "(('L', '%B=e'), ('N', '%D=a'))",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%B=e",
+          "new": "Horario flexible"
+        },
+        {
+          "type": "paraphrase",
+          "var": "N",
+          "condition": "%D=a",
+          "new": "Volumen considerable"
+        }
+      ]
+    },
+    {
+      "condition": "stacked_3",
+      "modification_type": "compression",
+      "target_id_repr": "(('N', '%D=a'), ('RESUMEN', '$N'), 'RESUMEN')",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "N",
+          "condition": "%D=a",
+          "new": "Volumen alto"
+        },
+        {
+          "type": "omission",
+          "field": "RESUMEN",
+          "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+          "new": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C))"
+        }
+      ]
+    },
+    {
+      "condition": "stacked_4",
+      "modification_type": "compression",
+      "target_id_repr": "(('L', '%B=d'), ('L', '%B=e'), ('L', '%B=e'), ('L', '%B=c'))",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%B=d",
+          "new": "Nocturno Especial"
+        },
+        {
+          "type": "paraphrase",
+          "var": "L",
+          "condition": "%B=e",
+          "new": "En cualquier franja horaria"
+        },
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%B=c",
+          "new": "Diurno Especial"
+        }
+      ]
+    },
+    {
+      "condition": "stacked_5plus",
+      "modification_type": "compression",
+      "target_id_repr": "(('L', '%B=f'), ('TEXTO', '$D'), ('TEXTO', '$C'), ('L', '%B=e'), ('N', '%D=a'))",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%B=f",
+          "new": "Horario Excepcional"
+        },
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%B=e",
+          "new": "Horario flexible"
+        },
+        {
+          "type": "expansion",
+          "var": "N",
+          "condition": "%D=a",
+          "new": "Volumen relevante, indicando una cantidad significativa que requiere una planificación y ejecución cuidadosa para asegurar la eficiencia y cumplimiento de los estándares de construcción."
+        }
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "type": "omission",
+      "layer": "template",
+      "status": "skipped",
+      "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'Diurno', 'new': 'Mantenimiento Extensivo'}"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'Intermedio', 'new': 'Mantenimiento Moderado'}"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'Breve', 'new': 'Mantenimiento Corto'}"
+    },
+    {
+      "type": "unit_conversion",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'i >= 5 horas', 'new': '5 horas'}"
+    },
+    {
+      "type": "unit_expansion",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'i >= 5 horas', 'new': 'Intervalo mayor o igual a cinco horas'}"
+    },
+    {
+      "type": "omission",
+      "layer": "template",
+      "status": "skipped",
+      "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+    },
+    {
+      "type": "omission",
+      "layer": "template",
+      "status": "skipped",
+      "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+    },
+    {
+      "type": "omission",
+      "layer": "template",
+      "status": "skipped",
+      "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+    },
+    {
+      "type": "omission",
+      "layer": "template",
+      "status": "skipped",
+      "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+    },
+    {
+      "type": "reorder",
+      "layer": "template",
+      "status": "skipped",
+      "reason": "same_target_conflict with earlier rule at canonical key (<Layer.TEMPLATE: 'template'>, 'resumen', 'Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))')"
+    },
+    {
+      "type": "expansion",
+      "layer": "text_variable",
+      "status": "skipped",
+      "reason": "same_target_conflict with earlier rule at canonical key (<Layer.TEXT_VARIABLE: 'text_variable'>, 'L', '%B=e')"
+    },
+    {
+      "type": "omission",
+      "layer": "template",
+      "status": "skipped",
+      "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+    },
+    {
+      "type": "omission",
+      "layer": "template",
+      "status": "skipped",
+      "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+    }
+  ],
+  "provenance": [
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Diurno\"\nCondición asociada: %B=a\nOtros fragmentos de la misma variable: %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Diurno\",\n  \"new\": \"Diurno, es decir, durante las horas de luz natural, excluyendo las horas nocturnas, para minimizar el impacto en el tráfico ferroviario y garantizar la seguridad en la ejecución de la obra.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Diurno",
+        "new": "Diurno, es decir, durante las horas de luz natural, excluyendo las horas nocturnas, para minimizar el impacto en el tráfico ferroviario y garantizar la seguridad en la ejecución de la obra.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\"\nVariable a omitir: B  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"omitted_var\": \"B\"\n}\n```",
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"omitted_var\": \"B\"\n}\n```"
+      ],
+      "validated_payload": null,
+      "skipped": {
+        "type": "omission",
+        "layer": "template",
+        "status": "skipped",
+        "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+      }
+    },
+    {
+      "modification_type": "synonym_label",
+      "rendered_prompt": "Eres un experto en terminología técnica de construcción ferroviaria en español.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nEje de parámetro: CONDICIONES DE EJECUCIÓN\nValores actuales: a: Volumen relevante; b: Volumen escaso; c: Cualquier condición de ejecución\n\nGenera un sinónimo natural en español técnico para cada valor, preservando\nexactamente el significado paramétrico (no cambies el referente físico).\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor, sin la\netiqueta de letra inicial: escribe \"Diurno\", no \"a: Diurno\", y no lo reformules.\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem, ni añadas justificaciones — sólo el sinónimo equivalente.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje. Si dos valores originales son cercanos (p. ej. \"Nocturno\" y\n\"Nocturno Excepcional\"), preserva la distinción en el sinónimo.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"synonyms\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"synonyms\": [\n    {\"original\": \"Volumen relevante\", \"new\": \"Alto volumen\"},\n    {\"original\": \"Volumen escaso\", \"new\": \"Bajo volumen\"},\n    {\"original\": \"Cualquier condición de ejecución\", \"new\": \"Sin restricciones\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "synonyms": [
+          {
+            "original": "Volumen relevante",
+            "new": "Alto volumen"
+          },
+          {
+            "original": "Volumen escaso",
+            "new": "Bajo volumen"
+          },
+          {
+            "original": "Cualquier condición de ejecución",
+            "new": "Sin restricciones"
+          }
+        ]
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Nocturno Excepcional\"\nCondición asociada: %B=d\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Nocturno Excepcional\",\n  \"new\": \"Nocturno Especial\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Nocturno Excepcional",
+        "new": "Nocturno Especial",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "new_param",
+      "rendered_prompt": "Eres un experto en catalogación técnica de obra civil ferroviaria.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nEjes existentes: A: Nº TUBOS; B: TRABAJO; C: BANDA DE MANTENIMIENTO; D: CONDICIONES DE EJECUCIÓN\n\nPropón UN nuevo eje de parámetro coherente con el concepto. El nuevo eje\ndebe ser claramente distinguible de los existentes (sin solapamiento semántico).\nDebe tener entre 2 y 5 valores discretos.\n\nRestricción: el nuevo eje debe estar en la lista de ejes admisibles:\n[]\n\nResponde SOLO con un JSON:\n{\n  \"new_axis_label\": \"...\",\n  \"values\": [\n    {\"label\": \"a\", \"value\": \"...\"},\n    ...\n  ],\n  \"var_definition\": \"$X = \\\"...\\\" * (%G=a) + ...\",\n  \"template_patch\": \"..., con $X, ...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"new_axis_label\": \"MATERIAL DE AISLAMIENTO\",\n  \"values\": [\n    {\"label\": \"a\", \"value\": \"Polietileno\"},\n    {\"label\": \"b\", \"value\": \"PVC\"},\n    {\"label\": \"c\", \"value\": \"GRP\"},\n    {\"label\": \"d\", \"value\": \"Cobre\"},\n    {\"label\": \"e\", \"value\": \"Acero\"}\n  ],\n  \"var_definition\": \"$X = \\\"Polietileno\\\" * (%G=a) + \\\"PVC\\\" * (%G=b) + \\\"GRP\\\" * (%G=c) + \\\"Cobre\\\" * (%G=d) + \\\"Acero\\\" * (%G=e)\",\n  \"template_patch\": \"Suministro y ejecución de canalización de $A tubo(s) de $X 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D)), con $X, ...\"\n}\n```"
+      ],
+      "validated_payload": {
+        "new_axis_label": "MATERIAL DE AISLAMIENTO",
+        "values": [
+          {
+            "label": "a",
+            "value": "Polietileno"
+          },
+          {
+            "label": "b",
+            "value": "PVC"
+          },
+          {
+            "label": "c",
+            "value": "GRP"
+          },
+          {
+            "label": "d",
+            "value": "Cobre"
+          },
+          {
+            "label": "e",
+            "value": "Acero"
+          }
+        ],
+        "var_definition": "$X = \"Polietileno\" * (%G=a) + \"PVC\" * (%G=b) + \"GRP\" * (%G=c) + \"Cobre\" * (%G=d) + \"Acero\" * (%G=e)",
+        "template_patch": "Suministro y ejecución de canalización de $A tubo(s) de $X 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D)), con $X, ..."
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "num_to_text",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a escribir números en palabras\npara valores numéricos de un parámetro de catálogo ferroviario.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nEje de parámetro: Nº TUBOS\nValores actuales: a: 1; b: 2\n\nPara cada valor numérico, escribe su forma en palabras en español. Mantén\nla misma magnitud y unidad (no conviertas: \"2\" → \"dos\", no \"2\" → \"two\" ni\n\"2 km\" → \"dos kilómetros\" si la unidad no estaba en el valor original).\nPreserva exactamente el significado paramétrico.\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor tal como\naparece, sin la etiqueta de letra inicial (p. ej. \"a: \") y sin reformularlo.\nSi un valor no es numérico, devuélvelo sin cambios en \"new\".\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem — sólo el número en palabras.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"numerals\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"numerals\": [\n    {\"original\": \"1\", \"new\": \"un tubo\"},\n    {\"original\": \"2\", \"new\": \"dos tubos\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "numerals": [
+          {
+            "original": "1",
+            "new": "un tubo"
+          },
+          {
+            "original": "2",
+            "new": "dos tubos"
+          }
+        ]
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "synonym_label",
+      "rendered_prompt": "Eres un experto en terminología técnica de construcción ferroviaria en español.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nEje de parámetro: TRABAJO\nValores actuales: a: Diurno; b: Nocturno; c: Diurno Excepcional; d: Nocturno Excepcional; e: Cualquier franja horaria; f: Cualquier franja horaria excepcional\n\nGenera un sinónimo natural en español técnico para cada valor, preservando\nexactamente el significado paramétrico (no cambies el referente físico).\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor, sin la\netiqueta de letra inicial: escribe \"Diurno\", no \"a: Diurno\", y no lo reformules.\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem, ni añadas justificaciones — sólo el sinónimo equivalente.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje. Si dos valores originales son cercanos (p. ej. \"Nocturno\" y\n\"Nocturno Excepcional\"), preserva la distinción en el sinónimo.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"synonyms\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"synonyms\": [\n    {\"original\": \"Diurno\", \"new\": \"Horario Diurno\"},\n    {\"original\": \"Nocturno\", \"new\": \"Horario Nocturno\"},\n    {\"original\": \"Diurno Excepcional\", \"new\": \"Horario Diurno Especial\"},\n    {\"original\": \"Nocturno Excepcional\", \"new\": \"Horario Nocturno Especial\"},\n    {\"original\": \"Cualquier franja horaria\", \"new\": \"Horario Flexible\"},\n    {\"original\": \"Cualquier franja horaria excepcional\", \"new\": \"Horario Flexible Especial\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "synonyms": [
+          {
+            "original": "Diurno",
+            "new": "Horario Diurno"
+          },
+          {
+            "original": "Nocturno",
+            "new": "Horario Nocturno"
+          },
+          {
+            "original": "Diurno Excepcional",
+            "new": "Horario Diurno Especial"
+          },
+          {
+            "original": "Nocturno Excepcional",
+            "new": "Horario Nocturno Especial"
+          },
+          {
+            "original": "Cualquier franja horaria",
+            "new": "Horario Flexible"
+          },
+          {
+            "original": "Cualquier franja horaria excepcional",
+            "new": "Horario Flexible Especial"
+          }
+        ]
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "synonym_label",
+      "rendered_prompt": "Eres un experto en terminología técnica de construcción ferroviaria en español.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nEje de parámetro: BANDA DE MANTENIMIENTO\nValores actuales: a:  i >= 5 horas; b: 3 <= i < 5 horas; c: i < 3 horas; d: No necesita intervalo\n\nGenera un sinónimo natural en español técnico para cada valor, preservando\nexactamente el significado paramétrico (no cambies el referente físico).\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor, sin la\netiqueta de letra inicial: escribe \"Diurno\", no \"a: Diurno\", y no lo reformules.\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem, ni añadas justificaciones — sólo el sinónimo equivalente.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje. Si dos valores originales son cercanos (p. ej. \"Nocturno\" y\n\"Nocturno Excepcional\"), preserva la distinción en el sinónimo.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"synonyms\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"synonyms\": [\n    {\"original\": \"Diurno\", \"new\": \"Mantenimiento Extensivo\"},\n    {\"original\": \"Intermedio\", \"new\": \"Mantenimiento Moderado\"},\n    {\"original\": \"Breve\", \"new\": \"Mantenimiento Corto\"},\n    {\"original\": \"No necesita intervalo\", \"new\": \"Sin Mantenimiento\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "synonyms": [
+          {
+            "original": "Diurno",
+            "new": "Mantenimiento Extensivo"
+          },
+          {
+            "original": "Intermedio",
+            "new": "Mantenimiento Moderado"
+          },
+          {
+            "original": "Breve",
+            "new": "Mantenimiento Corto"
+          },
+          {
+            "original": "No necesita intervalo",
+            "new": "Sin Mantenimiento"
+          }
+        ]
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "synonym_label",
+      "rendered_prompt": "Eres un experto en terminología técnica de construcción ferroviaria en español.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nEje de parámetro: CONDICIONES DE EJECUCIÓN\nValores actuales: a: Volumen relevante; b: Volumen escaso; c: Cualquier condición de ejecución\n\nGenera un sinónimo natural en español técnico para cada valor, preservando\nexactamente el significado paramétrico (no cambies el referente físico).\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor, sin la\netiqueta de letra inicial: escribe \"Diurno\", no \"a: Diurno\", y no lo reformules.\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem, ni añadas justificaciones — sólo el sinónimo equivalente.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje. Si dos valores originales son cercanos (p. ej. \"Nocturno\" y\n\"Nocturno Excepcional\"), preserva la distinción en el sinónimo.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"synonyms\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"synonyms\": [\n    {\"original\": \"Volumen relevante\", \"new\": \"Alto volumen\"},\n    {\"original\": \"Volumen escaso\", \"new\": \"Bajo volumen\"},\n    {\"original\": \"Cualquier condición de ejecución\", \"new\": \"Sin restricciones\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "synonyms": [
+          {
+            "original": "Volumen relevante",
+            "new": "Alto volumen"
+          },
+          {
+            "original": "Volumen escaso",
+            "new": "Bajo volumen"
+          },
+          {
+            "original": "Cualquier condición de ejecución",
+            "new": "Sin restricciones"
+          }
+        ]
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "unit_conversion",
+      "rendered_prompt": "Eres un ingeniero de obra civil ferroviaria. Vas a convertir valores de\nparámetro a una unidad equivalente del Sistema Internacional.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nEje de parámetro: BANDA DE MANTENIMIENTO\nValores actuales: a:  i >= 5 horas; b: 3 <= i < 5 horas; c: i < 3 horas; d: No necesita intervalo\n\nPara cada valor, expresa la misma magnitud física en una unidad equivalente\n(p. ej., \"1000 m\" → \"1 km\", \"0.5 kg\" → \"500 g\"). El valor convertido debe\nser numéricamente exacto y preservar exactamente el referente físico. No\ncambies la magnitud, sólo la representación de unidad.\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor tal como\naparece, sin la etiqueta de letra inicial (p. ej. \"a: \") y sin reformularlo.\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem — sólo el valor con la unidad convertida.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"synonyms\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"synonyms\": [\n    {\"original\": \"i >= 5 horas\", \"new\": \"5 horas\"},\n    {\"original\": \"3 <= i < 5 horas\", \"new\": \"3 a 5 horas\"},\n    {\"original\": \"i < 3 horas\", \"new\": \"menos de 3 horas\"},\n    {\"original\": \"No necesita intervalo\", \"new\": \"sin intervalo\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "synonyms": [
+          {
+            "original": "i >= 5 horas",
+            "new": "5 horas"
+          },
+          {
+            "original": "3 <= i < 5 horas",
+            "new": "3 a 5 horas"
+          },
+          {
+            "original": "i < 3 horas",
+            "new": "menos de 3 horas"
+          },
+          {
+            "original": "No necesita intervalo",
+            "new": "sin intervalo"
+          }
+        ]
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "unit_expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir las unidades abreviadas\nde un parámetro a su forma completa.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nEje de parámetro: BANDA DE MANTENIMIENTO\nValores actuales: a:  i >= 5 horas; b: 3 <= i < 5 horas; c: i < 3 horas; d: No necesita intervalo\n\nPara cada valor, sustituye la unidad abreviada por su nombre completo en\nespañol (p. ej., \"mm\" → \"milímetros\", \"kg\" → \"kilogramos\", \"m²\" → \"metros\ncuadrados\"). Conserva la magnitud numérica exacta y el referente físico.\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor tal como\naparece, sin la etiqueta de letra inicial (p. ej. \"a: \") y sin reformularlo.\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem — sólo el valor con la unidad expandida.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"synonyms\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"synonyms\": [\n    {\"original\": \"i >= 5 horas\", \"new\": \"Intervalo mayor o igual a cinco horas\"},\n    {\"original\": \"3 <= i < 5 horas\", \"new\": \"Intervalo entre tres y cinco horas\"},\n    {\"original\": \"i < 3 horas\", \"new\": \"Intervalo menor a tres horas\"},\n    {\"original\": \"No necesita intervalo\", \"new\": \"Sin intervalo requerido\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "synonyms": [
+          {
+            "original": "i >= 5 horas",
+            "new": "Intervalo mayor o igual a cinco horas"
+          },
+          {
+            "original": "3 <= i < 5 horas",
+            "new": "Intervalo entre tres y cinco horas"
+          },
+          {
+            "original": "i < 3 horas",
+            "new": "Intervalo menor a tres horas"
+          },
+          {
+            "original": "No necesita intervalo",
+            "new": "Sin intervalo requerido"
+          }
+        ]
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Diurno\"\nCondición asociada: %B=a\nOtros fragmentos de la misma variable: %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Diurno\",\n  \"new\": \"Horario Diurno\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Diurno",
+        "new": "Horario Diurno",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Nocturno\"\nCondición asociada: %B=b\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Nocturno\",\n  \"new\": \"Noche\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Nocturno",
+        "new": "Noche",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Diurno Excepcional\"\nCondición asociada: %B=c\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Diurno Excepcional\",\n  \"new\": \"Diurno Especial\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Diurno Excepcional",
+        "new": "Diurno Especial",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Nocturno Excepcional\"\nCondición asociada: %B=d\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Nocturno Excepcional\",\n  \"new\": \"Nocturno Especial\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Nocturno Excepcional",
+        "new": "Nocturno Especial",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Cualquier frana horaria\"\nCondición asociada: %B=e\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier frana horaria\",\n  \"new\": \"Horario flexible\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier frana horaria",
+        "new": "Horario flexible",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Cualquier franja horaria excepcional\"\nCondición asociada: %B=f\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier franja horaria excepcional\",\n  \"new\": \"Horario Excepcional\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier franja horaria excepcional",
+        "new": "Horario Excepcional",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: N\nFragmento original: \"Volumen relevante\"\nCondición asociada: %D=a\nOtros fragmentos de la misma variable: %D=b: Volumen escaso; %D=c: Cualquier condición de ejecución\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen relevante\",\n  \"new\": \"Volumen alto\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen relevante",
+        "new": "Volumen alto",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: N\nFragmento original: \"Volumen escaso\"\nCondición asociada: %D=b\nOtros fragmentos de la misma variable: %D=a: Volumen relevante; %D=c: Cualquier condición de ejecución\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen escaso\",\n  \"new\": \"Volumen bajo\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen escaso",
+        "new": "Volumen bajo",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: N\nFragmento original: \"Cualquier condición de ejecución\"\nCondición asociada: %D=c\nOtros fragmentos de la misma variable: %D=a: Volumen relevante; %D=b: Volumen escaso\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier condición de ejecución\",\n  \"new\": \"Ejecución variable\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier condición de ejecución",
+        "new": "Ejecución variable",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Diurno\"\nCondición asociada: %B=a\nOtros fragmentos de la misma variable: %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Diurno\",\n  \"new\": \"Durante las horas de luz natural, excluyendo las horas nocturnas, para minimizar el impacto en el tráfico ferroviario y garantizar condiciones de seguridad óptimas.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Diurno",
+        "new": "Durante las horas de luz natural, excluyendo las horas nocturnas, para minimizar el impacto en el tráfico ferroviario y garantizar condiciones de seguridad óptimas.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Nocturno\"\nCondición asociada: %B=b\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Nocturno\",\n  \"new\": \"Ejecución durante la noche, evitando interrupciones en el tráfico ferroviario y minimizando el impacto en la operación diaria.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Nocturno",
+        "new": "Ejecución durante la noche, evitando interrupciones en el tráfico ferroviario y minimizando el impacto en la operación diaria.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Diurno Excepcional\"\nCondición asociada: %B=c\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Diurno Excepcional\",\n  \"new\": \"Diurno Excepcional, que implica trabajos realizados durante el horario diurno pero con condiciones especiales que permiten excepciones a las normas habituales de operación.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Diurno Excepcional",
+        "new": "Diurno Excepcional, que implica trabajos realizados durante el horario diurno pero con condiciones especiales que permiten excepciones a las normas habituales de operación.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Nocturno Excepcional\"\nCondición asociada: %B=d\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Nocturno Excepcional\",\n  \"new\": \"Ejecución programada durante horas nocturnas, con condiciones excepcionales para minimizar el impacto en el tráfico ferroviario y garantizar la seguridad.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Nocturno Excepcional",
+        "new": "Ejecución programada durante horas nocturnas, con condiciones excepcionales para minimizar el impacto en el tráfico ferroviario y garantizar la seguridad.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Cualquier frana horaria\"\nCondición asociada: %B=e\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier frana horaria\",\n  \"new\": \"Cualquier franja horaria, permitiendo flexibilidad en la programación de trabajos para adaptarse a las necesidades operativas y logísticas del proyecto.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier frana horaria",
+        "new": "Cualquier franja horaria, permitiendo flexibilidad en la programación de trabajos para adaptarse a las necesidades operativas y logísticas del proyecto.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Cualquier franja horaria excepcional\"\nCondición asociada: %B=f\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier franja horaria excepcional\",\n  \"new\": \"Cualquier franja horaria excepcional, incluyendo aquellas que no se ajustan a los horarios estándar de trabajo diurno o nocturno, permitiendo flexibilidad en la programación de actividades.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier franja horaria excepcional",
+        "new": "Cualquier franja horaria excepcional, incluyendo aquellas que no se ajustan a los horarios estándar de trabajo diurno o nocturno, permitiendo flexibilidad en la programación de actividades.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: N\nFragmento original: \"Volumen relevante\"\nCondición asociada: %D=a\nOtros fragmentos de la misma variable: %D=b: Volumen escaso; %D=c: Cualquier condición de ejecución\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen relevante\",\n  \"new\": \"Volumen relevante, indicando una cantidad significativa que requiere una planificación y ejecución cuidadosa para asegurar la eficiencia y cumplimiento de los estándares de construcción.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen relevante",
+        "new": "Volumen relevante, indicando una cantidad significativa que requiere una planificación y ejecución cuidadosa para asegurar la eficiencia y cumplimiento de los estándares de construcción.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: N\nFragmento original: \"Volumen escaso\"\nCondición asociada: %D=b\nOtros fragmentos de la misma variable: %D=a: Volumen relevante; %D=c: Cualquier condición de ejecución\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen escaso\",\n  \"new\": \"Volumen escaso, indicando una cantidad mínima de tubos necesarios para la ejecución del proyecto bajo las condiciones especificadas.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen escaso",
+        "new": "Volumen escaso, indicando una cantidad mínima de tubos necesarios para la ejecución del proyecto bajo las condiciones especificadas.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: N\nFragmento original: \"Cualquier condición de ejecución\"\nCondición asociada: %D=c\nOtros fragmentos de la misma variable: %D=a: Volumen relevante; %D=b: Volumen escaso\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier condición de ejecución\",\n  \"new\": \"Cualquier condición de ejecución, incluyendo variaciones en el terreno o condiciones climáticas adversas, que puedan afectar la instalación.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier condición de ejecución",
+        "new": "Cualquier condición de ejecución, incluyendo variaciones en el terreno o condiciones climáticas adversas, que puedan afectar la instalación.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Diurno\"\nCondición asociada: %B=a\nOtros fragmentos de la misma variable: %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Diurno\",\n  \"new\": \"Horario de día\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Diurno",
+        "new": "Horario de día",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Nocturno\"\nCondición asociada: %B=b\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Nocturno\",\n  \"new\": \"Horario nocturno\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Nocturno",
+        "new": "Horario nocturno",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Diurno Excepcional\"\nCondición asociada: %B=c\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Diurno Excepcional\",\n  \"new\": \"Horario Diurno Especial\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Diurno Excepcional",
+        "new": "Horario Diurno Especial",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Nocturno Excepcional\"\nCondición asociada: %B=d\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Nocturno Excepcional\",\n  \"new\": \"Nocturno Especial\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Nocturno Excepcional",
+        "new": "Nocturno Especial",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Cualquier frana horaria\"\nCondición asociada: %B=e\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=f: Cualquier franja horaria excepcional\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier frana horaria\",\n  \"new\": \"En cualquier franja horaria\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier frana horaria",
+        "new": "En cualquier franja horaria",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Cualquier franja horaria excepcional\"\nCondición asociada: %B=f\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier franja horaria excepcional\",\n  \"new\": \"Horario extraordinario\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier franja horaria excepcional",
+        "new": "Horario extraordinario",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: N\nFragmento original: \"Volumen relevante\"\nCondición asociada: %D=a\nOtros fragmentos de la misma variable: %D=b: Volumen escaso; %D=c: Cualquier condición de ejecución\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen relevante\",\n  \"new\": \"Volumen considerable\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen relevante",
+        "new": "Volumen considerable",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: N\nFragmento original: \"Volumen escaso\"\nCondición asociada: %D=b\nOtros fragmentos de la misma variable: %D=a: Volumen relevante; %D=c: Cualquier condición de ejecución\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen escaso\",\n  \"new\": \"Cantidad reducida\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen escaso",
+        "new": "Cantidad reducida",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: N\nFragmento original: \"Cualquier condición de ejecución\"\nCondición asociada: %D=c\nOtros fragmentos de la misma variable: %D=a: Volumen relevante; %D=b: Volumen escaso\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier condición de ejecución\",\n  \"new\": \"Condiciones diversas de ejecución\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier condición de ejecución",
+        "new": "Condiciones diversas de ejecución",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\"\nVariable a omitir: A  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\",\n  \"new\": \"Suministro y ejecución de canalización de tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\",\n  \"omitted_var\": \"A\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+        "new": "Suministro y ejecución de canalización de tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+        "omitted_var": "A"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\"\nVariable a omitir: L  (corresponde al parámetro: TRABAJO)\n\nReescribe la plantilla eliminando toda mención al parámetro TRABAJO,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\",\n  \"new\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($M(%C)/$N(%D))\",\n  \"omitted_var\": \"L\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+        "new": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($M(%C)/$N(%D))",
+        "omitted_var": "L"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\"\nVariable a omitir: M  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\",\n  \"new\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$N(%D))\",\n  \"omitted_var\": \"M\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+        "new": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$N(%D))",
+        "omitted_var": "M"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\"\nVariable a omitir: N  (corresponde al parámetro: CONDICIONES DE EJECUCIÓN)\n\nReescribe la plantilla eliminando toda mención al parámetro CONDICIONES DE EJECUCIÓN,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\",\n  \"new\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C))\",\n  \"omitted_var\": \"N\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+        "new": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C))",
+        "omitted_var": "N"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\"\nVariable a omitir: A  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"omitted_var\": \"A\"\n}\n```",
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"omitted_var\": \"A\"\n}\n```"
+      ],
+      "validated_payload": null,
+      "skipped": {
+        "type": "omission",
+        "layer": "template",
+        "status": "skipped",
+        "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+      }
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\"\nVariable a omitir: B  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"omitted_var\": \"B\"\n}\n```",
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"omitted_var\": \"B\"\n}\n```"
+      ],
+      "validated_payload": null,
+      "skipped": {
+        "type": "omission",
+        "layer": "template",
+        "status": "skipped",
+        "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+      }
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\"\nVariable a omitir: C  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Condiciones de ejecución: $D\",\n  \"omitted_var\": \"C\"\n}\n```",
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Condiciones de ejecución: $D\",\n  \"omitted_var\": \"C\"\n}\n```"
+      ],
+      "validated_payload": null,
+      "skipped": {
+        "type": "omission",
+        "layer": "template",
+        "status": "skipped",
+        "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+      }
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\"\nVariable a omitir: D  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C\",\n  \"omitted_var\": \"D\"\n}\n```",
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C\",\n  \"omitted_var\": \"D\"\n}\n```"
+      ],
+      "validated_payload": null,
+      "skipped": {
+        "type": "omission",
+        "layer": "template",
+        "status": "skipped",
+        "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+      }
+    },
+    {
+      "modification_type": "reorder",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reordenar los constituyentes\nde una plantilla de catálogo ferroviario, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\"\nConstituyentes reordenables: $A; $L; $M; $N\n\nReescribe la plantilla cambiando el orden de los constituyentes indicados.\nConserva TODAS las variables ($A, $B, …) intactas (no las renombres, no\nlas omitas). El texto resultante debe ser gramatical, coherente y debe\nexpresar la misma información que el original.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\",\n  \"new\": \"Suministro y ejecución de canalización de ($L(%B)/$M(%C)/$N(%D)) $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+        "new": "Suministro y ejecución de canalización de ($L(%B)/$M(%C)/$N(%D)) $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "reorder",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reordenar los constituyentes\nde una plantilla de catálogo ferroviario, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\"\nConstituyentes reordenables: $A; $B; $C; $D\n\nReescribe la plantilla cambiando el orden de los constituyentes indicados.\nConserva TODAS las variables ($A, $B, …) intactas (no las renombres, no\nlas omitas). El texto resultante debe ser gramatical, coherente y debe\nexpresar la misma información que el original.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Condiciones de ejecución: $D Banda de mantenimiento: $C Trabajo: $B\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+        "new": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Condiciones de ejecución: $D Banda de mantenimiento: $C Trabajo: $B",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "template_paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reescribir la plantilla completa\nde un catálogo ferroviario con un fraseo alternativo, conservando\nexactamente el significado y todas las variables paramétricas.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nCampo destino: RESUMEN\nPlantilla actual: \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\"\nVariables que deben preservarse íntegras: $A, $L(%B), $M(%C), $N(%D)\n\nReescribe la plantilla usando vocabulario, orden y giros alternativos en\nespañol técnico natural (p. ej. \"canalización hormigonada\" → \"conducción\nenterrada\", \"tubos\" → \"conductos\", \"de 110 mm de diámetro\" → \"de diámetro\nnominal 110 mm\"). Conserva todos los datos técnicos (materiales, medidas,\nunidades, marcas de calidad) y el referente físico exacto.\n\nReglas obligatorias:\n\n- Conserva TODAS las variables ($A, $B, $L(%B), $M(%C), …) exactamente\n  como aparecen en la plantilla original: mismos nombres, mismos índices\n  de eje, mismo número de apariciones. No las renombres, no las omitas,\n  no añadas nuevas.\n- El texto resultante debe tener aproximadamente la misma longitud que la\n  plantilla original (entre 0.75 y 1.5 veces su longitud).\n- El resultado debe ser gramatical y coherente en español técnico natural.\n- No añadas justificaciones ni comentarios; devuelve sólo el JSON.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\",\n  \"new\": \"Provisión y colocación de $A conducto(s) de polietileno de diámetro nominal 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+        "new": "Provisión y colocación de $A conducto(s) de polietileno de diámetro nominal 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "template_paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reescribir la plantilla completa\nde un catálogo ferroviario con un fraseo alternativo, conservando\nexactamente el significado y todas las variables paramétricas.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nCampo destino: TEXTO\nPlantilla actual: \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\"\nVariables que deben preservarse íntegras: $A, $B, $C, $D\n\nReescribe la plantilla usando vocabulario, orden y giros alternativos en\nespañol técnico natural (p. ej. \"canalización hormigonada\" → \"conducción\nenterrada\", \"tubos\" → \"conductos\", \"de 110 mm de diámetro\" → \"de diámetro\nnominal 110 mm\"). Conserva todos los datos técnicos (materiales, medidas,\nunidades, marcas de calidad) y el referente físico exacto.\n\nReglas obligatorias:\n\n- Conserva TODAS las variables ($A, $B, $L(%B), $M(%C), …) exactamente\n  como aparecen en la plantilla original: mismos nombres, mismos índices\n  de eje, mismo número de apariciones. No las renombres, no las omitas,\n  no añadas nuevas.\n- El texto resultante debe tener aproximadamente la misma longitud que la\n  plantilla original (entre 0.75 y 1.5 veces su longitud).\n- El resultado debe ser gramatical y coherente en español técnico natural.\n- No añadas justificaciones ni comentarios; devuelve sólo el JSON.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"\\\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"Provisión y colocación de $A conducto(s) de polietileno de diámetro nominal 110 mm 5 At. con topo bajo vías. Labor: $B Zona de mantenimiento: $C Circunstancias de ejecución: $D\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+        "new": "Provisión y colocación de $A conducto(s) de polietileno de diámetro nominal 110 mm 5 At. con topo bajo vías. Labor: $B Zona de mantenimiento: $C Circunstancias de ejecución: $D",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Cualquier frana horaria\"\nCondición asociada: %B=e\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier frana horaria\",\n  \"new\": \"Horario flexible\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier frana horaria",
+        "new": "Horario flexible",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: N\nFragmento original: \"Volumen relevante\"\nCondición asociada: %D=a\nOtros fragmentos de la misma variable: %D=b: Volumen escaso; %D=c: Cualquier condición de ejecución\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen relevante\",\n  \"new\": \"Volumen considerable\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen relevante",
+        "new": "Volumen considerable",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: N\nFragmento original: \"Volumen relevante\"\nCondición asociada: %D=a\nOtros fragmentos de la misma variable: %D=b: Volumen escaso; %D=c: Cualquier condición de ejecución\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen relevante\",\n  \"new\": \"Volumen alto\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen relevante",
+        "new": "Volumen alto",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\"\nVariable a omitir: N  (corresponde al parámetro: CONDICIONES DE EJECUCIÓN)\n\nReescribe la plantilla eliminando toda mención al parámetro CONDICIONES DE EJECUCIÓN,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\",\n  \"new\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C))\",\n  \"omitted_var\": \"N\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+        "new": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C))",
+        "omitted_var": "N"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "reorder",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reordenar los constituyentes\nde una plantilla de catálogo ferroviario, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\"\nConstituyentes reordenables: $A; $L; $M; $N\n\nReescribe la plantilla cambiando el orden de los constituyentes indicados.\nConserva TODAS las variables ($A, $B, …) intactas (no las renombres, no\nlas omitas). El texto resultante debe ser gramatical, coherente y debe\nexpresar la misma información que el original.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\",\n  \"new\": \"Suministro y ejecución de canalización de ($L(%B)/$M(%C)/$N(%D)) $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))",
+        "new": "Suministro y ejecución de canalización de ($L(%B)/$M(%C)/$N(%D)) $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Nocturno Excepcional\"\nCondición asociada: %B=d\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Nocturno Excepcional\",\n  \"new\": \"Nocturno Especial\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Nocturno Excepcional",
+        "new": "Nocturno Especial",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Cualquier frana horaria\"\nCondición asociada: %B=e\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=f: Cualquier franja horaria excepcional\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier frana horaria\",\n  \"new\": \"En cualquier franja horaria\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier frana horaria",
+        "new": "En cualquier franja horaria",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Cualquier frana horaria\"\nCondición asociada: %B=e\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier frana horaria\",\n  \"new\": \"Cualquier franja horaria, permitiendo flexibilidad en la programación de trabajos para adaptarse a las necesidades operativas y logísticas del proyecto.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier frana horaria",
+        "new": "Cualquier franja horaria, permitiendo flexibilidad en la programación de trabajos para adaptarse a las necesidades operativas y logísticas del proyecto.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Diurno Excepcional\"\nCondición asociada: %B=c\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Diurno Excepcional\",\n  \"new\": \"Diurno Especial\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Diurno Excepcional",
+        "new": "Diurno Especial",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Cualquier franja horaria excepcional\"\nCondición asociada: %B=f\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=e: Cualquier frana horaria\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier franja horaria excepcional\",\n  \"new\": \"Horario Excepcional\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier franja horaria excepcional",
+        "new": "Horario Excepcional",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\"\nVariable a omitir: D  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C\",\n  \"omitted_var\": \"D\"\n}\n```",
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C\",\n  \"omitted_var\": \"D\"\n}\n```"
+      ],
+      "validated_payload": null,
+      "skipped": {
+        "type": "omission",
+        "layer": "template",
+        "status": "skipped",
+        "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+      }
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nPlantilla actual: \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\"\nVariable a omitir: C  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Condiciones de ejecución: $D\",\n  \"omitted_var\": \"C\"\n}\n```",
+        "```json\n{\n  \"original\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D\",\n  \"new\": \"\\Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Condiciones de ejecución: $D\",\n  \"omitted_var\": \"C\"\n}\n```"
+      ],
+      "validated_payload": null,
+      "skipped": {
+        "type": "omission",
+        "layer": "template",
+        "status": "skipped",
+        "reason": "malformed_llm_response_after_retry: malformed_json: Invalid \\escape"
+      }
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: L\nFragmento original: \"Cualquier frana horaria\"\nCondición asociada: %B=e\nOtros fragmentos de la misma variable: %B=a: Diurno; %B=b: Nocturno; %B=c: Diurno Excepcional; %B=d: Nocturno Excepcional; %B=f: Cualquier franja horaria excepcional\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier frana horaria\",\n  \"new\": \"Horario flexible\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier frana horaria",
+        "new": "Horario flexible",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto: Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))\\\nVariable de texto: N\nFragmento original: \"Volumen relevante\"\nCondición asociada: %D=a\nOtros fragmentos de la misma variable: %D=b: Volumen escaso; %D=c: Cualquier condición de ejecución\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen relevante\",\n  \"new\": \"Volumen relevante, indicando una cantidad significativa que requiere una planificación y ejecución cuidadosa para asegurar la eficiencia y cumplimiento de los estándares de construcción.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen relevante",
+        "new": "Volumen relevante, indicando una cantidad significativa que requiere una planificación y ejecución cuidadosa para asegurar la eficiencia y cumplimiento de los estándares de construcción.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    }
+  ]
+}

@@ -7,9 +7,9 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from collections import defaultdict
-from src.utils.text_processing import normalize_text
-from src.utils.custom_types import DocumentList, EmbeddingVector
-from src.utils.config import Config
+from .text_processing import normalize_text
+from .custom_types import DocumentList, EmbeddingVector
+from .config import Config
 
 #### BM25 INDEX CLASSES ####
 

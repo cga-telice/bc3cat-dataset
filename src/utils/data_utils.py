@@ -3,7 +3,7 @@ import logging
 import pickle
 from pathlib import Path
 from typing import Optional, List, Tuple
-from src.utils.custom_types import DocumentList
+from .custom_types import DocumentList
 import random
 
 def setup_logging():

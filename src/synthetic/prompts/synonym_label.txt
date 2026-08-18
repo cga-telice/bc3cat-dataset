@@ -1,0 +1,28 @@
+Eres un experto en terminología técnica de construcción ferroviaria en español.
+
+Concepto: {concept}
+Eje de parámetro: {axis_label}
+Valores actuales: {value_list}
+
+Genera un sinónimo natural en español técnico para cada valor, preservando
+exactamente el significado paramétrico (no cambies el referente físico).
+
+El campo "original" debe copiar EXACTAMENTE el texto de cada valor, sin la
+etiqueta de letra inicial: escribe "Diurno", no "a: Diurno", y no lo reformules.
+
+El campo "new" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo
+8 palabras). No copies frases del campo Concepto, ni redactes descripciones
+completas del ítem, ni añadas justificaciones — sólo el sinónimo equivalente.
+
+El campo "new" de cada entrada debe ser distinto del valor "original" de
+las demás entradas del mismo eje: no crees colisiones entre valores del
+mismo eje. Si dos valores originales son cercanos (p. ej. "Nocturno" y
+"Nocturno Excepcional"), preserva la distinción en el sinónimo.
+
+Responde SOLO con un JSON con la forma:
+{
+  "synonyms": [
+    {"original": "...", "new": "..."},
+    ...
+  ]
+}

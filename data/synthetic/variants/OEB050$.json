@@ -1,0 +1,1142 @@
+{
+  "concept_key": "OEB050$",
+  "concept_resumen": " Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\",
+  "parent_key": "",
+  "variants": [
+    {
+      "condition": "full_random_mix",
+      "modification_type": "expansion",
+      "target_id_repr": "(('L', '%C=b'), ('TEXTO', '$C'), ('L', '%C=b'), ('L', '%C=c'))",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "L",
+          "condition": "%C=b",
+          "new": "Volumen escaso, indicando una cantidad mínima de material o espacio necesario para la ejecución de la canalización."
+        },
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%C=c",
+          "new": "Ejecución variable"
+        },
+        {
+          "type": "omission",
+          "field": "TEXTO",
+          "original": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.",
+          "new": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento."
+        }
+      ]
+    },
+    {
+      "condition": "new_param_only",
+      "modification_type": "new_param",
+      "target_id_repr": "(None,)",
+      "rules": [
+        {
+          "type": "new_param",
+          "param": "D",
+          "label": "MATERIAL DE PROTECCIÓN",
+          "values": [
+            {
+              "label": "a",
+              "value": "POLIETILENO"
+            },
+            {
+              "label": "b",
+              "value": "POLIPROPILENO"
+            },
+            {
+              "label": "c",
+              "value": "POLICARBONATO"
+            },
+            {
+              "label": "d",
+              "value": "ACERO GALVANIZADO"
+            },
+            {
+              "label": "e",
+              "value": "FIBRA DE VIDRIO"
+            }
+          ],
+          "metadata": {
+            "var_definition": "$X = \"POLIETILENO\" * (%G=a) + \"POLIPROPILENO\" * (%G=b) + \"POLICARBONATO\" * (%G=c) + \"ACERO GALVANIZADO\" * (%G=d) + \"FIBRA DE VIDRIO\" * (%G=e)",
+            "template_patch": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento, con $X, (-/-/$L(%C))"
+          }
+        }
+      ]
+    },
+    {
+      "condition": "single_L1_synonym_label",
+      "modification_type": "synonym_label",
+      "target_id_repr": "('C',)",
+      "rules": [
+        {
+          "type": "synonym_label",
+          "param": "C",
+          "value": "a",
+          "original": "Volumen relevante",
+          "new": "Alto Volumen"
+        },
+        {
+          "type": "synonym_label",
+          "param": "C",
+          "value": "b",
+          "original": "Volumen escaso",
+          "new": "Bajo Volumen"
+        },
+        {
+          "type": "synonym_label",
+          "param": "C",
+          "value": "c",
+          "original": "Cualquier condición de ejecución",
+          "new": "Condición General"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_compression",
+      "modification_type": "compression",
+      "target_id_repr": "(('L', '%C=a'),)",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%C=a",
+          "new": "Volumen alto"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_compression",
+      "modification_type": "compression",
+      "target_id_repr": "(('L', '%C=b'),)",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%C=b",
+          "new": "Volumen mínimo"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_compression",
+      "modification_type": "compression",
+      "target_id_repr": "(('L', '%C=c'),)",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%C=c",
+          "new": "Ejecución variable"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_expansion",
+      "modification_type": "expansion",
+      "target_id_repr": "(('L', '%C=a'),)",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "L",
+          "condition": "%C=a",
+          "new": "Volumen relevante, indicando una cantidad significativa de material o espacio necesario para la ejecución del proyecto."
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_expansion",
+      "modification_type": "expansion",
+      "target_id_repr": "(('L', '%C=b'),)",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "L",
+          "condition": "%C=b",
+          "new": "Volumen escaso, indicando una cantidad mínima de material o espacio necesario para la ejecución de la canalización."
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_expansion",
+      "modification_type": "expansion",
+      "target_id_repr": "(('L', '%C=c'),)",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "L",
+          "condition": "%C=c",
+          "new": "Cualquier condición de ejecución, incluyendo variaciones en el volumen de trabajo y características del terreno, que puedan influir en el proceso de canalización."
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_paraphrase",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('L', '%C=a'),)",
+      "rules": [
+        {
+          "type": "paraphrase",
+          "var": "L",
+          "condition": "%C=a",
+          "new": "Volumen considerable"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_paraphrase",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('L', '%C=b'),)",
+      "rules": [
+        {
+          "type": "paraphrase",
+          "var": "L",
+          "condition": "%C=b",
+          "new": "Volumen reducido"
+        }
+      ]
+    },
+    {
+      "condition": "single_L2_paraphrase",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('L', '%C=c'),)",
+      "rules": [
+        {
+          "type": "paraphrase",
+          "var": "L",
+          "condition": "%C=c",
+          "new": "Condiciones diversas de ejecución"
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_omission",
+      "modification_type": "omission",
+      "target_id_repr": "(('RESUMEN', '$A'),)",
+      "rules": [
+        {
+          "type": "omission",
+          "field": "RESUMEN",
+          "original": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))",
+          "new": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $B de pavimento. (-/-/$L(%C))"
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_omission",
+      "modification_type": "omission",
+      "target_id_repr": "(('RESUMEN', '$B'),)",
+      "rules": [
+        {
+          "type": "omission",
+          "field": "RESUMEN",
+          "original": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))",
+          "new": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A de pavimento. (-/-/$L(%C))"
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_omission",
+      "modification_type": "omission",
+      "target_id_repr": "(('RESUMEN', '$L'),)",
+      "rules": [
+        {
+          "type": "omission",
+          "field": "RESUMEN",
+          "original": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))",
+          "new": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento."
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_omission",
+      "modification_type": "omission",
+      "target_id_repr": "(('TEXTO', '$B'),)",
+      "rules": [
+        {
+          "type": "omission",
+          "field": "TEXTO",
+          "original": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.",
+          "new": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A de pavimento. Condiciones de ejecución: $C."
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_omission",
+      "modification_type": "omission",
+      "target_id_repr": "(('TEXTO', '$C'),)",
+      "rules": [
+        {
+          "type": "omission",
+          "field": "TEXTO",
+          "original": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.",
+          "new": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento."
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_reorder",
+      "modification_type": "reorder",
+      "target_id_repr": "('RESUMEN',)",
+      "rules": [
+        {
+          "type": "reorder",
+          "field": "RESUMEN",
+          "original": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))",
+          "new": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $B, $A de pavimento. (-/-/$L(%C))"
+        }
+      ]
+    },
+    {
+      "condition": "single_L3_reorder",
+      "modification_type": "reorder",
+      "target_id_repr": "('TEXTO',)",
+      "rules": [
+        {
+          "type": "reorder",
+          "field": "TEXTO",
+          "original": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.",
+          "new": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. Condiciones de ejecución: $C. En terreno $A, $B de pavimento."
+        }
+      ]
+    },
+    {
+      "condition": "stacked_2",
+      "modification_type": "reorder",
+      "target_id_repr": "('TEXTO', ('L', '%C=a'))",
+      "rules": [
+        {
+          "type": "expansion",
+          "var": "L",
+          "condition": "%C=a",
+          "new": "Volumen relevante, indicando una cantidad significativa de material o espacio necesario para la ejecución del proyecto."
+        },
+        {
+          "type": "reorder",
+          "field": "TEXTO",
+          "original": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.",
+          "new": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. Condiciones de ejecución: $C. En terreno $A, $B de pavimento."
+        }
+      ]
+    },
+    {
+      "condition": "stacked_3",
+      "modification_type": "omission",
+      "target_id_repr": "(('TEXTO', '$B'), 'A', ('L', '%C=b'))",
+      "rules": [
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%C=b",
+          "new": "Volumen mínimo"
+        },
+        {
+          "type": "omission",
+          "field": "TEXTO",
+          "original": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.",
+          "new": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A de pavimento. Condiciones de ejecución: $C."
+        }
+      ]
+    },
+    {
+      "condition": "stacked_4",
+      "modification_type": "reorder",
+      "target_id_repr": "('RESUMEN', None, ('L', '%C=b'), ('L', '%C=c'))",
+      "rules": [
+        {
+          "type": "new_param",
+          "param": "D",
+          "label": "MATERIAL DE PROTECCIÓN",
+          "values": [
+            {
+              "label": "a",
+              "value": "POLIETILENO"
+            },
+            {
+              "label": "b",
+              "value": "POLIPROPILENO"
+            },
+            {
+              "label": "c",
+              "value": "POLICARBONATO"
+            },
+            {
+              "label": "d",
+              "value": "ACERO GALVANIZADO"
+            },
+            {
+              "label": "e",
+              "value": "FIBRA DE VIDRIO"
+            }
+          ],
+          "metadata": {
+            "var_definition": "$X = \"POLIETILENO\" * (%G=a) + \"POLIPROPILENO\" * (%G=b) + \"POLICARBONATO\" * (%G=c) + \"ACERO GALVANIZADO\" * (%G=d) + \"FIBRA DE VIDRIO\" * (%G=e)",
+            "template_patch": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento, con $X, (-/-/$L(%C))"
+          }
+        },
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%C=b",
+          "new": "Volumen mínimo"
+        },
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%C=c",
+          "new": "Ejecución variable"
+        },
+        {
+          "type": "reorder",
+          "field": "RESUMEN",
+          "original": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))",
+          "new": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $B, $A de pavimento. (-/-/$L(%C))"
+        }
+      ]
+    },
+    {
+      "condition": "stacked_5plus",
+      "modification_type": "paraphrase",
+      "target_id_repr": "(('L', '%C=a'), 'C', ('L', '%C=c'), ('RESUMEN', '$A'), 'A')",
+      "rules": [
+        {
+          "type": "synonym_label",
+          "param": "C",
+          "value": "a",
+          "original": "Volumen relevante",
+          "new": "Alto Volumen"
+        },
+        {
+          "type": "synonym_label",
+          "param": "C",
+          "value": "b",
+          "original": "Volumen escaso",
+          "new": "Bajo Volumen"
+        },
+        {
+          "type": "synonym_label",
+          "param": "C",
+          "value": "c",
+          "original": "Cualquier condición de ejecución",
+          "new": "Condición General"
+        },
+        {
+          "type": "paraphrase",
+          "var": "L",
+          "condition": "%C=a",
+          "new": "Volumen considerable"
+        },
+        {
+          "type": "compression",
+          "var": "L",
+          "condition": "%C=c",
+          "new": "Ejecución variable"
+        },
+        {
+          "type": "omission",
+          "field": "RESUMEN",
+          "original": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))",
+          "new": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $B de pavimento. (-/-/$L(%C))"
+        }
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "type": "compression",
+      "layer": "text_variable",
+      "status": "skipped",
+      "reason": "same_target_conflict with earlier rule at canonical key (<Layer.TEXT_VARIABLE: 'text_variable'>, 'L', '%C=b')"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'blando', 'new': 'Suelo Blando'}"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'medio', 'new': 'Suelo Intermedio'}"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'duro', 'new': 'Suelo Duro'}"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'sin reposición', 'new': 'sin reemplazo'}"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'con reposición', 'new': 'con reemplazo'}"
+    },
+    {
+      "type": "omission",
+      "layer": "template",
+      "status": "skipped",
+      "reason": "schema_validation_failed: placeholders_not_preserved_after_omission: expected=['$B', '$C'] new=['$B'] (omitted 'A')"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'blando', 'new': 'Suelo Blando'}"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'medio', 'new': 'Suelo Intermedio'}"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'duro', 'new': 'Suelo Duro'}"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'blando', 'new': 'Suelo Blando'}"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'medio', 'new': 'Suelo Intermedio'}"
+    },
+    {
+      "type": "synonym_label",
+      "layer": "param_value",
+      "status": "skipped",
+      "reason": "unmatched_payload_entry: {'original': 'duro', 'new': 'Suelo Duro'}"
+    }
+  ],
+  "provenance": [
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Volumen escaso\"\nCondición asociada: %C=b\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=c: Cualquier condición de ejecución\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen escaso\",\n  \"new\": \"Volumen escaso, indicando una cantidad mínima de material o espacio necesario para la ejecución de la canalización.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen escaso",
+        "new": "Volumen escaso, indicando una cantidad mínima de material o espacio necesario para la ejecución de la canalización.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \"\\ Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\"\nVariable a omitir: C  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\",\n  \"new\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento.\",\n  \"omitted_var\": \"C\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.",
+        "new": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento.",
+        "omitted_var": "C"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Volumen escaso\"\nCondición asociada: %C=b\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=c: Cualquier condición de ejecución\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen escaso\",\n  \"new\": \"Volumen mínimo\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen escaso",
+        "new": "Volumen mínimo",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Cualquier condición de ejecución\"\nCondición asociada: %C=c\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=b: Volumen escaso\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier condición de ejecución\",\n  \"new\": \"Ejecución variable\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier condición de ejecución",
+        "new": "Ejecución variable",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "new_param",
+      "rendered_prompt": "Eres un experto en catalogación técnica de obra civil ferroviaria.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nEjes existentes: A:  TERRENO ; B:  PAVIMENTO ; C: CONDICIONES DE EJECUCIÓN\n\nPropón UN nuevo eje de parámetro coherente con el concepto. El nuevo eje\ndebe ser claramente distinguible de los existentes (sin solapamiento semántico).\nDebe tener entre 2 y 5 valores discretos.\n\nRestricción: el nuevo eje debe estar en la lista de ejes admisibles:\n[]\n\nResponde SOLO con un JSON:\n{\n  \"new_axis_label\": \"...\",\n  \"values\": [\n    {\"label\": \"a\", \"value\": \"...\"},\n    ...\n  ],\n  \"var_definition\": \"$X = \\\"...\\\" * (%G=a) + ...\",\n  \"template_patch\": \"..., con $X, ...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"new_axis_label\": \"MATERIAL DE PROTECCIÓN\",\n  \"values\": [\n    {\"label\": \"a\", \"value\": \"POLIETILENO\"},\n    {\"label\": \"b\", \"value\": \"POLIPROPILENO\"},\n    {\"label\": \"c\", \"value\": \"POLICARBONATO\"},\n    {\"label\": \"d\", \"value\": \"ACERO GALVANIZADO\"},\n    {\"label\": \"e\", \"value\": \"FIBRA DE VIDRIO\"}\n  ],\n  \"var_definition\": \"$X = \\\"POLIETILENO\\\" * (%G=a) + \\\"POLIPROPILENO\\\" * (%G=b) + \\\"POLICARBONATO\\\" * (%G=c) + \\\"ACERO GALVANIZADO\\\" * (%G=d) + \\\"FIBRA DE VIDRIO\\\" * (%G=e)\",\n  \"template_patch\": \"Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento, con $X, (-/-/$L(%C))\"\n}\n```"
+      ],
+      "validated_payload": {
+        "new_axis_label": "MATERIAL DE PROTECCIÓN",
+        "values": [
+          {
+            "label": "a",
+            "value": "POLIETILENO"
+          },
+          {
+            "label": "b",
+            "value": "POLIPROPILENO"
+          },
+          {
+            "label": "c",
+            "value": "POLICARBONATO"
+          },
+          {
+            "label": "d",
+            "value": "ACERO GALVANIZADO"
+          },
+          {
+            "label": "e",
+            "value": "FIBRA DE VIDRIO"
+          }
+        ],
+        "var_definition": "$X = \"POLIETILENO\" * (%G=a) + \"POLIPROPILENO\" * (%G=b) + \"POLICARBONATO\" * (%G=c) + \"ACERO GALVANIZADO\" * (%G=d) + \"FIBRA DE VIDRIO\" * (%G=e)",
+        "template_patch": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento, con $X, (-/-/$L(%C))"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "synonym_label",
+      "rendered_prompt": "Eres un experto en terminología técnica de construcción ferroviaria en español.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nEje de parámetro:  TERRENO \nValores actuales: a:  blando ; b:  medio ; c:  duro \n\nGenera un sinónimo natural en español técnico para cada valor, preservando\nexactamente el significado paramétrico (no cambies el referente físico).\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor, sin la\netiqueta de letra inicial: escribe \"Diurno\", no \"a: Diurno\", y no lo reformules.\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem, ni añadas justificaciones — sólo el sinónimo equivalente.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje. Si dos valores originales son cercanos (p. ej. \"Nocturno\" y\n\"Nocturno Excepcional\"), preserva la distinción en el sinónimo.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"synonyms\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"synonyms\": [\n    {\"original\": \"blando\", \"new\": \"Suelo Blando\"},\n    {\"original\": \"medio\", \"new\": \"Suelo Intermedio\"},\n    {\"original\": \"duro\", \"new\": \"Suelo Duro\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "synonyms": [
+          {
+            "original": "blando",
+            "new": "Suelo Blando"
+          },
+          {
+            "original": "medio",
+            "new": "Suelo Intermedio"
+          },
+          {
+            "original": "duro",
+            "new": "Suelo Duro"
+          }
+        ]
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "synonym_label",
+      "rendered_prompt": "Eres un experto en terminología técnica de construcción ferroviaria en español.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nEje de parámetro:  PAVIMENTO \nValores actuales: a:  sin reposición ; b:  con reposición \n\nGenera un sinónimo natural en español técnico para cada valor, preservando\nexactamente el significado paramétrico (no cambies el referente físico).\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor, sin la\netiqueta de letra inicial: escribe \"Diurno\", no \"a: Diurno\", y no lo reformules.\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem, ni añadas justificaciones — sólo el sinónimo equivalente.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje. Si dos valores originales son cercanos (p. ej. \"Nocturno\" y\n\"Nocturno Excepcional\"), preserva la distinción en el sinónimo.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"synonyms\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"synonyms\": [\n    {\"original\": \"sin reposición\", \"new\": \"sin reemplazo\"},\n    {\"original\": \"con reposición\", \"new\": \"con reemplazo\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "synonyms": [
+          {
+            "original": "sin reposición",
+            "new": "sin reemplazo"
+          },
+          {
+            "original": "con reposición",
+            "new": "con reemplazo"
+          }
+        ]
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "synonym_label",
+      "rendered_prompt": "Eres un experto en terminología técnica de construcción ferroviaria en español.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nEje de parámetro: CONDICIONES DE EJECUCIÓN\nValores actuales: a: Volumen relevante; b: Volumen escaso; c: Cualquier condición de ejecución\n\nGenera un sinónimo natural en español técnico para cada valor, preservando\nexactamente el significado paramétrico (no cambies el referente físico).\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor, sin la\netiqueta de letra inicial: escribe \"Diurno\", no \"a: Diurno\", y no lo reformules.\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem, ni añadas justificaciones — sólo el sinónimo equivalente.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje. Si dos valores originales son cercanos (p. ej. \"Nocturno\" y\n\"Nocturno Excepcional\"), preserva la distinción en el sinónimo.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"synonyms\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"synonyms\": [\n    {\"original\": \"Volumen relevante\", \"new\": \"Alto Volumen\"},\n    {\"original\": \"Volumen escaso\", \"new\": \"Bajo Volumen\"},\n    {\"original\": \"Cualquier condición de ejecución\", \"new\": \"Condición General\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "synonyms": [
+          {
+            "original": "Volumen relevante",
+            "new": "Alto Volumen"
+          },
+          {
+            "original": "Volumen escaso",
+            "new": "Bajo Volumen"
+          },
+          {
+            "original": "Cualquier condición de ejecución",
+            "new": "Condición General"
+          }
+        ]
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Volumen relevante\"\nCondición asociada: %C=a\nOtros fragmentos de la misma variable: %C=b: Volumen escaso; %C=c: Cualquier condición de ejecución\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen relevante\",\n  \"new\": \"Volumen alto\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen relevante",
+        "new": "Volumen alto",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Volumen escaso\"\nCondición asociada: %C=b\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=c: Cualquier condición de ejecución\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen escaso\",\n  \"new\": \"Volumen mínimo\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen escaso",
+        "new": "Volumen mínimo",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Cualquier condición de ejecución\"\nCondición asociada: %C=c\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=b: Volumen escaso\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier condición de ejecución\",\n  \"new\": \"Ejecución variable\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier condición de ejecución",
+        "new": "Ejecución variable",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Volumen relevante\"\nCondición asociada: %C=a\nOtros fragmentos de la misma variable: %C=b: Volumen escaso; %C=c: Cualquier condición de ejecución\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen relevante\",\n  \"new\": \"Volumen relevante, indicando una cantidad significativa de material o espacio necesario para la ejecución del proyecto.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen relevante",
+        "new": "Volumen relevante, indicando una cantidad significativa de material o espacio necesario para la ejecución del proyecto.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Volumen escaso\"\nCondición asociada: %C=b\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=c: Cualquier condición de ejecución\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen escaso\",\n  \"new\": \"Volumen escaso, indicando una cantidad mínima de material o espacio necesario para la ejecución de la canalización.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen escaso",
+        "new": "Volumen escaso, indicando una cantidad mínima de material o espacio necesario para la ejecución de la canalización.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Cualquier condición de ejecución\"\nCondición asociada: %C=c\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=b: Volumen escaso\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier condición de ejecución\",\n  \"new\": \"Cualquier condición de ejecución, incluyendo variaciones en el volumen de trabajo y características del terreno, que puedan influir en el proceso de canalización.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier condición de ejecución",
+        "new": "Cualquier condición de ejecución, incluyendo variaciones en el volumen de trabajo y características del terreno, que puedan influir en el proceso de canalización.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Volumen relevante\"\nCondición asociada: %C=a\nOtros fragmentos de la misma variable: %C=b: Volumen escaso; %C=c: Cualquier condición de ejecución\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen relevante\",\n  \"new\": \"Volumen considerable\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen relevante",
+        "new": "Volumen considerable",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Volumen escaso\"\nCondición asociada: %C=b\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=c: Cualquier condición de ejecución\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen escaso\",\n  \"new\": \"Volumen reducido\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen escaso",
+        "new": "Volumen reducido",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Cualquier condición de ejecución\"\nCondición asociada: %C=c\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=b: Volumen escaso\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier condición de ejecución\",\n  \"new\": \"Condiciones diversas de ejecución\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier condición de ejecución",
+        "new": "Condiciones diversas de ejecución",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \" Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\"\nVariable a omitir: A  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))\",\n  \"new\": \"Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $B de pavimento. (-/-/$L(%C))\",\n  \"omitted_var\": \"A\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))",
+        "new": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $B de pavimento. (-/-/$L(%C))",
+        "omitted_var": "A"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \" Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\"\nVariable a omitir: B  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))\",\n  \"new\": \"Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A de pavimento. (-/-/$L(%C))\",\n  \"omitted_var\": \"B\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))",
+        "new": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A de pavimento. (-/-/$L(%C))",
+        "omitted_var": "B"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \" Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\"\nVariable a omitir: L  (corresponde al parámetro: CONDICIONES DE EJECUCIÓN)\n\nReescribe la plantilla eliminando toda mención al parámetro CONDICIONES DE EJECUCIÓN,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))\",\n  \"new\": \"Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento.\",\n  \"omitted_var\": \"L\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))",
+        "new": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento.",
+        "omitted_var": "L"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \"\\ Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\"\nVariable a omitir: A  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\",\n  \"new\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $B de pavimento.\",\n  \"omitted_var\": \"A\"\n}\n```"
+      ],
+      "validated_payload": null,
+      "skipped": {
+        "type": "omission",
+        "layer": "template",
+        "status": "skipped",
+        "reason": "schema_validation_failed: placeholders_not_preserved_after_omission: expected=['$B', '$C'] new=['$B'] (omitted 'A')"
+      }
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \"\\ Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\"\nVariable a omitir: B  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\",\n  \"new\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A de pavimento. Condiciones de ejecución: $C.\",\n  \"omitted_var\": \"B\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.",
+        "new": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A de pavimento. Condiciones de ejecución: $C.",
+        "omitted_var": "B"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \"\\ Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\"\nVariable a omitir: C  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\",\n  \"new\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento.\",\n  \"omitted_var\": \"C\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.",
+        "new": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento.",
+        "omitted_var": "C"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "reorder",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reordenar los constituyentes\nde una plantilla de catálogo ferroviario, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \" Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\"\nConstituyentes reordenables: $A; $B; $L\n\nReescribe la plantilla cambiando el orden de los constituyentes indicados.\nConserva TODAS las variables ($A, $B, …) intactas (no las renombres, no\nlas omitas). El texto resultante debe ser gramatical, coherente y debe\nexpresar la misma información que el original.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))\",\n  \"new\": \"Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $B, $A de pavimento. (-/-/$L(%C))\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))",
+        "new": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $B, $A de pavimento. (-/-/$L(%C))",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "reorder",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reordenar los constituyentes\nde una plantilla de catálogo ferroviario, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \"\\ Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\"\nConstituyentes reordenables: $A; $B; $C\n\nReescribe la plantilla cambiando el orden de los constituyentes indicados.\nConserva TODAS las variables ($A, $B, …) intactas (no las renombres, no\nlas omitas). El texto resultante debe ser gramatical, coherente y debe\nexpresar la misma información que el original.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\",\n  \"new\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. Condiciones de ejecución: $C. En terreno $A, $B de pavimento.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.",
+        "new": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. Condiciones de ejecución: $C. En terreno $A, $B de pavimento.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "reorder",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reordenar los constituyentes\nde una plantilla de catálogo ferroviario, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \"\\ Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\"\nConstituyentes reordenables: $A; $B; $C\n\nReescribe la plantilla cambiando el orden de los constituyentes indicados.\nConserva TODAS las variables ($A, $B, …) intactas (no las renombres, no\nlas omitas). El texto resultante debe ser gramatical, coherente y debe\nexpresar la misma información que el original.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\",\n  \"new\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. Condiciones de ejecución: $C. En terreno $A, $B de pavimento.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.",
+        "new": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. Condiciones de ejecución: $C. En terreno $A, $B de pavimento.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "expansion",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a expandir un fragmento de texto\nbreve de un catálogo de construcción ferroviaria, añadiendo detalle\nexplicativo sin cambiar el significado.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Volumen relevante\"\nCondición asociada: %C=a\nOtros fragmentos de la misma variable: %C=b: Volumen escaso; %C=c: Cualquier condición de ejecución\n\nReescribe el fragmento añadiendo precisión técnica o un complemento que ya\nestuviese implícito en el original. No introduzcas información nueva sobre\ncantidades, unidades, ni referente físico — sólo expande lo que ya estaba.\nEl resultado debe ser estrictamente más largo que el original.\n\nEl campo \"new\" debe estar centrado en el fragmento: expande el significado\ndel fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la\ndescripción completa del ítem. No copies frases del campo Concepto, ni\nenumeres las condiciones del catálogo, ni añadas justificaciones — sólo\nla expansión enriquecida del fragmento.\n\nEl núcleo del campo \"new\" debe seguir siendo distinguible de los \"Otros\nfragmentos de la misma variable\": no crees colisiones entre fragmentos\ndel mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen relevante\",\n  \"new\": \"Volumen relevante, indicando una cantidad significativa de material o espacio necesario para la ejecución del proyecto.\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen relevante",
+        "new": "Volumen relevante, indicando una cantidad significativa de material o espacio necesario para la ejecución del proyecto.",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \"\\ Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\"\nVariable a omitir: B  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.\",\n  \"new\": \"Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A de pavimento. Condiciones de ejecución: $C.\",\n  \"omitted_var\": \"B\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C.",
+        "new": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A de pavimento. Condiciones de ejecución: $C.",
+        "omitted_var": "B"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "synonym_label",
+      "rendered_prompt": "Eres un experto en terminología técnica de construcción ferroviaria en español.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nEje de parámetro:  TERRENO \nValores actuales: a:  blando ; b:  medio ; c:  duro \n\nGenera un sinónimo natural en español técnico para cada valor, preservando\nexactamente el significado paramétrico (no cambies el referente físico).\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor, sin la\netiqueta de letra inicial: escribe \"Diurno\", no \"a: Diurno\", y no lo reformules.\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem, ni añadas justificaciones — sólo el sinónimo equivalente.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje. Si dos valores originales son cercanos (p. ej. \"Nocturno\" y\n\"Nocturno Excepcional\"), preserva la distinción en el sinónimo.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"synonyms\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"synonyms\": [\n    {\"original\": \"blando\", \"new\": \"Suelo Blando\"},\n    {\"original\": \"medio\", \"new\": \"Suelo Intermedio\"},\n    {\"original\": \"duro\", \"new\": \"Suelo Duro\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "synonyms": [
+          {
+            "original": "blando",
+            "new": "Suelo Blando"
+          },
+          {
+            "original": "medio",
+            "new": "Suelo Intermedio"
+          },
+          {
+            "original": "duro",
+            "new": "Suelo Duro"
+          }
+        ]
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Volumen escaso\"\nCondición asociada: %C=b\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=c: Cualquier condición de ejecución\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen escaso\",\n  \"new\": \"Volumen mínimo\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen escaso",
+        "new": "Volumen mínimo",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "reorder",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reordenar los constituyentes\nde una plantilla de catálogo ferroviario, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \" Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\"\nConstituyentes reordenables: $A; $B; $L\n\nReescribe la plantilla cambiando el orden de los constituyentes indicados.\nConserva TODAS las variables ($A, $B, …) intactas (no las renombres, no\nlas omitas). El texto resultante debe ser gramatical, coherente y debe\nexpresar la misma información que el original.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))\",\n  \"new\": \"Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $B, $A de pavimento. (-/-/$L(%C))\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))",
+        "new": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $B, $A de pavimento. (-/-/$L(%C))",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "new_param",
+      "rendered_prompt": "Eres un experto en catalogación técnica de obra civil ferroviaria.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nEjes existentes: A:  TERRENO ; B:  PAVIMENTO ; C: CONDICIONES DE EJECUCIÓN\n\nPropón UN nuevo eje de parámetro coherente con el concepto. El nuevo eje\ndebe ser claramente distinguible de los existentes (sin solapamiento semántico).\nDebe tener entre 2 y 5 valores discretos.\n\nRestricción: el nuevo eje debe estar en la lista de ejes admisibles:\n[]\n\nResponde SOLO con un JSON:\n{\n  \"new_axis_label\": \"...\",\n  \"values\": [\n    {\"label\": \"a\", \"value\": \"...\"},\n    ...\n  ],\n  \"var_definition\": \"$X = \\\"...\\\" * (%G=a) + ...\",\n  \"template_patch\": \"..., con $X, ...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"new_axis_label\": \"MATERIAL DE PROTECCIÓN\",\n  \"values\": [\n    {\"label\": \"a\", \"value\": \"POLIETILENO\"},\n    {\"label\": \"b\", \"value\": \"POLIPROPILENO\"},\n    {\"label\": \"c\", \"value\": \"POLICARBONATO\"},\n    {\"label\": \"d\", \"value\": \"ACERO GALVANIZADO\"},\n    {\"label\": \"e\", \"value\": \"FIBRA DE VIDRIO\"}\n  ],\n  \"var_definition\": \"$X = \\\"POLIETILENO\\\" * (%G=a) + \\\"POLIPROPILENO\\\" * (%G=b) + \\\"POLICARBONATO\\\" * (%G=c) + \\\"ACERO GALVANIZADO\\\" * (%G=d) + \\\"FIBRA DE VIDRIO\\\" * (%G=e)\",\n  \"template_patch\": \"Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento, con $X, (-/-/$L(%C))\"\n}\n```"
+      ],
+      "validated_payload": {
+        "new_axis_label": "MATERIAL DE PROTECCIÓN",
+        "values": [
+          {
+            "label": "a",
+            "value": "POLIETILENO"
+          },
+          {
+            "label": "b",
+            "value": "POLIPROPILENO"
+          },
+          {
+            "label": "c",
+            "value": "POLICARBONATO"
+          },
+          {
+            "label": "d",
+            "value": "ACERO GALVANIZADO"
+          },
+          {
+            "label": "e",
+            "value": "FIBRA DE VIDRIO"
+          }
+        ],
+        "var_definition": "$X = \"POLIETILENO\" * (%G=a) + \"POLIPROPILENO\" * (%G=b) + \"POLICARBONATO\" * (%G=c) + \"ACERO GALVANIZADO\" * (%G=d) + \"FIBRA DE VIDRIO\" * (%G=e)",
+        "template_patch": "Ejecución de canalización de comunicaciones para línea subterránea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento, con $X, (-/-/$L(%C))"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Volumen escaso\"\nCondición asociada: %C=b\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=c: Cualquier condición de ejecución\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen escaso\",\n  \"new\": \"Volumen mínimo\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen escaso",
+        "new": "Volumen mínimo",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Cualquier condición de ejecución\"\nCondición asociada: %C=c\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=b: Volumen escaso\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier condición de ejecución\",\n  \"new\": \"Ejecución variable\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier condición de ejecución",
+        "new": "Ejecución variable",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "paraphrase",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a reformular fragmentos de texto\nde un catálogo de construcción ferroviaria.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Volumen relevante\"\nCondición asociada: %C=a\nOtros fragmentos de la misma variable: %C=b: Volumen escaso; %C=c: Cualquier condición de ejecución\n\nReformula el fragmento manteniendo el significado técnico exacto. No alteres\nlas cantidades, unidades, ni el referente físico. Devuelve UN único fragmento\nalternativo.\n\nEl campo \"new\" debe tener la misma longitud aproximada que el fragmento\noriginal (entre la mitad y el doble de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación equivalente\ndel fragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Volumen relevante\",\n  \"new\": \"Volumen considerable\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Volumen relevante",
+        "new": "Volumen considerable",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "synonym_label",
+      "rendered_prompt": "Eres un experto en terminología técnica de construcción ferroviaria en español.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nEje de parámetro: CONDICIONES DE EJECUCIÓN\nValores actuales: a: Volumen relevante; b: Volumen escaso; c: Cualquier condición de ejecución\n\nGenera un sinónimo natural en español técnico para cada valor, preservando\nexactamente el significado paramétrico (no cambies el referente físico).\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor, sin la\netiqueta de letra inicial: escribe \"Diurno\", no \"a: Diurno\", y no lo reformules.\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem, ni añadas justificaciones — sólo el sinónimo equivalente.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje. Si dos valores originales son cercanos (p. ej. \"Nocturno\" y\n\"Nocturno Excepcional\"), preserva la distinción en el sinónimo.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"synonyms\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"synonyms\": [\n    {\"original\": \"Volumen relevante\", \"new\": \"Alto Volumen\"},\n    {\"original\": \"Volumen escaso\", \"new\": \"Bajo Volumen\"},\n    {\"original\": \"Cualquier condición de ejecución\", \"new\": \"Condición General\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "synonyms": [
+          {
+            "original": "Volumen relevante",
+            "new": "Alto Volumen"
+          },
+          {
+            "original": "Volumen escaso",
+            "new": "Bajo Volumen"
+          },
+          {
+            "original": "Cualquier condición de ejecución",
+            "new": "Condición General"
+          }
+        ]
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "compression",
+      "rendered_prompt": "Eres un redactor técnico en español. Vas a comprimir un fragmento de texto\nde un catálogo de construcción ferroviaria, conservando exactamente el\nsignificado paramétrico.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nVariable de texto: L\nFragmento original: \"Cualquier condición de ejecución\"\nCondición asociada: %C=c\nOtros fragmentos de la misma variable: %C=a: Volumen relevante; %C=b: Volumen escaso\n\nReescribe el fragmento usando menos palabras. Conserva todos los datos\ntécnicos (cantidades, unidades, referentes físicos); elimina sólo lo\nredundante o lo implícito por contexto. El resultado debe ser\nestrictamente más corto que el original.\n\nEl campo \"new\" debe ser una versión reducida del fragmento (idealmente\n1-3 palabras menos que el original, máximo la mitad de su longitud).\nNo copies frases del campo Concepto, ni redactes descripciones completas\ndel ítem, ni añadas justificaciones — sólo la reformulación breve del\nfragmento.\n\nEl campo \"new\" debe ser distinto de todos los \"Otros fragmentos de la\nmisma variable\": no crees colisiones entre fragmentos del mismo eje.\nSi dos fragmentos originales son cercanos (p. ej. \"Nocturno\" y \"Nocturno\nExcepcional\"), preserva la distinción en la compresión.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"preserves_meaning\": true\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Cualquier condición de ejecución\",\n  \"new\": \"Ejecución variable\",\n  \"preserves_meaning\": true\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Cualquier condición de ejecución",
+        "new": "Ejecución variable",
+        "preserves_meaning": true
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "omission",
+      "rendered_prompt": "Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nPlantilla actual: \" Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\"\nVariable a omitir: A  (corresponde al parámetro: )\n\nReescribe la plantilla eliminando toda mención al parámetro ,\npero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.\nEl texto resultante debe ser gramatical y coherente.\n\nResponde SOLO con un JSON:\n{\n  \"original\": \"...\",\n  \"new\": \"...\",\n  \"omitted_var\": \"...\"\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"original\": \"Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))\",\n  \"new\": \"Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $B de pavimento. (-/-/$L(%C))\",\n  \"omitted_var\": \"A\"\n}\n```"
+      ],
+      "validated_payload": {
+        "original": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))",
+        "new": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $B de pavimento. (-/-/$L(%C))",
+        "omitted_var": "A"
+      },
+      "skipped": null
+    },
+    {
+      "modification_type": "synonym_label",
+      "rendered_prompt": "Eres un experto en terminología técnica de construcción ferroviaria en español.\n\nConcepto:  Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))  \\\nEje de parámetro:  TERRENO \nValores actuales: a:  blando ; b:  medio ; c:  duro \n\nGenera un sinónimo natural en español técnico para cada valor, preservando\nexactamente el significado paramétrico (no cambies el referente físico).\n\nEl campo \"original\" debe copiar EXACTAMENTE el texto de cada valor, sin la\netiqueta de letra inicial: escribe \"Diurno\", no \"a: Diurno\", y no lo reformules.\n\nEl campo \"new\" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo\n8 palabras). No copies frases del campo Concepto, ni redactes descripciones\ncompletas del ítem, ni añadas justificaciones — sólo el sinónimo equivalente.\n\nEl campo \"new\" de cada entrada debe ser distinto del valor \"original\" de\nlas demás entradas del mismo eje: no crees colisiones entre valores del\nmismo eje. Si dos valores originales son cercanos (p. ej. \"Nocturno\" y\n\"Nocturno Excepcional\"), preserva la distinción en el sinónimo.\n\nResponde SOLO con un JSON con la forma:\n{\n  \"synonyms\": [\n    {\"original\": \"...\", \"new\": \"...\"},\n    ...\n  ]\n}\n",
+      "raw_responses": [
+        "```json\n{\n  \"synonyms\": [\n    {\"original\": \"blando\", \"new\": \"Suelo Blando\"},\n    {\"original\": \"medio\", \"new\": \"Suelo Intermedio\"},\n    {\"original\": \"duro\", \"new\": \"Suelo Duro\"}\n  ]\n}\n```"
+      ],
+      "validated_payload": {
+        "synonyms": [
+          {
+            "original": "blando",
+            "new": "Suelo Blando"
+          },
+          {
+            "original": "medio",
+            "new": "Suelo Intermedio"
+          },
+          {
+            "original": "duro",
+            "new": "Suelo Duro"
+          }
+        ]
+      },
+      "skipped": null
+    }
+  ]
+}

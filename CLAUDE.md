@@ -104,6 +104,17 @@ data/
 - **No state shared between stages other than the on-disk JSONs.** Stages can be rerun in isolation as long as their input file exists.
 - **Pickle / LlamaIndex caches** under `data/processed/` and notebook checkpoints (`.ipynb_checkpoints/`) are derived artifacts — clear them when the underlying data changes.
 
+## Cache Hygiene
+
+The pipeline leaves derived artifacts on disk that go stale when the corpus is regenerated. `src/synthetic/cache_hygiene.py` enumerates and (opt-in) clears them:
+
+- `data/processed/*.pkl` — Pickle caches (`Generate_OEB_dataset`, retrieval).
+- `data/llamaindex/` contents — LlamaIndex doc-store caches (`s08`).
+- stray `chunk_*.json` — half-merged chunks left by the `s04`/`s05` chunked drivers.
+- `**/.ipynb_checkpoints` — Jupyter checkpoint directories under `data/`.
+
+`stale_cache_paths(data_root=…)` is pure (returns the list, deletes nothing). `clear_caches(data_root=…, dry_run=True)` defaults to dry-run — deletion is opt-in via `dry_run=False`.
+
 ## Working on This Repo
 
 - The pipeline notebooks live in `src/` and are numbered s01–s08 plus `Generate_OEB_dataset.ipynb`. Run in order.

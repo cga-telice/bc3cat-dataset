@@ -26,6 +26,24 @@ SYNTHETIC_DATA_ROOT = Path(
 SYNTHETIC_INTERMEDIATE_DIR = SYNTHETIC_DATA_ROOT / "intermediate"
 SYNTHETIC_PROCESSED_DIR    = SYNTHETIC_DATA_ROOT / "processed"
 SYNTHETIC_VARIANTS_DIR     = SYNTHETIC_DATA_ROOT / "variants"
+SYNTHETIC_REVIEW_DIR       = SYNTHETIC_DATA_ROOT / "review"
+
+# --- LLM transport settings (A3a) -------------------------------------------
+# Additive, env-overridable scalars/paths consumed by synthetic.llm_client.
+# OpenAI-compatible /chat/completions contract: a single client covers the
+# GPT-4-class API and local-Llama candidates by base URL + model id alone.
+# LLM_API_KEY_ENV holds only the *name* of the env var carrying the key — the
+# key value never lives in config, on disk, or in a log/exception.
+LLM_BASE_URL     = os.environ.get("BC3CAT_LLM_BASE_URL", "http://localhost:11434/v1")
+LLM_MODEL        = os.environ.get("BC3CAT_LLM_MODEL", "llama3.1:8b")
+LLM_API_KEY_ENV  = os.environ.get("BC3CAT_LLM_API_KEY_ENV", "BC3CAT_LLM_API_KEY")
+LLM_TIMEOUT      = float(os.environ.get("BC3CAT_LLM_TIMEOUT", "60"))
+LLM_MAX_RETRIES  = int(os.environ.get("BC3CAT_LLM_MAX_RETRIES", "3"))
+LLM_BACKOFF_BASE = float(os.environ.get("BC3CAT_LLM_BACKOFF_BASE", "0.5"))
+LLM_TEMPERATURE  = float(os.environ.get("BC3CAT_LLM_TEMPERATURE", "0.0"))
+LLM_CACHE_DIR    = Path(
+    os.environ.get("BC3CAT_LLM_CACHE_DIR", SYNTHETIC_DATA_ROOT / "llm_cache")
+)
 
 
 def chapter_path(chapter: str, *, root: Path = INTERMEDIATE_DIR) -> Path:

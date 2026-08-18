@@ -1,0 +1,68 @@
+{
+  "CTEST010$": {
+    "ud": "ud",
+    "concept": "prueba uno",
+    "parameters": {
+      "A": {
+        "label": "TRABAJO",
+        "values": [
+          {"label": "a", "value": "Diurno"},
+          {"label": "b", "value": "Nocturno"}
+        ]
+      },
+      "B": {
+        "label": "TIPO",
+        "values": [
+          {"label": "a", "value": "Normal"},
+          {"label": "b", "value": "Rocoso"}
+        ]
+      }
+    },
+    "text_variables": {
+      "K": "\"normal\" * (%B=a) + \"rocoso\" * (%B=b)"
+    },
+    "resumen": "Prueba uno $A $K",
+    "texto": "Prueba uno con $A en $B"
+  },
+  "CTEST020$": {
+    "ud": "ud",
+    "concept": "prueba dos",
+    "parameters": {
+      "A": {
+        "label": "TRABAJO",
+        "values": [
+          {"label": "a", "value": "Diurno"},
+          {"label": "b", "value": "Nocturno"}
+        ]
+      },
+      "C": {
+        "label": "PROFUNDIDAD",
+        "values": [
+          {"label": "a", "value": "1"},
+          {"label": "b", "value": "2"}
+        ]
+      }
+    },
+    "text_variables": {
+      "L": "\"normal\" * (%C=a) + \"medio\" * (%C=b)"
+    },
+    "resumen": "Prueba dos $A $L",
+    "texto": "Prueba dos: $A / $C"
+  },
+  "CTEST030$": {
+    "ud": "ud",
+    "concept": "prueba tres",
+    "parameters": {
+      "D": {
+        "label": "MATERIAL",
+        "values": [
+          {"label": "a", "value": "PVC"},
+          {"label": "b", "value": "HDPE"}
+        ]
+      }
+    },
+    "text_variables": {},
+    "resumen": "Prueba tres $D",
+    "texto": "Prueba tres unitaria $D"
+  }
+}

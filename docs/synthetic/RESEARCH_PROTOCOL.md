@@ -119,7 +119,7 @@ The synthetic engine treats each between-stage JSON as a typed contract. Each mu
 | **L3** | `template`        | Between **s04** and **s05**       | `resumen` and `texto` template strings             | New templates + `Modification` log entries                   |
 | **PD** | `param_definition` | Between **s02** and **s03**      | Full `parameters` dict (adds a new axis)           | Augmented `parameters` + `$VAR` definition + template patch  |
 
-Mutations from different layers compose by stacking: L1 mutations run first, then L2, then L3, then PD (or PD-first if the new axis affects L2/L3 — see §B5 composition rules). The engine logs every applied mutation as a `Modification` record (proposal §6.1 schema).
+Mutations from different layers compose by stacking. **Canonical apply order (pinned by §B5 / Sprint 11):** **PD → L1 → L2 → L3.** PD runs first because its job is to install a new axis that subsequent L1/L2/L3 rules in the same batch may reference; L1 / L2 / L3 follow in stage-numerical order. The protocol's earlier "L1 first, then L2, L3, PD" phrasing was written before PD's cross-block edits were specified — the PD-first order is now the unconditional canonical pin (the conditional "PD-first if the new axis affects L2/L3" framing is superseded). The engine logs every applied mutation as a `Modification` record (proposal §6.1 schema).
 
 ### 3.4 Key Data Facts
 
@@ -145,15 +145,19 @@ Mutations from different layers compose by stacking: L1 mutations run first, the
 | Parquet packager                          | ✅      | `Generate_OEB_dataset.ipynb`                                                          |
 | Modification taxonomy module              | ❌      | A2 — 12-type enum + `Modification` dataclass                                          |
 | L1 / L2 / L3 mutators                     | ❌      | B1–B3 — per-layer pure-function transformers                                          |
+| L2 real-data representation adapter       | ✅      | B6 (Sprint 26) — `l2_repr.py`: reference-style-aware adapter; fixes the silent L2 no-op across **all three** real text-variable shapes (`LIST_plain` indexed, `STR_formula` bare, `LIST_conditional` bare). Two-mode `list_to_formula` (enumerate vs apply) + `formula_to_list` (restores only indexed vars) + `assert_l2_targets_or_warn` guard; byte-faithful baseline. Consumer above the frozen seam. |
+| Single-concept pilot harness              | ✅      | F1-build (Sprint 27) — `f1_pilot.py`: `run_pilot` composes `run_concept`→`stage_b`→`metadata`→`review` over one concept with the `l2_repr` adapter bracketed in (via a default-identity `pre_rerun` hook on `stage_b`); live LLM through `RecordingClient` (offline `replay`); `PilotScore` + 100 %-coverage queue. F1-run (live + manual review) is Sprint 28. |
 | `new_param` mutator                       | ❌      | B4 — adds axis + `$VAR` + template hook                                               |
 | Three-layer injection harness             | ❌      | A5 — `apply_l1` / `apply_l2` / `apply_l3` / `apply_new_param`                         |
 | LLM-assisted variant proposer             | ❌      | C1–C3 — prompt library + client + JSON validator                                      |
+| Concrete `LLMClient` transport            | ✅      | A3a (Sprint 24) — `llm_client.py`: stdlib `urllib` OpenAI-compat `HttpLLMClient` + `ReplayClient`/`RecordingClient`, behind the frozen Protocol. |
+| Model-choice spike harness                | ✅      | A3b-build (Sprint 25) — `spike.py`: composes the unedited `run_concept` over the 12 single-type conditions per candidate through a `RecordingClient`; automatable scorecard (parse/schema/skip/latency/length). A3b-run (live ≥2-model spike + §4 flip) still ⏳ (manual, paid, César). |
 | Variant catalog format                    | ❌      | C4 — JSON-per-concept, durable artifact of Stage A                                    |
 | Stage hooks (s03/s04/s05 acceptors)       | ❌      | D1 — accept mutated stage-N JSONs transparently                                       |
 | Synthetic orchestrator                    | ❌      | D2 — variant catalog → mutated JSONs → pipeline → raw synthetic items                 |
 | Metadata join + schema validator          | ❌      | E1–E2 — bind synthetic items to their `modifications` list                            |
-| Validation sampler + reviewer harness     | ❌      | E3–E4 — stratified sampling + CLI for verdicts                                        |
-| Dataset packager + loader utilities       | ❌      | G1–G2 — Parquet + sidecar JSONL                                                       |
+| Validation sampler + reviewer harness     | ✅      | E3–E4 — stratified sampling + CLI for verdicts                                        |
+| Dataset packager + loader utilities       | ✅      | G1 ✅ (`packaging.py`, Sprint 21 — Parquet + sidecar JSONL) / G2 ✅ (`loaders.py`, Sprint 22 — read API + 1:1 join + long/short views) |
 | Path / config refactor                    | ❌      | A4 — un-hardcode `/work/data/raw/`; route through `src/utils/config.py`               |
 
 ---
@@ -167,7 +171,7 @@ Mutations from different layers compose by stacking: L1 mutations run first, the
 | Multi-mod variants                         | Composed by stacking atomic mutations (L1 → L2 → L3 → PD)                              | Compositionality slices need explicit stack depth                      |
 | Variant ID format                          | `{original_key}_syn_v{n}`                                                              | Preserves lexicographic parent grouping                                |
 | Variant catalog format                     | JSON-per-concept under `data/synthetic/variants/`                                      | Durable Stage-A artifact; decoupled from pipeline reruns               |
-| LLM proposer model                         | **TBD** — spike in A3 across ≥2 candidates                                             | Quality of Spanish technical writing is the gating factor              |
+| LLM proposer model                         | **`llama3.1:8b`, local via Ollama** (`base_url http://localhost:11434/v1`; use the **exact** tag `llama3.1:8b` — the bare `llama3.1` resolves to `:latest` and 404s unless separately pulled) — committed (A3b-run, 2026-05-20) as a deliberate strategic choice (cost / privacy / reproducibility), **not** a measured fluency winner; the `spike.py` harness stays available to compare local variants if F1 review flags quality | Local-only, free + reproducible to re-run; Spanish-technical fluency is validated in the F1 100 %-manual pilot review rather than a pre-generation spike |
 | Stage-A locality                           | Offline batch                                                                         | Decouples expensive LLM calls from cheap pipeline reruns               |
 | Manual review coverage                     | 100 % for `new_param`; stratified sampling for the other 11 types                     | Semantic-collision risk is concentrated in `new_param`                 |
 | Stratification axis                        | `(concept × modification_type)` crossed                                                | Per-cell statistical power for the slice analyses                      |
@@ -187,7 +191,11 @@ Ordered by dependency and priority. Tasks will be grouped into sprints as work p
 
 - **A1. Branch scaffolding.** Create `docs/synthetic/sprints/`, initial `RESEARCH_LOG.md`, and a branch-specific `CLAUDE.md` summarising the protocol's design decisions for Claude Code.
 - **A2. Modification taxonomy module.** `src/synthetic/taxonomy.py` — `ModificationType` enum (12 codes), `Layer` enum (4 layers), `Modification` dataclass matching the proposal §6.1 schema.
-- **A3. LLM proposer choice spike.** Smoke-test ≥2 candidates on a single concept group across all 12 modification types. Decide on Spanish technical fluency, JSON-output reliability, and cost. Record the choice in `RESEARCH_LOG.md` and update §4 of this protocol.
+- **A3. LLM proposer transport + choice spike.** Split into two:
+  - **A3a ✅ (Sprint 24) — concrete transport + record/replay harness.** `src/synthetic/llm_client.py`: a stdlib-`urllib` OpenAI-compatible `HttpLLMClient` (two-layer-separated network-fault retry/backoff, injectable sender, fail-loud) plus `ReplayClient`/`RecordingClient`, all behind the already-frozen `llm_proposer.LLMClient` Protocol. Hermetic test suite (zero network calls); one env-gated live smoke that skips-not-fails.
+  - **A3b.** Split into two, same fault line as A3:
+    - **A3b-build ✅ (Sprint 25) — the spike harness.** `src/synthetic/spike.py`: a consumer module (above the seam, never imported by it) that composes the **unedited** `run_concept` over the 12 single-type conditions for each candidate, wraps every client in a `RecordingClient` (per-candidate store), and tallies an **automatable** `CandidateScore` (JSON-parse/schema-pass, the C2/C3 skip split, per-type outcome, latency, response length) off the returned `VariantCatalogEntry`. `format_scorecard` emits a comparison table (automatable columns only — **no fluency column**). Hermetic test suite (zero network calls); the live run is the manual CLI, not a `pytest` case.
+    - **A3b-run ✅ (2026-05-20 — strategic commitment, not a live spike).** Decision: generate with **local Llama (`llama3.1` 8B via Ollama)**, chosen for cost, privacy, and reproducibility rather than a measured ≥2-model fluency comparison. §4's `LLM proposer model` row is flipped from `TBD` accordingly (the default config already points here). The `spike.py` harness remains available to compare local variants (8B vs 70B vs a Spanish-tuned model) **if** the F1 pilot review surfaces Spanish-quality concerns — at which point fluency is judged on the harness's recorded transcripts. Spanish-fluency validation otherwise moves into the F1 100 %-manual review.
 - **A4. Path refactor.** Un-hardcode `/work/data/raw/` in s01 and any downstream stages; route everything through [src/utils/config.py](../../src/utils/config.py). Add a `SYNTHETIC_DATA_ROOT` config entry.
 - **A5. Three-layer injection harness.** `src/synthetic/mutator.py` exposing `apply_l1`, `apply_l2`, `apply_l3`, `apply_new_param` over stage-JSON dicts. Each returns `(mutated_json, list[Modification])`.
 
@@ -197,7 +205,8 @@ Ordered by dependency and priority. Tasks will be grouped into sprints as work p
 - **B2. L2 text-variable mutators.** `src/synthetic/layer_l2.py` — `paraphrase`, `expansion`, `compression`. Operates on `$VAR = "fragment" * (%X=y) + ...` formulas; never touches the conditional structure, only the string fragments.
 - **B3. L3 template mutators.** `src/synthetic/layer_l3.py` — `omission`, `reorder`. Operates on `\RESUMEN\` / `\TEXTO\` strings; preserves untargeted `$var` references.
 - **B4. `new_param` mutator.** `src/synthetic/layer_pd.py` — adds a new axis to `parameters`, a corresponding `$VAR` definition, and injects the variable into the template. Requires a controlled-list veto against collisions with existing axes.
-- **B5. Composition rules.** Encode which atomic mutations may stack on the same target (e.g., `unit_conversion` ∘ `num_to_text` requires an explicit ordering). Conflicts: skip + log via the `Modification` record.
+- **B5. Composition rules.** Encode which atomic mutations may stack on the same target (e.g., `unit_conversion` ∘ `num_to_text` requires an explicit ordering). Conflicts: skip + log via the `Modification` record. Matrix lives in `src/synthetic/composition.py` as a Python module-level constant for B5; YAML externalisation (`configs/synthetic/composition_rules.yaml`) deferred to a later phase if Phase C / E tooling needs an editable surface without code changes.
+- **B6 ✅ (Sprint 26) — L2 real-data representation adapter.** `src/synthetic/l2_repr.py`: a **reference-style-aware** adapter that fixes the **silent L2 no-op** — `slot_extractor.enumerate_targets` skips any non-string text-variable, and real data has **three shapes** whose rerun form is set by the template ref: `LIST_plain` (`['"Diurno"', …]`, indexed `$L(%B)` → positional list), `STR_formula` (`'"normal" * (%B=="a") + …'`, bare `$K` → formula string), and `LIST_conditional` (`['"…" * (%B=="f")', …]`, bare `$P` → list of conditional fragments). The two list shapes were silently un-enumerable. Two-mode `list_to_formula` makes all three enumerable for Stage A (`include_conditional=True`) or converts only `LIST_plain` for application (`include_conditional=False`, so `STR_formula`/`LIST_conditional` mutate natively via `layer_l2` and stay byte-faithful); `formula_to_list` restores **only indexed-referenced** vars to positional lists before the s03→s07 rerun. Per-var report (nothing silent); `assert_l2_targets_or_warn` guard; **byte-faithful baseline** verified (unmutated round-trip == original rerun on `OEB020$`'s 4608 leaves). Consumer above the frozen seam — `slot_extractor`/`layer_l2`/`rule_emitter` untouched. *(Discovered while selecting the F1 pilot concept; fixed before F1 so the pilot covers all 12 types. Two error-swallowing risks — `stage_runners` s04 bare `except`, `stage_b` skip-and-log — are a documented follow-up, not B6.)*
 
 ### Phase C — LLM-assisted variant proposer (Stage A of the proposal)
 
@@ -221,17 +230,29 @@ Ordered by dependency and priority. Tasks will be grouped into sprints as work p
 
 ### Phase F — Pilot then full generation
 
-- **F1. Single-concept pilot.** Pick 1–2 concept groups of moderate size (50–200 items each, e.g., a mid-sized OEB group); generate one variant per modification type; 100 % manual review.
-- **F2. Pilot retro.** Measure acceptance rate per type, generation throughput, mutation conflicts, semantic-collision rate for `new_param`. Update variant budgets and prompt templates accordingly.
-- **F3. Full generation.** Run across all 25 concept groups. Variant count scales with original group size, capped on the largest group (6,336 items) to control combinatorial blowup. Budgets per type taken from F2.
+- **F1. Single-concept pilot.** Pick 1–2 concept groups of moderate size (50–200 items each, e.g., a mid-sized OEB group); generate one variant per modification type; 100 % manual review. Pilot concept pinned: **`OEB070$`** (144 items). Split:
+  - **F1-build ✅ (Sprint 27) — the runnable harness.** `src/synthetic/f1_pilot.py`: `run_pilot` composes the unedited stack (`run_concept` → `stage_b` → `metadata` → `review`) over one concept across all conditions, with the `l2_repr` two-mode adapter bracketing the mutation (and a default-identity `pre_rerun` hook in `stage_b` as the `formula_to_list` insertion point). Live LLM through a `RecordingClient` (offline `replay`); automatable `PilotScore`; 100 %-coverage review queue. Hermetic tests; no live `pytest` case. Consumer above the orchestrator.
+  - **F1-run-generate ✅ (Sprint 28, then re-run after F2 fixes).** Ran `f1_pilot run` on `OEB070$` against Ollama `llama3.1:8b`, all 17 conditions. First run exposed 8B defects (prose/fence-wrapped JSON, wrong list keys, placeholder corruption). After the **F2 process-hardening** (below) the re-run yields **48 placeholder-clean variants** (malformed 31→7, wrong-key 24→0); the residual is `unmatched_original` on L1-expansion-of-inapplicable-axes (a targeting matter, largely legitimate).
+  - **F2 process-hardening ✅ (3 iterations).** (1) `llm_proposer._extract_json_object` recovers JSON from prose+fence; (2) `variant_proposer` placeholder-preservation validator (reorder/omission); (3) L1 prompt fixes — JSON keys aligned to the schema (`conversions`/`expansions` → `synonyms`) and a verbatim-`original` instruction (kill the `"a: "` label-prefix echo). `pytest` 826 passed, 2 skipped.
+  - **F1-review ⏳ (pending — César).** Review the 43 distinct modifications (digest: `docs/synthetic/F1_PILOT_REVIEW_DIGEST.md`) — Spanish fluency + retrieval-safety + per-type semantics; verdicts via `review.write_verdicts`; the `llama3.1:8b` verdict feeding F2.
+- **F2. Pilot retro.** ✅ (Sprints 30–36) Measured acceptance rate per type, tuned prompts (sibling-fragments slot, per-axis targeting gate, paired L1+L2 mutation for indexed twins, collision guard), added the 13th modification type (`template_paraphrase`), and validated multi-concept generalisation on OEB020$ + OEB050$ + OEB070$. `phi4:latest` selected as the F3 model.
+- **F3. Full generation.** Run across all 25 concept groups. Variant count scales with original group size, capped on the largest group (6,336 items) to control combinatorial blowup. **Split (Sprint 37):**
+  - **F3-prep-1 ✅ (Sprint 37) — menu builder** (hermetic). `src/synthetic/target_scanner.py` + `menu_proposer.py` + `menu_artefacts.py` implement the *menu-first* Stage-A flow requested by César (2026-07-08): dedup targets across concepts (83 % savings, 673→562 unique on OEB subset), propose **N=10 candidates per unique target**, write both a machine-readable JSONL (for the sampler) and a human-review Markdown (for the reviewer) per rewrite type. 990 passed, 2 skipped; zero seam edits.
+  - **F3-prep-2 ⏳ (Sprint 38) — live run + manual review.** Split into four landmarks:
+    - **F3-prep-2-code ✅ (Sprint 38, 2026-07-09).** `src/synthetic/menu_runner.py` (CLI driver above the frozen seam; `MenuRun` scorecard, `run`/`replay` subcommands, `ResumingRecordingClient` cache-first wrapper) + `menu_review_parser.py` (reads ticked Markdown back into structured `MenuVerdict` JSONL; fail-loud on structural drift; reject-by-default). 1018 passed, 2 skipped; zero seam edits.
+    - **F3-prep-2-generate ✅ (Sprint 38, 2026-07-09).** Ran against `phi4:latest`, `temperature 0`, `BC3CAT_LLM_TIMEOUT=300`. 5528 s wall-clock, 562 unique targets across 25 OEB concepts, 636 phi4 calls (89 L1 targets served by 29 batched calls). **2 918 candidates** across 11 populated rewrite types; per-type generation rate 100 % on L2 + new_param, 88 % on synonym_label, 53 % on omission (`_require_placeholders_omitted` filter working as designed). Artefacts under `data/synthetic/menus/{mtype}.jsonl` + `docs/synthetic/menus/{mtype}.md`; recorded transcripts under `data/synthetic/llm_cache/menu_OEB/` (502 prompts, offline-replayable).
+    - **F3-prep-2-review ⏳ (César, manual, ~7-9 h).** Tick approvals in the 11 Markdown files under `docs/synthetic/menus/`.
+    - **F3-prep-2-parse ⏳ (Claude, post-review).** `python -m synthetic.menu_review_parser parse` translates ticks into `data/synthetic/menus/verdicts/{mtype}.jsonl` + a coverage-summary report.
+  - **F3-prep-3 ⏳ (Sprint 39) — variant budgets + sampler + chapter driver.** `configs/synthetic/variant_budgets.yaml` (flat 50 per concept, César 2026-07-08), the deterministic sampler that draws N variants per concept from the approved menu, and the chapter driver that iterates concept keys.
+  - **F3-run ⏳ (Sprint 40)** — execute the chapter driver over OBRA CIVIL; land the corpus.
 - **F4. Validation pass.** Stratified sample reviewed against the F1 protocol; produce a quality report under `docs/synthetic/QUALITY_REPORT.md`.
 
 ### Phase G — Release
 
 - **G1. Packaging.** Parquet items mirroring `OEB_long_norm.parquet` schema plus four metadata columns (`original_key`, `variante_id`, `modification_types`, `modification_count`); sidecar JSONL keyed by `item_key` carrying the full `modifications` array.
 - **G2. Loader utilities.** `src/synthetic/loaders.py` — `load_items()`, `load_modifications()`, `join()`. Used by downstream consumers, primarily `bc3cat-retrieval`.
-- **G3. Documentation.** `docs/synthetic/DATA_CARD.md` (Data-in-Brief style); update top-level `README.md` with a "Synthetic Variant" section.
-- **G4. Cross-repo handoff.** Short memo in `docs/synthetic/HANDOFF.md` pointing `bc3cat-retrieval` at the new dataset, the new slice columns (`modification_types`, `modification_count`), and the loader API.
+- **G3. Documentation.** ✅ (Sprint 23) `docs/synthetic/DATA_CARD.md` (Data-in-Brief style) + a "Synthetic Variant" section appended to the top-level `README.md`. Documents the frozen G1/G2 contract; all corpus-scale statistics are `TBD (pending F3)` placeholders pending a post-F3 refresh.
+- **G4. Cross-repo handoff.** ✅ (Sprint 23) Short memo in `docs/synthetic/HANDOFF.md` pointing `bc3cat-retrieval` at the new dataset, the new slice columns (`modification_types`, `modification_count`), and the loader API.
 
 ### Backlog (if time permits)
 
@@ -299,7 +320,7 @@ configs/
   synthetic/                                # NEW
     variant_budgets.yaml                    # per-concept variant counts
     new_param_allowlist.yaml                # controlled list of admissible new axes
-    composition_rules.yaml                  # B5 stacking constraints
+    composition_rules.yaml                  # B5 stacking constraints (deferred — matrix is in `src/synthetic/composition.py`)
 
 data/
   synthetic/                                # NEW

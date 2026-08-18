@@ -238,6 +238,14 @@ The BC3 format (Base de Costes de la Construcción) is the Spanish standard for 
 
 For full specification, see: [FIEBDC-3/2016](https://www.fiebdc.es/fiebdc-32016-2/)
 
+## Synthetic Variant (BC3CAT-Syn)
+
+**BC3CAT-Syn** is a synthetic, fully-traceable variant of this benchmark for *robustness* evaluation. Where BC3CAT measures retrieval under a best-case lexical-overlap scenario (queries and targets share generation rules), BC3CAT-Syn applies controlled linguistic modifications at the *generation-rule* level — parameter values, text variables, output templates, and parameter definitions — so that retrieval degradation can be attributed to specific transformations (synonym substitution, number-to-text, unit conversion, paraphrase, omission, reorder, new-axis introduction, …) rather than aggregate noise. Each synthetic item carries the full list of modifications applied, enabling per-type, per-layer, and per-stack-depth evaluation slices.
+
+This work lives entirely on the parallel `synthetic` branch (it is never merged to `main`). The release is two files joined 1:1 on `item_key` — `data/synthetic/processed/BC3CAT_Syn_items.parquet` (flat items table) and `BC3CAT_Syn_modifications.jsonl` (per-item modification log) — consumed via the read-only loader API in [`src/synthetic/loaders.py`](src/synthetic/loaders.py) (`load_items`, `load_modifications`, `join`, `long_view`, `short_view`).
+
+> **Status:** the format, schema, taxonomy, and loader API are frozen; the corpus has not yet been generated. See the [BC3CAT-Syn data card](docs/synthetic/DATA_CARD.md) for the full schema, modification taxonomy, evaluation slices, and AI-disclosure, and [`docs/synthetic/`](docs/synthetic/) for the research proposal and protocol.
+
 ## Citation
 
 If you use this dataset in your research, please cite:

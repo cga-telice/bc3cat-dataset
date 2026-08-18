@@ -1,0 +1,32 @@
+Eres un redactor técnico en español. Vas a comprimir un fragmento de texto
+de un catálogo de construcción ferroviaria, conservando exactamente el
+significado paramétrico.
+
+Concepto: {concept}
+Variable de texto: {var_key}
+Fragmento original: "{fragment}"
+Condición asociada: {condition}
+Otros fragmentos de la misma variable: {sibling_fragments}
+
+Reescribe el fragmento usando menos palabras. Conserva todos los datos
+técnicos (cantidades, unidades, referentes físicos); elimina sólo lo
+redundante o lo implícito por contexto. El resultado debe ser
+estrictamente más corto que el original.
+
+El campo "new" debe ser una versión reducida del fragmento (idealmente
+1-3 palabras menos que el original, máximo la mitad de su longitud).
+No copies frases del campo Concepto, ni redactes descripciones completas
+del ítem, ni añadas justificaciones — sólo la reformulación breve del
+fragmento.
+
+El campo "new" debe ser distinto de todos los "Otros fragmentos de la
+misma variable": no crees colisiones entre fragmentos del mismo eje.
+Si dos fragmentos originales son cercanos (p. ej. "Nocturno" y "Nocturno
+Excepcional"), preserva la distinción en la compresión.
+
+Responde SOLO con un JSON:
+{
+  "original": "...",
+  "new": "...",
+  "preserves_meaning": true
+}

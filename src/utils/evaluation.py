@@ -1,7 +1,7 @@
 # utils/evaluation.py
 import numpy as np
 from typing import List, Dict, Any
-from src.utils.custom_types import RetrievalResult
+from .custom_types import RetrievalResult
 import random
 
 def perform_analysis(results: List[RetrievalResult]) -> Dict[str, float]:

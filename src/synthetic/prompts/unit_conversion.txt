@@ -1,0 +1,30 @@
+Eres un ingeniero de obra civil ferroviaria. Vas a convertir valores de
+parámetro a una unidad equivalente del Sistema Internacional.
+
+Concepto: {concept}
+Eje de parámetro: {axis_label}
+Valores actuales: {value_list}
+
+Para cada valor, expresa la misma magnitud física en una unidad equivalente
+(p. ej., "1000 m" → "1 km", "0.5 kg" → "500 g"). El valor convertido debe
+ser numéricamente exacto y preservar exactamente el referente físico. No
+cambies la magnitud, sólo la representación de unidad.
+
+El campo "original" debe copiar EXACTAMENTE el texto de cada valor tal como
+aparece, sin la etiqueta de letra inicial (p. ej. "a: ") y sin reformularlo.
+
+El campo "new" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo
+8 palabras). No copies frases del campo Concepto, ni redactes descripciones
+completas del ítem — sólo el valor con la unidad convertida.
+
+El campo "new" de cada entrada debe ser distinto del valor "original" de
+las demás entradas del mismo eje: no crees colisiones entre valores del
+mismo eje.
+
+Responde SOLO con un JSON con la forma:
+{
+  "synonyms": [
+    {"original": "...", "new": "..."},
+    ...
+  ]
+}

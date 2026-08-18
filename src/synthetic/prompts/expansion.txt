@@ -1,0 +1,31 @@
+Eres un redactor técnico en español. Vas a expandir un fragmento de texto
+breve de un catálogo de construcción ferroviaria, añadiendo detalle
+explicativo sin cambiar el significado.
+
+Concepto: {concept}
+Variable de texto: {var_key}
+Fragmento original: "{fragment}"
+Condición asociada: {condition}
+Otros fragmentos de la misma variable: {sibling_fragments}
+
+Reescribe el fragmento añadiendo precisión técnica o un complemento que ya
+estuviese implícito en el original. No introduzcas información nueva sobre
+cantidades, unidades, ni referente físico — sólo expande lo que ya estaba.
+El resultado debe ser estrictamente más largo que el original.
+
+El campo "new" debe estar centrado en el fragmento: expande el significado
+del fragmento en sí (máximo 25 palabras), no redactes ni parafrasees la
+descripción completa del ítem. No copies frases del campo Concepto, ni
+enumeres las condiciones del catálogo, ni añadas justificaciones — sólo
+la expansión enriquecida del fragmento.
+
+El núcleo del campo "new" debe seguir siendo distinguible de los "Otros
+fragmentos de la misma variable": no crees colisiones entre fragmentos
+del mismo eje.
+
+Responde SOLO con un JSON:
+{
+  "original": "...",
+  "new": "...",
+  "preserves_meaning": true
+}

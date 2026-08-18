@@ -1,0 +1,20 @@
+### Menu-builder scorecard — OEB
+
+Concepts: **25**  ·  Unique targets: **562**  ·  LLM calls: **636**  ·  Wall clock: **5528.3 s**
+
+| Rewrite type | Targets | LLM calls | Generated | Skipped | Total candidates | Dropped |
+|---|---:|---:|---:|---:|---:|---:|
+| synonym_label | 49 | 16 | 43 | 6 | 236 | 0 |
+| num_to_text | 12 | 3 | 12 | 0 | 105 | 0 |
+| unit_conversion | 14 | 5 | 7 | 7 | 21 | 0 |
+| unit_expansion | 14 | 5 | 12 | 2 | 49 | 0 |
+| abbrev_expansion | 0 | 0 | 0 | 0 | 0 | 0 |
+| code_expansion | 0 | 0 | 0 | 0 | 0 | 0 |
+| paraphrase | 46 | 46 | 46 | 0 | 420 | 0 |
+| expansion | 46 | 46 | 46 | 0 | 454 | 0 |
+| compression | 46 | 46 | 46 | 0 | 291 | 0 |
+| omission | 212 | 312 | 112 | 100 | 590 | 51 |
+| reorder | 49 | 68 | 30 | 19 | 215 | 1 |
+| template_paraphrase | 49 | 64 | 34 | 15 | 286 | 0 |
+| new_param | 25 | 25 | 25 | 0 | 251 | 0 |
+MENU RUN COMPLETED
