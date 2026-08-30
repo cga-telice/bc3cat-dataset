@@ -1,4 +1,11 @@
-"""Sprint 38.6 — hermetic tests for :mod:`synthetic.menu_diversity`."""
+"""Sprint 38.6 — hermetic tests for :mod:`synthetic.menu_diversity`.
+
+Sprint 38.6-B: the diversity flow masks placeholders and quantities behind
+``[[Pn]]``/``[[Qn]]`` sentinels before prompting, and restores them after.
+Scripted responses therefore echo the MASKED world; expected masked strings
+are derived by calling :func:`mask_invariants` on the sanitized template
+(never by hardcoding sentinel ids).
+"""
 from __future__ import annotations
 
 import json
@@ -15,6 +22,7 @@ from synthetic.menu_diversity import (
 )
 from synthetic.target_scanner import scan_chapter
 from synthetic.taxonomy import ModificationType
+from synthetic.template_masking import mask_invariants
 
 
 _STAGE = {
@@ -29,6 +37,23 @@ _STAGE = {
         "texto": "\\Prueba de zanja de 2 m de ancho con trabajo $A en modo $K. ($L(%A))",
     },
 }
+
+_TEXTO_SANITIZED = "Prueba de zanja de 2 m de ancho con trabajo $A en modo $K. ($L(%A))"
+
+
+def _texto_masked():
+    """Masked TEXTO template + mapping, exactly as the module computes it."""
+    return mask_invariants(_TEXTO_SANITIZED)
+
+
+def _mask_with(text: str, mapping: dict) -> str:
+    """Rewrite a human-readable variant into the masked world by replacing
+    each mapped literal with its sentinel (longest literal first, one
+    occurrence each — the test templates carry each literal exactly once)."""
+    for sid, literal in sorted(mapping.items(), key=lambda kv: -len(kv[1])):
+        assert literal in text, f"test variant lost literal {literal!r}: {text!r}"
+        text = text.replace(literal, f"[[{sid}]]", 1)
+    return text
 
 
 class _ScriptedClient:
@@ -45,7 +70,7 @@ class _ScriptedClient:
         return self._queue.pop(0)
 
 
-def _resp(*news, original="\\Prueba de zanja de 2 m de ancho con trabajo $A en modo $K. ($L(%A))"):
+def _resp(*news, original=_TEXTO_SANITIZED):
     return json.dumps(
         [{"original": original, "new": n, "preserves_meaning": True} for n in news],
         ensure_ascii=False,
@@ -67,6 +92,9 @@ def test_rounds_are_three_named_ops():
 def test_wrap_round_embeds_tag_n_and_forbidden_openings():
     w = _wrap_round("BASE", ROUNDS[2], n=3, forbidden_openings=("Prueba de zanja",))
     assert "BASE" in w and "R3" in w and "3" in w and "Prueba de zanja" in w
+    # Sprint 38.6-B: the constant leave-the-sentinels-alone instruction.
+    assert "marcadores intocables" in w
+    assert "no los modifiques" in w
 
 
 def test_forbidden_openings_first_six_words():
@@ -78,38 +106,119 @@ def test_model_store_tags_distinguish_sizes():
     assert _model_store_tag("qwen2.5:14b") != _model_store_tag("qwen2.5:32b")
 
 
+def test_prompts_carry_masked_template_and_sentinel_instruction():
+    inv = scan_chapter(_STAGE)
+    # Two targets (RESUMEN before TEXTO) x 3 rounds; all responses junk —
+    # this test only inspects the prompts.
+    client = _ScriptedClient(["no json"] * 6)
+    propose_diverse(_STAGE, inv, {"phi4": client}, n_per_round=1)
+    assert len(client.prompts) == 6
+
+    first = client.prompts[0]
+    assert "[[" in first
+    assert "marcadores intocables" in first
+    assert "no los modifiques" in first
+
+    masked, mapping = _texto_masked()
+    texto_prompt = client.prompts[3]  # TEXTO target's R1
+    # The Plantilla line carries the masked template, not the raw one.
+    assert masked in texto_prompt
+    assert "trabajo $A en modo $K" not in texto_prompt
+    # The placeholders slot now lists the sentinels the model actually sees.
+    sentinel_list = ", ".join(f"[[{k}]]" for k in mapping)
+    assert sentinel_list in texto_prompt
+
+
+def test_candidate_with_dropped_sentinel_is_rejected():
+    inv = scan_chapter(_STAGE)
+    masked, mapping = _texto_masked()
+    good = "Queda probada la zanja de 2 m de ancho — trabajo $A, modo $K. ($L(%A))"
+    good_masked = _mask_with(good, mapping)
+    q_sid = next(k for k in mapping if k.startswith("Q"))
+    dropped_q = good_masked.replace(f"[[{q_sid}]]", "")
+    assert f"[[{q_sid}]]" not in dropped_q
+    clients = {
+        "phi4": _ScriptedClient(["no json"] * 3 + [
+            _resp(dropped_q, original=masked),
+            "no json",
+            "no json",
+        ]),
+    }
+    sets = propose_diverse(_STAGE, inv, clients, n_per_round=1)
+    texto = next(v for k, v in sets.items() if k[0] == "TEXTO")
+    assert texto.candidates == ()
+    assert any("sentinels_not_preserved" in d for d in texto.dropped_reasons)
+
+
+def test_surviving_candidate_is_unmasked_and_validated():
+    inv = scan_chapter(_STAGE)
+    masked, mapping = _texto_masked()
+    good = "Queda probada la zanja de 2 m de ancho — trabajo $A, modo $K. ($L(%A))"
+    good_masked = _mask_with(good, mapping)
+    clients = {
+        "phi4": _ScriptedClient(["no json"] * 3 + [
+            _resp(good_masked, original=masked),
+            "no json",
+            "no json",
+        ]),
+    }
+    sets = propose_diverse(_STAGE, inv, clients, n_per_round=1)
+    texto = next(v for k, v in sets.items() if k[0] == "TEXTO")
+    assert len(texto.candidates) == 1
+    payload = texto.candidates[0].payload
+    # Restored literals, no sentinel residue anywhere in the payload.
+    assert payload["new"] == good
+    assert "2 m" in payload["new"]
+    assert "[[" not in json.dumps(payload, ensure_ascii=False)
+    # The echoed original is overwritten with the known true template.
+    assert payload["original"] == _TEXTO_SANITIZED
+    assert payload["proposer_model"] == "phi4"
+
+
 def test_propose_diverse_pools_two_models_and_tags_provenance():
     inv = scan_chapter(_STAGE)
     targets = inv.by_type[ModificationType.TEMPLATE_PARAPHRASE]
     texto_target = next(t for t in targets if t.dedup_key[0] == "TEXTO")
     # Two targets (RESUMEN before TEXTO in dedup-key order) x 3 rounds per
     # model: the RESUMEN rounds get junk (parse-skip, no candidates), the
-    # TEXTO rounds get the real scripted responses; sanitized original (no
-    # backslash) in responses.
-    orig = "Prueba de zanja de 2 m de ancho con trabajo $A en modo $K. ($L(%A))"
+    # TEXTO rounds get the real scripted responses. Responses live in the
+    # masked world: each `new` carries every sentinel exactly once.
+    masked, mapping = _texto_masked()
+    phi4_news = [
+        _mask_with(n, mapping) for n in (
+            "Se prueba la zanja de 2 m de ancho, trabajo $A, modo $K. ($L(%A))",
+            "($L(%A)) En modo $K y con trabajo $A: prueba de zanja de 2 m de ancho.",
+            "La zanja, de 2 m de ancho, se somete a prueba con trabajo $A y modo $K. ($L(%A))",
+        )
+    ]
+    qwen_news = [
+        _mask_with(n, mapping) for n in (
+            "Ensayo de zanja con 2 m de ancho para trabajo $A en modo $K. ($L(%A))",
+            "Con trabajo $A y modo $K se ensaya una zanja de 2 m de ancho. ($L(%A))",
+            "Zanja de 2 m de ancho: ensayo bajo trabajo $A, modo $K. ($L(%A))",
+        )
+    ]
     clients = {
-        "phi4": _ScriptedClient(["no json"] * 3 + [
-            _resp("Se prueba la zanja de 2 m de ancho, trabajo $A, modo $K. ($L(%A))", original=orig),
-            _resp("($L(%A)) En modo $K y con trabajo $A: prueba de zanja de 2 m de ancho.", original=orig),
-            _resp("La zanja, de 2 m de ancho, se somete a prueba con trabajo $A y modo $K. ($L(%A))", original=orig),
-        ]),
-        "qwen": _ScriptedClient(["no json"] * 3 + [
-            _resp("Ensayo de zanja con 2 m de ancho para trabajo $A en modo $K. ($L(%A))", original=orig),
-            _resp("Con trabajo $A y modo $K se ensaya una zanja de 2 m de ancho. ($L(%A))", original=orig),
-            _resp("Zanja de 2 m de ancho: ensayo bajo trabajo $A, modo $K. ($L(%A))", original=orig),
-        ]),
+        "phi4": _ScriptedClient(
+            ["no json"] * 3 + [_resp(n, original=masked) for n in phi4_news]),
+        "qwen": _ScriptedClient(
+            ["no json"] * 3 + [_resp(n, original=masked) for n in qwen_news]),
     }
     sets = propose_diverse(_STAGE, inv, clients, n_per_round=1)
     cs = sets[texto_target.dedup_key]
     assert len(cs.candidates) == 6
     models = {c.payload["proposer_model"] for c in cs.candidates}
     assert models == {"phi4", "qwen"}
+    # Stored payloads are fully unmasked.
+    for c in cs.candidates:
+        assert "[[" not in json.dumps(c.payload, ensure_ascii=False)
     # every prompt saw the sanitized template (no raw backslash from the stage JSON)
     for client in clients.values():
         for p in client.prompts:
             assert "\\Prueba" not in p
     # TEXTO's prompts are indices 3-5 per client; index 5 is its R3, which
-    # carries the forbidden openings harvested from that model's R1/R2 keeps.
+    # carries the forbidden openings harvested from that model's R1/R2 keeps
+    # (openings are harvested from RESTORED text, hence the literal "2").
     r3_prompts = [c.prompts[5] for c in clients.values()]
     assert all("R3" in p for p in r3_prompts)
     assert "Se prueba la zanja de 2" in clients["phi4"].prompts[5]
@@ -117,21 +226,29 @@ def test_propose_diverse_pools_two_models_and_tags_provenance():
 
 def test_propose_diverse_applies_validators():
     inv = scan_chapter(_STAGE)
-    orig = "Prueba de zanja de 2 m de ancho con trabajo $A en modo $K. ($L(%A))"
-    bad_quantity = "Se prueba la zanja de 3 m de ancho, trabajo $A, modo $K. ($L(%A))"
-    lost_placeholder = "Se prueba la zanja de 2 m de ancho, trabajo $A. ($L(%A))"
+    masked, mapping = _texto_masked()
     good = "Queda probada la zanja de 2 m de ancho — trabajo $A, modo $K. ($L(%A))"
+    good_masked = _mask_with(good, mapping)
+    # Quantities and placeholders are sentinels now, so the old "3 m" /
+    # lost-"$K" corruptions cannot be expressed in text — both failure
+    # modes surface as dropped sentinels instead.
+    q_sid = next(k for k in mapping if mapping[k] == "2 m")
+    p_sid = next(k for k in mapping if mapping[k] == "$K")
+    dropped_q_sentinel = good_masked.replace(f"[[{q_sid}]]", "")
+    dropped_p_sentinel = good_masked.replace(f"[[{p_sid}]]", "")
     clients = {
         # 3 junk responses for the RESUMEN target's rounds, then the TEXTO rounds.
         "phi4": _ScriptedClient(["no json"] * 3 + [
-            _resp(bad_quantity, original=orig),
-            _resp(lost_placeholder, original=orig),
-            _resp(good, original=orig),
+            _resp(dropped_q_sentinel, original=masked),
+            _resp(dropped_p_sentinel, original=masked),
+            _resp(good_masked, original=masked),
         ]),
     }
     sets = propose_diverse(_STAGE, inv, clients, n_per_round=1)
     texto = next(v for k, v in sets.items() if k[0] == "TEXTO")
     news = [c.payload["new"] for c in texto.candidates]
     assert news == [good]
-    assert any("quantities_not_conserved" in d for d in texto.dropped_reasons)
-    assert any("placeholders_not_preserved" in d for d in texto.dropped_reasons)
+    n_sentinel_drops = sum(
+        1 for d in texto.dropped_reasons if "sentinels_not_preserved" in d
+    )
+    assert n_sentinel_drops == 2

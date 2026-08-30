@@ -14,10 +14,15 @@ named family of meaning-preserving transformations:
 Slots are sanitized of the FIEBDC ``\\`` delimiters before rendering
 (mini-F1, this type only — its cache is invalidated by this sprint
 anyway; the trailing ``\\`` is the proven OEB010$ prompt-echo cause).
-Candidates are pooled across rounds × models, validated by the full
-Sprint 38.5/38.6 gate stack (schema + placeholders + quantities +
-scaffold-echo + exact dedup + similarity gate), and tagged with
-``proposer_model`` *after* validation.
+Sprint 38.6-B: before prompting, the template's placeholders and
+quantities are masked behind ``[[Pn]]``/``[[Qn]]`` sentinels
+(:mod:`template_masking`); candidates must carry every sentinel exactly
+once (``check_sentinels``) and are un-masked before validation, so
+placeholder/quantity preservation is guaranteed by construction.
+Candidates are pooled across rounds × models, validated on the RESTORED
+text by the full Sprint 38.5/38.6 gate stack (schema + placeholders +
+quantities + scaffold-echo + exact dedup + similarity gate), and tagged
+with ``proposer_model`` *after* validation.
 
 Owns the ``template_paraphrase`` menu artefacts from Sprint 38.6 on —
 ``menu_runner`` full passes should use ``--skip-types template_paraphrase``.
@@ -40,16 +45,17 @@ from .menu_proposer import (
     CandidateProposal,
     CandidateSet,
     _dedupe_non_l1,
+    _is_prompt_echo,
     _parse_json_list,
     _similarity_gate,
-    _validate_variants,
 )
 from . import menu_runner
 from .menu_runner import ResumingRecordingClient
 from .prompts import load_prompt
 from .target_scanner import ChapterInventory
 from .taxonomy import ModificationType
-from .variant_proposer import _render_prompt
+from .template_masking import check_sentinels, mask_invariants, unmask
+from .variant_proposer import _render_prompt, _validate_payload
 from utils import config
 
 
@@ -124,6 +130,9 @@ def _wrap_round(
         round_.instructions,
         "Conserva todas las variables ($X, $X(%Y)) y todas las cantidades y "
         "unidades exactamente como en el original. No añadas información.",
+        "Los tokens [[P1]], [[Q2]], … son marcadores intocables: no los "
+        "modifiques, elimines, dupliques ni traduzcas; colócalos donde "
+        "correspondan en tu reescritura.",
     ]
     if forbidden_openings:
         listed = "; ".join(f"«{o}…»" for o in forbidden_openings)
@@ -142,13 +151,78 @@ def _forbidden_openings(payloads: Sequence[dict], words: int = 6) -> tuple[str, 
     return tuple(seen)
 
 
-def _sanitized_slots(stage_json: dict, usage) -> dict:
+def _sanitized_slots(stage_json: dict, usage) -> tuple[dict, dict[str, str], str]:
+    """Sanitized + masked slots for one target.
+
+    Sprint 38.6-B: after stripping the FIEBDC delimiters the template's
+    placeholders and quantities are replaced by ``[[Pn]]``/``[[Qn]]``
+    sentinels (:func:`mask_invariants`), and the ``placeholders`` slot is
+    recomputed as the sentinel list so the prompt's preservation line
+    refers to what the model actually sees. Returns ``(slots, mapping,
+    true_template)`` where ``true_template`` is the sanitized, un-masked
+    template (the ground truth restored into every kept payload). The
+    ``concept`` slot is NOT masked — it is context, not rewrite material.
+    """
     slots = slot_extractor.extract_slots(
         stage_json, usage.concept_key, MTYPE, usage.slot_extractor_target_id,
     )
-    slots["template"] = _strip_fiebdc(slots["template"])
     slots["concept"] = _strip_fiebdc(slots["concept"])
-    return slots
+    true_template = _strip_fiebdc(slots["template"])
+    masked, mapping = mask_invariants(true_template)
+    slots["template"] = masked
+    slots["placeholders"] = (
+        ", ".join(f"[[{k}]]" for k in mapping) if mapping else "(ninguna)"
+    )
+    return slots, mapping, true_template
+
+
+def _restore_and_validate(
+    raw: list,
+    mapping: dict[str, str],
+    true_template: str,
+    prefix: str,
+) -> tuple[list[dict], list[str]]:
+    """Sentinel-aware per-candidate validation (replaces
+    :func:`menu_proposer._validate_variants` in the diversity flow).
+
+    Per raw element: shape check (dict with a string ``new``), then
+    :func:`check_sentinels` on the masked text, then restore —
+    ``original`` is overwritten with the known ``true_template`` (echo
+    sloppiness must not matter) and ``new`` is unmasked — then the full
+    schema validator (:func:`variant_proposer._validate_payload`, which
+    still requires ``preserves_meaning``; no defaulting) and the
+    scaffold-echo check run on the RESTORED payload. Returns
+    ``(keeps, dropped)``; drops are ``f"{prefix} [i] reason"``.
+    """
+    keeps: list[dict] = []
+    dropped: list[str] = []
+    for i, elem in enumerate(raw):
+        if not isinstance(elem, dict):
+            dropped.append(f"{prefix} [{i}] not_a_dict")
+            continue
+        if not isinstance(elem.get("new"), str):
+            dropped.append(f"{prefix} [{i}] missing_key: 'new'")
+            continue
+        try:
+            check_sentinels(elem["new"], mapping)
+        except ValueError as err:
+            dropped.append(f"{prefix} [{i}] {err}")
+            continue
+        restored = {
+            **elem,
+            "original": true_template,
+            "new": unmask(elem["new"], mapping),
+        }
+        try:
+            _validate_payload(restored, MTYPE)
+        except ValueError as err:
+            dropped.append(f"{prefix} [{i}] {err}")
+            continue
+        if _is_prompt_echo(restored):
+            dropped.append(f"{prefix} [{i}] prompt_scaffold_echo")
+            continue
+        keeps.append(restored)
+    return keeps, dropped
 
 
 def propose_diverse(
@@ -170,7 +244,7 @@ def propose_diverse(
     out: dict[tuple, CandidateSet] = {}
     for target in targets:
         usage = target.usages[0]
-        slots = _sanitized_slots(stage_json, usage)
+        slots, mapping, true_template = _sanitized_slots(stage_json, usage)
         rendered = _render_prompt(prompt_body, slots, MTYPE)
         pooled: list[dict] = []
         dropped_all: list[str] = []
@@ -194,10 +268,11 @@ def propose_diverse(
                 except ValueError as err:
                     skip_reasons.append(f"{model_tag}/{round_.tag}: {err}")
                     continue
-                variants, dropped = _validate_variants(raw, MTYPE)
-                dropped_all.extend(
-                    f"{model_tag}/{round_.tag} {d}" for d in dropped
+                variants, dropped = _restore_and_validate(
+                    raw, mapping, true_template,
+                    prefix=f"{model_tag}/{round_.tag}",
                 )
+                dropped_all.extend(dropped)
                 model_keeps.extend(variants)
             for v in model_keeps:
                 pooled.append({**v, "proposer_model": model_tag})
