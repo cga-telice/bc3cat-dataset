@@ -8,6 +8,7 @@ import pytest
 from synthetic.menu_diversity import (
     ROUNDS,
     _forbidden_openings,
+    _model_store_tag,
     _strip_fiebdc,
     _wrap_round,
     propose_diverse,
@@ -71,6 +72,10 @@ def test_wrap_round_embeds_tag_n_and_forbidden_openings():
 def test_forbidden_openings_first_six_words():
     payloads = [{"new": "uno dos tres cuatro cinco seis siete ocho"}]
     assert _forbidden_openings(payloads) == ("uno dos tres cuatro cinco seis",)
+
+
+def test_model_store_tags_distinguish_sizes():
+    assert _model_store_tag("qwen2.5:14b") != _model_store_tag("qwen2.5:32b")
 
 
 def test_propose_diverse_pools_two_models_and_tags_provenance():

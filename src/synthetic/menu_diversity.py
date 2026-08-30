@@ -185,8 +185,12 @@ def propose_diverse(
                 prompt = _wrap_round(
                     rendered, round_, n=n_per_round, forbidden_openings=openings,
                 )
+                # complete() stays outside the try: a truncated cache record
+                # raises json.JSONDecodeError (⊂ ValueError) from the cache-
+                # reading client and must fail loud, not file as a parse skip.
+                response = client.complete(prompt)
                 try:
-                    raw = _parse_json_list(client.complete(prompt))
+                    raw = _parse_json_list(response)
                 except ValueError as err:
                     skip_reasons.append(f"{model_tag}/{round_.tag}: {err}")
                     continue
@@ -219,7 +223,9 @@ def propose_diverse(
 
 
 def _model_store_tag(model: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "", model.split(":")[0].lower())
+    # Full model string, not just the name before ":" — "qwen2.5:14b" and
+    # "qwen2.5:32b" must map to distinct store dirs / provenance tags.
+    return re.sub(r"[^a-z0-9]+", "", model.lower())
 
 
 def default_store_dir(model: str) -> Path:
@@ -243,6 +249,8 @@ def build_clients(
                 LLMConfig.from_env(), model=model, temperature=temperature,
             )
             clients[tag] = ResumingRecordingClient(HttpLLMClient(cfg), store_dir=store)
+    if len(clients) != len(models):
+        raise ValueError(f"model tag collision: {models}")
     return clients
 
 
@@ -255,7 +263,13 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         p.add_argument("--concept-filter", default=None)
         p.add_argument("--concepts", default=None,
                        help="Comma-separated concept keys (pilot mode); overrides --concept-filter.")
-        p.add_argument("--models", default=",".join(DEFAULT_MODELS))
+        p.add_argument(
+            "--models",
+            default=",".join(DEFAULT_MODELS),
+            help="Comma-separated model names. replay must use the same "
+                 "--models and --n-per-round as the original run (both are "
+                 "baked into the recorded prompts).",
+        )
         p.add_argument("--n-per-round", type=int, default=DEFAULT_N_PER_ROUND)
         p.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE)
         p.add_argument("--out-machine", default=None)
@@ -292,8 +306,10 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     )
     n_c = sum(len(s.candidates) for s in sets.values())
     n_skip = sum(1 for s in sets.values() if s.reason)
+    n_empty = sum(1 for s in sets.values() if not s.candidates and not s.reason)
     sys.stdout.write(
-        f"template_paraphrase diversity: {len(sets)} targets, {n_c} candidates, {n_skip} skipped\n"
+        f"template_paraphrase diversity: {len(sets)} targets, {n_c} candidates, "
+        f"{n_skip} skipped, {n_empty} empty\n"
     )
     return 0
 
