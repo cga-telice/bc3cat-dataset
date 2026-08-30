@@ -214,6 +214,7 @@ def run_menu(
     stage_json: dict,
     *,
     concept_filter=None,
+    skip_types: frozenset = frozenset(),
     n: int = menu_proposer.DEFAULT_N_CANDIDATES,
     client,
     chapter_label: str,
@@ -231,6 +232,11 @@ def run_menu(
     concept_filter
         Optional predicate on the concept key (e.g.
         ``lambda k: k.startswith("OEB")``).
+    skip_types
+        Modification types to leave unproposed (zero LLM calls, no
+        artefact written). Sprint 38.6: ``template_paraphrase`` is owned
+        by :mod:`menu_diversity` — full passes skip it here so a replay
+        never clobbers the diversity-generated menu.
     n
         Candidates per unique target (default from
         :data:`menu_proposer.DEFAULT_N_CANDIDATES`).
@@ -274,7 +280,7 @@ def run_menu(
     for mtype in ModificationType:
         counter.reset()
         targets = inventory.by_type.get(mtype, ())
-        if not targets:
+        if not targets or mtype in skip_types:
             per_type.append(TypeStat(
                 mtype=mtype,
                 n_targets=0,
@@ -407,6 +413,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         p.add_argument("--out-machine", default=None)
         p.add_argument("--out-review", default=None)
         p.add_argument("--llm-cache", default=None)
+        p.add_argument(
+            "--skip-types",
+            default="",
+            help="Comma-separated ModificationType values to skip (e.g. template_paraphrase).",
+        )
 
     args = parser.parse_args(argv)
     if args.cmd not in ("run", "replay"):
@@ -426,6 +437,9 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     run = run_menu(
         stage,
         concept_filter=concept_filter,
+        skip_types=frozenset(
+            ModificationType(v.strip()) for v in args.skip_types.split(",") if v.strip()
+        ),
         n=args.n,
         client=client,
         chapter_label=args.chapter_label,

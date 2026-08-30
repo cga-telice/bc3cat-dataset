@@ -282,7 +282,9 @@ def _render_candidate_line(payload: dict, mtype: ModificationType) -> str:
         ModificationType.REORDER,
         ModificationType.TEMPLATE_PARAPHRASE,
     ):
-        return f'"{_escape_md(str(payload.get("new", "")))}"'
+        line = f'"{_escape_md(str(payload.get("new", "")))}"'
+        model = payload.get("proposer_model")
+        return f"{line} — _{_escape_md(str(model))}_" if model else line
     if mtype is ModificationType.NEW_PARAM:
         label = payload.get("new_axis_label", "?")
         vals = payload.get("values", [])

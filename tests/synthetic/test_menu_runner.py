@@ -377,6 +377,34 @@ class TestRunMenu:
 
 
 # ===========================================================================
+# Sprint 38.6 — skip_types guard
+# ===========================================================================
+
+
+class TestSkipTypes:
+    def test_run_menu_skips_named_types(self, tmp_path: Path):
+        """skip_types leaves the type unproposed and writes no artefact for it."""
+        stage = _load_tiny()
+        # Junk padding lets every non-skipped type run (and cleanly skip on
+        # parse failure); the skipped type must consume none of it — asserted
+        # via its per-type n_llm_calls == 0.
+        client = _StubLLMClient(["not json"] * 500)
+        run = run_menu(
+            stage,
+            n=2,
+            client=client,
+            chapter_label="T",
+            out_dir_machine=tmp_path / "m",
+            out_dir_review=tmp_path / "r",
+            skip_types=frozenset({ModificationType.TEMPLATE_PARAPHRASE}),
+            concept_filter=None,
+        )
+        stat = next(s for s in run.per_type if s.mtype is ModificationType.TEMPLATE_PARAPHRASE)
+        assert stat.n_llm_calls == 0 and stat.n_generated_targets == 0
+        assert not (tmp_path / "m" / "template_paraphrase.jsonl").exists()
+
+
+# ===========================================================================
 # format_scorecard tests
 # ===========================================================================
 
