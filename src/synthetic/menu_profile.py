@@ -57,16 +57,29 @@ class TypeProfile:
     n_skipped: int
     n_dropped: int
     n_usages: int
+    dist_orig: float     # mean (1 - token-Jaccard(new, original)) over candidates; 0.0 when no original
+    pair_sim: float      # mean pairwise token-Jaccard among a target's candidates; averaged over populated targets
 
 
 def _candidate_text(payload: dict) -> str:
     return str(payload.get("new") or payload.get("new_axis_label") or "")
 
 
+def _tokens(s: str) -> frozenset[str]:
+    return frozenset(_norm(s).split())
+
+
+def _jaccard(a: frozenset[str], b: frozenset[str]) -> float:
+    union = a | b
+    return len(a & b) / len(union) if union else 1.0
+
+
 def profile_file(path: Path) -> TypeProfile:
     rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
     n_empty = n_cand = n_noop = n_dup = n_skipped = n_dropped = n_usages = 0
     uniq_counts: list[int] = []
+    dists: list[float] = []
+    pair_sims: list[float] = []
     for r in rows:
         n_usages += len(r.get("usages") or [])
         if r.get("skipped_reason"):
@@ -77,6 +90,7 @@ def profile_file(path: Path) -> TypeProfile:
             n_empty += 1
             continue
         seen: set[str] = set()
+        token_sets: list[frozenset[str]] = []
         for c in cands:
             p = c.get("payload", {})
             new = _norm(_candidate_text(p))
@@ -87,7 +101,16 @@ def profile_file(path: Path) -> TypeProfile:
             if new in seen:
                 n_dup += 1
             seen.add(new)
+            token_sets.append(_tokens(_candidate_text(p)))
+            if orig is not None:
+                dists.append(1.0 - _jaccard(token_sets[-1], _tokens(str(orig))))
         uniq_counts.append(len(seen))
+        if len(token_sets) >= 2:
+            sims = [
+                _jaccard(token_sets[i], token_sets[j])
+                for i in range(len(token_sets)) for j in range(i + 1, len(token_sets))
+            ]
+            pair_sims.append(sum(sims) / len(sims))
     return TypeProfile(
         mtype=path.stem,
         n_targets=len(rows),
@@ -99,6 +122,8 @@ def profile_file(path: Path) -> TypeProfile:
         n_skipped=n_skipped,
         n_dropped=n_dropped,
         n_usages=n_usages,
+        dist_orig=(sum(dists) / len(dists)) if dists else 0.0,
+        pair_sim=(sum(pair_sims) / len(pair_sims)) if pair_sims else 0.0,
     )
 
 
@@ -107,12 +132,16 @@ def profile_dir(menus_dir: Path) -> list[TypeProfile]:
 
 
 def format_profile(rows: Sequence[TypeProfile]) -> str:
-    head = f"{'type':20s} {'tgt':>4s} {'empty':>5s} {'cands':>5s} {'noop':>4s} {'dup':>4s} {'uniq/tgt':>8s} {'skip':>4s} {'drop':>4s} {'usages':>6s}"
+    head = (
+        f"{'type':20s} {'tgt':>4s} {'empty':>5s} {'cands':>5s} {'noop':>4s} {'dup':>4s} "
+        f"{'uniq/tgt':>8s} {'skip':>4s} {'drop':>4s} {'usages':>6s} {'d_orig':>6s} {'p_sim':>5s}"
+    )
     lines = [head, "-" * len(head)]
     for r in rows:
         lines.append(
             f"{r.mtype:20s} {r.n_targets:4d} {r.n_empty:5d} {r.n_candidates:5d} {r.n_noop:4d} "
             f"{r.n_dup:4d} {r.uniq_per_target:8.1f} {r.n_skipped:4d} {r.n_dropped:4d} {r.n_usages:6d}"
+            f" {r.dist_orig:6.2f} {r.pair_sim:5.2f}"
         )
     return "\n".join(lines) + "\n"
 

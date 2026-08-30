@@ -59,3 +59,21 @@ def test_profile_dir_empty_dir_yields_empty_list_and_header_only_table(tmp_path)
     assert len(lines) == 2
     assert "uniq/tgt" in lines[0]
     assert lines[1] == "-" * len(lines[0])
+
+
+def test_diversity_columns(tmp_path):
+    _write(tmp_path / "template_paraphrase.jsonl", [
+        {"modification_type": "template_paraphrase", "skipped_reason": None, "dropped_reasons": [],
+         "usages": [{"concept_key": "A$"}],
+         "candidates": [
+             {"payload": {"original": "a b c d", "new": "a b c d"}},   # dist 0.0 to original
+             {"payload": {"original": "a b c d", "new": "e f g h"}},   # dist 1.0
+         ]},
+    ])
+    r = profile_dir(tmp_path)[0]
+    # dist_orig: mean over candidates of (1 - Jaccard(new, original)) -> (0.0 + 1.0) / 2
+    assert r.dist_orig == 0.5
+    # pair_sim: mean pairwise Jaccard among the target's candidates -> 0.0 for disjoint pair
+    assert r.pair_sim == 0.0
+    text = format_profile([r])
+    assert "d_orig" in text and "p_sim" in text
