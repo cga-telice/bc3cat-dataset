@@ -70,6 +70,23 @@ def mask_invariants(text: str) -> tuple[str, dict[str, str]]:
     return _MASK_RE.sub(_sub, text), mapping
 
 
+def remask(text: str, mapping: dict[str, str]) -> str:
+    """Forgive self-unmasking: for each sentinel absent from ``text`` whose
+    literal appears EXACTLY once, substitute the sentinel back (longest
+    literals first, deterministically). Restoring a remasked text yields the
+    same string as the model wrote, so this can never alter the final
+    candidate — it only lets bookkeeping-correct candidates pass
+    :func:`check_sentinels`. Ambiguous (0 or >=2 occurrences) literals are
+    left alone and the check will still fail closed."""
+    present = set(_SENTINEL_RE.findall(text))
+    for sid, literal in sorted(
+        mapping.items(), key=lambda kv: len(kv[1]), reverse=True,
+    ):
+        if sid not in present and text.count(literal) == 1:
+            text = text.replace(literal, f"[[{sid}]]", 1)
+    return text
+
+
 def unmask(text: str, mapping: dict[str, str]) -> str:
     """Restore the exact literals. Unknown sentinels are left in place —
     call :func:`check_sentinels` first to fail loud on them."""

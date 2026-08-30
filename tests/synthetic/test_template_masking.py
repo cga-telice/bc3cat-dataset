@@ -3,7 +3,12 @@ from __future__ import annotations
 
 import pytest
 
-from synthetic.template_masking import check_sentinels, mask_invariants, unmask
+from synthetic.template_masking import (
+    check_sentinels,
+    mask_invariants,
+    remask,
+    unmask,
+)
 
 
 _TEMPLATE = (
@@ -45,6 +50,31 @@ def test_placeholders_and_quantities_get_distinct_prefixes():
     q = [k for k in mapping if k.startswith("Q")]
     assert len(p) == 2 and len(q) == 1
     assert mapping[q[0]] == "250 mm"
+
+
+def test_remask_rescues_self_unmasked_placeholder():
+    masked, mapping = mask_invariants("$A de 250 mm ($L(%C))")
+    # model wrote the literal $A instead of its sentinel
+    a_sid = next(k for k, v in mapping.items() if v == "$A")
+    model_new = masked.replace(f"[[{a_sid}]]", "$A")
+    fixed = remask(model_new, mapping)
+    check_sentinels(fixed, mapping)  # no raise
+    assert unmask(fixed, mapping) == unmask(masked, mapping)
+
+
+def test_remask_leaves_ambiguous_literals_alone():
+    # Same literal twice -> two sentinel ids; a fully self-unmasked text
+    # has "$A" count==2, so neither P id can be rescued unambiguously.
+    masked, mapping = mask_invariants("$A y $A de 2")
+    broken = unmask(masked, mapping)
+    assert broken == "$A y $A de 2"
+    fixed = remask(broken, mapping)
+    # The Q literal "2" appears exactly once, so it DOES get rescued...
+    q_sid = next(k for k in mapping if k.startswith("Q"))
+    assert f"[[{q_sid}]]" in fixed
+    # ...but the ambiguous $A ids stay literal and the check fails closed.
+    with pytest.raises(ValueError, match="sentinels_not_preserved"):
+        check_sentinels(fixed, mapping)
 
 
 def test_attached_unit_masked_with_its_number():

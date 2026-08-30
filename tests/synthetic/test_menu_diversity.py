@@ -267,6 +267,36 @@ def test_propose_diverse_applies_validators():
     assert n_sentinel_drops == 2
 
 
+def test_self_unmasked_sentinel_is_rescued_by_remask():
+    # Pilot finding: models often write the literal ($A, "2 m") instead of
+    # its sentinel because the unmasked Concepto line shows the real
+    # tokens. When the literal appears exactly once, remask restores the
+    # sentinel and the candidate survives with the fully-restored text.
+    inv = scan_chapter(_STAGE)
+    masked, mapping = _texto_masked()
+    good = "Queda probada la zanja de 2 m de ancho — trabajo $A, modo $K. ($L(%A))"
+    good_masked = _mask_with(good, mapping)
+    p_sid = next(k for k in mapping if k.startswith("P"))
+    self_unmasked = good_masked.replace(f"[[{p_sid}]]", mapping[p_sid])
+    assert f"[[{p_sid}]]" not in self_unmasked
+    clients = {
+        # RESUMEN: 5 junk rounds; TEXTO: the self-unmasked candidate in
+        # R1, junk for R2/R3 and the two top-up rounds (1 < MIN_CANDIDATES).
+        "phi4": _ScriptedClient(["no json"] * 5 + [
+            _resp(self_unmasked, original=masked),
+            "no json",
+            "no json",
+        ] + ["no json"] * 2),
+    }
+    sets = propose_diverse(_STAGE, inv, clients, n_per_round=1)
+    texto = next(v for k, v in sets.items() if k[0] == "TEXTO")
+    assert len(texto.candidates) == 1
+    payload = texto.candidates[0].payload
+    assert payload["new"] == good
+    assert payload["original"] == _TEXTO_SANITIZED
+    assert not any("sentinels_not_preserved" in d for d in texto.dropped_reasons)
+
+
 def test_bracket_junk_in_new_is_rejected():
     # [[NOTA]] is not a [[Pn]]/[[Qn]] sentinel, so check_sentinels cannot
     # see it — the residue guard after unmasking must drop it instead.

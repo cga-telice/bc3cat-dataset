@@ -54,7 +54,7 @@ from .menu_runner import ResumingRecordingClient
 from .prompts import load_prompt
 from .target_scanner import ChapterInventory
 from .taxonomy import ModificationType
-from .template_masking import check_sentinels, mask_invariants, unmask
+from .template_masking import check_sentinels, mask_invariants, remask, unmask
 from .variant_proposer import _render_prompt, _validate_payload
 from utils import config
 
@@ -209,15 +209,20 @@ def _restore_and_validate(
         if not isinstance(elem.get("new"), str):
             dropped.append(f"{prefix} [{i}] missing_key: 'new'")
             continue
+        # Pilot finding: models often self-unmask (write the literal
+        # instead of the sentinel, having seen the real tokens in the
+        # Concepto line). remask() forgives the unambiguous cases before
+        # the check; ambiguous ones still fail closed.
+        candidate_text = remask(elem["new"], mapping)
         try:
-            check_sentinels(elem["new"], mapping)
+            check_sentinels(candidate_text, mapping)
         except ValueError as err:
             dropped.append(f"{prefix} [{i}] {err}")
             continue
         restored = {
             **elem,
             "original": true_template,
-            "new": unmask(elem["new"], mapping),
+            "new": unmask(candidate_text, mapping),
         }
         if "[[" in restored["new"] or "]]" in restored["new"]:
             # Bracket junk like "[[NOTA]]" is invisible to check_sentinels
