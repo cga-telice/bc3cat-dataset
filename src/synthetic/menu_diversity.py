@@ -219,6 +219,11 @@ def _restore_and_validate(
             "original": true_template,
             "new": unmask(elem["new"], mapping),
         }
+        if "[[" in restored["new"] or "]]" in restored["new"]:
+            # Bracket junk like "[[NOTA]]" is invisible to check_sentinels
+            # (it only counts [[Pn]]/[[Qn]]) and would leak into the corpus.
+            dropped.append(f"{prefix} [{i}] sentinel_residue")
+            continue
         try:
             _validate_payload(restored, MTYPE)
         except ValueError as err:

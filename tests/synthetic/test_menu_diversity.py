@@ -267,6 +267,28 @@ def test_propose_diverse_applies_validators():
     assert n_sentinel_drops == 2
 
 
+def test_bracket_junk_in_new_is_rejected():
+    # [[NOTA]] is not a [[Pn]]/[[Qn]] sentinel, so check_sentinels cannot
+    # see it — the residue guard after unmasking must drop it instead.
+    inv = scan_chapter(_STAGE)
+    masked, mapping = _texto_masked()
+    good = "Queda probada la zanja de 2 m de ancho — trabajo $A, modo $K. ($L(%A))"
+    junk = _mask_with(good, mapping) + " [[NOTA]]"
+    clients = {
+        # RESUMEN: 5 junk rounds; TEXTO: the bracket-junk candidate in R1,
+        # junk for R2/R3 and the two top-up rounds (0 < MIN_CANDIDATES).
+        "phi4": _ScriptedClient(["no json"] * 5 + [
+            _resp(junk, original=masked),
+            "no json",
+            "no json",
+        ] + ["no json"] * 2),
+    }
+    sets = propose_diverse(_STAGE, inv, clients, n_per_round=1)
+    texto = next(v for k, v in sets.items() if k[0] == "TEXTO")
+    assert texto.candidates == ()
+    assert any("sentinel_residue" in d for d in texto.dropped_reasons)
+
+
 def test_topup_rounds_fire_until_min_candidates():
     assert MIN_CANDIDATES == 6 and MAX_TOPUP_ROUNDS == 2
     inv = scan_chapter(_STAGE)

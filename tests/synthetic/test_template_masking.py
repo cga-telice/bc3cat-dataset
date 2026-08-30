@@ -30,6 +30,15 @@ def test_masked_text_has_no_placeholders_digits_or_units():
     assert " mm" not in stripped and " kV" not in stripped
 
 
+def test_placeholder_after_number_is_still_masked():
+    # Regression (38.6-B review): the unit peek after "5.6" must not
+    # swallow a following placeholder as a pseudo-unit, which left
+    # "$L(%C" un-masked in the emitted text.
+    masked, mapping = mask_invariants("clase 5.6 ($L(%C)/-/$M(%D))")
+    assert "$" not in masked
+    assert "$L(%C)" in set(mapping.values()) and "$M(%D)" in set(mapping.values())
+
+
 def test_placeholders_and_quantities_get_distinct_prefixes():
     masked, mapping = mask_invariants("$A de 250 mm ($L(%C))")
     p = [k for k in mapping if k.startswith("P")]

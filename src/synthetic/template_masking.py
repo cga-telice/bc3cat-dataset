@@ -27,7 +27,10 @@ _PLACEHOLDER_PART = r"\$[A-Za-z0-9]+(?:\(%[A-Z]\))?"
 # A whitespace-delimited token containing a digit ("220", "1,60", "HM-20",
 # "4x40"), optionally followed by one unit word from the shared unit
 # vocabulary ("m", "mm", "kV", "At."), which travels with its number.
-_QUANTITY_PART = r"[^\s\[\]]*\d[^\s\[\]]*(?:\s+(?P<unit>[^\s\d\[\]]+?)\.?(?=\s|$|[,;:)]))?"
+# The unit peek excludes "$" so a placeholder following a number (e.g.
+# "clase 5.6 ($L(%C)…") can never be swallowed as a pseudo-unit — it must
+# stay available for the placeholder alternative to mask.
+_QUANTITY_PART = r"[^\s\[\]]*\d[^\s\[\]]*(?:\s+(?P<unit>[^\s\d\[\]$]+?)\.?(?=\s|$|[,;:)]))?"
 
 _MASK_RE = re.compile(rf"(?P<ph>{_PLACEHOLDER_PART})|(?P<qty>{_QUANTITY_PART})")
 _SENTINEL_RE = re.compile(r"\[\[([PQ]\d+)\]\]")
