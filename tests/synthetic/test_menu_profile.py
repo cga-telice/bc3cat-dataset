@@ -77,3 +77,26 @@ def test_diversity_columns(tmp_path):
     assert r.pair_sim == 0.0
     text = format_profile([r])
     assert "d_orig" in text and "p_sim" in text
+
+
+def test_pair_sim_is_mean_of_per_target_means(tmp_path):
+    # target 1: two disjoint candidates -> per-target mean 0.0
+    # target 2: three identical candidates... use distinct-but-overlapping to avoid dedup concerns:
+    # pairs all Jaccard 1.0 -> per-target mean 1.0. Overall = (0.0 + 1.0) / 2 = 0.5,
+    # whereas pooled-pairs would give (0*1 + 1*3) / 4 = 0.75.
+    _write(tmp_path / "paraphrase.jsonl", [
+        {"modification_type": "paraphrase", "skipped_reason": None, "dropped_reasons": [],
+         "usages": [{"concept_key": "A$"}],
+         "candidates": [
+             {"payload": {"original": "o", "new": "a b"}},
+             {"payload": {"original": "o", "new": "c d"}},
+         ]},
+        {"modification_type": "paraphrase", "skipped_reason": None, "dropped_reasons": [],
+         "usages": [{"concept_key": "B$"}],
+         "candidates": [
+             {"payload": {"original": "o", "new": "x y"}},
+             {"payload": {"original": "o", "new": "y x"}},
+             {"payload": {"original": "o", "new": "x  y"}},
+         ]},
+    ])
+    assert profile_dir(tmp_path)[0].pair_sim == 0.5

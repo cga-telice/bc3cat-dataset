@@ -58,7 +58,9 @@ class TypeProfile:
     n_dropped: int
     n_usages: int
     dist_orig: float     # mean (1 - token-Jaccard(new, original)) over candidates; 0.0 when no original
-    pair_sim: float      # mean pairwise token-Jaccard among a target's candidates; averaged over populated targets
+    # unweighted mean of per-target means (targets need >= 2 candidates); for
+    # new_param compares axis labels only -- see n_dup
+    pair_sim: float
 
 
 def _candidate_text(payload: dict) -> str:
