@@ -1,0 +1,13 @@
+type                  tgt empty cands noop  dup uniq/tgt skip drop usages d_orig p_sim
+--------------------------------------------------------------------------------------
+compression            22     0   107    0    0      4.9    0    0    132   0.65  0.56
+expansion              46     0   454    0    0      9.9    0    0    358   0.75  0.43
+new_param              25     0   251    0    6      9.8    0    0     25   0.00  0.26
+num_to_text            11     0    33    0    0      3.0    0    0     85   1.00  0.32
+omission              212     8   496    3    0      2.4    8  119    218   0.19  0.82
+paraphrase             46     0   420    0    0      9.1    0    0    358   0.72  0.45
+reorder                49     5   132    0    0      3.0    5    1     50   0.11  0.86
+synonym_label          34     2   158    2    0      4.9    0    0    289   0.87  0.27
+template_paraphrase    49     0   709    0    0     14.5    0  194     50   0.55  0.41
+unit_conversion        12     5    18    0    0      2.6    0    0     74   0.92  0.10
+unit_expansion         12     0    33    0    0      2.8    0    0     74   0.89  0.52
