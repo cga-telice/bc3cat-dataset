@@ -84,7 +84,8 @@ def _omission(new, omitted):
 
 
 def test_reorder_clean_placeholders_accepted():
-    new = "($N(%D)) primero, luego $A tubo(s) ($L(%B)/$M(%C))"
+    # 38.6: new must conserve quantities (quantity gate)
+    new = "($N(%D)) primero, luego $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C))"
     assert _validate_payload(_reorder(new), ModificationType.REORDER) is not None
 
 

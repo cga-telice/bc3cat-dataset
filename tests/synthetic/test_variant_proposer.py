@@ -25,6 +25,8 @@ from synthetic.taxonomy import (
 from synthetic.variant_proposer import (
     EXPECTED_SLOTS,
     VariantProposal,
+    _require_quantities_conserved,
+    _validate_payload,
     propose_variant,
 )
 
@@ -878,3 +880,57 @@ def test_skip_record_other_fields_are_none_on_validation_failure():
     assert skip.value is None
     assert skip.original is None
     assert skip.new is None
+
+
+# ---- Sprint 38.6: quantity conservation --------------------------------
+
+
+class TestQuantityConservation:
+    def test_equal_quantities_pass(self):
+        _require_quantities_conserved(
+            "zanja de 2 m de ancho por 1,60 m de alto al 95% P.M. con tubos de 250 mm",
+            "con tubos de 250 mm, zanja de 1,60 m de alto y 2 m de ancho, compactado al 95% P.M.",
+        )  # no raise
+
+    def test_changed_number_rejected(self):
+        with pytest.raises(ValueError, match="quantities_not_conserved"):
+            _require_quantities_conserved("hormigonado a 760 mm", "hormigonado a 780 mm")
+
+    def test_dropped_number_rejected(self):
+        with pytest.raises(ValueError, match="quantities_not_conserved"):
+            _require_quantities_conserved("2 ternas de tubos de 250 mm", "ternas de tubos de 250 mm")
+
+    def test_duplicated_number_rejected(self):
+        # multiset, not set: 250 appearing twice != once
+        with pytest.raises(ValueError, match="quantities_not_conserved"):
+            _require_quantities_conserved("tubos de 250 mm", "tubos de 250 mm y separadores de 250 mm")
+
+    def test_changed_unit_rejected(self):
+        # strict per spec D4.3: "mm" -> "milímetros" is unit_expansion's job, not template_paraphrase's
+        with pytest.raises(ValueError, match="quantities_not_conserved"):
+            _require_quantities_conserved("tubos de 250 mm", "tubos de 250 milímetros")
+
+    def test_embedded_code_numbers_count(self):
+        # HM-20 / 4x40 contribute their digits to the multiset
+        with pytest.raises(ValueError, match="quantities_not_conserved"):
+            _require_quantities_conserved("hormigón HM-20", "hormigón HM-25")
+
+    def test_standalone_unit_letters_ignored(self):
+        # "t"/"m" as prose words are not quantities; only number-attached units count
+        _require_quantities_conserved("plantilla t con $A", "plantilla u con $A")  # no raise
+
+    def test_wired_into_template_paraphrase_schema(self):
+        with pytest.raises(ValueError, match="quantities_not_conserved"):
+            _validate_payload(
+                {"original": "plantilla $A de 760 mm", "new": "plantilla $A de 760 cm",
+                 "preserves_meaning": True},
+                ModificationType.TEMPLATE_PARAPHRASE,
+            )
+
+    def test_wired_into_reorder_schema(self):
+        with pytest.raises(ValueError, match="quantities_not_conserved"):
+            _validate_payload(
+                {"original": "plantilla $A de 760 mm", "new": "de 750 mm plantilla $A",
+                 "preserves_meaning": True},
+                ModificationType.REORDER,
+            )

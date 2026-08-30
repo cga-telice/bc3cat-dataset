@@ -26,10 +26,12 @@ Does NOT own:
 from __future__ import annotations
 
 import re
+from collections import Counter
 from dataclasses import dataclass
 from typing import Any, Optional
 
 from .llm_proposer import LLMClient, propose
+from .slot_extractor import _UNIT_TOKENS
 from .taxonomy import Modification, ModificationType, TYPE_TO_LAYER
 
 
@@ -185,6 +187,7 @@ def _validate_payload(
             # placeholder must survive (a small LLM corrupts them — e.g.
             # `$L(%B)` -> `$/($B)` — and the string-only checks miss it).
             _require_placeholders_preserved(payload["original"], payload["new"])
+            _require_quantities_conserved(payload["original"], payload["new"])
         elif modification_type in _L2_CONTENT_TYPES:
             # L2 fragments are placeholder-free by construction. F1-review
             # found paraphrase/expansion/compression payloads whose `new`
@@ -200,6 +203,7 @@ def _validate_payload(
         # keeps every $VAR / $VAR(%AXIS) token intact.
         _validate_original_new_preserves(payload)
         _require_placeholders_preserved(payload["original"], payload["new"])
+        _require_quantities_conserved(payload["original"], payload["new"])
     elif modification_type is ModificationType.NEW_PARAM:
         _validate_new_param(payload)
     else:  # defensive: every enum member must be covered
@@ -314,6 +318,45 @@ def _require_placeholders_preserved(original: str, new: str) -> None:
     if o != n:
         raise ValueError(
             f"placeholders_not_preserved: original={sorted(o)} new={sorted(n)}"
+        )
+
+
+_NUMBER_RE = re.compile(r"\d+(?:[.,]\d+)?")
+_ATTACHED_UNIT_RE = re.compile(r"\d(?:[.,]\d+)?\s*([a-záéíóúñü°²³%]+)\.?", re.IGNORECASE)
+
+
+def _quantity_signature(text: str) -> tuple[Counter, Counter]:
+    """Multisets of (numeric tokens, number-attached unit tokens) in `text`.
+
+    Sprint 38.6 (per SPRINT_386_DESIGN.md D4.3: "attached unit/code
+    tokens"). Numbers include those embedded in codes (`HM-20` → `20`,
+    `4x40` → `4`,`40`). Unit tokens count only when they immediately
+    follow a numeric token (optional whitespace, optional trailing
+    dot) and appear in :data:`slot_extractor._UNIT_TOKENS` (`mm`, `m`,
+    `%`, `horas`, …) — e.g. `"2 m"`, `"5 At."`, `"95%"`. Standalone
+    letters/words elsewhere in the prose (a lone `"t"` or `"a"`, or a
+    placeholder's variable letter) never count; that's what keeps this
+    safe for prose that merely contains unit-like single letters.
+    """
+    numbers = Counter(_NUMBER_RE.findall(text))
+    units = Counter(
+        m.lower() for m in _ATTACHED_UNIT_RE.findall(text) if m.lower() in _UNIT_TOKENS
+    )
+    return numbers, units
+
+
+def _require_quantities_conserved(original: str, new: str) -> None:
+    """Full-surface rewrites must keep every quantity and unit token:
+    a changed dimension (`760 mm` → `780 mm`), a dropped count, a
+    duplicated diameter, or a re-spelled unit (`mm` → `milímetros`) all
+    change catalog meaning. Unit re-spelling is `unit_expansion`'s job."""
+    o_num, o_unit = _quantity_signature(original)
+    n_num, n_unit = _quantity_signature(new)
+    if o_num != n_num or o_unit != n_unit:
+        raise ValueError(
+            "quantities_not_conserved: "
+            f"numbers {sorted(o_num.items())}→{sorted(n_num.items())}, "
+            f"units {sorted(o_unit.items())}→{sorted(n_unit.items())}"
         )
 
 
