@@ -264,7 +264,7 @@ def _render_target_section(
         text = _render_candidate_line(cp.payload, mtype)
         lines.append(f"- [ ] {i}. {text}\n")
     if set_.dropped_reasons:
-        lines.append("\n_Dropped by schema validation (not reviewable):_\n")
+        lines.append("\n_Dropped by validation gates (not reviewable):_\n")
         for drop in set_.dropped_reasons:
             lines.append(f"- {_escape_md(drop)}\n")
     lines.append("\n")

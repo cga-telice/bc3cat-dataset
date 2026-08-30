@@ -98,16 +98,37 @@ def _token_set(s: str) -> frozenset[str]:
 
 def _similarity_gate(
     candidates: tuple["CandidateProposal", ...],
+    mtype: ModificationType,
 ) -> tuple[tuple["CandidateProposal", ...], tuple[str, ...]]:
     """Drop candidates whose token-Jaccard against an already-kept
     candidate exceeds :data:`SIMILARITY_THRESHOLD`. Returns
     ``(kept, drop_reasons)``; reasons use the candidate's index in the
-    incoming tuple."""
+    incoming tuple.
+
+    REORDER is exempt (38.6 review finding): token-set Jaccard is
+    order-blind, so it cannot distinguish reorderings — a pure clause
+    permutation has an identical token set (Jaccard 1.0), and the gate
+    would destroy reorder's entire value axis. REORDER is the one type
+    whose value *is* the order; its cap-3 + exact dedup already bounds
+    dullness without this gate.
+    """
+    if mtype is ModificationType.REORDER:
+        return candidates, ()
     kept: list[CandidateProposal] = []
     kept_tokens: list[frozenset[str]] = []
     reasons: list[str] = []
     for i, cand in enumerate(candidates):
-        text = cand.payload.get("new") or cand.payload.get("new_axis_label") or ""
+        payload = cand.payload
+        if "new_axis_label" in payload:
+            # NEW_PARAM's identity is label + values (mirrors
+            # _candidate_dedup_key) — the label alone is near-constant
+            # across a target's candidates and would over-collapse them.
+            vals = " ".join(
+                str(v.get("value", "")) for v in payload.get("values", []) if isinstance(v, dict)
+            )
+            text = f"{payload.get('new_axis_label', '')} {vals}"
+        else:
+            text = payload.get("new") or ""
         toks = _token_set(str(text))
         is_dup = False
         for kt in kept_tokens:
@@ -155,18 +176,24 @@ class CandidateSet:
         family).
     candidates
         Zero-or-more surviving :class:`CandidateProposal` records,
-        already deduplicated by normalised text, and, for the types
-        listed in :data:`MENU_CAP_BY_TYPE`, truncated to that cap
-        (Sprint 38.5) — the tuple can be shorter than the number of
-        survivors.
+        already deduplicated by normalised text, passed through the
+        near-duplicate :func:`_similarity_gate` (Sprint 38.6; REORDER
+        exempt), and, for the types listed in :data:`MENU_CAP_BY_TYPE`,
+        truncated to that cap (Sprint 38.5) — the tuple can be shorter
+        than the number of survivors.
     reason
         Non-``None`` iff the whole target was skipped (malformed list
         after retry / empty list / etc.); prefixed with a stable
         machine-readable slug so downstream reporting can group them.
     dropped_reasons
         Per-element schema-validation errors for elements that were
-        parsed but rejected. Ordered as they appeared in the response;
-        used by :mod:`menu_artefacts` to note "3 of 10 dropped" in the
+        parsed but rejected, plus (Sprint 38.6) ``near_duplicate_of_kept``
+        entries appended by :func:`_similarity_gate`. Ordered as they
+        appeared in the response, except that the gate's entries index
+        into its own post-dedup input tuple, not the raw LLM response —
+        the ``[i]`` prefix on a ``near_duplicate_of_kept`` reason is not
+        comparable to the ``[i]`` prefix on a schema-validation reason.
+        Used by :mod:`menu_artefacts` to note "3 of 10 dropped" in the
         artefact's tally without exposing internals.
     """
 
@@ -234,7 +261,7 @@ def _propose_l1(
         for target in axis_targets:
             _, value_norm = target.dedup_key
             gated, gate_reasons = _similarity_gate(
-                _extract_l1_candidates_for_value(variants, value_norm),
+                _extract_l1_candidates_for_value(variants, value_norm), mtype,
             )
             candidates = _cap_candidates(gated, mtype)
             out[target.dedup_key] = CandidateSet(
@@ -338,7 +365,7 @@ def _propose_single_target(
             stage_json, first, mtype, client, n=n,
         )
         if variants:
-            gated, gate_reasons = _similarity_gate(_dedupe_non_l1(variants, mtype))
+            gated, gate_reasons = _similarity_gate(_dedupe_non_l1(variants, mtype), mtype)
             candidates = _cap_candidates(gated, mtype)
             out[target.dedup_key] = CandidateSet(
                 target=target,

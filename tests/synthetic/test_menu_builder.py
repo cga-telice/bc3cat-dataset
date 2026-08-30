@@ -838,7 +838,7 @@ class TestSimilarityGate:
             CandidateProposal(payload={"new": "canalización hormigonada de tubos de PVC en la zanja"}),  # 7/8 shared
             CandidateProposal(payload={"new": "conducción embebida en hormigón para conductos plásticos"}),
         )
-        kept, reasons = _similarity_gate(cands)
+        kept, reasons = _similarity_gate(cands, ModificationType.TEMPLATE_PARAPHRASE)
         assert [c.payload["new"] for c in kept] == [cands[0].payload["new"], cands[2].payload["new"]]
         assert reasons == ("[1] near_duplicate_of_kept",)
 
@@ -849,7 +849,21 @@ class TestSimilarityGate:
             CandidateProposal(payload={"new": "con reposición"}),
             CandidateProposal(payload={"new": "con reemplazo"}),
         )
-        kept, reasons = _similarity_gate(cands)
+        kept, reasons = _similarity_gate(cands, ModificationType.TEMPLATE_PARAPHRASE)
+        assert len(kept) == 2 and reasons == ()
+
+    def test_reorder_exempt_pure_permutations_kept(self):
+        cands = (
+            CandidateProposal(payload={"new": "$K. Canalización hormigonada $A T"}),
+            CandidateProposal(payload={"new": "Canalización hormigonada $A T $K."}),
+        )
+        kept, reasons = _similarity_gate(cands, ModificationType.REORDER)
+        assert len(kept) == 2 and reasons == ()
+
+    def test_new_param_gate_text_includes_values(self):
+        a = CandidateProposal(payload={"new_axis_label": "TIPO", "values": [{"value": "Horizontal"}, {"value": "Vertical"}]})
+        b = CandidateProposal(payload={"new_axis_label": "TIPO", "values": [{"value": "Fija"}, {"value": "Móvil"}]})
+        kept, reasons = _similarity_gate((a, b), ModificationType.NEW_PARAM)
         assert len(kept) == 2 and reasons == ()
 
     def test_propose_single_target_applies_gate(self):
