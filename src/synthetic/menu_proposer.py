@@ -85,6 +85,44 @@ def _cap_candidates(
     return candidates if cap is None else candidates[:cap]
 
 
+# Sprint 38.6. Exact-duplicate dedup misses "same sentence, one word
+# swapped" — the dominant dullness mode measured on the Sprint 38 menus
+# (template_paraphrase mutual similarity 0.77). Greedy first-kept-wins:
+# candidates are ordered best→worst, so the earlier candidate survives.
+SIMILARITY_THRESHOLD: float = 0.8
+
+
+def _token_set(s: str) -> frozenset[str]:
+    return frozenset(_normalise(s).split())
+
+
+def _similarity_gate(
+    candidates: tuple["CandidateProposal", ...],
+) -> tuple[tuple["CandidateProposal", ...], tuple[str, ...]]:
+    """Drop candidates whose token-Jaccard against an already-kept
+    candidate exceeds :data:`SIMILARITY_THRESHOLD`. Returns
+    ``(kept, drop_reasons)``; reasons use the candidate's index in the
+    incoming tuple."""
+    kept: list[CandidateProposal] = []
+    kept_tokens: list[frozenset[str]] = []
+    reasons: list[str] = []
+    for i, cand in enumerate(candidates):
+        text = cand.payload.get("new") or cand.payload.get("new_axis_label") or ""
+        toks = _token_set(str(text))
+        is_dup = False
+        for kt in kept_tokens:
+            union = toks | kt
+            if union and len(toks & kt) / len(union) > SIMILARITY_THRESHOLD:
+                is_dup = True
+                break
+        if is_dup:
+            reasons.append(f"[{i}] near_duplicate_of_kept")
+            continue
+        kept.append(cand)
+        kept_tokens.append(toks)
+    return tuple(kept), tuple(reasons)
+
+
 # ---------------------------------------------------------------------------
 # Result dataclasses
 # ---------------------------------------------------------------------------
@@ -195,15 +233,16 @@ def _propose_l1(
         )
         for target in axis_targets:
             _, value_norm = target.dedup_key
-            candidates = _cap_candidates(
-                _extract_l1_candidates_for_value(variants, value_norm), mtype,
+            gated, gate_reasons = _similarity_gate(
+                _extract_l1_candidates_for_value(variants, value_norm),
             )
+            candidates = _cap_candidates(gated, mtype)
             out[target.dedup_key] = CandidateSet(
                 target=target,
                 mtype=mtype,
                 candidates=candidates,
                 reason=reason if not variants else None,
-                dropped_reasons=dropped,
+                dropped_reasons=dropped + gate_reasons,
             )
     return out
 
@@ -299,13 +338,14 @@ def _propose_single_target(
             stage_json, first, mtype, client, n=n,
         )
         if variants:
-            candidates = _cap_candidates(_dedupe_non_l1(variants, mtype), mtype)
+            gated, gate_reasons = _similarity_gate(_dedupe_non_l1(variants, mtype))
+            candidates = _cap_candidates(gated, mtype)
             out[target.dedup_key] = CandidateSet(
                 target=target,
                 mtype=mtype,
                 candidates=candidates,
                 reason=None,
-                dropped_reasons=dropped,
+                dropped_reasons=dropped + gate_reasons,
             )
         else:
             out[target.dedup_key] = CandidateSet(

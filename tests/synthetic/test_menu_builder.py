@@ -32,11 +32,13 @@ from synthetic.menu_proposer import (
     _validate_variants,
     DEFAULT_N_CANDIDATES,
     MENU_CAP_BY_TYPE,
+    SIMILARITY_THRESHOLD,
     CandidateProposal,
     CandidateSet,
     _cap_candidates,
     _parse_json_list,
     _repair_invalid_escapes,
+    _similarity_gate,
     propose_type,
 )
 from synthetic.target_scanner import (
@@ -822,3 +824,62 @@ class TestPromptEchoGuard:
         )
         assert len(variants) == 1 and variants[0]["new"] == "u $A"
         assert dropped == ("[1] prompt_scaffold_echo",)
+
+
+# ===========================================================================
+# Sprint 38.6 — near-duplicate similarity gate
+# ===========================================================================
+
+
+class TestSimilarityGate:
+    def test_near_duplicate_dropped_with_reason(self):
+        cands = (
+            CandidateProposal(payload={"new": "canalización hormigonada de tubos de PVC en zanja"}),
+            CandidateProposal(payload={"new": "canalización hormigonada de tubos de PVC en la zanja"}),  # 7/8 shared
+            CandidateProposal(payload={"new": "conducción embebida en hormigón para conductos plásticos"}),
+        )
+        kept, reasons = _similarity_gate(cands)
+        assert [c.payload["new"] for c in kept] == [cands[0].payload["new"], cands[2].payload["new"]]
+        assert reasons == ("[1] near_duplicate_of_kept",)
+
+    def test_threshold_is_08_and_short_strings_survive(self):
+        assert SIMILARITY_THRESHOLD == 0.8
+        # 1/3 Jaccard — distinct L1-style short candidates stay
+        cands = (
+            CandidateProposal(payload={"new": "con reposición"}),
+            CandidateProposal(payload={"new": "con reemplazo"}),
+        )
+        kept, reasons = _similarity_gate(cands)
+        assert len(kept) == 2 and reasons == ()
+
+    def test_propose_single_target_applies_gate(self):
+        stage = _load_tiny()
+        inv = scan_chapter(stage)
+        # CTEST010$ RESUMEN "Prueba uno $A $K" -> a template_paraphrase target.
+        # The tiny fixture has 6 TEMPLATE_PARAPHRASE targets (RESUMEN/TEXTO x
+        # 3 concepts); isolate this one so a single stub response suffices
+        # (same fake_inv pattern used elsewhere in this file).
+        all_targets = inv.by_type[ModificationType.TEMPLATE_PARAPHRASE]
+        rst_target = next(
+            t for t in all_targets
+            if t.usages[0].concept_key == "CTEST010$" and t.dedup_key[0] == "RESUMEN"
+        )
+        fake_inv = ChapterInventory(
+            concept_keys=inv.concept_keys,
+            by_type={ModificationType.TEMPLATE_PARAPHRASE: (rst_target,), **{
+                m: () for m in ModificationType if m is not ModificationType.TEMPLATE_PARAPHRASE
+            }},
+        )
+        resp = _l2_list_response([
+            ("Prueba uno $A $K", "Ensayo uno $A $K"),
+            ("Prueba uno $A $K", "Ensayo  uno $A $K"),   # normalises to dup (exact dedup)
+            ("Prueba uno $A $K", "Ensayo uno $A $K bis"),  # Jaccard 4/5 = 0.8 > threshold? no: 0.8 is not > 0.8 — keep
+            ("Prueba uno $A $K", "Primera comprobación $A $K"),
+        ])
+        client = _StubLLMClient([resp])
+        sets = propose_type(stage, fake_inv, ModificationType.TEMPLATE_PARAPHRASE, client, n=4)
+        target = next(s for s in sets.values()
+                      if s.target.usages[0].concept_key == "CTEST010$"
+                      and s.target.dedup_key[0] == "RESUMEN")
+        news = [c.payload["new"] for c in target.candidates]
+        assert "Ensayo uno $A $K" in news and "Primera comprobación $A $K" in news
