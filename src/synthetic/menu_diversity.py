@@ -63,6 +63,12 @@ MTYPE = ModificationType.TEMPLATE_PARAPHRASE
 DEFAULT_MODELS: tuple[str, ...] = ("phi4:latest", "qwen2.5:14b")
 DEFAULT_TEMPERATURE: float = 0.8
 DEFAULT_N_PER_ROUND: int = 3
+# Sprint 38.6-B top-up rounds: while a target's gated pool is smaller than
+# MIN_CANDIDATES, up to MAX_TOPUP_ROUNDS extra free-restructure rounds
+# (tags T1, T2) run per model. The decision depends only on validated
+# candidate counts, so replay over recorded transcripts reproduces it.
+MIN_CANDIDATES: int = 6
+MAX_TOPUP_ROUNDS: int = 2
 
 _EDGE_BACKSLASH_RE = re.compile(r"^\s*\\\s*|\s*\\\s*$")
 
@@ -225,6 +231,45 @@ def _restore_and_validate(
     return keeps, dropped
 
 
+def _run_round(
+    client,
+    model_tag: str,
+    round_: Round,
+    rendered: str,
+    mapping: dict[str, str],
+    true_template: str,
+    *,
+    n: int,
+    forbidden_openings: tuple[str, ...],
+    dropped_all: list[str],
+    skip_reasons: list[str],
+) -> list[dict]:
+    """One prompt → parse → restore-and-validate round for one model.
+
+    Appends drops / parse skips to the shared per-target lists and
+    returns the validated (restored) keeps. Shared by the three base
+    ROUNDS and the T1/T2 top-up rounds.
+    """
+    prompt = _wrap_round(
+        rendered, round_, n=n, forbidden_openings=forbidden_openings,
+    )
+    # complete() stays outside the try: a truncated cache record
+    # raises json.JSONDecodeError (⊂ ValueError) from the cache-
+    # reading client and must fail loud, not file as a parse skip.
+    response = client.complete(prompt)
+    try:
+        raw = _parse_json_list(response)
+    except ValueError as err:
+        skip_reasons.append(f"{model_tag}/{round_.tag}: {err}")
+        return []
+    variants, dropped = _restore_and_validate(
+        raw, mapping, true_template,
+        prefix=f"{model_tag}/{round_.tag}",
+    )
+    dropped_all.extend(dropped)
+    return variants
+
+
 def propose_diverse(
     stage_json: dict,
     inventory: ChapterInventory,
@@ -238,6 +283,13 @@ def propose_diverse(
     to an ``LLMClient``. Per model the three ROUNDS run in order; R3's
     prompt embeds the forbidden openings harvested from that model's
     R1+R2 validated keeps (deterministic given recorded transcripts).
+
+    Sprint 38.6-B: if the pooled + deduped + similarity-gated survivors
+    number fewer than :data:`MIN_CANDIDATES`, up to
+    :data:`MAX_TOPUP_ROUNDS` extra free-restructure rounds (tags ``T1``,
+    ``T2``; R3-style instructions) run — one per model per top-up — with
+    forbidden openings harvested from that model's keeps plus every
+    pooled keep so far, then the pool is re-deduped and re-gated.
     """
     targets = inventory.by_type.get(MTYPE, ())
     prompt_body = load_prompt(MTYPE)
@@ -246,9 +298,9 @@ def propose_diverse(
         usage = target.usages[0]
         slots, mapping, true_template = _sanitized_slots(stage_json, usage)
         rendered = _render_prompt(prompt_body, slots, MTYPE)
-        pooled: list[dict] = []
         dropped_all: list[str] = []
         skip_reasons: list[str] = []
+        keeps_by_model: dict[str, list[dict]] = {}
         for model_tag, client in clients.items():
             model_keeps: list[dict] = []
             for round_ in ROUNDS:
@@ -256,28 +308,46 @@ def propose_diverse(
                     _forbidden_openings(model_keeps)
                     if round_.wants_forbidden_openings else ()
                 )
-                prompt = _wrap_round(
-                    rendered, round_, n=n_per_round, forbidden_openings=openings,
+                model_keeps.extend(_run_round(
+                    client, model_tag, round_, rendered, mapping,
+                    true_template, n=n_per_round,
+                    forbidden_openings=openings,
+                    dropped_all=dropped_all, skip_reasons=skip_reasons,
+                ))
+            keeps_by_model[model_tag] = model_keeps
+
+        def _pool_and_gate() -> tuple[list[dict], tuple, tuple[str, ...]]:
+            pooled = [
+                {**v, "proposer_model": tag}
+                for tag, keeps in keeps_by_model.items()
+                for v in keeps
+            ]
+            deduped = _dedupe_non_l1(tuple(pooled), MTYPE)
+            gated, gate_reasons = _similarity_gate(deduped, MTYPE)
+            return pooled, gated, gate_reasons
+
+        pooled, gated, gate_reasons = _pool_and_gate()
+        topups_used = 0
+        while len(gated) < MIN_CANDIDATES and topups_used < MAX_TOPUP_ROUNDS:
+            topups_used += 1
+            topup = Round(
+                tag=f"T{topups_used}",
+                instructions=ROUNDS[2].instructions,
+                wants_forbidden_openings=True,
+            )
+            for model_tag, client in clients.items():
+                openings = _forbidden_openings(
+                    keeps_by_model[model_tag] + pooled
                 )
-                # complete() stays outside the try: a truncated cache record
-                # raises json.JSONDecodeError (⊂ ValueError) from the cache-
-                # reading client and must fail loud, not file as a parse skip.
-                response = client.complete(prompt)
-                try:
-                    raw = _parse_json_list(response)
-                except ValueError as err:
-                    skip_reasons.append(f"{model_tag}/{round_.tag}: {err}")
-                    continue
-                variants, dropped = _restore_and_validate(
-                    raw, mapping, true_template,
-                    prefix=f"{model_tag}/{round_.tag}",
-                )
-                dropped_all.extend(dropped)
-                model_keeps.extend(variants)
-            for v in model_keeps:
-                pooled.append({**v, "proposer_model": model_tag})
-        deduped = _dedupe_non_l1(tuple(pooled), MTYPE)
-        gated, gate_reasons = _similarity_gate(deduped, MTYPE)
+                keeps_by_model[model_tag].extend(_run_round(
+                    client, model_tag, topup, rendered, mapping,
+                    true_template, n=n_per_round,
+                    forbidden_openings=openings,
+                    dropped_all=dropped_all, skip_reasons=skip_reasons,
+                ))
+            pooled, gated, gate_reasons = _pool_and_gate()
+        # Only the final gate's reasons are logged: intermediate gates over
+        # the growing pool would duplicate them (same indices re-checked).
         dropped_all.extend(gate_reasons)
         out[target.dedup_key] = CandidateSet(
             target=target,
