@@ -349,7 +349,11 @@ def _require_quantities_conserved(original: str, new: str) -> None:
     """Full-surface rewrites must keep every quantity and unit token:
     a changed dimension (`760 mm` → `780 mm`), a dropped count, a
     duplicated diameter, or a re-spelled unit (`mm` → `milímetros`) all
-    change catalog meaning. Unit re-spelling is `unit_expansion`'s job."""
+    change catalog meaning. Unit re-spelling is `unit_expansion`'s job.
+    Known leak (multiset design, false-negative direction only): a unit
+    swap between numbers (`"2 tubos de 250 mm"` → `"250 tubos de 2 mm"`)
+    passes, since both multisets still hold {2, 250} and {mm}; human
+    review catches this rare case."""
     o_num, o_unit = _quantity_signature(original)
     n_num, n_unit = _quantity_signature(new)
     if o_num != n_num or o_unit != n_unit:

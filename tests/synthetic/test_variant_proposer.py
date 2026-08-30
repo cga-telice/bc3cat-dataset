@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import importlib
 import json
+from collections import Counter
 from dataclasses import FrozenInstanceError
 
 import pytest
@@ -25,6 +26,7 @@ from synthetic.taxonomy import (
 from synthetic.variant_proposer import (
     EXPECTED_SLOTS,
     VariantProposal,
+    _quantity_signature,
     _require_quantities_conserved,
     _validate_payload,
     propose_variant,
@@ -918,6 +920,14 @@ class TestQuantityConservation:
     def test_standalone_unit_letters_ignored(self):
         # "t"/"m" as prose words are not quantities; only number-attached units count
         _require_quantities_conserved("plantilla t con $A", "plantilla u con $A")  # no raise
+
+    def test_no_space_unit_attaches(self):
+        _require_quantities_conserved("tubos de 250mm", "tubos de 250 mm")  # no raise
+
+    def test_dimension_code_x_not_a_unit(self):
+        # "4x40 mm": numbers 4 and 40 both count; "x" is captured but not a unit
+        nums, units = _quantity_signature("tetratubos de 4x40 mm")
+        assert nums == Counter({"4": 1, "40": 1}) and units == Counter({"mm": 1})
 
     def test_wired_into_template_paraphrase_schema(self):
         with pytest.raises(ValueError, match="quantities_not_conserved"):
