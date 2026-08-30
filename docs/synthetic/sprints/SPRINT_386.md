@@ -35,7 +35,7 @@
 - Modify: `src/synthetic/variant_proposer.py` (TEMPLATE_PARAPHRASE branch at ~:197-202; REORDER branch just above it; helpers near `_require_placeholders_preserved` at ~:311)
 - Test: `tests/synthetic/test_variant_proposer.py`
 
-- [ ] **Step 1: Write the failing tests.** Append to `tests/synthetic/test_variant_proposer.py` (add `_require_quantities_conserved` to its `from synthetic.variant_proposer import (...)` block; `ModificationType` and `_validate_payload` are already imported):
+- [x] **Step 1: Write the failing tests.** Append to `tests/synthetic/test_variant_proposer.py` (add `_require_quantities_conserved` to its `from synthetic.variant_proposer import (...)` block; `ModificationType` and `_validate_payload` are already imported):
 
 ```python
 # ---- Sprint 38.6: quantity conservation --------------------------------
@@ -88,9 +88,9 @@ class TestQuantityConservation:
             )
 ```
 
-- [ ] **Step 2: Run to verify failure.** `pytest tests/synthetic/test_variant_proposer.py::TestQuantityConservation -q` → ImportError.
+- [x] **Step 2: Run to verify failure.** `pytest tests/synthetic/test_variant_proposer.py::TestQuantityConservation -q` → ImportError.
 
-- [ ] **Step 3: Implement.** In `src/synthetic/variant_proposer.py`, add next to `_require_placeholders_preserved` (~:311). `re` is already imported; add `from collections import Counter` to the imports and `from .slot_extractor import _UNIT_TOKENS`:
+- [x] **Step 3: Implement.** In `src/synthetic/variant_proposer.py`, add next to `_require_placeholders_preserved` (~:311). `re` is already imported; add `from collections import Counter` to the imports and `from .slot_extractor import _UNIT_TOKENS`:
 
 ```python
 _NUMBER_RE = re.compile(r"\d+(?:[.,]\d+)?")
@@ -133,11 +133,11 @@ Wire it: in `_validate_payload`, the REORDER branch and the TEMPLATE_PARAPHRASE 
         _require_quantities_conserved(payload["original"], payload["new"])
 ```
 
-- [ ] **Step 4: Run tests.** `pytest tests/synthetic/test_variant_proposer.py -q` → all pass. Then `pytest tests/synthetic -q` — **watch for collateral**: existing reorder/template_paraphrase fixture tests whose payloads change numbers would now fail; none is expected to (fixtures reorder placeholders, not numbers), but if one fails, inspect whether its payload genuinely violates conservation before touching it, and report rather than silently editing.
+- [x] **Step 4: Run tests.** `pytest tests/synthetic/test_variant_proposer.py -q` → all pass. Then `pytest tests/synthetic -q` — **watch for collateral**: existing reorder/template_paraphrase fixture tests whose payloads change numbers would now fail; none is expected to (fixtures reorder placeholders, not numbers), but if one fails, inspect whether its payload genuinely violates conservation before touching it, and report rather than silently editing.
 
-- [ ] **Step 5: Note on cached data.** This check is post-parse: the reorder cache stays valid; a future replay may drop reorder candidates that alter quantities. That is intended (record in Task 7 docs).
+- [x] **Step 5: Note on cached data.** This check is post-parse: the reorder cache stays valid; a future replay may drop reorder candidates that alter quantities. That is intended (record in Task 7 docs).
 
-- [ ] **Step 6: Commit.**
+- [x] **Step 6: Commit.**
 
 ```bash
 git add src/synthetic/variant_proposer.py tests/synthetic/test_variant_proposer.py
@@ -154,7 +154,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 - Modify: `src/synthetic/menu_proposer.py` (`_propose_l1` ~:195, `_propose_single_target` ~:299, helpers near `_normalise`)
 - Test: `tests/synthetic/test_menu_builder.py`
 
-- [ ] **Step 1: Failing tests.** Append to `tests/synthetic/test_menu_builder.py` (add `_similarity_gate`, `SIMILARITY_THRESHOLD` to the `menu_proposer` import block):
+- [x] **Step 1: Failing tests.** Append to `tests/synthetic/test_menu_builder.py` (add `_similarity_gate`, `SIMILARITY_THRESHOLD` to the `menu_proposer` import block):
 
 ```python
 # ===========================================================================
@@ -202,9 +202,9 @@ class TestSimilarityGate:
         assert "Ensayo uno $A $K" in news and "Primera comprobación $A $K" in news
 ```
 
-- [ ] **Step 2: Verify failure.** `pytest tests/synthetic/test_menu_builder.py::TestSimilarityGate -q` → ImportError.
+- [x] **Step 2: Verify failure.** `pytest tests/synthetic/test_menu_builder.py::TestSimilarityGate -q` → ImportError.
 
-- [ ] **Step 3: Implement.** In `src/synthetic/menu_proposer.py`, below `_cap_candidates`:
+- [x] **Step 3: Implement.** In `src/synthetic/menu_proposer.py`, below `_cap_candidates`:
 
 ```python
 # Sprint 38.6. Exact-duplicate dedup misses "same sentence, one word
@@ -275,9 +275,9 @@ and in `_propose_single_target` (the `if variants:` branch):
             )
 ```
 
-- [ ] **Step 4: Run.** `pytest tests/synthetic/test_menu_builder.py tests/synthetic/test_menu_runner.py -q` → all pass (existing tests use clearly-distinct stub candidates; if one fails on the gate, its fixture candidates are >80% similar — verify by hand before adjusting the fixture, never the threshold).
+- [x] **Step 4: Run.** `pytest tests/synthetic/test_menu_builder.py tests/synthetic/test_menu_runner.py -q` → all pass (existing tests use clearly-distinct stub candidates; if one fails on the gate, its fixture candidates are >80% similar — verify by hand before adjusting the fixture, never the threshold).
 
-- [ ] **Step 5: Commit.**
+- [x] **Step 5: Commit.**
 
 ```bash
 git add src/synthetic/menu_proposer.py tests/synthetic/test_menu_builder.py
@@ -294,7 +294,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 - Modify: `src/synthetic/menu_profile.py`
 - Test: `tests/synthetic/test_menu_profile.py`
 
-- [ ] **Step 1: Failing test.** Append to `tests/synthetic/test_menu_profile.py`:
+- [x] **Step 1: Failing test.** Append to `tests/synthetic/test_menu_profile.py`:
 
 ```python
 def test_diversity_columns(tmp_path):
@@ -315,9 +315,9 @@ def test_diversity_columns(tmp_path):
     assert "d_orig" in text and "p_sim" in text
 ```
 
-- [ ] **Step 2: Verify failure.** `pytest tests/synthetic/test_menu_profile.py -q` → AttributeError/TypeError (missing fields).
+- [x] **Step 2: Verify failure.** `pytest tests/synthetic/test_menu_profile.py -q` → AttributeError/TypeError (missing fields).
 
-- [ ] **Step 3: Implement.** In `src/synthetic/menu_profile.py`:
+- [x] **Step 3: Implement.** In `src/synthetic/menu_profile.py`:
 
 Add to `TypeProfile` (after `n_usages`):
 
@@ -375,11 +375,11 @@ In `format_profile`, extend header and row (keep existing columns, append two):
 
 and append to each row line: `f" {r.dist_orig:6.2f} {r.pair_sim:5.2f}"`.
 
-- [ ] **Step 4: Run + baseline check.** `pytest tests/synthetic/test_menu_profile.py -q` → pass. Then `PYTHONPATH=src python -m synthetic.menu_profile` — the `template_paraphrase` row should print `d_orig` ≈ 0.33 and `p_sim` ≈ 0.77, confirming the metric reproduces the assessment. Record the actual printed row in the commit message body if it differs by more than ±0.05.
+- [x] **Step 4: Run + baseline check.** `pytest tests/synthetic/test_menu_profile.py -q` → pass. Then `PYTHONPATH=src python -m synthetic.menu_profile` — the `template_paraphrase` row should print `d_orig` ≈ 0.33 and `p_sim` ≈ 0.77, confirming the metric reproduces the assessment. Record the actual printed row in the commit message body if it differs by more than ±0.05.
 
 **Note:** the committed `SPRINT_385_profile_{before,after}.txt` snapshots keep the old 10-column format — do NOT regenerate them (they are historical artefacts; Task 6 writes new snapshots).
 
-- [ ] **Step 5: Commit.**
+- [x] **Step 5: Commit.**
 
 ```bash
 git add src/synthetic/menu_profile.py tests/synthetic/test_menu_profile.py
@@ -397,7 +397,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 - Modify: `src/synthetic/menu_artefacts.py:274-286` (`_render_candidate_line`), `src/synthetic/menu_runner.py` (`run_menu` ~:213, `main` ~:385)
 - Test: `tests/synthetic/test_menu_diversity.py` (new), `tests/synthetic/test_menu_runner.py`
 
-- [ ] **Step 1: Failing tests.** Create `tests/synthetic/test_menu_diversity.py`:
+- [x] **Step 1: Failing tests.** Create `tests/synthetic/test_menu_diversity.py`:
 
 ```python
 """Sprint 38.6 — hermetic tests for :mod:`synthetic.menu_diversity`."""
@@ -553,9 +553,9 @@ class TestSkipTypes:
 
 (Adapt the two helper names to what `test_menu_runner.py` actually defines — read its fixture section first; the assertion body stays as written.)
 
-- [ ] **Step 2: Verify failure.** `pytest tests/synthetic/test_menu_diversity.py tests/synthetic/test_menu_runner.py -q` → ModuleNotFoundError / TypeError.
+- [x] **Step 2: Verify failure.** `pytest tests/synthetic/test_menu_diversity.py tests/synthetic/test_menu_runner.py -q` → ModuleNotFoundError / TypeError.
 
-- [ ] **Step 3: Implement `src/synthetic/menu_diversity.py`.**
+- [x] **Step 3: Implement `src/synthetic/menu_diversity.py`.**
 
 ```python
 """Transformation-slotted, multi-model proposer for TEMPLATE_PARAPHRASE.
@@ -864,7 +864,7 @@ if __name__ == "__main__":  # pragma: no cover
 
 (Config names verified 2026-08-30: `config.SYNTHETIC_DATA_ROOT` exists; the review default reuses `menu_runner.default_out_review_dir()` = `config.REPO_ROOT / "docs" / "synthetic" / "menus"` — the code above already does both.)
 
-- [ ] **Step 4: Provenance rendering.** In `src/synthetic/menu_artefacts.py` `_render_candidate_line`, change the L2/reorder/template_paraphrase branch:
+- [x] **Step 4: Provenance rendering.** In `src/synthetic/menu_artefacts.py` `_render_candidate_line`, change the L2/reorder/template_paraphrase branch:
 
 ```python
     if mtype in _L2_TYPES or mtype in (
@@ -876,7 +876,7 @@ if __name__ == "__main__":  # pragma: no cover
         return f"{line} — _{_escape_md(str(model))}_" if model else line
 ```
 
-- [ ] **Step 5: skip_types in menu_runner.** In `run_menu`, add parameter `skip_types: frozenset = frozenset(),` (after `concept_filter`), and in the per-type loop, extend the existing empty-targets short-circuit condition:
+- [x] **Step 5: skip_types in menu_runner.** In `run_menu`, add parameter `skip_types: frozenset = frozenset(),` (after `concept_filter`), and in the per-type loop, extend the existing empty-targets short-circuit condition:
 
 ```python
         targets = inventory.by_type.get(mtype, ())
@@ -891,9 +891,9 @@ if __name__ == "__main__":  # pragma: no cover
         ),
 ```
 
-- [ ] **Step 6: Run all tests.** `pytest tests/synthetic -q` → 1016 + new all green.
+- [x] **Step 6: Run all tests.** `pytest tests/synthetic -q` → 1016 + new all green.
 
-- [ ] **Step 7: Commit.**
+- [x] **Step 7: Commit.**
 
 ```bash
 git add src/synthetic/menu_diversity.py src/synthetic/menu_artefacts.py src/synthetic/menu_runner.py tests/synthetic/test_menu_diversity.py tests/synthetic/test_menu_runner.py
@@ -906,11 +906,13 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 
 ### Task 5: Pilot — 5 concepts, live, both models  **[CHECKPOINT: report to César before Task 6]**
 
+> **Superseded by the 38.6-B addendum (same day):** this pre-masking pilot ran and was committed (`92d89c4`, 133 candidates / 10 targets, p_sim 0.42) but exposed the long-TEXTO survival problem (OEB010$ TEXTO: 2 survivors) — the pilot was re-run under the masked+rescue flow of [`SPRINT_386B.md`](SPRINT_386B.md) Task 4 (`49c90c4`, 119 candidates).
+
 No code. Ollama must be up (Docker container `ollama` on :11434 — verify with `curl -s http://localhost:11434/api/tags`).
 
-- [ ] **Step 1: Pick pilot concepts.** `OEB010$,OEB020$,OEB140$,OEB250$,OEB290$` — includes the two backslash-residue concepts (OEB010$, OEB140$) and three ordinary ones.
+- [x] **Step 1: Pick pilot concepts.** `OEB010$,OEB020$,OEB140$,OEB250$,OEB290$` — includes the two backslash-residue concepts (OEB010$, OEB140$) and three ordinary ones.
 
-- [ ] **Step 2: Live pilot run** (from repo root, bash):
+- [x] **Step 2: Live pilot run** (from repo root, bash):
 
 ```bash
 BC3CAT_LLM_TIMEOUT=300 PYTHONPATH=src python -m synthetic.menu_diversity run \
@@ -921,13 +923,13 @@ BC3CAT_LLM_TIMEOUT=300 PYTHONPATH=src python -m synthetic.menu_diversity run \
 
 Expected: ~10 targets (RESUMEN+TEXTO × 5 concepts) × 3 rounds × 2 models = **60 calls**, roughly 10–20 min. Writes to the `_pilot` dirs so the real menu is untouched.
 
-- [ ] **Step 3: Measure.** `PYTHONPATH=src python -m synthetic.menu_profile --menus-dir data/synthetic/menus_pilot` — record the `template_paraphrase` row. Success gate (from spec D5): `p_sim` ≤ 0.55 and `d_orig` ≥ 0.45. Also check: `skip` should be 0–2; per-model candidate balance in the JSONL (`grep -o '"proposer_model": "[a-z0-9]*"' data/synthetic/menus_pilot/template_paraphrase.jsonl | sort | uniq -c`) — if qwen contributes <20% of survivors, its JSON reliability is the problem: check `dropped_reasons` and the raw store.
+- [x] **Step 3: Measure.** `PYTHONPATH=src python -m synthetic.menu_profile --menus-dir data/synthetic/menus_pilot` — record the `template_paraphrase` row. Success gate (from spec D5): `p_sim` ≤ 0.55 and `d_orig` ≥ 0.45. Also check: `skip` should be 0–2; per-model candidate balance in the JSONL (`grep -o '"proposer_model": "[a-z0-9]*"' data/synthetic/menus_pilot/template_paraphrase.jsonl | sort | uniq -c`) — if qwen contributes <20% of survivors, its JSON reliability is the problem: check `dropped_reasons` and the raw store.
 
-- [ ] **Step 4: Eyeball.** Open `docs/synthetic/menus_pilot/template_paraphrase.md`; verify OEB010$ has real candidates now (sanitized prompt = no echo), candidates visibly differ in structure (some passive/«se», some reordered), each line carries the `— _model_` suffix.
+- [x] **Step 4: Eyeball.** Open `docs/synthetic/menus_pilot/template_paraphrase.md`; verify OEB010$ has real candidates now (sanitized prompt = no echo), candidates visibly differ in structure (some passive/«se», some reordered), each line carries the `— _model_` suffix.
 
-- [ ] **Step 5: CHECKPOINT.** Report the profile row, the model balance, and 2–3 sample candidates to César. **Do not start Task 6 without his go-ahead** (he may want temperature or round-instruction tweaks first — the pilot exists precisely to iterate cheaply; each tweak only costs the pilot's 60 calls again).
+- [x] **Step 5: CHECKPOINT.** Report the profile row, the model balance, and 2–3 sample candidates to César. **Do not start Task 6 without his go-ahead** (he may want temperature or round-instruction tweaks first — the pilot exists precisely to iterate cheaply; each tweak only costs the pilot's 60 calls again).
 
-- [ ] **Step 6: Commit pilot artefacts** (audit trail):
+- [x] **Step 6: Commit pilot artefacts** (audit trail):
 
 ```bash
 git add data/synthetic/menus_pilot docs/synthetic/menus_pilot
@@ -940,9 +942,11 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 
 ### Task 6: Full run + regeneration
 
+> **Executed under the 38.6-B flow (masking + top-up + rescue), not as written here:** two-phase live run (phi4 alone, then both models), stores `menu_OEB_tpar_{phi4latest,qwen2514b}` (full-string tags per `83f216e`, not the `phi4`/`qwen25` names below) — commit `fa7b7bc`: 49 targets, 709 candidates, p_sim 0.41 / d_orig 0.55, replay sha1-verified.
+
 Only after the Task 5 checkpoint passes.
 
-- [ ] **Step 1: Full live run** (49 targets × 6 calls ≈ 294 calls; the ~60 pilot prompts replay free from the per-model stores — same store dirs; estimated 45–90 min):
+- [x] **Step 1: Full live run** (49 targets × 6 calls ≈ 294 calls; the ~60 pilot prompts replay free from the per-model stores — same store dirs; estimated 45–90 min):
 
 ```bash
 BC3CAT_LLM_TIMEOUT=300 PYTHONPATH=src python -m synthetic.menu_diversity run \
@@ -952,9 +956,9 @@ BC3CAT_LLM_TIMEOUT=300 PYTHONPATH=src python -m synthetic.menu_diversity run \
 
 (no `--out-*` overrides → writes the real `data/synthetic/menus/template_paraphrase.jsonl` + `docs/synthetic/menus/template_paraphrase.md`). The `ResumingRecordingClient` makes a crash resumable — rerun the same command.
 
-- [ ] **Step 2: Offline determinism check.** `PYTHONPATH=src python -m synthetic.menu_diversity replay --stage-json "data/intermediate/OBRA CIVIL/OBRA CIVIL.json" --concept-filter OEB` → must reproduce the same files (`git diff --stat` empty for the two menu files after replay).
+- [x] **Step 2: Offline determinism check.** `PYTHONPATH=src python -m synthetic.menu_diversity replay --stage-json "data/intermediate/OBRA CIVIL/OBRA CIVIL.json" --concept-filter OEB` → must reproduce the same files (`git diff --stat` empty for the two menu files after replay).
 
-- [ ] **Step 3: Profile + snapshot.**
+- [x] **Step 3: Profile + snapshot.**
 
 ```bash
 PYTHONPATH=src python -m synthetic.menu_profile > docs/synthetic/sprints/SPRINT_386_profile.txt
@@ -962,9 +966,9 @@ PYTHONPATH=src python -m synthetic.menu_profile > docs/synthetic/sprints/SPRINT_
 
 Verify: `template_paraphrase` meets `p_sim` ≤ 0.55 / `d_orig` ≥ 0.45; every OTHER type's row unchanged vs `SPRINT_385_profile_after.txt` on the shared columns (tgt/empty/cands/skip/drop — the two new columns are additive).
 
-- [ ] **Step 4: Sanity.** `grep -c "Campo destino" docs/synthetic/menus/template_paraphrase.md` → 0. `git status --short` → only the two menu files, the snapshot, and the new `llm_cache/menu_OEB_tpar_*` stores.
+- [x] **Step 4: Sanity.** `grep -c "Campo destino" docs/synthetic/menus/template_paraphrase.md` → 0. `git status --short` → only the two menu files, the snapshot, and the new `llm_cache/menu_OEB_tpar_*` stores.
 
-- [ ] **Step 5: Commit.**
+- [x] **Step 5: Commit.**
 
 ```bash
 git add data/synthetic/menus/template_paraphrase.jsonl docs/synthetic/menus/template_paraphrase.md data/synthetic/llm_cache/menu_OEB_tpar_phi4 data/synthetic/llm_cache/menu_OEB_tpar_qwen25 docs/synthetic/sprints/SPRINT_386_profile.txt
@@ -979,10 +983,10 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 
 ### Task 7: Docs
 
-- [ ] **Step 1:** `docs/synthetic/RESEARCH_LOG.md` — append a `### 2026-08-30 — Sprint 38.6` entry: diagnosis (temp 0, one-call anchoring, brakes-only prompt, small model), the design (rounds/models/temp/gates), pilot + full-run numbers (quote `SPRINT_386_profile.txt`), the quantity-gate scope note (also applies to reorder replays from now on), and the `menu_runner --skip-types template_paraphrase` ownership rule for future full passes.
-- [ ] **Step 2:** `docs/synthetic/STATUS_2026-08-18.md` — update the review-guidance block: `template_paraphrase` menu regenerated with structural diversity; provenance suffix explains the `— _phi4_` / `— _qwen25_` marks; review-time estimate for that file up (more distinct candidates to read, fewer wasted ones).
-- [ ] **Step 3:** `docs/synthetic/CLAUDE_SYNTHETIC.md` — module-table row for `menu_diversity.py`; note the ownership rule next to the `menu_runner` row.
-- [ ] **Step 4:** Full suite `pytest tests -q` → green; commit:
+- [x] **Step 1:** `docs/synthetic/RESEARCH_LOG.md` — append a `### 2026-08-30 — Sprint 38.6` entry: diagnosis (temp 0, one-call anchoring, brakes-only prompt, small model), the design (rounds/models/temp/gates), pilot + full-run numbers (quote `SPRINT_386_profile.txt`), the quantity-gate scope note (also applies to reorder replays from now on), and the `menu_runner --skip-types template_paraphrase` ownership rule for future full passes.
+- [x] **Step 2:** `docs/synthetic/STATUS_2026-08-18.md` — update the review-guidance block: `template_paraphrase` menu regenerated with structural diversity; provenance suffix explains the `— _phi4_` / `— _qwen25_` marks; review-time estimate for that file up (more distinct candidates to read, fewer wasted ones).
+- [x] **Step 3:** `docs/synthetic/CLAUDE_SYNTHETIC.md` — module-table row for `menu_diversity.py`; note the ownership rule next to the `menu_runner` row.
+- [x] **Step 4:** Full suite `pytest tests -q` → green; commit:
 
 ```bash
 git add docs/synthetic/RESEARCH_LOG.md docs/synthetic/STATUS_2026-08-18.md docs/synthetic/CLAUDE_SYNTHETIC.md docs/synthetic/sprints/SPRINT_386.md

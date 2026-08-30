@@ -29,7 +29,7 @@
 - Create: `src/synthetic/template_masking.py`
 - Test: `tests/synthetic/test_template_masking.py`
 
-- [ ] **Step 1: Write the failing tests.** Create `tests/synthetic/test_template_masking.py`:
+- [x] **Step 1: Write the failing tests.** Create `tests/synthetic/test_template_masking.py`:
 
 ```python
 """Sprint 38.6-B — hermetic tests for :mod:`synthetic.template_masking`."""
@@ -110,9 +110,9 @@ def test_check_sentinels_rejects_unknown_sentinel():
         check_sentinels(masked + " [[Q99]]", mapping)
 ```
 
-- [ ] **Step 2: Run to verify failure.** `pytest tests/synthetic/test_template_masking.py -q` → ModuleNotFoundError.
+- [x] **Step 2: Run to verify failure.** `pytest tests/synthetic/test_template_masking.py -q` → ModuleNotFoundError.
 
-- [ ] **Step 3: Implement `src/synthetic/template_masking.py`:**
+- [x] **Step 3: Implement `src/synthetic/template_masking.py`:**
 
 ```python
 """Mask meaning-critical invariants behind opaque sentinels.
@@ -206,9 +206,9 @@ def check_sentinels(text: str, mapping: dict[str, str]) -> None:
 
 **Implementation note (regex subtlety):** the `(?P<unit>…)` group peeks the next word; the callback re-checks it against `_UNIT_TOKENS` and, when it is NOT a unit ("2 ternas"), re-emits it outside the sentinel. If wrangling the lookahead regex proves brittle against the tests, an equivalent two-step tokenizer (split on whitespace, join back) is acceptable — **the tests are the contract, not the regex**; keep the public API identical.
 
-- [ ] **Step 4: Run tests.** `pytest tests/synthetic/test_template_masking.py -q` → all pass. Also run a round-trip probe over the real catalog: for every OEB `resumen`/`texto` in `data/intermediate/OBRA CIVIL/OBRA CIVIL.json` (after `_strip_fiebdc`-style edge cleanup), assert `unmask(*mask_invariants(t)) == t`; report the count checked (~50). A single failure → fix before proceeding.
+- [x] **Step 4: Run tests.** `pytest tests/synthetic/test_template_masking.py -q` → all pass. Also run a round-trip probe over the real catalog: for every OEB `resumen`/`texto` in `data/intermediate/OBRA CIVIL/OBRA CIVIL.json` (after `_strip_fiebdc`-style edge cleanup), assert `unmask(*mask_invariants(t)) == t`; report the count checked (~50). A single failure → fix before proceeding.
 
-- [ ] **Step 5: Commit.**
+- [x] **Step 5: Commit.**
 
 ```bash
 git add src/synthetic/template_masking.py tests/synthetic/test_template_masking.py
@@ -225,7 +225,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 - Modify: `src/synthetic/menu_diversity.py` (read the CURRENT file first — it has evolved past the SPRINT_386.md listing: `_model_store_tag` is full-string, the parse `try` is narrow, the CLI prints an `empty` count)
 - Test: `tests/synthetic/test_menu_diversity.py`
 
-- [ ] **Step 1: Failing tests.** Update/extend `tests/synthetic/test_menu_diversity.py`. The scripted clients' queued responses must now echo the MASKED original (the tests can compute it via `mask_invariants` on the sanitized template) and produce `new` texts containing the sentinels. Add:
+- [x] **Step 1: Failing tests.** Update/extend `tests/synthetic/test_menu_diversity.py`. The scripted clients' queued responses must now echo the MASKED original (the tests can compute it via `mask_invariants` on the sanitized template) and produce `new` texts containing the sentinels. Add:
 
 ```python
 def test_prompts_carry_masked_template_and_sentinel_instruction():
@@ -246,9 +246,9 @@ def test_surviving_candidate_is_unmasked_and_validated():
 
 Write these three tests fully (no `...` in the real file), reusing the file's `_ScriptedClient` and `_STAGE` fixtures; derive expected masked strings by importing `mask_invariants` rather than hardcoding sentinel ids.
 
-- [ ] **Step 2: Verify failure.** New tests fail (prompt has `$A`, no sentinel path exists).
+- [x] **Step 2: Verify failure.** New tests fail (prompt has `$A`, no sentinel path exists).
 
-- [ ] **Step 3: Implement in `menu_diversity.py`.**
+- [x] **Step 3: Implement in `menu_diversity.py`.**
 
 1. Import: `from .template_masking import check_sentinels, mask_invariants, unmask`.
 2. In `_sanitized_slots` (or a wrapper around it), after stripping FIEBDC: `masked_template, mapping = mask_invariants(slots["template"])`; put `masked_template` into `slots["template"]`, recompute the `placeholders` slot from the masked text as the sentinel list (`", ".join(f"[[{k}]]" for k in mapping)`) so the prompt's own placeholder line refers to what the model actually sees; return `(slots, mapping, true_template)` where `true_template` is the pre-mask sanitized template.
@@ -264,9 +264,9 @@ Write these three tests fully (no `...` in the real file), reusing the file's `_
    This replaces the previous `_validate_variants` call (which bundled the same checks pre-unmask); `_forbidden_openings` now naturally sees restored text.
 5. `propose_diverse` keeps its signature; pooling/dedup/similarity-gate/CandidateSet construction unchanged.
 
-- [ ] **Step 4: Run.** `pytest tests/synthetic/test_menu_diversity.py tests/synthetic -q` → all green (existing diversity tests updated in Step 1; nothing else should move).
+- [x] **Step 4: Run.** `pytest tests/synthetic/test_menu_diversity.py tests/synthetic -q` → all green (existing diversity tests updated in Step 1; nothing else should move).
 
-- [ ] **Step 5: Commit** (`src/synthetic/menu_diversity.py`, `tests/synthetic/test_menu_diversity.py`):
+- [x] **Step 5: Commit** (`src/synthetic/menu_diversity.py`, `tests/synthetic/test_menu_diversity.py`):
 
 ```bash
 git commit -m "Sprint 38.6-B: mask invariants in template_paraphrase prompts, validate on restored text
@@ -282,7 +282,7 @@ Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>"
 - Modify: `src/synthetic/menu_diversity.py`
 - Test: `tests/synthetic/test_menu_diversity.py`
 
-- [ ] **Step 1: Failing test.**
+- [x] **Step 1: Failing test.**
 
 ```python
 def test_topup_rounds_fire_until_min_candidates():
@@ -298,7 +298,7 @@ def test_no_topup_when_enough_candidates():
 
 (Write fully with the scripted client; MIN_CANDIDATES is importable.)
 
-- [ ] **Step 2: Implement.** In `menu_diversity.py`:
+- [x] **Step 2: Implement.** In `menu_diversity.py`:
 
 ```python
 MIN_CANDIDATES: int = 6
@@ -307,15 +307,15 @@ MAX_TOPUP_ROUNDS: int = 2
 
 After the base rounds for a target (all models pooled, deduped, gated), while `len(gated) < MIN_CANDIDATES` and top-ups used `< MAX_TOPUP_ROUNDS`: run one extra round per model with `Round(tag=f"T{k}", instructions=ROUNDS[2].instructions, wants_forbidden_openings=True)` (free-restructure style; forbidden openings from ALL current keeps of that model plus pooled keeps), validate identically, re-pool, re-dedupe, re-gate. Deterministic: the decision depends only on validated counts, which replay reproduces. Structure it so the base-rounds logic is not duplicated (extract a `_run_round(client, model_tag, round_, rendered, mapping, true_template, n)` helper if needed).
 
-- [ ] **Step 3: Run full suite, commit** (`Sprint 38.6-B: top-up rounds to MIN_CANDIDATES=6`, same trailer).
+- [x] **Step 3: Run full suite, commit** (`Sprint 38.6-B: top-up rounds to MIN_CANDIDATES=6`, same trailer).
 
 ---
 
 ### Task 4: Re-pilot + comparison  **[CHECKPOINT: report to César before the full run]**
 
-- [ ] **Step 1:** Two-phase pilot, same 5 concepts, same commands as the 2026-08-30 pilot (phase 1 `--models phi4:latest`, phase 2 `--models phi4:latest,qwen2.5:14b`), `--out-machine data/synthetic/menus_pilot --out-review docs/synthetic/menus_pilot`. All prompts are new (masked) → fully live (~60+ calls + top-ups; budget 20–35 min).
-- [ ] **Step 2:** Compare against the pre-masking pilot (the "pilot diversity run (5 concepts, phi4+qwen, two-phase)" commit — its data/synthetic/menus_pilot/template_paraphrase.jsonl; retrieve via `git show <sha>:...` after finding it with `git log --oneline -5`): `menu_profile --menus-dir data/synthetic/menus_pilot` row, drop breakdown by reason, per-target survivor counts — **OEB010$ TEXTO ≥ 8 is the headline number**; `p_sim ≤ 0.55` and `d_orig ≥ 0.45` must still hold on the restored texts; sentinel leak check: `grep -c '\[\[' data/synthetic/menus_pilot/template_paraphrase.jsonl` → 0.
-- [ ] **Step 3:** Commit pilot artefacts + stores; **STOP and report to César** (survivors before/after per target, metrics, 2–3 samples from OEB010$). The full run and docs (SPRINT_386.md Tasks 6–7) proceed only on his go.
+- [x] **Step 1:** Two-phase pilot, same 5 concepts, same commands as the 2026-08-30 pilot (phase 1 `--models phi4:latest`, phase 2 `--models phi4:latest,qwen2.5:14b`), `--out-machine data/synthetic/menus_pilot --out-review docs/synthetic/menus_pilot`. All prompts are new (masked) → fully live (~60+ calls + top-ups; budget 20–35 min).
+- [x] **Step 2:** Compare against the pre-masking pilot (the "pilot diversity run (5 concepts, phi4+qwen, two-phase)" commit — its data/synthetic/menus_pilot/template_paraphrase.jsonl; retrieve via `git show <sha>:...` after finding it with `git log --oneline -5`): `menu_profile --menus-dir data/synthetic/menus_pilot` row, drop breakdown by reason, per-target survivor counts — **OEB010$ TEXTO ≥ 8 is the headline number**; `p_sim ≤ 0.55` and `d_orig ≥ 0.45` must still hold on the restored texts; sentinel leak check: `grep -c '\[\[' data/synthetic/menus_pilot/template_paraphrase.jsonl` → 0.
+- [x] **Step 3:** Commit pilot artefacts + stores; **STOP and report to César** (survivors before/after per target, metrics, 2–3 samples from OEB010$). The full run and docs (SPRINT_386.md Tasks 6–7) proceed only on his go.
 
 ---
 

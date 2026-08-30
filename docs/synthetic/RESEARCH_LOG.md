@@ -29,6 +29,71 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### 2026-08-30 — Sprints 38.6 + 38.6-B (template_paraphrase diversity: rounds×models, masking, rescue)
+**Date:** 2026-08-30
+**Sprint files:** [`sprints/SPRINT_386.md`](sprints/SPRINT_386.md) (spec: [`sprints/SPRINT_386_DESIGN.md`](sprints/SPRINT_386_DESIGN.md)) + same-day addendum [`sprints/SPRINT_386B.md`](sprints/SPRINT_386B.md) (invariant masking + top-up rounds + remask rescue).
+**Backlog IDs:** Sprint 38.6 / 38.6-B — closed (inserted between Sprint 38.5 and F3-prep-2-review, same insertion pattern as 38.5). F3-prep-2-review (César, manual) + F3-prep-2-parse (Claude, post-review) still open.
+
+**Why this sprint exists.** The `template_paraphrase` menu was dull — ten near-identical variations of one paraphrase per target. Diagnosis (design spec): (1) temperature 0 takes the safest decoding path, synonym swaps; (2) one call for 10 alternatives "ordered best to worst" anchors candidates 2–10 on candidate 1; (3) the prompt is all brakes and no accelerator — it never *asks* for structural change; (4) phi4-14B retreats to word swaps on 150-word dimension-dense sentences. Official baselines, measured on the 38.5 menus by the new `menu_profile` diversity columns: **p_sim 0.76, d_orig 0.41** (the 2026-08-18 hand assessment's 0.77 / 0.33 was in the same ballpark). Sprint targets: p_sim ≤ 0.55, d_orig ≥ 0.45.
+
+**Design (Sprint 38.6 base):**
+- **Rounds × models at temperature 0.8.** Per target, 3 transformation-slotted rounds — R1 voice & frame (active ↔ passive/impersonal «se», nominal ↔ verbal), R2 architecture (clause reorder, split/merge, move the placeholder block), R3 free restructuring with R1/R2 keeps' openings forbidden — × 2 local models (`phi4:latest` + `qwen2.5:14b`), pooled into one CandidateSet. New consumer-above-the-seam module [`menu_diversity.py`](../../src/synthetic/menu_diversity.py) with its own `run`/`replay` CLI and per-model transcript stores `data/synthetic/llm_cache/menu_OEB_tpar_{phi4latest,qwen2514b}`; `proposer_model` provenance in every payload, rendered as a `— _model_` suffix in the review Markdown.
+- **Quantity-conservation gate** (`variant_proposer._require_quantities_conserved`, wired into TEMPLATE_PARAPHRASE **and REORDER**): multiset equality of numeric tokens and unit tokens between `original` and `new`. Zero false positives on the 532 existing menu candidates. Applies to reorder replays from now on — a future replay may legitimately drop reorder candidates that alter quantities.
+- **Similarity gate** (`menu_proposer._similarity_gate`, token-Jaccard > 0.8 against an already-kept candidate → `near_duplicate_of_kept`): all menu types **except REORDER** — exempt because an order-blind token-set metric would kill every pure reorder; NEW_PARAM candidates are compared on their label+values text.
+- **`menu_profile`** gained `dist_orig` / `pair_sim` columns (pair_sim pinned as the mean of per-target mean pairwise Jaccard).
+- **`menu_runner --skip-types` guard:** full menu passes must use `--skip-types template_paraphrase` — that type's artefacts are owned by `menu_diversity` from Sprint 38.6 on.
+
+**First pilot (pre-masking, 5 concepts / 10 targets):** 133 candidates, p_sim 0.42 — the diversity mechanism works — but survival on long TEXTO templates was poor: OEB010$ TEXTO kept only 2 survivors. Drop breakdown: 23 `placeholders_not_preserved`, 12 near-duplicates, 9 `quantities_not_conserved`, 3 echoes. All-or-nothing rejection means one corrupt token kills a 150-word rewrite — the motivation for 38.6-B.
+
+**Sprint 38.6-B (same-day addendum — masking + top-up + rescue):**
+- **[`template_masking.py`](../../src/synthetic/template_masking.py)** — placeholders and quantities are replaced by opaque sentinels `[[Pn]]`/`[[Qn]]` before prompting and the exact literals restored afterwards, so placeholder/quantity preservation is guaranteed by construction; the full validator stack still runs on the restored text (belt and braces — no gate weakened). **902/902 catalog surfaces round-trip identically.** Hardening (`e06bf97`): `$` excluded from the unit peek so a placeholder following a number can never be swallowed as a pseudo-unit (affected 12 non-OEB surfaces — follow-up F7, resolved same day), plus a `sentinel_residue` guard in the diversity path.
+- **Top-up rounds:** a target below `MIN_CANDIDATES = 6` after R1–R3 gets up to `MAX_TOPUP_ROUNDS = 2` extra free-restructure rounds per model.
+- **Remask rescue:** the models *self-unmask* — they write `$A` instead of `[[P1]]` because the unmasked `Concepto` line in the prompt shows the real tokens. `remask` forgives a self-unmasked literal when it appears exactly once in the candidate (provably harmless: restoring a remasked text yields the model's own text back). Rescued 40 candidates in simulation over the pilot stores.
+
+**Pilot progression per target (pre-mask / mask / mask+rescue):**
+
+| target | pre-mask | mask | mask + rescue |
+|---|---:|---:|---:|
+| OEB010$ TEXTO | 2 | 7 | 7 |
+| OEB250$ RESUMEN | 12 | 2 | 6 |
+| OEB250$ TEXTO | 16 | 3 | 6 |
+| OEB020$ TEXTO | 9 | 3 | 3 |
+| **all 10 targets** | **133** | **99** | **119** |
+| p_sim | 0.42 | 0.45 | 0.45 |
+
+Masking fixed the long-template starvation (OEB010$ TEXTO 2 → 7) but cost survivors where the models self-unmasked (OEB250$); the rescue recovered those without weakening any gate.
+
+**Full run (49 targets, both models, masked + rescue; commit `fa7b7bc`):** **709 candidates, 0 skipped, 0 empty, 0 sentinel leaks, 0 prompt echoes.** Row quoted from [`sprints/SPRINT_386_profile.txt`](sprints/SPRINT_386_profile.txt):
+
+```
+type                  tgt empty cands noop  dup uniq/tgt skip drop usages d_orig p_sim
+template_paraphrase    49     0   709    0    0     14.5    0  194     50   0.55  0.41
+```
+
+- **p_sim 0.41** (target ≤ 0.55; baseline 0.76) and **d_orig 0.55** (target ≥ 0.45; baseline 0.41) — both success gates met with margin. uniq/tgt 14.5 (was 8.3).
+- Weakest target: OEB020$ TEXTO with 3 candidates; no target below 3.
+- Model balance: phi4 383 / qwen 326 survivors.
+- `python -m synthetic.menu_diversity replay …` reproduces both artefact files **byte-identically (sha1-verified)**.
+- Wall clock: two phases ≈ **55 min GPU total**. Every other type's profile row is unchanged vs the 38.5 snapshot on the shared columns.
+
+**Environment incident.** The first pilot attempt failed with CUDA OOM. Root cause was not the models but a wedged WSL2 VM (host RAM down to 8.3/64 GB, hung IO); fixed by restarting Docker Desktop/WSL. Adopted **two-phase model loading** to avoid dual-residency on the 24 GB GPU: phase 1 runs `--models phi4:latest` alone, phase 2 runs both models — phase 2 serves phi4's prompts from its transcript store, so only qwen goes live.
+
+- Test suite: `pytest tests/synthetic -q` → **1061 passed, 2 skipped** (was 1016 at sprint start); full `pytest tests -q` → **1085 passed, 2 skipped**. No live LLM call from pytest, as always.
+
+**Follow-ups:**
+
+| # | Item | Status |
+|---|---|---|
+| F7 | `template_masking` unit peek could swallow a `$` placeholder after a number (12 non-OEB surfaces) | **resolved same day** — `$` excluded from the peek in `e06bf97` (diff verified) |
+| F8 | Selective `MAX_TOPUP_ROUNDS = 3` for targets still < 6 candidates | open — only if César wants more on OEB020$ TEXTO |
+| F9 | Soften the static "conserva las variables $X" prompt line (reduces self-unmasking) | open — invalidates all tpar caches; bundle with Sprint 40 |
+
+**CLAUDE_SYNTHETIC.md updated:** yes — `menu_diversity.py` + `template_masking.py` file-map rows; `menu_runner.py` / `menu_profile.py` rows extended; sprint-history entry prepended. `STATUS_2026-08-18.md` review guidance updated for the regenerated menu (~1.5–2 h alone; total ~6–7 h).
+
+**Next step:** F3-prep-2-review (César, manual, ~6–7 h) over all 11 menus including the regenerated `template_paraphrase`; then F3-prep-2-parse; then Sprint 39 (F3-prep-3: budgets + sampler + chapter driver).
+
+---
+
 ### 2026-08-18 — Sprint 38.5, F3-prep-2-fix (assessment + offline recovery)
 **Date:** 2026-08-18
 **Sprint file:** [`sprints/SPRINT_385.md`](sprints/SPRINT_385.md)
