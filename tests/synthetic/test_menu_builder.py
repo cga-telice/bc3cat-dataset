@@ -28,6 +28,8 @@ from synthetic import (
 )
 from synthetic.menu_artefacts import WriteReport, write_menu
 from synthetic.menu_proposer import (
+    _is_prompt_echo,
+    _validate_variants,
     DEFAULT_N_CANDIDATES,
     MENU_CAP_BY_TYPE,
     CandidateProposal,
@@ -789,3 +791,34 @@ class TestScannerValueGate:
         keys = {t.dedup_key for t in inv.by_type[ModificationType.SYNONYM_LABEL]}
         assert ("TIPO", "Rocoso") in keys
         assert ("TIPO", "Rocoso 2 m") not in keys
+
+
+# ===========================================================================
+# Sprint 38.5 (addendum) — prompt-scaffold echo guard
+# ===========================================================================
+
+
+class TestPromptEchoGuard:
+    def test_is_prompt_echo_detects_scaffold_markers(self):
+        echo = {
+            "original": "x",
+            "new": 'Instalación ... Campo destino: TEXTO Plantilla actual: "...',
+        }
+        clean = {"original": "x", "new": "Instalación de conducción enterrada $A"}
+        assert _is_prompt_echo(echo) is True
+        assert _is_prompt_echo(clean) is False
+
+    def test_validate_variants_drops_echo_with_reason(self):
+        raw = [
+            {"original": "t $A", "new": "u $A", "preserves_meaning": True},
+            {
+                "original": "t $A",
+                "new": 'v $A Campo destino: TEXTO Plantilla actual: "t $A"',
+                "preserves_meaning": True,
+            },
+        ]
+        variants, dropped = _validate_variants(
+            raw, ModificationType.TEMPLATE_PARAPHRASE,
+        )
+        assert len(variants) == 1 and variants[0]["new"] == "u $A"
+        assert dropped == ("[1] prompt_scaffold_echo",)

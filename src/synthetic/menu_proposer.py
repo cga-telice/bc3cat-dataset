@@ -494,6 +494,25 @@ def _recover_json_array(text: str) -> str:
     return _extract_json_object(text)
 
 
+# Sprint 38.5 addendum. The raw templates' trailing FIEBDC "\" reads like a
+# line-continuation, so phi4 occasionally absorbs the prompt scaffold lines
+# ("Campo destino: …", "Plantilla actual: …") into its candidate text
+# (observed on OEB010$ TEXTO template_paraphrase). Such echoes pass the
+# placeholder validator — the echoed original carries every placeholder —
+# so they are dropped here by marker. Catalog text never contains these
+# phrases; they exist only in the prompt scaffold.
+_SCAFFOLD_MARKERS: tuple[str, ...] = ("Campo destino:", "Plantilla actual:")
+
+
+def _is_prompt_echo(payload: dict) -> bool:
+    """True if any string field of ``payload`` contains a prompt-scaffold
+    marker — the candidate is a regurgitation of the prompt, not a rewrite."""
+    return any(
+        isinstance(v, str) and any(marker in v for marker in _SCAFFOLD_MARKERS)
+        for v in payload.values()
+    )
+
+
 def _validate_variants(
     raw_list: list,
     mtype: ModificationType,
@@ -510,6 +529,9 @@ def _validate_variants(
             _validate_payload(elem, mtype)
         except ValueError as err:
             dropped.append(f"[{i}] {err}")
+            continue
+        if _is_prompt_echo(elem):
+            dropped.append(f"[{i}] prompt_scaffold_echo")
             continue
         out.append(elem)
     return tuple(out), tuple(dropped)
