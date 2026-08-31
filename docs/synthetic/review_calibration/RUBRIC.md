@@ -59,3 +59,20 @@ cualquiera, se RECHAZA. Ante duda genuina, el veredicto es DUDOSO (nunca se fuer
 4. Se calcula el acuerdo (kappa de Cohen sobre A/R; los D se examinan aparte). Si el
    acuerdo es aceptable para César, Claude pasa sobre los 11 menús completos con tres
    veredictos; los D y una muestra de los A van a auditoría de César.
+
+## Reglas de desambiguación — v1.1 (César, 2026-08-31)
+
+1. **Superficie de juicio (L1):** la etiqueta suelta, NO el render en plantilla.
+2. **unit_conversion identidad:** aceptable — cualquier restated aritméticamente correcto
+   vale aunque el factor sea 1 (deletrear unidad, cambio de notación).
+3. **expansion — propósito inherente:** explicitar un propósito constitutivo es A;
+   los beneficios valorativos ("asegura calidad", "ideal para…") siguen siendo R.
+4. **omission — reparación flexible:** se admite reescritura local mientras el resto
+   del contenido se conserve; la pérdida de contenido sigue siendo R (criterio 2).
+5. **omission de parámetro discriminante:** legítima (es la esencia del tipo);
+   criterio 3 solo se viola si el texto pasa a describir a OTRO ítem concreto.
+6. **reorder del bloque parentético ($L/$M/$N):** válido.
+7. **unit_expansion de intervalos:** la lectura natural ("entre tres y cinco horas")
+   es aceptable aunque pierda el borde semiabierto.
+8. **new_param — colisión:** solo cuenta contra ejes paramétricos declarados, no
+   contra hechos fijos del texto de la plantilla.
