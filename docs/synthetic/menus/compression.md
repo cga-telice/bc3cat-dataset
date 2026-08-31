@@ -28,7 +28,7 @@ _Used in 19 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OE
 ## $Q / %A=b: Incluido el sumistro y montaje de los tubos, la prueba de los conductos, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación, el transporte y la retirada de los productos al lugar de empleo.
 _Used in 1 concept(s): OEB250$_
 
-- [ ] 1. "Suministro, montaje, prueba, conexiones, elevación, transporte y retirada de tubos."
+- [x] 1. "Suministro, montaje, prueba, conexiones, elevación, transporte y retirada de tubos."
 - [ ] 2. "Montaje, prueba, conexiones, elevación, transporte y retirada de tubos."
 - [ ] 3. "Suministro, montaje, prueba, conexiones, elevación y transporte de tubos."
 - [ ] 4. "Montaje, prueba, conexiones, elevación, transporte y colocación de tubos."
@@ -40,44 +40,44 @@ _Used in 1 concept(s): OEB250$_
 ## $M / %B=="h": Incluso la construcción del pozo de ataque, entibación de los costados, instalación de un tubo guía de acero de 500 mm de diámetro. El suministro y montaje de los hilos guía y el sellado de las embocaduras con poliuretano expandido.
 _Used in 1 concept(s): OEB020$_
 
-- [ ] 1. "Construcción del pozo, entibación, tubo guía de 500 mm, hilos guía y sellado con poliuretano."
-- [ ] 2. "Pozo de ataque, entibación, tubo guía de 500 mm, hilos guía y sellado con poliuretano."
+- [x] 1. "Construcción del pozo, entibación, tubo guía de 500 mm, hilos guía y sellado con poliuretano."
+- [x] 2. "Pozo de ataque, entibación, tubo guía de 500 mm, hilos guía y sellado con poliuretano."
 - [ ] 3. "Pozo de ataque, entibación, tubo guía de 500 mm, hilos guía y sellado."
 - [ ] 4. "Construcción del pozo, entibación, tubo guía de 500 mm, hilos guía y sellado."
 
 ## $R / %B=a: ejecutada por excavación manual en cualquier tipo de terreno excepto roca
 _Used in 1 concept(s): OEB190$_
 
-- [ ] 1. "excavación manual en terreno no rocoso"
-- [ ] 2. "excavación manual, terreno no rocoso"
-- [ ] 3. "excavación manual, salvo roca"
+- [x] 1. "excavación manual en terreno no rocoso"
+- [x] 2. "excavación manual, terreno no rocoso"
+- [x] 3. "excavación manual, salvo roca"
 - [ ] 4. "excavación manual, no roca"
-- [ ] 5. "excavación manual, excluyendo roca"
-- [ ] 6. "excavación manual, sin roca"
+- [x] 5. "excavación manual, excluyendo roca"
+- [x] 6. "excavación manual, sin roca"
 
 ## $R / %B=b: ejecutada por excavación manual en terreno rocoso, incluso excavación con explosivos
 _Used in 1 concept(s): OEB190$_
 
-- [ ] 1. "excavación manual en roca, incluyendo explosivos"
-- [ ] 2. "excavación manual en roca, con explosivos"
-- [ ] 3. "excavación manual en roca, explosivos incluidos"
-- [ ] 4. "excavación manual en roca, con uso de explosivos"
-- [ ] 5. "excavación manual en roca, incluye explosivos"
+- [x] 1. "excavación manual en roca, incluyendo explosivos"
+- [x] 2. "excavación manual en roca, con explosivos"
+- [x] 3. "excavación manual en roca, explosivos incluidos"
+- [x] 4. "excavación manual en roca, con uso de explosivos"
+- [x] 5. "excavación manual en roca, incluye explosivos"
 - [ ] 6. "excavación manual en roca, explosivos posibles"
 - [ ] 7. "excavación manual en roca, con posibilidad de explosivos"
 - [ ] 8. "excavación manual en roca, explosivos permitidos"
-- [ ] 9. "excavación manual en roca, incluye uso de explosivos"
+- [x] 9. "excavación manual en roca, incluye uso de explosivos"
 
 ## $N / %B=="b"  or  %B=="g": el descerne y la entibación de los costados y la posterior reposición del balasto retirado,
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "descerne, entibación y reposición del balasto,"
-- [ ] 2. "descerne, entibación y reposición del balasto retirado,"
+- [x] 1. "descerne, entibación y reposición del balasto,"
+- [x] 2. "descerne, entibación y reposición del balasto retirado,"
 
 ## $I / %B=="b": en cruce bajo vías
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "bajo vías"
+- [x] 1. "bajo vías"
 - [ ] 2. "crucero subvial"
 - [ ] 3. "subvías cruzadas"
 - [ ] 4. "bajo vías cruzadas"
@@ -100,7 +100,7 @@ _Used in 14 concept(s): OEB020$, OEB020$, OEB030$, OEB030$, OEB040$, OEB040$, OE
 - [ ] 2. "en cruce carreteras"
 - [ ] 3. "en intersección carretera"
 - [ ] 4. "en intersección vial"
-- [ ] 5. "en cruce vial"
+- [x] 5. "en cruce vial"
 - [ ] 6. "en intersección carreteras"
 - [ ] 7. "en cruce vías"
 - [ ] 8. "en intersección vías"
@@ -109,10 +109,10 @@ _Used in 14 concept(s): OEB020$, OEB020$, OEB030$, OEB030$, OEB040$, OEB040$, OE
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
 - [ ] 1. "en cualquier terreno, no roca"
-- [ ] 2. "en todo terreno, salvo roca"
+- [x] 2. "en todo terreno, salvo roca"
 - [ ] 3. "en cualquier terreno, no rocoso"
-- [ ] 4. "en todo terreno, excepto roca"
-- [ ] 5. "en cualquier terreno, salvo roca"
+- [x] 4. "en todo terreno, excepto roca"
+- [x] 5. "en cualquier terreno, salvo roca"
 - [ ] 6. "en todo terreno, no roca"
 - [ ] 7. "en cualquier terreno, salvo rocoso"
 - [ ] 8. "en todo terreno, no rocoso"
@@ -120,7 +120,7 @@ _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB
 ## $I / %B=="g": en zona de balasto
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "en balasto"
+- [x] 1. "en balasto"
 
 ## $M / %B=="h": incluso la construcción del pozo de ataque, entibación de los costados, instalación de un tubo guía de acero de 500 mm de diámetro, el suministro y montaje de los hilos guía y el sellado de las embocaduras con poliuretano expandido.
 _Used in 6 concept(s): OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
@@ -134,34 +134,34 @@ _Used in 6 concept(s): OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
 - [ ] 1. "demolición de roca,"
-- [ ] 2. "demolición de roca dura"
+- [x] 2. "demolición de roca dura"
 - [ ] 3. "demolición de roca"
 
 ## $N / %B=="d": la demolición y la reposición del firme y del pavimento,
 _Used in 1 concept(s): OEB020$_
 
-- [ ] 1. "demolición y reposición del firme y pavimento,"
-- [ ] 2. "demolición y reposición del firme y pavimento"
+- [x] 1. "demolición y reposición del firme y pavimento,"
+- [x] 2. "demolición y reposición del firme y pavimento"
 
 ## $N / %B=="e": la demolición y la reposición del pavimento y la solera,
 _Used in 1 concept(s): OEB020$_
 
-- [ ] 1. "demolición y reposición del pavimento y solera,"
-- [ ] 2. "demolición y reposición del pavimento y solera"
+- [x] 1. "demolición y reposición del pavimento y solera,"
+- [x] 2. "demolición y reposición del pavimento y solera"
 - [ ] 3. "demolición y reposición del pavimento-solera,"
 - [ ] 4. "demolición y reposición del pavimento-solera"
 
 ## $N / %B=="d": la demolición y reposición del firme y del pavimento,
 _Used in 6 concept(s): OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "demolición y reposición del firme y pavimento,"
-- [ ] 2. "demolición y reposición del firme y pavimento"
+- [x] 1. "demolición y reposición del firme y pavimento,"
+- [x] 2. "demolición y reposición del firme y pavimento"
 
 ## $N / %B=="e": la demolición y reposición del pavimento y la solera,
 _Used in 6 concept(s): OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "demolición y reposición de pavimento y solera,"
-- [ ] 2. "demolición y reposición de pavimento y solera"
+- [x] 1. "demolición y reposición de pavimento y solera,"
+- [x] 2. "demolición y reposición de pavimento y solera"
 
 ## $P / %B=="f": la preparación y la nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación, desencofrado,
 _Used in 6 concept(s): OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_

@@ -29,6 +29,36 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### 2026-08-31 — Sprint 38.7 (revisión de los 11 menús: rúbrica, calibración, pasada LLM completa, parse)
+
+- **Rúbrica** `review_calibration/RUBRIC.md` v1 (5 criterios, A/R/D, rechazo por defecto, ciega
+  de modelo) + v1.1 (8 reglas de desambiguación decididas por César tras las ambigüedades
+  detectadas en los lotes de calibración).
+- **Calibración (100 ítems, semilla 38):** los veredictos de Claude se sellaron por SHA-256 en git
+  ANTES de recibir los de César (verificado al revelar: hash coincide). Resultado: César aprobó
+  100/100 → kappa 0.00 (sin varianza, no computable). César adjudicó la discrepancia como "eres
+  más riguroso y has hecho mejor trabajo" y delegó la revisión en Claude con auditoría humana.
+  Se documenta tal cual: la validación del corpus es **por LLM con rúbrica escrita + auditoría
+  humana dirigida**, no revisión humana exhaustiva.
+- **Pasada completa:** 2 811 candidatos, 58 lotes homogéneos por tipo con contexto de hermanos,
+  ciega de modelo. **1 155 A / 1 646 R / 10 D (41,1 % aprobación)**. Consistencia intra-revisor
+  sobre los 100 de calibración re-juzgados: 89/100. Ticks aplicados a `docs/synthetic/menus/*.md`
+  (verificados 1:1 contra veredictos); razones por candidato en `review_full/*_verdicts.jsonl`;
+  informe + Dudosos + 79 targets-sin-aprobado + muestra de auditoría en
+  `review_full/REVIEW_REPORT.md`.
+- **F3-prep-2-parse ejecutado:** `menu_review_parser parse` valida los ticks y emite
+  `data/synthetic/menus/verdicts/{tipo}.jsonl` — el contrato del sampler de Sprint 39 está servido.
+- **Hallazgos de generación para Sprint 40** (de los patrones sistemáticos de los 58 lotes):
+  expansion produce colas valorativas ("garantizando…") en masa; "con topo" se malinterpreta como
+  topografía en TODOS los modelos y tipos; template_paraphrase reinterpreta el bloque parentético
+  como normas/dimensiones y rompe marcos de placeholders ($I locativo tratado como diámetro);
+  residuos mecánicos del enmascarado: "mm mm", ",," (coma tragada en literal Q), bloques $L/$M/$N
+  duplicados en literal que evaden el check de conjuntos (defensa en profundidad: la revisión los
+  cazó; corregir remask/validador en 38.8 o Sprint 40).
+- **Pendiente de César (auditoría, ~30-45 min):** 10 Dudosos, 5 decisiones de línea fina,
+  30 ítems de muestra confirmar/corregir, y decidir qué hacer con los 79 targets sin aprobado
+  (adjudicar / regenerar con prompts corregidos / aceptar hueco).
+
 ### 2026-08-30 — Sprints 38.6 + 38.6-B (template_paraphrase diversity: rounds×models, masking, rescue)
 **Date:** 2026-08-30
 **Sprint files:** [`sprints/SPRINT_386.md`](sprints/SPRINT_386.md) (spec: [`sprints/SPRINT_386_DESIGN.md`](sprints/SPRINT_386_DESIGN.md)) + same-day addendum [`sprints/SPRINT_386B.md`](sprints/SPRINT_386B.md) (invariant masking + top-up rounds + remask rescue).

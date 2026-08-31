@@ -24,26 +24,26 @@ _Used in 24 concept(s): OEB010$, OEB020$, OEB030$, OEB040$, OEB050$, OEB070$, OE
 ## CONDICIONES DE EJECUCIÓN / Volumen escaso
 _Used in 24 concept(s): OEB010$, OEB020$, OEB030$, OEB040$, OEB050$, OEB070$, OEB080$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB160$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB250$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. Bajo volumen
-- [ ] 2. Volumen mínimo
-- [ ] 3. Volumen reducido
-- [ ] 4. Volumen limitado
+- [x] 1. Bajo volumen
+- [x] 2. Volumen mínimo
+- [x] 3. Volumen reducido
+- [x] 4. Volumen limitado
 
 ## CONDICIONES DE EJECUCIÓN / Volumen relevante
 _Used in 24 concept(s): OEB010$, OEB020$, OEB030$, OEB040$, OEB050$, OEB070$, OEB080$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB160$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB250$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. Alto volumen
-- [ ] 2. Gran volumen
-- [ ] 3. Volumen significativo
-- [ ] 4. Volumen considerable
+- [x] 1. Alto volumen
+- [x] 2. Gran volumen
+- [x] 3. Volumen significativo
+- [x] 4. Volumen considerable
 
 ## MATERIAL / de cantera
 _Used in 1 concept(s): OEB240$_
 
-- [ ] 1. Extraído de Cantera
-- [ ] 2. Material de Cantera
+- [x] 1. Extraído de Cantera
+- [x] 2. Material de Cantera
 - [ ] 3. Rocas de Cantera
-- [ ] 4. Proveniente de Cantera
+- [x] 4. Proveniente de Cantera
 
 ## MATERIAL / de la traza
 _Used in 1 concept(s): OEB240$_
@@ -59,25 +59,25 @@ _Used in 1 concept(s): OEB240$_
 _Used in 2 concept(s): OEB010$, OEB050$_
 
 - [ ] 1. con reposición
-- [ ] 2. con reemplazo
-- [ ] 3. con restauración
-- [ ] 4. con reconstrucción
+- [x] 2. con reemplazo
+- [x] 3. con restauración
+- [x] 4. con reconstrucción
 - [ ] 5. con reponer
 
 ## PAVIMENTO / sin reposición
 _Used in 2 concept(s): OEB010$, OEB050$_
 
 - [ ] 1. sin reposición
-- [ ] 2. sin reponer
-- [ ] 3. sin reemplazo
-- [ ] 4. sin restaurar
-- [ ] 5. sin reconstruir
+- [x] 2. sin reponer
+- [x] 3. sin reemplazo
+- [x] 4. sin restaurar
+- [x] 5. sin reconstruir
 
 ## TERRENO / blando
 _Used in 2 concept(s): OEB010$, OEB050$_
 
-- [ ] 1. Suelo Blando
-- [ ] 2. Terreno Blando
+- [x] 1. Suelo Blando
+- [x] 2. Terreno Blando
 - [ ] 3. Suelo Maleable
 - [ ] 4. Terreno Maleable
 - [ ] 5. Suelo Suave
@@ -85,17 +85,17 @@ _Used in 2 concept(s): OEB010$, OEB050$_
 ## TERRENO / duro
 _Used in 2 concept(s): OEB010$, OEB050$_
 
-- [ ] 1. Terreno Duro
+- [x] 1. Terreno Duro
 - [ ] 2. Suelo Compacto
 - [ ] 3. Terreno Compacto
-- [ ] 4. Suelo Resistente
-- [ ] 5. Terreno Resistente
-- [ ] 6. Suelo Rígido
+- [x] 4. Suelo Resistente
+- [x] 5. Terreno Resistente
+- [x] 6. Suelo Rígido
 
 ## TERRENO / medio
 _Used in 2 concept(s): OEB010$, OEB050$_
 
-- [ ] 1. Terreno Intermedio
+- [x] 1. Terreno Intermedio
 - [ ] 2. Suelo Moderado
 - [ ] 3. Terreno Compacto
 - [ ] 4. Suelo Firme
@@ -104,9 +104,9 @@ _Used in 2 concept(s): OEB010$, OEB050$_
 ## TIPO DE ACCIÓN / Suministro
 _Used in 1 concept(s): OEB250$_
 
-- [ ] 1. Provisión
-- [ ] 2. Abastecimiento
-- [ ] 3. Entrega
+- [x] 1. Provisión
+- [x] 2. Abastecimiento
+- [x] 3. Entrega
 - [ ] 4. Fornecimiento
 - [ ] 5. Suministro de Materiales
 
@@ -115,14 +115,14 @@ _Used in 1 concept(s): OEB250$_
 
 - [ ] 1. Instalación
 - [ ] 2. Montaje Completo
-- [ ] 3. Suministro y Colocación
-- [ ] 4. Suministro y Ejecución
+- [x] 3. Suministro y Colocación
+- [x] 4. Suministro y Ejecución
 - [ ] 5. Suministro y Puesta en Marcha
 
 ## TIPO DE TERRENO / Adosada
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. Contigua
+- [x] 1. Contigua
 - [ ] 2. Junto a
 - [ ] 3. Contigua a
 - [ ] 4. Junto
@@ -155,17 +155,17 @@ _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB
 ## TIPO DE TERRENO / Cruce de carretera
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. Intersección Vial
+- [x] 1. Intersección Vial
 - [ ] 2. Vía Cruzada
 - [ ] 3. Intersección
 
 ## TIPO DE TERRENO / Normal
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. Terreno Estándar
-- [ ] 2. Terreno Convencional
+- [x] 1. Terreno Estándar
+- [x] 2. Terreno Convencional
 - [ ] 3. Terreno Regular
-- [ ] 4. Terreno Común
+- [x] 4. Terreno Común
 
 ## TIPO DE TERRENO / Rocoso
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
@@ -177,50 +177,50 @@ _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB
 ## TIPO DE TERRENO / balasto
 _Used in 1 concept(s): OEB190$_
 
-- [ ] 1. Terreno de Balasto
-- [ ] 2. Suelo de Balasto
-- [ ] 3. Terreno Balastado
+- [x] 1. Terreno de Balasto
+- [x] 2. Suelo de Balasto
+- [x] 3. Terreno Balastado
 - [ ] 4. Suelo Balasto
 - [ ] 5. Terreno Balasto
 
 ## TIPO DE TERRENO / normal
 _Used in 2 concept(s): OEB190$, OEB200$_
 
-- [ ] 1. Terreno Convencional
-- [ ] 2. Suelo Estándar
+- [x] 1. Terreno Convencional
+- [x] 2. Suelo Estándar
 - [ ] 3. Terreno Regular
-- [ ] 4. Suelo Normal
+- [x] 4. Suelo Normal
 - [ ] 5. Terreno Homogéneo
-- [ ] 6. Suelo Común
-- [ ] 7. Terreno Estándar
+- [x] 6. Suelo Común
+- [x] 7. Terreno Estándar
 - [ ] 8. Suelo Normalizado
-- [ ] 9. Suelo Convencional
+- [x] 9. Suelo Convencional
 
 ## TIPO DE TERRENO / rocoso
 _Used in 2 concept(s): OEB190$, OEB200$_
 
 - [ ] 1. Terreno Pedregoso
-- [ ] 2. Suelo Rocoso
+- [x] 2. Suelo Rocoso
 - [ ] 3. Terreno Áspero
 - [ ] 4. Suelo de Rocas
 - [ ] 5. Terreno de Piedra
-- [ ] 6. Terreno de Roca
-- [ ] 7. Terreno Rocoso
+- [x] 6. Terreno de Roca
+- [x] 7. Terreno Rocoso
 - [ ] 8. Terreno de Piedras
 - [ ] 9. Terreno de Rocas
 
 ## TRABAJO / Cualquier franja horaria
 _Used in 20 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB240$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. Horario Flexible
-- [ ] 2. Horario Libre
-- [ ] 3. Horario Indistinto
-- [ ] 4. Horario Abierto
+- [x] 1. Horario Flexible
+- [x] 2. Horario Libre
+- [x] 3. Horario Indistinto
+- [x] 4. Horario Abierto
 
 ## TRABAJO / Cualquier franja horaria excepcional
 _Used in 19 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. Horario Flexible Especial
+- [x] 1. Horario Flexible Especial
 - [ ] 2. Horario Libre Extra
 - [ ] 3. Horario Indistinto Urgente
 - [ ] 4. Horario Abierto Extra
@@ -232,31 +232,31 @@ _Used in 19 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OE
 _Used in 20 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB240$, OEB280$, OEB290$, OEB300$_
 
 - [ ] 1. Horario Normal
-- [ ] 2. Horario de Día
+- [x] 2. Horario de Día
 - [ ] 3. Horario Regular
-- [ ] 4. Horario de Día Normal
-- [ ] 5. Horario de Día Estándar
-- [ ] 6. Horario de Día Regular
+- [x] 4. Horario de Día Normal
+- [x] 5. Horario de Día Estándar
+- [x] 6. Horario de Día Regular
 
 ## TRABAJO / Diurno Excepcional
 _Used in 18 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB170$, OEB180$, OEB230$, OEB250$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. Horario Diurno Especial
+- [x] 1. Horario Diurno Especial
 - [ ] 2. Horario Diurno Extra
 - [ ] 3. Horario Diurno Urgente
-- [ ] 4. Horario Diurno Extraordinario
+- [x] 4. Horario Diurno Extraordinario
 
 ## TRABAJO / Diurno excepcional
 _Used in 2 concept(s): OEB190$, OEB200$_
 
-- [ ] 1. Horario Diurno Especial
-- [ ] 2. Turno de Día Especial
+- [x] 1. Horario Diurno Especial
+- [x] 2. Turno de Día Especial
 - [ ] 3. Día Especial
 - [ ] 4. Horario de Día Extra
 - [ ] 5. Turno Diurno Extra
-- [ ] 6. Horario de Día Extraordinario
+- [x] 6. Horario de Día Extraordinario
 - [ ] 7. Día Extraordinario
-- [ ] 8. Horario de Día Especial
+- [x] 8. Horario de Día Especial
 - [ ] 9. Turno de Día Extra
 - [ ] 10. Horario de Día No Convencional
 
@@ -267,32 +267,32 @@ _No candidates survived validation._
 ## TRABAJO / Nocturno
 _Used in 20 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB240$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. Horario Nocturno
-- [ ] 2. Horario de Noche
-- [ ] 3. Horario Nocturno Regular
-- [ ] 4. Horario de Noche Normal
-- [ ] 5. Horario de Noche Estándar
-- [ ] 6. Horario de Noche Regular
+- [x] 1. Horario Nocturno
+- [x] 2. Horario de Noche
+- [x] 3. Horario Nocturno Regular
+- [x] 4. Horario de Noche Normal
+- [x] 5. Horario de Noche Estándar
+- [x] 6. Horario de Noche Regular
 
 ## TRABAJO / Nocturno Excepcional
 _Used in 18 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB170$, OEB180$, OEB230$, OEB250$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. Horario Nocturno Especial
+- [x] 1. Horario Nocturno Especial
 - [ ] 2. Horario Nocturno Extra
 - [ ] 3. Horario Nocturno Urgente
-- [ ] 4. Horario Nocturno Extraordinario
+- [x] 4. Horario Nocturno Extraordinario
 
 ## TRABAJO / Nocturno excepcional
 _Used in 2 concept(s): OEB190$, OEB200$_
 
-- [ ] 1. Horario Nocturno Especial
-- [ ] 2. Turno de Noche Especial
+- [x] 1. Horario Nocturno Especial
+- [x] 2. Turno de Noche Especial
 - [ ] 3. Noche Especial
 - [ ] 4. Horario de Noche Extra
 - [ ] 5. Turno Nocturno Extra
-- [ ] 6. Horario de Noche Extraordinario
+- [x] 6. Horario de Noche Extraordinario
 - [ ] 7. Noche Extraordinaria
-- [ ] 8. Horario de Noche Especial
+- [x] 8. Horario de Noche Especial
 - [ ] 9. Turno de Noche Extra
 - [ ] 10. Horario de Noche No Convencional
 

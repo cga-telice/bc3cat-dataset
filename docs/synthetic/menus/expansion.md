@@ -33,7 +33,7 @@ _Used in 2 concept(s): OEB190$, OEB200$_
 ## $L / %C=c: Cualquier condición de ejecución
 _Used in 24 concept(s): OEB010$, OEB020$, OEB030$, OEB040$, OEB050$, OEB070$, OEB080$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB160$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB250$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "Cualquier condición de ejecución, incluyendo variaciones en el terreno y condiciones climáticas adversas"
+- [x] 1. "Cualquier condición de ejecución, incluyendo variaciones en el terreno y condiciones climáticas adversas"
 - [ ] 2. "Cualquier condición de ejecución, considerando tanto la estabilidad del terreno como la accesibilidad del sitio"
 - [ ] 3. "Cualquier condición de ejecución, adaptándose a las especificaciones técnicas y normativas vigentes"
 - [ ] 4. "Cualquier condición de ejecución, asegurando la compatibilidad con infraestructuras existentes"
@@ -47,38 +47,38 @@ _Used in 24 concept(s): OEB010$, OEB020$, OEB030$, OEB040$, OEB050$, OEB070$, OE
 ## $G / %C=e: Cualquier frana horaria
 _Used in 4 concept(s): OEB020$, OEB030$, OEB040$, OEB070$_
 
-- [ ] 1. "Cualquier franja horaria, incluyendo todas las posibles divisiones del día para operaciones"
-- [ ] 2. "Cualquier franja horaria, abarcando todas las divisiones temporales posibles"
-- [ ] 3. "Cualquier franja horaria, sin restricciones de tiempo específicas"
-- [ ] 4. "Cualquier franja horaria, permitiendo flexibilidad en el horario de operación"
-- [ ] 5. "Cualquier franja horaria, incluyendo todas las posibilidades de horarios"
-- [ ] 6. "Cualquier franja horaria, abarcando todas las divisiones del día"
-- [ ] 7. "Cualquier franja horaria, sin limitaciones de tiempo específicas"
-- [ ] 8. "Cualquier franja horaria, permitiendo operaciones en cualquier momento del día"
-- [ ] 9. "Cualquier franja horaria, incluyendo todas las posibles divisiones temporales"
-- [ ] 10. "Cualquier franja horaria, sin restricciones de horario específicas"
+- [x] 1. "Cualquier franja horaria, incluyendo todas las posibles divisiones del día para operaciones"
+- [x] 2. "Cualquier franja horaria, abarcando todas las divisiones temporales posibles"
+- [x] 3. "Cualquier franja horaria, sin restricciones de tiempo específicas"
+- [x] 4. "Cualquier franja horaria, permitiendo flexibilidad en el horario de operación"
+- [x] 5. "Cualquier franja horaria, incluyendo todas las posibilidades de horarios"
+- [x] 6. "Cualquier franja horaria, abarcando todas las divisiones del día"
+- [x] 7. "Cualquier franja horaria, sin limitaciones de tiempo específicas"
+- [x] 8. "Cualquier franja horaria, permitiendo operaciones en cualquier momento del día"
+- [x] 9. "Cualquier franja horaria, incluyendo todas las posibles divisiones temporales"
+- [x] 10. "Cualquier franja horaria, sin restricciones de horario específicas"
 
 ## $L / %B=e: Cualquier franja horaria
 _Used in 16 concept(s): OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB240$, OEB280$, OEB290$, OEB300$_
 
 - [ ] 1. "Cualquier franja horaria, incluyendo tanto las horas de operación estándar como las no estándar"
-- [ ] 2. "Cualquier franja horaria, abarcando tanto las horas diurnas como las nocturnas"
-- [ ] 3. "Cualquier franja horaria, sin restricciones de tiempo específicas"
-- [ ] 4. "Cualquier franja horaria, permitiendo flexibilidad en el horario de uso"
+- [x] 2. "Cualquier franja horaria, abarcando tanto las horas diurnas como las nocturnas"
+- [x] 3. "Cualquier franja horaria, sin restricciones de tiempo específicas"
+- [x] 4. "Cualquier franja horaria, permitiendo flexibilidad en el horario de uso"
 - [ ] 5. "Cualquier franja horaria, incluyendo tanto las horas regulares como las excepcionales"
-- [ ] 6. "Cualquier franja horaria, sin limitaciones de tiempo específicas"
-- [ ] 7. "Cualquier franja horaria, abarcando todas las posibles horas de operación"
+- [x] 6. "Cualquier franja horaria, sin limitaciones de tiempo específicas"
+- [x] 7. "Cualquier franja horaria, abarcando todas las posibles horas de operación"
 - [ ] 8. "Cualquier franja horaria, incluyendo tanto las horas normales como las extraordinarias"
-- [ ] 9. "Cualquier franja horaria, sin distinción entre horas diurnas y nocturnas"
-- [ ] 10. "Cualquier franja horaria, permitiendo uso en cualquier momento del día o de la noche"
+- [x] 9. "Cualquier franja horaria, sin distinción entre horas diurnas y nocturnas"
+- [x] 10. "Cualquier franja horaria, permitiendo uso en cualquier momento del día o de la noche"
 
 ## $G / %C=f: Cualquier franja horaria excepcional
 _Used in 19 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "Cualquier franja horaria excepcional, incluyendo aquellas que no se ajustan a los horarios estándar diurnos o nocturnos"
+- [x] 1. "Cualquier franja horaria excepcional, incluyendo aquellas que no se ajustan a los horarios estándar diurnos o nocturnos"
 - [ ] 2. "Cualquier franja horaria excepcional, que abarca horarios no regulares ni predefinidos"
 - [ ] 3. "Cualquier franja horaria excepcional, que no se limita a las franjas diurnas o nocturnas habituales"
-- [ ] 4. "Cualquier franja horaria excepcional, que incluye horarios fuera de los períodos diurnos o nocturnos estándar"
+- [x] 4. "Cualquier franja horaria excepcional, que incluye horarios fuera de los períodos diurnos o nocturnos estándar"
 - [ ] 5. "Cualquier franja horaria excepcional, que comprende horarios no convencionales ni preestablecidos"
 - [ ] 6. "Cualquier franja horaria excepcional, que no se circunscribe a las franjas horarias diurnas o nocturnas regulares"
 - [ ] 7. "Cualquier franja horaria excepcional, que incluye horarios no estándar ni predefinidos"
@@ -88,16 +88,16 @@ _Used in 19 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OE
 ## $G / %C=a: Diurno
 _Used in 20 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB240$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "Diurno, durante las horas de luz natural, para operaciones estándar"
-- [ ] 2. "Diurno, en el horario regular de trabajo, sin excepciones"
-- [ ] 3. "Diurno, en el periodo de actividad normal, bajo condiciones estándar"
-- [ ] 4. "Diurno, durante el día, en el horario laboral convencional"
-- [ ] 5. "Diurno, en el periodo de luz diurna, para tareas regulares"
-- [ ] 6. "Diurno, en el horario de trabajo diurno, sin condiciones especiales"
-- [ ] 7. "Diurno, en el periodo de actividad diurna, para operaciones normales"
-- [ ] 8. "Diurno, durante el día, en el horario estándar de trabajo"
-- [ ] 9. "Diurno, en el periodo de luz natural, para tareas regulares"
-- [ ] 10. "Diurno, en el horario de trabajo diurno, sin excepciones"
+- [x] 1. "Diurno, durante las horas de luz natural, para operaciones estándar"
+- [x] 2. "Diurno, en el horario regular de trabajo, sin excepciones"
+- [x] 3. "Diurno, en el periodo de actividad normal, bajo condiciones estándar"
+- [x] 4. "Diurno, durante el día, en el horario laboral convencional"
+- [x] 5. "Diurno, en el periodo de luz diurna, para tareas regulares"
+- [x] 6. "Diurno, en el horario de trabajo diurno, sin condiciones especiales"
+- [x] 7. "Diurno, en el periodo de actividad diurna, para operaciones normales"
+- [x] 8. "Diurno, durante el día, en el horario estándar de trabajo"
+- [x] 9. "Diurno, en el periodo de luz natural, para tareas regulares"
+- [x] 10. "Diurno, en el horario de trabajo diurno, sin excepciones"
 
 ## $G / %C=c: Diurno Excepcional
 _Used in 5 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB250$_
@@ -116,44 +116,44 @@ _Used in 5 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB250$_
 ## $L / %B=c: Diurno excepcional
 _Used in 15 concept(s): OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "Diurno excepcional, aplicable en condiciones de operación específicas durante el día"
-- [ ] 2. "Diurno excepcional, indicando un uso especial durante las horas de luz"
-- [ ] 3. "Diurno excepcional, refiriéndose a situaciones atípicas en el horario diurno"
-- [ ] 4. "Diurno excepcional, para casos no habituales en el periodo de luz diurna"
-- [ ] 5. "Diurno excepcional, utilizado en circunstancias particulares durante el día"
-- [ ] 6. "Diurno excepcional, aplicable en situaciones especiales en el horario de luz diurna"
-- [ ] 7. "Diurno excepcional, para condiciones de operación no estándar en el día"
-- [ ] 8. "Diurno excepcional, refiriéndose a usos no comunes durante el día"
-- [ ] 9. "Diurno excepcional, indicando aplicaciones especiales en el periodo diurno"
-- [ ] 10. "Diurno excepcional, para situaciones atípicas durante las horas de luz"
+- [x] 1. "Diurno excepcional, aplicable en condiciones de operación específicas durante el día"
+- [x] 2. "Diurno excepcional, indicando un uso especial durante las horas de luz"
+- [x] 3. "Diurno excepcional, refiriéndose a situaciones atípicas en el horario diurno"
+- [x] 4. "Diurno excepcional, para casos no habituales en el periodo de luz diurna"
+- [x] 5. "Diurno excepcional, utilizado en circunstancias particulares durante el día"
+- [x] 6. "Diurno excepcional, aplicable en situaciones especiales en el horario de luz diurna"
+- [x] 7. "Diurno excepcional, para condiciones de operación no estándar en el día"
+- [x] 8. "Diurno excepcional, refiriéndose a usos no comunes durante el día"
+- [x] 9. "Diurno excepcional, indicando aplicaciones especiales en el periodo diurno"
+- [x] 10. "Diurno excepcional, para situaciones atípicas durante las horas de luz"
 
 ## $Q / %A=b: Incluido el sumistro y montaje de los tubos, la prueba de los conductos, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación, el transporte y la retirada de los productos al lugar de empleo.
 _Used in 1 concept(s): OEB250$_
 
-- [ ] 1. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para verificar su funcionalidad, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación necesaria para el montaje, el transporte y la retirada de los productos al lugar de empleo."
-- [ ] 2. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para asegurar su correcto funcionamiento, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación requerida, el transporte y la retirada de los productos al lugar de empleo."
-- [ ] 3. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para confirmar su integridad, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación necesaria, el transporte y la retirada de los productos al lugar de empleo."
-- [ ] 4. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para verificar su eficacia, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación requerida, el transporte y la retirada de los productos al lugar de empleo."
-- [ ] 5. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para asegurar su operatividad, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación necesaria, el transporte y la retirada de los productos al lugar de empleo."
-- [ ] 6. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para comprobar su funcionalidad, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación requerida, el transporte y la retirada de los productos al lugar de empleo."
-- [ ] 7. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para garantizar su correcto funcionamiento, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación necesaria, el transporte y la retirada de los productos al lugar de empleo."
-- [ ] 8. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para verificar su integridad estructural, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación requerida, el transporte y la retirada de los productos al lugar de empleo."
-- [ ] 9. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para confirmar su eficacia operativa, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación necesaria, el transporte y la retirada de los productos al lugar de empleo."
-- [ ] 10. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para asegurar su correcta instalación, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación requerida, el transporte y la retirada de los productos al lugar de empleo."
+- [x] 1. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para verificar su funcionalidad, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación necesaria para el montaje, el transporte y la retirada de los productos al lugar de empleo."
+- [x] 2. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para asegurar su correcto funcionamiento, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación requerida, el transporte y la retirada de los productos al lugar de empleo."
+- [x] 3. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para confirmar su integridad, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación necesaria, el transporte y la retirada de los productos al lugar de empleo."
+- [x] 4. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para verificar su eficacia, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación requerida, el transporte y la retirada de los productos al lugar de empleo."
+- [x] 5. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para asegurar su operatividad, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación necesaria, el transporte y la retirada de los productos al lugar de empleo."
+- [x] 6. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para comprobar su funcionalidad, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación requerida, el transporte y la retirada de los productos al lugar de empleo."
+- [x] 7. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para garantizar su correcto funcionamiento, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación necesaria, el transporte y la retirada de los productos al lugar de empleo."
+- [x] 8. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para verificar su integridad estructural, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación requerida, el transporte y la retirada de los productos al lugar de empleo."
+- [x] 9. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para confirmar su eficacia operativa, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación necesaria, el transporte y la retirada de los productos al lugar de empleo."
+- [x] 10. "Incluido el suministro y montaje de los tubos, la prueba de los conductos para asegurar su correcta instalación, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación requerida, el transporte y la retirada de los productos al lugar de empleo."
 
 ## $M / %B=="h": Incluso la construcción del pozo de ataque, entibación de los costados, instalación de un tubo guía de acero de 500 mm de diámetro. El suministro y montaje de los hilos guía y el sellado de las embocaduras con poliuretano expandido.
 _Used in 1 concept(s): OEB020$_
 
-- [ ] 1. "Incluso la construcción del pozo de ataque, entibación de los costados para estabilización, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el alineamiento. El suministro y montaje de los hilos guía para guiar el tubo, y el sellado de las embocaduras con poliuretano expandido para asegurar la estanqueidad."
-- [ ] 2. "Incluso la construcción del pozo de ataque, entibación de los costados para evitar desplomes, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el desplazamiento. El suministro y montaje de los hilos guía para asegurar el correcto posicionamiento, y el sellado de las embocaduras con poliuretano expandido para prevenir filtraciones."
-- [ ] 3. "Incluso la construcción del pozo de ataque, entibación de los costados para soporte estructural, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el avance. El suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para garantizar la hermeticidad."
-- [ ] 4. "Incluso la construcción del pozo de ataque, entibación de los costados para estabilidad, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento. El suministro y montaje de los hilos guía para dirigir el tubo, y el sellado de las embocaduras con poliuretano expandido para asegurar la impermeabilidad."
-- [ ] 5. "Incluso la construcción del pozo de ataque, entibación de los costados para evitar deslizamientos, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el desplazamiento. El suministro y montaje de los hilos guía para asegurar el alineamiento, y el sellado de las embocaduras con poliuretano expandido para prevenir fugas."
-- [ ] 6. "Incluso la construcción del pozo de ataque, entibación de los costados para soporte temporal, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el avance. El suministro y montaje de los hilos guía para mantener la dirección, y el sellado de las embocaduras con poliuretano expandido para asegurar la estanqueidad."
-- [ ] 7. "Incluso la construcción del pozo de ataque, entibación de los costados para estabilidad estructural, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento. El suministro y montaje de los hilos guía para guiar el tubo, y el sellado de las embocaduras con poliuretano expandido para prevenir filtraciones."
-- [ ] 8. "Incluso la construcción del pozo de ataque, entibación de los costados para evitar desplomes, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el desplazamiento. El suministro y montaje de los hilos guía para asegurar el correcto posicionamiento, y el sellado de las embocaduras con poliuretano expandido para garantizar la hermeticidad."
-- [ ] 9. "Incluso la construcción del pozo de ataque, entibación de los costados para soporte estructural, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el avance. El suministro y montaje de los hilos guía para dirigir el tubo, y el sellado de las embocaduras con poliuretano expandido para asegurar la impermeabilidad."
-- [ ] 10. "Incluso la construcción del pozo de ataque, entibación de los costados para estabilidad, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento. El suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para prevenir fugas."
+- [x] 1. "Incluso la construcción del pozo de ataque, entibación de los costados para estabilización, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el alineamiento. El suministro y montaje de los hilos guía para guiar el tubo, y el sellado de las embocaduras con poliuretano expandido para asegurar la estanqueidad."
+- [x] 2. "Incluso la construcción del pozo de ataque, entibación de los costados para evitar desplomes, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el desplazamiento. El suministro y montaje de los hilos guía para asegurar el correcto posicionamiento, y el sellado de las embocaduras con poliuretano expandido para prevenir filtraciones."
+- [x] 3. "Incluso la construcción del pozo de ataque, entibación de los costados para soporte estructural, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el avance. El suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para garantizar la hermeticidad."
+- [x] 4. "Incluso la construcción del pozo de ataque, entibación de los costados para estabilidad, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento. El suministro y montaje de los hilos guía para dirigir el tubo, y el sellado de las embocaduras con poliuretano expandido para asegurar la impermeabilidad."
+- [x] 5. "Incluso la construcción del pozo de ataque, entibación de los costados para evitar deslizamientos, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el desplazamiento. El suministro y montaje de los hilos guía para asegurar el alineamiento, y el sellado de las embocaduras con poliuretano expandido para prevenir fugas."
+- [x] 6. "Incluso la construcción del pozo de ataque, entibación de los costados para soporte temporal, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el avance. El suministro y montaje de los hilos guía para mantener la dirección, y el sellado de las embocaduras con poliuretano expandido para asegurar la estanqueidad."
+- [x] 7. "Incluso la construcción del pozo de ataque, entibación de los costados para estabilidad estructural, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento. El suministro y montaje de los hilos guía para guiar el tubo, y el sellado de las embocaduras con poliuretano expandido para prevenir filtraciones."
+- [x] 8. "Incluso la construcción del pozo de ataque, entibación de los costados para evitar desplomes, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el desplazamiento. El suministro y montaje de los hilos guía para asegurar el correcto posicionamiento, y el sellado de las embocaduras con poliuretano expandido para garantizar la hermeticidad."
+- [x] 9. "Incluso la construcción del pozo de ataque, entibación de los costados para soporte estructural, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el avance. El suministro y montaje de los hilos guía para dirigir el tubo, y el sellado de las embocaduras con poliuretano expandido para asegurar la impermeabilidad."
+- [x] 10. "Incluso la construcción del pozo de ataque, entibación de los costados para estabilidad, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento. El suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para prevenir fugas."
 
 ## $L / %C=c: No aplica
 _Used in 1 concept(s): OEB250$_
@@ -173,28 +173,28 @@ _Used in 1 concept(s): OEB250$_
 _Used in 20 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB240$, OEB280$, OEB290$, OEB300$_
 
 - [ ] 1. "Nocturno, instalación durante las horas de menor tráfico ferroviario para minimizar interrupciones."
-- [ ] 2. "Nocturno, ejecución en horario nocturno para evitar afectar el tráfico diario de trenes."
-- [ ] 3. "Nocturno, realización de trabajos en horario nocturno para reducir impacto en operaciones ferroviarias."
+- [x] 2. "Nocturno, ejecución en horario nocturno para evitar afectar el tráfico diario de trenes."
+- [x] 3. "Nocturno, realización de trabajos en horario nocturno para reducir impacto en operaciones ferroviarias."
 - [ ] 4. "Nocturno, instalación programada en horario nocturno para optimizar la eficiencia operativa."
-- [ ] 5. "Nocturno, ejecución de trabajos en horario nocturno para disminuir la interrupción del servicio."
+- [x] 5. "Nocturno, ejecución de trabajos en horario nocturno para disminuir la interrupción del servicio."
 - [ ] 6. "Nocturno, instalación durante la noche para facilitar el acceso y reducir el impacto en el tráfico."
 - [ ] 7. "Nocturno, realización de trabajos en horario nocturno para mejorar la seguridad y eficiencia."
 - [ ] 8. "Nocturno, ejecución en horario nocturno para optimizar la logística y minimizar el impacto."
-- [ ] 9. "Nocturno, instalación programada en horario nocturno para asegurar menor interferencia operativa."
+- [x] 9. "Nocturno, instalación programada en horario nocturno para asegurar menor interferencia operativa."
 - [ ] 10. "Nocturno, realización de trabajos en horario nocturno para facilitar la coordinación y reducir el impacto."
 
 ## $G / %C=d: Nocturno Excepcional
 _Used in 5 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB250$_
 
-- [ ] 1. "Nocturno Excepcional, aplicable únicamente durante horas nocturnas fuera del horario regular"
+- [x] 1. "Nocturno Excepcional, aplicable únicamente durante horas nocturnas fuera del horario regular"
 - [ ] 2. "Nocturno Excepcional, específico para operaciones fuera del horario estándar nocturno"
-- [ ] 3. "Nocturno Excepcional, referente a actividades realizadas en horas nocturnas no habituales"
-- [ ] 4. "Nocturno Excepcional, indicando horarios nocturnos no convencionales"
-- [ ] 5. "Nocturno Excepcional, para intervenciones en horarios nocturnos atípicos"
-- [ ] 6. "Nocturno Excepcional, aplicable a horarios nocturnos fuera del estándar"
-- [ ] 7. "Nocturno Excepcional, específico para horarios nocturnos no regulares"
-- [ ] 8. "Nocturno Excepcional, referente a operaciones en horarios nocturnos no habituales"
-- [ ] 9. "Nocturno Excepcional, para actividades en horarios nocturnos atípicos"
+- [x] 3. "Nocturno Excepcional, referente a actividades realizadas en horas nocturnas no habituales"
+- [x] 4. "Nocturno Excepcional, indicando horarios nocturnos no convencionales"
+- [x] 5. "Nocturno Excepcional, para intervenciones en horarios nocturnos atípicos"
+- [x] 6. "Nocturno Excepcional, aplicable a horarios nocturnos fuera del estándar"
+- [x] 7. "Nocturno Excepcional, específico para horarios nocturnos no regulares"
+- [x] 8. "Nocturno Excepcional, referente a operaciones en horarios nocturnos no habituales"
+- [x] 9. "Nocturno Excepcional, para actividades en horarios nocturnos atípicos"
 - [ ] 10. "Nocturno Excepcional, indicando horarios nocturnos fuera del común"
 
 ## $L / %B=d: Nocturno excepcional
@@ -272,7 +272,7 @@ _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB
 
 - [ ] 1. "instalada adosada o superficialmente al terreno, sin penetrar profundamente en el suelo"
 - [ ] 2. "colocada adosada o superficialmente, permitiendo un fácil acceso para mantenimiento"
-- [ ] 3. "ubicada adosada o superficialmente, sin requerir excavación profunda"
+- [x] 3. "ubicada adosada o superficialmente, sin requerir excavación profunda"
 - [ ] 4. "instalada adosada o superficialmente, facilitando la integración con el entorno"
 - [ ] 5. "colocada adosada o superficialmente, minimizando el impacto en el terreno"
 - [ ] 6. "ubicada adosada o superficialmente, sin alterar significativamente la topografía"
@@ -284,16 +284,16 @@ _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB
 ## $K / %B=="b": bajo vías
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "bajo vías, instalada en el subsuelo directamente debajo de las vías férreas"
-- [ ] 2. "bajo vías, ubicada en el espacio subterráneo debajo de las vías del tren"
-- [ ] 3. "bajo vías, situada en el área subterránea inmediatamente debajo de las vías ferroviarias"
-- [ ] 4. "bajo vías, colocada en el subsuelo justo debajo de las vías del tren"
-- [ ] 5. "bajo vías, emplazada en el espacio subterráneo debajo de las vías del ferrocarril"
-- [ ] 6. "bajo vías, instalada en el área subterránea directamente debajo de las vías férreas"
-- [ ] 7. "bajo vías, ubicada en el subsuelo inmediatamente debajo de las vías del tren"
-- [ ] 8. "bajo vías, situada en el espacio subterráneo justo debajo de las vías ferroviarias"
-- [ ] 9. "bajo vías, colocada en el área subterránea debajo de las vías del ferrocarril"
-- [ ] 10. "bajo vías, emplazada en el subsuelo directamente debajo de las vías del tren"
+- [x] 1. "bajo vías, instalada en el subsuelo directamente debajo de las vías férreas"
+- [x] 2. "bajo vías, ubicada en el espacio subterráneo debajo de las vías del tren"
+- [x] 3. "bajo vías, situada en el área subterránea inmediatamente debajo de las vías ferroviarias"
+- [x] 4. "bajo vías, colocada en el subsuelo justo debajo de las vías del tren"
+- [x] 5. "bajo vías, emplazada en el espacio subterráneo debajo de las vías del ferrocarril"
+- [x] 6. "bajo vías, instalada en el área subterránea directamente debajo de las vías férreas"
+- [x] 7. "bajo vías, ubicada en el subsuelo inmediatamente debajo de las vías del tren"
+- [x] 8. "bajo vías, situada en el espacio subterráneo justo debajo de las vías ferroviarias"
+- [x] 9. "bajo vías, colocada en el área subterránea debajo de las vías del ferrocarril"
+- [x] 10. "bajo vías, emplazada en el subsuelo directamente debajo de las vías del tren"
 
 ## $K / %B=="h": con topo
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
@@ -312,28 +312,28 @@ _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB
 ## $R / %B=a: ejecutada por excavación manual en cualquier tipo de terreno excepto roca
 _Used in 1 concept(s): OEB190$_
 
-- [ ] 1. "ejecutada por excavación manual en cualquier tipo de terreno, incluyendo suelos blandos, arcillosos o arenosos, pero excluyendo terrenos rocosos"
+- [x] 1. "ejecutada por excavación manual en cualquier tipo de terreno, incluyendo suelos blandos, arcillosos o arenosos, pero excluyendo terrenos rocosos"
 - [ ] 2. "ejecutada por excavación manual en terrenos como arcilla, arena o grava, pero no en terrenos rocosos"
 - [ ] 3. "ejecutada por excavación manual en terrenos no rocosos, como suelos blandos o compactados, pero excluyendo rocas"
 - [ ] 4. "ejecutada por excavación manual en terrenos diversos, excluyendo aquellos con presencia de roca"
 - [ ] 5. "ejecutada por excavación manual en terrenos como arcilla, arena o limo, pero no en terrenos rocosos"
-- [ ] 6. "ejecutada por excavación manual en terrenos no rocosos, incluyendo suelos blandos y compactados"
+- [x] 6. "ejecutada por excavación manual en terrenos no rocosos, incluyendo suelos blandos y compactados"
 - [ ] 7. "ejecutada por excavación manual en terrenos diversos, excluyendo aquellos con roca"
-- [ ] 8. "ejecutada por excavación manual en terrenos no rocosos, incluyendo suelos blandos, arcillosos o arenosos"
+- [x] 8. "ejecutada por excavación manual en terrenos no rocosos, incluyendo suelos blandos, arcillosos o arenosos"
 
 ## $R / %B=b: ejecutada por excavación manual en terreno rocoso, incluso excavación con explosivos
 _Used in 1 concept(s): OEB190$_
 
-- [ ] 1. "ejecutada por excavación manual en terreno rocoso, incluyendo el uso de explosivos para facilitar la remoción de rocas"
-- [ ] 2. "ejecutada por excavación manual en terreno rocoso, utilizando explosivos cuando sea necesario para la fragmentación de rocas"
-- [ ] 3. "ejecutada por excavación manual en terreno rocoso, con la posibilidad de emplear explosivos para la fragmentación de rocas"
-- [ ] 4. "ejecutada por excavación manual en terreno rocoso, incluyendo el uso de explosivos para la fragmentación de rocas"
-- [ ] 5. "ejecutada por excavación manual en terreno rocoso, con la utilización de explosivos para facilitar la remoción de rocas"
-- [ ] 6. "ejecutada por excavación manual en terreno rocoso, empleando explosivos cuando sea necesario para la fragmentación de rocas"
-- [ ] 7. "ejecutada por excavación manual en terreno rocoso, con la posibilidad de usar explosivos para la fragmentación de rocas"
-- [ ] 8. "ejecutada por excavación manual en terreno rocoso, incluyendo el uso de explosivos para facilitar la fragmentación de rocas"
-- [ ] 9. "ejecutada por excavación manual en terreno rocoso, utilizando explosivos para la fragmentación de rocas cuando sea necesario"
-- [ ] 10. "ejecutada por excavación manual en terreno rocoso, con la posibilidad de emplear explosivos para facilitar la remoción de rocas"
+- [x] 1. "ejecutada por excavación manual en terreno rocoso, incluyendo el uso de explosivos para facilitar la remoción de rocas"
+- [x] 2. "ejecutada por excavación manual en terreno rocoso, utilizando explosivos cuando sea necesario para la fragmentación de rocas"
+- [x] 3. "ejecutada por excavación manual en terreno rocoso, con la posibilidad de emplear explosivos para la fragmentación de rocas"
+- [x] 4. "ejecutada por excavación manual en terreno rocoso, incluyendo el uso de explosivos para la fragmentación de rocas"
+- [x] 5. "ejecutada por excavación manual en terreno rocoso, con la utilización de explosivos para facilitar la remoción de rocas"
+- [x] 6. "ejecutada por excavación manual en terreno rocoso, empleando explosivos cuando sea necesario para la fragmentación de rocas"
+- [x] 7. "ejecutada por excavación manual en terreno rocoso, con la posibilidad de usar explosivos para la fragmentación de rocas"
+- [x] 8. "ejecutada por excavación manual en terreno rocoso, incluyendo el uso de explosivos para facilitar la fragmentación de rocas"
+- [x] 9. "ejecutada por excavación manual en terreno rocoso, utilizando explosivos para la fragmentación de rocas cuando sea necesario"
+- [x] 10. "ejecutada por excavación manual en terreno rocoso, con la posibilidad de emplear explosivos para facilitar la remoción de rocas"
 
 ## $N / %B=="b"  or  %B=="g": el descerne y la entibación de los costados y la posterior reposición del balasto retirado,
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
@@ -342,9 +342,9 @@ _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB
 - [ ] 2. "el descerne y la entibación de los costados, y la reposición meticulosa del balasto retirado,"
 - [ ] 3. "el descerne y la entibación de los costados, seguido de la reposición del balasto retirado,"
 - [ ] 4. "el descerne y la entibación de los costados, y la reposición del balasto retirado,"
-- [ ] 5. "el descerne y la entibación de los costados, seguido de la reposición del balasto previamente retirado,"
+- [x] 5. "el descerne y la entibación de los costados, seguido de la reposición del balasto previamente retirado,"
 - [ ] 6. "el descerne y la entibación de los costados, y la reposición cuidadosa del balasto retirado,"
-- [ ] 7. "el descerne y la entibación de los costados, seguido de la reposición del balasto retirado previamente,"
+- [x] 7. "el descerne y la entibación de los costados, seguido de la reposición del balasto retirado previamente,"
 - [ ] 8. "el descerne y la entibación de los costados, y la reposición del balasto retirado previamente,"
 
 ## $I / %B=="e": en andén
@@ -379,7 +379,7 @@ _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
 - [ ] 1. "en cruce bajo vías, donde la canalización se instala debajo de las vías férreas, asegurando protección y accesibilidad limitada"
-- [ ] 2. "en cruce bajo vías, implicando la instalación subterránea de la canalización debajo de las vías del tren"
+- [x] 2. "en cruce bajo vías, implicando la instalación subterránea de la canalización debajo de las vías del tren"
 - [ ] 3. "en cruce bajo vías, requiriendo técnicas de excavación que no interfieran con el tráfico ferroviario"
 - [ ] 4. "en cruce bajo vías, donde la canalización se coloca estratégicamente para evitar interferencias con el tráfico ferroviario"
 - [ ] 5. "en cruce bajo vías, asegurando que la canalización esté protegida de las vibraciones y el tráfico ferroviario"
@@ -435,7 +435,7 @@ _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
 - [ ] 1. "en terreno rocoso, donde la dureza del sustrato exige técnicas de excavación especializadas"
-- [ ] 2. "en terreno rocoso, caracterizado por su resistencia y compactación natural"
+- [x] 2. "en terreno rocoso, caracterizado por su resistencia y compactación natural"
 - [ ] 3. "en terreno rocoso, que requiere adaptaciones en el método de instalación"
 - [ ] 4. "en terreno rocoso, donde la presencia de rocas puede complicar la canalización"
 - [ ] 5. "en terreno rocoso, que presenta desafíos específicos para la canalización"
@@ -448,29 +448,29 @@ _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB
 ## $I / %B=="g": en zona de balasto
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "en zona de balasto, específicamente en la capa de piedras que soporta las vías férreas"
-- [ ] 2. "en zona de balasto, donde se encuentra la capa de piedras que amortigua y estabiliza las vías"
-- [ ] 3. "en zona de balasto, que es la capa de piedras que se coloca debajo de las traviesas para soportar las vías"
-- [ ] 4. "en zona de balasto, compuesta por piedras que proporcionan estabilidad y drenaje a las vías férreas"
-- [ ] 5. "en zona de balasto, que consiste en una capa de piedras que facilita el drenaje y soporta las vías"
-- [ ] 6. "en zona de balasto, formada por piedras que amortiguan y estabilizan las vías férreas"
-- [ ] 7. "en zona de balasto, que es la capa de piedras que se coloca debajo de las traviesas para soportar las vías y facilitar el drenaje"
-- [ ] 8. "en zona de balasto, compuesta por piedras que amortiguan las vibraciones y soportan las vías férreas"
-- [ ] 9. "en zona de balasto, que es la capa de piedras que se coloca debajo de las traviesas para soportar y estabilizar las vías"
-- [ ] 10. "en zona de balasto, formada por piedras que proporcionan soporte y amortiguación a las vías férreas"
+- [x] 1. "en zona de balasto, específicamente en la capa de piedras que soporta las vías férreas"
+- [x] 2. "en zona de balasto, donde se encuentra la capa de piedras que amortigua y estabiliza las vías"
+- [x] 3. "en zona de balasto, que es la capa de piedras que se coloca debajo de las traviesas para soportar las vías"
+- [x] 4. "en zona de balasto, compuesta por piedras que proporcionan estabilidad y drenaje a las vías férreas"
+- [x] 5. "en zona de balasto, que consiste en una capa de piedras que facilita el drenaje y soporta las vías"
+- [x] 6. "en zona de balasto, formada por piedras que amortiguan y estabilizan las vías férreas"
+- [x] 7. "en zona de balasto, que es la capa de piedras que se coloca debajo de las traviesas para soportar las vías y facilitar el drenaje"
+- [x] 8. "en zona de balasto, compuesta por piedras que amortiguan las vibraciones y soportan las vías férreas"
+- [x] 9. "en zona de balasto, que es la capa de piedras que se coloca debajo de las traviesas para soportar y estabilizar las vías"
+- [x] 10. "en zona de balasto, formada por piedras que proporcionan soporte y amortiguación a las vías férreas"
 
 ## $M / %B=="h": incluso la construcción del pozo de ataque, entibación de los costados, instalación de un tubo guía de acero de 500 mm de diámetro, el suministro y montaje de los hilos guía y el sellado de las embocaduras con poliuretano expandido.
 _Used in 6 concept(s): OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "incluso la construcción del pozo de ataque, entibación de los costados para estabilizar la excavación, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el alineamiento, el suministro y montaje de los hilos guía para asegurar la correcta colocación, y el sellado de las embocaduras con poliuretano expandido para garantizar la estanqueidad."
-- [ ] 2. "incluso la construcción del pozo de ataque, entibación de los costados para prevenir deslizamientos, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento, el suministro y montaje de los hilos guía para asegurar la alineación, y el sellado de las embocaduras con poliuretano expandido para evitar filtraciones."
+- [x] 1. "incluso la construcción del pozo de ataque, entibación de los costados para estabilizar la excavación, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el alineamiento, el suministro y montaje de los hilos guía para asegurar la correcta colocación, y el sellado de las embocaduras con poliuretano expandido para garantizar la estanqueidad."
+- [x] 2. "incluso la construcción del pozo de ataque, entibación de los costados para prevenir deslizamientos, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento, el suministro y montaje de los hilos guía para asegurar la alineación, y el sellado de las embocaduras con poliuretano expandido para evitar filtraciones."
 - [ ] 3. "incluso la construcción del pozo de ataque, entibación de los costados para soportar la estructura, instalación de un tubo guía de acero de 500 mm de diámetro para guiar el proceso, el suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para asegurar la hermeticidad."
-- [ ] 4. "incluso la construcción del pozo de ataque, entibación de los costados para estabilizar la excavación, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento, el suministro y montaje de los hilos guía para asegurar la correcta colocación, y el sellado de las embocaduras con poliuretano expandido para prevenir filtraciones."
-- [ ] 5. "incluso la construcción del pozo de ataque, entibación de los costados para evitar deslizamientos, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el alineamiento, el suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para garantizar la estanqueidad."
+- [x] 4. "incluso la construcción del pozo de ataque, entibación de los costados para estabilizar la excavación, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento, el suministro y montaje de los hilos guía para asegurar la correcta colocación, y el sellado de las embocaduras con poliuretano expandido para prevenir filtraciones."
+- [x] 5. "incluso la construcción del pozo de ataque, entibación de los costados para evitar deslizamientos, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el alineamiento, el suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para garantizar la estanqueidad."
 - [ ] 6. "incluso la construcción del pozo de ataque, entibación de los costados para soportar la estructura, instalación de un tubo guía de acero de 500 mm de diámetro para guiar el proceso, el suministro y montaje de los hilos guía para asegurar la alineación, y el sellado de las embocaduras con poliuretano expandido para evitar filtraciones."
-- [ ] 7. "incluso la construcción del pozo de ataque, entibación de los costados para prevenir deslizamientos, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento, el suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para asegurar la hermeticidad."
-- [ ] 8. "incluso la construcción del pozo de ataque, entibación de los costados para estabilizar la excavación, instalación de un tubo guía de acero de 500 mm de diámetro para guiar el proceso, el suministro y montaje de los hilos guía para asegurar la correcta colocación, y el sellado de las embocaduras con poliuretano expandido para prevenir filtraciones."
-- [ ] 9. "incluso la construcción del pozo de ataque, entibación de los costados para evitar deslizamientos, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el alineamiento, el suministro y montaje de los hilos guía para asegurar la alineación, y el sellado de las embocaduras con poliuretano expandido para garantizar la estanqueidad."
+- [x] 7. "incluso la construcción del pozo de ataque, entibación de los costados para prevenir deslizamientos, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento, el suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para asegurar la hermeticidad."
+- [x] 8. "incluso la construcción del pozo de ataque, entibación de los costados para estabilizar la excavación, instalación de un tubo guía de acero de 500 mm de diámetro para guiar el proceso, el suministro y montaje de los hilos guía para asegurar la correcta colocación, y el sellado de las embocaduras con poliuretano expandido para prevenir filtraciones."
+- [x] 9. "incluso la construcción del pozo de ataque, entibación de los costados para evitar deslizamientos, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el alineamiento, el suministro y montaje de los hilos guía para asegurar la alineación, y el sellado de las embocaduras con poliuretano expandido para garantizar la estanqueidad."
 - [ ] 10. "incluso la construcción del pozo de ataque, entibación de los costados para soportar la estructura, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el posicionamiento, el suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para asegurar la hermeticidad."
 
 ## $N / %B=="c": la demolición de roca dura,
@@ -547,70 +547,70 @@ _Used in 6 concept(s): OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 _Used in 6 concept(s): OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
 - [ ] 1. "la preparación y nivelación meticulosa de la solera, el suministro y montaje cuidadoso del encofrado, elementos de fijación precisos, y el desencofrado sistemático,"
-- [ ] 2. "la preparación y nivelación adecuada de la solera, el suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado posterior,"
-- [ ] 3. "la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación apropiados, y el desencofrado final,"
+- [x] 2. "la preparación y nivelación adecuada de la solera, el suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado posterior,"
+- [x] 3. "la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación apropiados, y el desencofrado final,"
 - [ ] 4. "la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado cuidadoso,"
-- [ ] 5. "la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación adecuados, y el desencofrado posterior,"
+- [x] 5. "la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación adecuados, y el desencofrado posterior,"
 - [ ] 6. "la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación precisos, y el desencofrado final,"
 - [ ] 7. "la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado sistemático,"
 - [ ] 8. "la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación adecuados, y el desencofrado cuidadoso,"
 - [ ] 9. "la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación precisos, y el desencofrado posterior,"
-- [ ] 10. "la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado final,"
+- [x] 10. "la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado final,"
 
 ## $P / %B=="f": la preparación y nivelación de la solera, suministro y montaje del encofrado, elementos de fijación, desencofrado,
 _Used in 1 concept(s): OEB020$_
 
 - [ ] 1. "la preparación y nivelación meticulosa de la solera, suministro y montaje cuidadoso del encofrado, elementos de fijación adecuados, y el desencofrado posterior,"
 - [ ] 2. "la preparación y nivelación precisa de la solera, suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado final,"
-- [ ] 3. "la preparación y nivelación adecuada de la solera, suministro y montaje del encofrado, elementos de fijación requeridos, y el desencofrado subsiguiente,"
+- [x] 3. "la preparación y nivelación adecuada de la solera, suministro y montaje del encofrado, elementos de fijación requeridos, y el desencofrado subsiguiente,"
 - [ ] 4. "la preparación y nivelación correcta de la solera, suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado posterior,"
-- [ ] 5. "la preparación y nivelación adecuada de la solera, suministro y montaje del encofrado, elementos de fijación apropiados, y el desencofrado final,"
+- [x] 5. "la preparación y nivelación adecuada de la solera, suministro y montaje del encofrado, elementos de fijación apropiados, y el desencofrado final,"
 - [ ] 6. "la preparación y nivelación precisa de la solera, suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado subsiguiente,"
 - [ ] 7. "la preparación y nivelación meticulosa de la solera, suministro y montaje del encofrado, elementos de fijación requeridos, y el desencofrado final,"
 - [ ] 8. "la preparación y nivelación correcta de la solera, suministro y montaje del encofrado, elementos de fijación adecuados, y el desencofrado posterior,"
-- [ ] 9. "la preparación y nivelación adecuada de la solera, suministro y montaje del encofrado, elementos de fijación apropiados, y el desencofrado subsiguiente,"
+- [x] 9. "la preparación y nivelación adecuada de la solera, suministro y montaje del encofrado, elementos de fijación apropiados, y el desencofrado subsiguiente,"
 - [ ] 10. "la preparación y nivelación meticulosa de la solera, suministro y montaje cuidadoso del encofrado, elementos de fijación necesarios, y el desencofrado final,"
 
 ## $W / %A=b: material de cantera
 _Used in 1 concept(s): OEB240$_
 
 - [ ] 1. "material de cantera, extraído y procesado localmente para su uso en relleno compactado"
-- [ ] 2. "material de cantera, adecuado para relleno compactado en obras ferroviarias"
+- [x] 2. "material de cantera, adecuado para relleno compactado en obras ferroviarias"
 - [ ] 3. "material de cantera, seleccionado por su calidad y compatibilidad con instalaciones ferroviarias"
-- [ ] 4. "material de cantera, utilizado específicamente para relleno compactado en construcción ferroviaria"
-- [ ] 5. "material de cantera, preparado para su aplicación en relleno compactado en obras ferroviarias"
+- [x] 4. "material de cantera, utilizado específicamente para relleno compactado en construcción ferroviaria"
+- [x] 5. "material de cantera, preparado para su aplicación en relleno compactado en obras ferroviarias"
 - [ ] 6. "material de cantera, empleado en relleno compactado para asegurar estabilidad en instalaciones ferroviarias"
 - [ ] 7. "material de cantera, procesado para cumplir con los estándares de relleno compactado en ferrocarriles"
-- [ ] 8. "material de cantera, utilizado en relleno compactado para obras de infraestructura ferroviaria"
-- [ ] 9. "material de cantera, adecuado para relleno compactado en el contexto de construcción ferroviaria"
-- [ ] 10. "material de cantera, seleccionado para su uso en relleno compactado en instalaciones ferroviarias"
+- [x] 8. "material de cantera, utilizado en relleno compactado para obras de infraestructura ferroviaria"
+- [x] 9. "material de cantera, adecuado para relleno compactado en el contexto de construcción ferroviaria"
+- [x] 10. "material de cantera, seleccionado para su uso en relleno compactado en instalaciones ferroviarias"
 
 ## $W / %A=a: material de la traza
 _Used in 1 concept(s): OEB240$_
 
-- [ ] 1. "material de la traza, específicamente utilizado para el relleno localizado y compactado en obras de instalaciones ferroviarias"
-- [ ] 2. "material de la traza, empleado en el relleno localizado y compactado para obras de instalaciones ferroviarias"
-- [ ] 3. "material de la traza, destinado al relleno localizado y compactado en el contexto de obras de instalaciones ferroviarias"
-- [ ] 4. "material de la traza, utilizado para el relleno localizado y compactado en el ámbito de las obras de instalaciones ferroviarias"
-- [ ] 5. "material de la traza, aplicado en el relleno localizado y compactado durante las obras de instalaciones ferroviarias"
-- [ ] 6. "material de la traza, que se utiliza para el relleno localizado y compactado en el marco de obras de instalaciones ferroviarias"
-- [ ] 7. "material de la traza, empleado específicamente para el relleno localizado y compactado en el contexto de obras de instalaciones ferroviarias"
-- [ ] 8. "material de la traza, destinado al relleno localizado y compactado en el ámbito de las obras de instalaciones ferroviarias"
-- [ ] 9. "material de la traza, utilizado en el relleno localizado y compactado para obras de instalaciones ferroviarias"
+- [x] 1. "material de la traza, específicamente utilizado para el relleno localizado y compactado en obras de instalaciones ferroviarias"
+- [x] 2. "material de la traza, empleado en el relleno localizado y compactado para obras de instalaciones ferroviarias"
+- [x] 3. "material de la traza, destinado al relleno localizado y compactado en el contexto de obras de instalaciones ferroviarias"
+- [x] 4. "material de la traza, utilizado para el relleno localizado y compactado en el ámbito de las obras de instalaciones ferroviarias"
+- [x] 5. "material de la traza, aplicado en el relleno localizado y compactado durante las obras de instalaciones ferroviarias"
+- [x] 6. "material de la traza, que se utiliza para el relleno localizado y compactado en el marco de obras de instalaciones ferroviarias"
+- [x] 7. "material de la traza, empleado específicamente para el relleno localizado y compactado en el contexto de obras de instalaciones ferroviarias"
+- [x] 8. "material de la traza, destinado al relleno localizado y compactado en el ámbito de las obras de instalaciones ferroviarias"
+- [x] 9. "material de la traza, utilizado en el relleno localizado y compactado para obras de instalaciones ferroviarias"
 
 ## $K / %B=="a": normal
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
-- [ ] 1. "instalación estándar en condiciones normales de suelo"
-- [ ] 2. "instalación estándar sin condiciones especiales"
-- [ ] 3. "instalación estándar en terreno sin complicaciones"
+- [x] 1. "instalación estándar en condiciones normales de suelo"
+- [x] 2. "instalación estándar sin condiciones especiales"
+- [x] 3. "instalación estándar en terreno sin complicaciones"
 - [ ] 4. "instalación estándar en suelo homogéneo"
 - [ ] 5. "instalación estándar en condiciones de suelo neutro"
-- [ ] 6. "instalación estándar en terreno sin características especiales"
+- [x] 6. "instalación estándar en terreno sin características especiales"
 - [ ] 7. "instalación estándar en condiciones de suelo regular"
-- [ ] 8. "instalación estándar en terreno sin condiciones adversas"
+- [x] 8. "instalación estándar en terreno sin condiciones adversas"
 - [ ] 9. "instalación estándar en suelo sin alteraciones"
-- [ ] 10. "instalación estándar en condiciones de suelo típicas"
+- [x] 10. "instalación estándar en condiciones de suelo típicas"
 
 ## $K / %B=="c": rocoso
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
@@ -631,12 +631,12 @@ _Used in 1 concept(s): OEB190$_
 
 - [ ] 1. "zona de balasto, ejecutada a mano, incluyendo el descerne cuidadoso, la entibación de los costados para estabilización y la posterior reposición del balasto retirado para restaurar la superficie original"
 - [ ] 2. "zona de balasto, ejecutada manualmente, con descerne meticuloso, entibación de los costados para asegurar estabilidad y reposición del balasto retirado para completar el proceso"
-- [ ] 3. "zona de balasto, realizada a mano, incluyendo el descerne, la entibación de los costados para soporte y la reposición del balasto retirado para finalizar el trabajo"
-- [ ] 4. "zona de balasto, ejecutada manualmente, con descerne, entibación de los costados para estabilidad y reposición del balasto retirado para restaurar la superficie"
-- [ ] 5. "zona de balasto, realizada a mano, incluyendo el descerne, la entibación de los costados para soporte estructural y la reposición del balasto retirado para completar el proceso"
+- [x] 3. "zona de balasto, realizada a mano, incluyendo el descerne, la entibación de los costados para soporte y la reposición del balasto retirado para finalizar el trabajo"
+- [x] 4. "zona de balasto, ejecutada manualmente, con descerne, entibación de los costados para estabilidad y reposición del balasto retirado para restaurar la superficie"
+- [x] 5. "zona de balasto, realizada a mano, incluyendo el descerne, la entibación de los costados para soporte estructural y la reposición del balasto retirado para completar el proceso"
 - [ ] 6. "zona de balasto, ejecutada manualmente, con descerne cuidadoso, entibación de los costados para estabilidad y reposición del balasto retirado para restaurar la superficie"
-- [ ] 7. "zona de balasto, realizada a mano, incluyendo el descerne, la entibación de los costados para soporte y la reposición del balasto retirado para completar el trabajo"
+- [x] 7. "zona de balasto, realizada a mano, incluyendo el descerne, la entibación de los costados para soporte y la reposición del balasto retirado para completar el trabajo"
 - [ ] 8. "zona de balasto, ejecutada manualmente, con descerne meticuloso, entibación de los costados para asegurar estabilidad y reposición del balasto retirado para restaurar la superficie original"
-- [ ] 9. "zona de balasto, realizada a mano, incluyendo el descerne, la entibación de los costados para soporte estructural y la reposición del balasto retirado para finalizar el trabajo"
+- [x] 9. "zona de balasto, realizada a mano, incluyendo el descerne, la entibación de los costados para soporte estructural y la reposición del balasto retirado para finalizar el trabajo"
 - [ ] 10. "zona de balasto, ejecutada manualmente, con descerne cuidadoso, entibación de los costados para estabilidad y reposición del balasto retirado para completar el proceso"
 

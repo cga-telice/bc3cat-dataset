@@ -16,7 +16,7 @@ _Criterio del tipo: mismas palabras/cláusulas en otro orden_
 |---|---|
 | Canalización hormigonada $A T, polietileno libre de halógenos de 40 mm, $K. ($G(%C)/$H(%D)/$J(%F)) | Canalización hormigonada $A T, polietileno libre de halógenos de 40 mm, ($G(%C)/$H(%D)/$J(%F)) $K. |
 
-**Veredicto 1:** _
+**Veredicto 1:** A
 
 ---
 
@@ -30,7 +30,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "Diurno"; "Nocturno"; "Diurno Excepcional"; "Nocturno Excepcional"; "Cualquier frana horaria"
 
-**Veredicto 2:** _
+**Veredicto 2:** A
 
 ---
 
@@ -44,7 +44,7 @@ _Criterio del tipo: número en letras, conservando el sustantivo_
 
 > Hermanos del eje «Nº TUBOS»:  1 ;  2 ;  3 ;  4 ;  5 ;  6 ;  8 ;  12 ;  16 ;  18 ;  24 
 
-**Veredicto 3:** _
+**Veredicto 3:** A
 
 ---
 
@@ -58,7 +58,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 
 > Fragmentos hermanos de la variable: "Volumen escaso"; "Cualquier condición de ejecución"
 
-**Veredicto 4:** _
+**Veredicto 4:** A
 
 ---
 
@@ -72,7 +72,7 @@ _Criterio del tipo: unidad/expresión desarrollada, mismo valor_
 
 > Hermanos del eje «PROFUNDIDAD»: hasta 0,80 m; 1,10 m
 
-**Veredicto 5:** _
+**Veredicto 5:** A
 
 ---
 
@@ -84,7 +84,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Ejecución de canalización para línea subterránea de doble circuito de 220 o 400 kV de cables entubados y tubos embebidos en hormigón HM-20, de dimensiones totales 2 m de ancho por 1,60 m de alto, hormigonado hasta cota de 760 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 ternas de tubos de polietileno (PE) de alta densidad de 250 mm de diámetro exterior para los cables de potencia; 4 tubos de polietileno de doble pared de diámetro exterior 110 mm para la puesta a tierra; 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones. Incluidos separadores para 3 tubos de diámetro 250 mm, 2 tubos de diámetro 110 mm y testigo soporte para tetratubo de diámetro 40 mm. Con cintas de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluida la excavación, la preparación de la superficie de asiento, la compactación y la nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C. | Para la instalación de una canalización subterránea de doble circuito de 220 o 400 kV se utilizarán cables en tubos y tubos encajados en hormigón HM-20, con dimensiones totales de 2 m de ancho por 1,60 m de alto. El hormigonado se extenderá hasta una profundidad de 760 mm, seguido de un relleno compactado al 95% P.M. Se incluyen 2 ternas de conductos de polietileno (PE) de 250 mm de diámetro exterior para los cables de potencia; 4 conductos de polietileno con doble pared de diámetro exterior 110 mm para puesta a tierra; y 2 tetratubos de polietileno de 4x40 mm de diámetro para telecomunicaciones. Se proporcionan separadores para 3 conductos de diámetro 250 mm, 2 de diámetro 110 mm y soporte testigo para un tetratubo de diámetro 40 mm.. Se colocarán cintas de señalización de riesgo eléctrico de 150 mm de ancho hasta una profundidad de 150 mm del firme existente. Se incluye la excavación, la preparación de la superficie de apoyo, la compactación y el nivelado. Se suministrará, transportará, cargará y descargará el material en el lugar de la obra, así como se ejecutará la instalación, se manejarán los desplazamientos, materiales de pequeño tamaño, herramientas, maquinaria y medios auxiliares, y se realizará el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C. |
 
-**Veredicto 6:** _
+**Veredicto 6:** A
 
 ---
 
@@ -98,7 +98,7 @@ _Criterio del tipo: conversión aritméticamente correcta_
 
 > Hermanos del eje «PROFUNDIDAD»: 0,80 a 1,00 m; 1,10 m
 
-**Veredicto 7:** _
+**Veredicto 7:** A
 
 ---
 
@@ -112,7 +112,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $M
 
-**Veredicto 8:** _
+**Veredicto 8:** A
 
 ---
 
@@ -126,7 +126,7 @@ _Criterio del tipo: eje nuevo plausible, sin colisionar; valores excluyentes y s
 
 > Ejes existentes del concepto: PROFUNDIDAD; TIPO DE TERRENO; TRABAJO; BANDA DE MANTENIMIENTO; CONDICIONES DE EJECUCIÓN
 
-**Veredicto 9:** _
+**Veredicto 9:** A
 
 ---
 
@@ -140,7 +140,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 
 > Fragmentos hermanos de la variable: "el descerne y la entibación de los costados y la posterior reposición del balasto retirado,"; "la demolición de roca dura,"; "la demolición y la reposición del pavimento y la solera,"
 
-**Veredicto 10:** _
+**Veredicto 10:** A
 
 ---
 
@@ -154,7 +154,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "20 cm"; "20 cm"
 
-**Veredicto 11:** _
+**Veredicto 11:** A
 
 ---
 
@@ -168,7 +168,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $L
 
-**Veredicto 12:** _
+**Veredicto 12:** A
 
 ---
 
@@ -182,7 +182,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $L
 
-**Veredicto 13:** _
+**Veredicto 13:** A
 
 ---
 
@@ -196,7 +196,7 @@ _Criterio del tipo: sinónimo/etiqueta equivalente, distinguible de los hermanos
 
 > Hermanos del eje «TIPO DE TERRENO»: Normal; Bajo vías; Rocoso; Cruce de carretera; Andén; Balasto; Con topo
 
-**Veredicto 14:** _
+**Veredicto 14:** A
 
 ---
 
@@ -210,7 +210,7 @@ _Criterio del tipo: eje nuevo plausible, sin colisionar; valores excluyentes y s
 
 > Ejes existentes del concepto: PROFUNDIDAD; TIPO DE TERRENO; TRABAJO; BANDA DE MANTENIMIENTO; CONDICIONES DE EJECUCIÓN
 
-**Veredicto 15:** _
+**Veredicto 15:** A
 
 ---
 
@@ -222,7 +222,7 @@ _Criterio del tipo: mismas palabras/cláusulas en otro orden_
 |---|---|
 | Entronque de tubos de 110 mm en arqueta o cámara existente. ($L(%A)/$M(%B)/$N(%C)) | Entronque de tubos de 110 mm en arqueta o cámara existente. ($N(%C)/$L(%A)/$M(%B)) |
 
-**Veredicto 16:** _
+**Veredicto 16:** A
 
 ---
 
@@ -236,7 +236,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 
 > Fragmentos hermanos de la variable: "normal"; "rocoso"; "en cruce de carretera"; "en andén"; "adosada"; "en balasto"; "con topo"
 
-**Veredicto 17:** _
+**Veredicto 17:** A
 
 ---
 
@@ -250,7 +250,7 @@ _Criterio del tipo: estrictamente más corta, sin perder contenido_
 
 > Fragmentos hermanos de la variable: "ejecutada por excavación manual en cualquier tipo de terreno excepto roca"; "ejecutada por excavación manual en terreno rocoso, incluso excavación con explosivos"
 
-**Veredicto 18:** _
+**Veredicto 18:** A
 
 ---
 
@@ -262,7 +262,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Canalización hormigonada $A T, polietileno libre de halógenos de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F)) | Conductos de hormigón armado $A T, en polietileno sin halógenos de 160 mm, categoría $K. Datos esenciales: ($G(%C)/$H(%D)/$J(%F)) |
 
-**Veredicto 19:** _
+**Veredicto 19:** A
 
 ---
 
@@ -276,7 +276,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $F
 
-**Veredicto 20:** _
+**Veredicto 20:** A
 
 ---
 
@@ -288,7 +288,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Suministro y ejecución de canalización en túnel acceso interfono ($L(%A)/$M(%B)/$N(%C)) | $L(%A)/$M(%B)/$N(%C) suministro e instalación de conducciones enterradas en túnel de acceso interfono ($L(%A)/$M(%B)/$N(%C)) |
 
-**Veredicto 21:** _
+**Veredicto 21:** A
 
 ---
 
@@ -302,7 +302,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $I
 
-**Veredicto 22:** _
+**Veredicto 22:** A
 
 ---
 
@@ -316,7 +316,7 @@ _Criterio del tipo: eje nuevo plausible, sin colisionar; valores excluyentes y s
 
 > Ejes existentes del concepto: TRABAJO; BANDA DE MANTENIMIENTO; CONDICIONES DE EJECUCIÓN
 
-**Veredicto 23:** _
+**Veredicto 23:** A
 
 ---
 
@@ -330,7 +330,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "Diurno"; "Nocturno"; "Diurno excepcional"; "Nocturno excepcional"; "Cualquier franja horaria excepcional"
 
-**Veredicto 24:** _
+**Veredicto 24:** A
 
 ---
 
@@ -344,7 +344,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $L
 
-**Veredicto 25:** _
+**Veredicto 25:** A
 
 ---
 
@@ -358,7 +358,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "Diurno"; "Diurno Excepcional"; "Nocturno Excepcional"; "Cualquier frana horaria"; "Cualquier franja horaria excepcional"
 
-**Veredicto 26:** _
+**Veredicto 26:** A
 
 ---
 
@@ -372,7 +372,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "la demolición de roca dura,"; " la demolición y la reposición del firme y del pavimento,"; "la demolición y la reposición del pavimento y la solera,"
 
-**Veredicto 27:** _
+**Veredicto 27:** A
 
 ---
 
@@ -386,7 +386,7 @@ _Criterio del tipo: conversión aritméticamente correcta_
 
 > Hermanos del eje «DIÁMETRO»: 29mm; 36mm; 40mm; 48mm
 
-**Veredicto 28:** _
+**Veredicto 28:** A
 
 ---
 
@@ -400,7 +400,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 
 > Fragmentos hermanos de la variable: "ejecutada por excavación manual en cualquier tipo de terreno excepto roca"; "zona de balasto, ejecutada a mano incluso descerne y entibación de costados y posterior reposición del balasto retirado"
 
-**Veredicto 29:** _
+**Veredicto 29:** A
 
 ---
 
@@ -414,7 +414,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "normal"; "bajo vías"; "rocoso"; "en cruce de carretera"; "en andén"; "adosada"; "con topo"
 
-**Veredicto 30:** _
+**Veredicto 30:** A
 
 ---
 
@@ -426,7 +426,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Suministro y ejecución de embocadura canalización de $A tubos en arqueta o cámara existente ($L(%B)/$M(%C)/$N(%D)) | Ejecución de entrada de conductos de $A en arqueta o cámara preexistente ($L(%B)/$M(%C)/$N(%D)) |
 
-**Veredicto 31:** _
+**Veredicto 31:** A
 
 ---
 
@@ -440,7 +440,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $B
 
-**Veredicto 32:** _
+**Veredicto 32:** A
 
 ---
 
@@ -452,7 +452,7 @@ _Criterio del tipo: estrictamente más corta, sin perder contenido_
 |---|---|
 | la preparación y la nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación, desencofrado, | nivelación de la solera, suministro del encofrado, desencofrado, |
 
-**Veredicto 33:** _
+**Veredicto 33:** A
 
 ---
 
@@ -466,7 +466,7 @@ _Criterio del tipo: sinónimo/etiqueta equivalente, distinguible de los hermanos
 
 > Hermanos del eje «TIPO DE TERRENO»: Normal; Bajo vías; Rocoso; Cruce de carretera; Andén; Balasto; Con topo
 
-**Veredicto 34:** _
+**Veredicto 34:** A
 
 ---
 
@@ -478,7 +478,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Zanja para cables de $A de profundidad a mano, $B, en material $B. ($L(%C)/$M(%D)/$N(%F)) | Excavación manual para cables de $A de profundidad, con $B, empleando $B. ($L(%C)/$M(%D)/$N(%F)) |
 
-**Veredicto 35:** _
+**Veredicto 35:** A
 
 ---
 
@@ -492,7 +492,7 @@ _Criterio del tipo: sinónimo/etiqueta equivalente, distinguible de los hermanos
 
 > Hermanos del eje «TIPO DE TERRENO»: Bajo vías; Rocoso; Cruce de carretera; Andén; Adosada; Balasto; Con topo
 
-**Veredicto 36:** _
+**Veredicto 36:** A
 
 ---
 
@@ -506,7 +506,7 @@ _Criterio del tipo: número en letras, conservando el sustantivo_
 
 > Hermanos del eje «Nº TUBOS»:  2 ;  4 ;  6 ;  8 ;  12 ;  16 ;  18 ;  24 
 
-**Veredicto 37:** _
+**Veredicto 37:** A
 
 ---
 
@@ -518,7 +518,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Canalización hormigonada de $A tubos de polietileno libre de halógenos de 40 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F | Se efectúa la instalación de tubería enterrada de $A conductos de polietileno sin halógenos de 40 mm de diámetro $I, comprendiendo $N el relleno y compactación de la zanja, $P el abastecimiento y colocación de los conductos y concreto tipo HE-20 sin vibrar, la verificación de los conductos, el traslado y retirada de los materiales al área de uso $M Trabajo: $C Área de mantenimiento: $D Criterios de ejecución: $F |
 
-**Veredicto 38:** _
+**Veredicto 38:** A
 
 ---
 
@@ -532,7 +532,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 
 > Fragmentos hermanos de la variable: "Diurno"; "Nocturno"; "Nocturno Excepcional"; "Cualquier frana horaria"; "Cualquier franja horaria excepcional"
 
-**Veredicto 39:** _
+**Veredicto 39:** A
 
 ---
 
@@ -544,7 +544,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Mandrilado de canalización existente. ($N(%A)/-/-) | Aplicación de mandrilado en conducciones ya instaladas, $N(%A)/-/-. |
 
-**Veredicto 40:** _
+**Veredicto 40:** A
 
 ---
 
@@ -558,7 +558,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "ejecutada por excavación manual en cualquier tipo de terreno excepto roca"; "zona de balasto, ejecutada a mano incluso descerne y entibación de costados y posterior reposición del balasto retirado"
 
-**Veredicto 41:** _
+**Veredicto 41:** A
 
 ---
 
@@ -570,7 +570,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | $A de canalización de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F | Sistema de canalización $A de $B conductos de acero galvanizado de 100mm de diámetro para sistemas CMS en las transiciones entre plataformas. $Q(%A) Operación: $C Franja de mantenimiento: $D Condiciones de implementación: $F |
 
-**Veredicto 42:** _
+**Veredicto 42:** A
 
 ---
 
@@ -584,7 +584,7 @@ _Criterio del tipo: estrictamente más corta, sin perder contenido_
 
 > Fragmentos hermanos de la variable: "Volumen relevante"; "Volumen escaso"
 
-**Veredicto 43:** _
+**Veredicto 43:** A
 
 ---
 
@@ -598,7 +598,7 @@ _Criterio del tipo: sinónimo/etiqueta equivalente, distinguible de los hermanos
 
 > Hermanos del eje «CONDICIONES DE EJECUCIÓN»: Volumen relevante; Cualquier condición de ejecución
 
-**Veredicto 44:** _
+**Veredicto 44:** A
 
 ---
 
@@ -612,7 +612,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "normal"; "bajo vías"; "en cruce de carretera"; "en andén"; "adosada"; "en balasto"; "con topo"
 
-**Veredicto 45:** _
+**Veredicto 45:** A
 
 ---
 
@@ -626,7 +626,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 
 > Fragmentos hermanos de la variable: "ejecutada por excavación manual en terreno rocoso, incluso excavación con explosivos"; "zona de balasto, ejecutada a mano incluso descerne y entibación de costados y posterior reposición del balasto retirado"
 
-**Veredicto 46:** _
+**Veredicto 46:** A
 
 ---
 
@@ -640,7 +640,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 
 > Fragmentos hermanos de la variable: "Volumen escaso"; "Cualquier condición de ejecución"
 
-**Veredicto 47:** _
+**Veredicto 47:** A
 
 ---
 
@@ -654,7 +654,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $B
 
-**Veredicto 48:** _
+**Veredicto 48:** A
 
 ---
 
@@ -666,7 +666,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Canalización hormigonada de $A tubos de polietileno libre de halógenos de 160 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F | Estructura de conducción con $A tubos de polietileno sin halógenos de 160 mm, de diámetro nominal $I, que incluye $N la carga y compactación del terreno, $P el suministro y ubicación de los tubos y la preparación del hormigón tipo HE-20 por compresión natural, la comprobación de los conductos, el desplazamiento y eliminación de los materiales en los alrededores de trabajo $M, Trabajo: $C, Banda de mantenimiento: $D, Condiciones de ejecución: $F |
 
-**Veredicto 49:** _
+**Veredicto 49:** A
 
 ---
 
@@ -680,7 +680,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "Diurno"; "Nocturno"; "Diurno Excepcional"; "Nocturno Excepcional"; "Cualquier frana horaria"
 
-**Veredicto 50:** _
+**Veredicto 50:** A
 
 ---
 
@@ -694,7 +694,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 
 > Fragmentos hermanos de la variable: "Diurno"; "Nocturno"; "Diurno excepcional"; "Cualquier franja horaria"; "Cualquier franja horaria excepcional"
 
-**Veredicto 51:** _
+**Veredicto 51:** A
 
 ---
 
@@ -708,7 +708,7 @@ _Criterio del tipo: número en letras, conservando el sustantivo_
 
 > Hermanos del eje «Nº TUBOS»:  1 ;  2 ;  3 ;  4 ;  5 ;  6 ;  8 ;  12 ;  16 ;  18 ;  24 
 
-**Veredicto 52:** _
+**Veredicto 52:** A
 
 ---
 
@@ -720,7 +720,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Tubería de PVC de 110 mm de diámetro para drenaje de arqueta ($L(%A)/$M(%B)/$N(%C)) | $L(%A)/$M(%B)/$N(%C) canalización de PVC con diámetro nominal 110 mm para evacuación en arquetas |
 
-**Veredicto 53:** _
+**Veredicto 53:** A
 
 ---
 
@@ -732,7 +732,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Canalización tubo corrugado de $A con alma de acero. (-/-/$L(%B)) | Se realiza la canalización empleando tubo corrugado de $A con recubrimiento de acero. (-/-/$L(%B)) |
 
-**Veredicto 54:** _
+**Veredicto 54:** A
 
 ---
 
@@ -744,7 +744,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Mandrilado de canalización existente. Condiciones de ejecución: $A. | Condiciones de ejecución para el mandrilado de canalización preinstalada: $A. |
 
-**Veredicto 55:** _
+**Veredicto 55:** A
 
 ---
 
@@ -758,7 +758,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $K
 
-**Veredicto 56:** _
+**Veredicto 56:** A
 
 ---
 
@@ -772,7 +772,7 @@ _Criterio del tipo: eje nuevo plausible, sin colisionar; valores excluyentes y s
 
 > Ejes existentes del concepto:  Nº TUBOS ;  TIPO DE TERRENO ; TRABAJO; BANDA DE MANTENIMIENTO; CONDICIONES DE EJECUCIÓN
 
-**Veredicto 57:** _
+**Veredicto 57:** A
 
 ---
 
@@ -786,7 +786,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "en cualquier clase de terreno, excepto roca"; "en cruce bajo vías"; "en cruce de carretera"; "en andén"; "adosada o superficial"; "en zona de balasto"; "en cruce bajo vías ejecutado con topo"
 
-**Veredicto 58:** _
+**Veredicto 58:** A
 
 ---
 
@@ -798,7 +798,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 |---|---|
 | Incluso la construcción del pozo de ataque, entibación de los costados, instalación de un tubo guía de acero de 500 mm de diámetro. El suministro y montaje de los hilos guía y el sellado de las embocaduras con poliuretano expandido. | Incluye la construcción del pozo de ataque, la entibación lateral, y la instalación de un tubo guía de acero de 500 mm de diámetro. Se suministran y montan los hilos guía, y se sellan las aberturas con poliuretano expandido. |
 
-**Veredicto 59:** _
+**Veredicto 59:** A
 
 ---
 
@@ -812,7 +812,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 
 > Fragmentos hermanos de la variable: "en cualquier clase de terreno, excepto roca"; "en terreno rocoso"; "en cruce de carretera"; "en andén"; "adosada o superficial"; "en zona de balasto"; "en cruce bajo vías ejecutado con topo"
 
-**Veredicto 60:** _
+**Veredicto 60:** A
 
 ---
 
@@ -824,7 +824,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Suministro y ejecución de embocadura canalización de $A tubos en arqueta o cámara existente ($L(%B)/$M(%C)/$N(%D)) | Se suministrarán y ejecutarán los adaptadores para canalización de $A conductos en arqueta o cámara existente ($L(%B)/$M(%C)/$N(%D)) |
 
-**Veredicto 61:** _
+**Veredicto 61:** A
 
 ---
 
@@ -836,7 +836,7 @@ _Criterio del tipo: mismas palabras/cláusulas en otro orden_
 |---|---|
 | Zanja para cables de $A de profundidad a máquina, $B, en material $B. ($L(%C)/$M(%D)/$N(%F)) | Zanja para cables de $B, en material $B, de $A de profundidad a máquina. ($N(%F)/$M(%D)/$L(%C)) |
 
-**Veredicto 62:** _
+**Veredicto 62:** A
 
 ---
 
@@ -850,7 +850,7 @@ _Criterio del tipo: eje nuevo plausible, sin colisionar; valores excluyentes y s
 
 > Ejes existentes del concepto:  TERRENO ;  PAVIMENTO ; CONDICIONES DE EJECUCIÓN
 
-**Veredicto 63:** _
+**Veredicto 63:** A
 
 ---
 
@@ -862,7 +862,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Suministro y ejecución de canalización de $A tubo(s) de polietileno 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D | Se proporcionará y ejecutará la canalización de $A conducto(s) de polietileno 110 mm 5 At. con sección inferior a las vías. Trabajos a realizar: $B, Banda de mantenimiento: $C, Condiciones de ejecución: $D |
 
-**Veredicto 64:** _
+**Veredicto 64:** A
 
 ---
 
@@ -874,7 +874,7 @@ _Criterio del tipo: mismas palabras/cláusulas en otro orden_
 |---|---|
 | Limpieza de tubo de canalización existente incluyendo la localización de obstrucciones y su limpieza, previo al tendido de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C. | Limpieza de tubo de canalización existente incluyendo la localización de obstrucciones y su limpieza, previo al tendido de nuevos cables. Banda de mantenimiento: $B Condiciones de ejecución: $C Trabajo: $A. |
 
-**Veredicto 65:** _
+**Veredicto 65:** A
 
 ---
 
@@ -888,7 +888,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "Nocturno"; "Diurno Excepcional"; "Nocturno Excepcional"; "Cualquier frana horaria"; "Cualquier franja horaria excepcional"
 
-**Veredicto 66:** _
+**Veredicto 66:** A
 
 ---
 
@@ -902,7 +902,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 
 > Fragmentos hermanos de la variable: "el descerne y la entibación de los costados y la posterior reposición del balasto retirado,"; "la demolición de roca dura,"; "la demolición y reposición del pavimento y la solera,"
 
-**Veredicto 67:** _
+**Veredicto 67:** A
 
 ---
 
@@ -914,7 +914,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Relleno localizado en obras de instalaciones ferroviarias, emplazamientos y accesos, con $W(%A), i/ carga, descarga y transporte al lugar asignado en el interior de la obra, extendido, humectación, compactación, terminación, i/herramientas y medios auxiliares. Trabajo: $B. Banda de mantenimiento: $C. | Relleno localizado $W(%A), i/ compactado y material en obras de instalaciones ferroviarias, con $W(%A). Incluye transporte al lugar asignado dentro de la obra, extendido, humectación, compactación y finalización. Herramientas y medios auxiliares son proporcionados. Trabajo: $B. Banda de mantenimiento: $C. |
 
-**Veredicto 68:** _
+**Veredicto 68:** A
 
 ---
 
@@ -928,7 +928,7 @@ _Criterio del tipo: sinónimo/etiqueta equivalente, distinguible de los hermanos
 
 > Hermanos del eje «TRABAJO»: Diurno; Nocturno; Nocturno excepcional; Cualquier franja horaria; Cualquier franja horaria excepcional
 
-**Veredicto 69:** _
+**Veredicto 69:** A
 
 ---
 
@@ -940,7 +940,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Mandrilado de canalización existente. Condiciones de ejecución: $A. | Procedimiento de mandrilado para canalización existente, condiciones de ejecución: $A. |
 
-**Veredicto 70:** _
+**Veredicto 70:** A
 
 ---
 
@@ -952,7 +952,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Tubo de acero galvanizado de $A ($L(%B)/$M(%C)/$N(%D)) | Se dispone de conducto de acero galvanizado con especificaciones de $A ($L(%B)/$M(%C)/$N(%D)) |
 
-**Veredicto 71:** _
+**Veredicto 71:** A
 
 ---
 
@@ -966,7 +966,7 @@ _Criterio del tipo: unidad/expresión desarrollada, mismo valor_
 
 > Hermanos del eje «BANDA DE MANTENIMIENTO»: i >= 5 horas; 3 <= i < 5 horas; No necesita intervalo
 
-**Veredicto 72:** _
+**Veredicto 72:** A
 
 ---
 
@@ -980,7 +980,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $B
 
-**Veredicto 73:** _
+**Veredicto 73:** A
 
 ---
 
@@ -994,7 +994,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "el descerne y la entibación de los costados y la posterior reposición del balasto retirado,"; "la demolición de roca dura,"; "la demolición y la reposición del pavimento y la solera,"
 
-**Veredicto 74:** _
+**Veredicto 74:** A
 
 ---
 
@@ -1008,7 +1008,7 @@ _Criterio del tipo: eje nuevo plausible, sin colisionar; valores excluyentes y s
 
 > Ejes existentes del concepto: DIÁMETRO; CONDICIONES DE EJECUCIÓN
 
-**Veredicto 75:** _
+**Veredicto 75:** A
 
 ---
 
@@ -1020,7 +1020,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Apertura y tapado de cata para localización de canalización existente, con reparación, en su caso, para la localización de canalización, obstrucciones,  reparación, y el tapado de la canalización. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C | Realización de apertura y cierre de cata para la identificación de la conducción enterrada existente, con reparación si fuera necesario, para detectar obstrucciones y realizar las correcciones pertinentes, finalizando con el cierre de la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C |
 
-**Veredicto 76:** _
+**Veredicto 76:** A
 
 ---
 
@@ -1034,7 +1034,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $B
 
-**Veredicto 77:** _
+**Veredicto 77:** A
 
 ---
 
@@ -1048,7 +1048,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 
 > Fragmentos hermanos de la variable: "material de cantera"
 
-**Veredicto 78:** _
+**Veredicto 78:** A
 
 ---
 
@@ -1062,7 +1062,7 @@ _Criterio del tipo: unidad/expresión desarrollada, mismo valor_
 
 > Hermanos del eje «BANDA DE MANTENIMIENTO»:  i >= 5 horas; i < 3 horas; No necesita intervalo
 
-**Veredicto 79:** _
+**Veredicto 79:** A
 
 ---
 
@@ -1076,7 +1076,7 @@ _Criterio del tipo: conversión aritméticamente correcta_
 
 > Hermanos del eje «DIÁMETRO»: 21mm; 36mm; 40mm; 48mm
 
-**Veredicto 80:** _
+**Veredicto 80:** A
 
 ---
 
@@ -1090,7 +1090,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $A
 
-**Veredicto 81:** _
+**Veredicto 81:** A
 
 ---
 
@@ -1104,7 +1104,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $B
 
-**Veredicto 82:** _
+**Veredicto 82:** A
 
 ---
 
@@ -1118,7 +1118,7 @@ _Criterio del tipo: eje nuevo plausible, sin colisionar; valores excluyentes y s
 
 > Ejes existentes del concepto:  TERRENO ;  PAVIMENTO ; CONDICIONES DE EJECUCIÓN
 
-**Veredicto 83:** _
+**Veredicto 83:** A
 
 ---
 
@@ -1132,7 +1132,7 @@ _Criterio del tipo: mismo contenido del fragmento, otras palabras_
 
 > Fragmentos hermanos de la variable: "en cualquier clase de terreno, excepto roca"; "en cruce bajo vías"; "en terreno rocoso"; "en cruce de carretera"; "adosada o superficial"; "en zona de balasto"; "en cruce bajo vías ejecutado con topo"
 
-**Veredicto 84:** _
+**Veredicto 84:** A
 
 ---
 
@@ -1144,7 +1144,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Suministro y ejecución de embocadura canalización de $A tubos en arqueta o cámara existente Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D | Realización y suministro de boca de embocadura para la conducción de $A conductos en una arqueta o cámara ya existente. Trabajo: $B, Banda de mantenimiento: $C, Condiciones de ejecución: $D |
 
-**Veredicto 85:** _
+**Veredicto 85:** A
 
 ---
 
@@ -1156,7 +1156,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Canalización hormigonada $A T, polietileno libre de halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F)) | La canalización de hormigón $A T está hecha con polietileno sin halógenos y un diámetro de 50 mm, $K. Se detallan en las especificaciones ($G(%C)/$H(%D)/$J(%F)) |
 
-**Veredicto 86:** _
+**Veredicto 86:** A
 
 ---
 
@@ -1168,7 +1168,7 @@ _Criterio del tipo: mismas palabras/cláusulas en otro orden_
 |---|---|
 | Canalización hormigonada de $A tubos de polietileno libre de halógenos de 90 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F | Canalización hormigonada de $A tubos de polietileno libre de halógenos de 90 mm de diámetro $I, incluso $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, $N el relleno y compactado de la zanja, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F |
 
-**Veredicto 87:** _
+**Veredicto 87:** A
 
 ---
 
@@ -1182,7 +1182,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $B
 
-**Veredicto 88:** _
+**Veredicto 88:** A
 
 ---
 
@@ -1196,7 +1196,7 @@ _Criterio del tipo: número en letras, conservando el sustantivo_
 
 > Hermanos del eje «Nº TUBOS»:  2 ;  4 ;  6 ;  8 ;  12 ;  16 ;  18 ;  24 
 
-**Veredicto 89:** _
+**Veredicto 89:** A
 
 ---
 
@@ -1210,7 +1210,7 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "Diurno"; "Nocturno"; "Nocturno Excepcional"; "Cualquier frana horaria"; "Cualquier franja horaria excepcional"
 
-**Veredicto 90:** _
+**Veredicto 90:** A
 
 ---
 
@@ -1222,7 +1222,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Canalización hormigonada $A T, polietileno libre de halógenos de 200 mm, $K. ($G(%C)/$H(%D)/$J(%F)) | Se instala conducción enterrada con hormigón $A T y se utiliza material de polietileno que no contiene halógenos de 200 mm, $K. Se indica la verificación ($G(%C)/$H(%D)/$J(%F)). |
 
-**Veredicto 91:** _
+**Veredicto 91:** A
 
 ---
 
@@ -1236,7 +1236,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $H
 
-**Veredicto 92:** _
+**Veredicto 92:** A
 
 ---
 
@@ -1250,7 +1250,7 @@ _Criterio del tipo: plantilla sin la mención omitida, gramaticalmente reparada_
 
 > Variable omitida: $M
 
-**Veredicto 93:** _
+**Veredicto 93:** A
 
 ---
 
@@ -1264,7 +1264,7 @@ _Criterio del tipo: conversión aritméticamente correcta_
 
 > Hermanos del eje «PROFUNDIDAD»: hasta 0,80 m; 0,80 a 1,00 m
 
-**Veredicto 94:** _
+**Veredicto 94:** A
 
 ---
 
@@ -1278,7 +1278,7 @@ _Criterio del tipo: estrictamente más corta, sin perder contenido_
 
 > Fragmentos hermanos de la variable: "en cruce bajo vías"; "en terreno rocoso"; "en cruce de carretera"; "en andén"; "adosada o superficial"; "en zona de balasto"; "en cruce bajo vías ejecutado con topo"
 
-**Veredicto 95:** _
+**Veredicto 95:** A
 
 ---
 
@@ -1292,7 +1292,7 @@ _Criterio del tipo: sinónimo/etiqueta equivalente, distinguible de los hermanos
 
 > Hermanos del eje «TRABAJO»: Diurno; Nocturno; Diurno Excepcional; Cualquier franja horaria; Cualquier franja horaria excepcional
 
-**Veredicto 96:** _
+**Veredicto 96:** A
 
 ---
 
@@ -1306,7 +1306,7 @@ _Criterio del tipo: unidad/expresión desarrollada, mismo valor_
 
 > Hermanos del eje «BANDA DE MANTENIMIENTO»:  i >= 5 horas; i < 3 horas; No necesita intervalo
 
-**Veredicto 97:** _
+**Veredicto 97:** A
 
 ---
 
@@ -1320,7 +1320,7 @@ _Criterio del tipo: eje nuevo plausible, sin colisionar; valores excluyentes y s
 
 > Ejes existentes del concepto: TRABAJO; BANDA DE MANTENIMIENTO; CONDICIONES DE EJECUCIÓN
 
-**Veredicto 98:** _
+**Veredicto 98:** A
 
 ---
 
@@ -1332,7 +1332,7 @@ _Criterio del tipo: plantilla completa reescrita (léxico y/o estructura)_
 |---|---|
 | Suministro y colocación de tubería de PVC de 110 mm de diámetro para drenaje de arqueta desde centro de arqueta a pie de talud incluyendo relleno y compactación de tierras. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C | Se proveerá y colocará tubería de PVC de 110 mm de diámetro para el drenaje de arquetas, desde el centro de la arqueta hasta el pie de talud, incluyendo el relleno y compactación de tierras. Se realizará el trabajo: $A. Se establecerá una banda de mantenimiento: $B. Se tendrán en cuenta las condiciones de ejecución: $C. |
 
-**Veredicto 99:** _
+**Veredicto 99:** A
 
 ---
 
@@ -1346,4 +1346,4 @@ _Criterio del tipo: explicita lo implícito; PROHIBIDO añadir hechos_
 
 > Fragmentos hermanos de la variable: "el descerne y la entibación de los costados y la posterior reposición del balasto retirado,"; "la demolición de roca dura,"; " la demolición y reposición del firme y del pavimento,"
 
-**Veredicto 100:** _
+**Veredicto 100:** A
