@@ -21,6 +21,12 @@ Design (SPRINT_39_DESIGN.md, binding):
   round-robin (least-used first) honouring ``reuse_cap`` for the thin
   types; when the cap exhausts the applicable pantry the slice falls
   short and the deficit is reported — never refilled from other types.
+  Reuse counters are **per condition** (reset at each condition's start),
+  so a thin-type rewrite capped out in its single condition is still
+  drawable in ``all_combined`` — where the same per-condition caps apply.
+* Allocation is capacity-aware: a concept never receives more variants
+  than its applicable rewrites can serve under the caps; the surplus is
+  redistributed within the condition to concepts with spare capacity.
 * ``all_combined`` carries one rewrite of each applicable type (types
   with nothing available are skipped) with no two rewrites sharing a
   ``dedup_key``; composition validation is the driver's job.
@@ -207,16 +213,26 @@ class PlannedVariant:
     rewrites: tuple[ApprovedRewrite, ...]
 
 
-def _allocate(n: int, leaf_counts: Mapping[str, int]) -> dict[str, int]:
+def _allocate(
+    n: int,
+    leaf_counts: Mapping[str, int],
+    capacities: Optional[Mapping[str, float]] = None,
+) -> dict[str, int]:
     """Split ``n`` across concepts proportional to leaf counts.
 
     Largest-remainder rounding, minimum 1 per applicable concept (funded by
-    the largest allocations), capped at each concept's leaf count (surplus
-    redistributed to concepts with spare leaves). Deterministic.
+    the largest allocations), capped at each concept's effective limit —
+    ``min(leaf count, rewrite capacity)`` — with the surplus redistributed
+    within the condition to concepts with spare capacity. Deterministic.
     """
     keys = sorted(k for k, c in leaf_counts.items() if c > 0)
     if not keys or n <= 0:
         return {}
+    capacities = capacities or {}
+    limits = {
+        k: min(leaf_counts[k], int(min(capacities.get(k, math.inf), n)))
+        for k in keys
+    }
     total = sum(leaf_counts[k] for k in keys)
     quotas = {k: n * leaf_counts[k] / total for k in keys}
     alloc = {k: math.floor(quotas[k]) for k in keys}
@@ -236,25 +252,78 @@ def _allocate(n: int, leaf_counts: Mapping[str, int]) -> dict[str, int]:
                 alloc[donors[0]] -= 1
                 alloc[k] = 1
 
-    # cap at leaf count; redistribute surplus to spare capacity
+    # cap at the effective limit; redistribute surplus to spare capacity
     surplus = 0
     for k in keys:
-        if alloc[k] > leaf_counts[k]:
-            surplus += alloc[k] - leaf_counts[k]
-            alloc[k] = leaf_counts[k]
+        if alloc[k] > limits[k]:
+            surplus += alloc[k] - limits[k]
+            alloc[k] = limits[k]
     while surplus > 0:
-        spare = sorted((k for k in keys if alloc[k] < leaf_counts[k]),
-                       key=lambda k: (-(leaf_counts[k] - alloc[k]), k))
+        spare = sorted((k for k in keys if alloc[k] < limits[k]),
+                       key=lambda k: (-(limits[k] - alloc[k]), k))
         if not spare:
-            break  # inventory exhausted — the condition falls short
+            break  # capacity exhausted — the condition falls short
         alloc[spare[0]] += 1
         surplus -= 1
 
     return {k: a for k, a in alloc.items() if a > 0}
 
 
+def _rewrite_capacity(
+    condition: str,
+    applicable: Mapping[ModificationType, tuple[ApprovedRewrite, ...]],
+    reuse_cap: Mapping[str, int],
+) -> float:
+    """Max variants this concept's applicable rewrites can serve here.
+
+    Per-condition usage starts at zero, so capacity per capped type is
+    ``n_applicable_rewrites × cap``; an uncapped type is unbounded. For
+    ``all_combined`` a variant exists while any applicable type still has
+    capacity, so per-type capacities add up (infinite dominates).
+    """
+    def type_capacity(t: ModificationType) -> float:
+        cap = reuse_cap.get(t.value)
+        if cap is None:
+            return math.inf
+        return len(applicable.get(t, ())) * cap
+
+    if condition == _ALL_COMBINED:
+        return sum(type_capacity(t) for t in NINE_TYPES if t in applicable)
+    return type_capacity(_condition_type(condition))
+
+
 def _condition_type(condition: str) -> ModificationType:
     return ModificationType(condition[len(_SINGLE_PREFIX):])
+
+
+def _draw_rewrites(
+    condition: str,
+    applicable: Mapping[ModificationType, tuple[ApprovedRewrite, ...]],
+    reuse_cap: Mapping[str, int],
+    usage: dict[str, int],
+) -> tuple[ApprovedRewrite, ...]:
+    """The rewrites for one variant — empty when the concept is capped out.
+
+    Within one condition the result is monotone: once empty for a concept,
+    it stays empty (usage only grows), so callers may stop trying it.
+    """
+    if condition == _ALL_COMBINED:
+        rewrites: list[ApprovedRewrite] = []
+        used_dedup: set = set()
+        for t in NINE_TYPES:
+            cands = applicable.get(t)
+            if not cands:
+                continue  # type not applicable here — skip
+            pick = _pick_rewrite(cands, t, reuse_cap, usage,
+                                 frozenset(used_dedup))
+            if pick is None:
+                continue  # capped out / dedup-blocked — skip type
+            rewrites.append(pick)
+            used_dedup.add(pick.dedup_key)
+        return tuple(rewrites)
+    mtype = _condition_type(condition)
+    pick = _pick_rewrite(applicable[mtype], mtype, reuse_cap, usage)
+    return (pick,) if pick is not None else ()
 
 
 def _pick_rewrite(
@@ -289,15 +358,16 @@ def build_plan(
     """Produce the full deterministic sampling plan.
 
     ``concepts`` restricts the plan to those concept keys (intersected with
-    the inventory). The reuse counter is global across the whole plan, so
-    ``all_combined`` draws also honour the thin-type caps.
+    the inventory). Reuse counters are per condition — reset at each
+    condition's start — so caps bound reuse within a condition; the caps
+    themselves apply in every condition, ``all_combined`` included.
     """
     concept_keys = tuple(sorted(set(concepts) & set(inventory.concepts())))
     applicable = {c: pantry.for_concept(c) for c in concept_keys}
-    usage: dict[str, int] = {}
     plan: list[PlannedVariant] = []
 
     for condition in CONDITIONS:
+        usage: dict[str, int] = {}
         target = budgets.targets[condition]
         if condition == _ALL_COMBINED:
             eligible = [c for c in concept_keys
@@ -306,50 +376,83 @@ def build_plan(
             mtype = _condition_type(condition)
             eligible = [c for c in concept_keys if mtype in applicable[c]]
         leaf_counts = {c: len(inventory.leaves(c)) for c in eligible}
-        alloc = _allocate(target, leaf_counts)
+        capacities = {
+            c: _rewrite_capacity(condition, applicable[c], budgets.reuse_cap)
+            for c in eligible
+        }
+        alloc = _allocate(target, leaf_counts, capacities)
         rng = random.Random(budgets.seed ^ zlib.crc32(condition.encode("utf-8")))
 
+        # Per-concept shuffled leaf order, consumed left to right; a leaf is
+        # only consumed when a variant is actually produced, so leaves stay
+        # unique within the condition.
+        orders = {
+            c: rng.sample(list(inventory.leaves(c)), leaf_counts[c])
+            for c in sorted(eligible)
+        }
+        pos = {c: 0 for c in eligible}
+        dead: set[str] = set()  # concepts capped out for this condition
+        cond_plan: list[PlannedVariant] = []
+
+        def _produce(concept_key: str) -> bool:
+            if concept_key in dead or pos[concept_key] >= len(orders[concept_key]):
+                return False
+            rewrites = _draw_rewrites(condition, applicable[concept_key],
+                                      budgets.reuse_cap, usage)
+            if not rewrites:
+                dead.add(concept_key)  # deficit — never refilled cross-type
+                return False
+            leaf = orders[concept_key][pos[concept_key]]
+            pos[concept_key] += 1
+            for r in rewrites:
+                usage[r.uid] = usage.get(r.uid, 0) + 1
+            cond_plan.append(PlannedVariant(
+                condition=condition,
+                concept_key=concept_key,
+                leaf_item_key=leaf,
+                rewrites=rewrites,
+            ))
+            return True
+
+        # main pass: the proportional allocation
         for concept_key in sorted(alloc):
-            chosen_leaves = rng.sample(
-                list(inventory.leaves(concept_key)), alloc[concept_key]
+            for _ in range(alloc[concept_key]):
+                if not _produce(concept_key):
+                    break
+
+        # recovery pass: shared rewrites make per-concept capacities
+        # overestimates, so refill any remaining deficit from concepts that
+        # still have spare leaves and live rewrites (deterministic sweeps,
+        # most-spare-leaves first; stop when a full sweep adds nothing).
+        while len(cond_plan) < target:
+            candidates = sorted(
+                (c for c in eligible
+                 if c not in dead and pos[c] < len(orders[c])),
+                key=lambda c: (-(len(orders[c]) - pos[c]), c),
             )
-            for leaf in chosen_leaves:
-                if condition == _ALL_COMBINED:
-                    rewrites: list[ApprovedRewrite] = []
-                    used_dedup: set = set()
-                    for t in NINE_TYPES:
-                        cands = applicable[concept_key].get(t)
-                        if not cands:
-                            continue  # type not applicable here — skip
-                        pick = _pick_rewrite(cands, t, budgets.reuse_cap,
-                                             usage, frozenset(used_dedup))
-                        if pick is None:
-                            continue  # capped out / dedup-blocked — skip type
-                        rewrites.append(pick)
-                        used_dedup.add(pick.dedup_key)
-                else:
-                    pick = _pick_rewrite(applicable[concept_key][mtype], mtype,
-                                         budgets.reuse_cap, usage)
-                    rewrites = [pick] if pick is not None else []
-                if not rewrites:
-                    continue  # deficit — never refilled from other types
-                for r in rewrites:
-                    usage[r.uid] = usage.get(r.uid, 0) + 1
-                plan.append(PlannedVariant(
-                    condition=condition,
-                    concept_key=concept_key,
-                    leaf_item_key=leaf,
-                    rewrites=tuple(rewrites),
-                ))
+            progressed = False
+            for concept_key in candidates:
+                if len(cond_plan) >= target:
+                    break
+                progressed = _produce(concept_key) or progressed
+            if not progressed:
+                break  # condition-wide capacity exhausted — deficit reported
+
+        plan.extend(cond_plan)
 
     return tuple(plan)
 
 
 def plan_report(
     plan: tuple[PlannedVariant, ...], budgets: Budgets
-) -> dict[str, dict[str, int]]:
-    """Per condition: achieved n, unique rewrites, max reuse, deficit."""
-    out: dict[str, dict[str, int]] = {}
+) -> dict[str, dict]:
+    """Per condition: achieved n, unique rewrites, max reuse, deficit.
+
+    The ``all_combined`` row additionally carries ``type_presence`` —
+    ``{type: number of all_combined variants carrying a rewrite of it}``
+    (at most one rewrite per type per variant, so this counts variants).
+    """
+    out: dict[str, dict] = {}
     for condition in CONDITIONS:
         variants = [p for p in plan if p.condition == condition]
         uses = Counter(r.uid for p in variants for r in p.rewrites)
@@ -361,4 +464,9 @@ def plan_report(
             "max_reuse": max(uses.values()) if uses else 0,
             "deficit": target - len(variants),
         }
+        if condition == _ALL_COMBINED:
+            presence = Counter(
+                r.mtype.value for p in variants for r in p.rewrites
+            )
+            out[condition]["type_presence"] = dict(sorted(presence.items()))
     return out
