@@ -140,6 +140,10 @@ def test_run_corpus_produces_valid_release(tmp_path):
     assert row["produced"] == 2
     assert row["unique_rewrites"] == 2
     assert row["max_reuse"] == 1
+    # compatibility-built plan (each leaf selects its rewritten value):
+    # the driver's no-op backstop stays at zero
+    assert row["noop_dropped"] == 0
+    assert stats.totals["noop_dropped"] == 0
     assert stats.totals["produced"] == 2
 
     report = report_path.read_text(encoding="utf-8")

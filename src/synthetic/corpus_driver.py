@@ -30,7 +30,9 @@ directly and becomes ``original_key`` (mirrors ``metadata.join_variant_payload``
 with ``k == 0``).
 
 Filters: a no-op variant (both texts identical to the leaf's originals) and an
-exact ``(resumen, texto)`` duplicate within the corpus are dropped + counted;
+exact ``(resumen, texto)`` duplicate within the corpus are dropped + counted —
+the no-op filter is a backstop: the sampler's leaf↔rewrite compatibility
+(original-text match) should keep its count at ~0, and the report shows it;
 unresolved ``$``-placeholder or ``[[`` residue in an output text **raises**
 (that would be a bug, not data). No LLM anywhere; generation is pure CPU.
 """
@@ -57,7 +59,7 @@ from .corpus_sampler import (
     Budgets,
     PlannedVariant,
     build_plan,
-    leaf_inventory_from_frame,
+    leaf_inventory_from_frames,
     load_budgets,
 )
 from .metadata import SyntheticItem, _SYN_MARK
@@ -78,7 +80,8 @@ __all__ = [
 DEFAULT_REPORT_PATH = (
     config.REPO_ROOT / "docs" / "synthetic" / "sprints" / "SPRINT_39_corpus_report.md"
 )
-DEFAULT_INVENTORY_PARQUET = config.PROCESSED_DIR / "OEB_long_norm.parquet"
+DEFAULT_INVENTORY_LONG_PARQUET = config.PROCESSED_DIR / "OEB_long_norm.parquet"
+DEFAULT_INVENTORY_SHORT_PARQUET = config.PROCESSED_DIR / "OEB_short_norm.parquet"
 
 # Unresolved template/variable residue in a *rendered* output text. `$X`
 # survivors and `[[...]]` scaffolding both mean the pipeline mis-rendered.
@@ -469,7 +472,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     run.add_argument("--out-dir", default=None)
     run.add_argument("--report", default=None)
     run.add_argument("--menus-dir", default=None)
-    run.add_argument("--inventory-parquet", default=None)
+    run.add_argument(
+        "--inventory-long-parquet", default=None,
+        help="original long (texto) parquet; default OEB_long_norm.parquet",
+    )
+    run.add_argument(
+        "--inventory-short-parquet", default=None,
+        help="original short (resumen) parquet; default OEB_short_norm.parquet",
+    )
 
     args = parser.parse_args(argv)
     if args.cmd != "run":
@@ -485,12 +495,17 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     ]
     pantry = load_pantry(Path(args.menus_dir) if args.menus_dir else None)
     budgets = load_budgets(Path(args.budgets) if args.budgets else None)
-    frame = pd.read_parquet(
-        Path(args.inventory_parquet)
-        if args.inventory_parquet
-        else DEFAULT_INVENTORY_PARQUET
+    long_frame = pd.read_parquet(
+        Path(args.inventory_long_parquet)
+        if args.inventory_long_parquet
+        else DEFAULT_INVENTORY_LONG_PARQUET
     )
-    inventory = leaf_inventory_from_frame(frame)
+    short_frame = pd.read_parquet(
+        Path(args.inventory_short_parquet)
+        if args.inventory_short_parquet
+        else DEFAULT_INVENTORY_SHORT_PARQUET
+    )
+    inventory = leaf_inventory_from_frames(long_frame, short_frame)
     plan = build_plan(pantry, inventory, budgets, concepts)
     stats = run_corpus(
         stage_json,
