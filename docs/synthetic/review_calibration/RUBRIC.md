@@ -76,3 +76,27 @@ cualquiera, se RECHAZA. Ante duda genuina, el veredicto es DUDOSO (nunca se fuer
    es aceptable aunque pierda el borde semiabierto.
 8. **new_param — colisión:** solo cuenta contra ejes paramétricos declarados, no
    contra hechos fijos del texto de la plantilla.
+
+## Rúbrica v2 — listón del propietario (César, 2026-08-31, derivada de su auditoría)
+
+La auditoría dirigida (30 ítems con razones) mostró que el listón real de César aprueba
+13 de 15 rechazos de la v1.1: para un benchmark de estrés, la deriva léxica/semántica
+leve, el registro imperfecto y las adiciones valorativas son ruido aceptable (incluso
+dificultad deseable). Con su aprobación, la v2 sustituye el juicio fino por esta regla:
+
+**APROBAR por defecto. RECHAZAR solo si el candidato presenta al menos uno de:**
+
+1. **Rotura estructural de render** — placeholders o bloques paramétricos duplicados en
+   literal, placeholders mutilados/ausentes, paréntesis del bloque de códigos rotos, o
+   un marco sintáctico que hace ilegible el ítem al renderizar (p. ej. «La espesor es
+   de bajo vías»). *(Ratificado por César: M15.)*
+2. **Borrado de contenido extra en `omission`** — pérdida de texto más allá de la
+   mención omitida y su reparación. *(Ratificado por César: M14; coherente con v1.1-4.)*
+3. **Residuo de generación** — comillas envolventes literales, ecos de prompt,
+   sentinelas sin restaurar. *(Ratificado por César: regla R2 de la auditoría.)*
+
+Todo lo demás — incluidos los casos que la v1.1 rechazaba por criterios 1, 2, 4 o 5
+("mm mm" cosmético, "concreto", valorativos, deriva de términos, disparates técnicos
+leves) — se APRUEBA. Nota de método: la clase 1 incluye una extensión conservadora de
+Claude (render ilegible) no muestreada explícitamente por César; los R resultantes de
+la v2 quedan listados para su vistazo final.

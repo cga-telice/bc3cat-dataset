@@ -23,7 +23,7 @@ Son los candidatos donde no me atreví a decidir sin tu criterio de ingeniero.
 
 _Mi duda: Dudoso si 'entibación para soportar la estructura' enuncia el propósito inherente o lo desvirtúa (la entibación sostiene los costados, no 'la estructura')._
 
-**Respuesta D1 (A/R):** _
+**Respuesta D1 (A/R):** A
 
 ### D2 — tipo `expansion`
 
@@ -33,7 +33,7 @@ _Mi duda: Dudoso si 'entibación para soportar la estructura' enuncia el propós
 
 _Mi duda: Mismo caso dudoso: 'entibación para soportar la estructura' es vago o desacertado como propósito de la entibación._
 
-**Respuesta D2 (A/R):** _
+**Respuesta D2 (A/R):** A
 
 ### D3 — tipo `expansion`
 
@@ -43,7 +43,7 @@ _Mi duda: Mismo caso dudoso: 'entibación para soportar la estructura' es vago o
 
 _Mi duda: Mismo caso dudoso de 'entibación para soportar la estructura'; el resto de cláusulas son propósitos inherentes válidos._
 
-**Respuesta D3 (A/R):** _
+**Respuesta D3 (A/R):** A
 
 ### D4 — tipo `new_param`
 
@@ -63,7 +63,7 @@ _Mi duda: Eje plausible pero G120/G240 no son designaciones estándar y su aplic
 
 _Mi duda: Los grados IP son propios de envolventes y accesorios mas que de la canalización en si; hace falta criterio experto para decidir si es plausible como eje._
 
-**Respuesta D5 (A/R):** _
+**Respuesta D5 (A/R):** A
 
 ### D6 — tipo `paraphrase`
 
@@ -73,7 +73,7 @@ _Mi duda: Los grados IP son propios de envolventes y accesorios mas que de la ca
 
 _Mi duda: 'Sin excepciones' es ambiguo frente al hermano 'excepcional'; requiere criterio experto._
 
-**Respuesta D6 (A/R):** _
+**Respuesta D6 (A/R):** A
 
 ### D7 — tipo `paraphrase`
 
@@ -83,7 +83,7 @@ _Mi duda: 'Sin excepciones' es ambiguo frente al hermano 'excepcional'; requiere
 
 _Mi duda: «sección de balasto» puede leerse como perfil transversal, no como zona; requiere criterio experto ferroviario._
 
-**Respuesta D7 (A/R):** _
+**Respuesta D7 (A/R):** A
 
 ### D8 — tipo `paraphrase`
 
@@ -93,7 +93,7 @@ _Mi duda: «sección de balasto» puede leerse como perfil transversal, no como 
 
 _Mi duda: 'en tierra' podría glosar 'cualquier terreno excepto roca', pero no es obvio que equivalga a 'normal'; requiere criterio experto._
 
-**Respuesta D8 (A/R):** _
+**Respuesta D8 (A/R):** A
 
 ### D9 — tipo `template_paraphrase`
 
@@ -103,7 +103,7 @@ _Mi duda: 'en tierra' podría glosar 'cualquier terreno excepto roca', pero no e
 
 _Mi duda: Único reparo: 'enterrada' añadido a la conducción en túnel — ¿hecho añadido o explicitación válida? Resto impecable._
 
-**Respuesta D9 (A/R):** _
+**Respuesta D9 (A/R):** A
 
 ### D10 — tipo `template_paraphrase`
 
@@ -113,7 +113,7 @@ _Mi duda: Único reparo: 'enterrada' añadido a la conducción en túnel — ¿h
 
 _Mi duda: Mismo caso que 45:9: solo el añadido 'enterrada' separa esta paráfrasis limpia de la A; requiere criterio de ingeniero._
 
-**Respuesta D10 (A/R):** _
+**Respuesta D10 (A/R):** A
 
 
 ---
@@ -122,23 +122,23 @@ _Mi duda: Mismo caso que 45:9: solo el añadido 'enterrada' separa esta paráfra
 
 **Regla 1.** En las hincas bajo vía (OEB180), el original dice tender cables **sobre** una trinchera (suspendidos de un cable tensor). 7 candidatos escriben **en** la trinchera. Los rechacé porque la preposición codifica el método. Si te parece incidental, recupero los 7.
 
-**Respuesta R1:** _
+**Respuesta R1:** Recupéralos
 
 **Regla 2.** 3 candidatos por lo demás perfectos llegaron envueltos en comillas literales ("…texto…") que se colarían en el render. Los rechacé. Si el pipeline va a despojar comillas envolventes, los recupero.
 
-**Respuesta R2:** _
+**Respuesta R2:** No los recuperes
 
 **Regla 3.** En omission, 8 candidatos comprimen «de 160 mm de diámetro $I» a «de 160 mm». Los APROBÉ (reparación flexible: el diámetro queda inequívoco en un tubo). Confirma o los rechazo.
 
-**Respuesta R3:** _
+**Respuesta R3:** OK
 
 **Regla 4.** En expansion tracé esta línea: adjetivos de atributo implícito (necesarios, posterior, adecuados) = aprobar; adjetivos de manera/calidad (meticulosa, cuidadoso, sistemático) = rechazar. Confirma la línea.
 
-**Respuesta R4:** _
+**Respuesta R4:** Aprobar ambos
 
 **Regla 5.** En OEB190, toda la familia de reescrituras pierde la palabra «seleccionado» de «material seleccionado» (una spec del relleno). Los rechacé todos. Confirma.
 
-**Respuesta R5:** _
+**Respuesta R5:** Recupéralos
 
 
 ---
@@ -155,7 +155,7 @@ No re-revises desde cero: lee mi veredicto y mi razón, y di si te vale.
 
 _Mi razón: Nocturno especial conserva significado y sigue distinguiéndose de Nocturno._
 
-**Respuesta M1 (OK / A / R):** _
+**Respuesta M1 (OK / A / R):** OK
 
 ### M2 — tipo `omission` — mi veredicto: **APROBADO**
 
@@ -165,7 +165,7 @@ _Mi razón: Nocturno especial conserva significado y sigue distinguiéndose de N
 
 _Mi razón: Omisión limpia de $G, separadores intactos._
 
-**Respuesta M2 (OK / A / R):** _
+**Respuesta M2 (OK / A / R):** OK
 
 ### M3 — tipo `synonym_label` — mi veredicto: **APROBADO**
 
@@ -175,7 +175,7 @@ _Mi razón: Omisión limpia de $G, separadores intactos._
 
 _Mi razón: 'Terreno Resistente' equivale a duro y es distinguible._
 
-**Respuesta M3 (OK / A / R):** _
+**Respuesta M3 (OK / A / R):** OK
 
 ### M4 — tipo `expansion` — mi veredicto: **RECHAZADO**
 
@@ -185,7 +185,7 @@ _Mi razón: 'Terreno Resistente' equivale a duro y es distinguible._
 
 _Mi razón: Añade 'estratégicamente' y finalidad de evitar interferencias, valoración._
 
-**Respuesta M4 (OK / A / R):** _
+**Respuesta M4 (OK / A / R):** A
 
 ### M5 — tipo `reorder` — mi veredicto: **APROBADO**
 
@@ -195,7 +195,7 @@ _Mi razón: Añade 'estratégicamente' y finalidad de evitar interferencias, val
 
 _Mi razón: Reordenación interna del bloque tras el punto; la pérdida de paréntesis es puntuación mínima, sigue legible._
 
-**Respuesta M5 (OK / A / R):** _
+**Respuesta M5 (OK / A / R):** A
 
 ### M6 — tipo `omission` — mi veredicto: **APROBADO**
 
@@ -205,7 +205,7 @@ _Mi razón: Reordenación interna del bloque tras el punto; la pérdida de paré
 
 _Mi razón: Elimina solo $P; frase gramatical, resto intacto._
 
-**Respuesta M6 (OK / A / R):** _
+**Respuesta M6 (OK / A / R):** A
 
 ### M7 — tipo `omission` — mi veredicto: **APROBADO**
 
@@ -215,7 +215,7 @@ _Mi razón: Elimina solo $P; frase gramatical, resto intacto._
 
 _Mi razón: Omisión limpia de $A; los artículos y 'hasta' son reescritura local que conserva el contenido._
 
-**Respuesta M7 (OK / A / R):** _
+**Respuesta M7 (OK / A / R):** A
 
 ### M8 — tipo `compression` — mi veredicto: **RECHAZADO**
 
@@ -225,7 +225,7 @@ _Mi razón: Omisión limpia de $A; los artículos y 'hasta' son reescritura loca
 
 _Mi razón: Pierde 'preparación' y 'suministro' del encofrado._
 
-**Respuesta M8 (OK / A / R):** _
+**Respuesta M8 (OK / A / R):** A
 
 ### M9 — tipo `num_to_text` — mi veredicto: **RECHAZADO**
 
@@ -235,7 +235,7 @@ _Mi razón: Pierde 'preparación' y 'suministro' del encofrado._
 
 _Mi razón: 'Número doce' se lee como identificador ordinal, no como cantidad de tubos._
 
-**Respuesta M9 (OK / A / R):** _
+**Respuesta M9 (OK / A / R):** A
 
 ### M10 — tipo `omission` — mi veredicto: **APROBADO**
 
@@ -245,7 +245,7 @@ _Mi razón: 'Número doce' se lee como identificador ordinal, no como cantidad d
 
 _Mi razón: Omisión limpia de $G en el paréntesis, separadores intactos._
 
-**Respuesta M10 (OK / A / R):** _
+**Respuesta M10 (OK / A / R):** A
 
 ### M11 — tipo `compression` — mi veredicto: **APROBADO**
 
@@ -255,7 +255,7 @@ _Mi razón: Omisión limpia de $G en el paréntesis, separadores intactos._
 
 _Mi razón: Estrictamente más corta, fluida y sin pérdida de contenido._
 
-**Respuesta M11 (OK / A / R):** _
+**Respuesta M11 (OK / A / R):** A
 
 ### M12 — tipo `template_paraphrase` — mi veredicto: **RECHAZADO**
 
@@ -265,7 +265,7 @@ _Mi razón: Estrictamente más corta, fluida y sin pérdida de contenido._
 
 _Mi razón: Pierde 'medios auxiliares' y la derivación/adyacencia se difumina en 'enlazando'; cierre 'de $C' clunky._
 
-**Respuesta M12 (OK / A / R):** _
+**Respuesta M12 (OK / A / R):** A
 
 ### M13 — tipo `template_paraphrase` — mi veredicto: **RECHAZADO**
 
@@ -275,7 +275,7 @@ _Mi razón: Pierde 'medios auxiliares' y la derivación/adyacencia se difumina e
 
 _Mi razón: 'Conducción de concreto con revestimiento de polietileno' distorsiona materiales y 'propiedades detalladas en $K' rinde sinsentido._
 
-**Respuesta M13 (OK / A / R):** _
+**Respuesta M13 (OK / A / R):** A
 
 ### M14 — tipo `omission` — mi veredicto: **RECHAZADO**
 
@@ -285,7 +285,7 @@ _Mi razón: 'Conducción de concreto con revestimiento de polietileno' distorsio
 
 _Mi razón: Además de $I borra 'de diámetro': pérdida de contenido extra._
 
-**Respuesta M14 (OK / A / R):** _
+**Respuesta M14 (OK / A / R):** R
 
 ### M15 — tipo `template_paraphrase` — mi veredicto: **RECHAZADO**
 
@@ -295,7 +295,7 @@ _Mi razón: Además de $I borra 'de diámetro': pérdida de contenido extra._
 
 _Mi razón: Paréntesis de parámetros duplicado al final._
 
-**Respuesta M15 (OK / A / R):** _
+**Respuesta M15 (OK / A / R):** R
 
 ### M16 — tipo `omission` — mi veredicto: **APROBADO**
 
@@ -305,7 +305,7 @@ _Mi razón: Paréntesis de parámetros duplicado al final._
 
 _Mi razón: Omisión limpia de 'Condiciones de ejecución: $D'._
 
-**Respuesta M16 (OK / A / R):** _
+**Respuesta M16 (OK / A / R):** A
 
 ### M17 — tipo `template_paraphrase` — mi veredicto: **RECHAZADO**
 
@@ -315,7 +315,7 @@ _Mi razón: Omisión limpia de 'Condiciones de ejecución: $D'._
 
 _Mi razón: "instalación de cables en una trinchera" pierde el matiz "sobre" del método original._
 
-**Respuesta M17 (OK / A / R):** _
+**Respuesta M17 (OK / A / R):** A
 
 ### M18 — tipo `new_param` — mi veredicto: **RECHAZADO**
 
@@ -325,7 +325,7 @@ _Mi razón: "instalación de cables en una trinchera" pierde el matiz "sobre" de
 
 _Mi razón: Una zanja para cables rellena y compactada no lleva cubierta de madera, plastico o asfalto; 'concreto' fuera de registro._
 
-**Respuesta M18 (OK / A / R):** _
+**Respuesta M18 (OK / A / R):** A
 
 ### M19 — tipo `omission` — mi veredicto: **APROBADO**
 
@@ -335,7 +335,7 @@ _Mi razón: Una zanja para cables rellena y compactada no lleva cubierta de made
 
 _Mi razón: Omite $G; conector 'y' válido._
 
-**Respuesta M19 (OK / A / R):** _
+**Respuesta M19 (OK / A / R):** A
 
 ### M20 — tipo `paraphrase` — mi veredicto: **APROBADO**
 
@@ -345,7 +345,7 @@ _Mi razón: Omite $G; conector 'y' válido._
 
 _Mi razón: Contenido íntegro; la posterioridad de la reposición queda implícita en el orden._
 
-**Respuesta M20 (OK / A / R):** _
+**Respuesta M20 (OK / A / R):** A
 
 ### M21 — tipo `expansion` — mi veredicto: **RECHAZADO**
 
@@ -355,7 +355,7 @@ _Mi razón: Contenido íntegro; la posterioridad de la reposición queda implíc
 
 _Mi razón: Adjetivo valorativo añadido ('elementos de fijación precisos')._
 
-**Respuesta M21 (OK / A / R):** _
+**Respuesta M21 (OK / A / R):** A
 
 ### M22 — tipo `reorder` — mi veredicto: **APROBADO**
 
@@ -365,7 +365,7 @@ _Mi razón: Adjetivo valorativo añadido ('elementos de fijación precisos')._
 
 _Mi razón: Bloque parentético desplazado antes de ', $K'; la coma mantiene $K ligado, gramática correcta._
 
-**Respuesta M22 (OK / A / R):** _
+**Respuesta M22 (OK / A / R):** A
 
 ### M23 — tipo `template_paraphrase` — mi veredicto: **RECHAZADO**
 
@@ -375,7 +375,7 @@ _Mi razón: Bloque parentético desplazado antes de ', $K'; la coma mantiene $K 
 
 _Mi razón: «50 mm mm» duplicado y «el provisión» sin concordancia; «subterránea» contradice adosada/superficial._
 
-**Respuesta M23 (OK / A / R):** _
+**Respuesta M23 (OK / A / R):** A
 
 ### M24 — tipo `template_paraphrase` — mi veredicto: **RECHAZADO**
 
@@ -385,7 +385,7 @@ _Mi razón: «50 mm mm» duplicado y «el provisión» sin concordancia; «subte
 
 _Mi razón: 'Canalones' recategoriza la canaleta; pierde 'suministro' y 'acceso a'._
 
-**Respuesta M24 (OK / A / R):** _
+**Respuesta M24 (OK / A / R):** A
 
 ### M25 — tipo `expansion` — mi veredicto: **APROBADO**
 
@@ -395,7 +395,7 @@ _Mi razón: 'Canalones' recategoriza la canaleta; pierde 'suministro' y 'acceso 
 
 _Mi razón: Explicitación fiel ('todas las divisiones del día')._
 
-**Respuesta M25 (OK / A / R):** _
+**Respuesta M25 (OK / A / R):** A
 
 ### M26 — tipo `paraphrase` — mi veredicto: **RECHAZADO**
 
@@ -405,7 +405,7 @@ _Mi razón: Explicitación fiel ('todas las divisiones del día')._
 
 _Mi razón: «suelo compuesto de roca» es incoherente: eso ya no es suelo, es roca._
 
-**Respuesta M26 (OK / A / R):** _
+**Respuesta M26 (OK / A / R):** A
 
 ### M27 — tipo `omission` — mi veredicto: **APROBADO**
 
@@ -415,7 +415,7 @@ _Mi razón: «suelo compuesto de roca» es incoherente: eso ya no es suelo, es r
 
 _Mi razón: Omite $I conservando 'de diámetro'; 'incluyendo' es sinónimo admisible._
 
-**Respuesta M27 (OK / A / R):** _
+**Respuesta M27 (OK / A / R):** A
 
 ### M28 — tipo `unit_expansion` — mi veredicto: **APROBADO**
 
@@ -425,7 +425,7 @@ _Mi razón: Omite $I conservando 'de diámetro'; 'incluyendo' es sinónimo admis
 
 _Mi razón: Desarrollo fiel de i < 3 horas, mismo valor._
 
-**Respuesta M28 (OK / A / R):** _
+**Respuesta M28 (OK / A / R):** A
 
 ### M29 — tipo `expansion` — mi veredicto: **RECHAZADO**
 
@@ -435,7 +435,7 @@ _Mi razón: Desarrollo fiel de i < 3 horas, mismo valor._
 
 _Mi razón: Operaciones urgentes añade un hecho no implícito en Diurno Excepcional._
 
-**Respuesta M29 (OK / A / R):** _
+**Respuesta M29 (OK / A / R):** A
 
 ### M30 — tipo `template_paraphrase` — mi veredicto: **RECHAZADO**
 
@@ -445,7 +445,7 @@ _Mi razón: Operaciones urgentes añade un hecho no implícito en Diurno Excepci
 
 _Mi razón: 'Canalización mediante tubería hormigonada con conductos' duplica el objeto (tubería vs conductos) en construcción forzada y confusa._
 
-**Respuesta M30 (OK / A / R):** _
+**Respuesta M30 (OK / A / R):** A
 
 
 ---
@@ -456,36 +456,36 @@ Para cada familia, escribe **REGENERAR** (Sprint 40 con prompts corregidos), **H
 
 **compression** (8 targets). 8 targets — fragmentos universales ('Cualquier…') o listas donde comprimir = perder contenido. Mi recomendación: HUECO (son incomprimibles por naturaleza).
 
-**Respuesta compression:** _
+**Respuesta compression:** VER
 
 **expansion** (21 targets). 21 targets — el generador solo produce colas valorativas para valores numéricos y etiquetas de volumen. Mi recomendación: REGENERAR (prompt: 'solo definición o propósito constitutivo, sin adjetivos de beneficio').
 
-**Respuesta expansion:** _
+**Respuesta expansion:** VER
 
 **new_param** (3 targets). 3 targets (OEB090/200/240) — conceptos donde todos los ejes propuestos son disparates. Mi recomendación: REGENERAR.
 
-**Respuesta new_param:** _
+**Respuesta new_param:** VER
 
 **omission** (16 targets). ~9 targets — omisiones cuya única reparación posible quedó mal. Mi recomendación: HUECO (hay 188 targets de omission cubiertos de sobra).
 
-**Respuesta omission:** _
+**Respuesta omission:** HUECO
 
 **paraphrase** (8 targets). Mi recomendación: HUECO (tipo bien cubierto por otros targets).
 
-**Respuesta paraphrase:** _
+**Respuesta paraphrase:** HUECO
 
 **reorder** (2 targets). Mi recomendación: HUECO (tipo bien cubierto por otros targets).
 
-**Respuesta reorder:** _
+**Respuesta reorder:** HUECO
 
 **synonym_label** (8 targets). Mi recomendación: HUECO (tipo bien cubierto por otros targets).
 
-**Respuesta synonym_label:** _
+**Respuesta synonym_label:** HUECO
 
 **template_paraphrase** (12 targets). 12 targets — plantillas donde todos los candidatos rompen términos de dominio (con topo, hastial) o el bloque paramétrico. Mi recomendación: REGENERAR con glosario de términos protegidos en el prompt.
 
-**Respuesta template_paraphrase:** _
+**Respuesta template_paraphrase:** VER
 
 **unit_conversion** (1 targets). Mi recomendación: HUECO (tipo bien cubierto por otros targets).
 
-**Respuesta unit_conversion:** _
+**Respuesta unit_conversion:** HUECO
