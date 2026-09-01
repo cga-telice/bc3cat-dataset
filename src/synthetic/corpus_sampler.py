@@ -30,6 +30,13 @@ Design (SPRINT_39_DESIGN.md, binding):
 * ``all_combined`` carries one rewrite of each applicable type (types
   with nothing available are skipped) with no two rewrites sharing a
   ``dedup_key``; composition validation is the driver's job.
+* Leaf↔rewrite compatibility: an L1 value rewrite or L2 fragment rewrite
+  only surfaces in leaves whose parameters select that value/fragment, so
+  the sampler pairs a rewrite with a leaf only when its normalized
+  ``payload["original"]`` appears in the leaf's original combined text
+  (resumen + texto); L3 template types are always compatible. Incompatible
+  picks would render as no-ops — and, in ``all_combined``, mislabel the
+  item's ``modification_types``.
 
 Pure CPU, no I/O beyond :func:`load_budgets`. Same inputs → identical plan.
 """
@@ -59,6 +66,7 @@ __all__ = [
     "PlannedVariant",
     "load_budgets",
     "leaf_inventory_from_frame",
+    "leaf_inventory_from_frames",
     "build_plan",
     "plan_report",
 ]
@@ -151,19 +159,37 @@ def load_budgets(path: Optional[Path] = None) -> Budgets:
 
 # ----- leaf inventory -----------------------------------------------------
 
+def _norm_ws(s: str) -> str:
+    """Whitespace-normalize — the single normalization used on BOTH sides
+    of every leaf↔rewrite compatibility check."""
+    return " ".join(s.split())
+
+
 class LeafInventory:
     """Leaves of the original corpus grouped by concept key.
 
-    Built directly from ``{concept_key: [item_key, ...]}`` (tests) or from
-    the original OEB parquet via :func:`leaf_inventory_from_frame`.
+    Each leaf carries its whitespace-normalized ORIGINAL combined text
+    (``resumen + " " + texto``) — the sampler only pairs a leaf with
+    rewrites whose surface form actually appears in it. Built directly
+    from ``{concept_key: [(item_key, combined_text), ...]}`` (tests; bare
+    ``item_key`` strings are accepted with an empty text) or from the
+    original OEB parquets via :func:`leaf_inventory_from_frames`.
     Concepts and leaves are kept sorted so iteration order is stable.
     """
 
-    def __init__(self, leaves_by_concept: Mapping[str, Iterable[str]]):
-        self._by_concept: dict[str, tuple[str, ...]] = {
-            concept: tuple(sorted(leaves))
-            for concept, leaves in sorted(leaves_by_concept.items())
-        }
+    def __init__(self, leaves_by_concept: Mapping[str, Iterable]):
+        self._by_concept: dict[str, tuple[str, ...]] = {}
+        self._texts: dict[str, str] = {}
+        for concept, entries in sorted(leaves_by_concept.items()):
+            keys: list[str] = []
+            for entry in entries:
+                if isinstance(entry, str):
+                    key, text = entry, ""
+                else:
+                    key, text = entry
+                keys.append(key)
+                self._texts[key] = _norm_ws(text)
+            self._by_concept[concept] = tuple(sorted(keys))
 
     def concepts(self) -> tuple[str, ...]:
         return tuple(self._by_concept)
@@ -171,33 +197,71 @@ class LeafInventory:
     def leaves(self, concept_key: str) -> tuple[str, ...]:
         return self._by_concept.get(concept_key, ())
 
+    def text(self, item_key: str) -> str:
+        """The leaf's normalized original combined text ("" if unknown)."""
+        return self._texts.get(item_key, "")
 
-def leaf_inventory_from_frame(df) -> LeafInventory:
-    """Group parquet rows (``item_key``, ``parent_key``) into an inventory.
 
-    Reuses the repo's own concept↔item rule (stage_runners.transform_data,
+def _check_parent_rule(item_key, parent_key) -> None:
+    """The repo's own concept↔item rule (stage_runners.transform_data,
     validated by metadata.validate_item): the concept key IS the parquet's
     ``parent_key``. Parametric concepts end in ``$`` and expand to
     ``item_key = parent_key[:-1] + <axis labels>``; non-parametric concepts
     keep ``item_key == parent_key`` (their single leaf is themselves).
     Fails loud on any row violating the rule instead of guessing a prefix.
     """
-    grouped: dict[str, list[str]] = {}
-    for item_key, parent_key in zip(df["item_key"], df["parent_key"]):
-        if not (isinstance(parent_key, str) and isinstance(item_key, str)):
+    if not (isinstance(parent_key, str) and isinstance(item_key, str)):
+        raise ValueError(
+            f"inventory_invalid: non-string keys ({item_key!r}, {parent_key!r})"
+        )
+    if parent_key.endswith("$"):
+        ok = item_key.startswith(parent_key[:-1])
+    else:
+        ok = item_key == parent_key
+    if not ok:
+        raise ValueError(
+            f"inventory_invalid: item_key {item_key!r} does not follow "
+            f"its parent {parent_key!r}"
+        )
+
+
+def leaf_inventory_from_frames(long_df, short_df) -> LeafInventory:
+    """The real-data loader: join the long (texto) and short (resumen)
+    parquets on ``item_key`` and build the inventory with each leaf's
+    combined original text. Fails loud on a leaf missing from the short
+    frame or on any concept-rule violation (see :func:`_check_parent_rule`).
+    """
+    resumen_by_key = dict(zip(short_df["item_key"], short_df["text"]))
+    grouped: dict[str, list[tuple[str, str]]] = {}
+    for item_key, parent_key, texto in zip(
+        long_df["item_key"], long_df["parent_key"], long_df["text"]
+    ):
+        _check_parent_rule(item_key, parent_key)
+        resumen = resumen_by_key.get(item_key)
+        if resumen is None:
             raise ValueError(
-                f"inventory_invalid: non-string keys ({item_key!r}, {parent_key!r})"
+                f"inventory_invalid: item {item_key!r} missing from the "
+                f"short (resumen) frame"
             )
-        if parent_key.endswith("$"):
-            ok = item_key.startswith(parent_key[:-1])
-        else:
-            ok = item_key == parent_key
-        if not ok:
-            raise ValueError(
-                f"inventory_invalid: item_key {item_key!r} does not follow "
-                f"its parent {parent_key!r}"
-            )
-        grouped.setdefault(parent_key, []).append(item_key)
+        grouped.setdefault(parent_key, []).append(
+            (item_key, f"{resumen} {texto}")
+        )
+    return LeafInventory(grouped)
+
+
+def leaf_inventory_from_frame(df) -> LeafInventory:
+    """Single-frame variant: texts come from ``df["text"]`` alone.
+
+    Prefer :func:`leaf_inventory_from_frames` (resumen + texto) for real
+    runs — with only one surface, rewrites whose original appears solely
+    in the other surface would be judged incompatible.
+    """
+    grouped: dict[str, list[tuple[str, str]]] = {}
+    for item_key, parent_key, text in zip(
+        df["item_key"], df["parent_key"], df["text"]
+    ):
+        _check_parent_rule(item_key, parent_key)
+        grouped.setdefault(parent_key, []).append((item_key, text))
     return LeafInventory(grouped)
 
 
@@ -296,34 +360,89 @@ def _condition_type(condition: str) -> ModificationType:
     return ModificationType(condition[len(_SINGLE_PREFIX):])
 
 
+#: Template-level types: the rewrite touches the shared L3 template, so it
+#: surfaces in EVERY leaf of the concept — always compatible.
+_L3_ALWAYS_COMPATIBLE = frozenset({
+    ModificationType.REORDER,
+    ModificationType.TEMPLATE_PARAPHRASE,
+})
+
+
+def _compatible(rewrite: ApprovedRewrite, leaf_text: str) -> bool:
+    """Leaf↔rewrite compatibility by original-text match.
+
+    An L1 value rewrite or L2 fragment rewrite only surfaces in leaves
+    whose parameters select that value/fragment, so it is compatible with
+    a leaf iff its whitespace-normalized ``payload["original"]`` appears
+    in the leaf's normalized combined original text. L3 types are always
+    compatible (the template covers every leaf). A payload without an
+    ``original`` surface cannot be checked and passes (fail-open — the
+    driver's no-op filter is the backstop).
+    """
+    if rewrite.mtype in _L3_ALWAYS_COMPATIBLE:
+        return True
+    original = rewrite.payload.get("original")
+    if not isinstance(original, str) or not original.strip():
+        return True
+    return _norm_ws(original) in leaf_text
+
+
 def _draw_rewrites(
     condition: str,
     applicable: Mapping[ModificationType, tuple[ApprovedRewrite, ...]],
     reuse_cap: Mapping[str, int],
     usage: dict[str, int],
-) -> tuple[ApprovedRewrite, ...]:
-    """The rewrites for one variant — empty when the concept is capped out.
+    leaf_text: str,
+) -> tuple[tuple[ApprovedRewrite, ...], int, bool]:
+    """The rewrites for one variant on one leaf.
 
-    Within one condition the result is monotone: once empty for a concept,
-    it stays empty (usage only grows), so callers may stop trying it.
+    Returns ``(rewrites, incompatible_type_skips, capacity_left)``:
+    ``incompatible_type_skips`` counts types that still had uncapped
+    rewrites but none compatible with THIS leaf; ``capacity_left`` says
+    whether any applicable type still has an uncapped rewrite at all
+    (leaf-independent — when False the concept is done for this
+    condition, since usage only grows).
     """
-    if condition == _ALL_COMBINED:
-        rewrites: list[ApprovedRewrite] = []
-        used_dedup: set = set()
-        for t in NINE_TYPES:
-            cands = applicable.get(t)
-            if not cands:
-                continue  # type not applicable here — skip
-            pick = _pick_rewrite(cands, t, reuse_cap, usage,
-                                 frozenset(used_dedup))
-            if pick is None:
-                continue  # capped out / dedup-blocked — skip type
-            rewrites.append(pick)
-            used_dedup.add(pick.dedup_key)
-        return tuple(rewrites)
-    mtype = _condition_type(condition)
-    pick = _pick_rewrite(applicable[mtype], mtype, reuse_cap, usage)
-    return (pick,) if pick is not None else ()
+    def _uncapped(t: ModificationType, cands):
+        cap = reuse_cap.get(t.value)
+        if cap is None:
+            return list(cands)
+        return [r for r in cands if usage.get(r.uid, 0) < cap]
+
+    if condition != _ALL_COMBINED:
+        mtype = _condition_type(condition)
+        avail = _uncapped(mtype, applicable[mtype])
+        if not avail:
+            return (), 0, False
+        compat = [r for r in avail if _compatible(r, leaf_text)]
+        if not compat:
+            return (), 1, True
+        pick = _pick_rewrite(compat, mtype, reuse_cap, usage)
+        return (pick,), 0, True
+
+    rewrites: list[ApprovedRewrite] = []
+    used_dedup: set = set()
+    incompatible = 0
+    capacity_left = False
+    for t in NINE_TYPES:
+        cands = applicable.get(t)
+        if not cands:
+            continue  # type not applicable to this concept — skip
+        avail = _uncapped(t, cands)
+        if not avail:
+            continue  # capped out — skip type
+        capacity_left = True
+        compat = [r for r in avail if _compatible(r, leaf_text)]
+        if not compat:
+            incompatible += 1  # nothing of this type surfaces in this leaf
+            continue
+        pick = _pick_rewrite(compat, t, reuse_cap, usage,
+                             frozenset(used_dedup))
+        if pick is None:
+            continue  # dedup-blocked — skip type
+        rewrites.append(pick)
+        used_dedup.add(pick.dedup_key)
+    return tuple(rewrites), incompatible, capacity_left
 
 
 def _pick_rewrite(
@@ -354,13 +473,19 @@ def build_plan(
     inventory: LeafInventory,
     budgets: Budgets,
     concepts: Iterable[str],
+    *,
+    stats_out: Optional[dict] = None,
 ) -> tuple[PlannedVariant, ...]:
     """Produce the full deterministic sampling plan.
 
     ``concepts`` restricts the plan to those concept keys (intersected with
     the inventory). Reuse counters are per condition — reset at each
     condition's start — so caps bound reuse within a condition; the caps
-    themselves apply in every condition, ``all_combined`` included.
+    themselves apply in every condition, ``all_combined`` included. A leaf
+    is only paired with rewrites compatible with its original text (see
+    :func:`_compatible`); incompatible leaves are skipped within the leaf
+    order, and pairing-level skips are tallied per condition into
+    ``stats_out`` (when given) for :func:`plan_report`.
     """
     concept_keys = tuple(sorted(set(concepts) & set(inventory.concepts())))
     applicable = {c: pantry.for_concept(c) for c in concept_keys}
@@ -393,26 +518,40 @@ def build_plan(
         pos = {c: 0 for c in eligible}
         dead: set[str] = set()  # concepts capped out for this condition
         cond_plan: list[PlannedVariant] = []
+        cond_stats = {"incompatible_skips": 0}
 
         def _produce(concept_key: str) -> bool:
-            if concept_key in dead or pos[concept_key] >= len(orders[concept_key]):
-                return False
-            rewrites = _draw_rewrites(condition, applicable[concept_key],
-                                      budgets.reuse_cap, usage)
-            if not rewrites:
-                dead.add(concept_key)  # deficit — never refilled cross-type
-                return False
-            leaf = orders[concept_key][pos[concept_key]]
-            pos[concept_key] += 1
-            for r in rewrites:
-                usage[r.uid] = usage.get(r.uid, 0) + 1
-            cond_plan.append(PlannedVariant(
-                condition=condition,
-                concept_key=concept_key,
-                leaf_item_key=leaf,
-                rewrites=rewrites,
-            ))
-            return True
+            """Try leaves in order until one yields a variant.
+
+            A leaf incompatible with everything drawable is consumed and
+            skipped (it cannot serve this condition); the concept goes
+            dead only when no uncapped rewrite remains at all.
+            """
+            while concept_key not in dead and pos[concept_key] < len(orders[concept_key]):
+                leaf = orders[concept_key][pos[concept_key]]
+                rewrites, n_incompatible, capacity_left = _draw_rewrites(
+                    condition, applicable[concept_key], budgets.reuse_cap,
+                    usage, inventory.text(leaf),
+                )
+                if rewrites:
+                    # (all_combined: types skipped for THIS leaf still count)
+                    cond_stats["incompatible_skips"] += n_incompatible
+                    pos[concept_key] += 1
+                    for r in rewrites:
+                        usage[r.uid] = usage.get(r.uid, 0) + 1
+                    cond_plan.append(PlannedVariant(
+                        condition=condition,
+                        concept_key=concept_key,
+                        leaf_item_key=leaf,
+                        rewrites=rewrites,
+                    ))
+                    return True
+                if not capacity_left:
+                    dead.add(concept_key)  # deficit — never refilled cross-type
+                    return False
+                cond_stats["incompatible_skips"] += max(n_incompatible, 1)
+                pos[concept_key] += 1  # leaf can't serve this condition
+            return False
 
         # main pass: the proportional allocation
         for concept_key in sorted(alloc):
@@ -439,15 +578,21 @@ def build_plan(
                 break  # condition-wide capacity exhausted — deficit reported
 
         plan.extend(cond_plan)
+        if stats_out is not None:
+            stats_out[condition] = dict(cond_stats)
 
     return tuple(plan)
 
 
 def plan_report(
-    plan: tuple[PlannedVariant, ...], budgets: Budgets
+    plan: tuple[PlannedVariant, ...],
+    budgets: Budgets,
+    stats: Optional[dict] = None,
 ) -> dict[str, dict]:
     """Per condition: achieved n, unique rewrites, max reuse, deficit.
 
+    ``stats`` is the ``stats_out`` dict filled by :func:`build_plan`; it
+    feeds each row's ``incompatible_skips`` diagnostic (0 when absent).
     The ``all_combined`` row additionally carries ``type_presence`` —
     ``{type: number of all_combined variants carrying a rewrite of it}``
     (at most one rewrite per type per variant, so this counts variants).
@@ -463,6 +608,9 @@ def plan_report(
             "unique_rewrites": len(uses),
             "max_reuse": max(uses.values()) if uses else 0,
             "deficit": target - len(variants),
+            "incompatible_skips": (
+                (stats or {}).get(condition, {}).get("incompatible_skips", 0)
+            ),
         }
         if condition == _ALL_COMBINED:
             presence = Counter(

@@ -22,7 +22,14 @@ from synthetic.taxonomy import ModificationType
 # ----- fixtures -----------------------------------------------------------
 
 C1, C2 = "C1$", "C2$"
-LEAVES = {C1: ["C1aa", "C1ab", "C1ba", "C1bb"], C2: ["C2aa", "C2ab"]}
+# every toy leaf's original text contains every toy rewrite's `original`
+# surface form, so compatibility never interferes with the generic tests
+TOY_TEXT = "obra con p-alpha p-beta n-alpha n-beta n-solo n-a de base"
+LEAVES = {
+    C1: [("C1aa", TOY_TEXT), ("C1ab", TOY_TEXT),
+         ("C1ba", TOY_TEXT), ("C1bb", TOY_TEXT)],
+    C2: [("C2aa", TOY_TEXT), ("C2ab", TOY_TEXT)],
+}
 
 
 def _rewrite(mtype, canonical, ci=0, concepts=(C1, C2), dedup=None):
@@ -142,7 +149,7 @@ def test_leaves_unique_within_condition():
         assert len(leaves) == len(set(leaves)), condition
     # single_paraphrase asked for all 6 leaves — got each exactly once
     assert sorted(by_condition["single_paraphrase"]) == sorted(
-        LEAVES[C1] + LEAVES[C2])
+        [k for k, _ in LEAVES[C1]] + [k for k, _ in LEAVES[C2]])
 
 
 def test_reuse_cap_shortfall_reported():
@@ -194,8 +201,8 @@ def test_allocation_respects_rewrite_capacity():
     # concept B: 10 leaves, 5 distinct rewrites (cap 2) -> receives the surplus
     a, b = "A1$", "B1$"
     inventory = LeafInventory({
-        a: [f"A1x{i:03d}" for i in range(100)],
-        b: [f"B1x{i:02d}" for i in range(10)],
+        a: [(f"A1x{i:03d}", "obra n-a") for i in range(100)],
+        b: [(f"B1x{i:02d}", "obra n-b0 n-b1 n-b2 n-b3 n-b4") for i in range(10)],
     })
     pantry = Pantry(by_type={
         ModificationType.NUM_TO_TEXT: (
@@ -224,6 +231,92 @@ def test_plan_report_counts_type_presence_in_all_combined():
     presence = report["all_combined"]["type_presence"]
     assert presence == {"num_to_text": 4, "paraphrase": 4, "reorder": 4}
     assert "type_presence" not in report["single_paraphrase"]
+
+
+def test_l1_rewrite_only_paired_with_matching_leaf():
+    # a value rewrite of "Diurno" must never land on a leaf whose original
+    # text lacks "Diurno" (it would render as a no-op there)
+    inv = LeafInventory({C1: [
+        ("C1aa", "trabajo en turno Diurno con medios"),
+        ("C1ab", "trabajo en  turno   Diurno con medios"),  # ws-normalized hit
+        ("C1ba", "trabajo en turno nocturno con medios"),
+        ("C1bb", "trabajo en turno nocturno con medios"),
+    ]})
+    pantry = Pantry(by_type={
+        ModificationType.SYNONYM_LABEL: (
+            _rewrite(ModificationType.SYNONYM_LABEL, "turno Diurno",
+                     concepts=(C1,)),
+        ),
+    })
+    budgets = _budgets(single_synonym_label=4)
+    stats: dict = {}
+    plan = build_plan(pantry, inv, budgets, [C1], stats_out=stats)
+    slice_ = [p for p in plan if p.condition == "single_synonym_label"]
+    assert {p.leaf_item_key for p in slice_} == {"C1aa", "C1ab"}
+    report = plan_report(plan, budgets, stats=stats)
+    assert report["single_synonym_label"]["n"] == 2
+    assert report["single_synonym_label"]["deficit"] == 2
+    assert report["single_synonym_label"]["incompatible_skips"] == 2
+
+
+def test_l2_fragment_compatibility():
+    inv = LeafInventory({C1: [
+        ("C1aa", "incluso fragmento largo de texto"),
+        ("C1ab", "sin nada relevante aqui"),
+    ]})
+    pantry = Pantry(by_type={
+        ModificationType.PARAPHRASE: (
+            _rewrite(ModificationType.PARAPHRASE, "fragmento largo",
+                     concepts=(C1,)),
+        ),
+    })
+    budgets = _budgets(single_paraphrase=2)
+    plan = build_plan(pantry, inv, budgets, [C1])
+    slice_ = [p for p in plan if p.condition == "single_paraphrase"]
+    assert [p.leaf_item_key for p in slice_] == ["C1aa"]
+
+
+def test_l3_always_compatible():
+    # template-level rewrites (reorder, template_paraphrase) cover every
+    # leaf regardless of surface text
+    inv = LeafInventory({C1: [("C1aa", "texto cualquiera")]})
+    pantry = Pantry(by_type={
+        ModificationType.REORDER: (
+            _rewrite(ModificationType.REORDER, "no aparece en el texto",
+                     concepts=(C1,)),
+        ),
+        ModificationType.TEMPLATE_PARAPHRASE: (
+            _rewrite(ModificationType.TEMPLATE_PARAPHRASE, "tampoco aparece",
+                     concepts=(C1,)),
+        ),
+    })
+    budgets = _budgets(single_reorder=1, single_template_paraphrase=1)
+    plan = build_plan(pantry, inv, budgets, [C1])
+    assert sum(1 for p in plan if p.condition == "single_reorder") == 1
+    assert sum(1 for p in plan
+               if p.condition == "single_template_paraphrase") == 1
+
+
+def test_all_combined_skips_incompatible_types_for_leaf():
+    inv = LeafInventory({C1: [("C1aa", "contiene p-alpha pero sin numeros")]})
+    pantry = Pantry(by_type={
+        ModificationType.PARAPHRASE: (
+            _rewrite(ModificationType.PARAPHRASE, "p-alpha", concepts=(C1,)),
+        ),
+        ModificationType.NUM_TO_TEXT: (
+            _rewrite(ModificationType.NUM_TO_TEXT, "n-alpha", concepts=(C1,)),
+        ),
+    })
+    budgets = _budgets(all_combined=1)
+    stats: dict = {}
+    plan = build_plan(pantry, inv, budgets, [C1], stats_out=stats)
+    combined = [p for p in plan if p.condition == "all_combined"]
+    assert len(combined) == 1
+    assert {r.mtype for r in combined[0].rewrites} == {
+        ModificationType.PARAPHRASE}  # num_to_text skipped for this leaf
+    report = plan_report(plan, budgets, stats=stats)
+    assert report["all_combined"]["type_presence"] == {"paraphrase": 1}
+    assert report["all_combined"]["incompatible_skips"] == 1
 
 
 def test_proportional_allocation():
