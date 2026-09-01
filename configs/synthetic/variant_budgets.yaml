@@ -1,0 +1,18 @@
+# Sprint 39 — presupuestos del corpus sintético piloto (SPRINT_39_DESIGN.md).
+# Editable sin tocar código; el sampler valida claves y tipos al cargar.
+seed: 39
+targets:
+  single_paraphrase: 1000
+  single_expansion: 1000
+  single_template_paraphrase: 1000
+  single_synonym_label: 1000
+  single_compression: 1000
+  single_reorder: 1000
+  single_num_to_text: 650
+  single_unit_expansion: 650
+  single_unit_conversion: 350
+  all_combined: 1500
+reuse_cap:            # usos máximos por reescritura única (tipos finos)
+  num_to_text: 20
+  unit_expansion: 20
+  unit_conversion: 20
