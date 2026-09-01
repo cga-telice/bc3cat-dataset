@@ -86,6 +86,10 @@ def load_pantry(menus_dir: Optional[Path] = None) -> Pantry:
                     f"pantry_misaligned: {vfile.name} target {menu_row['canonical']!r} "
                     f"candidates {len(verd_row['candidates'])} != menu {len(menu_row['candidates'])}"
                 )
+            if menu_row["canonical"] != verd_row["canonical"]:
+                raise ValueError(
+                    f"pantry_misaligned: {vfile.name} canonical {verd_row['canonical']!r} != menu {menu_row['canonical']!r}"
+                )
             usages = tuple(Usage(u["concept_key"], u.get("slot_extractor_target_id"),
                                  u.get("display"))
                            for u in menu_row.get("usages", []))

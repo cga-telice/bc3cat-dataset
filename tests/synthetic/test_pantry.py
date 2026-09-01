@@ -63,3 +63,8 @@ def test_load_pantry_fails_loud_on_misaligned_files(tmp_path):
     _write_pair(tmp_path, "reorder", menu, verd)
     with pytest.raises(ValueError, match="pantry_misaligned"):
         load_pantry(menus_dir=tmp_path / "menus")
+    # same candidate counts but different canonical between the two files
+    verd = [dict(menu[0], canonical="y")]
+    _write_pair(tmp_path, "reorder", menu, verd)
+    with pytest.raises(ValueError, match="pantry_misaligned"):
+        load_pantry(menus_dir=tmp_path / "menus")
