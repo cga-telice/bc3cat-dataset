@@ -19,15 +19,15 @@ _Used in 19 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OE
 _Used in 21 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB090$, OEB100$, OEB110$, OEB120$, OEB130$, OEB140$, OEB150$, OEB170$, OEB180$, OEB190$, OEB200$, OEB230$, OEB240$, OEB250$, OEB280$, OEB290$, OEB300$_
 
 - [x] 1. intervalo igual o mayor a cinco horas
-- [ ] 2. más de cinco horas
+- [x] 2. más de cinco horas
 - [x] 3. cinco horas o más
 
 ## BANDA DE MANTENIMIENTO / i< 3 horas
 _Used in 2 concept(s): OEB190$, OEB200$_
 
 - [x] 1. Intervalo menor a tres horas
-- [ ] 2. Mantenimiento cada menos de tres horas
-- [ ] 3. Cada menos de tres horas
+- [x] 2. Mantenimiento cada menos de tres horas
+- [x] 3. Cada menos de tres horas
 
 ## DIÁMETRO / 21mm
 _Used in 1 concept(s): OEB080$_

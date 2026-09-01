@@ -22,21 +22,21 @@ _No candidates survived validation._
 ## DIÁMETRO / 21mm
 _Used in 1 concept(s): OEB080$_
 
-- [ ] 1. 0.021 m
+- [x] 1. 0.021 m
 - [x] 2. 21 milímetros
-- [ ] 3. 0.021 metros
+- [x] 3. 0.021 metros
 
 ## DIÁMETRO / 29mm
 _Used in 1 concept(s): OEB080$_
 
-- [ ] 1. 0.029 m
+- [x] 1. 0.029 m
 - [x] 2. 29 milímetros
-- [ ] 3. 0.029 metros
+- [x] 3. 0.029 metros
 
 ## DIÁMETRO / 36mm
 _Used in 1 concept(s): OEB080$_
 
-- [ ] 1. 0.036 m
+- [x] 1. 0.036 m
 - [x] 2. 36 milímetros
 
 ## DIÁMETRO / 40mm
@@ -64,7 +64,7 @@ _Used in 2 concept(s): OEB190$, OEB200$_
 ## PROFUNDIDAD / hasta 0,80 m
 _Used in 2 concept(s): OEB190$, OEB200$_
 
-- [ ] 1. 80 cm
-- [ ] 2. 800 mm
-- [ ] 3. 8000 mm
+- [x] 1. 80 cm
+- [x] 2. 800 mm
+- [x] 3. 8000 mm
 

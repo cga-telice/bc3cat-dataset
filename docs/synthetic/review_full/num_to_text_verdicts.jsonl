@@ -1,33 +1,33 @@
-{"id": "num_to_text:0:0", "dedup_key": ["Nº TUBOS", "1"], "canonical": "Nº TUBOS / 1", "candidate_index": 0, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con el sustantivo conservado, inequívoco frente a hermanos."}
-{"id": "num_to_text:0:1", "dedup_key": ["Nº TUBOS", "1"], "canonical": "Nº TUBOS / 1", "candidate_index": 1, "verdict": "A", "criterion_failed": null, "reason": "'Un solo tubo' expresa el uno en letras con énfasis natural, sin añadir hechos."}
-{"id": "num_to_text:0:2", "dedup_key": ["Nº TUBOS", "1"], "canonical": "Nº TUBOS / 1", "candidate_index": 2, "verdict": "R", "criterion_failed": 4, "reason": "'Unidad' no deletrea el número (falta 'un/una') y es ambiguo como cantidad."}
-{"id": "num_to_text:1:0", "dedup_key": ["Nº TUBOS", "12"], "canonical": "Nº TUBOS / 12", "candidate_index": 0, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con el sustantivo conservado."}
-{"id": "num_to_text:1:1", "dedup_key": ["Nº TUBOS", "12"], "canonical": "Nº TUBOS / 12", "candidate_index": 1, "verdict": "R", "criterion_failed": 2, "reason": "'Número doce' se lee como identificador ordinal, no como cantidad de tubos."}
-{"id": "num_to_text:1:2", "dedup_key": ["Nº TUBOS", "12"], "canonical": "Nº TUBOS / 12", "candidate_index": 2, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con sustantivo genérico; el eje aporta el contexto de tubos."}
-{"id": "num_to_text:2:0", "dedup_key": ["Nº TUBOS", "16"], "canonical": "Nº TUBOS / 16", "candidate_index": 0, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con el sustantivo conservado."}
-{"id": "num_to_text:2:1", "dedup_key": ["Nº TUBOS", "16"], "canonical": "Nº TUBOS / 16", "candidate_index": 1, "verdict": "R", "criterion_failed": 2, "reason": "'Número dieciséis' cambia el sentido de cantidad a identificador."}
-{"id": "num_to_text:2:2", "dedup_key": ["Nº TUBOS", "16"], "canonical": "Nº TUBOS / 16", "candidate_index": 2, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con sustantivo genérico aceptable."}
-{"id": "num_to_text:3:0", "dedup_key": ["Nº TUBOS", "18"], "canonical": "Nº TUBOS / 18", "candidate_index": 0, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con el sustantivo conservado."}
-{"id": "num_to_text:3:1", "dedup_key": ["Nº TUBOS", "18"], "canonical": "Nº TUBOS / 18", "candidate_index": 1, "verdict": "R", "criterion_failed": 2, "reason": "'Número dieciocho' se lee como identificador, no como cantidad."}
-{"id": "num_to_text:3:2", "dedup_key": ["Nº TUBOS", "18"], "canonical": "Nº TUBOS / 18", "candidate_index": 2, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con sustantivo genérico aceptable."}
-{"id": "num_to_text:4:0", "dedup_key": ["Nº TUBOS", "2"], "canonical": "Nº TUBOS / 2", "candidate_index": 0, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con el sustantivo conservado."}
-{"id": "num_to_text:4:1", "dedup_key": ["Nº TUBOS", "2"], "canonical": "Nº TUBOS / 2", "candidate_index": 1, "verdict": "R", "criterion_failed": 2, "reason": "'Número dos' cambia el sentido de cantidad a identificador."}
-{"id": "num_to_text:4:2", "dedup_key": ["Nº TUBOS", "2"], "canonical": "Nº TUBOS / 2", "candidate_index": 2, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con sustantivo genérico aceptable."}
-{"id": "num_to_text:5:0", "dedup_key": ["Nº TUBOS", "24"], "canonical": "Nº TUBOS / 24", "candidate_index": 0, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con el sustantivo conservado."}
-{"id": "num_to_text:5:1", "dedup_key": ["Nº TUBOS", "24"], "canonical": "Nº TUBOS / 24", "candidate_index": 1, "verdict": "R", "criterion_failed": 2, "reason": "'Número veinticuatro' se lee como identificador, no como cantidad."}
-{"id": "num_to_text:5:2", "dedup_key": ["Nº TUBOS", "24"], "canonical": "Nº TUBOS / 24", "candidate_index": 2, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con sustantivo genérico aceptable."}
-{"id": "num_to_text:6:0", "dedup_key": ["Nº TUBOS", "3"], "canonical": "Nº TUBOS / 3", "candidate_index": 0, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con el sustantivo conservado."}
-{"id": "num_to_text:6:1", "dedup_key": ["Nº TUBOS", "3"], "canonical": "Nº TUBOS / 3", "candidate_index": 1, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con sustantivo genérico 'elementos'; cantidad inequívoca en el eje."}
-{"id": "num_to_text:6:2", "dedup_key": ["Nº TUBOS", "3"], "canonical": "Nº TUBOS / 3", "candidate_index": 2, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con sustantivo genérico aceptable."}
-{"id": "num_to_text:7:0", "dedup_key": ["Nº TUBOS", "4"], "canonical": "Nº TUBOS / 4", "candidate_index": 0, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con el sustantivo conservado."}
-{"id": "num_to_text:7:1", "dedup_key": ["Nº TUBOS", "4"], "canonical": "Nº TUBOS / 4", "candidate_index": 1, "verdict": "R", "criterion_failed": 2, "reason": "'Número cuatro' cambia el sentido de cantidad a identificador."}
-{"id": "num_to_text:7:2", "dedup_key": ["Nº TUBOS", "4"], "canonical": "Nº TUBOS / 4", "candidate_index": 2, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con sustantivo genérico aceptable."}
-{"id": "num_to_text:8:0", "dedup_key": ["Nº TUBOS", "5"], "canonical": "Nº TUBOS / 5", "candidate_index": 0, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con el sustantivo conservado."}
-{"id": "num_to_text:8:1", "dedup_key": ["Nº TUBOS", "5"], "canonical": "Nº TUBOS / 5", "candidate_index": 1, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con sustantivo genérico 'componentes'; cantidad clara en el eje."}
-{"id": "num_to_text:8:2", "dedup_key": ["Nº TUBOS", "5"], "canonical": "Nº TUBOS / 5", "candidate_index": 2, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con sustantivo genérico aceptable."}
-{"id": "num_to_text:9:0", "dedup_key": ["Nº TUBOS", "6"], "canonical": "Nº TUBOS / 6", "candidate_index": 0, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con el sustantivo conservado."}
-{"id": "num_to_text:9:1", "dedup_key": ["Nº TUBOS", "6"], "canonical": "Nº TUBOS / 6", "candidate_index": 1, "verdict": "R", "criterion_failed": 2, "reason": "'Número seis' cambia el sentido de cantidad a identificador."}
-{"id": "num_to_text:9:2", "dedup_key": ["Nº TUBOS", "6"], "canonical": "Nº TUBOS / 6", "candidate_index": 2, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con sustantivo genérico aceptable."}
-{"id": "num_to_text:10:0", "dedup_key": ["Nº TUBOS", "8"], "canonical": "Nº TUBOS / 8", "candidate_index": 0, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con el sustantivo conservado."}
-{"id": "num_to_text:10:1", "dedup_key": ["Nº TUBOS", "8"], "canonical": "Nº TUBOS / 8", "candidate_index": 1, "verdict": "R", "criterion_failed": 2, "reason": "'Número ocho' cambia el sentido de cantidad a identificador."}
-{"id": "num_to_text:10:2", "dedup_key": ["Nº TUBOS", "8"], "canonical": "Nº TUBOS / 8", "candidate_index": 2, "verdict": "A", "criterion_failed": null, "reason": "Número en letras con sustantivo genérico aceptable."}
+{"id": "num_to_text:0:0", "canonical": "Nº TUBOS / 1", "candidate_index": 0, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con el sustantivo conservado, inequívoco frente a hermanos."}
+{"id": "num_to_text:0:1", "canonical": "Nº TUBOS / 1", "candidate_index": 1, "verdict": "A", "phase": "v1.1", "reason": "'Un solo tubo' expresa el uno en letras con énfasis natural, sin añadir hechos."}
+{"id": "num_to_text:0:2", "canonical": "Nº TUBOS / 1", "candidate_index": 2, "verdict": "A", "phase": "v2", "reason": "sin defecto duro v2 (deriva semántica aceptada)"}
+{"id": "num_to_text:1:0", "canonical": "Nº TUBOS / 12", "candidate_index": 0, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con el sustantivo conservado."}
+{"id": "num_to_text:1:1", "canonical": "Nº TUBOS / 12", "candidate_index": 1, "verdict": "A", "phase": "v2", "reason": "sin defecto duro v2"}
+{"id": "num_to_text:1:2", "canonical": "Nº TUBOS / 12", "candidate_index": 2, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con sustantivo genérico; el eje aporta el contexto de tubos."}
+{"id": "num_to_text:2:0", "canonical": "Nº TUBOS / 16", "candidate_index": 0, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con el sustantivo conservado."}
+{"id": "num_to_text:2:1", "canonical": "Nº TUBOS / 16", "candidate_index": 1, "verdict": "A", "phase": "v2", "reason": "sin defecto duro v2"}
+{"id": "num_to_text:2:2", "canonical": "Nº TUBOS / 16", "candidate_index": 2, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con sustantivo genérico aceptable."}
+{"id": "num_to_text:3:0", "canonical": "Nº TUBOS / 18", "candidate_index": 0, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con el sustantivo conservado."}
+{"id": "num_to_text:3:1", "canonical": "Nº TUBOS / 18", "candidate_index": 1, "verdict": "A", "phase": "v2", "reason": "sin defecto duro v2"}
+{"id": "num_to_text:3:2", "canonical": "Nº TUBOS / 18", "candidate_index": 2, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con sustantivo genérico aceptable."}
+{"id": "num_to_text:4:0", "canonical": "Nº TUBOS / 2", "candidate_index": 0, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con el sustantivo conservado."}
+{"id": "num_to_text:4:1", "canonical": "Nº TUBOS / 2", "candidate_index": 1, "verdict": "A", "phase": "v2", "reason": "sin defecto duro v2"}
+{"id": "num_to_text:4:2", "canonical": "Nº TUBOS / 2", "candidate_index": 2, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con sustantivo genérico aceptable."}
+{"id": "num_to_text:5:0", "canonical": "Nº TUBOS / 24", "candidate_index": 0, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con el sustantivo conservado."}
+{"id": "num_to_text:5:1", "canonical": "Nº TUBOS / 24", "candidate_index": 1, "verdict": "A", "phase": "v2", "reason": "sin defecto duro v2"}
+{"id": "num_to_text:5:2", "canonical": "Nº TUBOS / 24", "candidate_index": 2, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con sustantivo genérico aceptable."}
+{"id": "num_to_text:6:0", "canonical": "Nº TUBOS / 3", "candidate_index": 0, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con el sustantivo conservado."}
+{"id": "num_to_text:6:1", "canonical": "Nº TUBOS / 3", "candidate_index": 1, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con sustantivo genérico 'elementos'; cantidad inequívoca en el eje."}
+{"id": "num_to_text:6:2", "canonical": "Nº TUBOS / 3", "candidate_index": 2, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con sustantivo genérico aceptable."}
+{"id": "num_to_text:7:0", "canonical": "Nº TUBOS / 4", "candidate_index": 0, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con el sustantivo conservado."}
+{"id": "num_to_text:7:1", "canonical": "Nº TUBOS / 4", "candidate_index": 1, "verdict": "A", "phase": "v2", "reason": "sin defecto duro v2"}
+{"id": "num_to_text:7:2", "canonical": "Nº TUBOS / 4", "candidate_index": 2, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con sustantivo genérico aceptable."}
+{"id": "num_to_text:8:0", "canonical": "Nº TUBOS / 5", "candidate_index": 0, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con el sustantivo conservado."}
+{"id": "num_to_text:8:1", "canonical": "Nº TUBOS / 5", "candidate_index": 1, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con sustantivo genérico 'componentes'; cantidad clara en el eje."}
+{"id": "num_to_text:8:2", "canonical": "Nº TUBOS / 5", "candidate_index": 2, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con sustantivo genérico aceptable."}
+{"id": "num_to_text:9:0", "canonical": "Nº TUBOS / 6", "candidate_index": 0, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con el sustantivo conservado."}
+{"id": "num_to_text:9:1", "canonical": "Nº TUBOS / 6", "candidate_index": 1, "verdict": "A", "phase": "v2", "reason": "sin defecto duro v2"}
+{"id": "num_to_text:9:2", "canonical": "Nº TUBOS / 6", "candidate_index": 2, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con sustantivo genérico aceptable."}
+{"id": "num_to_text:10:0", "canonical": "Nº TUBOS / 8", "candidate_index": 0, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con el sustantivo conservado."}
+{"id": "num_to_text:10:1", "canonical": "Nº TUBOS / 8", "candidate_index": 1, "verdict": "A", "phase": "v2", "reason": "sin defecto duro v2"}
+{"id": "num_to_text:10:2", "canonical": "Nº TUBOS / 8", "candidate_index": 2, "verdict": "A", "phase": "v1.1", "reason": "Número en letras con sustantivo genérico aceptable."}

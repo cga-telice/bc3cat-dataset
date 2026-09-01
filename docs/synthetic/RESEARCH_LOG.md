@@ -29,6 +29,27 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### 2026-08-31 (cont.) — Sprint 38.7-B: auditoría de César, rúbrica v2 y re-juicio
+
+- **Auditoría dirigida (54 campos):** César adjudicó los 10 Dudosos (todos A), 5 reglas de
+  línea fina (3 recuperaciones, 2 confirmaciones) y la muestra de 30 — donde ratificó las 15
+  aprobaciones pero **revirtió 13 de los 15 rechazos** (solo mantuvo M14 borrado-extra y M15
+  bloque-duplicado). Conclusión registrada: el listón del propietario para un benchmark de
+  estrés admite deriva léxica/semántica, registro imperfecto y valorativos como ruido útil.
+- **Rúbrica v2** (RUBRIC.md, sección final): aprobar por defecto; R solo por (1) rotura
+  estructural de render, (2) borrado extra en omission, (3) residuo de generación.
+- **Re-juicio de los 1 646 R** bajo v2 (28 lotes): 1 444 recuperados, 202 confirmados R
+  (roturas de render verificadas contra los valores reales de los ejes: marcos «certificada
+  bajo $K»→«bajo bajo vías», bloques duplicados, "T" huérfana, %A crudo, comillas envolventes).
+- **Resultado final: 2 609 A / 202 R (92,8 %)**. Targets sin aprobado: 79 → **14** (13 de
+  omission — César decidió HUECO para el tipo — y 1 de expansion). Ticks y verdicts/*.jsonl
+  regenerados y validados con `menu_review_parser parse`. Rechazos finales listados en
+  `review_full/FINAL_REJECTS.md` para el vistazo del propietario.
+- **Nota de método (honesta):** la validación del corpus es LLM-con-rúbrica en dos fases
+  (v1.1 estricta → v2 calibrada al propietario mediante auditoría dirigida con sello de
+  independencia); la afirmación publicable es «filtrado mecánico-estructural verificado +
+  listón semántico permisivo definido y auditado por el autor», no revisión humana exhaustiva.
+
 ### 2026-08-31 — Sprint 38.7 (revisión de los 11 menús: rúbrica, calibración, pasada LLM completa, parse)
 
 - **Rúbrica** `review_calibration/RUBRIC.md` v1 (5 criterios, A/R/D, rechazo por defecto, ciega

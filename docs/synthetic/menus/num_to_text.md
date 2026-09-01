@@ -7,41 +7,41 @@ _Used in 8 concept(s): OEB030$, OEB040$, OEB070$, OEB170$, OEB230$, OEB280$, OEB
 
 - [x] 1. Un tubo
 - [x] 2. Un solo tubo
-- [ ] 3. Unidad
+- [x] 3. Unidad
 
 ## Nº TUBOS / 12
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
 - [x] 1. Doce tubos
-- [ ] 2. Número doce
+- [x] 2. Número doce
 - [x] 3. Doce unidades
 
 ## Nº TUBOS / 16
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
 - [x] 1. Dieciséis tubos
-- [ ] 2. Número dieciséis
+- [x] 2. Número dieciséis
 - [x] 3. Dieciséis unidades
 
 ## Nº TUBOS / 18
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
 - [x] 1. Dieciocho tubos
-- [ ] 2. Número dieciocho
+- [x] 2. Número dieciocho
 - [x] 3. Dieciocho unidades
 
 ## Nº TUBOS / 2
 _Used in 9 concept(s): OEB020$, OEB030$, OEB040$, OEB070$, OEB170$, OEB230$, OEB280$, OEB290$, OEB300$_
 
 - [x] 1. Dos tubos
-- [ ] 2. Número dos
+- [x] 2. Número dos
 - [x] 3. Dos unidades
 
 ## Nº TUBOS / 24
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
 - [x] 1. Veinticuatro tubos
-- [ ] 2. Número veinticuatro
+- [x] 2. Número veinticuatro
 - [x] 3. Veinticuatro unidades
 
 ## Nº TUBOS / 3
@@ -55,7 +55,7 @@ _Used in 7 concept(s): OEB030$, OEB040$, OEB170$, OEB230$, OEB280$, OEB290$, OEB
 _Used in 10 concept(s): OEB020$, OEB030$, OEB040$, OEB120$, OEB170$, OEB230$, OEB250$, OEB280$, OEB290$, OEB300$_
 
 - [x] 1. Cuatro tubos
-- [ ] 2. Número cuatro
+- [x] 2. Número cuatro
 - [x] 3. Cuatro unidades
 
 ## Nº TUBOS / 5
@@ -69,13 +69,13 @@ _Used in 6 concept(s): OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 _Used in 10 concept(s): OEB020$, OEB030$, OEB040$, OEB120$, OEB170$, OEB230$, OEB250$, OEB280$, OEB290$, OEB300$_
 
 - [x] 1. Seis tubos
-- [ ] 2. Número seis
+- [x] 2. Número seis
 - [x] 3. Seis unidades
 
 ## Nº TUBOS / 8
 _Used in 7 concept(s): OEB020$, OEB030$, OEB040$, OEB230$, OEB280$, OEB290$, OEB300$_
 
 - [x] 1. Ocho tubos
-- [ ] 2. Número ocho
+- [x] 2. Número ocho
 - [x] 3. Ocho unidades
 

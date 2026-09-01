@@ -19,43 +19,43 @@ _Used in 1 concept(s): OEB140$_
 ## RESUMEN template (OEB030$)
 _Used in 1 concept(s): OEB030$_
 
-- [ ] 1. "$K Canalización hormigonada $A T, polietileno libre de halógenos de 110 mm. ($G(%C)/$H(%D)/$J(%F))"
+- [x] 1. "$K Canalización hormigonada $A T, polietileno libre de halógenos de 110 mm. ($G(%C)/$H(%D)/$J(%F))"
 - [x] 2. "Canalización hormigonada $A T, polietileno libre de halógenos de 110 mm ($G(%C)/$H(%D)/$J(%F)), $K."
 - [x] 3. "Canalización hormigonada $A T, polietileno libre de halógenos de 110 mm, ($G(%C)/$H(%D)/$J(%F)) $K."
 
 ## RESUMEN template (OEB040$)
 _Used in 1 concept(s): OEB040$_
 
-- [ ] 1. "$K Canalización hormigonada $A T, polietileno libre de halógenos de 160 mm. ($G(%C)/$H(%D)/$J(%F))"
+- [x] 1. "$K Canalización hormigonada $A T, polietileno libre de halógenos de 160 mm. ($G(%C)/$H(%D)/$J(%F))"
 - [x] 2. "Canalización hormigonada $A T, polietileno libre de halógenos de 160 mm ($G(%C)/$H(%D)/$J(%F)), $K."
 - [x] 3. "Canalización hormigonada $A T, polietileno libre de halógenos de 160 mm, ($G(%C)/$H(%D)/$J(%F)) $K."
 
 ## RESUMEN template (OEB230$)
 _Used in 1 concept(s): OEB230$_
 
-- [ ] 1. "$K. Canalización hormigonada $A T, polietileno libre de halógenos de 200 mm. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 2. "Canalización hormigonada $A T, polietileno libre de halógenos de 200 mm. ($G(%C)/$H(%D)/$J(%F)) $K."
+- [x] 1. "$K. Canalización hormigonada $A T, polietileno libre de halógenos de 200 mm. ($G(%C)/$H(%D)/$J(%F))"
+- [x] 2. "Canalización hormigonada $A T, polietileno libre de halógenos de 200 mm. ($G(%C)/$H(%D)/$J(%F)) $K."
 - [x] 3. "Canalización hormigonada $A T, ($G(%C)/$H(%D)/$J(%F)), polietileno libre de halógenos de 200 mm, $K."
 
 ## RESUMEN template (OEB280$)
 _Used in 1 concept(s): OEB280$_
 
-- [ ] 1. "$K Canalización hormigonada $A T, polietileno libre de halógenos de 40 mm. ($G(%C)/$H(%D)/$J(%F))"
+- [x] 1. "$K Canalización hormigonada $A T, polietileno libre de halógenos de 40 mm. ($G(%C)/$H(%D)/$J(%F))"
 - [x] 2. "Canalización hormigonada $A T, polietileno libre de halógenos de 40 mm ($G(%C)/$H(%D)/$J(%F)), $K."
 - [x] 3. "Canalización hormigonada $A T, polietileno libre de halógenos de 40 mm, ($G(%C)/$H(%D)/$J(%F)) $K."
 
 ## RESUMEN template (OEB290$)
 _Used in 1 concept(s): OEB290$_
 
-- [ ] 1. "$K Canalización hormigonada $A T, polietileno libre de halógenos de 50 mm. ($G(%C)/$H(%D)/$J(%F))"
+- [x] 1. "$K Canalización hormigonada $A T, polietileno libre de halógenos de 50 mm. ($G(%C)/$H(%D)/$J(%F))"
 - [x] 2. "Canalización hormigonada $A T, polietileno libre de halógenos de 50 mm ($G(%C)/$H(%D)/$J(%F)), $K."
 - [x] 3. "Canalización hormigonada $A T, polietileno libre de halógenos de 50 mm, ($G(%C)/$H(%D)/$J(%F)) $K."
 
 ## RESUMEN template (OEB300$)
 _Used in 1 concept(s): OEB300$_
 
-- [ ] 1. "$K Canalización hormigonada $A T, polietileno libre de halógenos de 90 mm. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 2. "Canalización hormigonada $A T, polietileno libre de halógenos de 90 mm. ($G(%C)/$H(%D)/$J(%F)) $K."
+- [x] 1. "$K Canalización hormigonada $A T, polietileno libre de halógenos de 90 mm. ($G(%C)/$H(%D)/$J(%F))"
+- [x] 2. "Canalización hormigonada $A T, polietileno libre de halógenos de 90 mm. ($G(%C)/$H(%D)/$J(%F)) $K."
 - [x] 3. "Canalización hormigonada $A T, polietileno libre de halógenos de 90 mm, ($G(%C)/$H(%D)/$J(%F)) $K."
 
 ## RESUMEN template (OEB020$)
@@ -68,23 +68,23 @@ _Used in 1 concept(s): OEB020$_
 ## RESUMEN template (OEB170$)
 _Used in 1 concept(s): OEB170$_
 
-- [ ] 1. "Canalización metálica superficial con $B de diámetro y $A tubos de acero galvanizado. ($L(%C)/$M(%D)/$N(%F))"
+- [x] 1. "Canalización metálica superficial con $B de diámetro y $A tubos de acero galvanizado. ($L(%C)/$M(%D)/$N(%F))"
 - [x] 2. "Canalización metálica superficial con $A tubos de acero galvanizado de $B de diámetro. ($N(%F)/$M(%D)/$L(%C))"
 - [x] 3. "Canalización metálica superficial con $A tubos de acero galvanizado de $B de diámetro. ($M(%D)/$L(%C)/$N(%F))"
 
 ## RESUMEN template (OEB080$)
 _Used in 1 concept(s): OEB080$_
 
-- [ ] 1. "Canalización tubo corrugado con alma de acero de $A. (-/-/$L(%B))"
-- [ ] 2. "Canalización tubo corrugado con alma de acero de $A. (-/$L(%B)/-)"
+- [x] 1. "Canalización tubo corrugado con alma de acero de $A. (-/-/$L(%B))"
+- [x] 2. "Canalización tubo corrugado con alma de acero de $A. (-/$L(%B)/-)"
 - [ ] 3. "Canalización tubo corrugado de $A con alma de acero. ($L(%B)/-/(-))"
 
 ## RESUMEN template (OEB050$)
 _Used in 1 concept(s): OEB050$_
 
 - [ ] 1. "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $B, $A de pavimento. (-/-/$L(%C))"
-- [ ] 2. "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A de pavimento, $B. (-/-/$L(%C))"
-- [ ] 3. "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $B de pavimento, $A. (-/-/$L(%C))"
+- [x] 2. "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A de pavimento, $B. (-/-/$L(%C))"
+- [x] 3. "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $B de pavimento, $A. (-/-/$L(%C))"
 
 ## RESUMEN template (OEB010$)
 _Used in 1 concept(s): OEB010$_
@@ -256,7 +256,7 @@ _Used in 1 concept(s): OEB170$_
 _Used in 1 concept(s): OEB080$_
 
 - [x] 1. "Condiciones de ejecución: $B. Canalización tubo corrugado de $A con alma de acero."
-- [ ] 2. "Canalización tubo corrugado de $A con alma de acero, con condiciones de ejecución: $B."
+- [x] 2. "Canalización tubo corrugado de $A con alma de acero, con condiciones de ejecución: $B."
 - [x] 3. "Condiciones de ejecución: $B. Canalización tubo corrugado de $A, con alma de acero."
 
 ## TEXTO template (OEB130$)
@@ -284,8 +284,8 @@ _Used in 1 concept(s): OEB150$_
 _Used in 1 concept(s): OEB160$_
 
 - [x] 1. "Condiciones de ejecución: $A. Mandrilado de canalización existente."
-- [ ] 2. "Mandrilado de canalización existente, con condiciones de ejecución: $A."
-- [ ] 3. "Condiciones de ejecución: $A, mandrilado de canalización existente."
+- [x] 2. "Mandrilado de canalización existente, con condiciones de ejecución: $A."
+- [x] 3. "Condiciones de ejecución: $A, mandrilado de canalización existente."
 
 ## TEXTO template (OEB240$)
 _Used in 1 concept(s): OEB240$_
