@@ -340,6 +340,56 @@ def test_condition_selects_bc3_and_python_styles():
     assert not _condition_selects("%A=,", labels)
 
 
+def test_all_combined_renders_both_template_fields(tmp_path):
+    # an all_combined variant carrying a RESUMEN-template AND a
+    # TEXTO-template rewrite: both must compose (the composition canonical
+    # key includes the field), both must render, and the frozen E2 schema
+    # must accept the duplicated modification type.
+    stage = _tiny_stage()
+    inv = scan_chapter(copy.deepcopy(stage))
+    targets = {
+        t.dedup_key[0]: t
+        for t in inv.by_type[ModificationType.TEMPLATE_PARAPHRASE]
+        if t.usages[0].concept_key == C3
+    }
+    res_rw = _rewrite(
+        ModificationType.TEMPLATE_PARAPHRASE,
+        targets["RESUMEN"].dedup_key,
+        {"original": "Prueba tres $D", "new": "Ensayo tres $D"},
+        concepts=(C3,),
+    )
+    tex_rw = _rewrite(
+        ModificationType.TEMPLATE_PARAPHRASE,
+        targets["TEXTO"].dedup_key,
+        {"original": "Prueba tres unitaria $D", "new": "Prueba unitaria tres $D"},
+        concepts=(C3,),
+    )
+    plan = (
+        PlannedVariant("all_combined", C3, "CTEST030a", (res_rw, tex_rw)),
+    )
+    stats, out_dir, report_path = _run(tmp_path, plan)
+    row = stats.per_condition["all_combined"]
+    assert row["composition_conflicts"] == 0
+    assert row["produced"] == 1
+    items = load_items(out_dir / packaging.ITEMS_FILENAME)
+    item = items.iloc[0]
+    # both surfaces moved, template-structurally
+    assert item["resumen"] == "Ensayo tres PVC"
+    assert item["texto"] == "Prueba unitaria tres PVC"
+    assert list(item["modification_types"]) == [
+        "template_paraphrase", "template_paraphrase",
+    ]
+    assert item["modification_count"] == 2
+    # QA report splits the presence by field
+    assert row["type_presence"] == {
+        "template_paraphrase (RESUMEN)": 1,
+        "template_paraphrase (TEXTO)": 1,
+    }
+    report = report_path.read_text(encoding="utf-8")
+    assert "template_paraphrase (RESUMEN): 1" in report
+    assert "template_paraphrase (TEXTO): 1" in report
+
+
 def test_l1_original_aligned_to_raw_whitespace(tmp_path):
     # Real BC3 value texts carry padding (' 12 '); the scanner/menus store the
     # whitespace-normalised form. The driver must align the L1 payload's

@@ -29,7 +29,10 @@ Design (SPRINT_39_DESIGN.md, binding):
   redistributed within the condition to concepts with spare capacity.
 * ``all_combined`` carries one rewrite of each applicable type (types
   with nothing available are skipped) with no two rewrites sharing a
-  ``dedup_key``; composition validation is the driver's job.
+  ``dedup_key``; for ``template_paraphrase`` it carries one rewrite per
+  FIELD — one RESUMEN-template and one TEXTO-template rewrite — so both
+  output surfaces move (César, 2026-09-02). Composition validation is
+  the driver's job.
 * Leaf↔rewrite compatibility: an L1 value rewrite or L2 fragment rewrite
   only surfaces in leaves whose parameters select that value/fragment, so
   the sampler pairs a rewrite with a leaf only when it is compatible —
@@ -549,6 +552,21 @@ def _draw_rewrites(
         ]
         if not compat:
             incompatible += 1  # nothing of this type surfaces in this leaf
+            continue
+        if t is ModificationType.TEMPLATE_PARAPHRASE:
+            # both output surfaces must move: one RESUMEN-template AND one
+            # TEXTO-template rewrite per all_combined variant (a field with
+            # an empty pool is skipped — real OEB coverage has both).
+            for field in ("RESUMEN", "TEXTO"):
+                pool = tuple(r for r in compat if r.dedup_key[0] == field)
+                if not pool:
+                    continue
+                pick = _pick_rewrite(pool, t, reuse_cap, usage,
+                                     frozenset(used_dedup))
+                if pick is None:
+                    continue  # dedup-blocked — skip field
+                rewrites.append(pick)
+                used_dedup.add(pick.dedup_key)
             continue
         pick = _pick_rewrite(compat, t, reuse_cap, usage,
                              frozenset(used_dedup))

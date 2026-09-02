@@ -139,6 +139,31 @@ def test_all_combined_uses_one_per_applicable_type():
         assert len(set(dedups)) == len(dedups)
 
 
+def test_all_combined_draws_both_template_fields():
+    # all_combined must carry template_paraphrase rewrites for BOTH fields:
+    # one RESUMEN-template and one TEXTO-template rewrite per variant.
+    tp = ModificationType.TEMPLATE_PARAPHRASE
+    pantry = Pantry(by_type={
+        tp: (
+            _rewrite(tp, "r1", dedup=("RESUMEN", "plantilla res")),
+            _rewrite(tp, "r2", dedup=("RESUMEN", "plantilla res dos")),
+            _rewrite(tp, "x1", dedup=("TEXTO", "plantilla tex")),
+        ),
+        ModificationType.PARAPHRASE: (
+            _rewrite(ModificationType.PARAPHRASE, "p-alpha"),
+        ),
+    })
+    budgets = _budgets(all_combined=4)
+    plan = build_plan(pantry, _inventory(), budgets, [C1, C2])
+    combined = [p for p in plan if p.condition == "all_combined"]
+    assert len(combined) == 4
+    for pv in combined:
+        tps = [r for r in pv.rewrites if r.mtype is tp]
+        assert sorted(r.dedup_key[0] for r in tps) == ["RESUMEN", "TEXTO"]
+        # plus the one paraphrase -> 3 rewrites total
+        assert len(pv.rewrites) == 3
+
+
 def test_leaves_unique_within_condition():
     pantry = _toy_pantry()
     budgets = _budgets(single_paraphrase=6, single_reorder=5, all_combined=6)

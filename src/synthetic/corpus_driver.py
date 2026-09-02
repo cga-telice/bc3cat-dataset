@@ -623,7 +623,15 @@ def run_corpus(
         for rewrite in planned.rewrites:
             uses[planned.condition][rewrite.uid] += 1
             if planned.condition == _ALL_COMBINED:
-                presence[rewrite.mtype.value] += 1
+                key = rewrite.mtype.value
+                if (
+                    rewrite.mtype is ModificationType.TEMPLATE_PARAPHRASE
+                    and rewrite.dedup_key
+                ):
+                    # split by field so the both-surfaces requirement
+                    # (RESUMEN == TEXTO == n) is visible in the QA report
+                    key = f"{key} ({rewrite.dedup_key[0]})"
+                presence[key] += 1
         distances[planned.condition] += _token_distance(
             original["resumen"], resumen
         ) + _token_distance(original["texto"], texto)
