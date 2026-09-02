@@ -5,11 +5,11 @@
 | Field             | Value                                                                 |
 |-------------------|-----------------------------------------------------------------------|
 | **Dataset**       | BC3CAT-Syn                                                            |
-| **Version**       | format v1 (G1/G2 contract frozen); corpus **not yet generated** (pending F3) |
+| **Version**       | format v1 (G1/G2 contract frozen); **pilot corpus generated** (Sprint 39, 2026-09-02, commit `6b52053`) |
 | **Branch**        | `synthetic` (parallel to `main`; never merged — see [`CLAUDE.md`](../../CLAUDE.md)) |
 | **License**       | Dataset: **CC-BY 4.0** · Code: **MIT** (mirrors the parent BC3CAT release) |
 | **Derived from**  | the BC3CAT OEB subset (`OEB_long_norm.parquet` / `OEB_short_norm.parquet`) |
-| **Status**        | Format/schema/taxonomy/loader contract final; corpus-scale statistics are `TBD (pending F3 full generation)` |
+| **Status**        | Format/schema/taxonomy/loader contract final; pilot corpus (OEB, 8,687 items) generated and byte-reproducible — statistics in §8 |
 
 > **One-line description.** BC3CAT-Syn is a synthetic, fully-traceable variant of
 > the BC3CAT retrieval benchmark in which controlled linguistic modifications are
@@ -17,15 +17,16 @@
 > output templates, parameter definitions) so that retrieval degradation can be
 > attributed to specific transformations rather than aggregate noise.
 
-> ⚠ **This card documents a frozen format, not a measured corpus.** The release
-> format, schema, modification taxonomy, evaluation slices, and loader API are
-> implemented and test-pinned (Phase G tasks G1/G2). The corpus itself has **not
-> been generated** — F3 (full generation) is blocked on A3 (the concrete LLM
-> transport). Every **corpus-scale statistic** below (item counts, per-type
-> distributions, acceptance rates, throughput) is therefore an explicit
-> `TBD (pending F3 full generation)` placeholder. A **post-F3 statistics refresh**
-> of this card is a planned follow-up. No number here is fabricated or borrowed
-> from the parent OEB corpus.
+> **Corpus status (2026-09-02).** The **pilot corpus is generated**: 8,687
+> synthetic items over the 25 parametric OEB concepts (Sprint 39, commit
+> `6b52053`), produced deterministically from the human-audited rewrite pantry
+> (2,609 approved rewrites, rubric v2) with **no LLM in the generation path**.
+> Two independent full runs are byte-identical (SHA-256: items `7A99A754…`,
+> modifications `DA8A140A…`). Pilot scope: 9 of the 12 taxonomy types
+> (`omission` and `new_param` excluded by owner decision 2026-08-31 — they do
+> not preserve informational content; `stacked_2…5+` conditions retired, the
+> schema still supports them). All statistics in §8 are measured on this
+> release. Full-chapter scale-up (all OBRA CIVIL) is Sprint 40.
 
 ---
 
@@ -236,21 +237,32 @@ raises `LoaderError` on any non-1:1 `item_key` match.
 
 ## 8. Statistics
 
-> **All corpus-scale statistics are `TBD (pending F3 full generation)`.** No F3
-> run exists, so there is no corpus to count. These will be filled by a post-F3
-> statistics refresh; nothing below is a real or borrowed number.
+> Measured on the Sprint 39 pilot release (commit `6b52053`, 2026-09-02).
+> QA source: [`sprints/SPRINT_39_corpus_report.md`](sprints/SPRINT_39_corpus_report.md).
 
 | Statistic                                       | Value                          |
 |-------------------------------------------------|--------------------------------|
-| Total synthetic items                           | `TBD (pending F3)`             |
-| Concept groups covered                          | `TBD (pending F3)`             |
-| Items per concept group (distribution)          | `TBD (pending F3)`             |
-| Items per `modification_type` (12 types)        | `TBD (pending F3)`             |
-| Items per `modification_count` (1, 2, 3, 4, ≥5) | `TBD (pending F3)`             |
-| Items per generation condition (§6)             | `TBD (pending F3)`             |
-| Reviewer acceptance rate per type               | `TBD (pending F3)`             |
-| `new_param` semantic-collision rate             | `TBD (pending F3)`             |
-| Generation throughput                           | `TBD (pending F3)`             |
+| Total synthetic items                           | **8,687** (8,734 planned; 45 no-ops + 2 exact duplicates dropped) |
+| Concept groups covered                          | 25 (all parametric OEB concepts); items/concept min 6 · median 29 · max 1,165 |
+| Items per `modification_type` (≥1 rewrite of the type) | paraphrase 2,474 · expansion 2,481 · template_paraphrase 2,500 · synonym_label 2,499 · compression 2,102 · reorder 1,000 · num_to_text 1,310 · unit_expansion 568 · unit_conversion 239 |
+| Items per `modification_count`                  | 1 → 7,187 · 4 → 3 · ≥5 → 1,497 |
+| Items per generation condition                  | six rich singles 974–1,000 each · num_to_text 650 · unit_expansion 373 (of 650) · unit_conversion 209 (of 350) · all_combined 1,500 |
+| Unique rewrites per condition (pseudo-replication guard) | paraphrase 327 · expansion 343 · template_paraphrase 220 · synonym_label 74 · compression 96 · reorder 72 · num_to_text 33 · unit_expansion 31 · unit_conversion 18 · all_combined 1,154 (thin types capped at ≤20 uses/rewrite) |
+| Reviewer acceptance rate per pilot type         | paraphrase 420/420 · expansion 444/454 · template_paraphrase 610/709 · synonym_label 157/158 · compression 107/107 · reorder 109/132 · num_to_text 33/33 · unit_expansion 33/33 · unit_conversion 18/18 (overall pilot pantry: 1,931 approved) |
+| `new_param` semantic-collision rate             | n/a — type excluded from the pilot (owner decision 2026-08-31) |
+| Generation throughput                           | ~60 min wall for the full corpus (8 workers, CPU only, no LLM); byte-identical across runs |
+
+The experimental **condition** is not a release column (frozen schema); it is
+derived unambiguously: `modification_count == 1` → `single_<modification_types[0]>`,
+`> 1` → `all_combined` (every all_combined item carries ≥3 types). Every
+all_combined item rewrites **both** the RESUMEN and TEXTO templates
+(owner requirement 2026-09-02; presence 1,500/1,500 each); `reorder` is
+structurally absent from all_combined — two full-template rewrites cannot
+share a field — and is measured in its `single_reorder` slice. Documented
+stress artifacts inherited from approved rewrites: number-word duplication
+("Dieciocho tubos tubos", ~376 items), unit duplication ("50 mm mm", ~280),
+and the semantic drift "con topo" → "con topografía" (~245); all traceable
+per item via the modifications sidecar.
 
 ---
 
@@ -268,8 +280,10 @@ content.
 
 ## 10. Known limitations / ethical considerations
 
-- **Corpus not yet generated.** This card documents the frozen format; the
-  corpus and its statistics await F3 (blocked on A3).
+- **Pilot scope.** The generated corpus covers the OEB chapter only (25
+  parametric concepts, 9 of 12 taxonomy types); full OBRA CIVIL scale-up and
+  the widening of the thin unit types (unit_expansion 373/650,
+  unit_conversion 209/350 — pantry-limited) are Sprint 40.
 - **Synthetic surface forms.** Modifications are model-proposed; despite the
   reviewer gate, residual non-equivalence or ungrammaticality in non-sampled
   variants cannot be fully excluded — the stratified-review error rate is itself
