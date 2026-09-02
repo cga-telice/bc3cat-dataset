@@ -29,6 +29,57 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### 2026-09-02 — Sprint 39: presupuestos + sampler determinista + driver — corpus piloto generado
+
+- **Módulos nuevos sobre la costura congelada** (TDD, sin LLM en ningún punto):
+  `pantry.py` (menús+verdicts → 1 931 reescrituras aprobadas de 9 tipos, índice de
+  aplicabilidad por concepto), `configs/synthetic/variant_budgets.yaml` (targets/caps/semilla
+  del spec, editable sin tocar código), `corpus_sampler.py` (plan determinista:
+  reparto proporcional por hojas, hojas únicas por condición, round-robin con tope 20×
+  en tipos finos, compatibilidad hoja↔reescritura por pares `(eje, valor)` exactos +
+  fallback textual con frontera de palabra) y `corpus_driver.py` (emisión de reglas por
+  slot, composición, materialización agrupada por `(concepto, ruleset)` en paralelo
+  —`ProcessPoolExecutor`, `--workers`—, filtros no-op/dup, verificación de residuos que
+  LANZA, `packaging.write_release` + informe QA Markdown).
+- **Decisiones de diseño de César registradas:**
+  - *2026-08-31 (spec):* exclusión de `omission` y `new_param`; sin apilamiento intermedio
+    (10 condiciones: 9 `single_<tipo>` + `all_combined`); n por significación estadística
+    (≈9 150 objetivo); tope 20× en tipos finos; déficit no se reasigna.
+  - *2026-09-02 (requisito que forzó la regeneración):* **todo ítem `all_combined` reescribe
+    AMBAS plantillas** — una reescritura `template_paraphrase` de RESUMEN y otra de TEXTO
+    (presencia 1 500/1 500 cada campo; `modification_count` +1 ahí; distancia media de
+    token 73,7 → 90,0).
+  - *2026-09-02 (tres veredictos en el checkpoint):* (1) la **ausencia estructural de
+    `reorder` en `all_combined`** se ACEPTA — las reescrituras de plantilla completa
+    colisionan por campo (misma clave canónica de composición) y con ambos campos ocupados
+    por `template_paraphrase` no queda plantilla para `reorder`, que se mide íntegro en
+    `single_reorder` (1 000/1 000); (2) los **déficits de tipos finos se aceptan tal cual**:
+    `unit_expansion` 373/650 y `unit_conversion` 209/350 (despensa limitada bajo el tope
+    20×; márgenes 95 % peor caso ≈ ±5,1/±6,8; la regeneración de tipos finos queda en el
+    backlog de Sprint 40); (3) los **artefactos de despensa se MANTIENEN y se documentan
+    como estrés**, sin veto: «tubos tubos» ~376 ítems, «mm mm» ~280, «con topo»→«con
+    topografía» ~245 (deriva semántica) — todos trazables en el sidecar.
+- **Corpus piloto final** (release commit `6b52053`; previos: `15f8bda` primera generación,
+  `9caefed`+`b7ea363` fixes pre-generación, `0f52c3a` sampler de ambos campos):
+  **8 687 ítems producidos / 8 734 planificados**; 45 no-ops descartados (0,5 %), 2
+  duplicados, **0** fallos de emisión/composición/residuos. Dos ejecuciones completas
+  **byte-idénticas** (SHA-256 items `7A99A754…`, modifications `DA8A140A…`); ~60 min de
+  pared con 8 workers. Informe QA: `sprints/SPRINT_39_corpus_report.md`.
+- **Determinismo verificado a tres niveles:** plan (doble llamada idéntica), driver
+  (workers=1 vs workers=2 byte-idénticos, test fijado) y corpus completo (doble
+  ejecución, hashes arriba).
+- **Nota de esquema:** la *condición* no es columna del release congelado pero es
+  derivable sin ambigüedad: `modification_count == 1` → `single_<modification_types[0]>`;
+  `> 1` → `all_combined` (en este release todo `all_combined` lleva ≥ 3 tipos). Regla
+  documentada en `HANDOFF.md`.
+- Suites: `pytest tests/synthetic` 1 092 passed / 2 skipped; suite completa verde
+  (ver commit de docs).
+- **CLAUDE_SYNTHETIC.md updated:** yes (filas de módulos nuevos + historia de sprint).
+- **Next step:** Sprint 40 — escala a todo OBRA CIVIL + regeneración de tipos finos;
+  el repo hermano `bc3cat-retrieval` ya puede consumir `data/synthetic/processed/`.
+
+---
+
 ### 2026-08-31 (cont.) — Sprint 38.7-B: auditoría de César, rúbrica v2 y re-juicio
 
 - **Auditoría dirigida (54 campos):** César adjudicó los 10 Dudosos (todos A), 5 reglas de

@@ -98,3 +98,21 @@ por familia de retriever.
 | Reescrituras de un mismo eje colisionando en `all_combined` | reglas de composición + orden canónico; conflictos se saltan y se loguean |
 | Pseudo-replicación en tipos finos | tope 20×, nº de reescrituras únicas publicado |
 | No-ops silenciosos inflando n | filtro no-op + su tasa en el informe |
+
+## Decisiones 2026-09-02 (adenda — checkpoint del corpus)
+
+1. **`all_combined` reescribe AMBAS plantillas.** Requisito nuevo de César (fue el que
+   forzó la regeneración del corpus): cada ítem `all_combined` lleva una reescritura
+   `template_paraphrase` del RESUMEN **y** otra del TEXTO (presencia 1 500/1 500 por
+   campo, visible en el informe QA; `modification_count` +1 ahí; distancia media de
+   token 73,7 → 90,0).
+2. **La ausencia estructural de `reorder` en `all_combined` se ACEPTA.** Las
+   reescrituras de plantilla completa colisionan por campo (misma clave canónica de
+   composición) y, con ambos campos ocupados por `template_paraphrase`, no queda
+   plantilla para `reorder`. Se mide íntegro en `single_reorder` (1 000/1 000).
+3. **Déficits de tipos finos aceptados tal cual:** `unit_expansion` 373/650 y
+   `unit_conversion` 209/350 — despensa limitada bajo el tope 20×; márgenes 95 % peor
+   caso ≈ ±5,1 / ±6,8. La regeneración de tipos finos queda en el backlog de Sprint 40.
+4. **Artefactos de despensa MANTENIDOS y documentados como estrés, sin veto:**
+   «tubos tubos» ~376 ítems, «mm mm» ~280, «con topo»→«con topografía» ~245 (deriva
+   semántica). Todos trazables por ítem en el sidecar de modificaciones.

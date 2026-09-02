@@ -53,7 +53,7 @@ SEED = 39
 
 **Files:** Create `src/synthetic/pantry.py`; Test `tests/synthetic/test_pantry.py`.
 
-- [ ] **Step 1: failing tests.** Create `tests/synthetic/test_pantry.py`:
+- [x] **Step 1: failing tests.** Create `tests/synthetic/test_pantry.py`:
 
 ```python
 """Sprint 39 — hermetic tests for :mod:`synthetic.pantry`."""
@@ -123,9 +123,9 @@ def test_load_pantry_fails_loud_on_misaligned_files(tmp_path):
         load_pantry(menus_dir=tmp_path / "menus")
 ```
 
-- [ ] **Step 2:** run → ModuleNotFoundError.
+- [x] **Step 2:** run → ModuleNotFoundError.
 
-- [ ] **Step 3: implement `src/synthetic/pantry.py`:**
+- [x] **Step 3: implement `src/synthetic/pantry.py`:**
 
 ```python
 """The approved-rewrite pantry for the Sprint 39 corpus sampler.
@@ -226,7 +226,7 @@ PYTHONPATH=src python -c "from synthetic.pantry import load_pantry; p=load_pantr
 ```
 Esperado: 9 tipos, total **1 931** (157/33/18/33/420/444/107/109/610). Si difiere, STOP e investigar (no ajustar el test al número que salga).
 
-- [ ] **Step 4:** full suite green; commit `Sprint 39: pantry — approved rewrites + applicability index` (+ trailer).
+- [x] **Step 4:** full suite green; commit `Sprint 39: pantry — approved rewrites + applicability index` (+ trailer).
 
 ---
 
@@ -234,7 +234,7 @@ Esperado: 9 tipos, total **1 931** (157/33/18/33/420/444/107/109/610). Si difier
 
 Pequeña: el YAML con las constantes del spec y su lector (dentro de `corpus_sampler.py`, Task 3, para no crear un módulo de 20 líneas). Aquí solo se crea el YAML:
 
-- [ ] **Step 1:** Create `configs/synthetic/variant_budgets.yaml`:
+- [x] **Step 1:** Create `configs/synthetic/variant_budgets.yaml`:
 
 ```yaml
 # Sprint 39 — presupuestos del corpus sintético piloto (SPRINT_39_DESIGN.md).
@@ -277,7 +277,7 @@ Contrato (el implementador escribe el código siguiendo esto; los tests de abajo
    - Determinismo total: misma entrada → mismo plan, byte a byte (test con doble llamada).
 4. `plan_report(plan) -> dict` — por condición: n, nº de reescrituras únicas, reuso máx, déficit vs target.
 
-- [ ] **Step 1: failing tests.** Create `tests/synthetic/test_corpus_sampler.py` con al menos estos casos (código completo, fixtures mínimas construidas a mano con 2 conceptos × 6 hojas y una pantry de juguete de 3 tipos):
+- [x] **Step 1: failing tests.** Create `tests/synthetic/test_corpus_sampler.py` con al menos estos casos (código completo, fixtures mínimas construidas a mano con 2 conceptos × 6 hojas y una pantry de juguete de 3 tipos):
   - `test_load_budgets_validates_conditions` (falta una condición → ValueError).
   - `test_plan_is_deterministic` (dos llamadas → planes idénticos).
   - `test_single_condition_uses_one_rewrite_of_its_type` (cada PlannedVariant de `single_X` lleva exactamente 1 rewrite y es del tipo X).
@@ -286,7 +286,7 @@ Contrato (el implementador escribe el código siguiendo esto; los tests de abajo
   - `test_reuse_cap_shortfall_reported` (pantry con 1 reescritura de un tipo fino y cap 2 → n conseguido = 2, déficit registrado en `plan_report`).
   - `test_proportional_allocation` (concepto con 4 hojas recibe el doble que uno con 2, ±1 por redondeo).
 
-- [ ] **Step 2:** run → fail. **Step 3:** implementar. **Step 4:** suite verde. **Step 5:** commit `Sprint 39: variant budgets YAML + deterministic corpus sampler` (+ trailer, incluye el YAML).
+- [x] **Step 2:** run → fail. **Step 3:** implementar. **Step 4:** suite verde. **Step 5:** commit `Sprint 39: variant budgets YAML + deterministic corpus sampler` (+ trailer, incluye el YAML).
 
 ---
 
@@ -304,7 +304,7 @@ Contrato:
    - `packaging.write_release(items, ...)` a `data/synthetic/processed/`; informe Markdown a `report_path` con la tabla del spec (n vs objetivo, reescrituras únicas, reuso, no-ops, dups, descartes por composición, distancia media de token al original por condición).
 2. CLI `python -m synthetic.corpus_driver run --stage-json ... --concepts OEB --budgets ... [--out-dir ...] [--report ...]`.
 
-- [ ] **Step 1: failing tests** (código completo en el archivo de test; hermético con un stage de juguete de 1–2 conceptos pequeños estilo `tiny_chapter` y una pantry sintética):
+- [x] **Step 1: failing tests** (código completo en el archivo de test; hermético con un stage de juguete de 1–2 conceptos pequeños estilo `tiny_chapter` y una pantry sintética):
   - `test_run_corpus_produces_valid_release(tmp_path)` — 2 variantes planificadas → parquet+jsonl escritos, `loaders.load_items` los lee, `loaders.join` no falla, columnas == `packaging.ITEM_COLUMNS`, tripleta única.
   - `test_synthetic_item_pairs_with_original` — `original_key` correcto y texto ≠ original (el cambio se aplicó de verdad).
   - `test_noop_variant_dropped_and_counted`.
@@ -312,7 +312,7 @@ Contrato:
   - `test_placeholder_residue_raises`.
   - `test_deterministic_output` (dos ejecuciones → parquet byte-idéntico; comparar hashes).
 
-- [ ] **Step 2-4:** TDD como siempre; suite completa verde. **Step 5:** commit `Sprint 39: corpus driver — materialize plan, filters, frozen release + report` (+ trailer).
+- [x] **Step 2-4:** TDD como siempre; suite completa verde. **Step 5:** commit `Sprint 39: corpus driver — materialize plan, filters, frozen release + report` (+ trailer).
 
 ---
 
@@ -320,20 +320,20 @@ Contrato:
 
 Sin LLM — solo CPU; estimar minutos, no horas.
 
-- [ ] **Step 1:**
+- [x] **Step 1:**
 ```bash
 PYTHONPATH=src python -m synthetic.corpus_driver run --stage-json "data/intermediate/OBRA CIVIL/OBRA CIVIL.json" --concepts OEB --budgets configs/synthetic/variant_budgets.yaml
 ```
-- [ ] **Step 2: verificaciones** — el informe cumple: total ≈ objetivo (déficits solo en tipos finos y explicados), 0 residuos, tasas de no-op/dup razonables (<5 %; si un tipo pierde >20 % en no-ops, STOP y reportar); `PYTHONPATH=src python -c "from synthetic.loaders import load_items, load_modifications, join; join(load_items(), load_modifications())"` sin errores; segunda ejecución reproduce el parquet (hash).
-- [ ] **Step 3: muestra ocular** — 10 ítems al azar impresos (original vs sintético, condición) para el checkpoint.
-- [ ] **Step 4: commit** de release + informe (`Sprint 39: pilot synthetic corpus — <n> items, 10 conditions` + trailer). **STOP: informe a César** (tabla del corpus, déficits, la muestra de 10). Task 6 solo con su OK.
+- [x] **Step 2: verificaciones** — el informe cumple: total ≈ objetivo (déficits solo en tipos finos y explicados), 0 residuos, tasas de no-op/dup razonables (<5 %; si un tipo pierde >20 % en no-ops, STOP y reportar); `PYTHONPATH=src python -c "from synthetic.loaders import load_items, load_modifications, join; join(load_items(), load_modifications())"` sin errores; segunda ejecución reproduce el parquet (hash).
+- [x] **Step 3: muestra ocular** — 10 ítems al azar impresos (original vs sintético, condición) para el checkpoint.
+- [x] **Step 4: commit** de release + informe (`Sprint 39: pilot synthetic corpus — <n> items, 10 conditions` + trailer). **STOP: informe a César** (tabla del corpus, déficits, la muestra de 10). Task 6 solo con su OK.
 
 ---
 
 ### Task 6: Docs y cierre
 
-- [ ] `RESEARCH_LOG.md`: entrada Sprint 39 (decisiones de diseño de César — exclusiones, sin stacking, n por significación —, números finales del corpus, determinismo verificado). `RESEARCH_PROTOCOL.md` §6: nota de enmienda (condiciones stacked/new_param_only retiradas del piloto por decisión 2026-08-31; el esquema las sigue soportando). `STATUS_*`: siguiente = Sprint 40 + repo hermano ya puede consumir. `CLAUDE_SYNTHETIC.md`: filas de módulos nuevos. `HANDOFF.md`: cambiar el aviso "not yet generated" por el estado real (piloto generado, stats del corpus).
-- [ ] `pytest tests -q` verde; commit docs (+ trailer).
+- [x] `RESEARCH_LOG.md`: entrada Sprint 39 (decisiones de diseño de César — exclusiones, sin stacking, n por significación —, números finales del corpus, determinismo verificado). `RESEARCH_PROTOCOL.md` §6: nota de enmienda (condiciones stacked/new_param_only retiradas del piloto por decisión 2026-08-31; el esquema las sigue soportando). `STATUS_*`: siguiente = Sprint 40 + repo hermano ya puede consumir. `CLAUDE_SYNTHETIC.md`: filas de módulos nuevos. `HANDOFF.md`: cambiar el aviso "not yet generated" por el estado real (piloto generado, stats del corpus).
+- [x] `pytest tests -q` verde; commit docs (+ trailer).
 
 ---
 

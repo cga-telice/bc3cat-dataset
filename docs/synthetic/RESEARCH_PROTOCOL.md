@@ -282,6 +282,18 @@ Each condition is a recipe for the synthetic orchestrator, used both for develop
 - `stacked_*` curves quantify whether degradation is sub-/linear/super-linear in mutation count.
 - A retriever family failing `single_L1_synonym_label` but surviving `single_L2_paraphrase` (or vice-versa) localises its weakness to the lexical-vs-semantic axis.
 
+> **Amendment (Sprint 39, decisions 2026-08-31 / 2026-09-02).** The pilot corpus retires
+> the `stacked_2…5+` conditions and the `new_param_only` / `omission`-bearing conditions
+> (César, 2026-08-31: only information-preserving rewrites; no intermediate stacking). The
+> pilot runs **10 conditions**: nine `single_<type>` plus one `all_combined` (one rewrite
+> of every applicable type at once). `all_combined` was redefined on 2026-09-02 to
+> **mandate template rewrites for both fields** — one RESUMEN-template and one
+> TEXTO-template `template_paraphrase` per item — which structurally excludes `reorder`
+> from `all_combined` (full-template rewrites collide per field; `reorder` is measured in
+> `single_reorder`). The schema still supports the retired conditions: the sampler can
+> re-admit them by configuration without any schema change (`modification_count` already
+> carries stack depth).
+
 ---
 
 ## 7. New File Map
