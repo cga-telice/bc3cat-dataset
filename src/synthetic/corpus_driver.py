@@ -230,14 +230,24 @@ def _leaf_labels(
 
 
 def _condition_selects(condition: object, labels: dict[str, str]) -> bool:
-    """Whether an L2 slot condition (e.g. `%C=="b"`, `%B=="b" or %B=="g"`)
-    selects the leaf with these axis labels. Sandboxed eval (no builtins) of
-    the condition with every `%X` replaced by the leaf's quoted label;
-    anything unevaluable is conservatively False (caller falls back)."""
+    """Whether an L2 slot condition — Python-style (`%C=="b"`,
+    `%B=="b" or %B=="g"`) or raw BC3-style (`%A=a`) — selects the leaf with
+    these axis labels. Sandboxed eval (no builtins) of the condition with
+    every `%X` replaced by the leaf's quoted label, BC3 `=` promoted to
+    `==`, and bare label tokens quoted; anything unevaluable is
+    conservatively False (caller falls back to the first slot)."""
     expr = re.sub(
         r"%([A-Za-z0-9]+)",
         lambda m: '"' + labels.get(m.group(1), "\x00") + '"',
         str(condition),
+    )
+    expr = re.sub(r"(?<![=<>!])=(?!=)", "==", expr)
+    expr = re.sub(
+        r'"[^"]*"|\b[A-Za-z][A-Za-z0-9]*\b',
+        lambda m: m.group(0)
+        if m.group(0).startswith('"') or m.group(0) in ("and", "or", "not")
+        else '"' + m.group(0) + '"',
+        expr,
     )
     try:
         return bool(eval(expr, {"__builtins__": {}}, {}))  # noqa: S307

@@ -324,6 +324,22 @@ def test_all_slot_rules_cover_planned_leaf(tmp_path):
     assert len(mods[item["item_key"]]) == 1
 
 
+def test_condition_selects_bc3_and_python_styles():
+    # The real OEB same-var duplicate-fragment groups (OEB190/OEB200, '20 cm')
+    # carry raw BC3-style conditions (`%A=a`, unquoted `=`); Python-style
+    # (`%C=="b"`, `or`-chains) must keep working, and garbage stays False.
+    from synthetic.corpus_driver import _condition_selects
+
+    labels = {"A": "b", "C": "b"}
+    assert _condition_selects("%A=b", labels)
+    assert not _condition_selects("%A=a", labels)
+    assert _condition_selects('%C=="b"', labels)
+    assert not _condition_selects('%C=="a"', labels)
+    assert _condition_selects('%C=="a" or %A=b', labels)
+    assert not _condition_selects("%Z=b", labels)
+    assert not _condition_selects("%A=,", labels)
+
+
 def test_l1_original_aligned_to_raw_whitespace(tmp_path):
     # Real BC3 value texts carry padding (' 12 '); the scanner/menus store the
     # whitespace-normalised form. The driver must align the L1 payload's
