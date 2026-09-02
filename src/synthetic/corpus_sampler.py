@@ -32,11 +32,14 @@ Design (SPRINT_39_DESIGN.md, binding):
   ``dedup_key``; composition validation is the driver's job.
 * Leaf↔rewrite compatibility: an L1 value rewrite or L2 fragment rewrite
   only surfaces in leaves whose parameters select that value/fragment, so
-  the sampler pairs a rewrite with a leaf only when its normalized
-  ``payload["original"]`` appears in the leaf's original combined text
-  (resumen + texto); L3 template types are always compatible. Incompatible
-  picks would render as no-ops — and, in ``all_combined``, mislabel the
-  item's ``modification_types``.
+  the sampler pairs a rewrite with a leaf only when it is compatible —
+  value-precise where the leaf's selected ``(axis, value)`` pairs are
+  known (L1 = exact pair membership; L2 = selected-value equality, with
+  matches swallowed by a longer sibling value rejected), else a
+  boundary-aware match of the normalized ``payload["original"]`` in the
+  leaf's original combined text (resumen + texto); L3 template types are
+  always compatible. Incompatible picks would render as no-ops — and, in
+  ``all_combined``, mislabel the item's ``modification_types``.
 
 Pure CPU, no I/O beyond :func:`load_budgets`. Same inputs → identical plan.
 """
@@ -45,6 +48,7 @@ from __future__ import annotations
 
 import math
 import random
+import re
 import zlib
 from collections import Counter
 from dataclasses import dataclass
@@ -169,26 +173,36 @@ class LeafInventory:
     """Leaves of the original corpus grouped by concept key.
 
     Each leaf carries its whitespace-normalized ORIGINAL combined text
-    (``resumen + " " + texto``) — the sampler only pairs a leaf with
-    rewrites whose surface form actually appears in it. Built directly
-    from ``{concept_key: [(item_key, combined_text), ...]}`` (tests; bare
-    ``item_key`` strings are accepted with an empty text) or from the
-    original OEB parquets via :func:`leaf_inventory_from_frames`.
+    (``resumen + " " + texto``) and, when available, its selected
+    ``(axis_label, value)`` pairs — the sampler only pairs a leaf with
+    rewrites whose surface form actually appears in it (value-precise
+    where the pairs are known). Built directly from
+    ``{concept_key: [(item_key, combined_text[, axis_values]), ...]}``
+    (tests; bare ``item_key`` strings are accepted with an empty text) or
+    from the original OEB parquets via :func:`leaf_inventory_from_frames`.
     Concepts and leaves are kept sorted so iteration order is stable.
     """
 
     def __init__(self, leaves_by_concept: Mapping[str, Iterable]):
         self._by_concept: dict[str, tuple[str, ...]] = {}
         self._texts: dict[str, str] = {}
+        self._axis_values: dict[str, tuple[tuple[str, str], ...]] = {}
         for concept, entries in sorted(leaves_by_concept.items()):
             keys: list[str] = []
             for entry in entries:
+                values: tuple = ()
                 if isinstance(entry, str):
                     key, text = entry, ""
-                else:
+                elif len(entry) == 2:
                     key, text = entry
+                else:
+                    key, text, values = entry
                 keys.append(key)
                 self._texts[key] = _norm_ws(text)
+                self._axis_values[key] = tuple(sorted(
+                    (_norm_ws(str(axis)), _norm_ws(str(value)))
+                    for axis, value in values
+                ))
             self._by_concept[concept] = tuple(sorted(keys))
 
     def concepts(self) -> tuple[str, ...]:
@@ -200,6 +214,11 @@ class LeafInventory:
     def text(self, item_key: str) -> str:
         """The leaf's normalized original combined text ("" if unknown)."""
         return self._texts.get(item_key, "")
+
+    def axis_values(self, item_key: str) -> tuple[tuple[str, str], ...]:
+        """The leaf's normalized selected `(axis_label, value)` pairs
+        (empty when unknown — compatibility then falls back to the text)."""
+        return self._axis_values.get(item_key, ())
 
 
 def _check_parent_rule(item_key, parent_key) -> None:
@@ -225,14 +244,38 @@ def _check_parent_rule(item_key, parent_key) -> None:
         )
 
 
+def _axis_value_pairs(parameters: object) -> tuple[tuple[str, str], ...]:
+    """`(axis_label, value)` pairs from one parquet `parameters` cell
+    (`{axis_id: {"label": ..., "values": [{"label", "value"}]} | None}`).
+    Unrecognised shapes yield `()` — compatibility then falls back to text."""
+    if not isinstance(parameters, dict):
+        return ()
+    pairs: list[tuple[str, str]] = []
+    for block in parameters.values():
+        if not isinstance(block, dict):
+            continue
+        axis_label = block.get("label", "")
+        for entry in block.get("values") if block.get("values") is not None else ():
+            if isinstance(entry, dict) and entry.get("value") is not None:
+                pairs.append((str(axis_label), str(entry["value"])))
+    return tuple(pairs)
+
+
 def leaf_inventory_from_frames(long_df, short_df) -> LeafInventory:
     """The real-data loader: join the long (texto) and short (resumen)
     parquets on ``item_key`` and build the inventory with each leaf's
-    combined original text. Fails loud on a leaf missing from the short
-    frame or on any concept-rule violation (see :func:`_check_parent_rule`).
+    combined original text plus its selected `(axis_label, value)` pairs
+    (from the long frame's ``parameters`` column, when present). Fails loud
+    on a leaf missing from the short frame or on any concept-rule violation
+    (see :func:`_check_parent_rule`).
     """
     resumen_by_key = dict(zip(short_df["item_key"], short_df["text"]))
-    grouped: dict[str, list[tuple[str, str]]] = {}
+    params_by_key = (
+        dict(zip(long_df["item_key"], long_df["parameters"]))
+        if "parameters" in long_df.columns
+        else {}
+    )
+    grouped: dict[str, list[tuple[str, str, tuple]]] = {}
     for item_key, parent_key, texto in zip(
         long_df["item_key"], long_df["parent_key"], long_df["text"]
     ):
@@ -244,7 +287,11 @@ def leaf_inventory_from_frames(long_df, short_df) -> LeafInventory:
                 f"short (resumen) frame"
             )
         grouped.setdefault(parent_key, []).append(
-            (item_key, f"{resumen} {texto}")
+            (
+                item_key,
+                f"{resumen} {texto}",
+                _axis_value_pairs(params_by_key.get(item_key)),
+            )
         )
     return LeafInventory(grouped)
 
@@ -368,23 +415,85 @@ _L3_ALWAYS_COMPATIBLE = frozenset({
 })
 
 
-def _compatible(rewrite: ApprovedRewrite, leaf_text: str) -> bool:
-    """Leaf↔rewrite compatibility by original-text match.
+#: Characters that extend a word: a match glued to one of these on either
+#: side is a substring hit, not the value/fragment itself (numeral "2" must
+#: not match inside "220 kV"). Accented Spanish letters are word characters.
+_WORD_CHARS = "0-9A-Za-zÁÉÍÓÚÑáéíóúñÜü"
+
+#: L1 per-value types: their ``dedup_key`` is ``(axis_label, value)``, so
+#: with known leaf axis-values compatibility is an exact pair membership.
+_L1_VALUE_TYPES = frozenset({
+    ModificationType.SYNONYM_LABEL,
+    ModificationType.NUM_TO_TEXT,
+    ModificationType.UNIT_CONVERSION,
+    ModificationType.UNIT_EXPANSION,
+    ModificationType.ABBREV_EXPANSION,
+    ModificationType.CODE_EXPANSION,
+})
+
+
+def _boundary_search(needle_norm: str, haystack: str) -> bool:
+    """Boundary-aware search: no word character glued to either side."""
+    pattern = (
+        rf"(?<![{_WORD_CHARS}]){re.escape(needle_norm)}(?![{_WORD_CHARS}])"
+    )
+    return re.search(pattern, haystack) is not None
+
+
+def _compatible(
+    rewrite: ApprovedRewrite,
+    leaf_text: str,
+    leaf_axis_values: tuple[tuple[str, str], ...] = (),
+) -> bool:
+    """Leaf↔rewrite compatibility.
 
     An L1 value rewrite or L2 fragment rewrite only surfaces in leaves
-    whose parameters select that value/fragment, so it is compatible with
-    a leaf iff its whitespace-normalized ``payload["original"]`` appears
-    in the leaf's normalized combined original text. L3 types are always
-    compatible (the template covers every leaf). A payload without an
-    ``original`` surface cannot be checked and passes (fail-open — the
-    driver's no-op filter is the backstop).
+    whose parameters select that value/fragment. With the leaf's selected
+    ``(axis_label, value)`` pairs known (the real-data loader supplies
+    them), the check is value-precise:
+
+    * L1 per-value types: compatible iff the leaf selects exactly
+      ``(dedup axis label, original)`` — "5" on Nº TUBOS never rides a
+      boundary hit inside BANDA's "i >= 5 horas".
+    * L2 fragments: an original that exactly equals a selected value is
+      compatible (the axis-twin surface); one that appears only INSIDE a
+      longer selected value ("Diurno" in "Diurno Excepcional") is not.
+    * otherwise fall back to the boundary-aware text match: the original
+      appears in the leaf's normalized combined text with no word
+      character glued to either side ("2" matches in "de 2 m", not in
+      "220 kV").
+
+    L3 types are always compatible (the template covers every leaf). A
+    payload without an ``original`` surface cannot be checked and passes
+    (fail-open — the driver's no-op filter is the backstop).
     """
     if rewrite.mtype in _L3_ALWAYS_COMPATIBLE:
         return True
     original = rewrite.payload.get("original")
     if not isinstance(original, str) or not original.strip():
         return True
-    return _norm_ws(original) in leaf_text
+    original_norm = _norm_ws(original)
+
+    if leaf_axis_values:
+        if rewrite.mtype in _L1_VALUE_TYPES and len(rewrite.dedup_key) == 2:
+            # exact pair AND rendered surface: a selected value whose text
+            # never surfaces (its twin fragment diverged) cannot change the
+            # rendered item, so pair membership alone is not enough.
+            axis_norm = _norm_ws(str(rewrite.dedup_key[0]))
+            return (
+                (axis_norm, original_norm) in leaf_axis_values
+                and _boundary_search(original_norm, leaf_text)
+            )
+        selected = {value for _axis, value in leaf_axis_values}
+        if original_norm in selected:
+            return True
+        if any(
+            value != original_norm and _boundary_search(original_norm, value)
+            for value in selected
+        ):
+            return False  # only surfaces inside a longer selected value
+
+    return _boundary_search(original_norm, leaf_text)
 
 
 def _draw_rewrites(
@@ -393,6 +502,7 @@ def _draw_rewrites(
     reuse_cap: Mapping[str, int],
     usage: dict[str, int],
     leaf_text: str,
+    leaf_axis_values: tuple[tuple[str, str], ...] = (),
 ) -> tuple[tuple[ApprovedRewrite, ...], int, bool]:
     """The rewrites for one variant on one leaf.
 
@@ -414,7 +524,9 @@ def _draw_rewrites(
         avail = _uncapped(mtype, applicable[mtype])
         if not avail:
             return (), 0, False
-        compat = [r for r in avail if _compatible(r, leaf_text)]
+        compat = [
+            r for r in avail if _compatible(r, leaf_text, leaf_axis_values)
+        ]
         if not compat:
             return (), 1, True
         pick = _pick_rewrite(compat, mtype, reuse_cap, usage)
@@ -432,7 +544,9 @@ def _draw_rewrites(
         if not avail:
             continue  # capped out — skip type
         capacity_left = True
-        compat = [r for r in avail if _compatible(r, leaf_text)]
+        compat = [
+            r for r in avail if _compatible(r, leaf_text, leaf_axis_values)
+        ]
         if not compat:
             incompatible += 1  # nothing of this type surfaces in this leaf
             continue
@@ -531,7 +645,7 @@ def build_plan(
                 leaf = orders[concept_key][pos[concept_key]]
                 rewrites, n_incompatible, capacity_left = _draw_rewrites(
                     condition, applicable[concept_key], budgets.reuse_cap,
-                    usage, inventory.text(leaf),
+                    usage, inventory.text(leaf), inventory.axis_values(leaf),
                 )
                 if rewrites:
                     # (all_combined: types skipped for THIS leaf still count)

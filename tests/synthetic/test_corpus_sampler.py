@@ -11,6 +11,7 @@ from synthetic.corpus_sampler import (
     CONDITIONS,
     Budgets,
     LeafInventory,
+    _compatible,
     build_plan,
     load_budgets,
     plan_report,
@@ -317,6 +318,50 @@ def test_all_combined_skips_incompatible_types_for_leaf():
     report = plan_report(plan, budgets, stats=stats)
     assert report["all_combined"]["type_presence"] == {"paraphrase": 1}
     assert report["all_combined"]["incompatible_skips"] == 1
+
+
+def test_compatibility_respects_word_boundaries():
+    # numeral "2" must not match inside "220 kV", but "2 m" (whole token)
+    # must still match; accented letters count as word characters.
+    two = _rewrite(ModificationType.NUM_TO_TEXT, "2")  # payload original "2"
+    assert not _compatible(two, "línea de 220 kV")
+    assert _compatible(two, "zanja de 2 m de ancho")
+    # multi-word originals still match inside a longer text
+    span = _rewrite(ModificationType.UNIT_EXPANSION, "2 m")
+    assert _compatible(span, "zanja de 2 m de ancho")
+    # a fragment glued to an accented word is not a boundary match
+    frag = _rewrite(ModificationType.PARAPHRASE, "dia")
+    assert not _compatible(frag, "medianía")
+    assert _compatible(frag, "por dia trabajado")
+    # L3 template types remain always-compatible
+    tp = _rewrite(ModificationType.TEMPLATE_PARAPHRASE, "whatever")
+    assert _compatible(tp, "texto sin relación")
+
+
+def test_compatibility_value_precise_with_axis_values():
+    # With the leaf's selected (axis, value) pairs known, matching is
+    # value-precise, not just textual.
+    # L2 fragment "Diurno": a leaf selecting the longer sibling value
+    # "Diurno Excepcional" contains the word at a boundary but does NOT
+    # select the fragment — incompatible.
+    diurno = _rewrite(ModificationType.PARAPHRASE, "Diurno")
+    text = "Canalización. (Diurno Excepcional/3 horas)"
+    assert not _compatible(diurno, text, (("TRABAJO", "Diurno Excepcional"),))
+    assert _compatible(diurno, "Canalización. (Diurno/3 horas)",
+                       (("TRABAJO", "Diurno"),))
+    # L1: requires the exact (axis, value) pair — numeral "5" on Nº TUBOS
+    # never rides the "5" inside BANDA's "i >= 5 horas".
+    five = _rewrite(ModificationType.NUM_TO_TEXT, "5",
+                    dedup=("Nº TUBOS", "5"))
+    assert not _compatible(five, "banda i >= 5 horas",
+                           (("BANDA", "i >= 5 horas"),))
+    assert _compatible(five, "hormigonada 5 T",
+                       (("Nº TUBOS", "5"), ("BANDA", "i >= 5 horas")))
+    # ...and the value must actually surface in the rendered text (a
+    # selected value whose twin fragment diverged renders nothing to change)
+    assert not _compatible(five, "hormigonada doce T", (("Nº TUBOS", "5"),))
+    # without axis values the boundary text match remains the fallback
+    assert _compatible(diurno, "trabajo Diurno normal")
 
 
 def test_proportional_allocation():

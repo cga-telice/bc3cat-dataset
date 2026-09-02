@@ -101,7 +101,7 @@ def _syn_pvc():
     )
 
 
-def _run(tmp_path, plan, stage=None):
+def _run(tmp_path, plan, stage=None, workers=1):
     out_dir = tmp_path / "release"
     report_path = tmp_path / "report.md"
     stats = run_corpus(
@@ -109,6 +109,7 @@ def _run(tmp_path, plan, stage=None):
         tuple(plan),
         out_dir=out_dir,
         report_path=report_path,
+        workers=workers,
     )
     return stats, out_dir, report_path
 
@@ -266,6 +267,63 @@ def test_target_not_found_skipped_and_counted(tmp_path):
     assert len(items) == 1
 
 
+def test_all_slot_rules_cover_planned_leaf(tmp_path):
+    # The same L2 fragment "apto" lives under TWO conditions (%C=="a" and
+    # %C=="b") of var L. The planned leaf selects C=b: first-slot-only
+    # emission would mutate only the %C=a slot and no-op; all-slot emission
+    # must land on the leaf. Conceptually it is still ONE modification.
+    stage = {
+        "CTEST050$": {
+            "ud": "ud",
+            "concept": "prueba cinco",
+            "parameters": {
+                "A": {
+                    "label": "TRABAJO",
+                    "values": [
+                        {"label": "a", "value": "Diurno"},
+                        {"label": "b", "value": "Nocturno"},
+                    ],
+                },
+                "C": {
+                    "label": "MODO",
+                    "values": [
+                        {"label": "a", "value": "Alfa"},
+                        {"label": "b", "value": "Beta"},
+                    ],
+                },
+            },
+            "text_variables": {
+                "L": '"apto" * (%C=="a") + "apto" * (%C=="b")',
+            },
+            "resumen": "Prueba cinco $A $L $C",
+            "texto": "Prueba cinco con $A y $L en $C",
+        },
+    }
+    rw = _rewrite(
+        ModificationType.PARAPHRASE,
+        ("apto",),
+        {"original": "apto", "new": "adecuado"},
+        concepts=("CTEST050$",),
+    )
+    plan = (
+        PlannedVariant("single_paraphrase", "CTEST050$", "CTEST050ab", (rw,)),
+    )
+    stats, out_dir, _ = _run(tmp_path, plan, stage=stage)
+    row = stats.per_condition["single_paraphrase"]
+    assert row["noop_dropped"] == 0
+    assert row["produced"] == 1
+    items = load_items(out_dir / packaging.ITEMS_FILENAME)
+    item = items.iloc[0]
+    # the rewrite landed on the planned leaf (C=b slot was covered)
+    assert item["texto"] == "Prueba cinco con Diurno y adecuado en Beta"
+    assert item["texto"] != "Prueba cinco con Diurno y apto en Beta"
+    # one distinct rewrite -> ONE conceptual modification, however many slots
+    assert item["modification_count"] == 1
+    assert list(item["modification_types"]) == ["paraphrase"]
+    mods = load_modifications(out_dir / packaging.MODIFICATIONS_FILENAME)
+    assert len(mods[item["item_key"]]) == 1
+
+
 def test_l1_original_aligned_to_raw_whitespace(tmp_path):
     # Real BC3 value texts carry padding (' 12 '); the scanner/menus store the
     # whitespace-normalised form. The driver must align the L1 payload's
@@ -307,6 +365,8 @@ def test_l1_original_aligned_to_raw_whitespace(tmp_path):
 
 
 def test_deterministic_output(tmp_path):
+    # serial (workers=1) vs parallel (workers=2) must be byte-identical:
+    # the merge/dedup order is sorted, never completion-order dependent.
     plan = (
         PlannedVariant("single_synonym_label", C1, "CTEST010aa", (_syn_diurno(),)),
         PlannedVariant("single_synonym_label", C3, "CTEST030a", (_syn_pvc(),)),
@@ -316,13 +376,14 @@ def test_deterministic_output(tmp_path):
         return hashlib.sha256(path.read_bytes()).hexdigest()
 
     hashes = []
-    for name in ("first", "second"):
+    for name, workers in (("first", 1), ("second", 2)):
         out_dir = tmp_path / name
         run_corpus(
             _tiny_stage(),
             plan,
             out_dir=out_dir,
             report_path=tmp_path / f"{name}.md",
+            workers=workers,
         )
         hashes.append(
             (
