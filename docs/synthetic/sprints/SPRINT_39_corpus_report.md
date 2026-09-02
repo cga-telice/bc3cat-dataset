@@ -15,7 +15,7 @@ original leaf, summed over (resumen, texto).
 | single_num_to_text | 650 | 650 | 0 | 33 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 6.00 |
 | single_unit_expansion | 373 | 650 | 277 | 31 | 20 | 0 | 2 | 0 | 0 | 0 | 0 | 7.80 |
 | single_unit_conversion | 209 | 350 | 141 | 18 | 20 | 0 | 0 | 0 | 0 | 0 | 0 | 8.68 |
-| all_combined | 1500 | 1500 | 0 | 1190 | 180 | 0 | 0 | 0 | 0 | 0 | 0 | 73.66 |
+| all_combined | 1500 | 1500 | 0 | 1154 | 199 | 0 | 0 | 0 | 0 | 0 | 0 | 90.03 |
 
 **all_combined type presence** (variants carrying ≥1 rewrite of the type):
 
@@ -23,9 +23,9 @@ original leaf, summed over (resumen, texto).
 - expansion: 1496
 - num_to_text: 660
 - paraphrase: 1500
-- reorder: 1499
 - synonym_label: 1500
-- template_paraphrase: 1500
+- template_paraphrase (RESUMEN): 1500
+- template_paraphrase (TEXTO): 1500
 - unit_conversion: 30
 - unit_expansion: 195
 
