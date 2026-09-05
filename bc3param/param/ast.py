@@ -124,6 +124,7 @@ class Family:
     code: str
     params: list[ParamDef] = field(default_factory=list)
     statements: list[Statement] = field(default_factory=list)
+    warnings: list[str] = field(default_factory=list)  # tolerated oddities in the source
 
     def option_counts(self) -> tuple[int, ...]:
         return tuple(len(p.options) for p in self.params)

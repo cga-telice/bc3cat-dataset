@@ -24,14 +24,19 @@ def cmd_validate(args: argparse.Namespace) -> int:
     catalog = _load(args.file)
     codes = [args.family] if args.family else catalog.families
     errors: list[ParseError] = []
+    warnings = 0
     for code in codes:
         try:
-            catalog.family(code)
+            family = catalog.family(code)
         except ParseError as exc:
             errors.append(exc)
+            continue
+        for w in family.warnings:
+            warnings += 1
+            print(f"warning: {code} {w}")
     for exc in errors:
         print(f"{exc.family} line {exc.line_no}: {exc.message}")
-    print(f"{len(codes)} families, {len(errors)} errors")
+    print(f"{len(codes)} families, {len(errors)} errors, {warnings} warnings")
     return 1 if errors else 0
 
 

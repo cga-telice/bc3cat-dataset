@@ -196,7 +196,7 @@ def _find_top_level(text: str, ch: str) -> int:
     return -1
 
 
-def _parse_statement(text: str, line_no: int, is_label: bool, params: list[ParamDef]) -> Statement:
+def _parse_statement(text: str, line_no: int, is_label: bool, params: list[ParamDef]) -> Statement | None:
     if is_label:
         m = _LABEL_RE.match(text)
         if not m:
@@ -241,7 +241,13 @@ def _parse_statement(text: str, line_no: int, is_label: bool, params: list[Param
         expr = parse_expression(parts[0])
         factor = parse_expression(parts[1]) if len(parts) > 1 and parts[1].strip() else None
         return Decomp(code_template, expr, factor, line_no)
-    raise ParseError(f"unrecognised statement {text[:60]!r}")
+    try:
+        parse_expression(text)
+    except ParseError:
+        raise ParseError(f"unrecognised statement {text[:60]!r}") from None
+    # A bare expression with no assignment or code is a leftover in the source
+    # (the ADIF catalogue has a couple); the viewer ignores them, so do we.
+    return None
 
 
 def parse_family(code: str, body: str) -> Family:
@@ -251,5 +257,8 @@ def parse_family(code: str, body: str) -> Family:
             node = _parse_statement(st.text, st.line_no, st.is_label, family.params)
         except ParseError as exc:
             raise ParseError(exc.message, code, st.line_no) from None
+        if node is None:
+            family.warnings.append(f"line {st.line_no}: ignored stray expression {st.text[:40]!r}")
+            continue
         family.statements.append(node)
     return family

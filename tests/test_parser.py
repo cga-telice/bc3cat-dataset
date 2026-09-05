@@ -112,6 +112,12 @@ def test_parse_family_label_aliases_and_spaces():
     assert fam.statements[0].template == " corto "
 
 
+def test_stray_expression_lines_are_ignored_with_warning():
+    fam = parse_family("X$", "\\P1\\a\\\nMN1: 1\n0\n(%D)*%P(%C)\nMN2: 2\n")
+    assert [type(s).__name__ for s in fam.statements] == ["ParamDef", "Decomp", "Decomp"]
+    assert len(fam.warnings) == 2 and "line 3" in fam.warnings[0] and "line 4" in fam.warnings[1]
+
+
 def test_parse_family_errors_carry_code_and_line():
     with pytest.raises(ParseError) as exc:
         parse_family("X$", "\\P1\\a\\\n%M(2,2)=1,2,3\n")
