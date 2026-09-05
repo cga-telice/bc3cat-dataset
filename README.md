@@ -238,6 +238,41 @@ The BC3 format (Base de Costes de la Construcción) is the Spanish standard for 
 
 For full specification, see: [FIEBDC-3/2016](https://www.fiebdc.es/fiebdc-32016-2/)
 
+## bc3param: parametric engine (new)
+
+`bc3param/` is a standalone, dependency-free Python package that parses the BC3 file and
+reconstructs every derived unit of work defined by a parametric family (`~P` record), with
+texts, decomposition and price, as shown by the ADIF viewer (https://bpa.adif.es/bp1/).
+It replaces the notebook pipeline stages 1-5 for that purpose (the notebooks are kept as-is).
+
+```bash
+pip install -e .
+bc3param validate data/raw/BPA_2024_v2.txt                 # parse all 2,996 families
+bc3param inspect  data/raw/BPA_2024_v2.txt OEB020$          # parameters and options
+bc3param resolve  data/raw/BPA_2024_v2.txt OEB020bbbaa      # one item as JSON
+bc3param generate data/raw/BPA_2024_v2.txt --chapter OEB# --out OEB.jsonl
+bc3param generate data/raw/BPA_2024_v2.txt --range OEB010..OEB300 --format json --out OEB.json
+```
+
+Python API:
+
+```python
+from bc3param import Catalog, resolve_code, iter_items, select_families
+
+cat = Catalog.load("data/raw/BPA_2024_v2.txt")
+item = resolve_code(cat, "OEB020bbbaa")
+print(item.price, item.resumen)
+for it in iter_items(cat, select_families(cat, chapter="OEB#")):
+    ...
+```
+
+Semantics follow the FIEBDC-3/2020 specification with the conventions observed in the ADIF
+base and viewer: option constants are 1-based (`a` = 1), statements are evaluated
+sequentially, quantities round to 4 decimals and amounts to 2 (from `~K`), percentage
+concepts (`%CIND`, `%VOL`) apply to the sum of previous lines, zero-quantity lines are
+omitted, and `%E` exclusions mark combinations invalid. Design notes:
+`docs/superpowers/specs/2026-09-05-bc3-parametric-engine-design.md`.
+
 ## Citation
 
 If you use this dataset in your research, please cite:
