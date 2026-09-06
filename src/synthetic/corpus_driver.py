@@ -80,7 +80,7 @@ from pathlib import Path
 from typing import Optional, Sequence
 
 from utils import config
-from . import l2_repr, stage_runners, target_scanner
+from . import l2_repr, target_scanner
 from .composition import compose_rules
 from .corpus_sampler import (
     CONDITIONS,
@@ -95,6 +95,7 @@ from .packaging import write_release
 from .pantry import ApprovedRewrite, load_pantry
 from .rule_emitter import _L1_LIST_KEY, emit_rules
 from .stage_b import materialize_variant, materialize_variant_bc3param
+from . import bc3param_backend
 from .bc3param_backend import render_base
 from .taxonomy import Modification, ModificationType, TYPE_TO_LAYER
 from .variant_catalog import VariantRecord
@@ -382,11 +383,19 @@ def _materialize_group_task(task: tuple) -> tuple:
     """Materialise one unique (concept, ruleset) group; return needed leaves.
 
     `task = (group_id, concept_key, concept_slice, condition, mtype_value,
-    target_id_repr, rules, needed_leaves)`. Returns
+    target_id_repr, rules, needed_leaves, bc3param_source)`. Returns
     `(group_id, {leaf: item}, [modification_dict, ...])`.
+
+    `bc3param_source` is `str(bc3param_backend.SOURCE)` at the moment
+    `run_corpus` built the task: the adapter's catalogue source is a plain
+    module global (`bc3param_backend.set_source`), which does NOT survive a
+    `ProcessPoolExecutor` spawn boundary (each worker process re-imports the
+    module fresh, reverting to `SOURCE_DEFAULT`) — so every task must carry
+    and re-apply it before rendering.
     """
     (gid, concept_key, concept_slice, condition,
-     mtype_value, tid_repr, rules, needed) = task
+     mtype_value, tid_repr, rules, needed, bc3param_source) = task
+    bc3param_backend.set_source(bc3param_source)
     record = VariantRecord(
         condition=condition,
         modification_type=ModificationType(mtype_value),
@@ -401,10 +410,13 @@ def _materialize_group_task(task: tuple) -> tuple:
 def _materialize_baseline_task(task: tuple) -> tuple:
     """Regenerate one concept's ORIGINAL items (no rules) for needed leaves.
 
-    `task = (concept_key, concept_slice, needed_leaves)`; returns
-    `(concept_key, {leaf: item})`. Same l2_repr bracket as the groups.
+    `task = (concept_key, concept_slice, needed_leaves, bc3param_source)`;
+    returns `(concept_key, {leaf: item})`. Same l2_repr bracket as the
+    groups; see `_materialize_group_task` for why `bc3param_source` travels
+    with the task.
     """
-    concept_key, concept_slice, needed = task
+    concept_key, concept_slice, needed, bc3param_source = task
+    bc3param_backend.set_source(bc3param_source)
     out = render_base(concept_key)
     return concept_key, {leaf: out[leaf] for leaf in needed if leaf in out}
 
@@ -530,6 +542,11 @@ def run_corpus(
         pending.append((planned, gid))
 
     # -- phase B: materialise each unique group + each baseline ONCE ---------
+    # `bc3param_source` travels with every task: it re-asserts the adapter's
+    # current catalogue source inside each pooled worker, since a plain
+    # module global does not survive a `ProcessPoolExecutor` spawn boundary
+    # (see `_materialize_group_task`).
+    bc3param_source = str(bc3param_backend.SOURCE)
     group_tasks = [
         (
             gid,
@@ -540,11 +557,12 @@ def run_corpus(
             spec["target_id_repr"],
             spec["rules"],
             tuple(sorted(spec["needed"])),
+            bc3param_source,
         )
         for gid, spec in enumerate(group_specs)
     ]
     baseline_tasks = [
-        (ck, {ck: appl_stage[ck]}, tuple(sorted(needed)))
+        (ck, {ck: appl_stage[ck]}, tuple(sorted(needed)), bc3param_source)
         for ck, needed in sorted(baseline_needed.items())
     ]
     if n_workers <= 1 or len(group_tasks) <= 1:

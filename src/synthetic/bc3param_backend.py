@@ -6,14 +6,16 @@ consumes. Fail-loud: an unmapped rule type or a missing target raises.
 """
 from __future__ import annotations
 
-from functools import lru_cache
+from pathlib import Path
 
 from bc3param import mutate
 from bc3param.fiebdc import Catalog
 from utils import config
 
 # Phase 1 pilot source (same file the frozen pilot corpus used).
-PILOT_SOURCE = config.RAW_DIR / "BPA_2024_v2_OEB_mod_utf8.txt"
+SOURCE_DEFAULT = config.RAW_DIR / "BPA_2024_v2_OEB_mod_utf8.txt"
+SOURCE = SOURCE_DEFAULT
+_CACHE: dict = {}
 
 # Rule-type routing (see the discovered schema).
 _L2 = {"paraphrase", "compression", "expansion"}
@@ -22,9 +24,27 @@ _L1 = {"synonym_label", "num_to_text", "unit_conversion", "unit_expansion",
 _FIELD = {"reorder", "template_paraphrase", "omission"}
 
 
-@lru_cache(maxsize=1)
+def set_source(path) -> None:
+    """Point the adapter at a different BC3 catalogue (clears the cache).
+
+    A no-op when `path` already names the current source, so repeatedly
+    re-asserting the same source (e.g. once per pooled task, to survive a
+    `ProcessPoolExecutor` spawn boundary) does not discard the parsed-Family
+    cache.
+    """
+    global SOURCE
+    path = Path(path)
+    if path == SOURCE:
+        return
+    SOURCE = path
+    _CACHE.clear()
+
+
 def _catalog() -> Catalog:
-    return Catalog.load(PILOT_SOURCE)
+    key = str(SOURCE)
+    if key not in _CACHE:
+        _CACHE[key] = Catalog.load(SOURCE)
+    return _CACHE[key]
 
 
 def family(concept_key: str):

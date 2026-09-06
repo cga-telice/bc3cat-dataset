@@ -11,6 +11,7 @@ import json
 
 import pytest
 
+from synthetic import bc3param_backend
 from synthetic import packaging
 from synthetic.corpus_driver import CorpusRunStats, run_corpus
 from synthetic.corpus_sampler import PlannedVariant
@@ -22,6 +23,54 @@ from synthetic.taxonomy import ModificationType
 
 C1 = "CTEST010$"
 C3 = "CTEST030$"
+
+# A tiny real BC3 catalogue giving the fake CTEST0xx$ concepts used below a
+# resolvable parametric family, so the bc3param-backed adapter (which re-parses
+# concepts from a real catalogue rather than from the in-memory stage_json) can
+# render them. Faithfully mirrors the _STAGE fixture's parameters, text
+# variables and RESUMEN/TEXTO templates in raw BC3 syntax (`%B=a`, not the
+# s01-translated `%B=="a"`). Axis letters are bc3param's natural
+# position-based assignment (1st param -> A, 2nd -> B, ...): MATERIAL (the
+# only real parameter of CTEST030$) is therefore letter A here, not the "D"
+# used as an arbitrary dict key in the legacy _STAGE fixture below (renamed to
+# match) — bc3param has no notion of a param living at a non-contiguous
+# letter without literally filling the skipped letters with extra parameters,
+# which would add spurious axes to the rendered item keys.
+_MINI_BC3 = (
+    "~V||FIEBDC-3/2007\\260224|menfis|\\|ANSI||\n"
+    "~K|0\\3\\3\\4\\2\\2\\2\\2\\|0\\0\\0\\0\\21\\|3\\2\\\\3\\4\\\\2\\2\\2\\3\\3\\3\\3\\2\\EUR\\|\n"
+    "~C|CTEST010$|ud|prueba uno||||\n"
+    "~P|CTEST010$|\\TRABAJO\\Diurno\\Nocturno\\\n"
+    "\\TIPO\\Normal\\Rocoso\\\n"
+    "$K= \"normal\"*(%B=a)+\"rocoso\"*(%B=b)\n"
+    "\\RESUMEN\\Prueba uno $A $K\\\n"
+    "\\TEXTO\\Prueba uno con $A en $B\\|\n"
+    "~C|CTEST030$|ud|prueba tres||||\n"
+    "~P|CTEST030$|\\MATERIAL\\PVC\\HDPE\\\n"
+    "\\RESUMEN\\Prueba tres $A\\\n"
+    "\\TEXTO\\Prueba tres unitaria $A\\|\n"
+    "~C|CTEST040$|ud|prueba cuatro||||\n"
+    "~P|CTEST040$|\\NUMERO\\ 2 \\ 4 \\\n"
+    "\\RESUMEN\\Prueba cuatro $A tubos\\\n"
+    "\\TEXTO\\Prueba cuatro con $A tubos\\|\n"
+    "~C|CTEST050$|ud|prueba cinco||||\n"
+    "~P|CTEST050$|\\TRABAJO\\Diurno\\Nocturno\\\n"
+    "\\MODO\\Alfa\\Beta\\\n"
+    "$L= \"apto\"*(%B=a)+\"apto\"*(%B=b)\n"
+    "\\RESUMEN\\Prueba cinco $A $L $B\\\n"
+    "\\TEXTO\\Prueba cinco con $A y $L en $B\\|\n"
+)
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _bc3param_mini_source(tmp_path_factory):
+    """Point the adapter at `_MINI_BC3` for every test in this module."""
+    path = tmp_path_factory.mktemp("mini_bc3") / "ctest_mini.bc3"
+    path.write_bytes(_MINI_BC3.encode("cp1252"))
+    bc3param_backend.set_source(path)
+    yield path
+    bc3param_backend.set_source(bc3param_backend.SOURCE_DEFAULT)
+
 
 _STAGE = {
     C1: {
@@ -53,7 +102,7 @@ _STAGE = {
         "ud": "ud",
         "concept": "prueba tres",
         "parameters": {
-            "D": {
+            "A": {
                 "label": "MATERIAL",
                 "values": [
                     {"label": "a", "value": "PVC"},
@@ -62,8 +111,8 @@ _STAGE = {
             },
         },
         "text_variables": {},
-        "resumen": "Prueba tres $D",
-        "texto": "Prueba tres unitaria $D",
+        "resumen": "Prueba tres $A",
+        "texto": "Prueba tres unitaria $A",
     },
 }
 
@@ -231,7 +280,7 @@ def test_placeholder_residue_raises(tmp_path):
     residue = _rewrite(
         ModificationType.TEMPLATE_PARAPHRASE,
         target.dedup_key,
-        {"original": "Prueba tres $D", "new": "Prueba tres [[X]] $D"},
+        {"original": "Prueba tres $A", "new": "Prueba tres [[X]] $A"},
         concepts=(C3,),
     )
     plan = (
@@ -268,10 +317,12 @@ def test_target_not_found_skipped_and_counted(tmp_path):
 
 
 def test_all_slot_rules_cover_planned_leaf(tmp_path):
-    # The same L2 fragment "apto" lives under TWO conditions (%C=="a" and
-    # %C=="b") of var L. The planned leaf selects C=b: first-slot-only
-    # emission would mutate only the %C=a slot and no-op; all-slot emission
+    # The same L2 fragment "apto" lives under TWO conditions (%B=="a" and
+    # %B=="b") of var L. The planned leaf selects B=b: first-slot-only
+    # emission would mutate only the %B=a slot and no-op; all-slot emission
     # must land on the leaf. Conceptually it is still ONE modification.
+    # (MODO is bc3param's natural 2nd parameter -> letter B, matching the
+    # mini BC3 fixture's CTEST050$ family; see the "D"->"A" rename note above.)
     stage = {
         "CTEST050$": {
             "ud": "ud",
@@ -284,7 +335,7 @@ def test_all_slot_rules_cover_planned_leaf(tmp_path):
                         {"label": "b", "value": "Nocturno"},
                     ],
                 },
-                "C": {
+                "B": {
                     "label": "MODO",
                     "values": [
                         {"label": "a", "value": "Alfa"},
@@ -293,10 +344,10 @@ def test_all_slot_rules_cover_planned_leaf(tmp_path):
                 },
             },
             "text_variables": {
-                "L": '"apto" * (%C=="a") + "apto" * (%C=="b")',
+                "L": '"apto" * (%B=="a") + "apto" * (%B=="b")',
             },
-            "resumen": "Prueba cinco $A $L $C",
-            "texto": "Prueba cinco con $A y $L en $C",
+            "resumen": "Prueba cinco $A $L $B",
+            "texto": "Prueba cinco con $A y $L en $B",
         },
     }
     rw = _rewrite(
@@ -314,7 +365,7 @@ def test_all_slot_rules_cover_planned_leaf(tmp_path):
     assert row["produced"] == 1
     items = load_items(out_dir / packaging.ITEMS_FILENAME)
     item = items.iloc[0]
-    # the rewrite landed on the planned leaf (C=b slot was covered)
+    # the rewrite landed on the planned leaf (B=b slot was covered)
     assert item["texto"] == "Prueba cinco con Diurno y adecuado en Beta"
     assert item["texto"] != "Prueba cinco con Diurno y apto en Beta"
     # one distinct rewrite -> ONE conceptual modification, however many slots
@@ -355,13 +406,13 @@ def test_all_combined_renders_both_template_fields(tmp_path):
     res_rw = _rewrite(
         ModificationType.TEMPLATE_PARAPHRASE,
         targets["RESUMEN"].dedup_key,
-        {"original": "Prueba tres $D", "new": "Ensayo tres $D"},
+        {"original": "Prueba tres $A", "new": "Ensayo tres $A"},
         concepts=(C3,),
     )
     tex_rw = _rewrite(
         ModificationType.TEMPLATE_PARAPHRASE,
         targets["TEXTO"].dedup_key,
-        {"original": "Prueba tres unitaria $D", "new": "Prueba unitaria tres $D"},
+        {"original": "Prueba tres unitaria $A", "new": "Prueba unitaria tres $A"},
         concepts=(C3,),
     )
     plan = (
