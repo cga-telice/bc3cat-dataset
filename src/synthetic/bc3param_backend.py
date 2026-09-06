@@ -66,3 +66,26 @@ def run_variant(concept_key: str, rules) -> dict:
     ud, concept = _concept_meta(concept_key)
     edited = apply_rules(family(concept_key), list(rules))
     return mutate.render_family_leaves(edited, ud=ud, concept=concept)
+
+
+try:
+    from synthetic.taxonomy import Modification, ModificationType, TYPE_TO_LAYER
+except ImportError:  # pragma: no cover - fallback for relative-import contexts
+    from .taxonomy import Modification, ModificationType, TYPE_TO_LAYER
+
+_CONTEXT_FIELDS = ("param", "var", "condition", "field", "value", "original", "new")
+
+
+def modification_from_rule(rule: dict) -> Modification:
+    """Build the Modification record a rule represents (matches the legacy sidecar).
+
+    Copies the rule's context fields (param/var/condition/field/value/original/new)
+    that are present; type+layer are derived from the rule type.
+    """
+    mtype = ModificationType(rule["type"])
+    kwargs = {k: rule[k] for k in _CONTEXT_FIELDS if k in rule}
+    return Modification(type=mtype, layer=TYPE_TO_LAYER[mtype], **kwargs)
+
+
+def modifications_from_rules(rules) -> list:
+    return [modification_from_rule(r) for r in rules]

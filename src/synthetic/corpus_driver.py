@@ -94,7 +94,8 @@ from .metadata import SyntheticItem, _SYN_MARK
 from .packaging import write_release
 from .pantry import ApprovedRewrite, load_pantry
 from .rule_emitter import _L1_LIST_KEY, emit_rules
-from .stage_b import materialize_variant
+from .stage_b import materialize_variant, materialize_variant_bc3param
+from .bc3param_backend import render_base
 from .taxonomy import Modification, ModificationType, TYPE_TO_LAYER
 from .variant_catalog import VariantRecord
 
@@ -392,9 +393,7 @@ def _materialize_group_task(task: tuple) -> tuple:
         target_id_repr=tid_repr,
         rules=tuple(rules),
     )
-    mv = materialize_variant(
-        concept_slice, concept_key, record, pre_rerun=l2_repr.formula_to_list,
-    )
+    mv = materialize_variant_bc3param(concept_slice, concept_key, record)
     items = {leaf: mv.items[leaf] for leaf in needed if leaf in mv.items}
     return gid, items, [m.to_dict() for m in mv.modifications]
 
@@ -406,7 +405,7 @@ def _materialize_baseline_task(task: tuple) -> tuple:
     `(concept_key, {leaf: item})`. Same l2_repr bracket as the groups.
     """
     concept_key, concept_slice, needed = task
-    out = stage_runners.run_stages_3_to_7(l2_repr.formula_to_list(concept_slice))
+    out = render_base(concept_key)
     return concept_key, {leaf: out[leaf] for leaf in needed if leaf in out}
 
 

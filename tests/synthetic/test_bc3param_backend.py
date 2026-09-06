@@ -82,3 +82,22 @@ def test_run_variant_applies_rules(cat):
     assert leaves["OEB020ab"]["resumen"] == "Canal 2 T, muy rocoso."
     # base render is unaffected by the variant edit (purity)
     assert bk.render_base("OEB020$")["OEB020ab"]["resumen"] == "Canal 2 T, rocoso."
+
+
+def test_materialize_variant_bc3param_items_and_mods(cat):
+    from synthetic import stage_b
+    from synthetic.variant_catalog import VariantRecord
+    from synthetic.taxonomy import ModificationType
+    variant = VariantRecord(
+        condition="single_compression",
+        modification_type=ModificationType.COMPRESSION,
+        target_id_repr="(('K','%B==\"b\"'),)",
+        rules=({"type": "compression", "var": "K", "condition": '%B=="b"', "new": "muy rocoso"},),
+    )
+    mv = stage_b.materialize_variant_bc3param({"OEB020$": {}}, "OEB020$", variant)
+    assert mv.concept_key == "OEB020$"
+    assert mv.items["OEB020ab"]["resumen"] == "Canal 2 T, muy rocoso."
+    assert [m.to_dict() for m in mv.modifications] == [
+        {"type": "compression", "layer": "text_variable", "var": "K",
+         "condition": '%B=="b"', "new": "muy rocoso"}
+    ]
