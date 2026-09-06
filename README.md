@@ -1,5 +1,7 @@
 # BC3CAT Dataset: A Benchmark for Retrieval on Parametric Construction Catalogs
 
+DOI: 10.5281/zenodo.20277801
+
 This repository contains the data processing pipeline for creating a retrieval evaluation benchmark from ADIF's parametric construction price catalog. The dataset is part of the research presented in:
 
 > **A Systematic Comparative Study of Retrieval Methods for Parametric Construction Catalogs: From Lexical to Neural Approaches**  
@@ -245,6 +247,41 @@ For full specification, see: [FIEBDC-3/2016](https://www.fiebdc.es/fiebdc-32016-
 This work lives entirely on the parallel `synthetic` branch (it is never merged to `main`). The release is two files joined 1:1 on `item_key` — `data/synthetic/processed/BC3CAT_Syn_items.parquet` (flat items table) and `BC3CAT_Syn_modifications.jsonl` (per-item modification log) — consumed via the read-only loader API in [`src/synthetic/loaders.py`](src/synthetic/loaders.py) (`load_items`, `load_modifications`, `join`, `long_view`, `short_view`).
 
 > **Status:** the format, schema, taxonomy, and loader API are frozen; the corpus has not yet been generated. See the [BC3CAT-Syn data card](docs/synthetic/DATA_CARD.md) for the full schema, modification taxonomy, evaluation slices, and AI-disclosure, and [`docs/synthetic/`](docs/synthetic/) for the research proposal and protocol.
+
+## bc3param: parametric engine (new)
+
+`bc3param/` is a standalone, dependency-free Python package that parses the BC3 file and
+reconstructs every derived unit of work defined by a parametric family (`~P` record), with
+texts, decomposition and price, as shown by the ADIF viewer (https://bpa.adif.es/bp1/).
+It replaces the notebook pipeline stages 1-5 for that purpose (the notebooks are kept as-is).
+
+```bash
+pip install -e .
+bc3param validate data/raw/BPA_2024_v2.txt                 # parse all 2,996 families
+bc3param inspect  data/raw/BPA_2024_v2.txt OEB020$          # parameters and options
+bc3param resolve  data/raw/BPA_2024_v2.txt OEB020bbbaa      # one item as JSON
+bc3param generate data/raw/BPA_2024_v2.txt --chapter OEB# --out OEB.jsonl
+bc3param generate data/raw/BPA_2024_v2.txt --range OEB010..OEB300 --format json --out OEB.json
+```
+
+Python API:
+
+```python
+from bc3param import Catalog, resolve_code, iter_items, select_families
+
+cat = Catalog.load("data/raw/BPA_2024_v2.txt")
+item = resolve_code(cat, "OEB020bbbaa")
+print(item.price, item.resumen)
+for it in iter_items(cat, select_families(cat, chapter="OEB#")):
+    ...
+```
+
+Semantics follow the FIEBDC-3/2020 specification with the conventions observed in the ADIF
+base and viewer: option constants are 1-based (`a` = 1), statements are evaluated
+sequentially, quantities round to 4 decimals and amounts to 2 (from `~K`), percentage
+concepts (`%CIND`, `%VOL`) apply to the sum of previous lines, zero-quantity lines are
+omitted, and `%E` exclusions mark combinations invalid. Design notes:
+`docs/superpowers/specs/2026-09-05-bc3-parametric-engine-design.md`.
 
 ## Citation
 

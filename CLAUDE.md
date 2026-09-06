@@ -25,6 +25,8 @@ docker-compose up -d          # Jupyter (port 8888, token: j)
 
 Inside the Jupyter container the repo is mounted at `/work`. **Paths inside notebooks currently assume `/work/...`** — most notably `s01_parse_fiebdc.ipynb` reads from `/work/data/raw/`. Outside Docker this needs the path refactor described in the synthetic-branch protocol (Task A4).
 
+Base image: `quay.io/jupyter/pytorch-notebook:cuda12-python-3.11.8`. Port 8050 is also exposed for Dash.
+
 Manual setup alternative:
 
 ```bash
@@ -52,6 +54,7 @@ data/raw/*.txt  ──►  s01  ──►  s02  ──►  s03  ──►  s04  
 | **s05** | `s05_evaluate_resumen_texto.ipynb`      | `{CHAPTER}_stage5.json`                      | Replaces `$L(...)` and `$A` placeholders in the `\RESUMEN\` / `\TEXTO\` templates.       |
 | **s06** | `s06_data_analysis.ipynb`               | *(stats only, no file)*                      | Word/parameter statistics; validation.                                                  |
 | **s07** | `s07_Filter_duplicates.ipynb`           | `{CHAPTER}_stage7.json`                      | Marks and removes items with duplicate `resumen` / `texto`.                              |
+| **s08** | `s08_Llamaindex_Doc_Creation.ipynb`     | LlamaIndex `Document` cache under `data/llamaindex/` | Converts stage-7 items into LlamaIndex `Document` objects.                        |
 | **fin** | `Generate_OEB_dataset.ipynb`            | `data/processed/OEB_*.parquet`               | OEB-subset filter + Parquet/Pickle export.                                              |
 
 ### Three-Layer BC3 Grammar
@@ -126,3 +129,9 @@ The pipeline leaves derived artifacts on disk that go stale when the corpus is r
 - [`README.md`](README.md) — public-facing repo description.
 - [`DataInBrief_BC3CAT.docx`](DataInBrief_BC3CAT.docx) — Data-in-Brief manuscript for the original BC3CAT release.
 - [`docs/synthetic/`](docs/synthetic) — BC3CAT-Syn (rule-modification synthetic benchmark) work on branch `synthetic`.
+
+## `bc3param` Package and Tests
+
+`bc3param/` is a standalone FIEBDC/BC3 parser + parametric evaluator package (brought in from `main`), with its own tests under `tests/` (run with `python -m pytest tests`). Reference tests in `tests/test_reference*.py` require raw catalogue files (`data/raw/BPA_2024_v2.txt`, `data/raw/BPA_2026.bc3`) that are gitignored and may be absent locally — they SKIP in that case. `scripts/reconcile_v1_v2.py` compares `bc3param` output against the legacy notebook pipeline (see `docs/reconciliation-v1-v2.md`). This is in addition to the synthetic-branch tests under `tests/synthetic/` (see `docs/synthetic/CLAUDE_SYNTHETIC.md`).
+
+- Dual licensing: **MIT** for code, **CC-BY 4.0** for dataset files.
