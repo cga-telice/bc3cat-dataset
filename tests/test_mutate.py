@@ -129,11 +129,11 @@ def test_replace_text_fragment_matches_disjunctive_condition():
     assert "REEMPLAZO" in strs and "descerne" not in " ".join(strs)
 
 
-def test_replace_template_substring_splices_and_skips():
+def test_replace_template_substring_whole_field_guarded():
     fam = parse_family("OEB020$", FAMILY)  # RESUMEN = "Canal $A T, $K."
-    out = replace_template_substring(fam, "RESUMEN", "Canal $A T", "Zanja de $A tubos")
+    # original present (whitespace-insensitive) -> whole field replaced by new
+    out = replace_template_substring(fam, "RESUMEN", "Canal  $A T,  $K.", "Zanja de $A tubos, $K.")
     t = [s for s in out.statements if getattr(s, "label", None) == "RESUMEN"][0]
     assert t.template == "Zanja de $A tubos, $K."
-    import pytest
-    with pytest.raises(KeyError):  # original with an accent not present -> skip signal
-        replace_template_substring(fam, "RESUMEN", "Canal subterránea", "x")
+    with pytest.raises(KeyError):  # accent mismatch -> not found -> skip signal
+        replace_template_substring(fam, "RESUMEN", "Canal subterránea $A T, $K.", "x")

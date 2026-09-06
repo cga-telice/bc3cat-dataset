@@ -112,25 +112,35 @@ def replace_template(family: Family, label: str, new_template: str) -> Family:
     raise KeyError(f"no {label} template in {family.code}")
 
 
-def replace_template_substring(family: Family, label: str, original: str, new: str) -> Family:
-    """Replace exactly one occurrence of ``original`` within a template.
+def _collapse_ws(text: str) -> str:
+    """Whitespace-and-backslash-insensitive form for matching L3 ``original``.
 
-    Mirrors the legacy ``layer_l3._replace_substring``: raises KeyError when
-    ``original`` is absent and ValueError when it is ambiguous (>1 match), so the
-    adapter's skip-and-log path drops exactly the L3 rules the legacy engine
-    skipped (e.g. a rewrite whose ``original`` doesn't match the template because
-    of an accent or wording difference).
+    The synthetic L3 rules' ``original`` was authored against the legacy s01
+    template, which keeps a leading ``\\`` and different internal spacing than
+    bc3param's parse. Collapsing both sides lets the presence check agree with the
+    legacy engine while staying accent-sensitive (so a genuine wording/accent
+    mismatch, like ``subterránea`` vs ``subterranea``, is still not found → skip).
+    """
+    return re.sub(r"\s+", " ", text.replace("\\", " ")).strip()
+
+
+def replace_template_substring(family: Family, label: str, original: str, new: str) -> Family:
+    """Whole-field replace of a template, guarded by a whitespace-insensitive
+    presence check of ``original``.
+
+    L3 rules (reorder / template_paraphrase / omission) carry an ``original`` that
+    spans the whole field and a full-field ``new``. Legacy `layer_l3` applies the
+    rule only when ``original`` is present in the template, else it raises and
+    stage_b skips it. This mirrors that decision: if ``original`` (whitespace-
+    normalised) is not in the template, raise so the adapter skips the rule;
+    otherwise replace the whole field with ``new``.
     """
     statements = list(family.statements)
     for i, st in enumerate(statements):
         if isinstance(st, Text) and st.label == label:
-            count = st.template.count(original)
-            if count == 0:
+            if _collapse_ws(original) not in _collapse_ws(st.template):
                 raise KeyError(f"original {original[:40]!r} not found in {label} of {family.code}")
-            if count > 1:
-                raise ValueError(f"original {original[:40]!r} ambiguous ({count}) in {label} of {family.code}")
-            new_template = st.template.replace(original, new, 1)
-            statements[i] = dataclasses.replace(st, template=new_template)
+            statements[i] = dataclasses.replace(st, template=new)
             return _rebuild(family, statements)
     raise KeyError(f"no {label} template in {family.code}")
 

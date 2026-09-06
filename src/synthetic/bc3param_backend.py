@@ -158,7 +158,9 @@ def modification_from_rule(rule: dict) -> Modification:
     """
     mtype = ModificationType(rule["type"])
     kwargs = {k: rule[k] for k in _CONTEXT_FIELDS if k in rule}
-    return Modification(type=mtype, layer=TYPE_TO_LAYER[mtype], **kwargs)
+    # Legacy mutators tag every successfully-applied rule with status="applied";
+    # match that so the modification sidecar is byte-identical.
+    return Modification(type=mtype, layer=TYPE_TO_LAYER[mtype], status="applied", **kwargs)
 
 
 def modifications_from_rules(rules) -> list:
