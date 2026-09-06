@@ -38,8 +38,18 @@ def replace_option_value(family: Family, var: str, letter: str, new_value: str) 
 
 
 def normalize_condition(cond: str) -> str:
-    """s01-translated condition (`%B=="c"`) -> bc3param raw form (`%B=c`)."""
+    """s01-translated condition -> bc3param raw form.
+
+    Legacy conditions (from `utils.z_formula_processing.translate_formula_to_python`)
+    use Python syntax: `%B=="c"`, ` or `, ` and `, `!=`. bc3param's raw form uses
+    `%B=c`, `@`, `&`, `<>`. Translate the connectives (needing word boundaries)
+    before stripping quotes and spaces. Example:
+    `'%B=="b"  or  %B=="g"'` -> `'%B=b@%B=g'`.
+    """
     cond = cond.replace('"', "")
+    cond = re.sub(r"\s+or\s+", "@", cond)
+    cond = re.sub(r"\s+and\s+", "&", cond)
+    cond = cond.replace("!=", "<>")
     cond = re.sub(r"(?<![<>!])==", "=", cond)  # == -> = ; leave <=,>=,<>,!= alone
     return cond.replace(" ", "")
 

@@ -21,6 +21,13 @@ FAMILY = (
     "\\TEXTO\\Canal de $A tubos $K.\\\n"
 )
 
+FAMILY_DISJ = (
+    "\\TIPO\\Normal\\Bajo\\Balasto\\\n"
+    "$N= \"descerne,\" * (%A=b @ %A=c) + \"otro,\" * (%A=a)\n"
+    "\\RESUMEN\\R $N\\\n"
+    "\\TEXTO\\T $N\\\n"
+)
+
 
 def _collect_strs(expr):
     if isinstance(expr, Str):
@@ -103,3 +110,19 @@ def test_render_family_leaves_reflects_edit():
     fam2 = replace_text_fragment(fam, "K", '%B=="b"', "muy rocoso")
     leaves = render_family_leaves(fam2, ud="m", concept="CANAL")
     assert leaves["OEB020ab"]["resumen"] == "Canal 2 T, muy rocoso."
+
+
+def test_normalize_condition_translates_connectives_and_neq():
+    # legacy Python-form conditions -> bc3param raw form
+    assert normalize_condition('%B=="b"  or  %B=="g"') == "%B=b@%B=g"
+    assert normalize_condition('%C=="a" and %D=="b"') == "%C=a&%D=b"
+    assert normalize_condition('%A!="b"') == "%A<>b"
+    assert normalize_condition('%A<>"b"') == "%A<>b"
+
+
+def test_replace_text_fragment_matches_disjunctive_condition():
+    fam = parse_family("OEB020$", FAMILY_DISJ)
+    out = replace_text_fragment(fam, "N", '%A=="b"  or  %A=="c"', "REEMPLAZO")
+    n = [s for s in out.statements if getattr(s, "name", None) == "N"][0]
+    strs = _collect_strs(n.values[0])
+    assert "REEMPLAZO" in strs and "descerne" not in " ".join(strs)
