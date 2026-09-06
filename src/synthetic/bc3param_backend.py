@@ -2,15 +2,25 @@
 
 Maps the frozen variant rule dicts to `bc3param.mutate` edits on a parsed
 `Family`, then emits the legacy stage-JSON leaf shape the synthetic pipeline
-consumes. Fail-loud: an unmapped rule type or a missing target raises.
+consumes.
+
+Skip semantics mirror the legacy `stage_b.apply_variant_rules`: a rule whose
+target cannot be edited (e.g. an L2 condition-addressed rule aimed at a
+lookup-table text variable that has no conditional fragments) is skipped and
+logged, exactly as the legacy mutators raise ValueError/KeyError and stage_b
+catches it. An *unmapped rule type* or `new_param` still raises loudly — those
+are programming/scope errors, not data-driven skips.
 """
 from __future__ import annotations
 
+import logging
 from pathlib import Path
 
 from bc3param import mutate
 from bc3param.fiebdc import Catalog
 from utils import config
+
+logger = logging.getLogger(__name__)
 
 # Phase 1 pilot source (same file the frozen pilot corpus used).
 SOURCE_DEFAULT = config.RAW_DIR / "BPA_2024_v2_OEB_mod_utf8.txt"
@@ -57,21 +67,56 @@ def _concept_meta(concept_key: str) -> tuple[str, str]:
     return (c.unit if c else "", c.summary if c else "")
 
 
+def _edit_for_rule(fam, rule):
+    """Apply one rule to a Family, returning the new Family. May raise.
+
+    Raises NotImplementedError for `new_param` and KeyError for an unmapped type
+    (programming/scope errors). Data-driven failures (target not found, list-form
+    text variable) propagate as KeyError/ValueError/TypeError for the caller to
+    skip-and-log, matching the legacy mutators + stage_b.
+    """
+    rtype = rule["type"]
+    if rtype == "new_param":
+        raise NotImplementedError("new_param is excluded from the pilot corpus (Phase 2)")
+    if rtype in _L2:
+        return mutate.replace_text_fragment(fam, rule["var"], rule["condition"], rule["new"])
+    if rtype in _L1:
+        return mutate.replace_option_value(fam, rule["param"], rule["value"], rule["new"])
+    if rtype in _FIELD:
+        return mutate.replace_template(fam, rule["field"], rule["new"])
+    raise KeyError(f"unmapped rule type {rtype!r}")
+
+
+def apply_rules_logged(fam, rules, concept_key: str = "?"):
+    """Apply rules, skipping (and logging) those whose target cannot be edited.
+
+    Returns `(edited_family, applied_rules)`. Mirrors legacy
+    `stage_b.apply_variant_rules`: KeyError/ValueError/TypeError from an edit are
+    caught and the rule is skipped; the applied subset drives the modification
+    log so the sidecar matches the legacy corpus.
+    """
+    out = fam
+    applied = []
+    for rule in rules:
+        try:
+            out = _edit_for_rule(out, rule)
+        except (KeyError, ValueError, TypeError) as exc:
+            logger.warning("bc3param_backend: skipping %s rule on concept %s: %s",
+                           rule.get("type"), concept_key, exc)
+            continue
+        applied.append(rule)
+    return out, applied
+
+
 def apply_rules(fam, rules):
-    """Return a new Family with every rule applied, in list order (pure)."""
+    """Return a new Family with every rule applied, in list order (pure).
+
+    Strict variant used by unit tests: raises on unmapped type / new_param and
+    propagates data-driven failures. Production render uses `apply_rules_logged`.
+    """
     out = fam
     for rule in rules:
-        rtype = rule["type"]
-        if rtype in _L2:
-            out = mutate.replace_text_fragment(out, rule["var"], rule["condition"], rule["new"])
-        elif rtype in _L1:
-            out = mutate.replace_option_value(out, rule["param"], rule["value"], rule["new"])
-        elif rtype in _FIELD:
-            out = mutate.replace_template(out, rule["field"], rule["new"])
-        elif rtype == "new_param":
-            raise NotImplementedError("new_param is excluded from the pilot corpus (Phase 2)")
-        else:
-            raise KeyError(f"unmapped rule type {rtype!r}")
+        out = _edit_for_rule(out, rule)
     return out
 
 
@@ -81,11 +126,17 @@ def render_base(concept_key: str) -> dict:
     return mutate.render_family_leaves(family(concept_key), ud=ud, concept=concept)
 
 
+def run_variant_logged(concept_key: str, rules):
+    """Apply rules (skip-and-log non-editable ones) and render; return (leaves, applied)."""
+    ud, concept = _concept_meta(concept_key)
+    edited, applied = apply_rules_logged(family(concept_key), list(rules), concept_key)
+    return mutate.render_family_leaves(edited, ud=ud, concept=concept), applied
+
+
 def run_variant(concept_key: str, rules) -> dict:
     """Apply rules to the concept's Family and return stage-JSON leaves."""
-    ud, concept = _concept_meta(concept_key)
-    edited = apply_rules(family(concept_key), list(rules))
-    return mutate.render_family_leaves(edited, ud=ud, concept=concept)
+    leaves, _applied = run_variant_logged(concept_key, rules)
+    return leaves
 
 
 try:

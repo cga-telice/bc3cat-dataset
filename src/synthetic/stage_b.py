@@ -151,16 +151,16 @@ def materialize_variant_bc3param(stage2_json, concept_key, variant):
     """Materialise a variant via the bc3param backend (Phase 1 seam swap).
 
     Ignores the stage2_json concept body: bc3param re-parses the concept from the
-    raw ~P (clean) and applies the variant's rules as Family edits. Returns the
-    same MaterializedVariant shape as the legacy path, with a modification log
-    reconstructed from the rules so the sidecar stays equivalent.
+    raw ~P (clean) and applies the variant's rules as Family edits. Rules whose
+    target cannot be edited are skipped-and-logged (as the legacy path does), so
+    the modification log — and thus the sidecar — is built only from the rules
+    that actually applied.
     """
-    from .bc3param_backend import run_variant, modifications_from_rules
-    from .taxonomy import ModificationType
+    from .bc3param_backend import modifications_from_rules, run_variant_logged
 
-    items = run_variant(concept_key, variant.rules)
-    mods = tuple(modifications_from_rules(variant.rules))
-    types = tuple(ModificationType(r["type"]) for r in variant.rules)
+    items, applied = run_variant_logged(concept_key, variant.rules)
+    mods = tuple(modifications_from_rules(applied))
+    types = tuple(m.type for m in mods)
     return MaterializedVariant(
         variant_id=_variant_id(variant),
         condition=variant.condition,

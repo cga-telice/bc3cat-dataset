@@ -101,3 +101,22 @@ def test_materialize_variant_bc3param_items_and_mods(cat):
         {"type": "compression", "layer": "text_variable", "var": "K",
          "condition": '%B=="b"', "new": "muy rocoso"}
     ]
+
+
+def test_apply_rules_logged_skips_unfindable_and_keeps_rest(cat):
+    fam = cat.family("OEB020$")
+    edited, applied = bk.apply_rules_logged(fam, [
+        {"type": "compression", "var": "K", "condition": '%B=="z"', "new": "x"},  # skip
+        {"type": "compression", "var": "K", "condition": '%B=="b"', "new": "muy rocoso"},  # applies
+    ], "OEB020$")
+    assert [r["condition"] for r in applied] == ['%B=="b"']
+    from bc3param import mutate
+    leaves = mutate.render_family_leaves(edited, ud="m", concept="CANAL")
+    assert leaves["OEB020ab"]["resumen"] == "Canal 2 T, muy rocoso."
+
+
+def test_apply_rules_strict_still_raises_on_unmapped(cat):
+    import pytest as _pytest
+    fam = cat.family("OEB020$")
+    with _pytest.raises(KeyError):
+        bk.apply_rules(fam, [{"type": "nope", "var": "K"}])
