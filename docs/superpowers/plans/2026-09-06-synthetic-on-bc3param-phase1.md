@@ -10,7 +10,7 @@
 
 **Conventions for every task:**
 - Branch `synthetic-on-bc3param` (based on `synthetic`). Never push toward `main`. Bringing bc3param in is a `main → synthetic` merge (allowed).
-- Run bc3param tests from repo root: `python -m pytest tests -q`. Run synthetic tests: `python -m pytest src/synthetic/tests -q` (path confirmed in Task 0).
+- Run bc3param tests from repo root: `python -m pytest tests -q`. Run synthetic tests: tests live at `tests/synthetic/` with a conftest that adds src/ to sys.path (confirmed Task 0).
 - Commit after each task; end every commit message with `Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>`.
 - Every new module starts with `from __future__ import annotations`.
 - Equivalence is "up to documented v2 corrections": reuse the normalization `undo_corruption` from `scripts/reconcile_v1_v2.py` (arrives with the main merge in Task 1).
@@ -23,7 +23,7 @@
 bc3param/mutate.py            NEW  edit a Family (option value, text fragment, template); render leaves
 tests/test_mutate.py          NEW  unit tests for bc3param.mutate
 src/synthetic/bc3param_backend.py   NEW  adapter: rules->Family edits, emit legacy stage-JSON
-src/synthetic/tests/test_bc3param_backend.py  NEW  adapter unit + equivalence tests
+tests/synthetic/test_bc3param_backend.py  NEW  adapter unit + equivalence tests
 src/synthetic/stage_b.py      MODIFY  route materialize_variant through the injected bc3param runner
 src/synthetic/corpus_driver.py MODIFY  pass the bc3param runner; base-leaf render via adapter
 scripts/reconcile_syn_v1_v2.py NEW  corpus reconciliation (regenerated vs release 6b52053)
@@ -38,7 +38,7 @@ docs/synthetic/reconciliation-syn-v1-v2.md  NEW  generated report
 
 - [ ] **Step 1: Confirm the synthetic test path and current green baseline**
 
-Run: `python -m pytest src/synthetic/tests -q 2>&1 | tail -5`
+Run: `python -m pytest tests/synthetic -q 2>&1 | tail -5`
 Expected: the suite collects and passes (retrospective cites 1,092 green). If the path differs, note the actual path (search: `git ls-files 'src/synthetic/**/test_*.py' | head`).
 
 - [ ] **Step 2: Confirm the pilot source file and config keys**
@@ -81,7 +81,7 @@ Run:
 ```bash
 python -m pip install -e . -q
 python -m pytest tests -q 2>&1 | tail -3            # bc3param suite (~95)
-python -m pytest src/synthetic/tests -q 2>&1 | tail -3   # synthetic suite
+python -m pytest tests/synthetic -q 2>&1 | tail -3   # synthetic suite
 ```
 Expected: both green. bc3param's reference tests skip (2024/2026 raw files are gitignored and may be absent) — that is fine.
 
@@ -508,7 +508,7 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 
 **Files:**
 - Create: `src/synthetic/bc3param_backend.py`
-- Test: `src/synthetic/tests/test_bc3param_backend.py`
+- Test: `tests/synthetic/test_bc3param_backend.py`
 
 - [ ] **Step 1: Confirm the real L1/L3 rule keys**
 
@@ -602,9 +602,13 @@ _L2 = {"paraphrase", "compression", "expansion"}
 _L3 = {"reorder", "template_paraphrase"}
 
 
+# Phase 1 pilot source (confirmed Task 0): config has RAW_DIR, not a source-file key.
+PILOT_SOURCE = config.RAW_DIR / "BPA_2024_v2_OEB_mod_utf8.txt"
+
+
 @lru_cache(maxsize=1)
 def _catalog() -> Catalog:
-    return Catalog.load(Path(config.SYNTHETIC_SOURCE_BC3))   # confirmed in Task 0/6
+    return Catalog.load(PILOT_SOURCE)
 
 
 def family(concept_key: str):
@@ -645,13 +649,13 @@ function letter-based.
 
 - [ ] **Step 4: Run to verify pass**
 
-Run: `python -m pytest src/synthetic/tests/test_bc3param_backend.py -q`
+Run: `python -m pytest tests/synthetic/test_bc3param_backend.py -q`
 Expected: 2 passed
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add src/synthetic/bc3param_backend.py src/synthetic/tests/test_bc3param_backend.py
+git add src/synthetic/bc3param_backend.py tests/synthetic/test_bc3param_backend.py
 git commit -m "synthetic: bc3param_backend — catalogue cache + rules->Family edits
 
 Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
@@ -663,7 +667,7 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 
 **Files:**
 - Modify: `src/synthetic/bc3param_backend.py`
-- Test: `src/synthetic/tests/test_bc3param_backend.py`
+- Test: `tests/synthetic/test_bc3param_backend.py`
 
 - [ ] **Step 1: Write the failing test**
 
@@ -685,7 +689,7 @@ def test_run_variant_applies_rules(cat, monkeypatch):
 
 - [ ] **Step 2: Run to verify failure**
 
-Run: `python -m pytest src/synthetic/tests/test_bc3param_backend.py -k "render_base or run_variant" -q`
+Run: `python -m pytest tests/synthetic/test_bc3param_backend.py -k "render_base or run_variant" -q`
 Expected: FAIL with `AttributeError: module ... has no attribute 'render_base'`
 
 - [ ] **Step 3: Implement (append to `bc3param_backend.py`)**
@@ -711,13 +715,13 @@ def run_variant(concept_key: str, rules) -> dict:
 
 - [ ] **Step 4: Run to verify pass**
 
-Run: `python -m pytest src/synthetic/tests/test_bc3param_backend.py -q`
+Run: `python -m pytest tests/synthetic/test_bc3param_backend.py -q`
 Expected: all passed
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add src/synthetic/bc3param_backend.py src/synthetic/tests/test_bc3param_backend.py
+git add src/synthetic/bc3param_backend.py tests/synthetic/test_bc3param_backend.py
 git commit -m "synthetic: bc3param_backend — render_base / run_variant
 
 Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
@@ -735,7 +739,7 @@ at ~line 409) is replaced with `bc3param_backend.render_base`.
 
 **Files:**
 - Modify: `src/synthetic/stage_b.py`, `src/synthetic/corpus_driver.py`
-- Test: `src/synthetic/tests/test_bc3param_backend.py`
+- Test: `tests/synthetic/test_bc3param_backend.py`
 
 - [ ] **Step 1: Write the failing test**
 
@@ -756,7 +760,7 @@ def test_materialize_variant_via_bc3param(cat, monkeypatch):
 
 - [ ] **Step 2: Run to verify failure**
 
-Run: `python -m pytest src/synthetic/tests/test_bc3param_backend.py -k materialize_variant_via -q`
+Run: `python -m pytest tests/synthetic/test_bc3param_backend.py -k materialize_variant_via -q`
 Expected: FAIL with `AttributeError: ... 'materialize_variant_bc3param'`
 
 - [ ] **Step 3: Add the bc3param materializer to `stage_b.py`**
@@ -804,13 +808,13 @@ remove if now unused (run `python -c "import ast..."` or flake to confirm).
 
 - [ ] **Step 5: Run to verify pass**
 
-Run: `python -m pytest src/synthetic/tests/test_bc3param_backend.py -q`
+Run: `python -m pytest tests/synthetic/test_bc3param_backend.py -q`
 Expected: all passed
 
 - [ ] **Step 6: Commit**
 
 ```bash
-git add src/synthetic/stage_b.py src/synthetic/corpus_driver.py src/synthetic/tests/test_bc3param_backend.py
+git add src/synthetic/stage_b.py src/synthetic/corpus_driver.py tests/synthetic/test_bc3param_backend.py
 git commit -m "synthetic: route stage_b + corpus_driver base render through bc3param
 
 Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
@@ -821,7 +825,7 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 ### Task 9: Equivalence test on real OEB concepts (up to v2 corrections)
 
 **Files:**
-- Test: `src/synthetic/tests/test_bc3param_backend.py`
+- Test: `tests/synthetic/test_bc3param_backend.py`
 
 - [ ] **Step 1: Write the test (skips if the pilot source is absent)**
 
@@ -861,13 +865,13 @@ def _meta(cat, key):
 
 - [ ] **Step 2: Run**
 
-Run: `python -m pytest src/synthetic/tests/test_bc3param_backend.py -k up_to_v2 -q`
+Run: `python -m pytest tests/synthetic/test_bc3param_backend.py -k up_to_v2 -q`
 Expected: PASS (or SKIP if the source file is not present locally). The authoritative equivalence check is the corpus-level reconciliation in Task 10.
 
 - [ ] **Step 3: Commit**
 
 ```bash
-git add src/synthetic/tests/test_bc3param_backend.py
+git add tests/synthetic/test_bc3param_backend.py
 git commit -m "synthetic: adapter equivalence spot-check (no v1 corruption in base)
 
 Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
@@ -965,7 +969,7 @@ Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>"
 ### Task 11: Update seam golden tests and run the full suites
 
 **Files:**
-- Modify: seam tests under `src/synthetic/tests/` that assert legacy byte-output.
+- Modify: seam tests under `tests/synthetic/` that assert legacy byte-output.
 
 - [ ] **Step 1: Find seam tests pinned to legacy byte-output**
 
@@ -984,7 +988,7 @@ assert the corrected `>=` form. Add a one-line comment citing this plan.
 Run:
 ```bash
 python -m pytest tests -q 2>&1 | tail -3
-python -m pytest src/synthetic/tests -q 2>&1 | tail -3
+python -m pytest tests/synthetic -q 2>&1 | tail -3
 ```
 Expected: both green. The synthetic suite count may drop by the handful of seam byte-tests re-pointed; no new failures.
 
