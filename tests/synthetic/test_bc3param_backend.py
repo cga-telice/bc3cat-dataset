@@ -99,7 +99,7 @@ def test_materialize_variant_bc3param_items_and_mods(cat):
     assert mv.items["OEB020ab"]["resumen"] == "Canal 2 T, muy rocoso."
     assert [m.to_dict() for m in mv.modifications] == [
         {"type": "compression", "layer": "text_variable", "var": "K",
-         "condition": '%B=="b"', "new": "muy rocoso", "status": "applied"}
+         "condition": '%B=="b"', "original": "rocoso", "new": "muy rocoso", "status": "applied"}
     ]
 
 

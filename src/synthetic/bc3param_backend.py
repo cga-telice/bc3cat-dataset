@@ -101,13 +101,22 @@ def apply_rules_logged(fam, rules, concept_key: str = "?"):
     out = fam
     applied = []
     for rule in rules:
+        # L2 rules carry only (var, condition, new); the legacy sidecar also records
+        # `original` (the replaced fragment). Capture it before editing so the
+        # modification record matches. Read from `out` (post earlier edits).
+        original = None
+        if rule.get("type") in _L2 and "original" not in rule:
+            try:
+                original = mutate.text_fragment(out, rule["var"], rule["condition"])
+            except (KeyError, ValueError, TypeError):
+                original = None
         try:
             out = _edit_for_rule(out, rule)
         except (KeyError, ValueError, TypeError) as exc:
             logger.warning("bc3param_backend: skipping %s rule on concept %s: %s",
                            rule.get("type"), concept_key, exc)
             continue
-        applied.append(rule)
+        applied.append({**rule, "original": original} if original is not None else rule)
     return out, applied
 
 

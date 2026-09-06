@@ -87,6 +87,36 @@ def _edit_terms(expr, want_cond: str, new_value: str, hit: list):
     return expr
 
 
+def text_fragment(family: Family, var: str, condition: str) -> str:
+    """Return the current fragment string of ``$var`` guarded by ``condition``.
+
+    Used to record the legacy modification sidecar's ``original`` for L2 rules,
+    which carry only (var, condition, new). Raises KeyError if not found.
+    """
+    want = normalize_condition(condition)
+    for st in family.statements:
+        if isinstance(st, Assign) and st.name == var and st.kind == "$":
+            found: list = []
+
+            def scan(expr):
+                if isinstance(expr, Binary) and expr.op == "+":
+                    scan(expr.left)
+                    scan(expr.right)
+                elif isinstance(expr, Binary) and expr.op == "*":
+                    left, right = expr.left, expr.right
+                    str_node = left if isinstance(left, Str) else (right if isinstance(right, Str) else None)
+                    cond_node = right if isinstance(left, Str) else left
+                    if str_node is not None and _render_condition(cond_node).replace(" ", "") == want:
+                        found.append(str_node.value)
+
+            for v in st.values:
+                scan(v)
+            if not found:
+                raise KeyError(f"no fragment for {var!r} at condition {want!r} in {family.code}")
+            return found[0]
+    raise KeyError(f"no text variable ${var} in {family.code}")
+
+
 def replace_text_fragment(family: Family, var: str, condition: str, new_value: str) -> Family:
     """Replace the text fragment of text-variable ``$var`` guarded by ``condition``."""
     want = normalize_condition(condition)
