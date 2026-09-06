@@ -1,0 +1,47 @@
+MIT License
+
+Copyright (c) 2026 Cesáreo González-Alvarez, Laura Fernández-Robles,
+Enrique Alegre, Manuel Castejón-Limas, Universidad de León
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+----------------------------------------------------------------------
+
+NOTE ON DUAL LICENSING
+
+This repository is dual-licensed:
+
+  * Source code (everything outside `data/`, including the parsing and
+    expansion notebooks under `src/` such as `s01_parse_fiebdc.ipynb`,
+    `s02_split_chapters.ipynb`, ..., `s08_Llamaindex_Doc_Creation.ipynb`,
+    `Generate_OEB_dataset.ipynb`, and the supporting modules under
+    `src/utils/`) is licensed under the MIT License above.
+
+  * Data files under `data/` are licensed separately. See the
+    accompanying LICENSE-DATA file, which distinguishes three tiers:
+
+      - `data/raw/`           — verbatim redistribution of ADIF's BC3
+                                catalog (UTF-8 transcoded). Terms are
+                                those set by ADIF, not by this project.
+      - `data/intermediate/`  — derived JSON dumps; CC-BY-4.0.
+      - `data/processed/`     — final query/document pairs; CC-BY-4.0.
+
+The BC3/FIEBDC format specification is maintained by FIEBDC
+(https://www.fiebdc.es) and is referenced descriptively in this work;
+no FIEBDC materials are redistributed here.
