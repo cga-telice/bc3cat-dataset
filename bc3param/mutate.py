@@ -103,10 +103,33 @@ def replace_text_fragment(family: Family, var: str, condition: str, new_value: s
 
 
 def replace_template(family: Family, label: str, new_template: str) -> Family:
-    """Replace the RESUMEN or TEXTO template text."""
+    """Replace the whole RESUMEN or TEXTO template text."""
     statements = list(family.statements)
     for i, st in enumerate(statements):
         if isinstance(st, Text) and st.label == label:
+            statements[i] = dataclasses.replace(st, template=new_template)
+            return _rebuild(family, statements)
+    raise KeyError(f"no {label} template in {family.code}")
+
+
+def replace_template_substring(family: Family, label: str, original: str, new: str) -> Family:
+    """Replace exactly one occurrence of ``original`` within a template.
+
+    Mirrors the legacy ``layer_l3._replace_substring``: raises KeyError when
+    ``original`` is absent and ValueError when it is ambiguous (>1 match), so the
+    adapter's skip-and-log path drops exactly the L3 rules the legacy engine
+    skipped (e.g. a rewrite whose ``original`` doesn't match the template because
+    of an accent or wording difference).
+    """
+    statements = list(family.statements)
+    for i, st in enumerate(statements):
+        if isinstance(st, Text) and st.label == label:
+            count = st.template.count(original)
+            if count == 0:
+                raise KeyError(f"original {original[:40]!r} not found in {label} of {family.code}")
+            if count > 1:
+                raise ValueError(f"original {original[:40]!r} ambiguous ({count}) in {label} of {family.code}")
+            new_template = st.template.replace(original, new, 1)
             statements[i] = dataclasses.replace(st, template=new_template)
             return _rebuild(family, statements)
     raise KeyError(f"no {label} template in {family.code}")

@@ -83,7 +83,10 @@ def _edit_for_rule(fam, rule):
     if rtype in _L1:
         return mutate.replace_option_value(fam, rule["param"], rule["value"], rule["new"])
     if rtype in _FIELD:
-        return mutate.replace_template(fam, rule["field"], rule["new"])
+        # Substring-splice against `original` (like legacy layer_l3): if `original`
+        # isn't in the template the edit raises and the rule is skipped, matching
+        # the legacy engine. `original` is always present in the frozen L3 rules.
+        return mutate.replace_template_substring(fam, rule["field"], rule["original"], rule["new"])
     raise KeyError(f"unmapped rule type {rtype!r}")
 
 

@@ -120,3 +120,16 @@ def test_apply_rules_strict_still_raises_on_unmapped(cat):
     fam = cat.family("OEB020$")
     with _pytest.raises(KeyError):
         bk.apply_rules(fam, [{"type": "nope", "var": "K"}])
+
+
+def test_field_rule_skipped_when_original_absent(cat):
+    # reorder whose `original` (accented) is not in the template -> skipped, base kept
+    fam = cat.family("OEB020$")
+    edited, applied = bk.apply_rules_logged(fam, [
+        {"type": "reorder", "field": "RESUMEN",
+         "original": "Canal subterránea $A", "new": "X"},
+    ], "OEB020$")
+    assert applied == []
+    from bc3param import mutate
+    leaves = mutate.render_family_leaves(edited, ud="m", concept="CANAL")
+    assert leaves["OEB020aa"]["resumen"] == "Canal 2 T, normal."

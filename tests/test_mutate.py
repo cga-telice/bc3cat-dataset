@@ -7,6 +7,7 @@ from bc3param.mutate import (
     render_family_leaves,
     replace_option_value,
     replace_template,
+    replace_template_substring,
     replace_text_fragment,
 )
 from bc3param.param.ast import Binary, Str
@@ -126,3 +127,13 @@ def test_replace_text_fragment_matches_disjunctive_condition():
     n = [s for s in out.statements if getattr(s, "name", None) == "N"][0]
     strs = _collect_strs(n.values[0])
     assert "REEMPLAZO" in strs and "descerne" not in " ".join(strs)
+
+
+def test_replace_template_substring_splices_and_skips():
+    fam = parse_family("OEB020$", FAMILY)  # RESUMEN = "Canal $A T, $K."
+    out = replace_template_substring(fam, "RESUMEN", "Canal $A T", "Zanja de $A tubos")
+    t = [s for s in out.statements if getattr(s, "label", None) == "RESUMEN"][0]
+    assert t.template == "Zanja de $A tubos, $K."
+    import pytest
+    with pytest.raises(KeyError):  # original with an accent not present -> skip signal
+        replace_template_substring(fam, "RESUMEN", "Canal subterránea", "x")
