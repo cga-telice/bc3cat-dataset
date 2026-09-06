@@ -42,7 +42,7 @@ def load_v1(path: str) -> dict[str, str]:
     out: dict[str, str] = {}
     for it in json.load(open(path, encoding="utf-8")):
         k = it.get("item_key")
-        if k and k != it.get("parent_key"):  # skip chapter/non-derived rows
+        if k and k != it.get("parent_key"):  # skip chapter / non-derived rows
             out[k] = it.get("text", "")
     return out
 
@@ -85,15 +85,15 @@ def main() -> None:
                     other_samples.append((k, a, b))
         report.append(f"## {field}")
         report.append("")
-        report.append(f"- v1 claves: {len(k1)} | v2 claves: {len(k2)} | comunes: {len(common)}")
-        report.append(f"- solo en v1: {len(k1 - k2)} | solo en v2: {len(k2 - k1)}")
-        report.append(f"- iguales exactos: {exact}")
-        report.append(f"- iguales salvo espacios (cosmético): {wsonly}")
-        report.append(f"- difieren solo por la corrupción de literales de v1 (v2 corrige): {corrupt}")
-        report.append(f"- otras diferencias de fondo: {other}")
+        report.append(f"- v1 keys: {len(k1)} | v2 keys: {len(k2)} | common: {len(common)}")
+        report.append(f"- only in v1: {len(k1 - k2)} | only in v2: {len(k2 - k1)}")
+        report.append(f"- exact match: {exact}")
+        report.append(f"- match up to whitespace (cosmetic): {wsonly}")
+        report.append(f"- differ only by v1's literal corruption (v2 fixes it): {corrupt}")
+        report.append(f"- other substantive differences: {other}")
         report.append("")
         if corrupt_samples:
-            report.append("Ejemplos donde v2 corrige la corrupción de v1:")
+            report.append("Examples where v2 corrects v1's corruption:")
             report.append("")
             for k, a, b in corrupt_samples:
                 report.append(f"- `{k}`")
@@ -101,7 +101,7 @@ def main() -> None:
                 report.append(f"  - v2: {collapse(b)[:200]}")
             report.append("")
         if other_samples:
-            report.append("Otras diferencias de fondo (requieren revisión):")
+            report.append("Other substantive differences (need review):")
             report.append("")
             for k, a, b in other_samples:
                 report.append(f"- `{k}`")
@@ -110,34 +110,34 @@ def main() -> None:
             report.append("")
 
     n_invalid = sum(1 for v in v2_valid.values() if not v)
-    report.append("# Informe de reconciliación v1 (notebooks) vs v2 (bc3param)")
+    report.append("# Reconciliation report: v1 (notebooks) vs v2 (bc3param)")
     report.append("")
-    report.append(f"Fuente común: `{SRC}`. Capítulo: OEB#.")
+    report.append(f"Shared source: `{SRC}`. Chapter: OEB#.")
     report.append("")
-    report.append(f"- v2 combinaciones totales: {len(v2_valid)} | válidas: {len(v2_valid)-n_invalid} | "
-                  f"inválidas por %E (ausentes en un uso normal): {n_invalid}")
+    report.append(f"- v2 total combinations: {len(v2_valid)} | valid: {len(v2_valid)-n_invalid} | "
+                  f"invalid via %E (absent in normal use): {n_invalid}")
     report.append("")
     section("RESUMEN", v1_res, v2_res)
     section("TEXTO", v1_tex, v2_tex)
 
-    report.append("## Conclusión")
+    report.append("## Conclusion")
     report.append("")
-    report.append("- El conjunto de claves (ítems derivados) es idéntico entre v1 y v2.")
-    report.append("- TEXTO: coincide al 100 % salvo espacios en blanco (v2 colapsa espacios repetidos).")
-    report.append("- RESUMEN: no hay ninguna diferencia inexplicada. Todas las que no son de "
-                  "espacios se deben a que v2 corrige la corrupción de literales de v1 "
-                  "(`>==`, `<==`, comillas espurias como `\"3\"`), producida por la reescritura "
-                  "de fórmulas con expresiones regulares sobre texto entre comillas.")
-    report.append("- v2 añade además precio y descompuesto por ítem, que v1 no calculaba, y marca "
-                  f"{n_invalid} combinaciones como inválidas por la sentencia `%E` (no existen en "
-                  "el uso normal del catálogo). No tienen equivalente en v1, que las incluía.")
+    report.append("- The set of keys (derived items) is identical between v1 and v2.")
+    report.append("- TEXTO: matches 100% up to whitespace (v2 collapses repeated spaces).")
+    report.append("- RESUMEN: there is no unexplained difference. Every non-whitespace difference is "
+                  "v2 correcting v1's literal corruption (`>==`, `<==`, spurious quotes such as "
+                  "`\"3\"`), caused by rewriting formulas with regular expressions over quoted text.")
+    report.append("- v2 additionally provides per-item price and decomposition, which v1 did not "
+                  f"compute, and marks {n_invalid} combinations invalid via the `%E` statement (they "
+                  "do not exist in normal catalogue use). These have no counterpart in v1, which "
+                  "included them.")
     report.append("")
-    report.append("Fuente de v2 en esta comparación: el mismo fichero `_mod` que usó v1, para que "
-                  "las diferencias reflejen el motor y no la elección de fichero.")
+    report.append("v2 source for this comparison: the same `_mod` file v1 used, so that the "
+                  "differences reflect the engine and not the choice of source file.")
     report.append("")
 
     open("docs/reconciliation-v1-v2.md", "w", encoding="utf-8", newline="\n").write("\n".join(report) + "\n")
-    print("informe escrito en docs/reconciliation-v1-v2.md")
+    print("report written to docs/reconciliation-v1-v2.md")
 
 
 if __name__ == "__main__":
