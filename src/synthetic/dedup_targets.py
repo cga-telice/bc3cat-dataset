@@ -67,3 +67,53 @@ def dedup_synthetic(syn_df, plan: DedupPlan):
     mask = ~syn_df["original_key"].isin(plan.drop_leaf_keys)
     dropped = set(syn_df.loc[~mask, "item_key"])
     return syn_df[mask].reset_index(drop=True), dropped
+
+
+def plan_collapse(long_df, short_df):
+    """Collapse *intra*-concept duplicate descriptions to one canonical leaf.
+
+    For every ``(resumen, texto)`` that a single concept renders under more than
+    one leaf (a parameter axis absent from its templates), keep the first leaf
+    (min ``item_key``) and map the rest to it. Returns ``(drop_leaf_keys, remap)``
+    where ``remap`` sends each dropped leaf to the surviving sibling — used to
+    remap the derived synthetic items' ``original_key`` rather than drop them, so
+    the concept is not under-represented.
+
+    Must run on data with no *cross*-concept duplicates left (see
+    :func:`plan_dedup`); a cross-concept duplicate here raises, to avoid silently
+    remapping a query across concepts.
+    """
+    parent = dict(zip(long_df["item_key"], long_df["parent_key"]))
+    texto = dict(zip(long_df["item_key"], long_df["text"]))
+    resumen = dict(zip(short_df["item_key"], short_df["text"]))
+
+    groups: dict = {}
+    for key in long_df["item_key"]:
+        groups.setdefault((resumen.get(key, ""), texto.get(key, "")), []).append(key)
+
+    drop: set = set()
+    remap: dict = {}
+    for keys in groups.values():
+        if len(keys) <= 1:
+            continue
+        concepts = {parent[k] for k in keys}
+        if len(concepts) > 1:
+            raise ValueError(
+                f"plan_collapse: cross-concept duplicate remains {sorted(concepts)}; "
+                "run cross-concept dedup (plan_dedup) first")
+        keep = min(keys)
+        for k in keys:
+            if k != keep:
+                drop.add(k)
+                remap[k] = keep
+    return frozenset(drop), remap
+
+
+def remap_synthetic(syn_df, remap: dict):
+    """Point synthetic items whose ``original_key`` was collapsed at the surviving
+    sibling leaf. Returns ``(remapped_df, n_remapped)``; row count is unchanged.
+    """
+    n = int(syn_df["original_key"].isin(remap).sum())
+    out = syn_df.copy()
+    out["original_key"] = out["original_key"].map(lambda k: remap.get(k, k))
+    return out, n
