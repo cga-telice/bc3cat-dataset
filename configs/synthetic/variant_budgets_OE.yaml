@@ -1,31 +1,32 @@
-# Phase 2 — OE synthetic corpus budgets (target ~5000 items, BPA 2026 base).
-# Same 10 conditions as the OEB pilot; scaled so single-type + all_combined ≈ 5000.
+# Phase 2 — OE synthetic corpus budgets (BPA 2026 base).
 #
-# Rebalanced after two calibration builds (4390/5000, then 4691/5040). Observed
-# per-condition behaviour on the OE/BPA-2026 base:
-#   * L2 yield SCALES with target (~0.48x paraphrase, ~0.44x expansion,
-#     ~0.91x compression): the rest are no-ops — many OE text variables are
-#     list-form positional lookups whose fragment rewrite renders identically
-#     to the base, so the variant is dropped. Keep these at 500 (starving them
-#     only loses fillable items); ~500->~243/~221/~456 respectively.
-#   * Ceiling-limited (fixed regardless of target): synonym_label ~496,
-#     unit_expansion ~292, unit_conversion ~193 (compatible-leaf bound). Leave
-#     them at the values that already reach the ceiling.
-#   * Unbounded absorbers (yield ~= target): template_paraphrase and reorder
-#     (L3 templates apply to every leaf) and all_combined (mixes all types).
-#     The structural L2/unit deficit (~610) is carried here.
+# Option A: leaf-proportional allocation. Each concept receives a total item
+# budget proportional to its share of leaves in the (deduplicated) target pool,
+# clamped to [floor, cap_per_leaf*leaves]. That per-concept budget is split
+# across the 10 conditions by `type_mix`; any single-type shortfall (e.g. L2
+# paraphrase/expansion on list-form variables) is absorbed by the SAME concept's
+# all_combined, so a shortfall never leaks to another concept. This keeps items
+# per concept ∝ leaves (fixing OED under-representation) while a coverage floor
+# keeps small concepts measurable (macro-average / per-stratum reporting).
+#
+# Generate from the DEDUPED target pool (OE_target_{long,short}.parquet) so the
+# corpus is duplicate-clean by construction (no OED170, no OEG010 dup leaves).
 seed: 42
-targets:
-  single_paraphrase: 500
-  single_expansion: 500
-  single_template_paraphrase: 750
-  single_synonym_label: 500
-  single_compression: 500
-  single_reorder: 750
-  single_num_to_text: 300
-  single_unit_expansion: 300
-  single_unit_conversion: 200
-  all_combined: 1350
+mode: leaf_proportional
+total: 5000
+floor: 5              # min items per concept (coverage); applied once, not per-condition
+cap_per_leaf: 3.0     # safety rail on items per concept (rarely binds; floor dominates tiny concepts)
+type_mix:             # desired share of each condition (renormalised per concept over eligible types)
+  single_paraphrase: 0.088
+  single_expansion: 0.088
+  single_template_paraphrase: 0.133
+  single_synonym_label: 0.088
+  single_compression: 0.088
+  single_reorder: 0.133
+  single_num_to_text: 0.053
+  single_unit_expansion: 0.053
+  single_unit_conversion: 0.035
+  all_combined: 0.239
 reuse_cap:
   num_to_text: 20
   unit_expansion: 20

@@ -109,11 +109,28 @@ DEFAULT_BUDGETS_PATH = (
 
 @dataclass(frozen=True)
 class Budgets:
-    """Validated corpus budgets: per-condition targets + thin-type caps."""
+    """Validated corpus budgets.
+
+    Two modes:
+
+    * ``legacy`` (default) — flat per-condition ``targets`` distributed across
+      concepts proportional to leaves, with a cross-concept recovery pass.
+    * ``leaf_proportional`` (Option A) — each concept gets a total budget
+      proportional to its leaf share, clamped to ``[floor, cap_per_leaf*leaves]``;
+      that budget is split across conditions by ``type_mix`` and any single-type
+      shortfall is absorbed by the concept's own ``all_combined`` (no
+      cross-concept leakage). Keeps the item count per concept ∝ leaves while
+      guaranteeing a coverage floor.
+    """
 
     seed: int
     targets: Mapping[str, int]
     reuse_cap: Mapping[str, int]
+    mode: str = "legacy"
+    total: Optional[int] = None
+    floor: Optional[int] = None
+    cap_per_leaf: Optional[float] = None
+    type_mix: Optional[Mapping[str, float]] = None
 
 
 def _require_positive_int(value: object, what: str) -> int:
@@ -136,6 +153,36 @@ def load_budgets(path: Optional[Path] = None) -> Budgets:
 
     seed = _require_positive_int(raw.get("seed"), "seed")
 
+    reuse_cap = raw.get("reuse_cap") or {}
+    if not isinstance(reuse_cap, dict):
+        raise ValueError("budgets_invalid: reuse_cap is not a mapping")
+    valid_types = {t.value for t in NINE_TYPES}
+    for mtype, cap in reuse_cap.items():
+        if mtype not in valid_types:
+            raise ValueError(f"budgets_invalid: reuse_cap type {mtype!r} is "
+                             f"not one of the nine pilot types")
+        _require_positive_int(cap, f"reuse_cap[{mtype}]")
+
+    mode = raw.get("mode", "legacy")
+    if mode == "leaf_proportional":
+        total = _require_positive_int(raw.get("total"), "total")
+        floor = _require_positive_int(raw.get("floor"), "floor")
+        cap = raw.get("cap_per_leaf")
+        if not isinstance(cap, (int, float)) or cap <= 0:
+            raise ValueError("budgets_invalid: cap_per_leaf must be a positive number")
+        mix = raw.get("type_mix")
+        if not isinstance(mix, dict) or set(mix) != set(CONDITIONS):
+            raise ValueError("budgets_invalid: type_mix must cover exactly the "
+                             "10 conditions")
+        for c, w in mix.items():
+            if not isinstance(w, (int, float)) or w < 0:
+                raise ValueError(f"budgets_invalid: type_mix[{c}] must be >= 0")
+        if sum(mix.values()) <= 0:
+            raise ValueError("budgets_invalid: type_mix sums to 0")
+        return Budgets(seed=seed, targets={}, reuse_cap=dict(reuse_cap),
+                       mode="leaf_proportional", total=total, floor=floor,
+                       cap_per_leaf=float(cap), type_mix=dict(mix))
+
     targets = raw.get("targets")
     if not isinstance(targets, dict):
         raise ValueError("budgets_invalid: targets missing or not a mapping")
@@ -150,16 +197,6 @@ def load_budgets(path: Optional[Path] = None) -> Budgets:
         )
     for condition, n in targets.items():
         _require_positive_int(n, f"targets[{condition}]")
-
-    reuse_cap = raw.get("reuse_cap") or {}
-    if not isinstance(reuse_cap, dict):
-        raise ValueError("budgets_invalid: reuse_cap is not a mapping")
-    valid_types = {t.value for t in NINE_TYPES}
-    for mtype, cap in reuse_cap.items():
-        if mtype not in valid_types:
-            raise ValueError(f"budgets_invalid: reuse_cap type {mtype!r} is "
-                             f"not one of the nine pilot types")
-        _require_positive_int(cap, f"reuse_cap[{mtype}]")
 
     return Budgets(seed=seed, targets=dict(targets), reuse_cap=dict(reuse_cap))
 
@@ -600,6 +637,144 @@ def _pick_rewrite(
     return None
 
 
+# ----- Option A: leaf-proportional allocation -----------------------------
+
+def _concept_budgets(
+    leaf_counts: Mapping[str, int], total: int, floor: int, cap_per_leaf: float,
+) -> dict[str, int]:
+    """Per-concept item budget ∝ leaf share, clamped to ``[floor, cap]`` where
+    ``cap = max(floor, round(cap_per_leaf*leaves))``. Deterministic."""
+    keys = sorted(k for k, c in leaf_counts.items() if c > 0)
+    supply = sum(leaf_counts[k] for k in keys)
+    if supply == 0:
+        return {}
+    out: dict[str, int] = {}
+    for k in keys:
+        prop = round(total * leaf_counts[k] / supply)
+        cap = max(floor, round(cap_per_leaf * leaf_counts[k]))
+        out[k] = min(max(prop, floor), cap)
+    return out
+
+
+def _split_by_type(
+    b_c: int, eligible: list[str], type_mix: Mapping[str, float],
+) -> dict[str, int]:
+    """Split a concept's budget across its eligible conditions by ``type_mix``
+    (renormalised over the eligible set), largest-remainder to sum exactly ``b_c``."""
+    if b_c <= 0:
+        return {}
+    weights = {c: type_mix.get(c, 0.0) for c in eligible if type_mix.get(c, 0.0) > 0}
+    total_w = sum(weights.values())
+    if total_w <= 0:
+        return {}
+    quotas = {c: b_c * weights[c] / total_w for c in weights}
+    alloc = {c: math.floor(q) for c, q in quotas.items()}
+    remainder = b_c - sum(alloc.values())
+    order = sorted(quotas, key=lambda c: (-(quotas[c] - alloc[c]), c))
+    for c in order[:remainder]:
+        alloc[c] += 1
+    return {c: a for c, a in alloc.items() if a > 0}
+
+
+def _eligible(condition: str, applicable: Mapping[ModificationType, tuple]) -> bool:
+    if condition == _ALL_COMBINED:
+        return any(t in applicable for t in NINE_TYPES)
+    return _condition_type(condition) in applicable
+
+
+def _produce_condition(
+    condition: str, alloc: Mapping[str, int], applicable: Mapping[str, dict],
+    inventory: "LeafInventory", budgets: Budgets,
+) -> tuple[list[PlannedVariant], dict]:
+    """Main production pass for a condition against a fixed per-concept ``alloc``
+    (no cross-concept recovery — Option A recovers within each concept via
+    ``all_combined``). Same leaf-order/compatibility/reuse-cap semantics as the
+    legacy pass."""
+    eligible = list(alloc)
+    usage: dict[str, int] = {}
+    rng = random.Random(budgets.seed ^ zlib.crc32(condition.encode("utf-8")))
+    orders = {c: rng.sample(list(inventory.leaves(c)), len(inventory.leaves(c)))
+              for c in sorted(eligible)}
+    pos = {c: 0 for c in eligible}
+    dead: set[str] = set()
+    cond_plan: list[PlannedVariant] = []
+    cond_stats = {"incompatible_skips": 0}
+
+    def _produce(c: str) -> bool:
+        while c not in dead and pos[c] < len(orders[c]):
+            leaf = orders[c][pos[c]]
+            rewrites, n_incompatible, capacity_left = _draw_rewrites(
+                condition, applicable[c], budgets.reuse_cap, usage,
+                inventory.text(leaf), inventory.axis_values(leaf),
+            )
+            if rewrites:
+                cond_stats["incompatible_skips"] += n_incompatible
+                pos[c] += 1
+                for r in rewrites:
+                    usage[r.uid] = usage.get(r.uid, 0) + 1
+                cond_plan.append(PlannedVariant(
+                    condition=condition, concept_key=c,
+                    leaf_item_key=leaf, rewrites=rewrites))
+                return True
+            if not capacity_left:
+                dead.add(c)
+                return False
+            cond_stats["incompatible_skips"] += max(n_incompatible, 1)
+            pos[c] += 1
+        return False
+
+    for c in sorted(alloc):
+        for _ in range(alloc[c]):
+            if not _produce(c):
+                break
+    return cond_plan, cond_stats
+
+
+def _build_plan_leaf_proportional(
+    pantry: Pantry, inventory: "LeafInventory", budgets: Budgets,
+    concepts: Iterable[str], *, stats_out: Optional[dict] = None,
+) -> tuple[PlannedVariant, ...]:
+    """Option A: each concept gets a total budget ∝ leaves (floor/cap), split
+    across conditions by ``type_mix``; any single-type shortfall is absorbed by
+    that concept's own ``all_combined`` (no cross-concept leakage)."""
+    concept_keys = tuple(sorted(set(concepts) & set(inventory.concepts())))
+    applicable = {c: pantry.for_concept(c) for c in concept_keys}
+    leaf_counts = {c: len(inventory.leaves(c)) for c in concept_keys}
+    budget = _concept_budgets(leaf_counts, budgets.total, budgets.floor,
+                              budgets.cap_per_leaf)
+
+    split = {
+        c: _split_by_type(
+            budget.get(c, 0),
+            [cond for cond in CONDITIONS if _eligible(cond, applicable[c])],
+            budgets.type_mix)
+        for c in concept_keys
+    }
+
+    plan: list[PlannedVariant] = []
+    produced = {c: 0 for c in concept_keys}
+    ordered = [c for c in CONDITIONS if c != _ALL_COMBINED]
+    if _ALL_COMBINED in CONDITIONS:
+        ordered.append(_ALL_COMBINED)  # last: absorbs each concept's shortfall
+
+    for condition in ordered:
+        if condition == _ALL_COMBINED:
+            alloc = {c: budget.get(c, 0) - produced[c] for c in concept_keys
+                     if _eligible(_ALL_COMBINED, applicable[c])
+                     and budget.get(c, 0) - produced[c] > 0}
+        else:
+            alloc = {c: split[c].get(condition, 0) for c in concept_keys
+                     if split[c].get(condition, 0) > 0}
+        cond_plan, cond_stats = _produce_condition(
+            condition, alloc, applicable, inventory, budgets)
+        for p in cond_plan:
+            produced[p.concept_key] += 1
+        plan.extend(cond_plan)
+        if stats_out is not None:
+            stats_out[condition] = cond_stats
+    return tuple(plan)
+
+
 def build_plan(
     pantry: Pantry,
     inventory: LeafInventory,
@@ -610,6 +785,9 @@ def build_plan(
 ) -> tuple[PlannedVariant, ...]:
     """Produce the full deterministic sampling plan.
 
+    Dispatches to the leaf-proportional builder (Option A) when
+    ``budgets.mode == "leaf_proportional"``, else the legacy per-condition path.
+
     ``concepts`` restricts the plan to those concept keys (intersected with
     the inventory). Reuse counters are per condition — reset at each
     condition's start — so caps bound reuse within a condition; the caps
@@ -619,6 +797,10 @@ def build_plan(
     order, and pairing-level skips are tallied per condition into
     ``stats_out`` (when given) for :func:`plan_report`.
     """
+    if budgets.mode == "leaf_proportional":
+        return _build_plan_leaf_proportional(
+            pantry, inventory, budgets, concepts, stats_out=stats_out)
+
     concept_keys = tuple(sorted(set(concepts) & set(inventory.concepts())))
     applicable = {c: pantry.for_concept(c) for c in concept_keys}
     plan: list[PlannedVariant] = []
@@ -733,7 +915,7 @@ def plan_report(
     for condition in CONDITIONS:
         variants = [p for p in plan if p.condition == condition]
         uses = Counter(r.uid for p in variants for r in p.rewrites)
-        target = budgets.targets[condition]
+        target = budgets.targets.get(condition, len(variants))
         out[condition] = {
             "n": len(variants),
             "target": target,

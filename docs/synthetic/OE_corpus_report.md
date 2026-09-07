@@ -6,37 +6,37 @@ original leaf, summed over (resumen, texto).
 
 | condition | n | target | deficit | unique rewrites | max reuse | no-ops | dups | emission skips | composition skips | target-not-found | leaf-missing | mean tok dist |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| single_paraphrase | 243 | 500 | 257 | 112 | 3 | 257 | 0 | 0 | 0 | 0 | 0 | 6.12 |
-| single_expansion | 221 | 500 | 279 | 120 | 3 | 279 | 0 | 0 | 0 | 0 | 0 | 14.13 |
-| single_template_paraphrase | 749 | 750 | 1 | 231 | 13 | 0 | 0 | 0 | 0 | 0 | 1 | 12.04 |
-| single_synonym_label | 496 | 500 | 4 | 107 | 7 | 4 | 0 | 0 | 0 | 0 | 0 | 4.59 |
-| single_compression | 456 | 500 | 44 | 54 | 28 | 44 | 0 | 0 | 0 | 0 | 0 | 7.36 |
-| single_reorder | 739 | 750 | 11 | 224 | 11 | 11 | 0 | 0 | 0 | 0 | 0 | 12.08 |
-| single_num_to_text | 300 | 300 | 0 | 45 | 11 | 0 | 0 | 0 | 0 | 0 | 0 | 5.99 |
-| single_unit_expansion | 292 | 300 | 8 | 79 | 20 | 7 | 1 | 0 | 0 | 0 | 0 | 8.35 |
-| single_unit_conversion | 193 | 200 | 7 | 99 | 20 | 7 | 0 | 0 | 0 | 0 | 0 | 9.08 |
-| all_combined | 1349 | 1350 | 1 | 1171 | 115 | 0 | 0 | 0 | 0 | 0 | 1 | 49.87 |
+| single_paraphrase | 244 | 470 | 226 | 111 | 4 | 226 | 0 | 0 | 0 | 0 | 0 | 6.13 |
+| single_expansion | 221 | 484 | 263 | 120 | 3 | 263 | 0 | 0 | 0 | 0 | 0 | 14.11 |
+| single_template_paraphrase | 719 | 720 | 1 | 231 | 12 | 0 | 0 | 0 | 0 | 0 | 1 | 12.26 |
+| single_synonym_label | 446 | 447 | 1 | 99 | 7 | 1 | 0 | 0 | 0 | 0 | 0 | 4.57 |
+| single_compression | 272 | 303 | 31 | 50 | 20 | 31 | 0 | 0 | 0 | 0 | 0 | 7.33 |
+| single_reorder | 716 | 726 | 10 | 228 | 10 | 10 | 0 | 0 | 0 | 0 | 0 | 12.29 |
+| single_num_to_text | 181 | 181 | 0 | 39 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 5.93 |
+| single_unit_expansion | 213 | 216 | 3 | 37 | 20 | 3 | 0 | 0 | 0 | 0 | 0 | 8.64 |
+| single_unit_conversion | 101 | 103 | 2 | 25 | 20 | 2 | 0 | 0 | 0 | 0 | 0 | 6.19 |
+| all_combined | 1414 | 1416 | 2 | 1166 | 130 | 0 | 0 | 0 | 0 | 0 | 2 | 49.26 |
 
 **all_combined type presence** (variants carrying ≥1 rewrite of the type):
 
-- compression: 464
-- expansion: 1203
-- num_to_text: 695
-- paraphrase: 1300
-- reorder: 1
-- synonym_label: 1344
-- template_paraphrase (RESUMEN): 1348
-- template_paraphrase (TEXTO): 1335
-- unit_conversion: 151
-- unit_expansion: 306
+- compression: 465
+- expansion: 1263
+- num_to_text: 693
+- paraphrase: 1365
+- reorder: 2
+- synonym_label: 1406
+- template_paraphrase (RESUMEN): 1412
+- template_paraphrase (TEXTO): 1399
+- unit_conversion: 126
+- unit_expansion: 297
 
 ## Totals
 
-- planned: 5650
-- produced: 5038
-- noop_dropped: 609
-- dup_dropped: 1
+- planned: 5066
+- produced: 4527
+- noop_dropped: 536
+- dup_dropped: 0
 - emission_failed: 0
 - composition_conflicts: 0
 - target_not_found: 0
-- leaf_missing: 2
+- leaf_missing: 3
