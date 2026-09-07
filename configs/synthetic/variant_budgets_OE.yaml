@@ -1,0 +1,32 @@
+# Phase 2 — OE synthetic corpus budgets (target ~5000 items, BPA 2026 base).
+# Same 10 conditions as the OEB pilot; scaled so single-type + all_combined ≈ 5000.
+#
+# Rebalanced after two calibration builds (4390/5000, then 4691/5040). Observed
+# per-condition behaviour on the OE/BPA-2026 base:
+#   * L2 yield SCALES with target (~0.48x paraphrase, ~0.44x expansion,
+#     ~0.91x compression): the rest are no-ops — many OE text variables are
+#     list-form positional lookups whose fragment rewrite renders identically
+#     to the base, so the variant is dropped. Keep these at 500 (starving them
+#     only loses fillable items); ~500->~243/~221/~456 respectively.
+#   * Ceiling-limited (fixed regardless of target): synonym_label ~496,
+#     unit_expansion ~292, unit_conversion ~193 (compatible-leaf bound). Leave
+#     them at the values that already reach the ceiling.
+#   * Unbounded absorbers (yield ~= target): template_paraphrase and reorder
+#     (L3 templates apply to every leaf) and all_combined (mixes all types).
+#     The structural L2/unit deficit (~610) is carried here.
+seed: 42
+targets:
+  single_paraphrase: 500
+  single_expansion: 500
+  single_template_paraphrase: 750
+  single_synonym_label: 500
+  single_compression: 500
+  single_reorder: 750
+  single_num_to_text: 300
+  single_unit_expansion: 300
+  single_unit_conversion: 200
+  all_combined: 1350
+reuse_cap:
+  num_to_text: 20
+  unit_expansion: 20
+  unit_conversion: 20

@@ -139,10 +139,26 @@ def render_base(concept_key: str) -> dict:
 
 
 def run_variant_logged(concept_key: str, rules):
-    """Apply rules (skip-and-log non-editable ones) and render; return (leaves, applied)."""
+    """Apply rules (skip-and-log non-editable ones) and render; return (leaves, applied).
+
+    If the mutated family fails to render (e.g. an LLM template rewrite introduced a
+    malformed ``$X(...)`` the evaluator cannot parse), the whole variant is dropped —
+    returns empty leaves — so one bad rewrite does not abort the corpus run. The
+    driver then materialises nothing for this variant and counts it as a hard fail.
+    """
+    from bc3param.fiebdc import Bc3Error
+    from bc3param.param.evaluator import EvalError
+    from bc3param.param.parser import ParseError
+
     ud, concept = _concept_meta(concept_key)
     edited, applied = apply_rules_logged(family(concept_key), list(rules), concept_key)
-    return mutate.render_family_leaves(edited, ud=ud, concept=concept), applied
+    try:
+        leaves = mutate.render_family_leaves(edited, ud=ud, concept=concept)
+    except (ParseError, EvalError, Bc3Error) as exc:
+        logger.warning("bc3param_backend: dropping unrenderable variant on concept %s "
+                       "(%d rules): %s", concept_key, len(applied), exc)
+        return {}, applied
+    return leaves, applied
 
 
 def run_variant(concept_key: str, rules) -> dict:
