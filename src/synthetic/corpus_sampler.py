@@ -196,7 +196,11 @@ def load_budgets(path: Optional[Path] = None) -> Budgets:
             f"(missing={missing}, extra={extra})"
         )
     for condition, n in targets.items():
-        _require_positive_int(n, f"targets[{condition}]")
+        if type(n) is not int or n < 0:
+            raise ValueError(f"budgets_invalid: targets[{condition}] must be a "
+                             f"non-negative int, got {n!r}")
+    if sum(targets.values()) <= 0:
+        raise ValueError("budgets_invalid: at least one target must be positive")
 
     return Budgets(seed=seed, targets=dict(targets), reuse_cap=dict(reuse_cap))
 

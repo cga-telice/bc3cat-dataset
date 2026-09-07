@@ -1,0 +1,20 @@
+# Ablation — STACKED corpus: every item stacks ALL applicable modifications
+# (the existing all_combined condition), one per shared base leaf. Pure
+# recombination of the approved pantry rewrites; no LLM. Run over the shared
+# ablation inventory (OE_ablation_inventory_{long,short}.parquet, 5000 leaves).
+seed: 42
+targets:
+  single_paraphrase: 0
+  single_expansion: 0
+  single_template_paraphrase: 0
+  single_synonym_label: 0
+  single_compression: 0
+  single_reorder: 0
+  single_num_to_text: 0
+  single_unit_expansion: 0
+  single_unit_conversion: 0
+  all_combined: 5000
+reuse_cap:
+  num_to_text: 20
+  unit_expansion: 20
+  unit_conversion: 20

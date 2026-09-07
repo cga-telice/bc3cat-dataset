@@ -44,6 +44,26 @@ def test_load_budgets_leaf_proportional(tmp_path):
     assert b.targets == {}
 
 
+def test_load_budgets_legacy_allows_zero_targets(tmp_path):
+    # Ablation configs zero out whole condition groups (all_combined only, or
+    # singles only); zero targets are allowed as long as one is positive.
+    lines = "\n".join(f"  {c}: {0 if c != 'all_combined' else 5000}"
+                      for c in cs.CONDITIONS)
+    (tmp_path / "b.yaml").write_text(
+        "seed: 42\ntargets:\n" + lines + "\n", encoding="utf-8")
+    b = cs.load_budgets(tmp_path / "b.yaml")
+    assert b.targets["all_combined"] == 5000
+    assert b.targets["single_paraphrase"] == 0
+
+
+def test_load_budgets_rejects_all_zero_targets(tmp_path):
+    lines = "\n".join(f"  {c}: 0" for c in cs.CONDITIONS)
+    (tmp_path / "b.yaml").write_text(
+        "seed: 42\ntargets:\n" + lines + "\n", encoding="utf-8")
+    with pytest.raises(ValueError):
+        cs.load_budgets(tmp_path / "b.yaml")
+
+
 def test_load_budgets_leaf_proportional_rejects_bad_type_mix(tmp_path):
     (tmp_path / "b.yaml").write_text(
         "seed: 42\nmode: leaf_proportional\ntotal: 100\nfloor: 5\n"

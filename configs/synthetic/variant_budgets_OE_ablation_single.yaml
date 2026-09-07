@@ -1,0 +1,23 @@
+# Ablation — SINGLE corpus: every item carries exactly ONE modification, so each
+# type's retrieval impact can be measured in isolation. Capacity-balanced: an equal
+# cap per type (600); weak types (paraphrase/expansion/unit_conversion) produce
+# fewer where the pantry/list-form limits bind, so the total falls below 9*600.
+# Run over the SAME shared ablation inventory as the stacked corpus (Design A), so
+# every single-mod item is paired with a stacked item on the same base leaf.
+# Pure recombination of the approved pantry rewrites; no LLM. all_combined disabled.
+seed: 42
+targets:
+  single_paraphrase: 600
+  single_expansion: 600
+  single_template_paraphrase: 600
+  single_synonym_label: 600
+  single_compression: 600
+  single_reorder: 600
+  single_num_to_text: 600
+  single_unit_expansion: 600
+  single_unit_conversion: 600
+  all_combined: 0
+reuse_cap:
+  num_to_text: 20
+  unit_expansion: 20
+  unit_conversion: 20
