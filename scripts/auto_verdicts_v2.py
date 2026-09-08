@@ -38,6 +38,11 @@ def _approve(payload: dict, mtype: str) -> bool:
         return False
     if payload.get("preserves_meaning") is False:
         return False
+    # No-op rewrite: `new` equals `original` (a "paraphrase" that changed nothing).
+    # It would inflate modification_count without altering the item, so reject it.
+    original = str(payload.get("original", ""))
+    if original and " ".join(new.split()) == " ".join(original.split()):
+        return False
     rx = _SENTINEL if mtype in _FIELD_TYPES else _FRAGMENT_RESIDUE
     if rx.search(new):
         return False

@@ -6,35 +6,35 @@ original leaf, summed over (resumen, texto).
 
 | condition | n | target | deficit | unique rewrites | max reuse | no-ops | dups | emission skips | composition skips | target-not-found | leaf-missing | mean tok dist |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| single_paraphrase | 244 | 470 | 226 | 111 | 4 | 226 | 0 | 0 | 0 | 0 | 0 | 6.13 |
-| single_expansion | 221 | 484 | 263 | 120 | 3 | 263 | 0 | 0 | 0 | 0 | 0 | 14.11 |
-| single_template_paraphrase | 719 | 720 | 1 | 231 | 12 | 0 | 0 | 0 | 0 | 0 | 1 | 12.26 |
+| single_paraphrase | 246 | 470 | 224 | 111 | 4 | 224 | 0 | 0 | 0 | 0 | 0 | 6.11 |
+| single_expansion | 222 | 484 | 262 | 120 | 3 | 262 | 0 | 0 | 0 | 0 | 0 | 14.10 |
+| single_template_paraphrase | 719 | 720 | 1 | 230 | 12 | 0 | 0 | 0 | 0 | 0 | 1 | 12.27 |
 | single_synonym_label | 446 | 447 | 1 | 99 | 7 | 1 | 0 | 0 | 0 | 0 | 0 | 4.57 |
 | single_compression | 272 | 303 | 31 | 50 | 20 | 31 | 0 | 0 | 0 | 0 | 0 | 7.33 |
-| single_reorder | 716 | 726 | 10 | 228 | 10 | 10 | 0 | 0 | 0 | 0 | 0 | 12.29 |
+| single_reorder | 723 | 726 | 3 | 228 | 10 | 3 | 0 | 0 | 0 | 0 | 0 | 12.25 |
 | single_num_to_text | 181 | 181 | 0 | 39 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 5.93 |
 | single_unit_expansion | 213 | 216 | 3 | 37 | 20 | 3 | 0 | 0 | 0 | 0 | 0 | 8.64 |
 | single_unit_conversion | 101 | 103 | 2 | 25 | 20 | 2 | 0 | 0 | 0 | 0 | 0 | 6.19 |
-| all_combined | 1414 | 1416 | 2 | 1166 | 130 | 0 | 0 | 0 | 0 | 0 | 2 | 49.26 |
+| all_combined | 1414 | 1416 | 2 | 1165 | 130 | 0 | 0 | 0 | 0 | 0 | 2 | 49.29 |
 
 **all_combined type presence** (variants carrying ≥1 rewrite of the type):
 
-- compression: 465
-- expansion: 1263
+- compression: 466
+- expansion: 1290
 - num_to_text: 693
-- paraphrase: 1365
-- reorder: 2
+- paraphrase: 1294
+- reorder: 9
 - synonym_label: 1406
 - template_paraphrase (RESUMEN): 1412
-- template_paraphrase (TEXTO): 1399
+- template_paraphrase (TEXTO): 1392
 - unit_conversion: 126
 - unit_expansion: 297
 
 ## Totals
 
 - planned: 5066
-- produced: 4527
-- noop_dropped: 536
+- produced: 4537
+- noop_dropped: 526
 - dup_dropped: 0
 - emission_failed: 0
 - composition_conflicts: 0

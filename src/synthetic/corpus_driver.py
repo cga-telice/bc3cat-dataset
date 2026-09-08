@@ -333,44 +333,28 @@ def _per_rewrite_modifications(
     rewrites: tuple[ApprovedRewrite, ...],
     materialized_mods: tuple[Modification, ...],
 ) -> tuple[Modification, ...]:
-    """One representative `Modification` per distinct rewrite.
+    """One representative APPLIED `Modification` per distinct rewrite.
 
     All-slot emission (and L1↔L2 twin pairing) can log several records per
-    rewrite; the release schema (E2) couples `modification_count` to
-    `len(modifications)`, and conceptually the variant carries ONE
-    modification per rewrite — so pick, per rewrite, the first unclaimed
-    record of its type (applied preferred). A rewrite whose rules all
-    silently failed to apply gets a synthesized `skipped` record (the item
-    is then normally a no-op and filtered anyway).
+    rewrite; conceptually the variant carries ONE modification per rewrite — so
+    pick, per rewrite, the first unclaimed applied record of its type. A rewrite
+    whose rules all failed to apply (e.g. an L2 fragment on a list-form variable)
+    contributes NOTHING: it changed the item, so it must not be counted. This
+    keeps `modification_count == len(modifications)` equal to the number of
+    modifications that actually altered the item.
     """
     claimed: set[int] = set()
     out: list[Modification] = []
     for rewrite in rewrites:
         found: Optional[int] = None
-        for prefer_applied in (True, False):
-            for i, mod in enumerate(materialized_mods):
-                if i in claimed or mod.type is not rewrite.mtype:
-                    continue
-                if prefer_applied and mod.status != "applied":
-                    continue
-                found = i
-                break
-            if found is not None:
-                break
-        if found is None:
-            original = rewrite.payload.get("original")
-            new = rewrite.payload.get("new")
-            out.append(
-                Modification(
-                    type=rewrite.mtype,
-                    layer=TYPE_TO_LAYER[rewrite.mtype],
-                    original=original if isinstance(original, str) else None,
-                    new=new if isinstance(new, str) else None,
-                    status="skipped",
-                    reason="no_apply_record_for_rewrite",
-                )
-            )
-        else:
+        for i, mod in enumerate(materialized_mods):
+            if i in claimed or mod.type is not rewrite.mtype:
+                continue
+            if mod.status != "applied":
+                continue
+            found = i
+            break
+        if found is not None:
             claimed.add(found)
             out.append(materialized_mods[found])
     return tuple(out)

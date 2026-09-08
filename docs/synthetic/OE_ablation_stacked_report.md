@@ -6,18 +6,18 @@ original leaf, summed over (resumen, texto).
 
 | condition | n | target | deficit | unique rewrites | max reuse | no-ops | dups | emission skips | composition skips | target-not-found | leaf-missing | mean tok dist |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| all_combined | 4998 | 5000 | 2 | 1596 | 451 | 0 | 0 | 0 | 0 | 0 | 2 | 47.55 |
+| all_combined | 4998 | 5000 | 2 | 1590 | 451 | 0 | 0 | 0 | 0 | 0 | 2 | 47.63 |
 
 **all_combined type presence** (variants carrying ≥1 rewrite of the type):
 
-- compression: 1768
-- expansion: 4575
+- compression: 1763
+- expansion: 4655
 - num_to_text: 746
-- paraphrase: 4893
-- reorder: 5
+- paraphrase: 4678
+- reorder: 19
 - synonym_label: 4983
 - template_paraphrase (RESUMEN): 4993
-- template_paraphrase (TEXTO): 4942
+- template_paraphrase (TEXTO): 4928
 - unit_conversion: 252
 - unit_expansion: 600
 
