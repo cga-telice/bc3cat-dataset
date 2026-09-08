@@ -124,6 +124,7 @@ _COUNTER_KEYS = (
     "planned",
     "produced",
     "noop_dropped",
+    "texto_unchanged_dropped",
     "dup_dropped",
     "emission_failed",
     "composition_conflicts",
@@ -420,6 +421,7 @@ def run_corpus(
     report_path: Optional[Path] = None,
     budgets: Optional[Budgets] = None,
     workers: Optional[int] = None,
+    require_texto_changed: bool = False,
 ) -> CorpusRunStats:
     """Materialise `plan` against `stage2_json` into the frozen release + report.
 
@@ -593,6 +595,12 @@ def run_corpus(
         if resumen == original["resumen"] and texto == original["texto"]:
             row["noop_dropped"] += 1
             continue
+        # texto-focused corpora: the query is the modified TEXTO and the target
+        # is the original TEXTO, so an item whose TEXTO is unchanged (only the
+        # resumen changed) is useless — drop it.
+        if require_texto_changed and texto == original["texto"]:
+            row["texto_unchanged_dropped"] += 1
+            continue
         if (resumen, texto) in seen_texts:
             row["dup_dropped"] += 1
             continue
@@ -679,6 +687,7 @@ _REPORT_COLUMNS = (
     ("unique_rewrites", "unique rewrites"),
     ("max_reuse", "max reuse"),
     ("noop_dropped", "no-ops"),
+    ("texto_unchanged_dropped", "texto-unchanged"),
     ("dup_dropped", "dups"),
     ("emission_failed", "emission skips"),
     ("composition_conflicts", "composition skips"),
@@ -763,6 +772,17 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         help="BC3 catalogue the bc3param backend renders from "
              "(default: the adapter's pilot source). Use the 2026 file for OE.",
     )
+    run.add_argument(
+        "--require-texto-changed", action="store_true",
+        help="drop any variant whose rendered TEXTO equals the original leaf's "
+             "TEXTO (for corpora whose query is the modified TEXTO).",
+    )
+    run.add_argument(
+        "--texto-fields-only", default="",
+        help="comma-separated field-type modifications (template_paraphrase, "
+             "reorder) restricted to their TEXTO-field rewrites, so a single-"
+             "modification item of that type always changes the TEXTO.",
+    )
 
     args = parser.parse_args(argv)
     if args.cmd != "run":
@@ -780,6 +800,17 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         k for k in stage_json if k.endswith("$") and k.startswith(prefixes)
     ]
     pantry = load_pantry(Path(args.menus_dir) if args.menus_dir else None)
+    tfo = {t.strip() for t in args.texto_fields_only.split(",") if t.strip()}
+    if tfo:
+        from .pantry import Pantry
+        from .taxonomy import ModificationType
+        keep_types = {ModificationType(t) for t in tfo}
+        by_type = {
+            mt: (tuple(r for r in rws if str(r.dedup_key[0]) == "TEXTO")
+                 if mt in keep_types else rws)
+            for mt, rws in pantry.by_type.items()
+        }
+        pantry = Pantry(by_type={mt: rws for mt, rws in by_type.items() if rws})
     budgets = load_budgets(Path(args.budgets) if args.budgets else None)
     long_frame = pd.read_parquet(
         Path(args.inventory_long_parquet)
@@ -800,6 +831,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         report_path=Path(args.report) if args.report else None,
         budgets=budgets,
         workers=args.workers,
+        require_texto_changed=args.require_texto_changed,
     )
     print(
         json.dumps(

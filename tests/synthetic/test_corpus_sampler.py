@@ -92,16 +92,29 @@ def test_load_budgets_validates_conditions(tmp_path):
     )
     with pytest.raises(ValueError, match="budgets_invalid"):
         load_budgets(bad)
-    # a non-positive target fails loud too
-    worse = tmp_path / "worse.yaml"
-    worse.write_text(
+    # a single 0 target is ALLOWED (ablation configs zero out a whole group,
+    # e.g. all_combined: 0 for the single-modification corpus) as long as at
+    # least one target is positive.
+    okzero = tmp_path / "okzero.yaml"
+    okzero.write_text(
         "seed: 39\ntargets:\n"
         + "".join(f"  {c}: {0 if c == 'all_combined' else 10}\n" for c in CONDITIONS)
         + "reuse_cap: {}\n",
         encoding="utf-8",
     )
-    with pytest.raises(ValueError, match="budgets_invalid"):
-        load_budgets(worse)
+    assert load_budgets(okzero).targets["all_combined"] == 0
+    # a NEGATIVE target, or ALL targets zero, still fails loud.
+    for spec in ("-1", "0"):
+        worse = tmp_path / f"worse_{spec}.yaml"
+        worse.write_text(
+            "seed: 39\ntargets:\n"
+            + "".join(f"  {c}: {spec if c == 'all_combined' or spec == '0' else 10}\n"
+                      for c in CONDITIONS)
+            + "reuse_cap: {}\n",
+            encoding="utf-8",
+        )
+        with pytest.raises(ValueError, match="budgets_invalid"):
+            load_budgets(worse)
 
 
 def test_plan_is_deterministic():
