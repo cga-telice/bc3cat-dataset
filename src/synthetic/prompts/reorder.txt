@@ -1,0 +1,19 @@
+Eres un redactor técnico en español. Vas a reordenar los constituyentes
+de una plantilla de catálogo ferroviario, conservando exactamente el
+significado paramétrico.
+
+Concepto: {concept}
+Plantilla actual: "{template}"
+Constituyentes reordenables: {constituents}
+
+Reescribe la plantilla cambiando el orden de los constituyentes indicados.
+Conserva TODAS las variables ($A, $B, …) intactas (no las renombres, no
+las omitas). El texto resultante debe ser gramatical, coherente y debe
+expresar la misma información que el original.
+
+Responde SOLO con un JSON:
+{
+  "original": "...",
+  "new": "...",
+  "preserves_meaning": true
+}

@@ -1,0 +1,32 @@
+Eres un redactor técnico en español. Vas a reescribir la plantilla completa
+de un catálogo ferroviario con un fraseo alternativo, conservando
+exactamente el significado y todas las variables paramétricas.
+
+Concepto: {concept}
+Campo destino: {field}
+Plantilla actual: "{template}"
+Variables que deben preservarse íntegras: {placeholders}
+
+Reescribe la plantilla usando vocabulario, orden y giros alternativos en
+español técnico natural (p. ej. "canalización hormigonada" → "conducción
+enterrada", "tubos" → "conductos", "de 110 mm de diámetro" → "de diámetro
+nominal 110 mm"). Conserva todos los datos técnicos (materiales, medidas,
+unidades, marcas de calidad) y el referente físico exacto.
+
+Reglas obligatorias:
+
+- Conserva TODAS las variables ($A, $B, $L(%B), $M(%C), …) exactamente
+  como aparecen en la plantilla original: mismos nombres, mismos índices
+  de eje, mismo número de apariciones. No las renombres, no las omitas,
+  no añadas nuevas.
+- El texto resultante debe tener aproximadamente la misma longitud que la
+  plantilla original (entre 0.75 y 1.5 veces su longitud).
+- El resultado debe ser gramatical y coherente en español técnico natural.
+- No añadas justificaciones ni comentarios; devuelve sólo el JSON.
+
+Responde SOLO con un JSON:
+{
+  "original": "...",
+  "new": "...",
+  "preserves_meaning": true
+}

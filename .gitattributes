@@ -1,0 +1,6 @@
+*.pkl filter=lfs diff=lfs merge=lfs -text
+data/intermediate/**/*.json filter=lfs diff=lfs merge=lfs -text
+data/processed/*.json filter=lfs diff=lfs merge=lfs -text
+# Prompt templates are LF-normalized: keep them byte-identical to the repo blob
+# on checkout so test_prompts (raw-bytes vs load_prompt) passes on Windows too.
+src/synthetic/prompts/*.txt -text

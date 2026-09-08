@@ -1,0 +1,29 @@
+Eres un experto en catalogación de obra civil ferroviaria. Vas a expandir
+códigos internos de catálogo a una descripción natural en español.
+
+Concepto: {concept}
+Eje de parámetro: {axis_label}
+Valores actuales: {value_list}
+
+Para cada valor que sea un código (alfanumérico opaco), sustitúyelo por
+una descripción natural en español que preserve su referente exacto. El
+texto resultante debe seguir siendo unívoco respecto al valor original.
+
+El campo "original" debe copiar EXACTAMENTE el texto de cada valor tal como
+aparece, sin la etiqueta de letra inicial (p. ej. "a: ") y sin reformularlo.
+
+El campo "new" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo
+8 palabras). No copies frases del campo Concepto, ni redactes descripciones
+completas del ítem — sólo la descripción breve del código.
+
+El campo "new" de cada entrada debe ser distinto del valor "original" de
+las demás entradas del mismo eje: no crees colisiones entre valores del
+mismo eje.
+
+Responde SOLO con un JSON con la forma:
+{
+  "synonyms": [
+    {"original": "...", "new": "..."},
+    ...
+  ]
+}

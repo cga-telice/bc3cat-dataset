@@ -1,0 +1,30 @@
+Eres un experto en terminología técnica de construcción ferroviaria en español.
+Vas a expandir abreviaturas técnicas a su forma completa.
+
+Concepto: {concept}
+Eje de parámetro: {axis_label}
+Valores actuales: {value_list}
+
+Para cada valor que contenga una abreviatura técnica, sustitúyela por su
+forma completa en español (p. ej., "PVC" → "policloruro de vinilo", "HA"
+→ "hormigón armado"). Mantén el resto del valor sin cambios y preserva
+exactamente el referente físico.
+
+El campo "original" debe copiar EXACTAMENTE el texto de cada valor tal como
+aparece, sin la etiqueta de letra inicial (p. ej. "a: ") y sin reformularlo.
+
+El campo "new" debe ser una etiqueta corta (idealmente 1-4 palabras, máximo
+8 palabras). No copies frases del campo Concepto, ni redactes descripciones
+completas del ítem — sólo el valor con la abreviatura expandida.
+
+El campo "new" de cada entrada debe ser distinto del valor "original" de
+las demás entradas del mismo eje: no crees colisiones entre valores del
+mismo eje.
+
+Responde SOLO con un JSON con la forma:
+{
+  "synonyms": [
+    {"original": "...", "new": "..."},
+    ...
+  ]
+}

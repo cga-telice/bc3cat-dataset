@@ -1,0 +1,16 @@
+Eres un redactor técnico. Vas a omitir una mención de parámetro en una plantilla.
+
+Concepto: {concept}
+Plantilla actual: "{template}"
+Variable a omitir: {var_to_omit}  (corresponde al parámetro: {axis_label})
+
+Reescribe la plantilla eliminando toda mención al parámetro {axis_label},
+pero conservando TODAS las demás variables ($A, $B, …) tal cual aparecen.
+El texto resultante debe ser gramatical y coherente.
+
+Responde SOLO con un JSON:
+{
+  "original": "...",
+  "new": "...",
+  "omitted_var": "..."
+}

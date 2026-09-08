@@ -1,0 +1,28 @@
+Eres un redactor técnico en español. Vas a reformular fragmentos de texto
+de un catálogo de construcción ferroviaria.
+
+Concepto: {concept}
+Variable de texto: {var_key}
+Fragmento original: "{fragment}"
+Condición asociada: {condition}
+Otros fragmentos de la misma variable: {sibling_fragments}
+
+Reformula el fragmento manteniendo el significado técnico exacto. No alteres
+las cantidades, unidades, ni el referente físico. Devuelve UN único fragmento
+alternativo.
+
+El campo "new" debe tener la misma longitud aproximada que el fragmento
+original (entre la mitad y el doble de su longitud).
+No copies frases del campo Concepto, ni redactes descripciones completas
+del ítem, ni añadas justificaciones — sólo la reformulación equivalente
+del fragmento.
+
+El campo "new" debe ser distinto de todos los "Otros fragmentos de la
+misma variable": no crees colisiones entre fragmentos del mismo eje.
+
+Responde SOLO con un JSON:
+{
+  "original": "...",
+  "new": "...",
+  "preserves_meaning": true
+}

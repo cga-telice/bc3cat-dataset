@@ -1,0 +1,22 @@
+Eres un experto en catalogación técnica de obra civil ferroviaria.
+
+Concepto: {concept}
+Ejes existentes: {existing_axes_with_labels}
+
+Propón UN nuevo eje de parámetro coherente con el concepto. El nuevo eje
+debe ser claramente distinguible de los existentes (sin solapamiento semántico).
+Debe tener entre 2 y 5 valores discretos.
+
+Restricción: el nuevo eje debe estar en la lista de ejes admisibles:
+{allowlist}
+
+Responde SOLO con un JSON:
+{
+  "new_axis_label": "...",
+  "values": [
+    {"label": "a", "value": "..."},
+    ...
+  ],
+  "var_definition": "$X = \"...\" * (%G=a) + ...",
+  "template_patch": "..., con $X, ..."
+}
