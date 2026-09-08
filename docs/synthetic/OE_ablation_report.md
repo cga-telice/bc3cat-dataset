@@ -1,19 +1,17 @@
 # OE ablation corpora (Design A - shared base leaves)
 
-Two corpora built purely by recombining the approved pantry rewrites (no LLM), over
-one shared sample of 5000 base leaves. Every item is paired on the same base leaf so
-retrieval-degradation differences are attributable to the modifications, not to leaf
-selection. modification_count counts APPLIED modifications only (skipped/no-op
-rewrites excluded).
+Two corpora built by recombining the approved pantry rewrites (no LLM at corpus time),
+over one shared sample of 5000 base leaves; every item paired on the same base leaf.
+template_paraphrase menus were regenerated at depth (>=10 valid candidates/target, both
+RESUMEN and TEXTO for all concepts). modification_count counts APPLIED modifications only.
 
 ## STACKED - all applicable modifications per item
 - items: **4998** (one per shared leaf; all unique)
-- applied modifications per item: mean 4.67, min 2, max 8
-- modification_count distribution: 2:21, 3:1199, 4:874, 5:1535, 6:1087, 7:237, 8:45
-- output: `data/synthetic/processed_OE_ablation_stacked/`
+- applied modifications per item: mean 4.69, min 2, max 8
+- distribution: 2:1, 3:1216, 4:877, 5:1484, 6:1138, 7:237, 8:45
 
 ## SINGLE - one modification per item (capacity-balanced, cap 600/type)
-- items: **4650** (each exactly one applied modification; all unique)
+- items: **4650**
 
 | modification | items |
 |---|---|
@@ -27,6 +25,4 @@ rewrites excluded).
 | paraphrase | 311 |
 | expansion | 303 |
 
-- output: `data/synthetic/processed_OE_ablation_single/`
-
-Both from the deduped target pool; Guard #1 = 0/0; ~100%% pairing.
+Both from the deduped target pool; Guard #1 = 0/0.

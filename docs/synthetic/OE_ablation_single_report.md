@@ -8,7 +8,7 @@ original leaf, summed over (resumen, texto).
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | single_paraphrase | 311 | 600 | 289 | 113 | 4 | 289 | 0 | 0 | 0 | 0 | 0 | 6.13 |
 | single_expansion | 303 | 600 | 297 | 121 | 3 | 297 | 0 | 0 | 0 | 0 | 0 | 14.09 |
-| single_template_paraphrase | 599 | 600 | 1 | 217 | 11 | 0 | 0 | 0 | 0 | 0 | 1 | 11.89 |
+| single_template_paraphrase | 599 | 600 | 1 | 507 | 2 | 0 | 0 | 0 | 0 | 0 | 1 | 19.62 |
 | single_synonym_label | 598 | 600 | 2 | 106 | 9 | 2 | 0 | 0 | 0 | 0 | 0 | 4.60 |
 | single_compression | 548 | 600 | 52 | 56 | 40 | 52 | 0 | 0 | 0 | 0 | 0 | 7.66 |
 | single_reorder | 600 | 600 | 0 | 216 | 9 | 0 | 0 | 0 | 0 | 0 | 0 | 11.67 |

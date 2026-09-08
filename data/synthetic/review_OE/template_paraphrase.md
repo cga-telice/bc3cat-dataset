@@ -5,1754 +5,4823 @@ _161 unique target(s) across 84 concept(s). Tick candidates you approve; leave u
 ## RESUMEN template (OEB250$)
 _Used in 1 concept(s): OEB250$_
 
-- [ ] 1. "$A de conductos de $B tubos de acero galvanizado de 100mm de diámetro para sistemas CMS en transiciones entre plataformas.($L(%C)/$M(%D)/$N(%F))"
-- [ ] 2. "$A de sistema de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones de plataformas.($L(%C)/$M(%D)/$N(%F))"
+- [ ] 1. "Para instalaciones CMS en transiciones entre diferentes plataformas, $A de canalización compuesta por $B conductos de acero galvanizado de 100mm de diámetro.($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 2. "Constituido por $B tubos de acero galvanizado de 100mm de diámetro, $A de canalización para instalaciones CMS en transiciones entre plataformas.($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 3. "$A de canalización, compuesta por $B tubos de acero galvanizado de 100mm de diámetro, para uso en instalaciones CMS en transiciones entre diversas plataformas.($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 4. "En transiciones entre diferentes plataformas para instalaciones CMS, se presenta $A de canalización que incluye $B tubos de acero galvanizado de 100mm de diámetro.($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 5. "$A de líneas de $B conductos de acero galvanizado con un diámetro de 100mm mm destinados a ser usados en transiciones entre distintas plataformas para instalaciones CMS ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 6. "Conjunto de $A líneas compuestas por $B conductores de acero galvanizado con 100mm mm de diámetro, ideales para integrarse en transiciones entre plataformas diversas en instalaciones CMS ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 7. "$A de configuraciones de $B tuberías de acero galvanizado con diámetro de 100mm mm, diseñadas para aplicaciones en transiciones interplataformas de instalaciones CMS ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 8. "$A líneas de $B conductos de acero galvanizado con un diámetro de 100mm mm, configuradas para su aplicación en transiciones entre diversas plataformas en instalaciones CMS ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 9. "Se ejecuta la instalación de canalización $A con $B tubos de acero galvanizado de diámetro nominal 100mm para transiciones en infraestructuras CMS entre distintas plataformas.($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 10. "Instalación de $A para canalizar $B tubos de acero galvanizado con diámetro de 100mm, destinados a transiciones entre diferentes plataformas en instalaciones CMS. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R1 [0] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- phi4:latest/R1 [1] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- phi4:latest/R1 [2] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- phi4:latest/R1 [3] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R2 [0] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R2 [2] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R3 [1] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R3 [2] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R3 [3] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
 
 ## RESUMEN template (OEC140$)
 _Used in 1 concept(s): OEC140$_
 
-- [ ] 1. "$U(%A, %B, %C, con especificaciones técnicas detalladas)"
-- [ ] 2. "$U(%A, %B, %C, incluyendo todas las características técnicas)"
-- [ ] 3. "$U(%A, %B, %C, con todas las especificaciones técnicas)"
-- [ ] 4. "$U(%A, %B, %C, detallando todas las especificaciones técnicas)"
-- [ ] 5. "$U(%A, %B, %C, con las especificaciones técnicas completas)"
-- [ ] 6. "$U(%A, %B, %C, incluyendo las especificaciones técnicas)"
+- [ ] 1. "Características de $U con especificaciones (%A,%B,%C), asegurando estándares de calidad." — _phi4:latest_
+- [ ] 2. "Configuración de $U que incluye detalles (%A,%B,%C) para cumplir con los requisitos técnicos." — _phi4:latest_
+- [ ] 3. "Especificaciones de $U cubriendo parámetros (%A,%B,%C), conforme a normativas vigentes." — _phi4:latest_
+- [ ] 4. "Descripción detallada de $U, abarcando (%A,%B,%C) para satisfacer las necesidades operativas." — _phi4:latest_
+- [ ] 5. "Implementación de $U caracterizada por (%A,%B,%C)" — _phi4:latest_
+- [ ] 6. "Sistema de $U definido por (%A,%B,%C)" — _phi4:latest_
+- [ ] 7. "Configuración de $U basada en (%A,%B,%C)" — _phi4:latest_
+- [ ] 8. "Disposición de $U con especificaciones (%A,%B,%C)" — _phi4:latest_
+- [ ] 9. "Se realiza la operación $U(%A,%B,%C) en el entorno ferroviario con los parámetros especificados." — _qwen2.5:14b_
+- [ ] 10. "Se efectúa la operación $U(%A,%B,%C) para cubrir las necesidades del proyecto ferroviario." — _qwen2.5:14b_
+- [ ] 11. "El procedimiento $U(%A,%B,%C) se lleva a cabo conforme a los requerimientos técnicos." — _qwen2.5:14b_
+- [ ] 12. "La implementación de la operación $U(%A,%B,%C) es realizada de acuerdo a los criterios establecidos." — _qwen2.5:14b_
+- [ ] 13. "Se aplica la técnica $U, empleando parámetros %A, %B y %C para cumplir con las especificaciones requeridas." — _qwen2.5:14b_
+- [ ] 14. "La implementación del procedimiento $U se lleva a cabo con los valores %A, %B y %C para asegurar la conformidad con los estándares." — _qwen2.5:14b_
+- [ ] 15. "Se ejecuta el método $U, utilizando los parámetros %A, %B y %C para lograr la precisión y el cumplimiento requeridos." — _qwen2.5:14b_
+- [ ] 16. "Con el fin de cumplir con los criterios de diseño, se utiliza la funcionalidad $U, configurando los valores %A, %B y %C." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$U'] new=['$A', '$B', '$M(%C)', '$U']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$U'] new=['$A', '$B', '$M(%C)', '$U']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$U'] new=['$A', '$B', '$M(%C)', '$U']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$U'] new=['$A', '$B', '$M(%C)', '$U']
+- qwen2.5:14b/R2 [0] placeholders_not_preserved: original=['$U'] new=['$A', '$B', '$C', '$U']
+- qwen2.5:14b/R2 [1] placeholders_not_preserved: original=['$U'] new=['$A', '$B', '$C', '$U']
+- qwen2.5:14b/R2 [2] placeholders_not_preserved: original=['$U'] new=['$A', '$B', '$C', '$U']
+- qwen2.5:14b/R2 [3] placeholders_not_preserved: original=['$U'] new=['$A', '$B', '$C', '$U']
 
 ## RESUMEN template (OEA150$)
 _Used in 1 concept(s): OEA150$_
 
-- [ ] 1. "Dimensiones $A de conducto de $B ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 2. "Medida $A de canalización de $B ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 3. "Tamaño $A de conducto de $B ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 4. "Dimensiones $A de tubería de $B ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 5. "Medida $A de conducto de $B ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 6. "Tamaño $A de canalización de $B ($L(%C)/$M(%D)/$N(%F))"
+- [ ] 1. "Se tiene una apertura $A en la canaleta de $B que corresponde a ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 2. "Canaleta de $B con una apertura de $A y especificaciones ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 3. "En la canaleta de $B, se presenta una apertura de $A con características ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 4. "La apertura $A de la canaleta de $B incluye medidas ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 5. "Disposición de una $A en la canaleta $B con dimensiones ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 6. "Configuración $A en la canaleta $B que incluye medidas ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 7. "Canaleta $B con una apertura $A especificada por ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 8. "Canaleta $B que presenta una apertura $A, caracterizada por ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 9. "Configuración de apertura $A en la canaleta elaborada de $B con especificaciones ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 10. "Diseño de la abertura $A en la estructura de canaleta $B, cumpliendo con los parámetros ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 11. "Implementación de la abertura $A en la canaleta de construcción $B, de acuerdo con las especificaciones ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 12. "Se realiza la apertura $A para la canaleta de $B, con dimensiones $L(%C), $M(%D), y $N(%F)" — _qwen2.5:14b_
+- [ ] 13. "La apertura $A para la conducción de $B se lleva a cabo con especificaciones $L(%C), $M(%D), y $N(%F)" — _qwen2.5:14b_
+- [ ] 14. "Se procede a efectuar la apertura $A en la canalización de $B, con datos $L(%C), $M(%D), y $N(%F)" — _qwen2.5:14b_
+- [ ] 15. "Se efectúa la apertura $A de la canaleta para $B, con características $L(%C), $M(%D), y $N(%F)" — _qwen2.5:14b_
+- [ ] 16. "Canaleta de $B con apertura $A, incluido el sistema ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 17. "Sistema ($L(%C)/$M(%D)/$N(%F)) en canaleta de $B con apertura $A" — _qwen2.5:14b_
+- [ ] 18. "Canaleta de $B con apertura $A, con los parámetros ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 19. "Incluyendo el sistema ($L(%C)/$M(%D)/$N(%F)), se presenta la apertura $A en la canaleta de $B" — _qwen2.5:14b_
+- [ ] 20. "Abertura $A para cañería de $B, (clasificación $L(%C), normativa $M(%D), estándar $N(%F))" — _qwen2.5:14b_
+- [ ] 21. "Procedimiento de apertura $A en tubería de $B, con especificaciones (criterio $L(%C), requerimiento $M(%D), procedimiento $N(%F))" — _qwen2.5:14b_
+- [ ] 22. "Conducto de $B con apertura $A, clasificación (criterio $L(%C), normativa $M(%D), estándar $N(%F))" — _qwen2.5:14b_
+- [ ] 23. "Dispositivo de apertura $A en conducto de $B, con especificaciones de calidad (criterio $L(%C), normativa $M(%D), estándar $N(%F))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R3 [3] sentinels_not_preserved: missing=['P3', 'P4', 'P5'] extra_or_dup=[]
 
 ## RESUMEN template (OEB140$)
 _Used in 1 concept(s): OEB140$_
 
-- [ ] 1. "Acceso y cierre de cata con arreglo de conducción existente ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 2. "Iniciación y cierre de cata con restauración de conducto existente ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 3. "Iniciación y cierre de cata con arreglo de tubería existente ($L(%A)/$M(%B)/$N(%C))"
-
-_Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
+- [ ] 1. "Se realiza la apertura y sellado de cata, incluyendo la restauración de la conducción enterrada existente ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 2. "Con el fin de reparar, se ejecuta la canalización existente mediante apertura y sellado de cata ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 3. "Se lleva a cabo el proceso de apertura y sellado de cata para la restauración de la canalización subterránea existente ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 4. "Apertura y sellado de cata se efectúan con la reparación de la conductividad subterránea existente ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 5. "Reparación de la conducción enterrada existente con apertura y cierre de cata ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Con apertura y cierre de cata, se realiza la reparación de la canalización existente ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 7. "Reparación de la canalización existente mediante apertura y tapado de cata ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 8. "Se procede al tapado y apertura de cata para la reparación de la conductriz existente ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 9. "Procedimiento de apertura y cierre de cata para reparar la conducción enterrada existente ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 10. "Operación de corte y tapado de cata en la reconstrucción de la canalización existente ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 11. "Reparación de la conducción enterrada previa a la apertura y cierre de cata ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 12. "Maniobra de desbroce y sellado de cata para restaurar la conducción subterránea ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 13. "Se realiza apertura y cierre de trinchera para la reparación de la conducción subterránea existente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "Se efectúa la reparación de la conducción existente mediante la apertura y cierre de trinchera ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 15. "La conducción subterránea existente se reparará con la apertura y cierre de trinchera ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Se lleva a cabo la reparación de la conducción enterrada mediante la apertura y cierre de trinchera ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 17. "Procedimiento de apertura y sellado de cata, junto con la rehabilitación de la conducción existente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 18. "Trabajo para abrir y cerrar la cata y, además, para reparar la canalización existente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 19. "Realización de la apertura y cierre de la cata con la rehabilitación incluida de la canalización existente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 20. "Operación de apertura de cata seguida de sellado, también con la reparación de la conducción existente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 21. "Procedimiento para la apertura y sellado de cata con la intervención en la conducción subterránea existente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 22. "Operación de apertura y cierre de cata junto con la rehabilitación de la conducción enterrada existente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 23. "Intervención de apertura y sellado de cata con la reparación de la conducción enterrada existente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 24. "Trabajos de apertura de cata y cierre con la revisión y reparación de la conducción existente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
 
 ## RESUMEN template (OEC030$)
 _Used in 1 concept(s): OEC030$_
 
-- [ ] 1. "Arqueta de registro compuesta-PRFV $A. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 2. "Arqueta de registro de material compuesto-PRFV $A. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 3. "Arqueta de registro de polímero reforzado-PRFV $A. ($L(%B)/$M(%C)/$N(%D))"
-
-_Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
+- [ ] 1. "Arqueta registradora de composite-PRFV $A. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 2. "Se presenta la arqueta de registro compuesta-PRFV $A. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 3. "Arqueta compuesta-PRFV destinada a registro $A. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 4. "$A es la arqueta de registro compuesta-PRFV. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 5. "Arqueta de registro composite-PRFV $A (con dimensiones $L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 6. "Arqueta registradora de composite-PRFV $A, incluyendo medidas de $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 7. "Arqueta de composite-PRFV destinada al registro $A, conformada a $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 8. "$A, una arqueta de composite-PRFV con especificación de dimensiones: $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 9. "$A. $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 10. "Registro de composite-PRFV en arqueta $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 11. "$A que comprende $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 12. "Conjunto composite-PRFV en arqueta $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 13. "Se considera arqueta de registro de composite-PRFV $A. Se estipula que la misma cumpla los requisitos: ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 14. "Se establece la especificación para la arqueta de registro de composite-PRFV $A. Se requieren las siguientes dimensiones: ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 15. "Se determina la estructura para la arqueta de registro de composite-PRFV $A. Se deben seguir las dimensiones: ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 16. "Se presenta la arqueta de registro de composite-PRFV $A. Se especifica la dimensión requerida: ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 17. "Incluye arqueta de registro de composite-PRFV $A. (Las dimensiones son $L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 18. "Esta arqueta de registro de composite-PRFV $A, con dimensiones $L(%B)/$M(%C)/$N(%D)." — _qwen2.5:14b_
+- [ ] 19. "Se presenta una arqueta de registro de composite-PRFV $A, que tiene las dimensiones $L(%B)/$M(%C)/$N(%D)." — _qwen2.5:14b_
+- [ ] 20. "El modelo de arqueta de registro de composite-PRFV $A, incluye dimensiones de $L(%B)/$M(%C)/$N(%D)." — _qwen2.5:14b_
+- [ ] 21. "Unidad de registro composite-PRFV $A. (Elemento $L(%B), sección $M(%C), posición $N(%D))" — _qwen2.5:14b_
+- [ ] 22. "Estructura de registro composite-PRFV $A. (Característica $L(%B), segmento $M(%C), tramo $N(%D))" — _qwen2.5:14b_
+- [ ] 23. "Registro de composite-PRFV $A. (Módulo $L(%B), sección $M(%C), localización $N(%D))" — _qwen2.5:14b_
+- [ ] 24. "Unidad de registro composite-PRFV $A. (Característica $L(%B), segmento $M(%C), posición $N(%D))" — _qwen2.5:14b_
 
 ## RESUMEN template (OEC010$)
 _Used in 1 concept(s): OEC010$_
 
-- [ ] 1. "Arqueta prefabricada con interiores de $A mm, destinada a instalaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 2. "Arqueta montada en obra con interiores de $A mm, para uso en instalaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 3. "Arqueta instalada directamente con interiores de $A mm, para aplicaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 4. "Arqueta construida en el lugar con interiores de $A mm, para instalaciones en vías férreas. ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 5. "Arqueta en obra con interiores de $A mm, para uso en infraestructuras ferroviarias. ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 6. "Arqueta montada en el sitio con interiores de $A mm, para aplicaciones en ferrocarriles. ($L(%C)/$M(%D)/$N(%F))"
+- [ ] 1. "Se dispone de una arqueta in situ con $A mm de dimensiones interiores, destinada a instalaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 2. "Para instalaciones ferroviarias se provee una arqueta in situ con dimensiones interiores de $A mm. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 3. "Disponibilidad de arqueta in situ, con dimensiones interiores de $A mm, para su uso en instalaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 4. "Se ofrece una arqueta in situ diseñada con dimensiones interiores de $A mm, especialmente para instalaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 5. "Para instalaciones ferroviarias, arqueta in situ de $A mm de dimensiones interiores. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 6. "Arqueta in situ, con dimensiones interiores de $A mm, para instalaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 7. "Arqueta en terreno de $A mm de dimensiones interiores, destinada a instalaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 8. "Destinada a instalaciones ferroviarias, arqueta in situ de $A mm de dimensiones interiores. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 9. "Conjunto de arqueta colocado directamente en el sitio, con dimensiones internas de $A mm para uso en ferrocarriles. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 10. "Arqueta instalada en su ubicación final con dimensiones interiores de $A mm, adecuada para redes ferroviarias. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 11. "Arqueta montada en el lugar con espacios interiores de $A mm, destinada a aplicaciones en el ramal ferroviario. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 12. "Contenedor arquitectónico en sitio, con $A mm de medida interna, diseñado para uso en vías férreas. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 13. "Se utiliza una arqueta in situ con dimensiones de $A mm para dimensiones interiores en instalaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 14. "Se fabrica una arqueta in situ con dimensiones interiores de $A mm para su uso en instalaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 15. "Para instalaciones ferroviarias, se ofrece una arqueta in situ con dimensiones interiores de $A mm, incluso en conformidad con los estándares ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 16. "Esta arqueta in situ es ideal para instalaciones ferroviarias, con dimensiones interiores de $A mm, incluido el cumplimiento de las normas ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 17. "Para la instalación ferroviaria, presentamos una arqueta in situ que cuenta con dimensiones interiores de $A mm, y que cumple con los requisitos ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 18. "Se proporciona una arqueta in situ para instalaciones ferroviarias, con dimensiones interiores de $A mm y que satisface los criterios de calidad ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 19. "Unidad de excavación en sitio con dimensiones interiores de $A mm, destinada a usos ferroviarios. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 20. "Instalación subterránea tipo arqueta, con dimensiones interiores de $A mm, para aplicaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 21. "Excavación en obra con dimensiones interiores de $A mm, usada en infraestructuras ferroviarias. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 22. "Estructura enterrada tipo arqueta, con dimensiones interiores de $A mm, diseñada para instalaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [12] near_duplicate_of_kept
+- [13] near_duplicate_of_kept
 
 ## RESUMEN template (OEC020$)
 _Used in 1 concept(s): OEC020$_
 
-- [ ] 1. "Arqueta prefabricada con dimensiones interiores de $A mm. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 2. "Arqueta prefabricada de $A mm de medidas interiores. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 3. "Arqueta prefabricada con medidas interiores de $A mm. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 4. "Arqueta prefabricada de $A mm de tamaño interior. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 5. "Arqueta prefabricada con tamaño interior de $A mm. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 6. "Arqueta prefabricada de $A mm de medidas internas. ($L(%B)/$M(%C)/$N(%D))"
+- [ ] 1. "Fabricada previamente, presenta dimensiones interiores de $A mm. Se especifican las dimensiones ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 2. "Con dimensiones interiores de $A mm, se ofrece esta arqueta fabricada. Las dimensiones se indican así: ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 3. "Se dispone de arqueta prefabricada con $A mm de dimensiones interiores. Se desglosan las dimensiones de la siguiente manera: ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 4. "La arqueta prefabricada tiene dimensiones interiores de $A mm. Las especificaciones son ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 5. "Construcción de arqueta estandarizada con $A mm en sus dimensiones interiores, disponible en tamaños ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 6. "En medidas interiores de $A mm, se presenta la arqueta prefabricada, adaptada a ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 7. "La arqueta prefabricada, con dimensiones interiores de $A mm, se ofrece en versiones ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 8. "Conformes a dimensiones interiores de $A mm, estas arquetas prefabricadas vienen en versiones ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 9. "Estructura estandarizada con dimensiones interiores de $A mm. Compatibilidades: ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 10. "Modulo estructural de dimensiones interiores $A mm. Configuraciones: ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 11. "Elemento estandarizado con dimensiones interiores de $A mm. Variantes: ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 12. "Caja modular con dimensiones interiores de $A mm. Disponibles en: ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 13. "Se presenta una arqueta prefabricada con dimensiones interiores de $A mm. Se especifican los siguientes valores estructurales: ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 14. "Se detalla una arqueta prefabricada con un interior de dimensiones $A mm. Se enumeran los parámetros: ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 15. "Se ofrece una arqueta prefabricada con dimensiones interiores de $A mm. Se describen los parámetros técnicos: ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 16. "Se presenta una arqueta prefabricada con un interior de dimensiones $A mm. Se proporcionan los siguientes valores: ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 17. "Arqueta prefabricada con dimensiones interiores de $A mm, incluidos los parámetros ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 18. "Se caracteriza por ser una arqueta prefabricada con dimensiones interiores de $A mm, en la cual se incluyen los datos ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 19. "Esta arqueta prefabricada presenta dimensiones interiores de $A mm, donde los parámetros ($L(%B)/$M(%C)/$N(%D)) son aspectos de interés." — _qwen2.5:14b_
+- [ ] 20. "Se trata de una arqueta prefabricada con dimensiones interiores de $A mm, así como las especificaciones ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 21. "Conjunto de arqueta prefabricada con dimensiones interiores de $A mm. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 22. "Estructura de arqueta de $A mm en dimensiones interiores. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 23. "Módulo de arqueta prefabricada con dimensiones internas de $A mm. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [21] near_duplicate_of_kept
 
 ## RESUMEN template (OEA010$)
 _Used in 1 concept(s): OEA010$_
 
-- [ ] 1. "Conducto de PVC de $A con cubierta. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 2. "Caja de PVC de $A con cubierta. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 3. "Conducción de PVC de $A con cubierta. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 4. "Caja de PVC de $A con cubierta superior. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 5. "Conducto de PVC de $A con tapa. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 6. "Caja de PVC de $A con tapa. ($L(%B)/$M(%C)/$N(%D))"
+- [ ] 1. "La canaleta de PVC de $A, provista de tapa, es ofrecida en configuraciones de $L(%B)/$M(%C)/$N(%D)." — _phi4:latest_
+- [ ] 2. "Se dispone de la canaleta con tapa, fabricada en PVC de $A, en las variantes $L(%B)/$M(%C)/$N(%D)." — _phi4:latest_
+- [ ] 3. "Provista de tapa, la canaleta de PVC de $A está disponible en las dimensiones $L(%B)/$M(%C)/$N(%D)." — _phi4:latest_
+- [ ] 4. "La canaleta de PVC con tapa, de $A, se presenta en las opciones $L(%B)/$M(%C)/$N(%D)." — _phi4:latest_
+- [ ] 5. "Con conducto de PVC de $A que incluye una tapa. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 6. "Canaleta de PVC de $A, que cuenta con tapa. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 7. "Con ducto de PVC de $A provisto de tapa. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 8. "Canaleta de PVC de $A, incluyendo tapa. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 9. "Conducción de PVC de $A provista de tapa. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 10. "Caja de PVC de $A con cubierta. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 11. "Tubería de PVC de $A dotada de tapa. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 12. "Conductor de PVC de $A con cubierta. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 13. "Se presenta una canaleta de PVC de $A con tapa. Se especifican las dimensiones ($L(%B)), las características ($M(%C)) y las condiciones ($N(%D))." — _qwen2.5:14b_
+- [ ] 14. "Se utiliza una canaleta de PVC de $A con tapa. Se proporcionan los detalles de las dimensiones ($L(%B)), las especificaciones ($M(%C)) y las condiciones ($N(%D))." — _qwen2.5:14b_
+- [ ] 15. "Se describe una canaleta de PVC de $A con tapa. Se incluyen las medidas ($L(%B)), las características ($M(%C)) y las condiciones ($N(%D))." — _qwen2.5:14b_
+- [ ] 16. "Se propone una canaleta de PVC de $A con tapa. Se detallan las dimensiones ($L(%B)), las especificaciones ($M(%C)) y las condiciones ($N(%D))." — _qwen2.5:14b_
+- [ ] 17. "Canaleta de PVC con tapa y $A. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 18. "Incluido la tapa, esta canaleta de PVC es de $A. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 19. "Con tapa, la canaleta de PVC es de $A. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 20. "Incluida la tapa, la canaleta de PVC es de $A. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 21. "Guía de PVC tipo $A, equipada con cubierta. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 22. "Canaleta de PVC de tipo $A, con cierre superior. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 23. "Conducto de PVC de la variedad $A, cuenta con cobertura superior. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 24. "Guía de proteccióne de PVC denominada $A, que incluye tope superior. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
 
 ## RESUMEN template (OEA050$)
 _Used in 1 concept(s): OEA050$_
 
-- [ ] 1. "Conducción enterrada de hormigón tipo $A $M(c,%B) ($M(b,%B)/$M(a,%C)/$L(%D))"
-- [ ] 2. "Conducto de hormigón tipo $A $M(c,%B) ($M(b,%B)/$M(a,%C)/$L(%D))"
-- [ ] 3. "Canaleta hormigonada tipo $A $M(c,%B) ($M(b,%B)/$M(a,%C)/$L(%D))"
-- [ ] 4. "Canaleta de hormigón tipo $A $M(c,%B) ($M(a,%C)/$M(b,%B)/$L(%D))"
-- [ ] 5. "Canaleta de hormigón tipo $A $M(c,%B) ($L(%D)/$M(b,%B)/$M(a,%C))"
-- [ ] 6. "Canaleta hormigonada tipo $A $M(c,%B) ($L(%D)/$M(b,%B)/$M(a,%C))"
+- [ ] 1. "La canaleta de hormigón $A se implementa del tipo $M(c,%B) (con $M(b,%B) / $M(a,%C) / $L(%D))" — _phi4:latest_
+- [ ] 2. "Canaleta de hormigón $A, del tipo $M(c,%B), se establece con $M(b,%B) / $M(a,%C) / $L(%D)" — _phi4:latest_
+- [ ] 3. "Se utiliza una canaleta de hormigón del tipo $A $M(c,%B), que incluye $M(b,%B) / $M(a,%C) / $L(%D)" — _phi4:latest_
+- [ ] 4. "Canaleta de hormigón de tipo $A, con especificaciones $M(c,%B), se constituye mediante $M(b,%B) / $M(a,%C) / $L(%D)" — _phi4:latest_
+- [ ] 5. "Canaleta enterrada de hormigón tipo $A $M(c,%B), incluyendo $M(b,%B)/$M(a,%C)/$L(%D)" — _phi4:latest_
+- [ ] 6. "Conducción de hormigón tipo $A $M(c,%B) con variantes $M(b,%B)/$M(a,%C)/$L(%D)" — _phi4:latest_
+- [ ] 7. "Canaleta en hormigón tipo $A $M(c,%B) que incluye $M(b,%B)/$M(a,%C)/$L(%D)" — _phi4:latest_
+- [ ] 8. "Canaleta hormigonada tipo $A $M(c,%B), que abarca $M(b,%B)/$M(a,%C)/$L(%D)" — _phi4:latest_
+- [ ] 9. "Conducto de hormigón clase $A $M(c,%B) ($M(b,%B)/$M(a,%C)/$L(%D))" — _phi4:latest_
+- [ ] 10. "Conducción de hormigón modelo $A $M(c,%B) ($M(b,%B)/$M(a,%C)/$L(%D))" — _phi4:latest_
+- [ ] 11. "Sistema de hormigón tipo $A $M(c,%B) ($M(b,%B)/$M(a,%C)/$L(%D))" — _phi4:latest_
+- [ ] 12. "Estructura de hormigón tipo $A $M(c,%B) ($M(b,%B)/$M(a,%C)/$L(%D))" — _phi4:latest_
+- [ ] 13. "Se define la canaleta de hormigón tipo $A, con especificaciones $M(c,%B), y dimensiones internas de $M(b,%B) y $M(a,%C), así como la longitud $L(%D)." — _qwen2.5:14b_
+- [ ] 14. "Se establece la especificación para la canaleta de hormigón tipo $A, con características $M(c,%B), y detalles de sección intermedia $M(b,%B) y $M(a,%C), junto con la longitud total $L(%D)." — _qwen2.5:14b_
+- [ ] 15. "Se describe la canaleta de hormigón tipo $A, con parámetros $M(c,%B), y secciones transversales $M(b,%B) y $M(a,%C), así como la longitud $L(%D)." — _qwen2.5:14b_
+- [ ] 16. "Se indica la canaleta de hormigón tipo $A, con atributos $M(c,%B), y dimensiones en sección $M(b,%B) y $M(a,%C), junto con la longitud $L(%D)." — _qwen2.5:14b_
+- [ ] 17. "Conducción enterrada de hormigón tipo $A, con el material $M(c,%B), incluyendo $M(b,%B) y $M(a,%C) además de $L(%D)" — _qwen2.5:14b_
+- [ ] 18. "Conducción de hormigón tipo $A, con las propiedades $M(c,%B) y las especificaciones $M(b,%B), $M(a,%C) y $L(%D)" — _qwen2.5:14b_
+- [ ] 19. "Canalización enterrada tipo $A, con el diseño $M(c,%B), incluyendo las características $M(b,%B) y $M(a,%C) y $L(%D)" — _qwen2.5:14b_
+- [ ] 20. "Conducción de hormigón tipo $A, con $M(c,%B), las dimensiones $M(b,%B), las especificaciones $M(a,%C) y $L(%D)" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [1] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [2] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [3] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
 
 ## RESUMEN template (OEB030$)
 _Used in 1 concept(s): OEB030$_
 
-- [ ] 1. "Conducción enterrada $A T, fabricada en polietileno sin halógenos de diámetro nominal 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 2. "Conductos enterrados en hormigón $A T, de polietileno exento de halógenos de 110 mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 3. "Conducción subterránea en hormigón $A T, de polietileno sin halógenos de 110 mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 4. "Conductos de hormigón $A T, con polietileno sin halógenos de 110 mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))"
+- [ ] 1. "Se instala conducción enterrada $A T, de polietileno sin halógenos con un diámetro nominal de 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 2. "Ejecución de canalización enterrada $A T, fabricada en polietileno exento de halógenos de diámetro nominal 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 3. "Conducción enterrada realizada en $A T, con tubería de polietileno sin halógenos de diámetro 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 4. "Se construye canalización en hormigón $A T, con conductos de polietileno sin halógenos de 110 mm de diámetro nominal, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 5. "Conducción enterrada con hormigón $A T, de polietileno sin halógenos de diámetro nominal 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 6. "Conducción de hormigón $A T con tubos de polietileno libre de halógenos de diámetro nom. 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 7. "Conducto enterrado de hormigón $A T, con polietileno sin halógenos de 110 mm mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 8. "Conducción enterrada de hormigón $A T, compuesta por tubos de polietileno libre de halógenos de 110 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 9. "Conducción enterrada en hormigón $A T, fabricada con polietileno libre de halógenos de diámetro nominal 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 10. "Conducto en hormigón $A T, de polietileno sin halógenos de 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 11. "Instalación de conducción enterrada en hormigón $A T, con polietileno sin halógenos de 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 12. "Se proporciona conducción enterrada $A T, fabricada en polietileno sin halógenos de 110 mm, con $K. Se especifican los valores de ($G(%C)/$H(%D)/$J(%F)) para la instalación." — _qwen2.5:14b_
+- [ ] 13. "Se emplea canalización de hormigón $A T, con polietileno de 110 mm, y $K. Se detallan las especificaciones de ($G(%C)/$H(%D)/$J(%F)) para la configuración." — _qwen2.5:14b_
+- [ ] 14. "Se utiliza conducción hormigonada $A T, con polietileno libre de halógenos de diámetro 110 mm, y $K. Se proporcionan los datos de ($G(%C)/$H(%D)/$J(%F)) para la implementación." — _qwen2.5:14b_
+- [ ] 15. "Se utiliza canalización de hormigón $A T, con material de polietileno de 110 mm, y $K. Se especifican los detalles de ($G(%C)/$H(%D)/$J(%F)) para la instalación." — _qwen2.5:14b_
+- [ ] 16. "Conducción enterrada $A T, incluyendo tubo de polietileno libre de halógenos de 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 17. "Conducción enterrada de tipo $A T, polietileno libre de halógenos de 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 18. "Tubo de conducción enterrada tipo $A T, polietileno libre de halógenos de 110 mm. $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 19. "Conducción enterrada tipo $A T, suministrada con polietileno sin halógenos de 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 20. "Canalización enterrada tipo $A T, que incluye polietileno libre de halógenos de 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 21. "Canalización de hormigón tipo $A T, provista con polietileno sin halógenos de 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [11] near_duplicate_of_kept
+- [18] near_duplicate_of_kept
+- [21] near_duplicate_of_kept
 
 ## RESUMEN template (OEB040$)
 _Used in 1 concept(s): OEB040$_
 
-- [ ] 1. "Conducción enterrada $A T, fabricada en polietileno sin halógenos de 160 mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 2. "Conductos de hormigón $A T, de polietileno exento de halógenos de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 3. "Conducción subterránea $A T, en polietileno sin halógenos de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 4. "Tubería de hormigón $A T, de polietileno sin halógenos de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 5. "Conducto de hormigón $A T, en polietileno exento de halógenos de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-
-_Dropped by validation gates (not reviewable):_
-- [5] near_duplicate_of_kept
+- [ ] 1. "Se realiza una canalización enterrada $A T usando polietileno sin halógenos de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 2. "La canalización enterrada $A T, elaborada con tubos de polietileno exento de halógenos de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 3. "Se ejecuta una conducción enterrada $A T mediante el uso de polietileno sin halógenos de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 4. "Una canalización enterrada $A T se fabrica con polietileno no halógenado de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 5. "Conducción enterrada de hormigón $A T y polietileno sin halógenos de 160 mm, característica $K. Incluye: ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 6. "Conductos de hormigón enterrado $A T y polietileno sin halógenos de 160 mm, con la especificación $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 7. "Conducto de hormigón enterrado $A T fabricado en polietileno inerte a halógenos de 160 mm, poseyendo la característica $K. Incluso ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 8. "Conducción de hormigón enterrada $A T, elaborada en polietileno sin halógenos de 160 mm, con la propiedad $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 9. "Conducción enterrada de hormigón $A T con componentes de polietileno sin halógenos de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 10. "Conducción subterránea de hormigón $A T con elementos de polietileno exento de halógenos de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 11. "Tubería de hormigón en canalización subterránea $A T con secciones de polietileno sin halógenos de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 12. "Instalación subterránea de tuberías de hormigón $A T incorporando polietileno de 160 mm sin halógenos, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 13. "Se propone la conducción enterrada en hormigón $A T, con revestimiento de polietileno libre de halógenos de 160 mm, $K. Se establecen los estándares ($G(%C)/$H(%D)/$J(%F))." — _qwen2.5:14b_
+- [ ] 14. "Se implementará la canalización en hormigón $A T, con un revestimiento interno de polietileno sin halógenos de 160 mm, $K. Se determinan los criterios ($G(%C)/$H(%D)/$J(%F))." — _qwen2.5:14b_
+- [ ] 15. "Se utiliza la canalización en hormigón $A T, con recubrimiento de polietileno sin halógenos de 160 mm, $K. Se especifican los requisitos ($G(%C)/$H(%D)/$J(%F))." — _qwen2.5:14b_
+- [ ] 16. "Se instala la conducción enterrada en hormigón $A T, con recubrimiento de polietileno libre de halógenos de 160 mm, $K. Se indican los estándares ($G(%C)/$H(%D)/$J(%F))." — _qwen2.5:14b_
+- [ ] 17. "Conducción enterrada de tipo $A, con polietileno libre de halógenos de 160 mm, $K. Incluido en: ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 18. "Entubación de hormigón $A, con polietileno de calidad superior libre de halógenos de 160 mm, $K. ([$G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 19. "Línea de hormigón $A, polietileno de 160 mm libre de halógenos para uso en $K. (Certificado: $G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 20. "Tubo de hormigón $A, con revestimiento de polietileno de 160 mm, apto para $K. (Especificaciones: $G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 21. "Conducción enterrada en hormigón tipo $A, recubierta con polietileno sin halógenos de 160 mm. ($K) Dimensiones: ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 22. "Tubo de hormigón $A, revestimiento de polietileno sin halógenos de 160 mm, especificación $K. Dimensiones: ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 23. "Conducto en hormigón $A, con revestimiento de polietileno sin halógenos de 160 mm, código $K. Dimensiones: ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 24. "Conducción de hormigón tipo $A, con revestimiento de polietileno sin halógenos de 160 mm. Especificación técnica: $K. Dimensiones: ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
 
 ## RESUMEN template (OEB230$)
 _Used in 1 concept(s): OEB230$_
 
-- [ ] 1. "Conducción enterrada $A T, fabricada en polietileno sin halógenos de 200 mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 2. "Conductos de hormigón $A T, de polietileno exento de halógenos de 200 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 3. "Conducción subterránea $A T, en polietileno sin halógenos de 200 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 4. "Tubería de hormigón $A T, de polietileno sin halógenos de 200 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 5. "Conducto de hormigón $A T, en polietileno exento de halógenos de 200 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-
-_Dropped by validation gates (not reviewable):_
-- [5] near_duplicate_of_kept
+- [ ] 1. "Se instala una conducción enterrada en hormigón $A T, de polietileno libre de halógenos de diámetro 200 mm, tipo $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 2. "Se caracteriza un conducto enterrado en hormigón $A T, fabricado con polietileno sin halógenos de 200 mm, y clasificado como $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 3. "Se presenta una estructura de conducción en hormigón $A T, utilizando polietileno no halogenado de 200 mm, categoría $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 4. "Se ejecuta una instalación de conducto en hormigón $A T, de polietileno exento de halógenos con diámetro 200 mm, especificación $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 5. "Conducción enterrada $A T, fabricada en polietileno sin halógenos de 200 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 6. "Tubería de hormigón $A T que cuenta con polietileno inofensivo de 200 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 7. "Conducción de hormigón $A T con polietileno sin halógenos de 200 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 8. "Canalización de hormigón $A T, integrando polietileno exento de halógenos de 200 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 9. "Conducción enterrada $A T, de polietileno sin halógenos de 200 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 10. "Conducto enterrado en hormigón $A T, con revestimiento de polietileno exento de halógenos de 200 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 11. "Tubería de hormigón $A T, revestida con polietileno no halógenado de 200 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 12. "Tubería de fundición $A T, con revestimiento de polietileno sin halógenos de 200 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 13. "Se utiliza conducción enterrada $A T, con polietileno sin halógenos de 200 mm, $K. Se especifica en ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 14. "Se propone la instalación de tubería $A T, con material polietileno no halogénico de 200 mm, $K. Se determina en ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 15. "Se emplea canalización enterrada $A T, con tubos de polietileno sin halógenos de 200 mm, $K. En ($G(%C)/$H(%D)/$J(%F)) se establece" — _qwen2.5:14b_
+- [ ] 16. "Se realiza la canalización enterrada $A T, con tubería de polietileno sin halógenos de 200 mm, $K. Se detalla en ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 17. "Conducción enterrada $A T, incluido polietileno libre de halógenos de 200 mm, y $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 18. "Conducción enterrada $A T con polietileno libre de halógenos de 200 mm. El componente también incluye $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 19. "El componente $K, hecho a partir de conducción enterrada $A T, es también compatible con polietileno libre de halógenos de 200 mm. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 20. "Conducción enterrada $A T, que incorpora polietileno libre de halógenos de 200 mm, así como $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 21. "Conducción enterrada de tipo $A T, compuesta por conductos de polietileno libre de halógenos de 200 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 22. "Instalación de tubería enterrada $A T, que incluye polietileno de 200 mm sin halógenos, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 23. "Conducción subterránea de clase $A T, con conducción de polietileno sin halógenos de 200 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 24. "Conducción enterrada T tipo $A, dotada de conductos de polietileno sin halógenos de diámetro 200 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
 
 ## RESUMEN template (OEB280$)
 _Used in 1 concept(s): OEB280$_
 
-- [ ] 1. "Conducción enterrada $A T, fabricada en polietileno sin halógenos de 40 mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 2. "Conductos de hormigón $A T, de polietileno exento de halógenos de 40 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 3. "Conducción subterránea $A T, en polietileno sin halógenos de 40 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 4. "Conductos enterrados $A T, de polietileno sin halógenos de 40 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 5. "Conducción de hormigón $A T, en polietileno exento de halógenos de 40 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 6. "Conductos de hormigón $A T, de polietileno sin halógenos de 40 mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))"
+- [ ] 1. "Conducción enterrada en hormigón $A T, compuesta por polietileno sin halógenos de 40 mm, $K. (Grado $G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 2. "Ejecutada en hormigón, la canalización $A T, de polietileno exento de halógenos de 40 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 3. "Se instalará canalización de hormigón $A T, utilizando polietileno que no contiene halógenos de 40 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 4. "Se dispone de una conducción en hormigón $A T, con polietileno sin halógenos de 40 mm, $K. (Especificación $G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 5. "Conducción enterrada de hormigón $A T, fabricada con polietileno sin halógenos de 40 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 6. "Conducción subterránea de hormigón $A T de diámetro 40 mm mm, polietileno sin halógenos, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 7. "$K. ($G(%C)/$H(%D)/$J(%F)) Conducción subterránea de hormigón $A T, con polietileno sin halógenos de 40 mm mm" — _phi4:latest_
+- [ ] 8. "Canal subterráneo de hormigón $A T, realizado con polietileno sin halógenos de 40 mm mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 9. "Conducción en hormigón armado $A T, realizada en polietileno sin halógenos, con 40 mm. $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 10. "Conducto enterrado en hormigón $A T, de polietileno inalterable por halógenos, de 40 mm. $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 11. "Sistema de conducción enterrada en $A T hormigón, fabricado en polietileno resistente a halógenos, de 40 mm. $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 12. "Conducción subterránea de hormigón $A T, con tuberías de polietileno exento de halógenos, de 40 mm. $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 13. "Se propone la canalización enterrada $A T, realizada con polietileno sin halógenos de 40 mm, $K. Se especifica la clasificación ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 14. "Se emplea canalización de hormigón tipo $A T, con revestimiento de polietileno que no contiene halógenos de 40 mm, $K. Se establecen las especificaciones ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 15. "Se implementa la canalización hormigonada $A T, revestida con polietileno sin halógenos, de 40 mm, $K. Se indica la nomenclatura ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 16. "Se lleva a cabo la canalización enterrada de tipo $A T, con revestimiento de polietileno sin halógenos de 40 mm, $K. Se detallan los parámetros ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 17. "Conducción enterrada $A T, polietileno libre de halógenos de 40 mm. Incluye $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 18. "Conducción enterrada $A T y polietileno libre de halógenos de 40 mm, con la inclusión de $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 19. "Conducción enterrada $A T, con polietileno libre de halógenos de 40 mm. ($G(%C)/$H(%D)/$J(%F)), se incluye $K." — _qwen2.5:14b_
+- [ ] 20. "Instalación de conducción enterrada de hormigón tipo $A T, material de conducción interior de polietileno sin halógenos de 40 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 21. "Conducción férrea enterrada clase $A T, con polietileno libre de halógenos de 40 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- qwen2.5:14b/R3 [1] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- [17] near_duplicate_of_kept
 
 ## RESUMEN template (OEB290$)
 _Used in 1 concept(s): OEB290$_
 
-- [ ] 1. "Conducción enterrada $A T, fabricada en polietileno sin halógenos de 50 mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 2. "Conductos de hormigón $A T, de polietileno exento de halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 3. "Conducción subterránea $A T, en polietileno sin halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 4. "Tubería de hormigón $A T, de polietileno sin halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 5. "Conducto de hormigón $A T, en polietileno exento de halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-
-_Dropped by validation gates (not reviewable):_
-- [5] near_duplicate_of_kept
+- [ ] 1. "Se ha instalado una conducción enterrada $A T de polietileno sin halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 2. "La ejecución de conductos enterrados $A T, realizados en polietileno que no contiene halógenos de 50 mm, es $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 3. "Se efectúa conducir una canalización $A T enterrada en hormigón, usando polietileno sin halógenos de 50 mm. $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 4. "Se implementa la canalización enterrada $A T en polietileno exento de halógenos de 50 mm, característica $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 5. "Conducción enterrada en hormigón $A T, fabricada con polietileno no halogenado de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 6. "Conducto de hormigón $A T, hecho de polietileno sin halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 7. "Tubería bajo hormigón $A T, de polietileno exento de halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 8. "Conducción subterránea en hormigón $A T, con polietileno libre de halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 9. "Conducción de hormigón armado $A T, hecha de polietileno exento de halógenos de 50 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 10. "Conductos en concreto $A T, de polietileno sin halógenos de 50 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 11. "Conducción en hormigón $A T, fabricada de polietileno sin halógenos de 50 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 12. "Conducto en hormigón armado $A T, compuesto de polietileno libre de halógenos de 50 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 13. "Se utiliza un sistema de conducción enterrada tipo $A T, con revestimiento de polietileno sin halógenos de 50 mm, y especificación $K. Se establece la normativa ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 14. "Se instala canalización de hormigón $A T, con recubrimiento de polietileno sin halógenos de 50 mm, según especificaciones $K. Se menciona la reglamentación ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 15. "Se aplicará la canalización hormigonada tipo $A T, revestida con polietileno que no contiene halógenos de 50 mm, y se seguirá la especificación $K. Se detallan los estándares ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 16. "Se dispone de un sistema de conducción enterrada de tipo $A T, con revestimiento de polietileno sin halógenos de 50 mm, y se rige por la especificación $K. Se indica la normativa ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 17. "Conducción enterrada $A T, incluido polietileno libre de halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 18. "Conducción enterrada $A, que utiliza polietileno libre de halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 19. "Tubo enterrado $A, para conducción con polietileno libre de halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 20. "Conducción enterrada $A, con polietileno libre de halógenos de 50 mm, para $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 21. "Conducción enterrada tipo $A T, con revestimiento de polietileno sin halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 22. "Entubación subterránea tipo $A T, incluye polietileno sin halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 23. "Conducto enterrado de tipo $A T con recubrimiento de polietileno sin halógenos de  50 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 24. "Entubación de hormigón tipo $A T con polietileno sin halógenos de 50 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
 
 ## RESUMEN template (OEB300$)
 _Used in 1 concept(s): OEB300$_
 
-- [ ] 1. "Conducción enterrada $A T, fabricada en polietileno sin halógenos de 90 mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 2. "Conducto enterrado $A T, de polietileno exento de halógenos de 90 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 3. "Conducción subterránea $A T, en polietileno sin halógenos de 90 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 4. "Conducto enterrado $A T, de polietileno sin halógenos de 90 mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))"
+- [ ] 1. "Se utiliza una conducción enterrada $A T, con conductos de polietileno sin halógenos de 90 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 2. "Ejecutada con conducción hormigonada $A T, se emplean tubos de polietileno exento de halógenos de 90 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 3. "La instalación de conductos hormigonados $A T, consiste en polietileno sin halógenos de 90 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 4. "Se lleva a cabo la instalación de canalización $A T, mediante tuberías de polietileno que no contienen halógenos de 90 mm mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 5. "Conducción enterrada $A T en polietileno sin halógenos de 90 mm, $K. Incluye ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 6. "Conducción enterrada de $A T en polietileno sin halógenos, 90 mm, con $K. Detalles: ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 7. "Conducción enterrada en polietileno sin halógenos $K, con $A T y 90 mm, ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 8. "Conductos de 90 mm de diámetro en hormigón con recubrimiento de polietileno sin halógenos $A T, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 9. "Con ductos en concreto $A T, revestidos con polietileno exento de halógenos de 90 mm, características $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 10. "Conductos enterrados en hormigón de tipo $A T, con un revestimiento de polietileno sin halógenos de 90 mm, y especificaciones $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 11. "Conductos en concreto armado $A T, recubiertos con polietileno sin halógenos de 90 mm, y características $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 12. "Se utiliza la conducción enterrada $A T, con tubo de polietileno libre de halógenos de 90 mm, y $K. Se especifica (se garantiza con $G(%C), se fabrica con $H(%D), se certifica mediante $J(%F))" — _qwen2.5:14b_
+- [ ] 13. "Se instala la canalización en hormigón $A T, con tubos de polietileno libre de halógenos de 90 mm, y se especifica $K. Se garantiza (se fabrica con $G(%C), se certifica mediante $H(%D), se especifica con $J(%F))" — _qwen2.5:14b_
+- [ ] 14. "Conducción enterrada $A T, realizada con polietileno de 90 mm, libre de halógenos, y especificada según $K. Se garantiza con $G(%C), se fabrica con $H(%D), se certifica mediante $J(%F)" — _qwen2.5:14b_
+- [ ] 15. "Conducción enterrada $A T, con polietileno sin halógenos de 90 mm. Incluye $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 16. "Conducción enterrada $A T, que utiliza polietileno sin halógenos de 90 mm, y $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 17. "Conducción enterrada $A T, hecha con polietileno sin halógenos de 90 mm, y $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 18. "Conducción en hormigón $A T, con polietileno sin halógenos de 90 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- [6] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
+- [19] near_duplicate_of_kept
+- [21] near_duplicate_of_kept
+- [22] near_duplicate_of_kept
 
 ## RESUMEN template (OEB020$)
 _Used in 1 concept(s): OEB020$_
 
-- [ ] 1. "Conducción enterrada de $A T, conductos de PVC de diámetro nominal 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 2. "Conducción subterránea de $A T, tuberías de PVC de 110 mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 3. "Conducción de hormigón de $A T, conductos de PVC de 110 mm de diámetro, $K. ($G(%C)/$H(%D)/$J(%F))"
-- [ ] 4. "Conducción de hormigón de $A T, tuberías de PVC de diámetro 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))"
+- [ ] 1. "Se instala una conducción enterrada en hormigón de $A T, conductos de PVC 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 2. "Se ejecuta la canalización enterrada en hormigón de $A T, con conductos de PVC 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 3. "La instalación de la canaleta de hormigón de $A T, conductos de PVC 110 mm, $K se lleva a cabo. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 4. "Conducción enterrada de $A T, con conductos de PVC 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 5. "Conductos de PVC 110 mm en una canalización hormigonada de $A T, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 6. "Conducción hormigonada de $A T con elementos de PVC de 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 7. "Canalización de hormigón de $A T, incorporando conductos de PVC 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 8. "Conducción subterránea en hormigón de $A T, fabricada con tubos de PVC 110 mm, especificación $K. Detalles de calidad: ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 9. "Instalación de tuberías hormigonadas con capacidad de $A T, empleando conductos de PVC de la medida 110 mm, según $K. Normativas: ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 10. "Conducción enterrada en concreto de $A T, con diámetros de PVC 110 mm, conforme a $K. Certificaciones: ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 11. "Rack en concreto de $A T, con elementos de PVC de diámetro 110 mm, estándares $K. Especificaciones completas: ($G(%C)/$H(%D)/$J(%F))" — _phi4:latest_
+- [ ] 12. "Se instala conducción enterrada de $A T, mediante tubos de PVC con diámetro nominal de 110 mm, en $K. Se especifica esta construcción conforme a las normas ($G(%C)), ($H(%D)), y ($J(%F))." — _qwen2.5:14b_
+- [ ] 13. "Se lleva a cabo la instalación de canalización hormigonada de $A T, utilizando tubería de PVC con un diámetro de 110 mm, en el sitio $K. Se basa en los estándares ($G(%C)), ($H(%D)), y ($J(%F))." — _qwen2.5:14b_
+- [ ] 14. "Se dispone de conducción de $A T, formada por conducciones de PVC con un diámetro nominal de 110 mm, en la ubicación $K. Se requiere cumplir con las especificaciones ($G(%C)), ($H(%D)), y ($J(%F))." — _qwen2.5:14b_
+- [ ] 15. "Se coloca la canalización de $A T, hecha de tubos de PVC con un diámetro nominal de 110 mm, en la localización $K. Se establecen las normas ($G(%C)), ($H(%D)), y ($J(%F))." — _qwen2.5:14b_
+- [ ] 16. "Incluye conducción enterrada con molduras de $A T, PVC 110 mm, de diámetro $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 17. "Conducción enterrada con molduras de $A T y PVC 110 mm, con diámetro $K; certificación ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 18. "Incluye la conducción enterrada de $A T, PVC 110 mm, de $K; certificaciones ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 19. "Conducción enterrada con molduras de $A, tubería de PVC 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 20. "Conductos enterrados con molduras de $A, tubería de PVC 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
+- [ ] 21. "Canalización de hormigón con molduras de $A, tubería de PVC 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [2] near_duplicate_of_kept
+- [16] near_duplicate_of_kept
+- [23] near_duplicate_of_kept
 
 ## RESUMEN template (OEB170$)
 _Used in 1 concept(s): OEB170$_
 
-- [ ] 1. "Conducción metálica aérea compuesta por $A conductos de acero galvanizado con %B de diámetro. ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 2. "Sistema de canalización metálica aérea con $A conductos de acero galvanizado de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))"
+- [ ] 1. "Se dispone de una canalización metálica superficial dotada con $A conductos de acero galvanizado de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 2. "Constituida por $A conductos de acero galvanizado de %B de diámetro, se presenta la canalización metálica superficial. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 3. "Canalización superficial de acero galvanizado se compone de $A conductos de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 4. "Conducción metálica instalada en la superficie, compuesta por $A conductos de acero galvanizado, de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 5. "Conjunto de canalización metálica superficial con $A conductos de acero galvanizado, de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 6. "Se presenta una canalización metálica superficial que incorpora $A conductos de acero galvanizado de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 7. "Canalización metálica en superficie que incluye $A conductos de acero galvanizado, de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 8. "Conjunto de conductos metálicos a nivel superficial con $A tubos de acero galvanizado de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 9. "Instalación de conductos metálicos en superficie que consta de $A tubos de acero galvanizado con %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 10. "Conjunto de conducción metálica en superficie formado por $A tubos de acero galvanizado de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 11. "Conjunto de canalización superficial metálica compuesto por $A tubos de acero galvanizado de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 12. "$A conducciones enterradas de acero galvanizado de %B de diámetro, con $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 13. "Conducción enterrada metálica superficial que incluye $A tubos de acero galvanizado de %B de diámetro, especificando $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 14. "Instalación de canalización metálica superficial, constando de $A conductos de acero galvanizado de %B de diámetro, con especificaciones técnicas de $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 15. "Tubería metálica superficial que integra $A tubos de acero galvanizado de %B de diámetro, detallada en $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 16. "Instalación de conductos metálicos superficiales con $A tubos de acero galvanizado de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 17. "Sistema de conducción metálica superficial compuesto por $A tubos de acero galvanizado de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 18. "Configuración de canalización metálica superficial con $A tubos de acero galvanizado de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 19. "Implementación de conductos superficiales metálicos que incluyen $A tubos de acero galvanizado de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P2', 'P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P2', 'P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P2', 'P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P2', 'P3'] extra_or_dup=[]
 - [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
 
 ## RESUMEN template (OEB080$)
 _Used in 1 concept(s): OEB080$_
 
-- [ ] 1. "Conducto corrugado de $A con núcleo de acero. (-/-/$L(%B))"
-- [ ] 2. "Conducción de tubo corrugado de $A con núcleo de acero. (-/-/$L(%B))"
-- [ ] 3. "Conducción corrugada de tubo de $A con núcleo de acero. (-/-/$L(%B))"
-
-_Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
+- [ ] 1. "Conducto enterrado en forma de tubo ondulado de diámetro $A y núcleo de acero. (-/-/$L(%B))" — _phi4:latest_
+- [ ] 2. "Se implementa la canalización de tubo en forma de ondas, poseyendo una sección central metálica de acero y un diámetro de $A. (-/-/$L(%B))" — _phi4:latest_
+- [ ] 3. "Se dispone de una conducción en forma de tubo corrugado, caracterizado por su alma de acero y un diámetro de $A. (-/-/$L(%B))" — _phi4:latest_
+- [ ] 4. "Canalización mediante tubo ondulado con diámetro $A y constituida por una estructura interna de acero. (-/-/$L(%B))" — _phi4:latest_
+- [ ] 5. "Conducto corrugado tubular de $A, armado con una alma de acero. (-/-/$L(%B))" — _phi4:latest_
+- [ ] 6. "Conducto tubular corrugado cuya $A incorpora una alma de acero. (-/-/$L(%B))" — _phi4:latest_
+- [ ] 7. "Conducción tubular de $A con alma de acero y superficie corrugada. (-/-/$L(%B))" — _phi4:latest_
+- [ ] 8. "Canalización en forma de tubo corrugado, de $A, que incluye alma de acero. (-/-/$L(%B))" — _phi4:latest_
+- [ ] 9. "Conducción ondulada tubular de $A y corazón de acero. (-/-/$L(%B))" — _phi4:latest_
+- [ ] 10. "Conducto tubular con ondulaciones de $A y núcleo de acero. (-/-/$L(%B))" — _phi4:latest_
+- [ ] 11. "Tubos ondulados de $A con estructura central de acero. (-/-/$L(%B))" — _phi4:latest_
+- [ ] 12. "Conducto tubular con ondulaciones de $A que incluye alma de acero. (-/-/$L(%B))" — _phi4:latest_
+- [ ] 13. "Se emplea tubo corrugado de $A con alma de acero. (-/-/$L(%B))" — _qwen2.5:14b_
+- [ ] 14. "Tubo corrugado de $A con alma de acero se utiliza. (-/-/$L(%B))" — _qwen2.5:14b_
+- [ ] 15. "Se realiza la canalización mediante tubo corrugado de $A con alma de acero. (-/-/$L(%B))" — _qwen2.5:14b_
+- [ ] 16. "Tubo corrugado de $A con alma de acero se implementa para la canalización. (-/-/$L(%B))" — _qwen2.5:14b_
+- [ ] 17. "Conducción enterrada con tubo corrugado de $A y alma de acero, incluido en la forma (-/-/$L(%B))." — _qwen2.5:14b_
+- [ ] 18. "Conducción enterrada con tubo corrugado de $A, equipada con alma de acero, y lista en la configuración (-/-/$L(%B))." — _qwen2.5:14b_
+- [ ] 19. "Canalización con tubo corrugado de $A, proporcionada con alma de acero, y en el formato (-/-/$L(%B))." — _qwen2.5:14b_
+- [ ] 20. "El sistema de canalización tiene tubo corrugado de $A, con alma de acero, presentado en la estructura (-/-/$L(%B))." — _qwen2.5:14b_
+- [ ] 21. "Conducción con tubo corrugado de $A y alma de acero. (-/-/$L(%B))" — _qwen2.5:14b_
+- [ ] 22. "Instalación de tubería corrugada de $A con alma de acero. (-/-/$L(%B))" — _qwen2.5:14b_
+- [ ] 23. "Conducción con tubería corrugada de $A, incluyendo alma de acero. (-/-/$L(%B))" — _qwen2.5:14b_
+- [ ] 24. "Tubo corrugado de $A con alma de acero para canalización. (-/-/$L(%B))" — _qwen2.5:14b_
 
 ## RESUMEN template (OED180$)
 _Used in 1 concept(s): OED180$_
 
-- [ ] 1. "Inspección preliminar de excavación del conjunto de electrificación en el área $A a una profundidad de $B ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 2. "Examen inicial de excavación del conjunto de electrificación en el terreno $A a una profundidad de $B ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 3. "Análisis previo de excavación del conjunto de electrificación en el terreno $A a una profundidad de $B ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 4. "Revisión inicial de excavación del conjunto de electrificación en el área $A a una profundidad de $B ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 5. "Estudio preliminar de excavación del conjunto de electrificación en el terreno $A a una profundidad de $B ($L(%C)/$M(%D)/$N(%F))."
+- [ ] 1. "Se lleva a cabo una cata preliminar para la excavación del macizo de electrificación en el área $A con una profundidad de $B ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 2. "Se efectúa una investigación preliminar para la extracción del núcleo de electrificación en el sector $A, alcanzando una profundidad de $B ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 3. "Previamente se realizará una inspección para excavar el bloque de electrificación en el emplazamiento $A, cuya profundidad es de $B ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 4. "Se procede a una exploración inicial para la remoción del conjunto de electrificación en el área $A con una profundidad de $B ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 5. "Cata preliminar de zanja para macizo de electrificación en terreno $A que alcanza una profundidad de $B ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 6. "Preparación de excavación de macizo para electrificación en terreno $A, con una profundidad de $B ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 7. "Excavación preliminar de macizo para electrificación en terreno $A, alcanzando una profundidad de $B ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 8. "Macizo de electrificación: cata previa de excavación en terreno $A, con profundidad de $B ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 9. "Inspección inicial de excavación para estructura de electrificación en suelo $A con profundidad $B (métodos: $L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 10. "Evaluación preliminar de excavación para subestructura de electrificación en área $A a $B de profundidad (técnicas: $L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 11. "Análisis preliminar del terreno $A para excavación de macizo de electricidad a profundidad $B (procedimientos: $L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 12. "Exploración anticipada de suelo $A para excavación de macizo de electrificación a $B de profundidad (métodos aplicados: $L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 13. "Excavación catastral del macizo de electrificación en terreno $A, con una profundidad de $B, incluyendo los aspectos técnicos de $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 14. "Realización de la excavación catastral correspondiente al macizo de electrificación en terreno $A, con la especificación de una profundidad de $B, detallando los parámetros técnicos $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 15. "Realización de la cata de excavación para el macizo de electrificación en terreno $A, especificando una profundidad de $B, con los detalles técnicos de $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 16. "Preparación de la cata de excavación para la instalación de electrificación en terreno $A, con una profundidad de excavación de $B, y los aspectos técnicos detallados como $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [1] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [2] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [3] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
 
 ## RESUMEN template (OEB310$)
 _Used in 1 concept(s): OEB310$_
 
-- [ ] 1. "Inspección y restauración del conducto subterráneo existente en $P(%A)."
-- [ ] 2. "Evaluación y arreglo del conducto subterráneo existente en $P(%A)."
-- [ ] 3. "Examen y mantenimiento del conducto subterráneo existente en $P(%A)."
-- [ ] 4. "Diagnóstico y corrección del conducto subterráneo existente en $P(%A)."
-- [ ] 5. "Inspección y solución de problemas del conducto subterráneo existente en $P(%A)."
-- [ ] 6. "Revisión y restauración del conducto subterráneo existente en $P(%A)."
+- [ ] 1. "Se efectúa la revisión y adecuación del subconducto preexistente en $P(%A)." — _phi4:latest_
+- [ ] 2. "En $P(%A), se lleva a cabo la cata y arreglo del subconducto existente $P(%A)." — _phi4:latest_
+- [ ] 3. "Se realiza la inspección y corrección del subconducto preinstalado en $P(%A)." — _phi4:latest_
+- [ ] 4. "En $P(%A), se procede a inspeccionar y restaurar el subconducto ya colocado $P(%A)." — _phi4:latest_
+- [ ] 5. "Inspección y restauración del subconducto ya instalado en $P(%A)." — _phi4:latest_
+- [ ] 6. "Reparación y evaluación de daños del subconducto existente en $P(%A)." — _phi4:latest_
+- [ ] 7. "En $P(%A) se realizará una cata y una reparación del subconducto existente." — _phi4:latest_
+- [ ] 8. "El subconducto existente en $P(%A) será objeto de cata y reparación." — _phi4:latest_
+- [ ] 9. "Inspección y restauración del subconducto preexistente en $P(%A)." — _phi4:latest_
+- [ ] 10. "Evaluación y arreglo del subconductor ya instalado en $P(%A)." — _phi4:latest_
+- [ ] 11. "Diagnóstico y corrección del subcanal presente en $P(%A)." — _phi4:latest_
+- [ ] 12. "Examen y arreglo del conducto subterráneo en $P(%A)." — _phi4:latest_
+- [ ] 13. "Se realiza la inspección y reparación de subconducto existente en $P(%A)." — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la evaluación y reparación del subconducto existente en $P(%A)." — _qwen2.5:14b_
+- [ ] 15. "Se efectúa la catado y rehabilitación de subconducto existente en $P(%A)." — _qwen2.5:14b_
+- [ ] 16. "Se lleva a cabo la catado técnica y la reparación del subconducto existente en $P(%A)." — _qwen2.5:14b_
+- [ ] 17. "Se realiza la cota y posterior reparación de la tubería subterránea existente en $P(%A)." — _qwen2.5:14b_
+- [ ] 18. "Realización de la inspección y corrección de la conducción subterránea existente en $P(%A)." — _qwen2.5:14b_
+- [ ] 19. "Revisión y reparación del subconducto existente en $P(%A), incluyendo cualquier imperfección detectada." — _qwen2.5:14b_
+- [ ] 20. "Inspección y arreglo del subconducto preexistente en $P(%A), con énfasis en la detección y corrección de anomalías detectadas." — _qwen2.5:14b_
+- [ ] 21. "Diagnóstico y restauración del conducto subterráneo previo en $P(%A)." — _qwen2.5:14b_
+- [ ] 22. "Investigación y reconstrucción del canal subterráneo preexistente en $P(%A)." — _qwen2.5:14b_
+- [ ] 23. "Análisis y reparación del conducto subterráneo ya instalado en $P(%A)." — _qwen2.5:14b_
+- [ ] 24. "Evaluación y mejora del ducto subterráneo existente en $P(%A)." — _qwen2.5:14b_
 
 ## RESUMEN template (OED120$)
 _Used in 1 concept(s): OED120$_
 
-- [ ] 1. "Estructuras de cimentación tipo puente, con barra corrugada roscada de $A ($L(%B)/$M(%C)/$N(%D))."
-- [ ] 2. "Fundaciones especiales tipo puente, con barra corrugada roscada de $A ($L(%B)/$M(%C)/$N(%D))."
-
-_Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [ ] 1. "Se dispone de cimentaciones especiales tipo puente, con barra corrugada roscada de $A ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 2. "Cimentaciones tipo puente especiales que incorporan barra corrugada roscada de $A ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 3. "Cimentaciones de tipo puente especial, que se conforman con barra corrugada roscada de $A ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 4. "Se han diseñado cimentaciones tipo puente especiales, equipadas con barra corrugada roscada de $A ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 5. "Puentes con cimentaciones especiales, equipados con barra corrugada roscada de $A (incluidas las medidas $L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 6. "Barra corrugada roscada de $A (en variantes $L(%B)/$M(%C)/$N(%D)) para cimentaciones especiales tipo puente." — _phi4:latest_
+- [ ] 7. "Con cimentaciones especiales tipo puente, se incluye barra corrugada roscada de $A (disponible en $L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 8. "Cimentaciones tipo puente especiales con barra corrugada roscada de $A, en variantes $L(%B)/$M(%C)/$N(%D)." — _phi4:latest_
+- [ ] 9. "Estructuras de cimentación tipo puente, con barras corrugadas roscadas de $A ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 10. "Cimentaciones de puente especiales, que incluyen barras corrugadas roscadas de $A ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 11. "Instalaciones de cimentación tipo puente, con armaduras roscadas corrugadas de $A ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 12. "Cimentaciones de tipo puente especial, que utilizan barras corrugadas roscadas de $A ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 13. "Se emplean cimentaciones especiales tipo puente, las cuales incluyen barra corrugada roscada de $A ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 14. "Las fundaciones especiales tipo puente se caracterizan por la incorporación de barra corrugada roscada de $A ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 15. "Se utiliza el sistema de cimentaciones especiales tipo puente que incorpora barra corrugada roscada de $A ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 16. "Los elementos de cimentación especial para puentes incluyen la barra corrugada roscada de $A ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 17. "Constituyen cimentaciones especiales tipo puente que incorporan barra corrugada roscada de $A, especificándose las dimensiones en $L(%B), $M(%C) y $N(%D)." — _qwen2.5:14b_
+- [ ] 18. "Se emplean cimentaciones especializadas tipo puente dotadas de barra corrugada roscada de $A, detallándose en $L(%B), $M(%C) y $N(%D)." — _qwen2.5:14b_
+- [ ] 19. "Presentan cimentaciones especializadas para puentes que incluyen barra corrugada roscada de $A, especificada en $L(%B), $M(%C) y $N(%D)." — _qwen2.5:14b_
+- [ ] 20. "Corresponden a cimentaciones especializadas de tipo puente que cuentan con barra corrugada roscada de $A, detallándose las especificaciones en $L(%B), $M(%C) y $N(%D)." — _qwen2.5:14b_
+- [ ] 21. "Fundaciones de tipo viaducto, con varilla corrugada y apretada de $A ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 22. "Estructura de apoyo tipo puente, con viga corrugada y fijada en rosca de $A ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 23. "Base especial para puentes, con tubería corrugada y unida en rosca de $A ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 24. "Elementos de soporte específicos para puentes, con perno corrugado y rosado de $A ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
 
 ## RESUMEN template (OEG040$)
 _Used in 1 concept(s): OEG040$_
 
-- [ ] 1. "Estructuras de cimentación tipo puente, con barra corrugada roscada de $A mm, entrada por $B, $L(b,%C). ($L(a,%C)/-/-)."
-- [ ] 2. "Fundaciones especiales tipo puente, con barra corrugada roscada de $A mm, acceso por $B, $L(b,%C). ($L(a,%C)/-/-)."
-- [ ] 3. "Cimentaciones especiales en forma de puente, con barra corrugada roscada de $A mm, acceso por $B, $L(b,%C). ($L(a,%C)/-/-)."
-- [ ] 4. "Cimentaciones especiales de tipo puente, con barra corrugada roscada de $A mm, entrada por $B, $L(b,%C). ($L(a,%C)/-/-)."
+- [ ] 1. "Cimentaciones tipo puente especial, equipadas con barra corrugada roscada de $A mm, accesibles por $B, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 2. "Cimentaciones tipo puente especial, que integran barra corrugada roscada de $A mm, con acceso por $B, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 3. "Cimentaciones especiales tipo puente, que tienen barra corrugada roscada de $A mm, con acceso por $B, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 4. "Estructuras de cimentación de tipo puente particular, dotadas de una barra ondulada y roscada de $A mm, entrada por $B, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 5. "Cimentaciones de diseño puente especial, con barra ondulada y roscada de $A mm, vía de acceso $B, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 6. "Cimentaciones de puente especial, equipadas con barra ondulada y roscada de $A mm, entrada por $B, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 7. "Cimentaciones de tipo puente especial, integrando una barra ondulada roscada de $A mm, acceso por $B, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 8. "Estructuras de fundación especiales del tipo puente, que incorporan barras corrugadas roscadas de $A mm, con acceso mediante $B. Se especifica $L(b,%C). (Se indica $L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 9. "Se emplean cimentaciones especiales tipo puente que incluyen barras corrugadas roscadas de $A mm, con acceso a través de $B. Se indica mediante $L(b,%C). Se indica también $L(a,%C)/-/-." — _qwen2.5:14b_
+- [ ] 10. "Se designa la implementación de fundaciones especiales de puente que cuentan con barras corrugadas roscadas de $A mm, con acceso por medio de $B. Se detalla $L(b,%C). Se indica $L(a,%C)/-/-." — _qwen2.5:14b_
+- [ ] 11. "Se propone el uso de cimentaciones especiales del tipo puente, que incluyen barras corrugadas roscadas de $A mm, con acceso a través de $B. Se indica $L(b,%C). Se detalla $L(a,%C)/-/-." — _qwen2.5:14b_
+- [ ] 12. "Cimentaciones especiales de tipo puente, que incluyen barra corrugada roscada de $A mm, con acceso por $B. Se especifican los parámetros como $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 13. "Las cimentaciones especiales para puentes incluyen la barra corrugada roscada con un diámetro de $A mm y se accede por $B. Se incluyen los detalles en $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 14. "Se trata de cimentaciones especiales para puentes, que cuentan con una barra corrugada roscada de $A mm, y se accede por $B, detalladas en $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 15. "Para puentes, se utilizan cimentaciones especiales con barra corrugada roscada de $A mm y acceso por $B. Se detallan los parámetros en $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 16. "Fundaciones especiales de tipo sobrepuente, con barras corrugadas con rosca de $A mm, conexión por $B, $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 17. "Soportes especiales para puentes, con barra corrugada roscada de $A mm, entrada por $B, $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 18. "Estructuras de base de tipo puente, con barra corrugada roscada de $A mm, conexión por $B, $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 19. "Apoyos especiales destinados a puentes, con barra corrugada roscada de $A mm, ingreso por $B, $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R1 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R1 [2] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R1 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
 - [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
 
 ## RESUMEN template (OEG050$)
 _Used in 1 concept(s): OEG050$_
 
-- [ ] 1. "Cimentaciones prismáticas con barra corrugada roscada de $A mm, entrada por $B, $L(b,%C) ($L(a,%D)/-/-)."
-- [ ] 2. "Cimentaciones prismáticas con barra corrugada roscada de $A mm, acceso mediante $B, $L(b,%C) ($L(a,%D)/-/-)."
+- [ ] 1. "Se realizan cimentaciones prismáticas, incorporando una barra corrugada roscada de $A mm, con entrada por $B, $L(b,%C) ($L(a,%D)/-/-)." — _phi4:latest_
+- [ ] 2. "Cimentaciones prismáticas donde se incluye una barra corrugada roscada de $A mm, permitiendo entrada por $B, $L(b,%C) ($L(a,%D)/-/-)." — _phi4:latest_
+- [ ] 3. "Las cimentaciones prismáticas cuentan con una barra corrugada roscada de $A mm, y se accede por $B, $L(b,%C) ($L(a,%D)/-/-)." — _phi4:latest_
+- [ ] 4. "Se dispone de cimentaciones prismáticas, integrando una barra corrugada roscada de $A mm, acceso facilitado por $B, $L(b,%C) ($L(a,%D)/-/-)." — _phi4:latest_
+- [ ] 5. "Cimentaciones prismáticas que presentan una barra corrugada roscada de $A mm, con acceso por $B y $L(b,%C) ($L(a,%D)/-/-)." — _phi4:latest_
+- [ ] 6. "Cimentaciones prismáticas con barra corrugada roscada de $A mm, acceso por $B, y $L(b,%C) ($L(a,%D)/-/-) incluido." — _phi4:latest_
+- [ ] 7. "Con $A mm de barra corrugada roscada, cimentaciones prismáticas ofrecen acceso por $B, y $L(b,%C) ($L(a,%D)/-/-) añadido." — _phi4:latest_
+- [ ] 8. "Cimentaciones prismáticas, que incluyen barra corrugada roscada de $A mm, con acceso por $B, y $L(b,%C) ($L(a,%D)/-/-)." — _phi4:latest_
+- [ ] 9. "Estructuras prismáticas para cimentación, dotadas de barra corrugada roscada de $A mm, entrada por $B, $L(b,%C) ($L(a,%D)/-/-)." — _phi4:latest_
+- [ ] 10. "Bases prismáticas para fundación, con barra corrugada roscada de $A mm, ingreso por $B, $L(b,%C) ($L(a,%D)/-/-)." — _phi4:latest_
+- [ ] 11. "Fundaciones prismáticas, equipadas con barra corrugada roscada de $A mm, entrada por $B, $L(b,%C) ($L(a,%D)/-/-)." — _phi4:latest_
+- [ ] 12. "Bases prismáticas con barra corrugada roscada de $A mm, entrada por $B, $L(b,%C) ($L(a,%D)/-/-)." — _phi4:latest_
+- [ ] 13. "Se proporcionan cimentaciones prismáticas equipadas con barra corrugada roscada de $A mm, con acceso mediante $B, y se determinan $L(b,%C) ($L(a,%D)/-/-)." — _qwen2.5:14b_
+- [ ] 14. "Se implementan cimentaciones prismáticas con barra corrugada roscada de $A mm, con acceso a través de $B, y se especifican $L(b,%C) ($L(a,%D)/-/-)." — _qwen2.5:14b_
+- [ ] 15. "Cimentaciones prismáticas, que incluyen una barra corrugada roscada de $A mm, con acceso por $B. Incluye la disposición $L(b,%C) (y $L(a,%D)/-/-)." — _qwen2.5:14b_
+- [ ] 16. "Se describe un sistema de cimentaciones prismáticas que integra una barra corrugada roscada de $A mm, además del acceso por $B. El esquema presenta una configuración $L(b,%C) con una disposición alternativa $L(a,%D)/-/-." — _qwen2.5:14b_
+- [ ] 17. "Cimentaciones prismáticas provistas de una barra corrugada roscada de $A mm y acceso por $B. La configuración incluye las posiciones $L(b,%C) y (respectivamente) $L(a,%D)/-/-." — _qwen2.5:14b_
+- [ ] 18. "Este diseño de cimentaciones prismáticas utiliza una barra corrugada roscada de $A mm y proporciona acceso por $B. Se especifica la configuración $L(b,%C) seguida de (y $L(a,%D)/-/-)." — _qwen2.5:14b_
+- [ ] 19. "Fundaciones prismáticas que incluyen una barra corrugada con rosca de $A mm, con acceso a través de $B, $L(b,%C) ($L(a,%D)/-/-)." — _qwen2.5:14b_
+- [ ] 20. "Estructuras de base prismáticas con barra tubular corrugada y rosca de $A mm, con entrada en $B, $L(b,%C) ($L(a,%D)/-/-)." — _qwen2.5:14b_
+- [ ] 21. "Base prismática con barra corrugada roscada de $A mm, acceso a través de $B, $L(b,%C) ($L(a,%D)/-/-)." — _qwen2.5:14b_
+- [ ] 22. "Estructuras de cimentación prismáticas que contienen una barra corrugada con rosca de $A mm, con acceso por $B, $L(b,%C) ($L(a,%D)/-/-)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
 
 ## RESUMEN template (OEG030$)
 _Used in 1 concept(s): OEG030$_
 
-- [ ] 1. "Base cilíndrica para fijación $A, entrada por $B, $L(b,%C). ($L(a,%C)/-/-)."
-- [ ] 2. "Soporte cilíndrico para sujeción $A, entrada por $B, $L(b,%C). ($L(a,%C)/-/-)."
-- [ ] 3. "Fundación cilíndrica para fijación $A, acceso por $B, $L(b,%C). ($L(a,%C)/-/-)."
-- [ ] 4. "Estructura cilíndrica para sujeción $A, entrada por $B, $L(b,%C). ($L(a,%C)/-/-)."
-- [ ] 5. "Base redonda para fijación $A, acceso por $B, $L(b,%C). ($L(a,%C)/-/-)."
+- [ ] 1. "Para anclaje $A, se dispone de una cimentación cilíndrica con acceso por $B. Características $L(b,%C). (Especificaciones $L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 2. "Construcción de cimentación cilíndrica diseñada para el anclaje $A, con acceso proporcionado por $B. Detalles $L(b,%C). (Descripción $L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 3. "Anclaje $A mediante cimentación cilíndrica, que ofrece acceso por $B. Configuración $L(b,%C). (Detalles $L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 4. "Se implementa una cimentación cilíndrica para anclaje $A, con accesibilidad a través de $B. Parámetros $L(b,%C). (Especificaciones $L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 5. "Anclaje tipo cilíndrico para $A, con acceso por $B, dimensiones $L(b,%C). (Incluidas las medidas $L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 6. "$A con cimentación cilíndrica accesible por $B, $L(b,%C). ($L(a,%C)/-/-) están incluidas." — _phi4:latest_
+- [ ] 7. "Para anclaje $A, cimentación cilíndrica con acceso por $B, con $L(b,%C). (Y $L(a,%C)/-/- incluidas)." — _phi4:latest_
+- [ ] 8. "Cimentación cilíndrica dedicada a $A, permite acceso por $B, especificaciones $L(b,%C). (Con $L(a,%C)/-/- contempladas)." — _phi4:latest_
+- [ ] 9. "Anclaje $A con cimentación cilíndrica, acceso por $B, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 10. "Cimentación de tipo cilíndrico para $A, con acceso $B, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 11. "Cimentación cilíndrica dedicada a $A, con acceso $B, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 12. "Estructura cilíndrica para anclaje $A, con entrada $B, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 13. "Cimentación cilíndrica de anclaje $A, con acceso a través de $B; incluye $L(b,%C). (-/-, $L(a,%C))." — _qwen2.5:14b_
+- [ ] 14. "Cimentación cilíndrica para fijación $A, con vía de ingreso por $B; con la adición de $L(b,%C). ($L(a,%C)/-/-)" — _qwen2.5:14b_
+- [ ] 15. "Funda cilíndrica de anclaje $A, con pasaje por $B; se incluye la $L(b,%C). ($L(a,%C)/-/-)" — _qwen2.5:14b_
+- [ ] 16. "Cimentación cilíndrica para asegurar $A, con entrada de $B; y con la inclusión de $L(b,%C). ($L(a,%C)/-/-)" — _qwen2.5:14b_
+- [ ] 17. "Fundación cilíndrica de estabilización $A, entrada por $B, $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 18. "Soporte cilíndrico para anclaje $A, ingreso por $B, $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 19. "Base cilíndrica de unión $A, entrada por $B, $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 20. "Fundación vertical para anclaje $A, apertura por $B, $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [5] near_duplicate_of_kept
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
 
 ## RESUMEN template (OEG010$)
 _Used in 1 concept(s): OEG010$_
 
-- [ ] 1. "Base cilíndrica para postes, barra corrugada roscada de $A, con diámetro $C y profundidad $B por $D, $L(b,%C). ($L(a,%C)/-/-)."
-- [ ] 2. "Soporte cilíndrico para postes, barra corrugada roscada de $A, diámetro $C y profundidad $B por $D, $L(b,%C). ($L(a,%C)/-/-)."
+- [ ] 1. "Se dispone una cimentación cilíndrica de postes con barra corrugada roscada de $A, de diámetro $C y profundidad $B, extendiéndose por $D. $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 2. "Se presenta una cimentación cilíndrica sobre postes con barra corrugada roscada de $A, que posee un diámetro de $C y una profundidad de $B, alcanzando $D. $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 3. "La cimentación cilíndrica de postes utiliza una barra corrugada roscada de $A, con un diámetro de $C y una profundidad de $B, extendiéndose hasta $D. $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 4. "Se utiliza para la cimentación cilíndrica de postes una barra corrugada roscada de $A, con un diámetro de $C y una profundidad de $B, llegando a $D. $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 5. "Cimentación cilíndrica de postes con barra corrugada roscada de $A, cuenta con un diámetro de $C y una profundidad de $B por $D, $L(b,%C). (Incluye: $L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 6. "Barra corrugada roscada de $A para cimentación cilíndrica de postes, con un diámetro de $C y profundidad de $B por $D, $L(b,%C). (Con $L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 7. "Barra corrugada roscada de $A para cimentación cilíndrica de postes, de diámetro $C y profundidad $B por $D, $L(b,%C). ($L(a,%C)/-/-) se incluye." — _phi4:latest_
+- [ ] 8. "Cimentación cilíndrica de postes, compuesta por barra corrugada roscada de $A, diámetro $C y profundidad $B por $D. Ofrece $L(b,%C), e incluye $L(a,%C)/-/-." — _phi4:latest_
+- [ ] 9. "Postes con cimentación cilíndrica, utilizando barra corrugada roscada de $A, con un diámetro de $C y profundidad $B extendida hasta $D, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 10. "Para cimentaciones cilíndricas de postes, se emplea una barra corrugada y roscada de $A, con un diámetro de $C y una profundidad de $B que alcanza $D, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 11. "Cimentación cilíndrica de postes con barra corrugada roscada de $A, diámetro $C y profundidad $B hasta $D, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 12. "En la cimentación cilíndrica de postes, se utiliza una barra corrugada roscada de $A, con un diámetro de $C y profundidad $B extendida a $D, $L(b,%C). ($L(a,%C)/-/-)." — _phi4:latest_
+- [ ] 13. "Se realiza el cimiento cilíndrico para postes, utilizando barra corrugada roscada de tipo $A, con un diámetro de $C y una profundidad de $B por $D. Se aplica $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 14. "El cimiento para la instalación de postes es de tipo cilíndrico, con barra corrugada roscada de especificación $A, un diámetro de $C y una profundidad de $B por $D. Se emplea $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 15. "Se configura un cimiento cilíndrico para postes, con una barra corrugada roscada de tipo $A, un diámetro de $C y una profundidad de $B por $D. Se especifica el uso de $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 16. "Se establece un cimiento cilíndrico para postes, que incluye barra corrugada roscada de tipo $A, con un diámetro de $C y una profundidad de $B por $D. Se requiere $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 17. "Cimentación cilíndrica para postes, con barra corrugada roscada de $A, que tiene un diámetro de $C, y profundidad de $B por $D. $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 18. "Fundación cilíndrica de postes con barra corrugada y roscada de $A, de diámetro $C y con un desarrollo vertical de $B por $D, $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 19. "Fundación en forma de cilindro para postes con barra corrugada y roscada de $A, de diámetro $C y con una longitud vertical de $B por $D, $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 20. "Base cilíndrica de postes que incorpora barra corrugada y roscada de $A, con un diámetro de $C y una profundidad de $B por $D, $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
+- [ ] 21. "Instalación de fundación cilíndrica para postes con barra corrugada y roscada de $A, de diámetro $C y profundidad $B por $D, $L(b,%C). ($L(a,%C)/-/-)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- [17] near_duplicate_of_kept
+- [18] near_duplicate_of_kept
+- [19] near_duplicate_of_kept
 
 ## RESUMEN template (OEG020$)
 _Used in 1 concept(s): OEG020$_
 
-- [ ] 1. "Fundación en roca mediante micropilote, barra corrugada roscada de $A mm, con diámetro de $C m y profundidad de $B m, acceso por $D, $L(b,%F). ($L(a,%F)/-/-)."
+- [ ] 1. "Se realiza una cimentación en roca mediante micropilotes, empleando una barra corrugada roscada de $A mm de diámetro, $C m de diámetro, y $B m de profundidad, acceso por $D, $L(b,%F). ($L(a,%F)/-/-)." — _phi4:latest_
+- [ ] 2. "Cimentación en roca se efectúa utilizando micropilotes, con barra corrugada roscada de $A mm, poseyendo un diámetro de $C m y una profundidad de $B m, y acceso facilitado por $D, $L(b,%F). ($L(a,%F)/-/-)." — _phi4:latest_
+- [ ] 3. "Se caracteriza la cimentación en roca con micropilotes, mediante barra corrugada roscada de $A mm, con un diámetro de $C m y una profundidad de $B m, accesible por $D, $L(b,%F). ($L(a,%F)/-/-)." — _phi4:latest_
+- [ ] 4. "Estructura de cimentación en roca mediante micropilote, barra corrugada de $A mm de diámetro, $C m de grosor y $B m de profundidad, con acceso por $D, $L(b,%F). ($L(a,%F)/-/-)." — _phi4:latest_
+- [ ] 5. "Micropilote para cimentación en roca que incluye barra corrugada roscada de $A mm, con un diámetro $C m y una profundidad de $B m, accesible por $D, $L(b,%F). ($L(a,%F)/-/-)." — _phi4:latest_
+- [ ] 6. "Con micropilote, se realiza la cimentación en roca con una barra corrugada roscada de $A mm, $C m de diámetro y $B m de profundidad, accesible por $D, $L(b,%F). ($L(a,%F)/-/-)." — _phi4:latest_
+- [ ] 7. "Cimentación en roca con micropilote que emplea barra corrugada roscada de $A mm, diámetro de $C m y profundidad de $B m, con acceso por $D, $L(b,%F). ($L(a,%F)/-/-)." — _phi4:latest_
+- [ ] 8. "Anclaje de roca con micropilote, barra cincelada con roscas de $A mm, diámetro $C m y profundidad $B m, entrada por $D, $L(b,%F). ($L(a,%F)/-/-)." — _phi4:latest_
+- [ ] 9. "Estructura en roca con micropilote, perfil ondulado con roscas de $A mm, diámetro $C m y profundidad $B m, entrada por $D, $L(b,%F). ($L(a,%F)/-/-)." — _phi4:latest_
+- [ ] 10. "Anclaje rocoso con micropilote, barra ondulada con roscas de $A mm, diámetro $C m y profundidad $B m, acceso por $D, $L(b,%F). ($L(a,%F)/-/-)." — _phi4:latest_
+- [ ] 11. "Para la cimentación en roca se emplean micropilotes, se utiliza una barra corrugada roscada de $A mm, con un diámetro de $C m y una profundidad de $B m, se accede por $D, $L(b,%F). ($L(a,%F)/-/-)." — _qwen2.5:14b_
+- [ ] 12. "Se lleva a cabo la cimentación en roca mediante micropilotes, se emplea una barra corrugada roscada de $A mm, con un diámetro de $C m y una profundidad de $B m, se accede por $D, $L(b,%F). ($L(a,%F)/-/-)." — _qwen2.5:14b_
+- [ ] 13. "Micropilote en cimentación rocosa con barra corrugada roscada de $A mm, de diámetro $C m y profundidad $B m, con acceso por $D. $L(b,%F). ($L(a,%F)/-/-)." — _qwen2.5:14b_
+- [ ] 14. "Fundación en roca mediante micropilote, se emplea barra corrugada de rosca de $A mm, el diámetro es de $C m y la profundidad alcanza los $B m. El acceso se realiza por $D, $L(b,%F). ($L(a,%F)/-/-)." — _qwen2.5:14b_
+- [ ] 15. "Micropilote para fundación en roca, con barra corrugada de rosca $A mm, diámetro igual a $C m, y excavación hasta una profundidad de $B m. Acceso mediante $D, $L(b,%F). ($L(a,%F)/-/-)." — _qwen2.5:14b_
+- [ ] 16. "Micropilote en cimentación rocosa con barra corrugada de rosca $A mm, diámetro $C m y excavación hasta una profundidad de $B m. Acceso por $D, $L(b,%F). ($L(a,%F)/-/-)." — _qwen2.5:14b_
+- [ ] 17. "Funda en roca mediante micropilote, con barra corrugada de rosca de $A mm, diámetro $C m, excavación hasta $B m de profundidad. Acceso por $D, $L(b,%F). ($L(a,%F)/-/-)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
 - [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [10] near_duplicate_of_kept
+- [12] near_duplicate_of_kept
+- [16] near_duplicate_of_kept
+- [17] near_duplicate_of_kept
+- [18] near_duplicate_of_kept
 
 ## RESUMEN template (OEA020$)
 _Used in 1 concept(s): OEA020$_
-_Skipped: malformed_list_after_retry: all_elements_rejected_by_schema_
+
+- [ ] 1. "En puente, se proporcionará y colocará canaleta metálica de 3 canales ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 2. "Se suministrará y colocará canaleta metálica con 3 canales en el puente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 3. "Se realizará la colocación y entrega de canaleta metálica de 3 canales en el puente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 4. "Colocación de canaleta metálica con 3 canales en el puente ($L(%A)/$M(%B)/$N(%C)) y su suministro correspondiente" — _qwen2.5:14b_
+- [ ] 5. "Se efectuará el suministro y colocación de canaleta metálica de 3 canales en el puente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 6. "Suministro e instalación de canaleta metálica con 3 canales en puente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 7. "Instalación y entrega de canaleta metálica de 3 canales para puente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 8. "Suministro e instalación de canaleta metálica que incluye 3 canales para puente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 9. "Instalación de canaleta metálica de 3 canales, además del suministro para puente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 10. "Entrega e instalación de canalización metálica con 3 canales en estructura vial ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 11. "Suministro e implementación de canaleta metálica de 3 canales para puente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 12. "Suministro e integración de carril metálico de 3 canales en estructura viaria ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 13. "Distribución e instalación de canalización metálica de 3 canales en vía del puente ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R1 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R1 [2] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R1 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R2 [0] sentinels_not_preserved: missing=['P1', 'P2', 'P3', 'Q1'] extra_or_dup=[]
+- phi4:latest/R2 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R2 [3] sentinels_not_preserved: missing=['P1', 'P2', 'P3', 'Q1'] extra_or_dup=[]
+- phi4:latest/R3 [0] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- phi4:latest/R3 [1] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- phi4:latest/R3 [2] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- phi4:latest/R3 [3] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
 
 ## RESUMEN template (OEA060$)
 _Used in 1 concept(s): OEA060$_
 
-- [ ] 1. "Instalación de conducto rectangular para cables en el $A de $B de ancho y una profundidad de $C. (-/-/$L(%D))"
-- [ ] 2. "Estructura de canal rectangular para cables en el $A de $B de anchura y una profundidad de $C. (-/-/$L(%D))"
-- [ ] 3. "Fabricación de conducto rectangular para cables en el $A de $B de anchura y una profundidad de $C. (-/-/$L(%D))"
-- [ ] 4. "Montaje de caja rectangular para cables en el $A de $B de anchura y una profundidad de $C. (-/-/$L(%D))"
-- [ ] 5. "Realización de ducto rectangular para cables en el $A de $B de anchura y una profundidad de $C. (-/-/$L(%D))"
+- [ ] 1. "Se lleva a cabo la instalación de una canaleta rectangular para cables en el $A de $B de anchura y con una profundidad de $C. (-/-/$L(%D))" — _phi4:latest_
+- [ ] 2. "Se efectúa la edificación de una canaleta rectangular destinada a cables en el $A, de una anchura de $B y con una profundidad de $C. (-/-/$L(%D))" — _phi4:latest_
+- [ ] 3. "La fabricación de una canaleta rectangular para cables se realiza en el $A, con una anchura de $B y una profundidad de $C. (-/-/$L(%D))" — _phi4:latest_
+- [ ] 4. "Se proyecta la creación de una canaleta rectangular para cables en el $A, de $B de anchura, alcanzando una profundidad de $C. (-/-/$L(%D))" — _phi4:latest_
+- [ ] 5. "Fabricación de canal rectangular para albergar cables en el $A con una anchura de $B y una hondura de $C. (-/-/$L(%D))" — _phi4:latest_
+- [ ] 6. "Implementación de una canaleta rectangular para conductores en el $A, con una anchura asignada de $B y profundidad de $C. (-/-/$L(%D))" — _phi4:latest_
+- [ ] 7. "Montaje de un canal rectangular para cables en el $A, que mide $B de ancho y una profundidad de $C. (-/-/$L(%D))" — _phi4:latest_
+- [ ] 8. "Ejecución de la fabricación de una canaleta rectangular para cables en el $A, con un ancho de $B y una profundidad de $C. (-/-/$L(%D))" — _phi4:latest_
+- [ ] 9. "Edificación de un conducto rectangular destinado a cables en el $A del $B, con una anchura de $B y una profundidad de $C. (-/-/$L(%D))" — _phi4:latest_
+- [ ] 10. "Se construirá una canaleta rectangular para cables en el $A de $B de ancho y una profundidad de $C. (-/-/$L(%D))" — _qwen2.5:14b_
+- [ ] 11. "Se llevará a cabo la construcción de una canaleta rectangular para cables en el $A de $B de anchura y una profundidad de $C. (-/-/$L(%D))" — _qwen2.5:14b_
+- [ ] 12. "Se implementará una canaleta rectangular para cables en el $A de $B de anchura y una profundidad de $C. (-/-/$L(%D))" — _qwen2.5:14b_
+- [ ] 13. "Se realiza la construcción de una canalización rectangular para cables con una anchura de $B en el $A. La profundidad es de $C, (-/-/$L(%D))" — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la construcción de una canaleta rectangular para cables en el $A, con una anchura de $B, (-/-/$L(%D)), con una profundidad de $C." — _qwen2.5:14b_
+- [ ] 15. "Se instala una canaleta rectangular para cables con una anchura de $B en el $A, (-/-/$L(%D)), con una profundidad de $C." — _qwen2.5:14b_
+- [ ] 16. "Fabricación de canalización rectangular para líneas eléctricas en el $A con una anchura de $B y una profundidad de $C. (-/-/$L(%D))" — _qwen2.5:14b_
+- [ ] 17. "Instalación de guía rectangular para conductos eléctricos en el $A, con una amplitud de $B y una profundidad de $C. (-/-/$L(%D))" — _qwen2.5:14b_
+- [ ] 18. "Diseño y fabricación de canal para cables de sección rectangular en el $A, con medida de $B en anchura y $C en profundidad. (-/-/$L(%D))" — _qwen2.5:14b_
+- [ ] 19. "Estructura para canalización eléctrica en forma rectangular en el $A, con un ancho de $B y una profundidad de $C. (-/-/$L(%D))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [5] near_duplicate_of_kept
+- phi4:latest/R3 [1] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R3 [2] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R3 [3] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- [12] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
 
 ## RESUMEN template (OEC040$)
 _Used in 1 concept(s): OEC040$_
 
-- [ ] 1. "Sistema de cámara de $B $I con cubierta de fundición ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 2. "Conjunto de cámara de $B $I y cubierta de fundición ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 3. "Sistema de cámara de $B $I con tapa de fundición ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 4. "Conjunto de cámara de $B $I y tapa de fundición ($L(%C)/$M(%D)/$N(%F))"
+- [ ] 1. "Se cuenta con una cámara de $B $I con un techo de fundición ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 2. "Incluye una estructura cámara de $B $I con un elemento superior de fundición ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 3. "La $B $I está provista de una cubierta de fundición ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 4. "Se dispone de una $B $I con su cubierta de fundición ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 5. "Tapa de fundición ($L(%C)/$M(%D)/$N(%F)) y cámara de $B $I" — _phi4:latest_
+- [ ] 6. "Cámara de $B $I que incluye una tapa de fundición ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 7. "Tapa de fundición ($L(%C)/$M(%D)/$N(%F)) junto con cámara de $B $I" — _phi4:latest_
+- [ ] 8. "Conjunto de cámara de $B $I con cubierta en fundición ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 9. "Sistema de cámara de $B $I junto con cubierta de fundición ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 10. "Elemento de cámara de $B $I y caperuza fundida ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 11. "Cámara $B $I provista de cubierta de fundición ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 12. "Cámara de $B $I, incluyendo tapa de fundición ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 13. "Incluye tapa de fundición ($L(%C)/$M(%D)/$N(%F)) en cámara de $B $I" — _qwen2.5:14b_
+- [ ] 14. "Unidad de cámara con dimensiones $B, $I y dispositivo de cierre en fundición de tipo ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 15. "Elemento de cámara en tamaño $B, $I, dotado de una tapa fabricada en fundición disponible en opciones ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 16. "Componente de cámara con especificación $B, $I y tapa hecha en fundición, con opciones ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 17. "Estructura de cámara de tamaño $B, $I, integrada con un mecanismo de cierre en fundición de los tipos ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- qwen2.5:14b/R1 [0] sentinel_residue
+- qwen2.5:14b/R1 [1] sentinel_residue
+- qwen2.5:14b/R1 [2] sentinel_residue
+- qwen2.5:14b/R1 [3] sentinel_residue
+- [6] near_duplicate_of_kept
 
 ## RESUMEN template (OEC050$)
 _Used in 1 concept(s): OEC050$_
 
-- [ ] 1. "Caja de conexión para línea eléctrica enterrada de doble circuito 220 ó 400 kV ($L(%A)/-/$N(%B))"
-- [ ] 2. "Gabinete de empalme para línea eléctrica subterránea de doble circuito 220 ó 400 kV ($L(%A)/-/$N(%B))"
-- [ ] 3. "Sistema de empalme para línea eléctrica enterrada de doble circuito 220 ó 400 kV ($L(%A)/-/$N(%B))"
+- [ ] 1. "Se instala una cámara de confluencia para una línea eléctrica subterránea de doble circuito en 220 o 400 kV ($L(%A)/-/$N(%B))" — _phi4:latest_
+- [ ] 2. "Cámara de unión destinada a líneas eléctricas subterráneas de doble circuito en 220 u 400 kV ($L(%A)/-/$N(%B))" — _phi4:latest_
+- [ ] 3. "Se dispone de una cámara de conexión para líneas eléctricas subterráneas de doble circulación en 220 o 400 kV ($L(%A)/-/$N(%B))" — _phi4:latest_
+- [ ] 4. "Cámara de convergencia para línea eléctrica en túnel con doble circuitería en 220 ó 400 kV ($L(%A)/-/$N(%B))" — _phi4:latest_
+- [ ] 5. "Cámara de conexión para doble circuito de línea eléctrica subterránea a 220 ó 400 kV $L(%A)/-/$N(%B)" — _phi4:latest_
+- [ ] 6. "Cámara para empalme de líneas eléctricas subterráneas de doble circuito a 220 ó 400 kV $L(%A)/-/$N(%B)" — _phi4:latest_
+- [ ] 7. "Cámara de empalme, para línea eléctrica subterránea de doble circuito, a 220 ó 400 kV $L(%A)/-/$N(%B)" — _phi4:latest_
+- [ ] 8. "Instalación de confluencia para redes subterráneas de doble circuito 220 ó 400 kV ($L(%A)/-/$N(%B))" — _phi4:latest_
+- [ ] 9. "Conjunto de conexión para redes eléctricas subterráneas de doble circuito 220 ó 400 kV ($L(%A)/-/$N(%B))" — _phi4:latest_
+- [ ] 10. "Unidad de empalme para instalaciones subterráneas en doble circuito 220 ó 400 kV ($L(%A)/-/$N(%B))" — _phi4:latest_
+- [ ] 11. "Componente de enlace para sistemas subterráneos de doble circuito 220 ó 400 kV ($L(%A)/-/$N(%B))" — _phi4:latest_
+- [ ] 12. "Se dispone de una cámara de empalme para la línea eléctrica subterránea doble circuito de 220 ó 400 kV ($L(%A)/-/$N(%B))" — _qwen2.5:14b_
+- [ ] 13. "Para la línea eléctrica subterránea doble circuito de 220 ó 400 kV ($L(%A)/-/$N(%B)), se proporciona una cámara de empalme" — _qwen2.5:14b_
+- [ ] 14. "Unión para conductor eléctrico enterrado doble circuito 220 o 400 kV, con configuración de ($L(%A)/-/$N(%B))" — _qwen2.5:14b_
+- [ ] 15. "Unión para conducción eléctrica subterránea doble circuito, con capacidad para 220 o 400 kV, y configuración $L(%A)/-/$N(%B)" — _qwen2.5:14b_
+- [ ] 16. "Empalmador diseñado para cables eléctricos de subterráneo doble circuito 220 ó 400 kV, con la codificación de ($L(%A)/-/$N(%B))" — _qwen2.5:14b_
+- [ ] 17. "Unión de circuito doble subterráneo para líneas eléctricas con potencia de 220 ó 400 kV, y configuración incluida en ($L(%A)/-/$N(%B))" — _qwen2.5:14b_
+- [ ] 18. "Unión para línea eléctrica enterrada de doble circuito capaz de manejar 220 o 400 kV voltaje, con referencias físicas $L(%A) y $N(%B)" — _qwen2.5:14b_
+- [ ] 19. "Unión intermedia para la instalación de líneas eléctricas subterráneas de doble circuito, diseñada para operar en 220 o 400 kV voltaje, con indicaciones físicas $L(%A) y $N(%B)" — _qwen2.5:14b_
+- [ ] 20. "Dispositivo de conexión para instalaciones de energía eléctrica subterráneas de doble circuito, especificado para soportar 220 o 400 kV voltaje, con identificadores físicos $L(%A) y $N(%B)" — _qwen2.5:14b_
+- [ ] 21. "Dispositivo de unión para líneas eléctricas enterradas de doble circuito, con capacidad de uso en 220 o 400 kV voltaje, y referencias físicas $L(%A) y $N(%B)" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
 - [5] near_duplicate_of_kept
+- [13] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
 
 ## RESUMEN template (OEA090$)
 _Used in 1 concept(s): OEA090$_
 
-- [ ] 1. "Limpieza de conducto preexistente $P(%D) ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 2. "Desobstrucción de canalización existente $P(%D) ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 3. "Eliminación de obstrucciones en conducto existente $P(%D) ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 4. "Desbloqueo de canal preexistente $P(%D) ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 5. "Limpieza de conducto preinstalado $P(%D) ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 6. "Desobstrucción de canalización preinstalada $P(%D) ($L(%A)/$M(%B)/$N(%C))"
+- [ ] 1. "Limpieza de conducto existente $P(%D) (incluyendo $L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 2. "Desatascar canaleta $P(%D) (incorporando $L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 3. "$P(%D): limpieza de conducto existente ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 4. "Canaleta $P(%D) desobstruida, incluyendo $L(%A)/$M(%B)/$N(%C)" — _phi4:latest_
+- [ ] 5. "Eliminación de obstrucciones en conducto preexistente $P(%D) ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Desobstrucción de conducto instalado anteriormente $P(%D) ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 7. "Libertar de atascos a una instalación de canalización $P(%D) ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 8. "Retiro de obstrucciones en canalización ya en funcionamiento $P(%D) ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 9. "El destape de la canaleta existente $P(%D) se realiza mediante ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 10. "Se efectúa el destape de la canalización existente identificada como $P(%D), utilizando ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 11. "Condución existente $P(%D) que se destapa mediante el método ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 12. "Se lleva a cabo el proceso de destape para la canaleta existente $P(%D), aplicando los métodos ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 13. "Incluso con la canalización con entrada existente $P(%D), se realizará un destape ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "Se llevará a cabo la operación de destapado en la conducción existente $P(%D) ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 15. "Conducción existente $P(%D): se procederá a destaparla ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Realización del destape en la canalización existente $P(%D), con el siguiente detalle técnico ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 17. "Procedimiento de descubrimiento de la conducción previa $P(%D) (marcada por $L(%A), $M(%B), $N(%C))" — _qwen2.5:14b_
+- [ ] 18. "Operación de eliminación de la obstrucción en la tubería existente $P(%D) (clasificada en $L(%A), $M(%B), $N(%C))" — _qwen2.5:14b_
+- [ ] 19. "Tarea de desbloqueo del sistema de conducción preexistente $P(%D) (acotado por $L(%A), $M(%B), $N(%C))" — _qwen2.5:14b_
+- [ ] 20. "Apertura de la conducción preinstalada $P(%D) (identificada mediante $L(%A), $M(%B), $N(%C))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R1 [1] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R1 [2] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R1 [3] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
 
 ## RESUMEN template (OEA170$)
 _Used in 1 concept(s): OEA170$_
 
-- [ ] 1. "Redirección de canal ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 2. "Desvío de conducto ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 3. "Desviación de canalización ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 4. "Redirección de conducto ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 5. "Desvío de tubería ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 6. "Redirección de canalización ($L(%A)/$M(%B)/$N(%C))"
+- [ ] 1. "Canaleta de desvío ($L(%A)/$M(%B)/$N(%C)) instalada" — _phi4:latest_
+- [ ] 2. "Se presenta el desvío de canaleta instalada ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 3. "En la instalación, se utiliza la canaleta de desvío ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 4. "Se implementa la desviación mediante la canaleta ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 5. "Redirección de conducto ($L(%A) incluso $M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Giro de canalización ($L(%A)/$M(%B) incluso $N(%C))" — _phi4:latest_
+- [ ] 7. "Aproximación de canaleta ($L(%A)/$M(%B) incluso $N(%C))" — _phi4:latest_
+- [ ] 8. "Desviación por canaleta ($L(%A) incluso $M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 9. "Cambio de trayectoria en la canaleta ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 10. "Alteración de dirección en la canaleta ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 11. "Variación de ruta en la canaleta ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 12. "Ruta modificada en la canaleta ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 13. "Desviador de canalización ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "Desviación de canalización ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 15. "Conducción de desviación ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Rerouting de canalización ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P1', 'P2', 'P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P1', 'P2', 'P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P1', 'P2', 'P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P1', 'P2', 'P3'] extra_or_dup=[]
+- qwen2.5:14b/R2 [0] sentinels_not_preserved: missing=['P1', 'P2', 'P3'] extra_or_dup=[]
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['P1', 'P2', 'P3'] extra_or_dup=[]
+- qwen2.5:14b/R2 [2] sentinels_not_preserved: missing=['P1', 'P2', 'P3'] extra_or_dup=[]
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['P1', 'P2', 'P3'] extra_or_dup=[]
 
 ## RESUMEN template (OEB050$)
 _Used in 1 concept(s): OEB050$_
 
-- [ ] 1. "Instalación de conducción enterrada para comunicaciones en línea subterránea de doble circuito de 220 u 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))"
-- [ ] 2. "Realización de conducción subterránea para comunicaciones en línea de doble circuito de 220 o 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))"
-- [ ] 3. "Implementación de conductos subterráneos para comunicaciones en línea de doble circuito de 220 o 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))"
-- [ ] 4. "Puesta en marcha de conductos subterráneos para comunicaciones en línea de doble circuito de 220 u 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))"
-
-_Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
+- [ ] 1. "Se llevará a cabo la instalación de conductos de comunicaciones para un doble circuito subterráneo de 220 ó 400 kV en suelo $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 2. "La instalación de conductos para comunicaciones de una línea subterránea de doble circuito de 220 ó 400 kV será realizada en la superficie $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 3. "Se instalarán los conductos para comunicaciones de una línea subterránea de doble circuito de 220 ó 400 kV en el terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 4. "Se efectuará la instalación de conductos de comunicaciones para una línea subterránea de doble circuito de 220 ó 400 kV sobre el terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 5. "Implementación de conductos enterrados para transmisión de comunicaciones en línea subterránea de doble circuito de 220 ó 400 kV, ubicada en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 6. "Configuración de estructuras para transmisión de comunicaciones en línea doble circuito subterránea de 220 ó 400 kV, en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 7. "Desarrollo de conducciones enterradas para líneas subterráneas de doble circuito de 220 ó 400 kV, en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 8. "Construcción de conductos subterráneos para línea doble circuito de transmisión de comunicaciones de 220 ó 400 kV, en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 9. "Realización de una estructura de conducción enterrada para comunicaciones en doble circuito subterráneo de 220 ó 400 kV, en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 10. "Instalación de una vía de comunicaciones enterradas para línea subterránea con doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 11. "Construcción de una vía enterrada de comunicaciones para línea subterránea de doble circuito de 220 ó 400 kV, en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 12. "Desarrollo de un sistema de conducción enterrada para comunicaciones en doble circuito subterráneo de 220 ó 400 kV, en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 13. "Se ejecutará la conducción enterrada para la línea subterránea doble circuito de 220 ó 400 kV, ubicada en terreno $A, con $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 14. "La instalación de la red de comunicaciones subterránea para la línea eléctrica de 220 ó 400 kV se realizará en terreno $A, con $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 15. "Se llevará a cabo la construcción de la tubería de comunicaciones destinada para la línea eléctrica subterránea de 220 ó 400 kV, en terreno $A, con $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 16. "La canalización de comunicaciones para la línea subterránea doble circuito de voltaje 220 ó 400 kV, en terreno $A, se realizará con $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 17. "Instalación de conducción enterrada para línea subterránea de doble circuito de 220 ó 400 kV en terreno $A, con sección pavimentada de $B. ($L(%C))" — _qwen2.5:14b_
+- [ ] 18. "Realización de canalización para la instalación de comunicaciones en línea subterránea de doble circuito de 220 ó 400 kV, en terreno $A, incluido $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 19. "Configuración de canalización de comunicación para línea subterránea de doble circuito de 220 ó 400 kV. La misma se efectúa en terreno $A, y en sección pavimentada de $B. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 20. "Instalación de conducción subterránea para el sistema de comunicación de línea de doble circuito de 220 ó 400 kV, en terreno $A, y en extensión pavimentada de $B. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 21. "Implementación de infraestructura de comunicación subterránea para un sistema de línea de 220 ó 400 kV en un área con características similares a $A, con superficie pavimentada de tipo $B. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 22. "Instalación de sistema de comunicación subterráneo para un circuito doble de líneas de 220 ó 400 kV, en un terreno compuesto por $A y superficie de pavimento tipo $B. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 23. "Desarrollo de red de comunicaciones enterradas para un sistema doble de circuitos de 220 ó 400 kV, en un entorno que incluye $A y superficie de pavimento designada como $B. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 24. "Construcción de red de comunicaciones subterráneas para un sistema de línea de 220 ó 400 kV, en un terreno que comprende $A y superficie de pavimento tipo $B. (-/-/$L(%C))" — _qwen2.5:14b_
 
 ## RESUMEN template (OEB010$)
 _Used in 1 concept(s): OEB010$_
 
-- [ ] 1. "Instalación de conducción enterrada para línea subterránea de doble circuito de 220 u 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))"
-- [ ] 2. "Construcción de conducto subterráneo para línea de doble circuito de 220 o 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))"
-- [ ] 3. "Realización de conducción subterránea para línea de doble circuito de 220 o 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))"
-- [ ] 4. "Implementación de conducto enterrado para línea subterránea de doble circuito de 220 u 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))"
+- [ ] 1. "Se ejecutará la conducción enterrada para línea subterránea de doble circuito con 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 2. "Canalización de línea subterránea de doble circuito realizada en terreno $A, $B de pavimento para 220 ó 400 kV. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 3. "Se llevará a cabo la instalación de conductos para línea subterránea de doble circuito con 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 4. "Realización de una estructura subterránea para línea de doble circuito con 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 5. "Creación de la conducción enterrada para doble circuito de línea subterránea de 220 ó 400 kV, ubicada en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 6. "Desarrollo de la conducción enterrada para doble circuito subterráneo de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 7. "Conducción subterránea para un doble circuito de 220 ó 400 kV en el terreno $A, $B de pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 8. "Instalación de un sistema subterráneo de doble circuito de 220 o 400 kV en el área $A, $B del pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 9. "Desarrollo de un conducto subterráneo para una línea de doble circuito de 220 ó 400 kV en el sector $A, $B del pavimento. (-/-/$L(%C))" — _phi4:latest_
+- [ ] 10. "Se instalará el conducto para línea subterránea de doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 11. "La instalación del conducto para línea subterránea de doble circuito de 220 ó 400 kV se realizará en terreno $A, $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 12. "Instalación de conducción enterrada para línea subterranea doble circuito de 220 ó 400 kV. Incluido terreno $A, con $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 13. "Proceso de instalación de tubería para línea subterranea doble circuito de 220 ó 400 kV. Incluye terreno $A, con $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 14. "Implementación de canalización subterránea para línea doble circuito de 220 ó 400 kV. Se realiza en terreno $A, incluyendo $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 15. "Instalación de tubería subterránea para línea doble circuito de 220 ó 400 kV. Se efectúa en terreno $A, con $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 16. "Desarrollo de instalación subterránea para línea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 17. "Realización de pasaje subterráneo para línea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 18. "Implementación de tubería subterránea para línea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
+- [ ] 19. "Instalación de conducto subterráneo para línea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [6] near_duplicate_of_kept
+- [7] near_duplicate_of_kept
+- [11] near_duplicate_of_kept
+- [12] near_duplicate_of_kept
+- [13] near_duplicate_of_kept
 
 ## RESUMEN template (OEB130$)
 _Used in 1 concept(s): OEB130$_
 
-- [ ] 1. "Conexión de conductos de diámetro nominal 110 mm en arqueta o cámara ya instalada. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 2. "Interconexión de conductos de 110 mm de diámetro en arqueta o cámara preexistente. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 3. "Unión de conductos de 110 mm de diámetro en arqueta o cámara ya instalada. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 4. "Conexión de conductos de 110 mm de diámetro en arqueta o cámara existente. ($L(%A)/$M(%B)/$N(%C))"
+- [ ] 1. "Conducción enterrada mediante conductos de diámetro nominal 110 mm para conexión en arqueta o cámara existente. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 2. "Se lleva a cabo el enlace de conductos de diámetro 110 mm en la arqueta o cámara que ya existe. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 3. "Se realiza el enlace de tuberías de diámetro 110 mm con el sistema de arqueta o cámara ya instalado. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 4. "Conexión de conductos de diámetro 110 mm a la arqueta o cámara preexistentes. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 5. "Conexión de conductos de diámetro nominal 110 mm mm a una arqueta o cámara ya instalada. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Incorporación de conductos de 110 mm mm a una cámara o arqueta preexistentes. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 7. "Conexión en arqueta o cámara existente de conductos de diámetro 110 mm mm. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 8. "Unión de conductos de 110 mm mm de diámetro a una arqueta o cámara ya existente. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 9. "Conexión de conductos de 110 mm en una arqueta o cámara ya instalada. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 10. "Interconexión de tuberías de 110 mm en una estructura de arqueta o cámara previamente montada. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 11. "Unión de tuberías con 110 mm de diámetro en una cámara o arqueta ya existente. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 12. "Se realiza el entronque de conductos de 110 mm en una arqueta o cámara preexistente. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 13. "Se establece el entronque de tubos de 110 mm en una arqueta o cámara que ya existe. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "Se efectúa el entronque de conducciones de 110 mm en una cámara o arqueta que ya está presente. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 15. "Se ejecuta el entronque de conductos de 110 mm en una arqueta o cámara que ya se encuentra en el lugar. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Conexión de conductos de 110 mm en cámara o arqueta preexistente. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 17. "Entrelazado de 110 mm en arqueta o cámara preexistente. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 18. "Unión en arqueta o cámara existente de conductos de 110 mm. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 19. "Alineación de conductos de 110 mm con arqueta o cámara preexistente. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 20. "Conexión de conductos de 110 mm en estructura subterránea existente. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 21. "Integración de conducciones de 110 mm en cámara de saneamiento preexistente. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 22. "Interconexión de conductos de 110 mm en depósito de aguas residuales existente. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 23. "Conexión de tuberías de 110 mm en estructura de saneamiento preexistente. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [11] near_duplicate_of_kept
 
 ## RESUMEN template (OEB180$)
 _Used in 1 concept(s): OEB180$_
 
-- [ ] 1. "Hincas con cable tensor de acero para el tendido de cables en una zanja de tierra. ($L(%A)/$M(%B)/$N(%C))"
+- [ ] 1. "Se utilizan hincas de cable tensor de acero en la colocación de cables sobre una trinchera excavada en tierra. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 2. "Para el tendido de cables sobre una trinchera de tierra, se emplean hincas con cable tensor de acero. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 3. "Hincas dotadas de cable tensor de acero están diseñadas para facilitar el tendido de cables en trincheras de tierra. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 4. "Con el propósito de tender cables sobre una trinchera de tierra, se implementan hincas equipadas con cable tensor de acero. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 5. "Hincas dotadas de cable tensor de acero, diseñadas para el tendido de cables sobre una trinchera terrestre. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Hincas con cable tensor de acero, específicamente para el tendido de cables sobre una trinchera terrestre. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 7. "Hincas equipadas con cable tensor de acero, utilizadas para el tendido de cables en una trinchera de tierra. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 8. "Equipo destinado a la instalación de cables en una zanja al aire libre, utilizando hincas provistas de cable tensor de acero. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 9. "Hincas dotadas de un cable tensor de acero, específicamente para el tendido de cables a través de una trinchera en el suelo. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 10. "Dispositivos de hincado con cable tensor de acero, empleados para instalar cables en una zanja abierta. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 11. "Herramientas de hincado que incluyen un cable tensor de acero, utilizadas para el tendido de cables a lo largo de una excavación. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 12. "Se proporcionan hincas con cable tensor de acero para la ejecución del tendido de cables sobre una trinchera de tierra. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 13. "Para la colocación de cables en una trinchera de tierra a través de un tendido, se usan hincas con cable tensor de acero. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "Se emplean hincas con cable tensor de acero en el tendido de cables para su instalación sobre una trinchera de tierra. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 15. "Para la instalación de cables en una trinchera terrestre, se utilizan hincas con cable tensor de acero en el tendido. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Para la instalación de cables en una trinchera de tierra, se emplean hincas con cable tensor de acero, incluso para ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 17. "Incluido en el tendido de cables sobre una trinchera de tierra, se utilizan hincas con cable tensor de acero, con ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 18. "Las hincas con cable tensor de acero, destinadas a la instalación de cables en una trinchera, se utilizan incluso para ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 19. "Con el fin de instalar cables en una trinchera de tierra, se utiliza un sistema de hincas con cable tensor de acero, incluso para ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 20. "Hincas equipadas con cable tensor de acero destinadas a la instalación de conductos en un canal de tierra. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 21. "Elementos de hincado con cable tensor de acero para la colocación de cables en un tramo de tierra excavado. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 22. "Dispositivos de hincado con cable tensor de acero utilizados para la introducción de cables en un canal recubierto de tierra. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 23. "Materiales de hincado con cable tensor de acero para la disposición de cables en un conducto excavado en suelo. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
 - [5] near_duplicate_of_kept
 
 ## RESUMEN template (OEF010$)
 _Used in 1 concept(s): OEF010$_
 
-- [ ] 1. "Marcador de referencia para cables. ($L(%A)/$M(%B)/$N(%C))."
-- [ ] 2. "Señalización de referencia para cables. ($L(%A)/$M(%B)/$N(%C))."
-- [ ] 3. "Punto de referencia para cables. ($L(%A)/$M(%B)/$N(%C))."
-- [ ] 4. "Indicador de posición para cables. ($L(%A)/$M(%B)/$N(%C))."
-- [ ] 5. "Marcador de localización para cables. ($L(%A)/$M(%B)/$N(%C))."
-- [ ] 6. "Punto de referencia para cableado. ($L(%A)/$M(%B)/$N(%C))."
+- [ ] 1. "Indicación de hito para cables. ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 2. "Marcador de hito para la referencia de cables. ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 3. "Se marca un hito para la indicación de cables. ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 4. "Se establece un hito que indica la ubicación de cables. ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 5. "Indicador de hito para cableado. ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 6. "Marcador de hito para cables. ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 7. "Hito para señalización de cables. ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 8. "Señalización de hito para cableado. ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 9. "Identificación de hito para cables. ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 10. "Delimitación de hito para referencia de cables. ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 11. "Marcador de cables. ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 12. "Se registra el hito para indicar los cables. ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 13. "Indicación del hito para los cables. ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 14. "Se señala el hito de cables. ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 15. "Marco de señalización para cables. Incluso considera los detalles de ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 16. "Marcador de cables. ($L(%A)/$M(%B)/$N(%C)) es parte de la instalación." — _qwen2.5:14b_
+- [ ] 17. "Indicador de cables. Esto incluye las especificaciones detalladas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 18. "Señal de cables. ($L(%A)/$M(%B)/$N(%C)) se considera en la configuración general." — _qwen2.5:14b_
+- [ ] 19. "Marco de señalización para la conducción de cables. ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 20. "Sello de identificación de cables. ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 21. "Referente físico para la canalización de cables. ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 22. "Marca de señalización para los conductos de cables. ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [7] near_duplicate_of_kept
+- [11] near_duplicate_of_kept
 
 ## RESUMEN template (OEA160$)
 _Used in 1 concept(s): OEA160$_
 
-- [ ] 1. "Excavación de suelo y balasto (20 cm) para exponer canaleta preexistente ($L(%A)/$M(%B)/-)"
-- [ ] 2. "Retiro de tierra y balasto (20 cm) para revelar canaleta ya instalada ($L(%A)/$M(%B)/-)"
-- [ ] 3. "Extracción de suelo y balasto (20 cm) para mostrar canaleta existente ($L(%A)/$M(%B)/-)"
-- [ ] 4. "Remoción de tierras y balasto (20 cm) para desvelar canaleta preinstalada ($L(%A)/$M(%B)/-)"
-- [ ] 5. "Retiro de suelo y balasto (20 cm) para exponer canaleta ya existente ($L(%A)/$M(%B)/-)"
+- [ ] 1. "Se elevará el terreno y balasto (20 cm) con el fin de exponer la canaleta preexistente ($L(%A)/$M(%B)/-)" — _phi4:latest_
+- [ ] 2. "Se procederá al desplazamiento de suelo y balasto (20 cm) a fin de revelar la canaleta preinstalada ($L(%A)/$M(%B)/-)" — _phi4:latest_
+- [ ] 3. "Se realizará el alzamiento de tierras y balasto (20 cm) a fin de visualizar la canaleta existente ($L(%A)/$M(%B)/-)" — _phi4:latest_
+- [ ] 4. "Se ejecutará el relleno de tierras y balasto (20 cm) con el objetivo de descubrir la canaleta ya instalada ($L(%A)/$M(%B)/-)" — _phi4:latest_
+- [ ] 5. "Para descubrir canaleta existente ($L(%A)/$M(%B)/-), realizar el levante de tierras y balasto (20 cm)" — _phi4:latest_
+- [ ] 6. "Realizar el levante de tierras y balasto (20 cm) con el objetivo de descubrir la canaleta existente ($L(%A)/$M(%B)/-)" — _phi4:latest_
+- [ ] 7. "Con el fin de descubrir la canaleta existente ($L(%A)/$M(%B)/-), proceder con el levante de tierras y balasto (20 cm)" — _phi4:latest_
+- [ ] 8. "Alza de terreno y balasto (20 cm con el propósito de exponer la canaleta preexistente ($L(%A)/$M(%B)/-)" — _phi4:latest_
+- [ ] 9. "Aumento de suelo y balasto (20 cm a fin de revelar la canaleta ya instalada ($L(%A)/$M(%B)/-)" — _phi4:latest_
+- [ ] 10. "Elevación de terreno y balasto (20 cm con el objetivo de mostrar la canaleta existente ($L(%A)/$M(%B)/-)" — _phi4:latest_
+- [ ] 11. "Incremento de capa de suelo y balasto (20 cm destinado a hacer visible la canaleta ya colocada ($L(%A)/$M(%B)/-)" — _phi4:latest_
+- [ ] 12. "Se efectúa la remoción de tierras y balasto (20 cm) con el objetivo de descubrir la canaleta ya existente ($L(%A)/$M(%B)/-)" — _qwen2.5:14b_
+- [ ] 13. "Para la revelación de la canaleta existente, se realiza la excavación de tierras y balasto (20 cm) ([$L(%A)/$M(%B)/-])" — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la extracción de tierras y balasto (20 cm) con el fin de dar a la canaleta existente la visibilidad necesaria ($L(%A)/$M(%B)/-)" — _qwen2.5:14b_
+- [ ] 15. "La operación de remoción de tierras y balasto (20 cm) tiene como propósito principal la descubierta de la canaleta que ya se encuentra instalada ($L(%A)/$M(%B)/-)" — _qwen2.5:14b_
+- [ ] 16. "Para descubrir la canalización existente ($L(%A)/$M(%B)/-), se realizará un levantamiento de tierras y balasto (20 cm." — _qwen2.5:14b_
+- [ ] 17. "Se realizará la extracción de tierras y balasto (20 cm con el objetivo de revelar la canalización existente ($L(%A)/$M(%B)/-)." — _qwen2.5:14b_
+- [ ] 18. "Se llevará a cabo la remoción de tierras y balasto (20 cm, con el propósito de exponer la conducción existente ($L(%A)/$M(%B)/-)." — _qwen2.5:14b_
+- [ ] 19. "Se efectuará el despeje de tierras y balasto (20 cm para dar acceso a la conducción existente ($L(%A)/$M(%B)/-)." — _qwen2.5:14b_
+- [ ] 20. "Extracción de suelo y vías (20 cm) con el propósito de revelar la conducción enterrada ($L(%A)/$M(%B)/-)" — _qwen2.5:14b_
+- [ ] 21. "Despeje de material superficial y balasto (20 cm) con el objetivo de mostrar la canalización hormigonada existente ($L(%A)/$M(%B)/-)" — _qwen2.5:14b_
+- [ ] 22. "Recogida de tierra y balasto (20 cm) para la exposición de la conducción enterrada existente ($L(%A)/$M(%B)/-)" — _qwen2.5:14b_
+- [ ] 23. "Remoción de terreno y balasto (20 cm) con el fin de exponer la canalización existente ($L(%A)/$M(%B)/-)" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [5] near_duplicate_of_kept
+- [7] near_duplicate_of_kept
 
 ## RESUMEN template (OEA140$)
 _Used in 1 concept(s): OEA140$_
 
-- [ ] 1. "Desobstrucción de conducto de hormigón. ($L(%A)/ - /$N(%B))"
-- [ ] 2. "Eliminación de residuos en canalización de hormigón. ($L(%A)/ - /$N(%B))"
-- [ ] 3. "Purificación de conducto de hormigón. ($L(%A)/ - /$N(%B))"
-- [ ] 4. "Desalojo de obstrucciones en canal de hormigón. ($L(%A)/ - /$N(%B))"
-- [ ] 5. "Limpieza de conducto de hormigón. ($L(%A)/ - /$N(%B))"
-- [ ] 6. "Despeje de canalización de hormigón. ($L(%A)/ - /$N(%B))"
+- [ ] 1. "Se realiza la limpieza de la conducción de hormigón. ($L(%A)/ - /$N(%B))" — _phi4:latest_
+- [ ] 2. "Ejecución de limpieza en canaleta hormigonada. ($L(%A)/ - /$N(%B))" — _phi4:latest_
+- [ ] 3. "Se efectúa el saneamiento de la canaleta de hormigón. ($L(%A)/ - /$N(%B))" — _phi4:latest_
+- [ ] 4. "Limpiado de la conducción enterrada de hormigón. ($L(%A)/ - /$N(%B))" — _phi4:latest_
+- [ ] 5. "Procedimiento de limpieza en canaleta de hormigón. ($L(%A)/ - /$N(%B))" — _phi4:latest_
+- [ ] 6. "Servicio de limpieza en conducción de hormigón. ($L(%A)/ - /$N(%B))" — _phi4:latest_
+- [ ] 7. "Operación de limpieza en canalización de hormigón. ($L(%A)/ - /$N(%B))" — _phi4:latest_
+- [ ] 8. "Cleaneza de conducto concreto. ($L(%A)/ - /$N(%B))" — _phi4:latest_
+- [ ] 9. "Mantenimiento de conducción hormigonada. ($L(%A)/ - /$N(%B))" — _phi4:latest_
+- [ ] 10. "Desatascado de canalización en hormigón. ($L(%A)/ - /$N(%B))" — _phi4:latest_
+- [ ] 11. "Purgado de conducto de hormigón. ($L(%A)/ - /$N(%B))" — _phi4:latest_
+- [ ] 12. "Limpieza integral de ducto de hormigón. ($L(%A)/ - /$N(%B))" — _phi4:latest_
+- [ ] 13. "La canalización de hormigón se limpia. ($L(%A)/ - /$N(%B))" — _qwen2.5:14b_
+- [ ] 14. "Proceso de limpieza de la conducción hormigonada. ($L(%A)/ - /$N(%B))" — _qwen2.5:14b_
+- [ ] 15. "Se lleva a cabo la desinfección de la canalización de hormigón. ($L(%A)/ - /$N(%B))" — _qwen2.5:14b_
+- [ ] 16. "Limpieza y desinfección de conducción enterrada de hormigón. (incluido $L(%A)/ - /$N(%B))" — _qwen2.5:14b_
+- [ ] 17. "(incluso $L(%A)/ - /$N(%B)) Limpieza de la canalización de hormigón." — _qwen2.5:14b_
+- [ ] 18. "Procedimiento de limpieza para conducción de hormigón enterrada, ($L(%A)/ - /$N(%B))" — _qwen2.5:14b_
+- [ ] 19. "Servicio de mantenimiento y limpieza de canaleta de hormigón: ($L(%A)/ - /$N(%B))" — _qwen2.5:14b_
+- [ ] 20. "Procedimiento de mantenimiento para canalización de hormigón. ($L(%A)/ - /$N(%B))" — _qwen2.5:14b_
+- [ ] 21. "Tratamiento de limpieza para tubería de concreto. ($L(%A)/ - /$N(%B))" — _qwen2.5:14b_
+- [ ] 22. "Operación de higiene para estructura de canalización de hormigón. ($L(%A)/ - /$N(%B))" — _qwen2.5:14b_
+- [ ] 23. "Limpieza y mantenimiento de canalización de hormigón. ($L(%A)/ - /$N(%B))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [12] near_duplicate_of_kept
 
 ## RESUMEN template (OEB150$)
 _Used in 1 concept(s): OEB150$_
 
-- [ ] 1. "Desobstrucción de conductos de canalización preexistentes. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 2. "Purificación de conductos de canalización ya instalados. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 3. "Eliminación de obstrucciones en conductos de canalización existentes. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 4. "Desbloqueo de conductos de canalización ya instalados. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 5. "Limpieza de conductos de canalización preexistentes. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 6. "Desinfección de conductos de canalización ya instalados. ($L(%A)/$M(%B)/$N(%C))"
+- [ ] 1. "Se realiza la limpieza de conductos de conducción enterrada preexistentes. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 2. "Limpieza ejecutada en los conductos de canalización existente. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 3. "Se efectúa el mantenimiento de limpieza de conductos en canalización ya instalada. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 4. "Operación de limpieza sobre los conductos de canalización existentes. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 5. "Mantenimiento de conductos de canalización preexistentes: ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Proceso de desobstrucción de tuberías en canalizaciones instaladas: ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 7. "Desobstrucción de tuberías ya implementadas en canalizaciones: ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 8. "Limpieza de conductos de canalización previamente instalados. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 9. "Desbloqueo de conductos preexistentes. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 10. "Eliminación de obstrucciones en conductos ya instalados. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 11. "Mantenimiento de higiene en conductos instalados previamente. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 12. "Remoción de impurezas en conductos instalados con anterioridad. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 13. "Se realiza la limpieza de la conducción existente de canalización. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la limpieza de la canalización enterrada existente. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 15. "Se ejecuta la limpieza en la canalización previamente instalada. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Se efectúa la limpieza de los conductos de canalización ya existentes. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 17. "Proceso de limpieza para conductos de canalización previamente instalados ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 18. "Limpieza de los conductos de canalización existentes, incluso de los de ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 19. "Incluye la limpieza de conductos de canalización ya existentes, con un enfoque en los de ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 20. "Se ofrece el servicio de limpieza para conductos de canalización ya existentes, incluidos aquellos de ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 21. "Higiene y mantenimiento de conducción subterránea preexistente. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 22. "Servicio de desinfección y limpieza para redes de drenaje preinstaladas. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 23. "Procedimiento de mantenimiento para conductos de desagüe preexistentes. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 24. "Tratamiento de saneamiento de redes de recogida de aguas preexistentes. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
 
 ## RESUMEN template (OEB160$)
 _Used in 1 concept(s): OEB160$_
 
-- [ ] 1. "Reperfilado de conductos preexistentes. ($N(%A)/-/-)"
-- [ ] 2. "Reformado de tuberías ya instaladas. ($N(%A)/-/-)"
-- [ ] 3. "Reajuste de conducciones ya colocadas. ($N(%A)/-/-)"
-- [ ] 4. "Reperfilado de tuberías preinstaladas. ($N(%A)/-/-)"
-- [ ] 5. "Reformado de conductos ya existentes. ($N(%A)/-/-)"
-- [ ] 6. "Reajuste de tuberías preexistentes. ($N(%A)/-/-)"
+- [ ] 1. "Se ejecuta el mandrilado de canalización preexistente. ($N(%A)/-/-)" — _phi4:latest_
+- [ ] 2. "El mandrilado se realiza en canalización existente, ($N(%A)/-/-)" — _phi4:latest_
+- [ ] 3. "Se efectúa el mandrilado sobre canalización preinstalada. ($N(%A)/-/-)" — _phi4:latest_
+- [ ] 4. "Se realiza el mandrilado en la canalización instalada previamente. ($N(%A)/-/-)" — _phi4:latest_
+- [ ] 5. "Proceso de mandrilado en la canalización preexistente. ($N(%A)/-/-)" — _phi4:latest_
+- [ ] 6. "Mandrilado de la infraestructura de canalización previamente instalada. ($N(%A)/-/-)" — _phi4:latest_
+- [ ] 7. "Mandrilado en la canalización ya instalada. ($N(%A)/-/-)" — _phi4:latest_
+- [ ] 8. "Mandrilado de la canalización instalada previamente. ($N(%A)/-/-)" — _phi4:latest_
+- [ ] 9. "Trabajo de mandrilado en canalización preinstalada. ($N(%A)/-/-)" — _phi4:latest_
+- [ ] 10. "Operación de mandrilado en tuberías ya ubicadas. ($N(%A)/-/-)" — _phi4:latest_
+- [ ] 11. "Proceso de mandrilado sobre conducción instalada previamente. ($N(%A)/-/-)" — _phi4:latest_
+- [ ] 12. "Ejecución de mandrilado en la infraestructura de conductos ya ubicada. ($N(%A)/-/-)" — _phi4:latest_
+- [ ] 13. "Se realiza el mandrilado en conducciones existentes. ($N(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo el mandrilado en la conducción previamente instalada. ($N(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 15. "La canalización existente se somete a un proceso de mandrilado. ($N(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 16. "El mandrilado en tuberías existentes es la operación realizada. ($N(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 17. "Proceso de mandrilado para conductos existentes, incluso para $N(%A)." — _qwen2.5:14b_
+- [ ] 18. "Incluido el mandrilado de conducciones preexistentes, como $N(%A)." — _qwen2.5:14b_
+- [ ] 19. "Trabajo de mandrilado para canalizaciones ya instaladas, inclusive $N(%A)." — _qwen2.5:14b_
+- [ ] 20. "Mandrilado de conducciones existentes, entre ellas $N(%A)." — _qwen2.5:14b_
+- [ ] 21. "Proceso de mandrilado en conductos preexistentes. ($N(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 22. "Mandrilado en conducciones ya instaladas. ($N(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 23. "Trabajo de mandrilado para tuberías preexistentes. ($N(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 24. "Operación de mandrilado en conducciones existentes. ($N(%A)/-/-)" — _qwen2.5:14b_
 
 ## RESUMEN template (OEC090$)
 _Used in 1 concept(s): OEC090$_
 
-- [ ] 1. "Soporte para cables equipado con $A fichas. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 2. "Soporte de cables con $A fichas. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 3. "Portafichas para cables con $A fichas. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 4. "Soporte de cableado con $A fichas. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 5. "Estante para cables con $A fichas. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 6. "Soporte para cableado con $A fichas. ($L(%B)/$M(%C)/$N(%D))"
+- [ ] 1. "Se dispone de una percha para cables que cuenta con $A fichas. Las especificaciones disponibles son: ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 2. "Se presenta una percha para cables, provista de $A fichas. Las opciones disponibles son: ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 3. "Se encuentra una percha para cables con un total de $A fichas. Se ofrecen las siguientes especificaciones: ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 4. "La percha para cables está equipada con $A fichas. Las versiones disponibles son: ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 5. "Con $L(%B)/$M(%C)/$N(%D), esta percha para cables soporta $A fichas." — _phi4:latest_
+- [ ] 6. "La percha diseñada para cables incluye $A fichas y se presenta en $L(%B)/$M(%C)/$N(%D)." — _phi4:latest_
+- [ ] 7. "Disponible en $L(%B)/$M(%C)/$N(%D), esta percha permite alojar $A fichas para cables." — _phi4:latest_
+- [ ] 8. "Esta estructura para alojar cables, con $A fichas, está disponible en $L(%B)/$M(%C)/$N(%D)." — _phi4:latest_
+- [ ] 9. "Soporte para cablería que dispone de $A tomas. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 10. "Estructura de alojamiento de cables equipada con $A conectores. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 11. "Organizador de cables que cuenta con $A espacios. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 12. "Soporte para cableado dotado de $A ranuras. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 13. "Se proporciona una percha para cables que cuenta con $A fichas. (Se especifican los valores de $L(%B), $M(%C) y $N(%D))." — _qwen2.5:14b_
+- [ ] 14. "Se presenta una percha para cables que incluye $A fichas. (Se indican los detalles de $L(%B), $M(%C) y $N(%D))." — _qwen2.5:14b_
+- [ ] 15. "Se fabrica una percha para cables dotada de $A fichas. (Se detallan las características de $L(%B), $M(%C) y $N(%D))." — _qwen2.5:14b_
+- [ ] 16. "Se ofrece una percha para cables equipada con $A fichas. (Se describen las especificaciones de $L(%B), $M(%C) y $N(%D))." — _qwen2.5:14b_
+- [ ] 17. "Percha para cables que incluye $A fichas. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 18. "($L(%B)/$M(%C)/$N(%D)) con $A fichas para percha para cables" — _qwen2.5:14b_
+- [ ] 19. "Percha para cables, con un total de $A fichas. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 20. "Accesorio para cableado con $A alojamientos. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 21. "Dispositivo para la fijación de cables con soportes $A. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 22. "Solución para la instalación de cables con $A módulos de conexión. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 23. "Elemento de retención de cables con capacidad para $A placas. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [19] near_duplicate_of_kept
 
 ## RESUMEN template (OEB240$)
 _Used in 1 concept(s): OEB240$_
 
-- [ ] 1. "Material de relleno localizado $W(%A), i/ compactado para obras de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)."
-- [ ] 2. "Relleno específico $W(%A), i/ compactado y material para instalaciones ferroviarias. ($L(%B)/$M(%C)/-)."
-- [ ] 3. "Relleno $W(%A), i/ compactado y material para construcción de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)."
-- [ ] 4. "Relleno $W(%A), i/ compactado y material en la construcción de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)."
-- [ ] 5. "Relleno $W(%A), i/ compactado y material para la ejecución de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)."
+- [ ] 1. "Se realiza relleno localizado $W(%A), i/ y se compacta material en obras de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _phi4:latest_
+- [ ] 2. "Material correspondiente al relleno localizado $W(%A), i/ y a las compactaciones en obras de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _phi4:latest_
+- [ ] 3. "Se lleva a cabo el relleno localizado $W(%A), i/, y el material es compactado para obras en instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _phi4:latest_
+- [ ] 4. "El material necesario para el relleno localizado $W(%A), i/, y su compactación en obras de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _phi4:latest_
+- [ ] 5. "Material de relleno específico $W(%A), i/ compactado, utilizado en la construcción de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _phi4:latest_
+- [ ] 6. "En obras de instalaciones ferroviarias se utiliza el relleno localizado $W(%A), i/ compactado, junto con los materiales necesarios. ($L(%B)/$M(%C)/-)." — _phi4:latest_
+- [ ] 7. "Para instalaciones ferroviarias, el material necesario incluye el relleno localizado $W(%A), i/ compactado. ($L(%B)/$M(%C)/-)." — _phi4:latest_
+- [ ] 8. "En la construcción de instalaciones ferroviarias se emplea un relleno localizado $W(%A), i/ compactado, y otros materiales. ($L(%B)/$M(%C)/-)." — _phi4:latest_
+- [ ] 9. "Relleno especificado $W(%A), i/ compactado y material para construcción de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _phi4:latest_
+- [ ] 10. "Relleno designado $W(%A), i/ compactado y material utilizado en obras de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _phi4:latest_
+- [ ] 11. "Concreto localizado $W(%A), i/ compactado y material destinado a instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _phi4:latest_
+- [ ] 12. "Material de relleno $W(%A), i/ compactado y usado en construcciones de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _phi4:latest_
+- [ ] 13. "Se utiliza relleno localizado $W(%A), compactado y dispuesto como material para obras de instalaciones ferroviarias. Se especifica el uso de ($L(%B)/$M(%C)/-)." — _qwen2.5:14b_
+- [ ] 14. "Se menciona la utilización de relleno localizado $W(%A), compactado y empleado como material para obras de instalaciones ferroviarias. Se indica que se utilizarán ($L(%B)/$M(%C)/-)." — _qwen2.5:14b_
+- [ ] 15. "Se define el uso de relleno localizado $W(%A), compactado y considerado como material para obras de instalaciones ferroviarias. Se designa el uso de ($L(%B)/$M(%C)/-)." — _qwen2.5:14b_
+- [ ] 16. "Material de relleno localizado $W(%A), incluido en compactado y utilizado en la construcción de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _qwen2.5:14b_
+- [ ] 17. "Material de relleno y compactado, ubicado en $W(%A), para uso en obras de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _qwen2.5:14b_
+- [ ] 18. "Relleno localizado $W(%A) para compactación y uso en construcción de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _qwen2.5:14b_
+- [ ] 19. "Materiales de relleno y compactación localizados en $W(%A) para su uso en la construcción de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _qwen2.5:14b_
+- [ ] 20. "Material de relleno localizado $W(%A), compactado e incorporado en las obras de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _qwen2.5:14b_
+- [ ] 21. "Material de relleno ubicado en $W(%A), compactado y empleado para la construcción de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _qwen2.5:14b_
+- [ ] 22. "Relleno colocado en el sitio $W(%A), compactado y utilizado en las construcciones ferroviarias. ($L(%B)/$M(%C)/-)." — _qwen2.5:14b_
+- [ ] 23. "Material para relleno en el punto $W(%A), compactado y aplicado de forma específica para las obras de instalaciones ferroviarias. ($L(%B)/$M(%C)/-)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [5] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
 
 ## RESUMEN template (OEA120$)
 _Used in 1 concept(s): OEA120$_
 
-- [ ] 1. "Reorganizar los cables actuales para instalar un nuevo cable debido a la insuficiencia de espacio en la canalización ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 2. "Reconfigurar los cables existentes para acomodar un nuevo cable por limitación de espacio en la caja de cables ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 3. "Reestructurar los cables actuales para instalar un nuevo cable debido a la escasez de espacio en la canalización ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 4. "Reorganizar los cables preexistentes para el tendido de un nuevo cable por carencia de espacio en la canalización ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 5. "Reconfigurar los cables existentes para el tendido de un nuevo cable debido a la insuficiencia de espacio en la canalización ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 6. "Reestructurar los cables actuales para instalar un nuevo cable por limitación de espacio en la canalización ($L(%A)/$M(%B)/$N(%C))"
+- [ ] 1. "Se llevará a cabo la reorganización de los cables actuales para facilitar la instalación de nuevos cables por insuficiencia de espacio en la canaleta ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 2. "Por la falta de espacio en la canaleta ($L(%A)/$M(%B)/$N(%C)), se efectuará el reordenamiento de cables existentes a fin de tender un nuevo cable" — _phi4:latest_
+- [ ] 3. "La reordenación de los cables existentes será realizada para permitir el tendido de un nuevo cable debido a la limitación de espacio en la canaleta ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 4. "Se procederá a la reorganización de los cables ya instalados para instalar nuevos cables, ya que la canaleta presenta insuficiencia de espacio ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 5. "Ajuste de cables actuales para instalar un nuevo cable debido a la limitación de espacio en la canaleta ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Para instalar un nuevo cable, realizar el reordenamiento de los cables existentes en la canaleta, por carecer de espacio suficiente ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 7. "Reordenamiento de los cables ya instalados, con el fin de colocar un nuevo cable, debido a la insuficiencia de espacio en la canaleta ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 8. "Por la falta de espacio en la canaleta, proceder al reordenamiento de los cables existentes para el tendido de un nuevo cable ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 9. "Ajustar la disposición de los cables ya instalados para facilitar la instalación de un nuevo cable debido a la restricción de espacio en la canal ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 10. "Disposición alternativa de los cables actuales para permitir el tendido de un nuevo cable, originada por la limitación de espacio en la canal ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 11. "Reorganizar los cables ya colocados para instalar un nuevo cable debido a la insuficiencia de espacio en la canal ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 12. "Reconfigurar los cables preexistentes para facilitar la colocación de un nuevo cable, ante la limitación de espacio en la canal ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 13. "Se reorganizarán los cables existentes para el tendido de nuevo cable debido a la falta de espacio en la canaleta ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "Se llevará a cabo la reorganización de cables existentes para el tendido de nuevo cable debido a la falta de espacio en la canaleta ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 15. "La reorganización de los cables existentes será necesaria para el tendido de nuevo cable debido a la falta de espacio en la canaleta ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Se procederá a la reorganización de los cables actuales para instalar un nuevo cable debido a la escasez de espacio en la conducción, ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 17. "La reordenación de los cables existentes es necesaria para asegurar el tendido del nuevo cable, debido a la falta de espacio en la canalización, ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 18. "Es necesario reorganizar los cables existentes para el tendido del nuevo cable debido a la escasez de espacio en la canaleta, ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 19. "Para instalar un nuevo cable, es necesario reorganizar los cables actuales debido a la falta de espacio en la canalización, ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 20. "Ajustar los cables actuales para la instalación de un nuevo cable debido a la falta de espacio en la conducción ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 21. "Reconfigurar los cables existentes para la colocación de un nuevo cable por problemas de espacio en la canalización ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 22. "Reorganizar los cables actuales para la instalación de un nuevo cable debido a la insuficiencia de espacio en el canal ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 23. "Alinear los cables existentes para el emplazamiento de un nuevo cable por falta de espacio en el recinto ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [13] near_duplicate_of_kept
 
 ## RESUMEN template (OEE040$)
 _Used in 1 concept(s): OEE040$_
 
-- [ ] 1. "Sustitución de barra de sujeción de base con soportes ($L(%A)/$M(%B)/$N(%C))."
-- [ ] 2. "Renovación de barra de fijación de fundación con soportes ($L(%A)/$M(%B)/$N(%C))."
-- [ ] 3. "Reemplazo de barra de sujeción de base con soportes ($L(%A)/$M(%B)/$N(%C))."
-- [ ] 4. "Sustitución de barra de fijación de fundación con soportes ($L(%A)/$M(%B)/$N(%C))."
-- [ ] 5. "Renovación de barra de sujeción de base con soportes ($L(%A)/$M(%B)/$N(%C))."
-- [ ] 6. "Reemplazo de barra de fijación de base con soportes ($L(%A)/$M(%B)/$N(%C))."
+- [ ] 1. "Se efectúa la sustitución de la barra de anclaje de cimentación con esperas ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 2. "Se llevará a cabo la reposición de la barra de anclaje de cimentación con esperas ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 3. "La reposición, de la barra de anclaje de cimentación con esperas, se efectúa ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 4. "Incluido: reposición de barra de anclaje para cimentación con esperas ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 5. "Reposición, con inclusiones de espera, de barra de anclaje de cimentación ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 6. "Restitución de barra de anclaje en cimentación, con el uso de esperas ($L(%A)/$M(%B)/$N(%C)) $L(%A)/$M(%B)/$N(%C)." — _phi4:latest_
+- [ ] 7. "Con esperas, reemplazo de barra de anclaje de cimentación ($L(%A)/$M(%B)/$N(%C)) $L(%A)/$M(%B)/$N(%C)." — _phi4:latest_
+- [ ] 8. "Reemplazo de la barra de sujeción de fundación con soportes adicionales ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 9. "Sustitución de la barra de enganche en la base con soportes auxiliares ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 10. "Intercambio de la barra de fijación en la cimentación, incluyendo soportes ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 11. "Renovación de la barra de sujeción en la fundación, añadiendo soportes ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 12. "Se realiza la reposición de la barra de anclaje de cimentación con espigas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 13. "La barra de anclaje de cimentación con espigas será reemplazada ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la reposición de la barra de anclaje de cimentación junto con las espigas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 15. "Se ejecuta la reposición de la barra de anclaje de cimentación incluyendo las espigas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 16. "Reemplazo de barra de anclaje de cimentación, incluyendo esperas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 17. "Se realizará la reposición de barra de anclaje de cimentación con esperas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 18. "Incluye la reposición de barra de anclaje de cimentación, con esperas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 19. "Incorporación de barra de anclaje de cimentación, con esperas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 20. "Instalación de refuerzo de anclaje de estructura con elementos de separación ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 21. "Sustitución de barras de apoyo estructural con intervaladores ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 22. "Colocación de elementos de unión de cimentación con espaciadores ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 23. "Introducción de refuerzo estructural con elementos de separación ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [1] near_duplicate_of_kept
 
 ## RESUMEN template (OEE030$)
 _Used in 1 concept(s): OEE030$_
 
-- [ ] 1. "Sustitución de barra de sujeción para postes en viaductos con intervalos ($L(%A)/$M(%B)/$N(%C))."
-- [ ] 2. "Renovación de barra de fijación para postes en viaductos con pausas ($L(%A)/$M(%B)/$N(%C))."
-- [ ] 3. "Reemplazo de barra de sujeción para postes en viaductos con interrupciones ($L(%A)/$M(%B)/$N(%C))."
+- [ ] 1. "Reemplazo de barra de fijación para postes en viaductos con plataformas de espera ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 2. "Sustitución de barra de sujeción para postes en viaductos que cuentan con zonas de espera ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 3. "Renovación de la barra de amarre para postes en viaductos, que incluyen áreas de espera ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 4. "Renovación de la barra de anclaje para postes en viaductos que poseen espacios de espera ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 5. "Actualización de la barra de sujeción para postes en estructuras viarias con sistemas de retención ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 6. "Reinstalación de la varilla de fijación para pilares en tramos elevados con dispositivos de contención ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 7. "Renovación de la varilla de sujeción para estribos en puentes con sistemas de seguridad ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 8. "Sustitución de la barra de fijación para soportes en pasos elevados con mecanismos de retenido ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 9. "Reemplazo de la barra de anclaje para postes en viaductos que cuentan con esperas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 10. "Instalación de nuevas barras de anclaje para postes en viaductos que incluyen esperas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 11. "Sustitución de barras de anclaje para postes en viaductos que tienen esperas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 12. "Colocación de nuevas barras de anclaje en postes de viaductos que poseen esperas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 13. "Substitución de barra de apoyo en postes de viaductos con rampas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 14. "Actualización de la barra de conexión en los postes de viaductos con rampas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 15. "Cambio de barra de sujeción en postes de viaductos con rampas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 16. "Reemplazo de la barra de enlace en postes de viaductos con rampas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R1 [0] sentinels_not_preserved: missing=['P1', 'P2', 'P3'] extra_or_dup=[]
+- phi4:latest/R1 [1] sentinels_not_preserved: missing=['P1', 'P2', 'P3'] extra_or_dup=[]
+- phi4:latest/R1 [2] sentinels_not_preserved: missing=['P1', 'P2', 'P3'] extra_or_dup=[]
+- phi4:latest/R1 [3] sentinels_not_preserved: missing=['P1', 'P2', 'P3'] extra_or_dup=[]
 
 ## RESUMEN template (OED030$)
 _Used in 1 concept(s): OED030$_
 
-- [ ] 1. "Cimentación cilíndrica para S y M en desmonte tipo $B, sobre terreno $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 2. "Cimentación cilíndrica para S y M en desmonte tipo $B, en suelo $A ($L(%C)/$M(%D)/$N(%F))."
+- [ ] 1. "Se implementa la cimentación cilíndrica S y M sobre desmonte tipo $B, en terreno $A con parámetros ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 2. "En terreno $A, se lleva a cabo la cimentación cilíndrica de S y M sobre desmonte tipo $B, caracterizada por ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 3. "La cimentación cilíndrica S y M se ejecuta en desmonte tipo $B, situado en terreno $A con especificaciones ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 4. "Se efectúa la cimentación cilíndrica S y M sobre desmonte de tipo $B, en el terreno $A con valores ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 5. "Cimentación cilíndrica S y M en tipo $B de desmonte, en terreno $A (incluyendo $L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 6. "Cimentación cilíndrica S y M, tipo $B para desmonte, sobre terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 7. "En terreno $A (con $L(%C)/$M(%D)/$N(%F)), se utiliza cimentación cilíndrica S y M de tipo $B para desmonte." — _phi4:latest_
+- [ ] 8. "Cimentación cilíndrica S y M, de tipo $B para desmonte, aplicada en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 9. "Construcción S y M de base cilíndrica en excavación tipo $B, en suelo $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 10. "S y M estructura cilíndrica de soporte en zanja tipo $B, ubicada en material $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 11. "Instalación S y M de forma cilíndrica en excavación tipo $B, en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 12. "Ejecución de base cilíndrica S y M en corte tipo $B, en área $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 13. "Se lleva a cabo la cimentación cilíndrica S y M en desmonte del tipo $B, para terrenos $A, con especificaciones de $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 14. "Se presenta la cimentación cilíndrica S y M en desmonte del tipo $B, adaptada para terrenos $A, con detalles técnicos $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 15. "Se emplea la cimentación cilíndrica S y M en desmonte del tipo $B, adecuada para terrenos $A, con parámetros especificados $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 16. "Se implementa la cimentación cilíndrica S y M en desmonte del tipo $B, en terrenos $A, con características técnicas $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 17. "S y M cimentación cilíndrica en desmonte tipo $B, con terreno $A, incluyendo condiciones geológicas ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 18. "S y M cimentación cilíndrica en desmonte, con especificación tipo $B, en terreno $A, que detalla condiciones geológicas ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 19. "Estructura de soporte en desmonte tipo $B, con características del terreno $A, (clasificación $L(%C), grado $M(%D), tipo $N(%F))." — _qwen2.5:14b_
+- [ ] 20. "Fundación cilíndrica en excavación tipo $B, entorno geológico $A, (categoría $L(%C), grado $M(%D), tipo $N(%F))." — _qwen2.5:14b_
+- [ ] 21. "Estructura de apoyo en excavación tipo $B, en un terreno definido como $A, (niveles $L(%C), grado $M(%D), tipo $N(%F))." — _qwen2.5:14b_
+- [ ] 22. "Soporte cilíndrico en desmonte tipo $B, en un terreno clasificado como $A, (nivel $L(%C), calidad $M(%D), tipo $N(%F))." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R2 [2] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
 
 ## RESUMEN template (OED110$)
 _Used in 1 concept(s): OED110$_
 
-- [ ] 1. "S y M fundación cilíndrica en roca tipo $A con micropilotes para soporte de catenaria CA. ($L(%B)/$M(%C)/$N(%D))."
-- [ ] 2. "S y M base cilíndrica en roca tipo $A con micropilotes para poste de catenaria CA. ($L(%B)/$M(%C)/$N(%D))."
-- [ ] 3. "S y M estructura de fundación cilíndrica en roca tipo $A con micropilotes para poste de línea catenaria CA. ($L(%B)/$M(%C)/$N(%D))."
+- [ ] 1. "Se realiza la cimentación cilíndrica en roca tipo $A con micropilotes para el poste de catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 2. "La instalación de cimentación cilíndrica en roca tipo $A con micropilotes se lleva a cabo para el poste de catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 3. "Cimentación cilíndrica en roca de tipo $A para S y M, incluyendo micropilotes destinados a postes de catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 4. "Para S y M, cimentación cilíndrica de roca tipo $A, con micropilotes para soportar postes de catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 5. "Con micropilotes para postes de catenaria CA, la cimentación cilíndrica para S y M se realiza en roca tipo $A. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 6. "Instalación de cimentación cilíndrica en roca del tipo $A con incorporación de micropilotes para soporte de poste catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 7. "Cimentación cilíndrica tipo $A en roca con micropilotes destinados a los postes de catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 8. "Ejecución de cimentación cilíndrica en estructura de roca tipo $A, complementada con micropilotes para el soporte de postes de catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 9. "Cimentación de tipo cilíndrico en roca clase $A, reforzada con micropilotes para la instalación de postes de catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 10. "Se realiza la cimentación cilíndrica tipo $A en roca mediante micropilotes para la instalación de postes catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 11. "Se lleva a cabo la cimentación cilíndrica tipo $A en roca para la instalación de postes catenaria CA mediante micropilotes. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 12. "Se aplicará la cimentación cilíndrica tipo $A en roca para la instalación de postes catenaria CA, empleando micropilotes. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 13. "S y M cimentación cilíndrica tipo $A, que incluye micropilotes para sostener el poste catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 14. "Construcción S y M de cimentación cilíndrica en roca tipo $A, dotada de micropilotes para la instalación del poste catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 15. "S y M cimentación cilíndrica en roca tipo $A, con micropilotes específicos para soporte del poste catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 16. "S y M cimentación cilíndrica en roca tipo $A, dotada de micropilotes para asegurar el soporte del poste catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 17. "Instalación S y M de fundación cilíndrica en roca clase $A, dotada de micropilotes para soporte de poste catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 18. "Diseño de cimentación S y M tipo $A, en roca, con micropilotes para sostener poste catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 19. "Sistema de cimentación tipo S y M en terreno rocoso $A, provisto de micropilotes de anclaje para poste catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 20. "Estructura de cimentación cilíndrica tipo S y M sobre roca $A, incluyendo micropilotes para instalación de poste catenaria CA. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
+- [1] near_duplicate_of_kept
 - [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
+- [6] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
 
 ## RESUMEN template (OED040$)
 _Used in 1 concept(s): OED040$_
 
-- [ ] 1. "Cimentación cilíndrica S y M en terraplén tipo $B, sobre terreno $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 2. "Cimentación cilíndrica de tipo S y M en terraplén tipo $B, ubicada en terreno $A ($L(%C)/$M(%D)/$N(%F))."
+- [ ] 1. "Se realiza la cimentación cilíndrica S y M en terraplén tipo $B, en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 2. "Cimentación cilíndrica tipo S y M se lleva a cabo en terraplén tipo $B, en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 3. "La cimentación cilíndrica de tipo S y M se efectúa en terraplén tipo $B, sobre terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 4. "Cimentación cilíndrica en terraplén tipo $B para S y M, en terreno $A (con $L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 5. "En terreno $A, se presenta la cimentación cilíndrica en terraplén tipo $B para S y M ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 6. "La cimentación cilíndrica en terraplén tipo $B se aplica a S y M en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 7. "Para S y M, cimentación cilíndrica en terraplén tipo $B en el terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 8. "Estructura cilíndrica de cimentación S y M en terraplén modelo $B, en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 9. "Cimentación cilíndrica S y M sobre terraplén tipo $B, en suelo $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 10. "Sistemas cilíndricos de cimentación S y M en terraplén de modelo $B, en el terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 11. "Cimentación de tipo S y M en forma cilíndrica sobre terraplén $B, situado en $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 12. "Se lleva a cabo la cimentación cilíndrica mediante S y M en terraplén tipo $B, en terreno $A, con condiciones de suelo ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 13. "Se realiza la cimentación cilíndrica mediante S y M para terraplén tipo $B, sobre terreno $A, con perfiles de suelo ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 14. "Se ha llevado a cabo la cimentación cilíndrica mediante S y M en un terraplén tipo $B, sobre terreno $A, con especificaciones del suelo ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 15. "Terreno $A, S y M cimentación cilíndrica en terraplén tipo $B, con características de suelo $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 16. "S y M cimentación cilíndrica en terraplén tipo $B, en terreno $A, incluyendo las condiciones de suelo $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 17. "Cimentación cilíndrica S y M en terraplén tipo $B, en un terreno que presenta las características de $L(%C)/$M(%D)/$N(%F) en $A." — _qwen2.5:14b_
+- [ ] 18. "En un terreno con las especificaciones de $L(%C)/$M(%D)/$N(%F) en $A, se implementa la cimentación cilíndrica S y M en terraplén tipo $B." — _qwen2.5:14b_
+- [ ] 19. "Instalación S y M de fundación cilíndrica sobre terraplén tipo $B, en terreno $A con las características ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 20. "Estructura de cimentación S y M con forma cilíndrica en terraplén tipo $B, en un terreno $A definido por las características ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 21. "Fundación de cimentación cilíndrica tipo S y M en terraplén tipo $B, sobre terreno $A con las clasificaciones ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 22. "Construcción de cimentación S y M cilíndrica en terraplén tipo $B, en terreno $A con las especificaciones ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
 - [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
 
 ## RESUMEN template (OED130$)
 _Used in 1 concept(s): OED130$_
 
-- [ ] 1. "S y M fundación cilíndrica modelo $A destinada a anclaje ($L(%B)/$M(%C)/$N(%D))."
-- [ ] 2. "S y M base cilíndrica tipo $A para sujeción ($L(%B)/$M(%C)/$N(%D))."
-- [ ] 3. "S y M estructura cilíndrica tipo $A para fijación ($L(%B)/$M(%C)/$N(%D))."
-- [ ] 4. "S y M soporte cilíndrico tipo $A para sujeción ($L(%B)/$M(%C)/$N(%D))."
-- [ ] 5. "S y M fundación de forma cilíndrica tipo $A para fijación ($L(%B)/$M(%C)/$N(%D))."
+- [ ] 1. "Se proporciona la cimentación cilíndrica tipo $A para anclaje mediante ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 2. "Cimentación de tipo $A cilíndrica destinada al anclaje, disponible en ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 3. "Implementada está la cimentación cilíndrica de tipo $A para el anclaje, con opciones ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 4. "Para anclaje, se ofrece la cimentación cilíndrica tipo $A, que incluye ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 5. "Cimentación cilíndrica tipo $A S y M, utilizada para anclaje ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 6. "Para anclaje ($L(%B)/$M(%C)/$N(%D)), se emplea la cimentación cilíndrica tipo $A S y M." — _phi4:latest_
+- [ ] 7. "La cimentación cilíndrica tipo $A S y M se aplica para anclaje ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 8. "Anclaje de cimentación cilíndrica de tipo $A (dimensiones $L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 9. "Cimentación cilíndrica modelo $A para anclaje, especificaciones $L(%B)/$M(%C)/$N(%D)." — _phi4:latest_
+- [ ] 10. "Cimentación cilíndrica tipo $A diseñada para anclaje con medidas $L(%B)/$M(%C)/$N(%D)." — _phi4:latest_
+- [ ] 11. "Cimentación cilíndrica tipo $A para anclaje, con dimensiones $L(%B)/$M(%C)/$N(%D)." — _phi4:latest_
+- [ ] 12. "Se emplea cimentación cilíndrica tipo $A para anclajes ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 13. "Tipo de cimentación cilíndrica $A utilizada para anclaje con especificaciones ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 14. "Se utiliza la cimentación cilíndrica tipo $A para proporcionar anclaje con medidas ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 15. "Cimentación cilíndrica tipo $A, designada para anclaje, se especifica con parámetros ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 16. "Tipo $A de cimentación cilíndrica S y M para asegurar anclaje, en configuración ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 17. "Para anclaje, se utiliza la cimentación cilíndrica S y M tipo $A, configurada con ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 18. "Cimentación cilíndrica tipo $A de S y M destinada a proporcionar anclaje, presentando especificaciones ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 19. "Anclaje proporcionado por cimentación cilíndrica S y M tipo $A, con configuración ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- qwen2.5:14b/R3 [0] sentinel_residue
+- qwen2.5:14b/R3 [1] sentinel_residue
+- qwen2.5:14b/R3 [2] sentinel_residue
+- qwen2.5:14b/R3 [3] sentinel_residue
+- [6] near_duplicate_of_kept
 
 ## RESUMEN template (OED090$)
 _Used in 1 concept(s): OED090$_
 
-- [ ] 1. "Instalación de cimentación cilíndrica tipo $B para el desmonte de poste de catenaria CA, en terreno: $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 2. "Cimentación cilíndrica tipo $B destinada al desmonte de poste de catenaria CA, en terreno: $A ($L(%C)/$M(%D)/$N(%F))."
+- [ ] 1. "Cimentación cilíndrica de S y M tipo $B para el desmonte de un poste de catenaria CA, en terreno: $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 2. "Construcción cilíndrica de cimentación tipo $B para la remoción de soportes de catenaria CA, sobre el suelo: $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 3. "Estructura cilíndrica de cimentación, tipo $B, destinada al desmantelamiento de apoyos de catenaria CA, ubicada en terreno: $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 4. "Instalación cilíndrica de cimentación, modelo $B, aplicada a la retirada de postes de catenaria CA, en terreno: $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 5. "Montaje cilíndrico de cimentación, tipo $B, para la eliminación de soportes de líneas de catenaria CA, sobre suelo: $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 6. "Se realiza la cimentación cilíndrica tipo $B en el desmonte para poste de catenaria CA, en terreno $A caracterizado por $L(%C), $M(%D), y $N(%F)." — _qwen2.5:14b_
+- [ ] 7. "En el desmonte para poste de catenaria CA, se ejecuta la cimentación cilíndrica tipo $B en terreno $A, cuyas características son $L(%C), $M(%D), y $N(%F)." — _qwen2.5:14b_
+- [ ] 8. "Se instala la cimentación cilíndrica tipo $B en el terreno $A del desmonte para poste de catenaria CA, presentándose las condiciones $L(%C), $M(%D), y $N(%F)." — _qwen2.5:14b_
+- [ ] 9. "La cimentación cilíndrica tipo $B se lleva a cabo en el desmonte para poste de catenaria CA, donde el terreno es $A, con las propiedades $L(%C), $M(%D), y $N(%F)." — _qwen2.5:14b_
+- [ ] 10. "S y M cimentación cilíndrica tipo $B, aplicada en terreno $A en el desmonte de poste de catenaria CA, con características: ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 11. "Cimentación cilíndrica tipo $B, ejecutada en desmonte de poste de catenaria CA, en terreno $A, con propiedades: ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 12. "Terreno $A con desmonte para poste de catenaria CA, en el que se implementa cimentación cilíndrica tipo $B, y con especificaciones geológicas: ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 13. "Construcción de cimentación cilíndrica tipo $B en desmonte de poste de catenaria CA, en un terreno $A, con las siguientes especificaciones geotécnicas: ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 14. "Instalación de fundación cilíndrica tipo $B en excavación de soporte para estructura de catenaria CA, suelo: $A ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 15. "Fundación cilíndrica tipo $B colocada en excavación para poste de catenaria CA, con suelo tipo $A, condiciones: ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 16. "Cimentación de tipo $B implementada en excavación para soporte de poste de catenaria CA, condiciones geológicas: $A ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 17. "Construcción de la cimentación cilíndrica tipo $B en obra de excavación para poste de catenaria CA, caracterización del suelo: $A ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] sentinels_not_preserved: missing=['P3', 'P4', 'P5'] extra_or_dup=[]
+- phi4:latest/R1 [1] sentinels_not_preserved: missing=['P3', 'P4', 'P5'] extra_or_dup=[]
+- phi4:latest/R1 [2] sentinels_not_preserved: missing=['P3', 'P4', 'P5'] extra_or_dup=[]
+- phi4:latest/R1 [3] sentinels_not_preserved: missing=['P3', 'P4', 'P5'] extra_or_dup=[]
 - [1] near_duplicate_of_kept
+- [2] near_duplicate_of_kept
 - [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
 
 ## RESUMEN template (OED100$)
 _Used in 2 concept(s): OED100$, OED140$_
 
-- [ ] 1. "S y M fundación cilíndrica de tipo $B para terraplén de poste de catenaria CA, en terreno: $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 2. "S y M base cilíndrica de tipo $B en terraplén de poste de catenaria CA, sobre terreno: $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 3. "S y M soporte cilíndrico tipo $B en terraplén de poste de catenaria CA, en terreno: $A ($L(%C)/$M(%D)/$N(%F))."
+- [ ] 1. "Se realiza una cimentación cilíndrica de S y M, tipo $B, en el terraplén de un poste de catenaria CA sobre un suelo $A que presenta las características $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 2. "La cimentación cilíndrica de S y M, de tipo $B, se encuentra en un terraplén de poste de catenaria CA, sobre un terreno de tipo $A con propiedades $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 3. "En el terraplén de un poste de catenaria CA se establece una cimentación cilíndrica de S y M, de tipo $B, en terreno $A con especificaciones $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 4. "Se instala una cimentación cilíndrica de los tipos S y M, de tipo $B, en el terraplén de un poste de catenaria CA, sobre un terreno $A caracterizado por $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 5. "Cimentación cilíndrica S y M tipo $B para terraplén de poste de catenaria CA, en terreno: $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 6. "Cimentación cilíndrica tipo $B para S y M, situada en terraplén de poste de catenaria CA, sobre terreno: $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 7. "En terraplén de poste de catenaria CA, se encuentra la cimentación cilíndrica tipo $B para S y M, en terreno: $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 8. "Instalación de S y M en soporte cilíndrico tipo $B ubicado en terraplén para poste de catenaria CA, en terreno: $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 9. "Cimentación cilíndrica tipo $B de S y M en el terraplén del poste de catenaria CA, para suelo $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 10. "Poste de catenaria CA en terraplén equipado con cimentación cilíndrica tipo $B para S y M, en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 11. "Soporte cilíndrico tipo $B de S y M en terraplén de poste de catenaria CA, ubicado en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 12. "Se realiza la cimentación cilíndrica tipo $B sobre terraplén de poste de catenaria CA, en terreno: $A ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 13. "La cimentación cilíndrica tipo $B se lleva a cabo sobre terraplén de poste de catenaria CA, en terreno: $A ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 14. "En el terraplén de poste de catenaria CA, se implementa la cimentación cilíndrica tipo $B, especificándose el terreno como $A (con características de $L(%C), $M(%D) y $N(%F))." — _qwen2.5:14b_
+- [ ] 15. "La cimentación cilíndrica tipo $B se ha instalado en el terraplén de poste de catenaria CA, en un terreno que se define como $A, con las especificaciones de $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 16. "Se utiliza la cimentación cilíndrica tipo $B en el terraplén de poste de catenaria CA, en terreno $A, con las características de $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 17. "En el terraplén de poste de catenaria CA, se coloca la cimentación cilíndrica tipo $B, teniendo en cuenta el terreno $A, caracterizado por $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 18. "Estructura de fundación tipo $B, diseñada para sostener el terraplén del poste de catenaria CA en terreno tipo $A, con especificaciones geológicas $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
+- [ ] 19. "Instalación de la cimentación tipo $B para la estructura de soporte del poste de catenaria CA, situada en terreno de tipo $A con las condiciones geológicas $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
+- [ ] 20. "Implementación de la fundación cilíndrica tipo $B para la estación de postes de catenaria CA, ubicada sobre terreno clasificado como $A, con características geológicas $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
+- [ ] 21. "Construcción de la cimentación tipo $B, destinada a soportar el terraplén de la infraestructura de catenaria CA, en terreno de la categoría $A, con las condiciones geológicas correspondientes $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
 - [5] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
 
 ## RESUMEN template (OED080$)
 _Used in 2 concept(s): OED080$, OED150$_
 
-- [ ] 1. "S y M fundación cilíndrica tipo $B para sujeción, en suelo $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 2. "S y M base cilíndrica tipo $B para fijación, en terreno $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 3. "S y M estructura cilíndrica tipo $B para sujeción, en terreno $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 4. "S y M soporte cilíndrico tipo $B para fijación, en suelo $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 5. "S y M base cilíndrica tipo $B para anclaje, en suelo $A ($L(%C)/$M(%D)/$N(%F))."
+- [ ] 1. "Se utiliza cimentación cilíndrica tipo $B para el anclaje en terreno $A, que incluye $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 2. "Para el anclaje, se implementa una cimentación cilíndrica tipo $B en el terreno $A, con especificaciones $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 3. "La cimentación cilíndrica de tipo $B se emplea para anclajes en terreno $A, caracterizado por $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 4. "Se provee cimentación cilíndrica tipo $B destinada al anclaje en terrenos $A, que presentan $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 5. "Anclaje con cimentación cilíndrica tipo $B en terreno $A, con especificaciones técnicas ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 6. "Para anclaje, se utiliza la cimentación cilíndrica tipo $B en terreno $A con las medidas ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 7. "Cimentación cilíndrica tipo $B para anclaje, diseñada para terreno $A, especificada como ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 8. "Anclaje con cimentación cilíndrica tipo $B en terreno $A, con propiedades ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 9. "Cimentación cilíndrica modelo $B diseñada para anclaje en terreno $A con las especificaciones $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 10. "Implementación del sistema de cimentación cilíndrica tipo $B, con aplicación en el terreno $A y características $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 11. "Estructura de cimentación cilíndrica tipo $B, orientada al anclaje en terreno $A, especificada por $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 12. "Solución de cimentación cilíndrica tipo $B aprobada para anclaje en terreno $A, con parámetros $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 13. "Se utiliza la cimentación cilíndrica tipo $B para el anclaje en terrenos $A, con especificaciones $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 14. "Para el anclaje se emplea la cimentación cilíndrica tipo $B en terrenos $A, con las características $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 15. "La cimentación cilíndrica tipo $B es utilizada para el anclaje en terrenos $A, con especificaciones $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 16. "Con el fin de anclar se aplicará la cimentación cilíndrica tipo $B en terrenos $A, según las especificaciones $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 17. "Fundación cónica S y M del tipo $B, diseñada para asegurar la estabilidad en suelos $A, con características de resistencia especificadas como $L(%C), $M(%D), y $N(%F)." — _qwen2.5:14b_
+- [ ] 18. "Estructura cimenticia S y M de tipo $B, indicada para anclajes en terrenos $A, con parámetros de resistencia $L(%C), $M(%D), y $N(%F)." — _qwen2.5:14b_
+- [ ] 19. "S y M fijación cilíndrica tipo $B, destinada a mejorar la estabilidad en suelos $A, con especificaciones de dureza $L(%C), $M(%D), y $N(%F)." — _qwen2.5:14b_
+- [ ] 20. "Cimentación para anclaje S y M tipo $B, recomendada para terrenos $A, con resistencias detalladas en $L(%C), $M(%D), y $N(%F)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
+- qwen2.5:14b/R2 [0] sentinels_not_preserved: missing=['P3', 'P4', 'P5'] extra_or_dup=[]
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['P3', 'P4', 'P5'] extra_or_dup=[]
+- qwen2.5:14b/R2 [2] sentinels_not_preserved: missing=['P3', 'P4', 'P5'] extra_or_dup=[]
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['P3', 'P4', 'P5'] extra_or_dup=[]
 
 ## RESUMEN template (OED050$)
 _Used in 1 concept(s): OED050$_
 
-- [ ] 1. "S y M estructura de base rectangular para poste L o R en excavación tipo $B, en suelo $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 2. "S y M fundación rectangular para poste L o R en excavación tipo $B, en terreno $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 3. "S y M base cuadrada para poste L o R en excavación tipo $B, en suelo $A ($L(%C)/$M(%D)/$N(%F))."
+- [ ] 1. "Se establece una cimentación rectangular tipo S o M para el poste L o R en una zona de desmonte del tipo $B, sobre un terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 2. "El terreno $A ($L(%C)/$M(%D)/$N(%F)) recibe una cimentación rectangular de los tipos S o M para el poste L o R en un desmonte de tipo $B." — _phi4:latest_
+- [ ] 3. "Se realiza la cimentación rectangular de los tipos S o M para los postes L o R en un desmonte del tipo $B, ubicada en un terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 4. "Un terreno $A ($L(%C)/$M(%D)/$N(%F)) cuenta con una cimentación rectangular de tipo S o M para postes L o R en un desmonte del tipo $B." — _phi4:latest_
+- [ ] 5. "En terreno $A, se utiliza una cimentación rectangular de poste L o R para S y M, en desmonte tipo $B, con dimensiones $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 6. "La cimentación rectangular de poste L o R para S y M se emplea en un terreno $A, en desmonte tipo $B, teniendo las medidas $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 7. "En el desmonte tipo $B, se aplica una cimentación rectangular de poste L o R para S y M en terreno $A (con dimensiones $L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 8. "Se implementa una cimentación rectangular de poste L o R para S y M en terreno $A, específicamente en desmonte tipo $B, con las dimensiones $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 9. "Cimentación S y M en forma de rectángulo para postes L o R sobre un terreno desmontado tipo $B, en suelo $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 10. "Una cimentación de tipo S y M en geometría rectangular se coloca para postes L o R en una zona de desmonte tipo $B, sobre terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 11. "Se dispone de cimentación rectangular tipo S y M para postes L o R, situada en un desmonte del tipo $B, en el terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 12. "Cimentación rectangular de los modelos S y M para postes L o R, instalada en un desmonte tipo $B, que abarca terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 13. "Se realiza la cimentación rectangular de poste L o R en desmonte tipo $B, en terreno $A, con especificaciones de $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la cimentación rectangular de poste L o R en el desmonte tipo $B, en terreno $A, especificando $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 15. "Cimentación rectangular de poste L o R en desmonte tipo $B, realizada en terreno $A, seguida de los estándares $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 16. "Terreno $A, cimentación rectangular de poste L o R en desmonte tipo $B, incluso en suelo $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 17. "Cimentación S y M para poste tipo L o R en desmonte $B, aplicable en terreno $A, con especificaciones $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
+- [ ] 18. "La cimentación S y M para postes tipo L o R en desmonte tipo $B, incluyendo condiciones de terreno $A, con las características $L(%C), $M(%D), y $N(%F)." — _qwen2.5:14b_
+- [ ] 19. "Desmonte tipo $B, con cimentación rectangular S y M para poste L o R, destinada para terrenos $A, especificando $L(%C), $M(%D), y $N(%F)." — _qwen2.5:14b_
+- [ ] 20. "Cimentación S y M para poste L o R en desmonte tipo $B, en terreno $A con especificaciones ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 21. "Instalación de cimentación S y M para poste L o R en desmonte tipo $B, en terreno $A y condiciones ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 22. "Cimentación de tipo S y M para poste L o R, en desmonte tipo $B, terreno $A y especificaciones ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
+- [23] near_duplicate_of_kept
 
 ## RESUMEN template (OED060$)
 _Used in 1 concept(s): OED060$_
 
-- [ ] 1. "S y M fundación cuadrangular para poste L o R en terraplén de clase $B, en suelo $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 2. "S y M base cuadrada para poste L o R en terraplén de tipo $B, en terreno $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 3. "S y M estructura de base rectangular para poste L o R en terraplén de categoría $B, en suelo $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 4. "S y M soporte cuadrangular para poste L o R en terraplén de tipo $B, en terreno $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 5. "S y M base de poste L o R con forma rectangular en terraplén de clase $B, en suelo $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 6. "S y M fundación de poste L o R con forma cuadrada en terraplén de tipo $B, en terreno $A ($L(%C)/$M(%D)/$N(%F))."
+- [ ] 1. "Se implementa la cimentación rectangular de poste L o R para estructuras S y M en un terraplén tipo $B, situado en un terreno $A (con valores $L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 2. "En el terraplén tipo $B, se establece la cimentación rectangular de poste L o R, adaptada para estructuras S y M sobre un terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 3. "La cimentación rectangular de poste L o R, diseñada para las estructuras S y M, se configura en un terraplén tipo $B, en condiciones de terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 4. "Se dispone de una cimentación rectangular de poste L o R para las estructuras S y M, en un terraplén del tipo $B, ubicado en el terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 5. "Cimentación rectangular S y M para poste L o R sobre terraplén tipo $B, situado en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 6. "Terreno $A (con $L(%C)/$M(%D)/$N(%F)) aloja la cimentación rectangular S y M para poste L o R en terraplén tipo $B." — _phi4:latest_
+- [ ] 7. "En terreno $A ($L(%C)/$M(%D)/$N(%F)), se encuentra la cimentación rectangular S y M para poste L o R en terraplén tipo $B." — _phi4:latest_
+- [ ] 8. "Cimentación rectangular S y M de poste L o R, ubicada en terraplén tipo $B, en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 9. "La cimentación rectangular para postes L o R, S y M, se ubica en el terraplén tipo $B, sobre el terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 10. "Terraplén tipo $B acoge la cimentación rectangular de postes L o R, categoría S y M, en el terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 11. "En el terreno $A ($L(%C)/$M(%D)/$N(%F)), se encuentra la cimentación rectangular de postes L o R, de tipo S y M, en terraplén $B." — _phi4:latest_
+- [ ] 12. "Se realiza la cimentación rectangular de poste L o R en terraplén tipo $B, en terreno $A, con especificaciones $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 13. "Para la cimentación rectangular de poste L o R en terraplén tipo $B, se definen las características del terreno $A, con parámetros $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la cimentación rectangular de poste L o R en terraplén tipo $B, con consideración a las condiciones del terreno $A, especificadas en $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 15. "La cimentación rectangular de poste L o R se ejecuta en terraplén tipo $B, teniendo en cuenta las características del terreno $A, que se detallan en $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 16. "S y M cimentación rectangular para poste L o R en terraplén tipo $B, incluido en terreno $A, con las características de $L(%C), $M(%D) y $N(%F)" — _qwen2.5:14b_
+- [ ] 17. "Cimentación S y M rectangular para poste L o R en terraplén tipo $B, con especificaciones de terreno $A, que incluyen $L(%C), $M(%D) y $N(%F)" — _qwen2.5:14b_
+- [ ] 18. "Rectangular cimentación S y M de poste L o R en terraplén tipo $B, en terreno $A, con detalles de $L(%C), $M(%D) y $N(%F)" — _qwen2.5:14b_
+- [ ] 19. "Cimentación rectangular tipo S y M para poste L o R en terraplén $B, con aspectos del terreno $A, comprendiendo $L(%C), $M(%D) y $N(%F)" — _qwen2.5:14b_
+- [ ] 20. "Fundación S y M en forma rectangular para postes L o R sobre terraplén $B, con características del suelo $A y especificaciones de relleno $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
+- [ ] 21. "Implementación de cimentación S y M en estructura rectangular para estacas L o R en terraplén tipo $B, considerando las condiciones geológicas $A y los parámetros de relleno $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
+- [ ] 22. "Instalación de cimentación rectangular S y M para postes L o R en terraplén tipo $B, con análisis del terreno $A, y relleno especificado en $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
+- [ ] 23. "Provisión de cimentación S y M en forma rectangular para postes L o R en terraplén tipo $B, con base en características del terreno $A, y detalles de relleno $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [11] near_duplicate_of_kept
 
 ## RESUMEN template (OED010$)
 _Used in 1 concept(s): OED010$_
 
-- [ ] 1. "Cimentación rectangular de S y M en desmonte tipo $B, sobre terreno $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 2. "Cimentación rectangular para S y M en desmonte tipo $B, ubicada en terreno $A ($L(%C)/$M(%D)/$N(%F))."
-- [ ] 3. "Cimentación de tipo rectangular para S y M en desmonte clasificado como $B, en terreno $A ($L(%C)/$M(%D)/$N(%F))."
+- [ ] 1. "Se realiza cimentación rectangular S y M sobre un desmonte tipo $B, en condiciones de terreno $A (con proporciones $L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 2. "En terreno $A, se efectúa la cimentación rectangular S y M en un desmonte clasificado como tipo $B (dimensionado en $L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 3. "Cimentación rectangular de S y M que se lleva a cabo en un desmonte tipo $B, sobre terreno $A con características $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 4. "Se implementa la cimentación rectangular S y M en un desmonte de tipo $B, en un terreno $A (con especificaciones $L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 5. "Cimentación rectangular S y M en desmonte de tipo $B, sobre terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 6. "En terreno $A ($L(%C)/$M(%D)/$N(%F)), se encuentra la cimentación rectangular S y M en desmonte tipo $B." — _phi4:latest_
+- [ ] 7. "Se instala cimentación rectangular S y M en el desmonte de tipo $B, ubicado en el terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 8. "Desmonte del tipo $B para cimentación rectangular S y M, ubicado en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 9. "Cimiento rectangular S y M en terreno $A con desmonte $B ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 10. "Terreno $A ($L(%C)/$M(%D)/$N(%F)) con cimentación rectangular S y M en desmonte tipo $B." — _phi4:latest_
+- [ ] 11. "En desmonte $B se dispone cimentación rectangular S y M en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 12. "Se realiza la cimentación rectangular en desmonte tipo $B, en terreno $A, con especificaciones del suelo como $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 13. "Se ejecuta la cimentación rectangular en desmonte del tipo $B, en suelo $A, caracterizado por las condiciones $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 14. "Proporcionada la cimentación rectangular en desmonte tipo $B, en terreno $A, con las características geológicas $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 15. "Se ha llevado a cabo la cimentación rectangular en desmonte del tipo $B, en terreno $A, con especificaciones del terreno que incluyen $L(%C), $M(%D) y $N(%F)." — _qwen2.5:14b_
+- [ ] 16. "Terreno $A, S y M cimentación rectangular en desmonte tipo $B, incluido en la composición geológica: ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 17. "S y M cimentación rectangular en desmonte tipo $B, en el contexto del terreno $A, caracterizado por su estructura geológica: ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 18. "S y M cimentación rectangular en desmonte tipo $B, con las especificaciones del terreno $A que incluyen: ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 19. "S y M cimentación rectangular en desmonte tipo $B, con la información geológica de terreno $A, detallada en los niveles: ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [1] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [2] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [3] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- [6] near_duplicate_of_kept
 
 ## RESUMEN template (OED160$)
 _Used in 1 concept(s): OED160$_
 
-- [ ] 1. "S y M estructura de cimentación rectangular en desmonte de tipo $B, sobre terreno $A, equipada con esperas roscadas($L(%C)/$M(%D)/$N(%F))."
-- [ ] 2. "Cimentación rectangular S y M en desmonte tipo $B, ubicada en terreno $A, con esperas roscadas($L(%C)/$M(%D)/$N(%F))."
+- [ ] 1. "Se realiza la cimentación de tipo S y M en forma rectangular en desmonte tipo $B, sobre terreno $A con la inclusión de esperas roscadas ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 2. "Cimentación de tipo S y M rectangular situada en un desmonte tipo $B, en un terreno $A, equipada con esperas roscadas ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 3. "Se efectúa una cimentación rectangular de tipo S y M en un desmonte tipo $B, en terreno $A, y se incorporan esperas roscadas ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 4. "Cimentación de tipo S y M en formato rectangular ejecutada en un desmonte tipo $B, sobre un terreno $A, provista de esperas roscadas ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 5. "Cimentación rectangular de tipo S y M en desmonte $B, situada en terreno $A y equipada con esperas roscadas($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 6. "En terreno $A, la cimentación rectangular de tipo S y M está en desmonte $B, incluyendo esperas roscadas($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 7. "Cimentación rectangular de tipo S y M en desmonte $B, en terreno $A, que incluye esperas roscadas($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 8. "La cimentación rectangular de tipo S y M se encuentra en desmonte $B, en un terreno $A, y cuenta con esperas roscadas($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 9. "Cimentación tipo S y M en forma rectangular, situada en desmonte categoría $B, sobre terreno $A, contando con esperas roscadas ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 10. "Se encuentra la cimentación rectangular S y M en desmonte clasificado como $B, en terreno $A, con esperas roscadas ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 11. "Implementación de cimentación rectangular tipo S y M en desmonte tipo $B, sobre terreno $A, incorporando esperas roscadas ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 12. "Cimentación rectangular tipo S y M en desmonte clasificado $B, en terreno $A, con inclusión de esperas roscadas ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 13. "En desmonte tipo $B, se realiza la cimentación rectangular de S y M en terreno $A, con esperas roscadas ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 14. "Se configura la cimentación rectangular de S y M en desmonte tipo $B, sobre terreno $A, utilizando esperas roscadas ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 15. "S y M cimentación rectangular en terreno $A, en desmonte tipo $B, con esperas roscadas ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 16. "S y M cimentación rectangular en terreno $A, con esperas roscadas ($L(%C)/$M(%D)/$N(%F)), en desmonte tipo $B." — _qwen2.5:14b_
+- [ ] 17. "S y M cimentación rectangular en terreno $A, en desmonte tipo $B. Incluye esperas roscadas ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 18. "Implementación de cimentación rectangulada tipo S y M en excavación tipo $B, sobre suelo $A, integrando esperas con rosca ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 19. "Instalación de fundación rectangulada para S y M en desmonte de tipo $B, en suelo $A, con tornillos de anclaje ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 20. "Proyecto de estructura portante en desmonte tipo $B, sobre terreno $A, con elementos de anclaje con rosca ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 21. "Configuración de bastidor rectangulada de S y M en excavación tipo $B, sobre suelo $A, con mecanismos de anclaje roscados ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
+- [18] near_duplicate_of_kept
 
 ## RESUMEN template (OED020$)
 _Used in 2 concept(s): OED020$, OED170$_
 
-- [ ] 1. "Cimentación rectangular de S y M en terraplén tipo $B, sobre terreno $A ($L(%C)/$M(%D)/$N(%F))"
+- [ ] 1. "Se realiza cimentación rectangular de tipo $B y $A en terraplén, con dimensiones de $L(%C)/$M(%D)/$N(%F)" — _phi4:latest_
+- [ ] 2. "Para el terraplén tipo $B y terreno $A, se ejecuta cimentación rectangular con medidas de $L(%C)/$M(%D)/$N(%F)" — _phi4:latest_
+- [ ] 3. "En terraplén de tipo $B y terreno $A, se lleva a cabo cimentación rectangular de $L(%C)/$M(%D)/$N(%F)" — _phi4:latest_
+- [ ] 4. "Cimentación rectangular se implementa en terraplén tipo $B, sobre terreno $A, dimensionado a $L(%C)/$M(%D)/$N(%F)" — _phi4:latest_
+- [ ] 5. "Cimentación rectangular S y M en terraplén de tipo $B, sobre un terreno $A ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 6. "Cimentación rectangular S y M en terraplén tipo $B, ubicada en terreno $A ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 7. "En el terreno $A ($L(%C)/$M(%D)/$N(%F)), se presenta cimentación rectangular tipo S y M en terraplén $B" — _phi4:latest_
+- [ ] 8. "Cimentación rectangular del tipo S y M en terraplén de tipo $B, ubicado en terreno $A ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 9. "Cimentación rectangular S y M se implementa en terraplén $B, con terreno $A ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 10. "Se realiza la cimentación rectangular en terraplén tipo $B, sobre terreno $A ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 11. "Se ha ejecutado la cimentación rectangular en terraplén tipo $B, en terreno $A ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 12. "La cimentación rectangular en terraplén tipo $B se ha llevado a cabo en terreno $A ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 13. "Cimentación rectangular en terraplén tipo $B que se efectúa sobre terreno $A ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 14. "Fundación tipo $B en terraplén, con cimentación rectangular en terreno $A, incluido el conjunto de condiciones geotécnicas ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 15. "Configuración de fundación en terraplén tipo $B, caracterizada por una cimentación rectangular y especificada para terreno $A, con las definiciones geotécnicas ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 16. "Cimentación de tipo $B, con sección rectangular en terraplén, destinada a terreno $A, incluyendo las especificaciones de condiciones geotécnicas ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 17. "Estructura de terraplén con cimentación de tipo $B, especificada para terreno $A, y que incluye las condiciones geotécnicas ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 18. "Construcción de cimentación rectangular tipo S y M en terraplén de la variante $B, aplicada sobre terreno $A, con especificaciones de suelo $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
+- [ ] 19. "Fundación rectangular tipo S y M de terraplén según especificación $B, en terreno $A, con características de suelo $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
+- [ ] 20. "Instalación de cimentación rectangular S y M en terraplén tipo $B, sobre terreno $A, con detalles de suelo $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
+- [ ] 21. "Proyecto de cimentación rectangular de tipo S y M para terraplén $B, en terreno $A, con condiciones de suelo $L(%C), $M(%D), $N(%F)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [6] near_duplicate_of_kept
+- [8] near_duplicate_of_kept
+- [10] near_duplicate_of_kept
 
 ## RESUMEN template (OED070$)
 _Used in 1 concept(s): OED070$_
 
-- [ ] 1. "Cimentación rectangular tipo $B para anclaje en terreno $A, dimensiones $L(%C)/$M(%D)/$N(%F)."
-- [ ] 2. "Anclaje mediante cimentación rectangular tipo $B en terreno $A, con medidas $L(%C)/$M(%D)/$N(%F)."
-- [ ] 3. "Cimentación rectangular tipo $B para anclaje, adecuada para terreno $A, con medidas $L(%C)/$M(%D)/$N(%F)."
+- [ ] 1. "Se instala cimentación rectangular tipo $B en el anclaje, adaptada para el terreno $A caracterizado por $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 2. "La cimentación rectangular de tipo $B se emplea en el anclaje, diseñada específicamente para el terreno $A cuyas características son $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 3. "Para anclaje, se proporciona cimentación rectangular del tipo $B, apta para el terreno $A con propiedades $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 4. "Se ha diseñado una cimentación rectangular de tipo $B para asegurar el anclaje en un terreno $A que presenta $L(%C)/$M(%D)/$N(%F)." — _phi4:latest_
+- [ ] 5. "Para anclaje, se utiliza la cimentación rectangular tipo $B S y M, adaptada al terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 6. "Cimentación rectangular tipo $B S y M, dedicada al anclaje, en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 7. "Para anclaje en terreno $A ($L(%C)/$M(%D)/$N(%F)), se emplea la cimentación rectangular tipo $B S y M." — _phi4:latest_
+- [ ] 8. "Construcción de cimentación rectangular tipo $B destinada a anclajes, ubicada en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 9. "Instalación de estructura cimentada rectangular, tipo $B, adecuada para anclajes, en suelo $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 10. "Para anclaje, se emplea cimentación rectangular del tipo $B, situada en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 11. "Se dispone de cimentación rectangular tipo $B para anclajes, en terreno $A ($L(%C)/$M(%D)/$N(%F))." — _phi4:latest_
+- [ ] 12. "Se establece una cimentación rectangular tipo $B para la estabilización estructural, en terreno $A con especificaciones de resistencia y permeabilidad correspondientes a $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 13. "Se requiere la implementación de una fundación rectangular tipo $B para asegurar la estabilidad del sistema, en un terreno clasificado como $A, caracterizado por las propiedades de resistencia a la compresión, aditividad y fluencia dadas por $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 14. "Se emplea una cimentación rectangular tipo $B para el anclaje en terreno $A, cuyas condiciones de resistencia y comportamiento geotécnico están determinadas por los valores de $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 15. "Se propone la utilización de una estructura de cimentación rectangular tipo $B para la estabilización del sistema en terreno $A, con especificaciones de resistencia a la compresión, capacidad de carga y permeabilidad indicadas en las medidas $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 16. "Estructura anclada tipo $B para sujeción, en terreno $A, con especificaciones técnicas $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 17. "Base anclable tipo $B, adecuada para terreno $A, con detalles técnicos $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 18. "Sujeción en terreno $A, utilizando cimentación rectangular tipo $B, con especificaciones $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
+- [ ] 19. "Fijación en terreno $A, mediante cimentación rectangular tipo $B, que sigue los parámetros técnicos $L(%C)/$M(%D)/$N(%F)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- qwen2.5:14b/R2 [0] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R2 [2] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- [7] near_duplicate_of_kept
 
 ## RESUMEN template (OEE010$)
 _Used in 1 concept(s): OEE010$_
 
-- [ ] 1. "Suministro e instalación de placas de anclaje para catenaria en viaductos, con perforaciones in-situ, de $A mm de tamaño. ($L(%B)/$M(%C)/$N(%D))."
+- [ ] 1. "Se suministran placas de anclaje de catenaria para viaductos con taladros realizados in-situ, cuya dimensión es de $A mm. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 2. "Placas de anclaje de catenaria situadas en viaductos, con taladros in-situ, de dimensión $A mm se describen. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 3. "Placas de anclaje de catenaria en viaductos, con taladros in-situ y de dimensión $A mm, son suministradas. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 4. "Se describen placas de anclaje de catenaria en viaductos, caracterizadas por taladros in-situ y de dimensión $A mm. ($L(%B)/$M(%C)/$N(%D))." — _phi4:latest_
+- [ ] 5. "Placas de anclajes de catenaria en viaductos con taladros hechos in-situ, con una dimensión de $A mm. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 6. "En viaductos, placa de anclajes de catenaria con taladros in-situ de $A mm de dimensión. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 7. "Placas de anclajes de catenaria con taladros in-situ para viaductos, de $A mm de dimensión. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 8. "Placas de anclajes de catenaria en viaductos con taladros in-situ. Dimensión de $A mm. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 9. "S y m de anclajes de catenaria en estructuras viaductales con perforaciones in-situ, de $A mm de tamaño. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 10. "S y m de placas de anclaje para catenaria en viaductos, con perforaciones in-situ, de $A mm de medida. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 11. "Suministro de placas de anclaje de catenaria en viaductos, con perforaciones in-situ, de $A mm de extensión. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 12. "S y m de componentes de anclaje de catenaria en viaductos con orificios realizados in-situ, de $A mm de magnitud. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 13. "Se determina la sección y masa de placas de anclajes para catenaria en viaductos con taladros realizados en el lugar, de $A mm de dimensión. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 14. "Se establece la sección y masa de placas de anclajes de catenaria en viaductos con taladros in-situ, de $A mm de dimensión. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 15. "Con taladros en campo, de $A mm de diámetro, incluye placa de anclajes de catenaria en viaductos, con especificaciones técnicas de ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 16. "Incluye taladros en sitio para placas de anclajes de catenaria en viaductos, con dimensiones de $A mm, y especificaciones técnicas ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 17. "Incluye placas de anclajes de catenaria para viaductos con taladros en campo, con dimensiones de $A mm, y especificaciones ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 18. "Señalización y masa de placas de anclaje para catenaria en estructuras elevadas, con perforaciones en el lugar mismo, de $A mm de medida. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 19. "Señalización y masa de elementos de fijación de catenaria en viaductos, con orificios hechos en el lugar, de $A mm de tamaño. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 20. "Señalización y masa de placas de anclajes para catenaria en viaductos, con perforaciones en el sitio, de $A mm de medida. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 21. "Señalización y masa de placas de anclajes de catenaria en viaductos, con perforaciones en el lugar, de $A mm de dimensión. ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
+- [18] near_duplicate_of_kept
 
 ## RESUMEN template (OEA180$)
 _Used in 1 concept(s): OEA180$_
 
-- [ ] 1. "Desembocadura de los cables en la conducción enterrada de hormigón sin arqueta ($L(%A)/-/-)"
-- [ ] 2. "Emergencia de los cables de la canalización hormigonada sin arqueta ($L(%A)/-/-)"
-- [ ] 3. "Extracción de los cables de la conducción de hormigón sin arqueta ($L(%A)/-/-)"
-- [ ] 4. "Salida de los cables de la conducción subterránea de hormigón sin arqueta ($L(%A)/-/-)"
-- [ ] 5. "Despacho de los cables de la canalización de hormigón sin arqueta ($L(%A)/-/-)"
-
-_Dropped by validation gates (not reviewable):_
-- [5] near_duplicate_of_kept
+- [ ] 1. "Emergencia de los conductos de cable en la conducción enterrada de hormigón sin cámara ($L(%A)/-/-)" — _phi4:latest_
+- [ ] 2. "Se produce la salida de los conductos del cable en la canaleta de hormigón sin cobertura de arqueta ($L(%A)/-/-)" — _phi4:latest_
+- [ ] 3. "Se ejecuta la salida de los conductores de cable por la conducción subterránea de hormigón sin capuchón ($L(%A)/-/-)" — _phi4:latest_
+- [ ] 4. "Se instala la salida de los cables en la canaleta de hormigón sin tapa de arqueta ($L(%A)/-/-)" — _phi4:latest_
+- [ ] 5. "Extracción de cableado de la estructura enterrada de hormigón sin tapa ($L(%A)/-/-)" — _phi4:latest_
+- [ ] 6. "Salida del cableado de la conducción enterrada sin tapa de hormigón ($L(%A)/-/-)" — _phi4:latest_
+- [ ] 7. "Extracción de cables de la conducción hormigonada sin arqueta ($L(%A)/-/-)" — _phi4:latest_
+- [ ] 8. "Extracción de cables de la estructura de hormigón sin cubierta ($L(%A)/-/-)" — _phi4:latest_
+- [ ] 9. "Emergencia de los conductos de fibra óptica de la canaleta de concreto sin arquetas ($L(%A)/-/-)" — _phi4:latest_
+- [ ] 10. "Proyección de los conductos eléctricos desde la canalización de cemento sin tapadero ($L(%A)/-/-)" — _phi4:latest_
+- [ ] 11. "Desarrollo de los cables desde la conducción de cemento careciendo de arquetón ($L(%A)/-/-)" — _phi4:latest_
+- [ ] 12. "Proyección de los conductores desde el conducto cementoso sin tapa de acceso ($L(%A)/-/-)" — _phi4:latest_
+- [ ] 13. "Distribución de los conductos de la conducción enterrada sin estructura de contención ($L(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 14. "Salida de los conductos de la canalización de hormigón sin arqueto ($L(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 15. "Distribución de los cables mediante salida de la canalización de hormigón sin contención ($L(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 16. "Se realiza la salida de los cables de la conducción enterrada de hormigón sin estructura de contención ($L(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 17. "Sin arqueta, salida de los conductos desde la conducción enterrada de hormigón ($L(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 18. "Salida de conductos sin arqueta desde la canalización de hormigón ($L(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 19. "Salida desde la conducción enterrada de hormigón de los conductos, sin arqueta ($L(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 20. "Sin arqueta, desembocadura de los cables desde la canalización de hormigón ($L(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 21. "Desembocadura de los cables en la conducción enterrada sin arqueta ($L(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 22. "Terminación de los conductos en la tubería de hormigón prefabricada sin arqueta ($L(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 23. "Conexión de los cables mediante salida en la conducción de hormigón sin arqueta ($L(%A)/-/-)" — _qwen2.5:14b_
+- [ ] 24. "Distribución de los conductores en el canal de hormigón prefabricado sin arqueta ($L(%A)/-/-)" — _qwen2.5:14b_
 
 ## RESUMEN template (OEA130$)
 _Used in 1 concept(s): OEA130$_
 
-- [ ] 1. "Rehabilitación de conducto viejo colocado ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 2. "Restauración de canalización previa montada ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 3. "Renovación de conducto previamente colocado ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 4. "Reparación de canalización vieja montada ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 5. "Mantenimiento de conducto antiguo colocado ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 6. "Conservación de canalización previa instalada ($L(%A)/$M(%B)/$N(%C))"
+- [ ] 1. "Se ha realizado el saneamiento de la canaleta antigua ($L(%A)/$M(%B)/$N(%C)) $L(%A)/$M(%B)/$N(%C)" — _phi4:latest_
+- [ ] 2. "Se ha ejecutado el saneamiento en la canaleta antigua instalada ($L(%A)/$M(%B)/$N(%C)) $L(%A)/$M(%B)/$N(%C)" — _phi4:latest_
+- [ ] 3. "Ejecución del saneamiento de la canaleta antigua ($L(%A)/$M(%B)/$N(%C)) $L(%A)/$M(%B)/$N(%C)" — _phi4:latest_
+- [ ] 4. "Procedió el saneamiento de la canaleta antigua que se encontraba instalada ($L(%A)/$M(%B)/$N(%C)) $L(%A)/$M(%B)/$N(%C)" — _phi4:latest_
+- [ ] 5. "Restauración de conductos viejos instalados ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Rehabilitación de conducciones preexistentes ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 7. "Mantenimiento de conductos históricos ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 8. "Recuperación de tuberías antiguas en funcionamiento ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 9. "Procedimiento de restauración de la conducción vieja puesta en marcha ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 10. "Operación de mantenimiento sobre la canalización preinstalada ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 11. "Rehabilitación de la tubería histórica puesta en servicio ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 12. "Actualización de la instalación de la vieja canalización ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 13. "Se realiza el saneamiento de la canaleta antigua instalada ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "La canaleta antigua instalada ($L(%A)/$M(%B)/$N(%C)) será saneada" — _qwen2.5:14b_
+- [ ] 15. "Se lleva a cabo el saneamiento de la canaleta antigua instalada ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Saneamiento de la conducción antigua $L(%A)/$M(%B)/$N(%C), incluido en la canalización existente" — _qwen2.5:14b_
+- [ ] 17. "Incluido en la canalización existente, se realiza el saneamiento de la conducción antigua $L(%A)/$M(%B)/$N(%C)" — _qwen2.5:14b_
+- [ ] 18. "Se ejecuta el saneamiento de la conducción antigua $L(%A)/$M(%B)/$N(%C), siendo parte del saneamiento general de la canalización instalada" — _qwen2.5:14b_
+- [ ] 19. "Saneamiento general de la canalización instalada, incluyendo la conducción antigua $L(%A)/$M(%B)/$N(%C)" — _qwen2.5:14b_
+- [ ] 20. "Trabajo de limpieza y mantenimiento en la conducción antigua instalada ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 21. "Intervención técnica para la renovación de la canalización antigua instalada ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 22. "Servicio de mantenimiento para la conducción antigua instalada ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 23. "Revisión y saneamiento de la conducción de drenaje antigua instalada ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [15] near_duplicate_of_kept
 
 ## RESUMEN template (OEA110$)
 _Used in 1 concept(s): OEA110$_
 
-- [ ] 1. "Cierre de conducto de hormigón. ($L(%A)/ - / $N(%B))"
-- [ ] 2. "Obturación de canalización de hormigón. ($L(%A)/ - / $N(%B))"
-- [ ] 3. "Cierre de conducto hormigonado. ($L(%A)/ - / $N(%B))"
-- [ ] 4. "Obturación de conducción de hormigón. ($L(%A)/ - / $N(%B))"
-- [ ] 5. "Cierre de canalización de hormigón. ($L(%A)/ - / $N(%B))"
-- [ ] 6. "Obturación de conducto de hormigón. ($L(%A)/ - / $N(%B))"
+- [ ] 1. "Se realiza el sellado de las canaletas de hormigón. ($L(%A)/ - / $N(%B))" — _phi4:latest_
+- [ ] 2. "Se llevará a cabo el sellado de las canalizaciones de hormigón. ($L(%A)/ - / $N(%B))" — _phi4:latest_
+- [ ] 3. "El sellado de los conductos de hormigón se efectúa. ($L(%A)/ - / $N(%B))" — _phi4:latest_
+- [ ] 4. "Se efectúa el aseguramiento del sellado en canaletas de hormigón. ($L(%A)/ - / $N(%B))" — _phi4:latest_
+- [ ] 5. "Sellado para la canaleta de hormigón. ($L(%A)/ - / $N(%B))" — _phi4:latest_
+- [ ] 6. "Canaleta de hormigón sellada. ($L(%A)/ - / $N(%B))" — _phi4:latest_
+- [ ] 7. "Para canaleta de hormigón: Sellado. ($L(%A)/ - / $N(%B))" — _phi4:latest_
+- [ ] 8. "Sellado destinado a canaleta de hormigón. ($L(%A)/ - / $N(%B))" — _phi4:latest_
+- [ ] 9. "Protección de recoveco de hormigón armado. ($L(%A)/ - / $N(%B))" — _phi4:latest_
+- [ ] 10. "Impedir filtración en conducto de hormigón. ($L(%A)/ - / $N(%B))" — _phi4:latest_
+- [ ] 11. "Protección contra el ingreso de humedad en canal de hormigón. ($L(%A)/ - / $N(%B))" — _phi4:latest_
+- [ ] 12. "Aislamiento de recinto de hormigón. ($L(%A)/ - / $N(%B))" — _phi4:latest_
+- [ ] 13. "Sellado de la canalización de hormigón. ($L(%A)/ - / $N(%B))" — _qwen2.5:14b_
+- [ ] 14. "Se realiza la estanqueidad en la canalización de hormigón. ($L(%A)/ - / $N(%B))" — _qwen2.5:14b_
+- [ ] 15. "Se aplica sellado en la canalización de hormigón. ($L(%A)/ - / $N(%B))" — _qwen2.5:14b_
+- [ ] 16. "Sellado en la canalización de hormigón ejecutado. ($L(%A)/ - / $N(%B))" — _qwen2.5:14b_
+- [ ] 17. "Sellado de canalización de hormigón, ($L(%A)/ - / $N(%B))" — _qwen2.5:14b_
+- [ ] 18. "Procedimiento de sellado para canaleta de hormigón, ($L(%A)/ - / $N(%B))" — _qwen2.5:14b_
+- [ ] 19. "Intervención para sellado de conducto de hormigón, ($L(%A)/ - / $N(%B))" — _qwen2.5:14b_
+- [ ] 20. "Sellado de travesaño de hormigón, ($L(%A)/ - / $N(%B))" — _qwen2.5:14b_
+- [ ] 21. "Sellado en tubería enterrada de concreto. ($L(%A)/ - / $N(%B))" — _qwen2.5:14b_
+- [ ] 22. "Sellado de tubería de hormigón prefabricada. ($L(%A)/ - / $N(%B))" — _qwen2.5:14b_
+- [ ] 23. "Sellado de conducción de hormigón. ($L(%A)/ - / $N(%B))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [22] near_duplicate_of_kept
 
 ## RESUMEN template (OEA040$)
 _Used in 1 concept(s): OEA040$_
 
-- [ ] 1. "Provisión e instalación de canal $A con $B cavidades de composite-PTR de 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 2. "Entrega e implementación de conducto $A con $B huecos de composite-PTR de 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 3. "Suministro e instalación de canalización $A con $B celdas de composite-PTR de 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))"
+- [ ] 1. "Se suministrará y ejecutará la canaleta $A con $B alveolos de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 2. "La canaleta $A se suministrará y ejecutará, incorporando $B alveolos de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 3. "Se llevará a cabo el suministro y ejecución de la canaleta $A, con $B alveolos de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 4. "El suministro y la ejecución de la canaleta $A con $B alveolos de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F)) se realizarán" — _phi4:latest_
+- [ ] 5. "Suministro y ejecución de conducto $A que cuenta con $B huecos de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 6. "Ejecución y provisión de canaleta $A dotada de $B cavidades de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 7. "Instalación y suministro de canaleta $A con $B células en composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 8. "Provisión y puesta en marcha de canaleta $A que incluye $B compartimentos de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 9. "Llevar a cabo el suministro y la instalación de la canaleta $A con $B alveolos de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 10. "Provisionar y aplicar canaleta $A dotada de $B alveolos de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 11. "Realizar el suministro y colocación de canaleta $A con $B alveolos de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 12. "Implementar el suministro y la instalación de la canaleta $A con $B alveolos de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 13. "Se suministra y se ejecuta la canaleta $A con $B alveolos de composite-PTR 1000x264x266 mm., con dimensiones ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 14. "La canaleta $A, con $B alveolos de composite-PTR 1000x264x266 mm., se suministrará y se ejecutará en las dimensiones ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 15. "Se llevará a cabo el suministro y la ejecución de la canaleta $A, equipada con $B alveolos de composite-PTR 1000x264x266 mm., con las medidas ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 16. "Se realizará el suministro y la instalación de la canaleta $A, dotada de $B alveolos de composite-PTR 1000x264x266 mm., según las especificaciones ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 17. "Ejecución y suministro de canaleta $A que incluye $B alveolos de composite-PTR 1000x264x266 mm., con dimensiones ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 18. "Suministro e instalación de canaleta $A, que cuenta con $B alveolos de composite-PTR 1000x264x266 mm., (medidas: $L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 19. "Instalación y entrega de canaleta $A, la cual incorpora $B alveolos de composite-PTR 1000x264x266 mm., con medidas indicativas ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 20. "Suministro e implementación de canaleta $A, con la inclusión de $B alveolos de composite-PTR 1000x264x266 mm., en dimensión ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 21. "Instalación y provisión de canalización $A con $B cavidades de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 22. "Entrega y montaje de canaleta $A con $B ranuras de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 23. "Ejecución y suministro de canalización $A con $B huecos de composite-PTR 1000x264x266 mm. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
+- [23] near_duplicate_of_kept
 
 ## RESUMEN template (OEB070$)
 _Used in 1 concept(s): OEB070$_
 
-- [ ] 1. "Provisión y montaje de $A conducto(s) de polietileno de diámetro nominal 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 2. "Suministro y colocación de $A conducto(s) de polietileno de 110 mm 5 At. con topo bajo vías ($L(%B)/$M(%C)/$N(%D))"
+- [ ] 1. "Canalización suministrada y ejecutada de $A conductos de polietileno 110 mm de diámetro nominal 5 At. bajo vías ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 2. "Se realizará el suministro y la instalación de canalización de $A conductos de polietileno 110 mm con diámetro de 5 At. bajo vías ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 3. "Ejecución de suministro de canalización mediante $A conductos de polietileno 110 mm de 5 At. bajo vías ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 4. "La canalización de $A conductos de polietileno 110 mm, de diámetro 5 At., será suministrada y ejecutada bajo vías ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 5. "Instalación y provisión de conducción enterrada de $A conducto(s) de polietileno 110 mm 5 At. con superficie bajo las vías ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 6. "Suministro y despliegue de conductos enterrados fabricados con $A tubo(s) de polietileno 110 mm 5 At. con terminación bajo las vías ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 7. "Ejecución e instalación de sistema de conductos de $A tubo(s) de polietileno 110 mm 5 At. acabado bajo las vías ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 8. "Instalación y provisión de conductos encauzados de $A tubo(s) de polietileno 110 mm 5 At. con acabado bajo las vías ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 9. "Se proveerá y se instalará la conducción enterrada de $A tubo(s) de polietileno 110 mm 5 At. con topografía bajo las vías ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 10. "Se realizará la instalación de conducción de $A tubo(s) de polietileno 110 mm 5 At., con distribución subviaria ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 11. "Ejecución del suministro e instalación de conducción de $A tubo(s) de polietileno 110 mm 5 At., bajo el nivel de las vías ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 12. "Instalación de conducción subviaria a través del suministro de $A tubo(s) de polietileno 110 mm 5 At., con especificaciones ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 13. "Suministro y montaje de conducción enterrada de $A tubo(s) de polietileno 110 mm 5 At., incluida la instalación de topo bajo vías ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 14. "Instalación y suministro de $A conducto(s) de polietileno de diámetro nominal 110 mm 5 At., con colocación subviaria ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 15. "Colocación y provisión de $A tubo(s) de polietileno de diámetro 110 mm 5 At., con instalación subviaria ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R2 [0] quantities_not_conserved: numbers [('110', 1), ('5', 1)]→[('110', 1), ('5', 2)], units [('at', 1), ('mm', 1)]→[('at', 2), ('mm', 1)]
+- phi4:latest/R2 [1] quantities_not_conserved: numbers [('110', 1), ('5', 1)]→[('110', 1), ('5', 2)], units [('at', 1), ('mm', 1)]→[('at', 2), ('mm', 1)]
+- phi4:latest/R2 [2] quantities_not_conserved: numbers [('110', 1), ('5', 1)]→[('110', 1), ('5', 2)], units [('at', 1), ('mm', 1)]→[('at', 2), ('mm', 1)]
+- phi4:latest/R2 [3] quantities_not_conserved: numbers [('110', 1), ('5', 1)]→[('110', 1), ('5', 2)], units [('at', 1), ('mm', 1)]→[('at', 2), ('mm', 1)]
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['Q2'] extra_or_dup=[]
+- qwen2.5:14b/R3 [3] sentinels_not_preserved: missing=['Q2'] extra_or_dup=[]
+- [13] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
 
 ## RESUMEN template (OEB100$)
 _Used in 1 concept(s): OEB100$_
 
-- [ ] 1. "Provisión y montaje de conducción enterrada en túnel para interfono ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 2. "Suministro y colocación de conductos en túnel para intercomunicación ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 3. "Provisión y montaje de tubería en túnel para interfono ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 4. "Suministro y ejecución de conducción subterránea en túnel para interfono ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 5. "Provisión y colocación de conductos en túnel para comunicación intercom ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 6. "Suministro y montaje de tubería en túnel para intercomunicación ($L(%A)/$M(%B)/$N(%C))"
+- [ ] 1. "Realización del suministro y puesta en marcha de la conducción para interfono en galería ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 2. "Se llevará a cabo el abastecimiento y la instalación de la tubería de comunicación en túnel ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 3. "Instalación de la red de conductos para interfonía en túnel, incluyendo su suministro ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 4. "Se suministrará y se instalará la conducción para intercomunicación en galería ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 5. "Ejecución y suministro de conducción enterrada en túnel para acceso interfono ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Suministro y ejecución de conductos para acceso interfono en túnel ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 7. "Ejecución de canalización en túnel para acceso interfono incluido suministro ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 8. "Fase de entrega e implementación de la conducción subterránea para interfono de acceso a túnel ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 9. "Elaboración y despliegue de la instalación de conductos para interfono de túnel de entrada ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 10. "Provisión y puesta en marcha de la red de tubos para intercomunicación en entrada de túnel ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 11. "Entrega y operación de conducción enterrada para interfono de acceso a túnel ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 12. "Se llevará a cabo la instalación y suministro de la conducción enterrada en el túnel de acceso al interfono ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 13. "El suministro y la ejecución de la canalización para el túnel de acceso al interfono ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "Se realizará la canalización en el túnel para el acceso al interfono ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 15. "Instalación y provisión de la conducción enterrada en el túnel de acceso al interfono ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Instalación y provisión de conductos en el túnel de acceso interfono, incluido el sistema de $L(%A)/$M(%B)/$N(%C)" — _qwen2.5:14b_
+- [ ] 17. "Suministro e implementación de conducción en túnel de acceso interfono, compuesto por $L(%A)/$M(%B)/$N(%C)" — _qwen2.5:14b_
+- [ ] 18. "Ejecución del suministro de conductos en el túnel de acceso interfono, para el sistema $L(%A)/$M(%B)/$N(%C)" — _qwen2.5:14b_
+- [ ] 19. "Instalación y montaje de conducción en túnel para sistema de acceso interfono ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 20. "Colocación y provisión de conducción para sistema de acceso interfono en túnel ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 21. "Realización de instalación de conducción en túnel destinada a sistema de acceso interfono ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [7] near_duplicate_of_kept
+- [16] near_duplicate_of_kept
+- [21] near_duplicate_of_kept
 
 ## RESUMEN template (OEB120$)
 _Used in 1 concept(s): OEB120$_
 
-- [ ] 1. "Provisión y montaje de entrada de conducción de $A conductos en arqueta o cámara ya existente ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 2. "Suministro y colocación de entrada de conductos de $A en arqueta o cámara preexistente ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 3. "Provisión y montaje de acceso de conducción de $A conductos en arqueta o cámara ya instalada ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 4. "Suministro y montaje de acceso de conductos de $A en arqueta o cámara preinstalada ($L(%B)/$M(%C)/$N(%D))"
+- [ ] 1. "Se llevará a cabo el montaje y suministro de una entrada a la red de conductos de $A tubos situada en una arqueta o cámara preexistente ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 2. "Instalación y provisión de un conducto de acceso a la canalización de $A tubos en una arqueta o cámara ya existente ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 3. "Se suministrará y ejecutará una conexión de acceso a la red de tuberías con $A tubos en una cámara o arqueta ya existente ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 4. "Se efectuará el montaje y suministro de una abertura de tubería para la red de $A tubos ubicada en una arqueta o cámara ya instalada ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 5. "Ejecución y suministro de entrada para conducción enterrada de $A conductos en la arqueta o cámara preexistente ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 6. "Instalación y provisión de entrada para la canalización de $A conductos dentro de una arqueta o cámara ya existente ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 7. "Suministro de entrada para el sistema de conducción de $A tubos en arqueta o cámara existente, con las especificaciones ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 8. "Ejecución del suministro de acceso para la canalización con $A conductos en la arqueta o cámara existente ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 9. "Provisión y montaje de conexión para tubería de $A conductos dentro de arqueta o cámara ya existente ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 10. "Entrega e instalación de conexión para la conducción de $A tuberías en arqueta o cámara ya colocada ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 11. "Suministro y montaje de acceso a la conductividad de $A tubos dentro de la arqueta o cámara preinstalada ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 12. "Fase de suministro y montaje de conexión para una canalización de $A conductos en una arqueta o cámara ya instalada ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 13. "Se suministrará y ejecutará la embocadura de canalización de $A tubos en arqueta o cámara existente ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 14. "Se llevará a cabo la instalación y suministro de embocadura de canalización de $A tubos en arqueta o cámara existente ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 15. "Se efectuará el suministro y la ejecución de la embocadura de canalización de $A tubos en arqueta o cámara existente ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 16. "Ejecución del suministro y colocación de embocadura para la conducción enterrada de $A en arqueta o cámara preexistente, incluido ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 17. "Colocación y suministro de la embocadura de conducción enterrada de $A en arqueta o cámara existente, incluso ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 18. "Ejecución del suministro para la colocación de embocadura de conducción enterrada de $A, en arqueta o cámara existente ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 19. "Instalación del suministro y colocación de embocadura para la conducción enterrada de $A en arqueta o cámara existente, incluyendo ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 20. "Suministro e instalación de embocadura para canalización de $A conductos en arqueta o cámara ya existente ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 21. "Provisión y configuración de embocadura para canalización de $A tubos en arqueta o cámara previamente instalada ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 22. "Suministro y ajuste de embocadura para canalización de $A tuberías en arqueta o cámara ya disponible ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 23. "Suministro e integración de embocadura para canalización de $A tubos en arqueta o cámara ya presente ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
 
 ## RESUMEN template (OEC070$)
 _Used in 1 concept(s): OEC070$_
 
-- [ ] 1. "Provisión y realización de sustitución de $A ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 2. "Suministro y puesta en marcha de reemplazo de $A ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 3. "Abastecimiento y ejecución de sustitución de $A ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 4. "Suministro y realización de cambio de $A ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 5. "Provisión y ejecución de sustitución de $A ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 6. "Abastecimiento y puesta en marcha de reemplazo de $A ($L(%B)/$M(%C)/$N(%D))"
+- [ ] 1. "Reposición y suministro de $A realizados, incluyendo $L(%B), $M(%C) y $N(%D)" — _phi4:latest_
+- [ ] 2. "Se procederá a suministrar y ejecutar la reposición de $A, contemplando $L(%B), $M(%C) y $N(%D)" — _phi4:latest_
+- [ ] 3. "La reposición de $A se suministrará y ejecutará, considerando $L(%B), $M(%C) y $N(%D)" — _phi4:latest_
+- [ ] 4. "Se llevará a cabo el suministro y la ejecución de la reposición de $A, incluyendo $L(%B), $M(%C) y $N(%D)" — _phi4:latest_
+- [ ] 5. "Ejecución del suministro y reposición de $A (mediante $L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 6. "Suministro y ejecución de la reposición de $A (usando $L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 7. "Reposición de $A a través del suministro y ejecución ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 8. "Ejecución del suministro para la reposición de $A (incluyendo $L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 9. "Reposición y despliegue del $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 10. "Operación de suministro y reemplazo de $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 11. "Suministro y acción de reposición de $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 12. "Implementación y suministro de reposición de $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 13. "Se suministrará y ejecutará la reposición de $A (cada $L(%B), cada $M(%C), cada $N(%D))" — _qwen2.5:14b_
+- [ ] 14. "El suministro y la ejecución de la reposición de $A (cada $L(%B), cada $M(%C), cada $N(%D))" — _qwen2.5:14b_
+- [ ] 15. "Se realizará el suministro y la ejecución de la reposición de $A, con intervalos de $L(%B), $M(%C) y $N(%D)" — _qwen2.5:14b_
+- [ ] 16. "La reposición de $A se suministrará y ejecutará con intervalos de $L(%B), $M(%C) y $N(%D)" — _qwen2.5:14b_
+- [ ] 17. "Ejecución de reposición y suministro de $A, incluyendo ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 18. "Incluye suministro y ejecución de reposición de $A ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 19. "Suministro y puesta en marcha de reposición de $A, junto con ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 20. "Suministro y realización de reposición de $A, con ($L(%B)/$M(%C)/$N(%D))," — _qwen2.5:14b_
+- [ ] 21. "Suministro e instalación de reposición para $A (correspondiente a $L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 22. "Ejecución y suministro de reposición para $A, conforme a $L(%B)/$M(%C)/$N(%D)" — _qwen2.5:14b_
+- [ ] 23. "Reposición de $A mediante su suministro y puesta en marcha (de acuerdo con $L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 24. "Instalación y suministro para la reposición de $A, acorde a las especificaciones $L(%B)/$M(%C)/$N(%D)" — _qwen2.5:14b_
 
 ## RESUMEN template (OEC080$)
 _Used in 1 concept(s): OEC080$_
 
-- [ ] 1. "Provisión y realización del sellado de arqueta o cámara de inspección. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 2. "Suministro y aplicación de sellado para arqueta o cámara de control. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 3. "Provisión y aplicación del sellado de arqueta o cámara de control. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 4. "Suministro y ejecución del sellado de arqueta o cámara de inspección. ($L(%A)/$M(%B)/$N(%C))"
+- [ ] 1. "Se realiza el suministro y la ejecución del sellado de la arqueta o cámara de registro. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 2. "Ejecución del sellado de la arqueta o cámara de registro, incluyendo el suministro. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 3. "Se llevará a cabo el sellado de la arqueta o cámara de registro, incluyendo el suministro. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 4. "Se proporciona el sellado de la arqueta o cámara de registro y su ejecución. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 5. "Ejecución y provisión de sellado en arqueta o cámara de registro. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Sellado de arqueta o cámara de registro, incluido su suministro y ejecución. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 7. "El sellado de arqueta o cámara de registro contempla tanto el suministro como la ejecución. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 8. "Suministro y ejecución de sellado para arqueta o cámara de registro. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 9. "Operación de entrega y aplicación de sellado para arqueta o cámara de registro. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 10. "Implementación y provisión del sellado de la arqueta o cámara de registro. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 11. "Suministro y aplicación de sellado en arqueta o cámara de inspección. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 12. "Entrega y colocación del sellado para arqueta o cámara de medición. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 13. "Se suministra y ejecuta el sellado de la arqueta o cámara de registro. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "El sellado de la arqueta o cámara de registro es suministrado y ejecutado. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 15. "Suministro e instalación del sellado para la arqueta o cámara de registro. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Suministro y ejecución del sellado para arqueta o cámara de registro, incluido ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 17. "Suministro e instalación del sellado para arqueta o cámara de registro, incluso ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 18. "Incluyendo ($L(%A)/$M(%B)/$N(%C)), se realiza el suministro y la ejecución del sellado para arqueta o cámara de registro" — _qwen2.5:14b_
+- [ ] 19. "Instalación y provisión de sellado para arqueta o cámara de registro. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 20. "Entrega y realización de sellado para la arqueta o cámara de registro. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
+- [17] near_duplicate_of_kept
+- [22] near_duplicate_of_kept
+- [23] near_duplicate_of_kept
 
 ## RESUMEN template (OEA070$)
 _Used in 1 concept(s): OEA070$_
 
-- [ ] 1. "Provisión e instalación de $A para conducto compuesto-PTR ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 2. "Entrega e instalación de $A para canal compuesto-PTR ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 3. "Suministro e instalación de $A para conducto compuesto-PTR ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 4. "Provisión y colocación de $A para canal compuesto-PTR ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 5. "Suministro y colocación de $A para conducto compuesto-PTR ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 6. "Entrega y montaje de $A para canal compuesto-PTR ($L(%B)/$M(%C)/$N(%D))"
+- [ ] 1. "Montaje e instalación de $A para ducto compuesto PTR, incluidas las especificaciones $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 2. "Provisión e instalación de $A, para conducción composite PTR con características $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 3. "Instalación y distribución de $A, destinada a ducto compuesto PTR, considerando $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 4. "Montaje y suministro de $A para canaleta compuesta PTR, que incluye $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 5. "Entrega e instalación de $A destinados a conductos composite-PTR ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 6. "Provisión y colocación de $A para sistemas de conducción composite-PTR ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 7. "Suministro e implementación de $A en estructuras composite-PTR ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 8. "Acomodo y provisión de $A para el diseño composite-PTR ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 9. "Se efectuará el suministro y la instalación de $A para la estructura de canalización composite-PTR ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 10. "Se realiza la entrega y colocación de $A para el sistema de conductos composite-PTR ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 11. "Se lleva a cabo la provisión y montaje de $A para la tubería composite-PTR ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 12. "Se ejecuta el suministro e instalación de $A para el canal composite-PTR ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 13. "Instalación y entrega de $A para canaleta composite-PTR ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 14. "Montaje e instalación de $A con canaleta composite-PTR, incluyendo ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 15. "Entrega y colocación de $A para canaleta composite-PTR, con ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 16. "Suministro e instalación de $A, con canaleta composite-PTR ($L(%B)/$M(%C)/$N(%D))." — _qwen2.5:14b_
+- [ ] 17. "Furnicio y configuración de $A en canaletas composite-PTR ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 18. "Adquisición e instalación de $A en canaletas composite-PTR ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 19. "Provisión y emplazamiento de $A en canaletas composite-PTR ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 20. "Configuración e instalación de $A en canaletas composite-PTR ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] sentinel_residue
+- phi4:latest/R1 [1] sentinel_residue
+- phi4:latest/R1 [2] sentinel_residue
+- phi4:latest/R1 [3] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
 
 ## RESUMEN template (OEC100$)
 _Used in 1 concept(s): OEC100$_
 
-- [ ] 1. "Provisión e instalación de caja de rejilla galvanizada de $A. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 2. "Entrega e instalación de caja de rejilla galvanizada de $A. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 3. "Suministro e instalación de caja de rejilla galvanizada de $A. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 4. "Provisión y colocación de caja de rejilla galvanizada de $A. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 5. "Entrega y colocación de caja de rejilla galvanizada de $A. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 6. "Suministro y colocación de caja de rejilla galvanizada de $A. ($L(%B)/$M(%C)/$N(%D))"
+- [ ] 1. "Provisión y colocación de soporte de cuadrícula galvanizada del modelo $A. (Medición $L(%B)/Tamaño $M(%C)/Dimensiones $N(%D))" — _phi4:latest_
+- [ ] 2. "Se suministra y se instala una bandeja de rejilla galvanizada de tipo $A. (Especificación $L(%B)/Calibre $M(%C)/Escala $N(%D))" — _phi4:latest_
+- [ ] 3. "Se lleva a cabo la entrega y ensamblaje de una estructura de rejilla galvanizada $A. (Parámetros $L(%B)/Mediciones $M(%C)/Niveles $N(%D))" — _phi4:latest_
+- [ ] 4. "Ejecución del abastecimiento y colocación de un soporte de rejilla recubierta de galvánico $A. (Datos $L(%B)/Mediciones $M(%C)/Dimensiones $N(%D))" — _phi4:latest_
+- [ ] 5. "Instalación y entrega de bandeja para rejilla de tipo galvanizado $A. Incluido $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 6. "Bandeja de rejilla galvanizada $A a suministrar y montar. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 7. "Suministro con montaje de bandeja de rejilla $A, galvanizada. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 8. "Suministro e instalación de bandeja para rejilla galvanizada $A. Incluso $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 9. "Entrega e instalación de plataforma de rejilla con recubrimiento de zinc de $A. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 10. "Provisión e instalación de estructura de rejilla recubierta de zinc de $A. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 11. "Suministro e integración de base de rejilla con acabado galvanizado de $A. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 12. "Proporcionamiento e instalación de caja de rejilla con recubrimiento de zinc de $A. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 13. "Se suministra y se monta la bandeja de rejilla galvanizada de $A. Se lleva a cabo la instalación según especificaciones ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 14. "Se realiza el montaje y suministro de bandeja de rejilla galvanizada de $A, conforme se indican las especificaciones ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 15. "Se ejecuta el montaje y suministro de bandeja de rejilla galvanizada de $A. Se siguen los estándares indicados ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 16. "La bandeja de rejilla galvanizada de $A se monta y se suministra. Se cumplen las condiciones ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 17. "Suministro e instalación de bandeja de rejilla galvanizada de $A, incluido ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 18. "Incluido ($L(%B)/$M(%C)/$N(%D)), se proporcionará y montará bandeja de rejilla galvanizada de $A" — _qwen2.5:14b_
+- [ ] 19. "Proporcionar y ejecutar montaje de bandeja de rejilla galvanizada de $A, con ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 20. "Se incluye el suministro y colocación de bandeja de rejilla galvanizada de $A, junto con ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 21. "Instalación y provisión de bandeja de malla galvanizada tipo $A. (Modelo $L(%B)/Versión $M(%C)/Configuración $N(%D))" — _qwen2.5:14b_
+- [ ] 22. "Suministro e instalación de bandeja de rejilla galvanizada de tipo $A. (Nivel $L(%B)/Versión $M(%C)/Configuración $N(%D))" — _qwen2.5:14b_
+- [ ] 23. "Montaje y entrega de bandeja de rejilla galvanizada especificación $A. (Nivel $L(%B)/Versión $M(%C)/Configuración $N(%D))" — _qwen2.5:14b_
+- [ ] 24. "Suministro e instalación de bandeja de rejilla galvanizada modelo $A. (Versión $L(%B)/Edición $M(%C)/Configuración $N(%D))" — _qwen2.5:14b_
 
 ## RESUMEN template (OEA030$)
 _Used in 1 concept(s): OEA030$_
 
-- [ ] 1. "Provisión e instalación de canal UNEX o similar de dimensiones 1000x150x60 mm, destinado a la conexión con puesto de control o sistema de videovigilancia local. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 2. "Entrega e instalación de conducto UNEX o similar de 1000x150x60 mm, para conexión a puesto de control o sistema de videovigilancia local. ($L(%A)/$M(%B)/$N(%C))"
+- [ ] 1. "Se proporciona y se instala una canaleta UNEX o similar de 1000x150x60 mm, destinada a la conexión con un puesto de mando o un sistema de videovigilancia local. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 2. "Canaleta UNEX o equivalente de 1000x150x60 mm se suministra y se monta para la conexión de un puesto de mando o sistema de videovigilancia local. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 3. "La instalación y el suministro de una canaleta UNEX o similar de 1000x150x60 mm están destinados a la conexión con un puesto de mando o un sistema de videovigilancia local. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 4. "Se efectúa el suministro y la instalación de un canal UNEX o equivalente de 1000x150x60 mm para la acometida de un puesto de mando o del sistema de videovigilancia local. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 5. "Instalación y entrega de conductos UNEX o similares de dimensiones 1000x150x60 mm, destinados para la conexión a sala de control o a sistema de gestión visual periférica. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Suministro e instalación de gaveta UNEX o similar de 1000x150x60 mm, para conexión a sala de control o a sistema de videovigilancia local. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 7. "Suministro y colocación de gaveta UNEX o similar de 1000x150x60 mm, para enlace a sala de control o a sistema de vídeo supervisión local. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 8. "Para conexión a sala de control o sistema de gestión de vídeo local, se suministra y monta canaleta UNEX o equivalente de 1000x150x60 mm. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 9. "$L(%A) y $M(%B) de canal de alimentación UNEX o similar de 1000x150x60 mm, destinado a conexión con puesto de mando o sistema de control visual local. ($N(%C))" — _phi4:latest_
+- [ ] 10. "Se suministra y se monta canaleta UNEX o equivalente de 1000x150x60 mm, con el propósito de realizar la conexión a puesto de mando o al sistema videográfico de mando local. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 11. "Se proporciona y se instala canaleta UNEX o equivalente de dimensiones 1000x150x60 mm, para la conexión a puesto de mando o al sistema videográfico de mando local. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 12. "Se efectúa la instalación y el montaje de canaleta UNEX o equivalente de tamaño 1000x150x60 mm, destinado para la conexión con puesto de mando o con sistema videográfico de mando local. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 13. "Se lleva a cabo el suministro y la instalación de canaleta UNEX o equivalente de 1000x150x60 mm, para el enlace con puesto de mando o con sistema videográfico de mando local. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "Montaje y suministro de canal UNEX o de igual especificación, de 1000x150x60 mm, para alimentación de puesto de control o sistema de vigilancia local. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 15. "Instalación y entrega de canal UNEX o de características similares de 1000x150x60 mm, para conexión a puesto de mando o sistema de videovigilancia local. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Suministro e instalación de carril UNEX o de igual calidad de 1000x150x60 mm, con destino a alimentación de puesto de control o sistema de videocomando local. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 17. "Suministro y montaje de canalización UNEX o equivalente de 1000x150x60 mm, para alimentación del puesto de mando o sistema de videovigilancia local. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 18. "Instalación y proveimiento de canal UNEX o similar con las especificaciones de 1000x150x60 mm, destinada para la alimentación eléctrica hacia el puesto de mando o al sistema de videovigilancia local. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 19. "Furnecimiento y configuración de canal UNEX o alternativa de características 1000x150x60 mm, utilizado para la conexión al puesto de mando o sistema de videocontrol local. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 20. "Entrega y configuración de canal UNEX o artículo similar según 1000x150x60 mm, para la alimentación del puesto de mando o sistema de videocontrol de mando local. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 21. "Proporcionar y poner en marcha la instalación de canal UNEX o alternativa con especificaciones de 1000x150x60 mm, encaminada para la alimentación eléctrica al puesto de mando o sistema de videovigilancia local. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R3 [1] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R3 [2] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R3 [3] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
 
 ## RESUMEN template (OEC120$)
 _Used in 1 concept(s): OEC120$_
 
-- [ ] 1. "Provisión e instalación de complemento de caja de registro de composite-PRFV tipo $A ya existente. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 2. "Entrega e instalación de aditamento de caja de registro de composite-PRFV tipo $A ya instalado. ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 3. "Suministro e instalación de accesorio de caja de registro de composite-PRFV tipo $A ya existente. ($L(%B)/$M(%C)/$N(%D))"
-
-_Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [ ] 1. "Montaje y provisión de un suplemento para arqueta de registro de composite-PRFV de tipo $A preexistente. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 2. "Con el suministro y la instalación de un suplemento para arqueta de registro de composite-PRFV tipo $A ya existente. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 3. "Se efectuará la provisión y colocación de un suplemento de arqueta de registro de composite-PRFV tipo $A existente. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 4. "Instalación y abastecimiento de un suplemento para arqueta de registro de composite-PRFV tipo $A existente. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 5. "Montaje y provisión del suplemento de arqueta de registro compuesta-PRFV tipo $A existente. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 6. "Provisto y montado el suplemento para arqueta de registro de composite-PRFV tipo $A existente. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 7. "Montaje y suministro del suplemento para arqueta de registro de composite-PRFV tipo $A existente están incluidos. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 8. "El suplemento de arqueta de registro de composite-PRFV tipo $A existente es suministrado y montado. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 9. "Provisión e instalación de complemento para caja de registro de composite-PRFV tipo $A ya instalada. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 10. "Abastecimiento e integración del accesorio de caja de registro de composite-PRFV tipo $A preexistente. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 11. "Entrega e implementación del añadido para caja de registro de composite-PRFV de tipo $A ya existente. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 12. "Aportación e ensamblaje del anexo para caja de registro de composite-PRFV del tipo $A preinstalado. ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 13. "Se suministra y se monta un suplemento de la arqueta de registro de composite-PRFV tipo $A. Se especifican las dimensiones ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo el suministro y montaje de un suplemento para la arqueta de registro de composite-PRFV tipo $A. Se detallan las dimensiones ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 15. "Se realiza la instalación de un suplemento en la arqueta de registro de composite-PRFV tipo $A. Se indican los detalles ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 16. "Se efectúa el suministro de un suplemento para la arqueta de registro de composite-PRFV tipo $A. Se mencionan las dimensiones ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 17. "Instalación y provisión de un suplemento de arqueta de registro con composite-PRFV tipo $A. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 18. "Suministro e instalación de un suplemento de arqueta de registro composite-PRFV tipo $A, existente. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 19. "Se suministrará e instalará un suplemento de arqueta de registro con composite-PRFV tipo $A. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 20. "Instalación y suministro de un suplemento de arqueta de registro con composite-PRFV tipo $A, incluyendo la fecha específica de entrega: ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 21. "Instalación y configuración de adicional para contenedor de registros composite-PRFV tipo $A. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 22. "Configuración e instalación del complemento de estación de registro composite-PRFV tipo $A. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 23. "Adición e instalación de contenedor de registros composite-PRFV tipo $A. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 24. "Incorporación y puesta en marcha del suplemento para estación de registro composite-PRFV tipo $A. ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
 
 ## RESUMEN template (OEA080$)
 _Used in 1 concept(s): OEA080$_
 
-- [ ] 1. "Provisión e instalación de cubierta para conducto de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 2. "Entrega e instalación de tapa para canalización hormigonada tipo $A ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 3. "Suministro e instalación de cubreconducción para canaleta de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 4. "Entrega e instalación de tapa para conducto de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 5. "Suministro e instalación de cubierta para canaleta hormigonada tipo $A ($L(%B)/$M(%C)/$N(%D))"
+- [ ] 1. "Instalación y provisión de cubierta para caja de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 2. "Colocación y entrega de portón para conducto de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 3. "Instalación y provisión de cubre para canalización de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 4. "Provisión y colocación de portón para caja de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 5. "Instalación y provisión de cubierta para canalización hormigonada de la clase $A (en tamaños $L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 6. "Provisión y colocación de cubre-cañería para conducción enterrada de hormigón tipo $A, en dimensiones $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 7. "Suministro y ensamblaje de tapón para conducto de hormigón tipo $A, especificado en tamaños $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 8. "Suministro y colocación de cierre para canal hormigonada tipo $A, en medidas $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 9. "Entrega y ensamblaje de cierre para rejilla de hormigón de tipo $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 10. "Provisión y ensamblaje de cerramiento para conducto de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 11. "Suministro y colocación de cierre para canal de hormigón de tipo $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 12. "Provisión y emplazamiento de portón para rejilla de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))" — _phi4:latest_
+- [ ] 13. "Se suministra y se monta tapa para canaleta de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 14. "Se llevará a cabo el suministro y montaje de tapa para canaleta de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 15. "El suministro y montaje de tapa para canaleta de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D)) se efectuará" — _qwen2.5:14b_
+- [ ] 16. "Se montará y se suministrará la tapa para canaleta de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 17. "Disposición y entrega de tapa para canalización en hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 18. "Furnición y puesta en obra de tapa para conducción en hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 19. "Colocación y suministro de tapa para canalización en hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
+- qwen2.5:14b/R2 [0] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R2 [2] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- [16] near_duplicate_of_kept
 
 ## RESUMEN template (OEA100$)
 _Used in 1 concept(s): OEA100$_
 
-- [ ] 1. "Cobertura de conducto de $A. ( - / -/ $N(%B))"
-- [ ] 2. "Cierre de canal de $A. ( - / -/ $N(%B))"
-- [ ] 3. "Sellado de conducto de $A. ( - / -/ $N(%B))"
-- [ ] 4. "Cobertura de canal de $A. ( - / -/ $N(%B))"
-- [ ] 5. "Cierre de conducto de $A. ( - / -/ $N(%B))"
-- [ ] 6. "Sellado de canal de $A. ( - / -/ $N(%B))"
+- [ ] 1. "Cierre de la canaleta correspondiente a $A. ( - / -/ $N(%B))" — _phi4:latest_
+- [ ] 2. "Se ha efectuado el sellado de la canaleta de $A. ( - / -/ $N(%B))" — _phi4:latest_
+- [ ] 3. "El cierre correspondiente a la canaleta de $A se muestra ( - / -/ $N(%B))." — _phi4:latest_
+- [ ] 4. "Procede el sellado realizado en la canaleta de $A. ( - / -/ $N(%B))" — _phi4:latest_
+- [ ] 5. "Cierre de conductos de $A. ( - / -/ $N(%B))" — _phi4:latest_
+- [ ] 6. "( - / -/ $N(%B)) Tapado de conductos de $A." — _phi4:latest_
+- [ ] 7. "Cierre de conductos, para $A, ( - / -/ $N(%B))." — _phi4:latest_
+- [ ] 8. "Para $A, tapado de conductos ( - / -/ $N(%B))." — _phi4:latest_
+- [ ] 9. "Sellado de conducto para $A. ( - / -/ $N(%B))" — _phi4:latest_
+- [ ] 10. "Cierre del colector destinado a $A. ( - / -/ $N(%B))" — _phi4:latest_
+- [ ] 11. "Conclusión de la conducción para $A. ( - / -/ $N(%B))" — _phi4:latest_
+- [ ] 12. "Finalización del conducto para $A. ( - / -/ $N(%B))" — _phi4:latest_
+- [ ] 13. "Se realiza el tapado de cañería para $A. ( - / -/ $N(%B))" — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la canalización de $A, cubierta de hormigón ( - / -/ $N(%B))" — _qwen2.5:14b_
+- [ ] 15. "Se efectúa el sellado y protección de la canaleta para $A, manteniendo las especificaciones ( - / -/ $N(%B))" — _qwen2.5:14b_
+- [ ] 16. "Se conduce la canaleta para $A y se procede a su encofrado, con las condiciones previstas ( - / -/ $N(%B))" — _qwen2.5:14b_
+- [ ] 17. "Cubrimiento de la canalización de $A. (incluido - / -/ $N(%B))" — _qwen2.5:14b_
+- [ ] 18. "( - / -/ $N(%B)) para el cubrimiento de la canaleta de $A." — _qwen2.5:14b_
+- [ ] 19. "Tapado para la canaleta de $A. ( - / -/ $N(%B))" — _qwen2.5:14b_
+- [ ] 20. "( - / -/ $N(%B)) en el tapado de la canalización de $A." — _qwen2.5:14b_
+- [ ] 21. "Sellado de la conducción subterránea para $A. ( - / -/ $N(%B))" — _qwen2.5:14b_
+- [ ] 22. "Cubrimiento de la tubería enterrada para $A. ( - / -/ $N(%B))" — _qwen2.5:14b_
+- [ ] 23. "Sellado de la canalización de $A. ( - / -/ $N(%B))" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [23] near_duplicate_of_kept
 
 ## RESUMEN template (OEC110$)
 _Used in 1 concept(s): OEC110$_
 
-- [ ] 1. "Operaciones de demolición y reconstrucción de cuneta con un ancho máximo de 250 cm. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 2. "Actividades de desmantelamiento y reinstalación de cuneta con un ancho no superior a 250 cm. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 3. "Procedimientos de desmantelamiento y reemplazo de cuneta con un ancho de hasta 250 cm. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 4. "Servicios de desmantelamiento y reinstalación de cuneta con un ancho de hasta 250 cm. ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 5. "Ejecución de demolición y reconstrucción de cuneta con un ancho no mayor a 250 cm. ($L(%A)/$M(%B)/$N(%C))"
+- [ ] 1. "Se efectuarán trabajos de demolición y reconstrucción de cuneta con un ancho máximo de 250 cm. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 2. "Se llevarán a cabo las tareas de eliminación y reinstalación de cuneta que no excedan los 250 cm de ancho. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 3. "Se realizarán los procedimientos de destrucción y reinstalación de cuneta de hasta 250 cm de ancho máximo. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 4. "Se ejecutarán operaciones de demolición y reemplazo de cuneta de no más de 250 cm de ancho. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 5. "Procedimientos de demolición y reconstrucción de cuneta con anchura máxima de hasta 250 cm. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Operaciones de desmantelamiento y reinstalación de cuneta con un ancho de hasta 250 cm. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 7. "Tareas de demolición y reemplazo de cuneta, con un máximo de 250 cm de ancho. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 8. "Servicios de derribo y colocación de cuneta con un ancho de hasta 250 cm. ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 9. "Se realizarán trabajos de demolición y reemplazo de cunetas con un ancho máximo de 250 cm. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 10. "Se llevarán a cabo los trabajos necesarios para la eliminación y reconstrucción de cunetas que pueden tener hasta un ancho de 250 cm. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 11. "Se va a proceder a la rotura y reposición de las cunetas con un ancho no superior a 250 cm. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 12. "Se efectuarán los trabajos relacionados con la destrucción y renovación de cunetas que no excedan un ancho de 250 cm. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 13. "Se realizan roturas y reemplazos de cuneta, con un ancho máximo de 250 cm. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "Roturas y reemplazos de cuneta, donde el ancho máximo permitido es de hasta 250 cm. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 15. "Incluye trabajos de rotura y reposición de cunetas, con un ancho máximo de 250 cm. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Trabajos incluyen roturas y reposiciones de cunetas, donde el ancho máximo es de 250 cm. ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
+- phi4:latest/R2 [0] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- phi4:latest/R2 [1] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- phi4:latest/R2 [2] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- phi4:latest/R2 [3] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P1', 'P2'] extra_or_dup=[]
+- qwen2.5:14b/R3 [1] sentinels_not_preserved: missing=['P1', 'P2'] extra_or_dup=[]
+- qwen2.5:14b/R3 [2] sentinels_not_preserved: missing=['P1', 'P2'] extra_or_dup=[]
+- qwen2.5:14b/R3 [3] sentinels_not_preserved: missing=['P1', 'P2'] extra_or_dup=[]
 
 ## RESUMEN template (OEB110$)
 _Used in 1 concept(s): OEB110$_
 
-- [ ] 1. "Conducto de PVC de diámetro nominal 110 mm para evacuación de arquetas ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 2. "Conducción de PVC de 110 mm de diámetro para desagüe de arquetas ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 3. "Tubos de PVC de diámetro 110 mm para drenaje de arquetas ($L(%A)/$M(%B)/$N(%C))"
-- [ ] 4. "Tubería de PVC de 110 mm para desagüe de arquetas ($L(%A)/$M(%B)/$N(%C))"
+- [ ] 1. "Conducto de PVC con un diámetro de 110 mm para el drenaje de arquetas, especificaciones ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 2. "Para drenaje de arquetas, se utiliza tubería de PVC de diámetro 110 mm, detalles ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 3. "Se provee tubería de PVC con diámetro 110 mm para el drenaje de arquetas, categorizada como ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 4. "Canalización de PVC, de 110 mm de diámetro, diseñada para el drenaje de arquetas, especificada como ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 5. "Conducto de PVC con un diámetro nominal de 110 mm mm, diseñado para el drenaje de arquetas ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 6. "Drenaje de arqueta utilizando conducto de PVC, con un diámetro de 110 mm mm ($L(%A)/$M(%B)/$N(%C))" — _phi4:latest_
+- [ ] 7. "Conducto de PVC de diámetro nominal 110 mm para drenaje en arqueta ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 8. "Se utiliza conducto de PVC con diámetro nominal 110 mm para el drenaje en arquetas ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 9. "Se propone tubería de PVC de diámetro 110 mm para la canalización de drenaje en arquetas ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 10. "Conducción de PVC de diámetro nominal 110 mm para drenaje de arqueta, incluído en las normas ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 11. "Conducto de PVC de diámetro 110 mm para el drenaje de arqueta, según las especificaciones ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 12. "Conducción de diámetro nominal 110 mm para drenaje de arqueta, realizada en PVC y conforme a las normas ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 13. "Conducto de PVC con diámetro de 110 mm para la canalización de arqueta, según las referencias ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 14. "Elemento de conducción de PVC de diámetro 110 mm para el sistema de desagüe subterráneo ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 15. "Conducción de PVC del diámetro 110 mm para la evacuación de aguas residuales en arquetas ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 16. "Elemento tubular de PVC de diámetro nominal 110 mm para la evacuación de aguas en arquetas ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
+- [ ] 17. "Pieza de conducción de PVC, con diámetro de 110 mm para sistemas de desagüe subterráneos ($L(%A)/$M(%B)/$N(%C))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R3 [0] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- phi4:latest/R3 [1] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- phi4:latest/R3 [2] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- phi4:latest/R3 [3] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- [6] near_duplicate_of_kept
+- [7] near_duplicate_of_kept
+- [11] near_duplicate_of_kept
 
 ## RESUMEN template (OEB090$)
 _Used in 1 concept(s): OEB090$_
 
-- [ ] 1. "Conducto de acero galvanizado de $A ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 2. "Tubería de acero con recubrimiento galvanizado de $A ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 3. "Conducto de acero con recubrimiento galvanizado de $A ($L(%B)/$M(%C)/$N(%D))"
-- [ ] 4. "Tubería galvanizada de acero de $A ($L(%B)/$M(%C)/$N(%D))"
-
-_Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [ ] 1. "Se presenta un tubo de acero galvanizado de $A con especificaciones de $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 2. "Se dispone de tubos galvanizados de acero de $A, disponibles en $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 3. "Se ofrecen conductos de acero galvanizado de $A, dimensionados en $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 4. "Están disponibles tuberías de acero galvanizado de $A, con medidas $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 5. "Conducto galvanizado de acero de $A con dimensiones de $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 6. "Conducto de acero galvanizado $A con medidas $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 7. "Tubos fabricados en acero galvanizado de $A, disponibles en $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 8. "De acero galvanizado, estos tubos de $A se ofrecen en $L(%B)/$M(%C)/$N(%D)" — _phi4:latest_
+- [ ] 9. "Conducto galvanizado fabricado en acero con diámetro $A (longitud $L(%B)/material $M(%C)/norma $N(%D))" — _phi4:latest_
+- [ ] 10. "Tubo construido en acero con recubrimiento de zinc de $A (medida $L(%B)/especificación $M(%C)/estándar $N(%D))" — _phi4:latest_
+- [ ] 11. "Tubería de acero con zincado de $A (dimensiones $L(%B)/características $M(%C)/especificaciones $N(%D))" — _phi4:latest_
+- [ ] 12. "Conduit de acero recubierto de zinc de $A (longitudes $L(%B)/composición $M(%C)/certificaciones $N(%D))" — _phi4:latest_
+- [ ] 13. "Se presenta tubo galvanizado de acero con especificaciones de $A, con dimensiones de ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 14. "Se indica la disposición de tubos galvanizados de acero con características de ($L(%B)/$M(%C)/$N(%D)) y especificación $A" — _qwen2.5:14b_
+- [ ] 15. "Se describe tubo de acero galvanizado con diseño según especificación $A, con las medidas indicadas en ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 16. "Se utiliza tubo galvanizado de acero de acuerdo a la especificación $A, con las medidas de ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 17. "Conducto de acero galvanizado de $A, incluido ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 18. "Conducto galvanizado de acero de $A, con dimensiones ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 19. "Un tubo galvanizado de acero de $A, con especificaciones ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 20. "Conducto de acero galvanizado, de $A, con detalles ($L(%B)/$M(%C)/$N(%D))" — _qwen2.5:14b_
+- [ ] 21. "Elemeneto tubular de acero galvanizado de $A, con dimensiones $L(%B), $M(%C) y $N(%D)" — _qwen2.5:14b_
+- [ ] 22. "Se encuentra tubo galvanizado hecho de acero de $A, con especificaciones $L(%B), $M(%C), $N(%D)" — _qwen2.5:14b_
+- [ ] 23. "Se especifica tubo con revestimiento galvanizado de acero de $A, con medidas $L(%B), $M(%C), $N(%D)" — _qwen2.5:14b_
+- [ ] 24. "Un producto tubular de acero con galvanizado de $A, con características dimensionales $L(%B), $M(%C), $N(%D)" — _qwen2.5:14b_
 
 ## RESUMEN template (OEB190$)
 _Used in 1 concept(s): OEB190$_
 
-- [ ] 1. "Excavación para cables de $A de profundidad manual, $B, realizada en material $B. ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 2. "Fosa para cables de $A de profundidad manual, $B, en material $B. ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 3. "Hoyo para cables de $A de profundidad manual, $B, elaborado en material $B. ($L(%C)/$M(%D)/$N(%F))"
+- [ ] 1. "Se ejecuta una excavación para cables con una profundidad de $A medida manualmente, $B, utilizando material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 2. "Se ejecuta una zanja para cables, con profundidad de $A alcanzada a mano, $B, usando el material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 3. "Se lleva a cabo una zanja para cables con una profundidad de $A, medida manualmente, $B, compuesta de material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 4. "Se realiza una excavación para cables de $A de profundidad a mano, $B, en material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 5. "Conducción enterrada para cables de $A de profundidad manual, $B, realizada con material $B. ($N(%F)/$M(%D)/$L(%C))" — _phi4:latest_
+- [ ] 6. "Realizada con material $B, la zanja para cables de profundidad manual de $A, $B, ($M(%D)/$L(%C)/$N(%F))" — _phi4:latest_
+- [ ] 7. "Zanja para cables de $A de profundidad manual, $B, construida en material $B. ($L(%C)/$N(%F)/$M(%D))" — _phi4:latest_
+- [ ] 8. "En material $B, zanja para cables de $A de profundidad a mano, $B. ($N(%F)/$L(%C)/$M(%D))" — _phi4:latest_
+- [ ] 9. "Excavación manual de profundidad $A para alojar cables, con características $B, fabricada en material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 10. "Cavado manual para cableado profundo de $A, con especificaciones $B, usando material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 11. "Excavación de profundidad $A para infraestructura de cables, realizada a mano, con detalles $B, compuesta de material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 12. "Cavado manual para enterrar cables, con una profundidad de $A, características $B, realizado con material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 13. "Canalización enterrada para cables, a mano, $B, con material $B, de profundidad $A. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 14. "Excavación manual para canalización de cables a profundidad $A, tipo $B, en material $B. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 15. "Canalización enterrada para cables de tipo $B, a mano, en material $B, de profundidad $A. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 16. "Excavación manual para canalización de cables, de tipo $B, en material $B, a una profundidad de $A. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 17. "Excavación manual para enterrar conductos eléctricos, $B, en material $B, con una profundidad de $A. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 18. "Trench manual para la instalación de cables eléctricos, con especificaciones $B, en un material de $B, a una profundidad de $A. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 19. "Excavación a mano para la colocación de cableado eléctrico, con detalles técnicos $B, utilizando material $B, y una profundidad de $A. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 20. "Excavación manual para la instalación de conductos de cableado eléctrico a una profundidad de $A, con especificaciones $B, y en material $B. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P4', 'P5'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P4', 'P5'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P4', 'P5'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P4', 'P5'] extra_or_dup=[]
 
 ## RESUMEN template (OEB200$)
 _Used in 1 concept(s): OEB200$_
 
-- [ ] 1. "Excavación para cables de $A de profundidad a máquina, $B, realizada en material $B. ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 2. "Fosa para cables de $A de profundidad a máquina, $B, en material $B. ($L(%C)/$M(%D)/$N(%F))"
-- [ ] 3. "Excavación para cables de $A de profundidad a máquina, $B, con material $B. ($L(%C)/$M(%D)/$N(%F))"
+- [ ] 1. "Se realiza una excavación para cables con $A de profundidad a máquina, $B, utilizando material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 2. "Se dispone de una zanja para cables con $A de profundidad a máquina, $B, fabricada con material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 3. "Se ejecuta una zanja para cables de $A de profundidad a máquina, $B, empleando material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 4. "Se encuentra una zanja para cables con $A de profundidad a máquina, $B, en material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 5. "Conducción enterrada para cables de $A de profundidad a máquina, $B, fabricada con material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 6. "Conjunto para cables de $A de profundidad a máquina, $B, utilizando material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 7. "Para cables, zanja de profundidad a máquina $A, $B, en material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 8. "Conducción para cables de profundidad a máquina $A, $B, fabricada con material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 9. "Excavación destinada a cables de $A de profundidad a máquina, $B, utilizando material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 10. "Cavado para tuberías de $A de profundidad a máquina, $B, con $B como material. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 11. "Hendidura para cables de $A de profundidad a máquina, $B, realizada en material $B. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 12. "Perforación para cables de $A de profundidad a máquina, $B, en $B como material. ($L(%C)/$M(%D)/$N(%F))" — _phi4:latest_
+- [ ] 13. "Se realiza una zanja para la conducción de cables con una profundidad de $A a máquina, referida a $B, en material $B. Se aplican las normas ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 14. "Se excavará una zanja para los cables con una profundidad de $A a máquina, en relación con $B, utilizando el material $B. Se cumplirán los estándares ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 15. "La excavación para la conducción de los cables se llevará a cabo con una profundidad de $A a máquina, en relación con $B, usando material $B. Se cumplirán los requisitos ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 16. "Se efectuará una zanja para la instalación de cables con una profundidad de $A a máquina, referida a $B, en material $B. Se observarán las pautas ($L(%C)/$M(%D)/$N(%F))." — _qwen2.5:14b_
+- [ ] 17. "Tranque subterráneo para cables en $B, con una profundidad a máquina de $A, a $B. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 18. "Excavación para el enterramiento de cables de $A, a máquina, en el material $B, a $B. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 19. "Conducción para cables de profundidad $A a máquina, en material $B, en $B. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 20. "Instalación de zanja para cables con profundidad a máquina de $A, en $B, en material $B. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 21. "Excavación para la disposición de cables a máquina, $B, con una profundidad de $A y material $B. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 22. "Canaleta para la instalación de cables de $A de profundidad a máquina, $B, en material $B. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
+- [ ] 23. "Entubado para cables a máquina de $B, con una profundidad de $A y material $B. ($L(%C)/$M(%D)/$N(%F))" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [20] near_duplicate_of_kept
 
 ## RESUMEN template (OEE020$)
 _Used in 1 concept(s): OEE020$_
 
-- [ ] 1. "placas s y m para tirantes de anclaje en viaductos con esperas previas ($L(%A)/$M(%B)/$N(%C))."
+- [ ] 1. ""Placas s y m para anclajes de tirantes en viaductos, previamente con esperas ($L(%A)/$M(%B)/$N(%C))."" — _phi4:latest_
+- [ ] 2. ""Se disponen placas s y m para anclajes de tirantes en viaductos con esperas previas ($L(%A)/$M(%B)/$N(%C))."" — _phi4:latest_
+- [ ] 3. ""Anclajes de tirantes en viaductos con esperas previas, mediante placas s y m ($L(%A)/$M(%B)/$N(%C))."" — _phi4:latest_
+- [ ] 4. ""Para viaductos, se utilizan placas s y m en anclajes de tirantes con esperas previas ($L(%A)/$M(%B)/$N(%C))."" — _phi4:latest_
+- [ ] 5. "placas de s y m para tirantes de anclajes en viaductos con esperas previas ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 6. "para tirantes de anclajes en viaductos con esperas previas, s y m de placa ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 7. "elementos s y m de soporte para fijación de tirantes en estructuras de viaductos con zonas de retención previas ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 8. "piezas s y m para sujeción de tirantes en viaductos, con áreas de espera previas ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 9. "componentes s y m de placa para la fijación de tirantes en viaductos, incluyendo zonas de espera inicial ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 10. "placas s y m para fijación de tirantes en viaductos, considerando zonas de retención previas ($L(%A)/$M(%B)/$N(%C))." — _phi4:latest_
+- [ ] 11. "Se determinan las secciones y módulos de placas para las armaduras de anclaje en viaductos con retardos ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 12. "Se calculan los perfiles y momentos de inercia de las placas utilizadas en los tirantes de anclajes en construcciones ferroviarias con espera previa ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 13. "Se especifican los dimensiones y las resistencias de las placas que conforman los tirantes de anclaje en edificaciones ferroviarias con retardos ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 14. "Se determinan los valores de las secciones y módulos de las placas para los tirantes de anclaje en viaductos con esquema de espera ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 15. "señalamientos y marcas de placa para el sistema de anclajes en viaductos, incluso para los casos con esperas previas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 16. "marcas y señalamientos de placa para tirantes de anclajes en estructuras viarios, que incluyen esperas previas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 17. "placas con señalamientos y marcas para anclajes en viaductos, incluidos aquellos con esperas previas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 18. "señalamientos y marcas para placas de anclajes en viaductos, que abarcan casos con esperas previas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 19. "señalamientos y marcas de placa para tirantes de anclajes en viaductos con pre-esperas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 20. "líneas y módulos de placa para tirantes de anclajes en estructuras viarios con intervalos de espera ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 21. "marcajes y módulos de placa para anclajes de tirantes en viaductos con períodos de espera ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
+- [ ] 22. "referencias y especificaciones de placa para tirantes de anclaje en viaductos con pausas previas ($L(%A)/$M(%B)/$N(%C))." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
 - [5] near_duplicate_of_kept
+- [7] near_duplicate_of_kept
 
 ## TEXTO template (OEC020$)
 _Used in 1 concept(s): OEC020$_
 
-- [ ] 1. "Arqueta prefabricada de $A mm de dimensiones interiores, incluyendo la conexión de los conductos de entrada y salida, $T(%A) y posterior relleno, además del acabado y limpieza de la misma. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 1. "Se instalará una arqueta prefabricada con $A mm de dimensiones interiores, incluyendo la recepción de conductos de acometida y desagüe profundo, $T(%A), seguido de relleno posterior, junto con el acabado y limpieza. El trabajo a realizar es: $B Mantenimiento asignado: $C Las condiciones de ejecución serán: $D" — _phi4:latest_
+- [ ] 2. "La arqueta prefabricada de $A mm de dimensiones interiores será preparada para la recepción de conductos de acometida y desagüe profundo, $T(%A), seguido de relleno posterior, acabado y limpieza. El trabajo es: $B La banda de mantenimiento será: $C Las condiciones de ejecución incluyen: $D" — _phi4:latest_
+- [ ] 3. "Se dispondrá de una arqueta prefabricada con dimensiones interiores de $A mm, recibiendo los conductos de acometida y desagüe profundo, $T(%A), además de relleno posterior, acabado y limpieza. Trabajo a realizar: $B Banda de mantenimiento: $C Condiciones de ejecución a cumplir: $D" — _phi4:latest_
+- [ ] 4. "La instalación de la arqueta prefabricada de $A mm de dimensiones interiores incluirá la recepción de conductos de acometida y desagüe profundo, $T(%A), seguido de relleno posterior, acabado y limpieza. El trabajo consiste en: $B La banda de mantenimiento se asignará: $C Las condiciones de ejecución se establecen en: $D" — _phi4:latest_
+- [ ] 5. "Arqueta prefabricada con $A mm de dimensiones interiores, que incluye la conexión con conductos de entrada y salida profunda, $T(%A), seguido de un relleno y finalmente el acabado y limpieza. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 6. "Arqueta prefabricada que cuenta con $A mm de dimensiones interiores, así como la conexión con los conductos de entrada y salida profunda, $T(%A), seguido de un relleno, y el acabado y limpieza. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 7. "Arqueta prefabricada de $A mm de dimensiones interiores, que comprende la conexión con los conductos de entrada y salida profunda, $T(%A), seguida de un relleno y el acabado y limpieza de la arqueta. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 8. "Arqueta prefabricada de $A mm de medidas internas, incluyendo el ajuste para las conducciones de suministro y evacuación, $T(%A), con posterior rellenado, y culminando con el acabado y la desinfección. Labor: $B Línea de conservación: $C Normas de realización: $D" — _phi4:latest_
+- [ ] 9. "Se dispone de una arqueta elaborada con medidas interiores de $A mm, integrando la adaptación para las canalizaciones de entrada y salida, $T(%A), complementada por el relleno final, además de la finalización y saneamiento. Operación: $B Faja de mantenimiento: $C Circunstancias de implantación: $D" — _phi4:latest_
+- [ ] 10. "Se instaura una caja preconstruida con interiores de $A mm, conteniendo la incorporación de las líneas de conexión y evacuación, $T(%A), seguido de un tapado final, así como el remate y purificación. Actividad: $B Margen de preservación: $C Modus operandi: $D" — _phi4:latest_
+- [ ] 11. "Caja metálica de construcción previa que presenta una amplitud interna de $A mm, abarcando la inserción de canales de entrada y salida, $T(%A), y el ensamblaje final, acompañado del remate y depuración. Proceso: $B Zona de cuidado: $C Parámetros de implantación: $D" — _phi4:latest_
+- [ ] 12. "Se presenta la arqueta prefabricada con dimensiones interiores de $A mm, incluyendo la recepción de conductos de acometida y desague profundo, $T(%A), y el posterior relleno, así como la limpieza y acabado de la misma. Se lleva a cabo el trabajo: $B. Se establece la banda de mantenimiento: $C. Se detallan las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 13. "La arqueta prefabricada, con dimensiones interiores de $A mm, se caracteriza por incluir la recepción de conductos de acometida y de desagüe profundo, $T(%A), y el relleno posterior, así como la limpieza y acabado de la misma. Se realiza el trabajo indicado: $B. La banda de mantenimiento es: $C. Se establecen las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 14. "Se detallan los aspectos de la arqueta prefabricada con dimensiones interiores de $A mm, incluyendo la recepción de conductos de acometida y desagüe profundo, $T(%A), y el llenado posterior, así como la limpieza y el acabado de la misma. Se ejecuta el trabajo: $B. Se especifica la banda de mantenimiento: $C. Se establecen las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 15. "Se describe la arqueta prefabricada con dimensiones interiores de $A mm, la cual incluye la recepción de conductos para acometida y desague profundo, $T(%A), y el relleno posterior, así como la limpieza y el acabado de la misma. Se realiza el trabajo: $B. Se especifica la banda de mantenimiento: $C. Se establecen las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 16. "Arqueta prefabricada de $A mm de dimensiones interiores, que incluye la recepción de los conductos de acometida y desague profundo, $T(%A), así como el relleno posterior, el acabado y la limpieza. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 17. "Arqueta prefabricada de $A mm de dimensiones interiores, la recepción de los conductos de acometida y desague profundo, $T(%A), el relleno posterior, el acabado y la limpieza, se incluyen en la labor. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 18. "Arqueta prefabricada de $A mm de dimensiones interiores, en la cual se lleva a cabo la recepción de los conductos de acometida y desague profundo, $T(%A), así como el relleno posterior y el acabado y la limpieza. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 19. "Arqueta prefabricada de $A mm de dimensiones interiores, con la recepción de los conductos de acometida y desague profundo, $T(%A), el relleno posterior y el acabado y la limpieza se efectúan como parte del trabajo. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 20. "Arqueta prefabricada con dimensiones interiores de $A mm, que incluye la colocación de conducciones para acometida y desagüe profundo de $T(%A), así como la finalización y limpieza. Tareas: $B, zona de servicio: $C, requisitos para la ejecución: $D" — _qwen2.5:14b_
+- [ ] 21. "Arqueta prefabricada con $A mm de dimensiones interiores, que comprende la instalación de tuberías de acometida y desagüe de $T(%A), además de la finalización y limpieza. Actividad: $B, franja de mantenimiento: $C, condiciones de realización: $D" — _qwen2.5:14b_
+- [ ] 22. "Arqueta prefabricada con dimensiones interiores de $A mm, que incluye la instalación de conducciones de acometida y desagüe de $T(%A), además de la puesta en condiciones y limpieza. Tareas: $B, área de servicio: $C, condiciones de finalización: $D" — _qwen2.5:14b_
+- [ ] 23. "Arqueta prefabricada con $A mm de dimensiones interiores, que abarca la instalación de conductos para acometida y desagüe de $T(%A), así como la finalización y limpieza. Actividad: $B, área de mantenimiento: $C, condiciones de ejecución: $D" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
+- [7] near_duplicate_of_kept
 
 ## TEXTO template (OEC010$)
 _Used in 1 concept(s): OEC010$_
 
-- [ ] 1. "Arqueta construida "in situ" de $B, con $A mm de dimensiones interiores, instalada sobre una base de hormigón en masa, preparada y acabada, incluyendo medios auxiliares proporcionales, como el relleno y la compactación perimetral posterior, el drenaje y la conexión de los conductos, $T(%A). Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 1. "Se instala una arqueta "in situ" de $B, con $A mm de dimensiones interiores, sobre una solera de hormigón en masa, que se limpia y termina. Se incluye la parte proporcional de medios auxiliares, como relleno, compactación perimetral posterior, drenaje y conexión de los conductos, $T(%A). Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 2. "Una arqueta "in situ" de $B, con dimensiones interiores de $A mm, se coloca sobre una solera de hormigón en masa que se limpia y termina. Se incorpora la proporción de medios auxiliares necesarios, incluyendo el relleno, compactación perimetral posterior, drenaje y conexión de los conductos, $T(%A). Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 3. "Se fabrica una arqueta "in situ" de $B, con dimensiones interiores de $A mm, sobre una solera de hormigón en masa, prestando atención a su limpieza y terminación. Se suministra la parte proporcional de medios auxiliares, incluyendo relleno, compactación perimetral, drenaje y conexión de los conductos, $T(%A). Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 4. "Construye una arqueta "in situ" de $B, de $A mm de dimensiones interiores, sobre una solera de hormigón en masa, asegurando su limpieza y acabado. Incluye la proporción necesaria de medios auxiliares, como relleno, compactación perimetral, drenaje y conexión de los conductos, $T(%A). Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 5. "Arqueta construida "in situ" de $B, con $A mm de dimensiones interiores, dispuesta sobre una solera de hormigón en masa, limpiada y pulida. Incluye la parte proporcional de medios auxiliares como el relleno y su compactación perimetral posterior, así como el drenaje y la conexión de los conductos, $T(%A). Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 6. "Construcción «in situ» de arqueta de $B, con $A mm de dimensiones interiores, situada sobre una base de hormigón en masa, limpia y acabada. Se incluye también la cantidad proporcional de medios auxiliares, como el relleno y la compactación perimetral posterior, así como el drenaje y la conexión de los conductos, $T(%A). Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 7. "Arqueta «in situ» de $B y con $A mm de dimensiones interiores, emplazada sobre una solera de hormigón en masa, que ha sido limpiada y finalizada. Incluye los medios auxiliares necesarios, como el relleno y la compactación perimetral posterior, el drenaje y la conexión de los conductos, $T(%A). Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 8. "Arqueta «in situ» de $B, con dimensiones interiores de $A mm, instalada sobre solera de hormigón en masa, en estado limpio y terminado. Además, contiene los medios auxiliares necesarios, como el relleno y su compactación perimetral posterior, el drenaje y la conexión de los conductos, $T(%A). Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 9. "En el lugar se instala una arqueta "in situ" con $B, dimensiones internas de $A mm, sobre una losa de hormigón preparada, fina y pulida, con soporte de medios auxiliares proporcionales como el empaquetado y compactación periférica, drenaje, y conexión de los conductos $T(%A). Detalles de construcción: $C Mantenimiento: $D Condiciones de puesta en marcha: $F" — _phi4:latest_
+- [ ] 10. "Una arqueta "in situ" de $B y $A mm de interiores, asentada en una base de hormigón compactado y pulimentado, con los auxiliares pertinentes como relleno compactado, drenaje y conexión de conductos $T(%A). Especificaciones de trabajo: $C Mantenimiento: $D Regulaciones de instalación: $F" — _phi4:latest_
+- [ ] 11. "Arqueta "in situ" elaborada con $B y dimensiones internas de $A mm, montada sobre una losa de hormigón acabada, con todos los accesorios necesarios como relleno y compactación, drenaje y conexión de canales $T(%A). Detalles constructivos: $C Mantenimiento: $D Normativa de ejecución: $F" — _phi4:latest_
+- [ ] 12. "Se lleva a cabo la instalación de la arqueta "in situ" de $B, con dimensiones interiores de $A mm, colocada sobre una base de hormigón a masa, limpia y finalizada, con el aporte de medios auxiliares, incluyendo el relleno y la compactación perimetral posterior, así como el drenaje y el alojamiento de los conductos, $T(%A). Se especifica el trabajo: $C. Se determina la banda de mantenimiento: $D. Se establecen las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 13. "Se define la arqueta "in situ" con $B, y dimensiones interiores de $A mm, instalada sobre una fundación de hormigón en masa, que se limpia y termina, y que incluye la proporción adecuada de medios auxiliares, como el relleno y la compactación perimetral posterior, el drenaje y la recepción de los conductos, $T(%A). Se indica el trabajo: $C. Se determina la banda de mantenimiento: $D. Se establecen las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 14. "Se coloca en su lugar la arqueta "in situ" de $B, con dimensiones interiores de $A mm, sobre una base de hormigón en masa, que se limpia y finaliza, y que incluye la proporción de medios auxiliares necesarios, como el relleno y la compactación perimetral posterior, el drenaje y la recepción de los conductos, $T(%A). Se indica el trabajo: $C. Se define la banda de mantenimiento: $D. Se establecen las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 15. "Se lleva a cabo la instalación de la arqueta "in situ" de $B, con dimensiones interiores de $A mm, colocada sobre una fundación de hormigón en masa, limpia y finalizada, con la proporción de medios auxiliares necesarios, incluyendo el relleno y la compactación perimetral posterior, el drenaje y la recepción de los conductos, $T(%A). Se especifica el trabajo: $C. Se determina la banda de mantenimiento: $D. Se establecen las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 16. "Arqueta construida "in situ" de $B, con dimensiones interiores de $A mm, instalada sobre una solera de hormigón continuo, y con la inclusión de relleno y compactación perimetral posterior, drenaje y alojamiento de los conductos, $T(%A). Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 17. "Arqueta construida "in situ" de $B, con $A mm de dimensiones interiores, y colocada sobre una solera de hormigón continuo, limpiada y terminada, con relleno y la compactación perimetral posterior, drenaje y alojamiento de los conductos, $T(%A). Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 18. "Arqueta construida "in situ" de $B, con dimensiones interiores de $A mm, y colocada sobre una solera de hormigón continuo, limpiada y terminada, y con el relleno, la compactación perimetral posterior y el alojamiento de los conductos, $T(%A). Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 19. "Arqueta "in situ" de $B, con dimensiones interiores de $A mm, instalada sobre cimentación de hormigón masivo, preparada y finalizada, así como las proporciones adecuadas de materiales auxiliares, incluyendo el relleno y la compactación perimetral, la evacuación y la recepción de los conductos, $T(%A). Proceso: $C Zona de trabajo: $D Criterios de implantación: $F" — _qwen2.5:14b_
+- [ ] 20. "Arqueta en obra de $B, con dimensiones interiores de $A mm, emplazada sobre cimentación de hormigón compactado, preparada y acabada, junto con las proporciones requeridas de auxiliares, incluyendo el relleno y la compactación perimetral, la disposición y el acoplamiento de los conductos, $T(%A). Labor: $C Zona de trabajo: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 21. "Arqueta "in situ" de $B, con medidas interiores de $A mm, ubicada sobre cimentación de hormigón macizo, preparada y terminada, junto con la proporción apropiada de auxiliares, incluyendo el relleno y la compactación perimetral, la disposición de los conductos y su colocación, $T(%A). Trabajo: $C Banda de trabajo: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 22. "Arqueta en obras de $B, con dimensiones de $A mm, instalada sobre cimentación de hormigón macizo, preparada y finalizada, junto con la cantidad adecuada de medios auxiliares, incluyendo el relleno y la compactación perimetral, el drenaje y el acoplamiento de los conductos, $T(%A). Trabajo: $C Área de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R3 [0] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- [16] near_duplicate_of_kept
 
 ## TEXTO template (OEA050$)
 _Used in 1 concept(s): OEA050$_
 
-- [ ] 1. "Conducción enterrada de hormigón armado con una resistencia a la compresión de 25 N/mm2, estandarizada tipo $A y provista de una tapa. Instalación completa, incluyendo la preparación del terreno, compactación, nivelación de la base, capa de arena fluvial de 10 cm, sellado de tapas y juntas con mortero, y relleno compactado. Trabajo: $B. Zona de mantenimiento: $C."
+- [ ] 1. "Canaleta de hormigón armado de 25 N/mm2 de resistencia a la compresión, normalizada tipo $A y con una tapa. Forma parte del conjunto instalado, abarcando la adecuación del terreno, la compactación, nivelación de la base, cama de arena de río de 10 cm, sellado de tapas y juntas con mortero, así como los rellenos compactados. Trabajo: $B. Banda de mantenimiento: $C." — _phi4:latest_
+- [ ] 2. "Canaleta de hormigón armado 25 N/mm2 de resistencia a la compresión, tipo $A normalizado, con una tapa. Incluye todo el proceso de instalación: adecuación del terreno, compactación, nivelación de la solera, cama de arena de río de 10 cm, sellado de tapas y juntas con mortero, y rellenos compactados. Trabajo: $B. Banda de mantenimiento: $C." — _phi4:latest_
+- [ ] 3. "Canaleta hormigonada armada de 25 N/mm2 de resistencia a la compresión, tipo $A normalizada con tapa incluida. La instalación cubre la adecuación del terreno, compactación, nivelación de la solera, cama de arena de río de 10 cm, sellado de tapas y juntas con mortero y los rellenos compactados. Trabajo: $B. Banda de mantenimiento: $C." — _phi4:latest_
+- [ ] 4. "Canaleta hormigonada armada de 25 N/mm2 de resistencia a la compresión, estándar tipo $A con tapa incluida. Instalación total, incluyendo la preparación del terreno, la compactación, el aplanado del suelo, la capa de arena de río de 10 cm, sellado de tapas y uniones con mortero, y relleno compactado. Trabajo: $B. Ancho de banda de conservación: $C." — _phi4:latest_
+- [ ] 5. "Canaleta estructurada de hormigón armado de 25 N/mm2 de resistencia a la compresión, categoría normalizada $A con tapa incorporada. Incluye la adaptación del suelo, compactación, nivelado de la base, capa de arena de río de 10 cm, sellado de tapas y juntas con mortero y relleno compactado. Trabajo: $B. Ancho de la banda de mantenimiento: $C." — _phi4:latest_
+- [ ] 6. "Canaleta de concreto armado de 25 N/mm2 resistente a la compresión, categoría normalizada $A y con cubierta. Instalación completa que incluye la preparación del terreno, compactación, nivelado del suelo, capa de arena de río de 10 cm, sellado de tapas y juntas con mortero, y compactación del relleno. Trabajo: $B. Ancho de la banda de mantenimiento: $C." — _phi4:latest_
+- [ ] 7. "Canaleta enterrada de hormigón armado de 25 N/mm2 resistencia a la compresión, estándar tipo $A con cubierta incluida. Incluye el ajuste del terreno, compactación, nivelación de la base, capa de arena de río de 10 cm, sellado de tapas y juntas mediante mortero, y relleno compactado. Trabajo: $B. Anchura de la banda de mantenimiento: $C." — _phi4:latest_
+- [ ] 8. "Se proporciona una canaleta de hormigón prefabricada, diseñada para resistencia a la compresión de 25 N/mm2, con estándar de tipo $A y con tapa incluida. Se realiza la instalación completa, incluyendo preparación del terreno, compactación, nivelado de la base y colocación de cama de arena de río de 10 cm. También se lleva a cabo el sellado de las tapas y juntas mediante mortero y la compactación de los rellenos. Trabajo: $B. Banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 9. "Se presenta una canaleta de hormigón prefabricada, con resistencia a la compresión de 25 N/mm2, normalizada al tipo $A, y dotada de una tapa. Se efectúa la instalación total, que incluye la preparación y nivelación del terreno, la compactación del terreno, la nivelación de la base y la colocación de cama de arena de río de 10 cm. Se realiza el sellado de las tapas y juntas mediante mortero y la compactación de los rellenos. Trabajo: $B. Banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 10. "Se ofrece una canaleta de hormigón prefabricada diseñada para resistencia a la compresión de 25 N/mm2, normalizada al tipo $A, y equipada con tapa. Se lleva a cabo la instalación completa, que incluye preparación del terreno, compactación, nivelación de la base y colocación de cama de arena de río de 10 cm. Se efectúa el sellado de las tapas y juntas mediante mortero y la compactación de los rellenos. Trabajo: $B. Banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 11. "Se proporciona una canaleta de hormigón prefabricada con resistencia a la compresión de 25 N/mm2, normalizada al tipo $A, y con tapa incorporada. Se realiza la instalación total, que abarca la preparación del terreno, la compactación, la nivelación de la base y la colocación de cama de arena de río de 10 cm. Se ejecuta el sellado de las tapas y juntas mediante mortero y la compactación de los rellenos. Trabajo: $B. Banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 12. "Canaleta prefabricada de hormigón armado de 25 N/mm2 de resistencia a la compresión, normalizada tipo $A y una tapa. Incluye la adecuación del terreno, la compactación, la nivelación de la solera, la cama de arena de río de 10 cm, el sellado de las tapas y las juntas con mortero y los rellenos compactados, además de su total instalación. Trabajo: $B. Banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 13. "Canaleta prefabricada de hormigón armado de 25 N/mm2 de resistencia a la compresión, normalizada tipo $A y una tapa. Se incluyen el adecuamiento del terreno, la compactación, la nivelación de la solera, la cama de arena de río de 10 cm, el sellado de las tapas y las juntas con mortero y los rellenos compactados, así como su instalación total. Trabajo: $B. Banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 14. "Canaleta prefabricada de hormigón armado de 25 N/mm2 de resistencia a la compresión, normalizada tipo $A y una tapa. Totalmente instalada, la adecuación del terreno, la compactación, la nivelación de la solera, la cama de arena de río de 10 cm, el sellado de las tapas y las juntas con mortero y los rellenos compactados se incluyen en la instalación. Trabajo: $B. Banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 15. "Hormigonera prefabricada tipo $A, con resistencia 25 N/mm2, que incluye la instalación y preparación de la superficie, la nivelación, la compactación y la colocación de una base de arena de río de 10 cm. Incluye el sellado de las juntas y las tapas con mortero y rellenos compactados. Trabajo: $B. Zona de servicio: $C." — _qwen2.5:14b_
+- [ ] 16. "Dispositivo de hormigón tipo $A, con resistencia N/mm2 25, que incluye la instalación completa, la preparación del área, la compactación, la nivelación de la base y la colocación de una cama de arena de río de 10 cm. Se incluye el sellado de juntas y tapas con mortero y rellenos compactados. Trabajo: $B. Zona de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 17. "Guía de hormigón prefabricada, con resistencia 25 N/mm2, del tipo $A, que incluye la instalación completa, ajuste y preparación del terreno, la compactación, nivelación y colocación de una capa de arena de río de 10 cm. El sellado de juntas y tapas mediante mortero y rellenos compactados está incluido. Trabajo: $B. Área de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 18. "Elemento de hormigón tipo $A, con resistencia a la compresión 25 N/mm2, que proporciona instalación completa, preparación del terreno, nivelación y compactación, colocación de una capa de arena de río de 10 cm. El sellado de juntas y tapas con mortero y la colocación de rellenos compactados se incluyen. Trabajo: $B. Límite de mantenimiento: $C." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%D)', '$M']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%D)', '$M']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%D)', '$M']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%D)', '$M']
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%D)', '$M']
+- [14] near_duplicate_of_kept
 
 ## TEXTO template (OED180$)
 _Used in 1 concept(s): OED180$_
 
-- [ ] 1. "Inspección preliminar de excavación del macizo de electrificación en terreno $A hasta una profundidad de $B, desde plataforma o vía, contempla el cierre de la excavación si lo decide la Dirección de Obra. Completamente finalizada. Tipo de terreno: $B. Profundidad: $C. Zona de mantenimiento: $D. Condiciones de ejecución: $F."
-- [ ] 2. "Evaluación inicial de excavación del macizo de electrificación en terreno $A a una profundidad de $B, desde plataforma o vía, abarca el sellado de la excavación si lo establece la Dirección de Obra. Totalmente concluida. Tipo de terreno: $B. Profundidad: $C. Área de mantenimiento: $D. Condiciones de ejecución: $F."
-
-_Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [ ] 1. "Se lleva a cabo la cata previa de excavación para el macizo de electrificación en el terreno $A, alcanzando una profundidad de $B. Desde plataforma o vía, se incluye el tapado si lo requiere la Dirección de Obra. Completa en su ejecución. Tipo de terreno: $B. Profundidad: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 2. "La excavación para cata previa del macizo de electrificación en terreno $A se realiza a una profundidad de $B, partiendo de plataforma o vía, con el tapado incluido si es necesario según la Dirección de Obra. Se tiene como resultado final. Se describe el tipo de terreno: $B. Profundidad: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 3. "Se efectúa la cata previa correspondiente a la excavación del macizo de electrificación en el terreno $A, con una profundidad alcanzada de $B, tanto desde plataforma como vía, y contempla el tapado de la excavación si lo prescribe la Dirección de Obra. Se considera total la obra. Tipo de terreno: $B. Profundidad: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 4. "Se realiza la cata previa de excavación para el macizo relacionado con electrificación situado en el terreno $A, que llega a una profundidad de $B, iniciándose desde una plataforma o vía, y se contempla el tapado si lo ordena la Dirección de Obra. Se encuentra completamente terminado. Tipo de terreno: $B. Profundidad: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 5. "Se efectuará una Cata previa de excavación del macizo de electrificación en el terreno $A hasta una profundidad de $B. Si la Dirección de Obra lo establece, se incluye el tapado del mismo. Realización completa. Tipo de terreno: $B. Profundidad: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 6. "Se realizará una Cata previa de excavación de macizo de electrificación en $A, alcanzando una profundidad de $B. Esto comprende el tapado del mismo, siempre que lo determine la Dirección de Obra. Se entrega en estado terminado. Tipo de terreno: $B. Profundidad: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 7. "La Cata previa de excavación de macizo de electrificación en el terreno $A, extendiéndose hasta una profundidad de $B, desde plataforma o vía, se efectuará. Incluirá el tapado si así lo indica la Dirección de Obra. Se proporcionará completamente finalizada. Tipo de terreno: $B. Profundidad: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 8. "Se planifica una Cata previa de excavación del macizo de electrificación en el terreno $A, a una profundidad de $B. Si se decide por la Dirección de Obra, se incluye el tapado. Entrega de obra totalmente acabada. Tipo de terreno: $B. Profundidad: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 9. "Excavación exploratoria de estructura de electrificación en área $A con profundidad $B, ejecutada desde plataforma o vía, incorpora el cierre si lo dispone la Dirección de Obra. Trabajo completo. Características del terreno: $B. Nivel de profundidad: $C. Zona de mantenimiento: $D. Reglas de ejecución: $F." — _phi4:latest_
+- [ ] 10. "Sondeo inicial de zanja para montaje eléctrico en suelo $A con cota $B, desde plataforma o vía, abarca el sellado si lo indica la Dirección de Obra. Completado en su totalidad. Naturaleza del suelo: $B. Cota de excavación: $C. Área de servicio: $D. Parámetros de realización: $F." — _phi4:latest_
+- [ ] 11. "Prospección de zanja para estructura eléctrica en parcela $A de nivel $B, desde plataforma o vía, abarca el sello si así lo decide la Dirección de Obra. Proyecto finalizado. Clasificación del área: $B. Extensión de excavación: $C. Área de conservación: $D. Circunstancias de operación: $F." — _phi4:latest_
+- [ ] 12. "Estudio preliminar de excavación para instalación eléctrica en suelo $A con profundidad $B, desde plataforma o vía, contempla el sellado si lo ordena la Dirección de Obra. Concluido totalmente. Descripción del suelo: $B. Profundidad alcanzada: $C. Zona de intervención: $D. Condiciones de implementación: $F." — _phi4:latest_
+- [ ] 13. "Se realiza la cata previa de excavación de macizo de electrificación en terreno especificado por $A, con una profundidad de $B. Se incluye el tapado de la plataforma o vía cuando lo requiera la Dirección de Obra, con la finalidad de asegurar una ejecución completa. Se especifica el tipo de terreno como $B, con una profundidad de $C. Se establece una banda de mantenimiento de $D y se indican las condiciones de ejecución como $F." — _qwen2.5:14b_
+- [ ] 14. "Se realiza la cata previa de excavación del macizo de electrificación para un terreno definido por $A, con una profundidad de $B. Se contempla el cubrimiento de la plataforma o vía dependiendo de la evaluación de la Dirección de Obra. Se considera totalmente finalizada conforme a los siguientes parámetros: tipo de terreno $B, profundidad de $C, banda de mantenimiento de $D, y condiciones de ejecución especificadas en $F." — _qwen2.5:14b_
+- [ ] 15. "Se realiza la cata previa para la excavación del macizo de electrificación en un terreno de tipo $A, con una profundidad de $B. Se considera el tapado de la plataforma o vía de acuerdo a las directrices establecidas por la Dirección de Obra, asegurando la finalización completa del proceso. Se detallan las características del terreno como $B, profundidad de $C, banda de mantenimiento de $D, y condiciones de ejecución establecidas en $F." — _qwen2.5:14b_
+- [ ] 16. "Se efectúa la cata previa para la excavación del macizo de electrificación en el terreno especificado por $A, con una profundidad de $B. Se contempla el tapado de la plataforma o vía en función de las directrices de la Dirección de Obra, asegurando la conclusión del proyecto. Se detallan el tipo de terreno $B, profundidad de $C, banda de mantenimiento de $D, y condiciones de ejecución en $F." — _qwen2.5:14b_
+- [ ] 17. "Se lleva a cabo una cata prospectiva de excavación para la electrificación en terreno $A, con una profundidad de $B. Esta operación incluye la cubrición de la plataforma o vía si la Dirección de Obra lo requiere. La obra se considera completa. El tipo de terreno es $B, la profundidad es $C, la banda de mantenimiento es $D y las condiciones de ejecución son $F." — _qwen2.5:14b_
+- [ ] 18. "Se ejecuta una cata previa para la excavación del macizo de electrificación en un terreno $A, con una profundidad de $B, incluyendo la reposición adecuada de la plataforma o vía si la Dirección de Obra lo estipula. La obra está totalmente terminada y la información del terreno es la siguiente: tipo $B, profundidad $C, banda de mantenimiento $D y condiciones de ejecución $F." — _qwen2.5:14b_
+- [ ] 19. "Se realiza una cata para la excavación de macizo de electrificación en terreno $A, con una profundidad de $B. Esto incluye la cubierta de la plataforma o vía en caso de que la Dirección de Obra lo especifique. La obra está terminada y los detalles del terreno son: tipo $B, profundidad $C, banda de mantenimiento $D, condiciones de ejecución $F." — _qwen2.5:14b_
+- [ ] 20. "Se efectúa una cata inicial para la excavación del macizo de electrificación en terreno $A, con una profundidad de $B. Se incluye la cobertura de la plataforma o vía si la Dirección de Obra lo determina. La obra se considera completada y se detallan las características del terreno: tipo $B, profundidad $C, banda de mantenimiento $D, condiciones de ejecución $F." — _qwen2.5:14b_
+- [ ] 21. "Excavación previa del macizo de electrificación en terreno $A, con una profundidad de $B. Se contempla el relleno de la plataforma o vía si la Dirección de Obra lo requiere. Proceso completo. Tipología de terreno: $B. Profundidad efectiva: $C. Ancho de la franja de conservación: $D. Circunstancias de la implementación: $F." — _qwen2.5:14b_
+- [ ] 22. "Previo tajo de excavación del macizo de electrificación en terreno $A, con una profundidad de $B. Incluye relleno con loza si se considera necesario por la Dirección de Obra. Estado final. Tipo de suelo: $B. Profundidad del corte: $C. Ancho de la zona de mantenimiento: $D. Circunstancias técnicas para la realización del trabajo: $F." — _qwen2.5:14b_
+- [ ] 23. "Limpieza previa del terreno $A para la excavación del macizo de electrificación con una profundidad de $B. Se cubre la plataforma o vía si es necesario según la Dirección de Obra. Terminación total. Características del terreno: $B. Profundidad del hueco: $C. Espacio para el mantenimiento: $D. Condiciones de trabajo: $F." — _qwen2.5:14b_
+- [ ] 24. "Procesamiento de terreno $A para la excavación del macizo de electrificación, con una profundidad de $B. Se cubrirá la plataforma o vía si la Dirección de Obra lo requiere. Proceso completo. Características del terreno: $B. Profundidad del hueco: $C. Ancho de la zona de mantenimiento: $D. Condiciones para la realización del trabajo: $F." — _qwen2.5:14b_
 
 ## TEXTO template (OEG040$)
 _Used in 1 concept(s): OEG040$_
 
-- [ ] 1. "Cimentaciones especiales tipo puente, con barra corrugada roscada de $A mm, acceso por $B. $L(b,%C). Proceso: $L(c,%C)."
+- [ ] 1. "Se diseñan cimentaciones especiales tipo puente con barra corrugada roscada de $A mm. El acceso se realiza por $B. Incluye $L(b,%C). En el trabajo se especifica $L(c,%C)." — _phi4:latest_
+- [ ] 2. "Se establecen cimentaciones especiales puente, dotadas de barra corrugada roscada de $A mm, con acceso por $B. Se implementa $L(b,%C). En cuanto al trabajo: $L(c,%C)." — _phi4:latest_
+- [ ] 3. "Cimentaciones de tipo puente especiales se realizan con barra corrugada roscada de $A mm, permitiendo acceso por $B. Se incluye $L(b,%C). En el ámbito del trabajo se establece $L(c,%C)." — _phi4:latest_
+- [ ] 4. "Para cimentaciones especiales tipo puente, se emplea barra corrugada roscada de $A mm. El acceso se efectúa por $B. Se adjunta $L(b,%C). En materia de trabajo: $L(c,%C)." — _phi4:latest_
+- [ ] 5. "Cimentaciones especiales tipo puente, con barra corrugada roscada de $A mm. Acceso: $B. Trabajo: $L(c,%C). $L(b,%C)." — _phi4:latest_
+- [ ] 6. "Con barra corrugada roscada de $A mm, las cimentaciones especiales tipo puente facilitan el acceso por $B. $L(c,%C). $L(b,%C)." — _phi4:latest_
+- [ ] 7. "Las cimentaciones especiales tipo puente cuentan con barra corrugada roscada de $A mm. Acceso: $B. Trabajo: $L(c,%C) incluido. $L(b,%C)." — _phi4:latest_
+- [ ] 8. "Cimentaciones especiales tipo puente, con barra corrugada roscada de $A mm, ofrecen acceso por $B. $L(c,%C) y $L(b,%C) como características." — _phi4:latest_
+- [ ] 9. "Instalaciones de cimentación especial tipo puente, equipadas con barra corrugada roscada de $A mm, entrada por $B. $L(b,%C). Operaciones: $L(c,%C)." — _phi4:latest_
+- [ ] 10. "Estructuras de cimentación tipo puente especial, con barra corrugada roscada de $A mm, vía de acceso $B. $L(b,%C). Desarrollo: $L(c,%C)." — _phi4:latest_
+- [ ] 11. "Cimentaciones de tipo puente especial, dotadas con barra corrugada roscada de $A mm, acceso mediante $B. $L(b,%C). Realización: $L(c,%C)." — _phi4:latest_
+- [ ] 12. "Elementos de cimentación tipo puente especial, con barra corrugada roscada de $A mm, entrada por $B. $L(b,%C). Ejecución: $L(c,%C)." — _phi4:latest_
+- [ ] 13. "Se proporcionan cimentaciones especiales tipo puente con barra corrugada roscada de $A mm, con acceso por $B. Se realiza $L(b,%C). Se ejecuta el trabajo $L(c,%C)." — _qwen2.5:14b_
+- [ ] 14. "Se efectúan las cimentaciones especiales tipo puente con barra corrugada roscada de $A mm, con acceso por $B. Se lleva a cabo $L(b,%C). Se conduce el trabajo $L(c,%C)." — _qwen2.5:14b_
+- [ ] 15. "Se emplean cimentaciones especiales tipo puente que incluyen barra corrugada roscada de $A mm, con acceso por $B. Se realiza $L(b,%C). Se realiza el trabajo $L(c,%C)." — _qwen2.5:14b_
+- [ ] 16. "Cimentaciones especiales tipo puente, que incluyen barra corrugada roscada de $A mm y acceso por $B. Trabajo: $L(c,%C). $L(b,%C)." — _qwen2.5:14b_
+- [ ] 17. "Cimentaciones especiales tipo puente, que incorporan barra corrugada roscada de $A mm y accesibilidad por $B. $L(b,%C). El trabajo es: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 18. "Las cimentaciones especiales tipo puente se caracterizan por una barra corrugada roscada de $A mm y acceso por $B. Trabajo: $L(c,%C). $L(b,%C)." — _qwen2.5:14b_
+- [ ] 19. "Cimentaciones especiales tipo puente, con barra corrugada roscada de $A mm y entradas por $B. $L(b,%C). $L(c,%C) es el trabajo requerido." — _qwen2.5:14b_
+- [ ] 20. "Fundaciones específicas para puentes, con varilla corrugada y roscada de $A mm, ingreso por $B. Acción: $L(b,%C). Procedimiento: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 21. "Fundaciones adaptadas a puentes, con barra corrugada roscada de $A mm, entrada por $B. Operativo: $L(b,%C). Ejecución: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 22. "Fundaciones personalizadas para puentes, con barra corrugada roscada de $A mm, acceso por $B. $L(b,%C). Proceso: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 23. "Fundaciones diseñadas para puentes, con barra corrugada roscada de $A mm, entrada por $B. Manejo: $L(b,%C). Ejecutado: $L(c,%C)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
 
 ## TEXTO template (OED120$)
 _Used in 1 concept(s): OED120$_
 
-- [ ] 1. "Cimentaciones especiales tipo puente, con barra corrugada roscada de $A, desde plataforma o vía. Ejecución: $B. Mantenimiento: $C. Condiciones: $D."
+- [ ] 1. "Para cimentaciones especiales tipo puente se utiliza barra corrugada roscada de $A, instalada desde plataforma o vía. Las labores se describen en $B. La banda de mantenimiento es $C. Las condiciones de ejecución son $D." — _phi4:latest_
+- [ ] 2. "Se instalan cimentaciones especiales tipo puente con barra corrugada roscada de $A, desde plataforma o vía. El trabajo a realizar es $B. La banda de mantenimiento corresponde a $C. Las condiciones de ejecución son $D." — _phi4:latest_
+- [ ] 3. "Se utilizan cimentaciones especiales tipo puente que incluyen barra corrugada roscada de $A, instalada desde plataforma o vía. Las tareas a realizar se detallan en $B. La banda de mantenimiento se especifica en $C. Las condiciones de ejecución se definen en $D." — _phi4:latest_
+- [ ] 4. "Las cimentaciones especiales tipo puente, que cuentan con barra corrugada roscada de $A, se instalan desde plataforma o vía. El trabajo involucrado se encuentra en $B. La banda de mantenimiento es $C. Las condiciones de ejecución se describen en $D." — _phi4:latest_
+- [ ] 5. "Se instalan cimentaciones especiales tipo puente, que incorporan barra corrugada roscada de $A, ya sea desde la plataforma o la vía. Se lleva a cabo el trabajo de $B. Se establece una banda de mantenimiento de $C. Se detallan las condiciones de ejecución de $D." — _qwen2.5:14b_
+- [ ] 6. "Se emplean cimentaciones especiales tipo puente que utilizan barra corrugada roscada de $A, tanto desde la plataforma como desde la vía. El trabajo es de tipo $B. Se establece una zona de mantenimiento de $C. Las condiciones de ejecución requeridas son las de $D." — _qwen2.5:14b_
+- [ ] 7. "Se utiliza la cimentación especial tipo puente que incluye una barra corrugada roscada de $A, colocada desde la plataforma o la vía. El trabajo a realizar es de tipo $B. Se define una banda de mantenimiento de $C. Se enumeran las condiciones de ejecución de $D." — _qwen2.5:14b_
+- [ ] 8. "Se implementan cimentaciones especiales de tipo puente con barra corrugada roscada de $A, desde la plataforma o la vía. Se lleva a cabo el trabajo de tipo $B. Se establece una banda de mantenimiento de $C. Se detallan las condiciones de ejecución de $D." — _qwen2.5:14b_
+- [ ] 9. "Instalación de cimentaciones especiales tipo puente, que incluye barra corrugada roscada de $A, desde la plataforma o la vía. Operaciones a realizar: $B. Estructura de mantenimiento: $C. Aspectos de ejecución: $D." — _qwen2.5:14b_
+- [ ] 10. "Estructuras de cimentación especial tipo puente, con barra corrugada roscada $A. Procedimientos a desarrollar: desde plataforma o vía, trabajo: $B. Mantenimiento: $C. Condiciones de instalación: $D." — _qwen2.5:14b_
+- [ ] 11. "Cimentación especial tipo puente, incluyendo barra corrugada roscada de $A. Desarrollada desde la plataforma o la vía, con las siguientes operaciones: $B. Consideraciones de mantenimiento: $C. Aspectos relacionados con la implementación: $D." — _qwen2.5:14b_
+- [ ] 12. "Cimentación especial de tipo puente, que incluye barra corrugada roscada $A, desde la plataforma o la vía. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 13. "Estructuras de cimentación especial tipo puente, que incluyen barra corrugada roscada de $A, realizadas desde el nivel de la plataforma o la vía. Operación: $B. Zona de seguridad de mantenimiento: $C. Consideraciones durante la implementación: $D." — _qwen2.5:14b_
+- [ ] 14. "Funda de cimentación especial diseñada para puentes, con barra corrugada y roscada de $A, colocada en plataforma o sobre la vía. Procedimiento laboral: $B. Zona de reserva para el mantenimiento: $C. Aspectos a tener en cuenta durante la realización: $D." — _qwen2.5:14b_
+- [ ] 15. "Fundamento especial para puentes, dotado de barra corrugada y roscada de $A, instalado en la plataforma o sobre la vía. Actividad de labor: $B. Ámbito reservado para la conservación: $C. Criterios durante la ejecución: $D." — _qwen2.5:14b_
+- [ ] 16. "Cimentación de tipo especial para puentes, con barra corrugada roscada de $A, fijada en la plataforma o vía. Desarrollo laboral: $B. Zona de protección para la conservación: $C. Recomendaciones durante la ejecución: $D." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
 
 ## TEXTO template (OEG050$)
 _Used in 1 concept(s): OEG050$_
 
-- [ ] 1. "Cimentaciones prismáticas, con barra corrugada roscada de $A mm, acceso por $B. $L(b,%D) Trabajo: $L(c,%D)."
+- [ ] 1. "Las cimentaciones prismáticas se ejecutan con una barra corrugada roscada de $A mm, permitiendo el acceso por $B. De tipo $L(b,%D), se realiza con $L(c,%D)." — _phi4:latest_
+- [ ] 2. "Se implementan cimentaciones prismáticas, equipadas con una barra corrugada roscada de $A mm, con acceso proporcionado por $B. El tipo de $L(b,%D) se efectúa con $L(c,%D)." — _phi4:latest_
+- [ ] 3. "Se conforman cimentaciones prismáticas empleando una barra corrugada roscada de $A mm, habilitando el acceso por $B. El trabajo de tipo $L(b,%D) se lleva a cabo con $L(c,%D)." — _phi4:latest_
+- [ ] 4. "Se dispone de cimentaciones prismáticas, incorporando una barra corrugada roscada de $A mm, con acceso por $B. La actividad $L(b,%D) se realiza utilizando $L(c,%D)." — _phi4:latest_
+- [ ] 5. "Con acceso por $B, cimentaciones prismáticas que incluyen barra corrugada roscada de $A mm. $L(b,%D). El trabajo consiste en $L(c,%D)." — _phi4:latest_
+- [ ] 6. "Cimentaciones prismáticas equipadas con barra corrugada roscada de $A mm, diseñadas para acceso por $B. $L(b,%D) y el Trabajo: $L(c,%D)." — _phi4:latest_
+- [ ] 7. "Cimentaciones prismáticas con barra corrugada roscada de $A mm, permitiendo acceso por $B. Trabajo: $L(c,%D) e $L(b,%D)." — _phi4:latest_
+- [ ] 8. "Cimentaciones prismáticas que cuentan con barra corrugada roscada de $A mm y acceso por $B. $L(b,%D). El Trabajo: $L(c,%D)." — _phi4:latest_
+- [ ] 9. "Estructuras de cimentación prismáticas, dotadas de barra corrugada roscada de $A mm, permitiendo acceso por $B. $L(b,%D). Actividad: $L(c,%D)." — _phi4:latest_
+- [ ] 10. "Bases prismáticas, con armazón de barra corrugada roscada de $A mm, con acceso a través de $B. $L(b,%D). Operación: $L(c,%D)." — _phi4:latest_
+- [ ] 11. "Soportes prismáticos, integrando barra corrugada roscada de $A mm, entrada por $B. $L(b,%D). Proceso: $L(c,%D)." — _phi4:latest_
+- [ ] 12. "Fundaciones prismáticas, incorporando barra corrugada roscada de $A mm, acceso mediante $B. $L(b,%D). Tarea: $L(c,%D)." — _phi4:latest_
+- [ ] 13. "Se establecen cimentaciones prismáticas, que incluyen una barra corrugada y roscada de $A mm, con acceso por $B. Se llevará a cabo el $L(b,%D) correspondiente al trabajo de $L(c,%D)." — _qwen2.5:14b_
+- [ ] 14. "Las cimentaciones prismáticas se caracterizan por la inclusión de una barra corrugada y roscada de $A mm, junto con un acceso por $B. Se realizará la $L(b,%D) asociada al trabajo de $L(c,%D)." — _qwen2.5:14b_
+- [ ] 15. "Se menciona la implementación de cimentaciones prismáticas que incorporan una barra corrugada y roscada de $A mm, y un acceso por $B. Se efectuará el $L(b,%D) en relación al trabajo de $L(c,%D)." — _qwen2.5:14b_
+- [ ] 16. "Se destaca la presencia de cimentaciones prismáticas que cuentan con una barra corrugada y roscada de $A mm, y un acceso por $B. Se ejecutará el $L(b,%D) en conexión con el trabajo de $L(c,%D)." — _qwen2.5:14b_
+- [ ] 17. "Cimentaciones prismáticas, con barra corrugada roscada de $A mm y acceso por $B. Trabajo: $L(c,%D). $L(b,%D) inclusión." — _qwen2.5:14b_
+- [ ] 18. "Cimentaciones prismáticas con barra corrugada roscada de $A mm, acceso por $B. Trabajo: $L(c,%D). $L(b,%D) indicación." — _qwen2.5:14b_
+- [ ] 19. "Fundaciones prismáticas, que incorporan barras corrugadas roscadas de $A mm y disponen de acceso por $B. $L(b,%D) Operación: $L(c,%D)." — _qwen2.5:14b_
+- [ ] 20. "Fundaciones prismáticas, con barras corrugadas roscadas de $A mm y acceso por $B. Diseño: $L(b,%D) Proceso: $L(c,%D)." — _qwen2.5:14b_
+- [ ] 21. "Fundaciones prismáticas, equipadas con barras corrugadas roscadas de $A mm y acceso previsto por $B. $L(b,%D) Labor: $L(c,%D)." — _qwen2.5:14b_
+- [ ] 22. "Fundaciones prismáticas, proporcionando barras corrugadas roscadas de $A mm y con acceso por $B. $L(b,%D) Operación: $L(c,%D)." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [17] near_duplicate_of_kept
+- [19] near_duplicate_of_kept
 
 ## TEXTO template (OEG030$)
 _Used in 1 concept(s): OEG030$_
 
-- [ ] 1. "Base cilíndrica para fijación $A, entrada por $B, $L(b,%C). ($L(a,%C)/-/-)."
-- [ ] 2. "Soporte cilíndrico para sujeción $A, acceso por $B, $L(b,%C). ($L(a,%C)/-/-)."
-- [ ] 3. "Estructura cilíndrica para sujeción $A, acceso por $B, $L(b,%C). ($L(a,%C)/-/-)."
+- [ ] 1. "Se dispone de una cimentación cilíndrica anclada en $T(%A), con entrada por $B . $L(b,%C). Ejecución: $L(c,%C)." — _phi4:latest_
+- [ ] 2. "Cimentación cilíndrica destinada al anclaje $T(%A), accesible por $B . $L(b,%C). Realización: $L(c,%C)." — _phi4:latest_
+- [ ] 3. "Se provee una cimentación de forma cilíndrica, anclada mediante $T(%A), con acceso por $B . $L(b,%C). Labor: $L(c,%C)." — _phi4:latest_
+- [ ] 4. "Una cimentación cilíndrica cuyo anclaje es $T(%A), accesible por $B . $L(b,%C). Realización: $L(c,%C)." — _phi4:latest_
+- [ ] 5. "Anclaje con cimentación cilíndrica $T(%A), acceso por $B. Trabajo: $L(c,%C). $L(b,%C)." — _phi4:latest_
+- [ ] 6. "Cimentación cilíndrica $T(%A) permite anclaje con acceso por $B. $L(b,%C). Incluye trabajo: $L(c,%C)." — _phi4:latest_
+- [ ] 7. "Anclaje $T(%A) mediante cimentación cilíndrica, acceso por $B. $L(b,%C). Incluye Trabajo: $L(c,%C)." — _phi4:latest_
+- [ ] 8. "Se emplea una cimentación cilíndrica para el anclaje $T(%A), con la posibilidad de acceso a través de $B. La labor se realiza conforme a la disposición $L(b,%C), mientras que el trabajo de instalación se lleva a cabo conforme a $L(c,%C)." — _qwen2.5:14b_
+- [ ] 9. "Se realiza la instalación de una cimentación cilíndrica para asegurar el anclaje $T(%A), con la entrada a través de $B. Se sigue la especificación $L(b,%C) y se realiza el trabajo de instalación en conformidad con las indicaciones de $L(c,%C)." — _qwen2.5:14b_
+- [ ] 10. "Se dispone de una cimentación cilíndrica para soportar el anclaje $T(%A), con la penetración a través de $B. Se ejecuta el procedimiento $L(b,%C) y se lleva a cabo la labor de instalación según las normas de $L(c,%C)." — _qwen2.5:14b_
+- [ ] 11. "Se proporciona una estructura de cimentación cilíndrica para garantizar el anclaje $T(%A), con la entrada de trabajo por $B. Se sigue la normativa $L(b,%C) y se realiza la labor de instalación conforme a las directrices de $L(c,%C)." — _qwen2.5:14b_
+- [ ] 12. "Para anclaje $T(%A), se utiliza una cimentación cilíndrica, con acceso por $B. Trabajo: $L(c,%C). Incluso: $L(b,%C)." — _qwen2.5:14b_
+- [ ] 13. "Cimentación cilíndrica para anclaje $T(%A), con acceso por $B, incluido en: $L(b,%C). Labor a realizar: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 14. "Se utiliza una cimentación cilíndrica para anclaje $T(%A), y acceso por $B. Incluye trabajo: $L(c,%C). ($L(b,%C))." — _qwen2.5:14b_
+- [ ] 15. "Fundación cilíndrica para anclaje $T(%A), con entrada por $B. $L(b,%C). Obra: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 16. "Instalación de cimentación cilíndrica para anclaje $T(%A), con paso por $B. $L(b,%C). Labor: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 17. "Estructura de cimentación cilíndrica para anclaje $T(%A), con acceso por $B. $L(b,%C). Operación: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 18. "Construcción de fundación cilíndrica para anclaje $T(%A), con ingreso por $B. $L(b,%C). Ejecución: $L(c,%C)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R3 [0] sentinels_not_preserved: missing=['P1', 'P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R3 [1] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- phi4:latest/R3 [2] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- phi4:latest/R3 [3] sentinels_not_preserved: missing=['P1', 'P3', 'P4'] extra_or_dup=[]
+- [6] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
 
 ## TEXTO template (OEG020$)
 _Used in 1 concept(s): OEG020$_
 
-- [ ] 1. "Cimentación en roca mediante micropilote con barra corrugada roscada de $A mm, de diámetro $C m y profundidad $B m, acceso por $D, $L(b,%F). ($L(a,%F)/-/-)."
+- [ ] 1. "Se efectúa una cimentación en roca mediante micropilotes, utilizando una barra corrugada roscada de $A mm. El diámetro es de $C m y la profundidad alcanza los $B m, con acceso facilitado por $D. Trabajo: $L(c,%F). $L(b,%F)." — _phi4:latest_
+- [ ] 2. "La cimentación en roca se realiza con micropilotes, incorporando una barra corrugada roscada de $A mm, con un diámetro de $C m y una profundidad de $B m. El acceso se efectúa por $D. $L(b,%F). Se desempeña el trabajo: $L(c,%F)." — _phi4:latest_
+- [ ] 3. "Se implementa una cimentación en roca mediante micropilotes, que incluye una barra corrugada roscada de $A mm. El diámetro es de $C m y la profundidad es de $B m, permitiendo el acceso por $D. $L(b,%F). El trabajo se realiza: $L(c,%F)." — _phi4:latest_
+- [ ] 4. "En la cimentación en roca con micropilotes se utiliza una barra corrugada roscada de $A mm, con un diámetro de $C m y una profundidad de $B m. El acceso se realiza por $D. $L(b,%F). Respecto al trabajo: $L(c,%F)." — _phi4:latest_
+- [ ] 5. "Se utiliza una cimentación en roca con micropilote que incluye barra corrugada roscada de $A mm, con un diámetro de $C m y una profundidad de $B m. El acceso es posible por $D. $L(c,%F) $L(b,%F)." — _phi4:latest_
+- [ ] 6. "La cimentación en roca con micropilote incorpora una barra corrugada roscada de $A mm de diámetro $C m y profundidad $B m, permitiendo el acesso por $D. $L(c,%F), además de $L(b,%F)." — _phi4:latest_
+- [ ] 7. "Con micropilote en cimentación en roca, se emplea una barra corrugada roscada de $A mm, de diámetro $C m y profundidad $B m, con acceso por $D. Incluye $L(b,%F) y $L(c,%F) para el Trabajo." — _phi4:latest_
+- [ ] 8. "Se opta por una cimentación en roca con micropilote, utilizando una barra corrugada roscada de $A mm, que tiene un diámetro de $C m y una profundidad de $B m, con acesso por $D. $L(c,%F) para el trabajo y $L(b,%F)." — _phi4:latest_
+- [ ] 9. "Se realiza una cimentación en roca usando micropilote, con barra corrugada roscada de $A mm de diámetro, $C m de diámetro y una profundidad de $B m, accesible por $D . $L(b,%F). Ejecución: $L(c,%F)." — _phi4:latest_
+- [ ] 10. "Implementación de cimentación en roca a través de micropilote, utilizando barra corrugada de $A mm, con un diámetro de $C m y una longitud de $B m, accesible desde $D . $L(b,%F). Operación: $L(c,%F)." — _phi4:latest_
+- [ ] 11. "Se lleva a cabo una cimentación en roca mediante micropilote, incorporando barra corrugada roscada de $A mm, con un diámetro de $C m y una profundidad de $B m, con acceso por $D . $L(b,%F). Desempeño: $L(c,%F)." — _phi4:latest_
+- [ ] 12. "Ejecución de cimentación en roca con micropilote, empleando barra corrugada roscada de $A mm, de diámetro $C m y profundidad $B m, accesible vía $D . $L(b,%F). Actividad: $L(c,%F)." — _phi4:latest_
+- [ ] 13. "Se realiza una cimentación en roca mediante micropilotes, usando una barra corrugada roscada de $A mm, con un diámetro de $C m y una profundidad de $B m. Se accede a través de $D. $L(b,%F) Trabajo: $L(c,%F)" — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la cimentación en roca empleando micropilotes con barra corrugada roscada de $A mm, diámetro de $C m y profundidad de $B m. El acceso se efectúa a través de $D. $L(b,%F) Trabajo: $L(c,%F)" — _qwen2.5:14b_
+- [ ] 15. "Se lleva a cabo la instalación de cimentación en roca, utilizando micropilotes con barra corrugada roscada de $A mm, diámetro de $C m y profundidad de $B m. Acceso a través de $D. $L(b,%F) Trabajo: $L(c,%F)" — _qwen2.5:14b_
+- [ ] 16. "Micropilote en roca con barra corrugada roscada de $A mm, de diámetro $C m y de profundidad $B m, con acceso por $D. Incluido $L(b,%F). Trabajo: $L(c,%F)." — _qwen2.5:14b_
+- [ ] 17. "Trabajo de cimentación en roca con micropilote, utilizando barra corrugada roscada de $A mm, con diámetro de $C m y profundidad de $B m, con acceso por $D. $L(b,%F). Incluido $L(c,%F)." — _qwen2.5:14b_
+- [ ] 18. "Fundación en roca mediante micropilotes y barra corrugada roscada de $A mm, con un diámetro de $C m y una profundidad de $B m, accediéndose a través de $D. $L(b,%F). Tareas: $L(c,%F)." — _qwen2.5:14b_
+- [ ] 19. "Instalación de micropilotes en base rocosa con barra corrugada roscada de $A mm, diámetro de $C m y profundidad de $B m, accediéndose a través de $D. $L(b,%F). Tareas: $L(c,%F)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
+- [17] near_duplicate_of_kept
+- [19] near_duplicate_of_kept
+- [21] near_duplicate_of_kept
+- [22] near_duplicate_of_kept
 
 ## TEXTO template (OEA060$)
 _Used in 1 concept(s): OEA060$_
 
-- [ ] 1. "Instalación de conducto rectangular para cables en el $A de $B de ancho y una profundidad de $C, incluyendo la excavación de la zanja con los medios apropiados, edificación del conducto de ladrillo sobre base de hormigón en masa, revestimiento interior, ángulo galvanizado, y cubierta $M(%A). Comprende el montaje, los traslados, material menor, herramientas, maquinaria, y medios auxiliares. Cumplirá con las E.T. de ADIF, planos estandarizados y especificaciones del proyecto. Condiciones de ejecución: $D."
-- [ ] 2. "Ejecución de conducto rectangular para cables en el $A de $B de anchura y una profundidad de $C, incluyendo la excavación de la zanja con los medios necesarios, construcción del conducto de ladrillo sobre solera de hormigón en masa, revestimiento interior, ángulo galvanizado, y cubierta $M(%A). Incluye el montaje, los traslados, material menor, herramientas, maquinaria, y medios auxiliares. Se ajustará a las E.T. de ADIF, planos normalizados y especificaciones del proyecto. Condiciones de ejecución: $D."
+- [ ] 1. "Se llevará a cabo la fabricación de una canaleta rectangular para cables en el $A de $B de anchura y una profundidad de $C dentro del $A. Conlleva la excavación de la zanja mediante métodos apropiados, montaje de la canaleta prefabricada de ladrillo sobre base de hormigón en masa, revestimiento interior, barandas galvanizadas y cerramiento con tapa $M(%A). Se incluye el montaje, los ajustes, materiales menores, herramientas, maquinaria, y medios auxiliares. Se ajustará a las E.T. de ADIF, planos normalizados y condiciones del proyecto. Condiciones de realización: $D." — _phi4:latest_
+- [ ] 2. "La instalación de una canaleta rectangular para cables se efectuará en el $A de $B de anchura y una profundidad de $C en el $A. Incluye la apertura de la zanja con los medios idóneos, el montaje de la canaleta prefabricada de ladrillo sobre solera de hormigón en masa, revestimiento interno, barandillas galvanizadas, y cierre con tapa $M(%A). Comprende el montaje, correcciones, materiales menores, herramientas, maquinaria, y recursos auxiliares. Se ajustará a las E.T. de ADIF, planos normalizados y especificaciones del proyecto. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 3. "Se ejecutará la creación de una canaleta rectangular para cables de anchura $B y una profundidad de $C en el $A del $A. Esto incluye la excavación de la zanja usando los métodos adecuados, el armado de la canaleta fabricada de ladrillos sobre solera de hormigón en masa, acabado interior, bordes galvanizados, y cierre con tapa $M(%A). Se incluye el ensamble, ajustes, materiales auxiliares, herramientas, maquinaria, y medios complementarios. Se ajustará a las E.T. de ADIF, planos normalizados y especificaciones del proyecto. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 4. "La realización de una canaleta rectangular para cables se efectuará en el $A de $B de anchura y una profundidad de $C en el $A. Incluye la apertura de la zanja mediante los medios apropiados, la colocación de la canaleta prefabricada de ladrillo sobre solera de hormigón en masa, revestimiento interior, barandas de acero galvanizado, y el cierre con tapa $M(%A). Se incluyen el ensamblaje, los ajustes, materiales menores, herramientas, maquinaria, y medios auxiliares. Se ajustará a las E.T. de ADIF, planos normalizados y especificaciones del proyecto. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 5. "Se realizará la instalación de una canaleta rectangular para cables en el $A con una anchura de $A de $B y una profundidad de $C. Esta operación incluye la excavación de la zanja con los medios apropiados, la edificación de la canaleta fabricada en ladrillo sobre una base de hormigón macizo, el enlucido interior, el ángulo galvanizado y la cubierta $M(%A). Se abarcarán el montaje, los ajustes necesarios, el material auxiliar, herramientas, maquinaria y medios auxiliares. La ejecución se ajustará a las E.T. de ADIF, a los planos estandarizados y a las especificaciones del proyecto. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 6. "Incluyendo el montaje, ajustes, material auxiliar, herramientas, maquinaria y medios auxiliares, se llevará a cabo la construcción de una canaleta rectangular para cables en el $A de $B de anchura y profundidad de $C en el $A. La zanja se abrirá con los medios idóneos, y se construirá la canaleta de ladrillos encima de una solera de hormigón en masa, con enlucido interior, ángulos galvanizados y cubierta $M(%A). La ejecución cumplirá con las E.T. de ADIF, planos normalizados y especificaciones del proyecto. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 7. "Construcción de una canaleta rectangular para cables en el $A de $B de anchura y profundidad de $C en el $A, que incluye la apertura de la zanja con los medios idóneos, la edificación de la canaleta de ladrillos sobre una solera de hormigón en masa, el enlucido interior, ángulos galvanizados y cubierta $M(%A). Se incluye el montaje, los ajustes necesarios, material auxiliar, herramientas, maquinaria y medios auxiliares. Cumplirá con las E.T. de ADIF, planos normalizados y especificaciones de proyecto. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 8. "En el $A, se construirá una canaleta rectangular para cables de $A de $B de anchura y $C de profundidad, incluyendo la excavación de la zanja con los medios adecuados, la edificación de la canaleta de ladrillo sobre una base de hormigón en masa, el enlucido interior, ángulos galvanizados y cubierta $M(%A). Se abarcarán el montaje, los ajustes necesarios, el material auxiliar, herramientas, maquinaria y medios auxiliares. La ejecución cumplirá con las E.T. de ADIF, planos normalizados y especificaciones del proyecto. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 9. "En el $A, se instalará una canaleta rectangular de $B de anchura y $C de profundidad para el alojamiento de cables, incluyendo la excavación de la zanja con los recursos necesarios, la fabricación de la canaleta de ladrillo sobre una base de hormigón, aplicando enlucido interno, ángulos galvanizados y tapadera $M(%A). Se contempla el montaje, la regulación, el suministro de pequeños materiales, herramientas, maquinaria y auxiliares. Se ajustará a los Estándares Técnicos de ADIF, planos estandarizados y especificaciones del proyecto. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 10. "Para el alojamiento de cables, se efectuará la instalación de una canaleta rectangular en el $A que medirá $B de ancho y $C de profundidad, con la excavación de la zanja mediante los medios apropiados, construcción de la canaleta de ladrillos sobre una losa de hormigón, interno enlucido, ángulos galvanizados y cubierta $M(%A). Se incluye el montaje, los ajustes, el suministro de pequeño material, herramientas, equipos y auxiliares. Cumplirá con los Estándares Técnicos de ADIF, planos normalizados y especificaciones del proyecto. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 11. "En el espacio designado $A, se llevará a cabo la fabricación de una canaleta rectangular para el ensamblaje de cables, con una anchura de $B y una profundidad de $C, incluyendo la excavación de la zanja con los aparatos apropiados, la edificación de la canaleta de ladrillos sobre hormigón en masa, revestimiento interior, ángulos de protección galvanizada y la tapa $M(%A). Contempla el ensamblaje, los ajustes, el provisto de pequeños materiales, herramientas, maquinaria y elementos auxiliares. Se ajustará a los Estándares Técnicos de ADIF, planos estandarizados y especificaciones del proyecto. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 12. "Se llevará a cabo la instalación de una canaleta rectangular destinada a cables en el $A, con un ancho de $B y una profundidad de $C, incluyendo la apertura de la zanja utilizando los instrumentos necesarios, fabricación de la canaleta de ladrillo sobre una base de hormigón en masa, interiores enlucidos, ángulos galvanizados y cierre $M(%A). Se incluye el montaje, los ajustes, el suministro de pequeños materiales, herramientas, maquinaria y medios auxiliares. Se alineará con los Estándares Técnicos de ADIF, planos normalizados y especificaciones del proyecto. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 13. "Se efectuará la construcción de una canaleta rectangular para cables en el $A con una anchura de $B y una profundidad de $C, incluyendo la excavación con los medios necesarios, la colocación de la canaleta fabricada con ladrillos sobre una base de hormigón en masa, enlucido interno, angular galvanizado, y la instalación de la tapa $M(%A). Se incluirá el montaje, los desplazamientos, material auxiliar, herramientas, maquinaria y medios auxiliares. Se realizará de acuerdo con las E.T. de ADIF, planos normalizados y especificaciones del proyecto. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 14. "Se realizarán los trabajos de construcción de una canaleta rectangular para cables en el $A con una anchura de $B y una profundidad de $C, incluyendo la excarvación con los medios adecuados, la construcción de la canaleta de fábrica de ladrillos sobre una base de hormigón en masa, enlucido interno, angular galvanizado y tapa $M(%A). Se incluirá el montaje, los desplazamientos, material auxiliar, herramientas, maquinaria y medios auxiliares. Se efectuará de acuerdo con las E.T. de ADIF, planos normalizados y especificaciones del proyecto. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 15. "Se instalará una canaleta rectangular para cables en el $A con una anchura de $B y una profundidad de $C. El trabajo incluirá la excavación de la zanja apropiada, la construcción de la canaleta con ladrillos de fábrica sobre una base de hormigón, enlucido interno, protecciones galvanizadas y la colocación de la tapa $M(%A). El servicio abarca el montaje, los desplazamientos, el material auxiliar, las herramientas, la maquinaria y los medios auxiliares necesarios. Deberá cumplir con las especificaciones técnicas de ADIF, los planos normalizados y la documentación del proyecto. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 16. "Se llevará a cabo la instalación de una canaleta rectangular para cables en el $A con una anchura de $B y una profundidad de $C. Incluye la excavación de la zanja necesaria, la construcción de la canaleta con ladrillos de fábrica en una base de hormigón, enlucido interno, protección galvanizada y la colocación de la tapa $M(%A). El servicio abarca la instalación, los desplazamientos, el material auxiliar, las herramientas, la maquinaria y los medios auxiliares. Deberá cumplir con las especificaciones técnicas de ADIF, los planos normalizados y la documentación del proyecto. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 17. "Se construirá una canaleta rectangular para cables en el $A, con una anchura de $B y una profundidad de $C. El procedimiento incluirá la apertura de la zanja, la construcción de la canaleta de fábrica de ladrillos en una base de hormigón, enlucido por dentro, protección galvanizada y colocación de la tapa $M(%A). Incluye la instalación, los desplazamientos, el material auxiliar, las herramientas, la maquinaria y los medios auxiliares. Deberá cumplir con las especificaciones técnicas de ADIF, los planos normalizados y la documentación del proyecto. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 18. "Se construirá una canaleta rectangular para cables en el $A, con una anchura de $B y una profundidad de $C. El proceso incluirá la excavación de la zanja necesaria, la construcción de la canaleta de fábrica de ladrillos sobre un cimiento de hormigón, enlucido interno, protección galvanizada y el montaje de la tapa $M(%A). Incluye el montaje, los desplazamientos, el material auxiliar, las herramientas, la maquinaria y los medios auxiliares. Deberá cumplir con las especificaciones técnicas de ADIF, los planos normalizados y la documentación del proyecto. Condiciones de ejecución: $D." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- qwen2.5:14b/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$M(%A)'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%A)']
+- qwen2.5:14b/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$M(%A)'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%A)']
+- qwen2.5:14b/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$M(%A)'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%A)']
+- qwen2.5:14b/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$M(%A)'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%A)']
+- [14] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
 
 ## TEXTO template (OEC040$)
 _Used in 1 concept(s): OEC040$_
-_Skipped: malformed_list_after_retry: all_elements_rejected_by_schema_
+
+- [ ] 1. "Se proporciona una cámara de registro de $B, $I con tapa de fundición. Se incluyen los rellenos precisos, los encofrados, la entrada de los conductos de acometida y el drenaje del fondo según los planos, junto con el acabado y la limpieza de la misma. Trabajo: $C Banda de mantenimiento: $D Se especifican las condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 2. "Se menciona la cámara de registro de $B, $I con tapa de fundición. Se incluye la preparación de los rellenos precisos, los encofrados, la introducción de los conductos de acometida y el sistema de drenaje del fondo según los planos, así como el acabado y la limpieza de la misma. Trabajo: $C Banda de mantenimiento: $D Se establecen las condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 3. "Se indica la cámara de registro de $B, $I con tapa de fundición. Se consideran los rellenos precisos, los encofrados, la entrada de los conductos de acometida y el desagüe del fondo según los planos, así como el acabado y la limpieza de la misma. Trabajo: $C Banda de mantenimiento: $D Se especifican las condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 4. "Cámara de registro de $B, $I y tapa de fundición. Incluye los rellenos precisos, los encofrados y el desagüe del fondo según los planos, el recibido de los conductos de acometida, así como el acabado y la limpieza de la misma. Trabajo: $C Banda de mantenimiento: $D. Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 5. "Cámara de registro de $B, $I, con tapa de fundición. Incluye rellenos precisos, encofrados, entrada de conductos de acometida y desagüe del fondo según los planos, así como el acabado y limpieza de la misma. Trabajo: $C Zona de servicio: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 6. "Cámara de registro con $B, $I, tapa de fundición. Incluye rellenos precisos, encofrados, entrada de conductos de acometida y desagüe del fondo según planos, así como acabado y limpieza. Trabajo: $C Zona de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 7. "Unidad de registro con $B, $I y tapa de fundición. Abarca el llenado preciso, los moldes temporales, la recepción de los conductos de distribución y el desagüe del fondo según los esquemas, así como la terminación y el saneamiento. Labor: $C Intervalo de mantenimiento: $D Estipulaciones de implementación: $F" — _qwen2.5:14b_
+- [ ] 8. "Elemento de registro con $B, $I y tapa de fundición. Incluye los rellenos adecuados, los apoyos de hormigón, el recibido de los conductos de distribución y el drenaje del fondo según los diseños, así como el acabado y la limpieza. Labor: $C Intervalo de mantenimiento: $D Estipulaciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 9. "Señal de registro con $B, $I y tapa de fundición. Abarca la colocación precisa de rellenos, la construcción de moldes temporales, la recepción de los conductos de distribución y el desagüe del fondo conforme a los esquemas, así como la terminación y limpieza. Labor: $C Intervalo de mantenimiento: $D Estipulaciones de implementación: $F" — _qwen2.5:14b_
+- [ ] 10. "Estructura de registro con $B, $I y tapa de fundición. Abarca los rellenos precisos, los moldeos temporales, la recepción de conductos de distribución y el drenaje del fondo según los planos, así como la terminación y la limpieza. Labor: $C Rango de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/T1 [0] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/T1 [1] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/T1 [2] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/T1 [3] placeholders_not_preserved: original=['$B', '$C', '$D', '$F', '$I'] new=['$B', '$C', '$D', '$F', '$I', '$L(%C)', '$M(%D)', '$N(%F)']
+- [1] near_duplicate_of_kept
+- [5] near_duplicate_of_kept
+- [6] near_duplicate_of_kept
+- [7] near_duplicate_of_kept
+- [9] near_duplicate_of_kept
+- [10] near_duplicate_of_kept
 
 ## TEXTO template (OEB010$)
 _Used in 1 concept(s): OEB010$_
 
-- [ ] 1. "Instalación de conducción enterrada para línea subterránea de doble circuito de 220 o 400 kV, con cables en conductos y conductos incrustados en hormigón HM-20, con dimensiones totales de 2 m de ancho por 1,60 m de alto, con hormigonado hasta una profundidad de 760 mm, seguido de un relleno compactado al 95% P.M. Se incluyen 2 ternas de conductos de polietileno (PE) de alta densidad de 250 mm de diámetro exterior para los cables de potencia; 4 conductos de polietileno de doble pared de 110 mm de diámetro exterior para la puesta a tierra; 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones. Se incluyen separadores para 3 conductos de 250 mm de diámetro, 2 conductos de 110 mm de diámetro y soporte para tetratubo de 40 mm de diámetro. Con cintas de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluida la excavación, la preparación de la superficie de asiento, la compactación y la nivelación. Incluido el suministro, transporte, carga y descarga del material en el lugar de trabajo, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares, y el mandrilado de conductos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C."
+- [ ] 1. "Instalación de conducción subterránea para línea de doble circuito de 220 o 400 kV con cables encapsulados y conductos inyectados en hormigón HM-20, de dimensiones totales 2 m de ancho por 1,60 m de alto, con concreto extendido hasta profundidad 760 mm, seguido de relleno a compresión 95% P.M. Incluidos 2 ternas de conductos de polietileno (PE) de alta densidad de 250 mm de diámetro exterior para cables de potencia; 4 conductos de polietileno de doble capa de 110 mm de diámetro exterior para la conexión a tierra; 2 cuatrotubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones. Se integrarán separadores para 3 conductos de 250 mm de diámetro, 2 conductos de 110 mm de diámetro y soporte para cuatrotubo de 40 mm. de diámetro. Cintas de advertencia eléctrica de 150 mm de ancho a 150 mm bajo la superficie existente. Se contemplan la excavación, la preparación del lecho, la compactación y apisonado. Se incluye el abastecimiento, el traslado, el acomodo y el retiro del material en el sitio de trabajo, la instalación, los traslados, material auxiliar, herramientas, equipamiento y medios auxiliares, además del mandrilado de conductos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 2. "Estructuración de canalización subterránea para línea de doble circuito de 220 o 400 kV compuesta por cables encapsulados y conductos inyectados en concreto HM-20, de dimensiones 2 m de ancho por 1,60 m de alto, con hormigonado nivelado a profundidad 760 mm, seguido por relleno compactado hasta 95% P.M. Se incluyen 2 ternas de conductos de polietileno (PE) de alta densidad de 250 mm de diámetro exterior para cables de potencia; 4 conductos de polietileno de doble capa de 110 mm de diámetro exterior para la conexión a tierra; y 2 cuatrotubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones. Incorporan separadores para 3 conductos de 250 mm de diámetro, 2 conductos de 110 mm de diámetro y soporte para cuatrotubo de 40 mm. de diámetro. Se colocan cintas reflectantes de riesgo eléctrico de 150 mm de ancho hasta 150 mm bajo el pavimento actual. Se considera la excavación, la preparación de la base, la compactación y el apisonado. Se incluye el suministro, traslado, acomodo y retiro del material en el área de trabajo, la instalación, los movimientos, material auxiliar, herramientas, equipamiento y auxiliares, así como el mandrilado de conductos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 3. "Se realizará la ejecución de la conducción enterrada para una línea subterránea de doble circuito de 220 o 400 kV. Se instalará en hormigón resistente HM-20,, con dimensiones de 2 m de ancho por 1,60 m de alto. El hormigonado llegará hasta la cota de 760 mm, seguido de un relleno compactado hasta la cota de 95% P.M. Se incluirán 2 ternas de conductos de polietileno de alta densidad de 250 mm de diámetro exterior para los cables de potencia; 4 conductos de polietileno de doble pared de diámetro exterior 110 mm para la puesta a tierra; y 2 conductos de cuatro tubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones. Se incluirán separadores para 3 conductos de diámetro 250 mm, 2 de diámetro 110 mm y testigo soporte para conducto de cuatro tubos de diámetro 40 mm.. Se colocarán cintas de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Se realizarán las excavaciones, la preparación de la superficie de asiento, la compactación y la nivelación del terreno. Se incluye el suministro, el transporte, la carga y descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. Se realizará en terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 4. "Se llevará a cabo la instalación de la canalización hormigonada para una línea subterránea de doble circuito de 220 o 400 kV. Se realizará en hormigón HM-20,, con dimensiones de 2 m de ancho por 1,60 m de alto. Se efectuará el hormigonado hasta la cota de 760 mm, seguida del relleno compactado hasta la cota de 95% P.M. Se incluirán 2 ternas de tubos de polietileno (PE) de alta densidad de 250 mm de diámetro exterior para los cables de potencia; 4 tubos de doble pared de polietileno de 110 mm de diámetro exterior para la puesta a tierra; 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones. Se incluirán separadores para 3 tubos de diámetro 250 mm, 2 tubos de diámetro 110 mm y testigo soporte para tetratubo de diámetro 40 mm.. Se colocarán cintas de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Se realizarán la excavación, la preparación de la superficie de asiento, la compactación y la nivelación del terreno. Se incluye el suministro, el transporte, la carga y descarga del material a pie de obra, la instalación, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos. Se llevará a cabo en terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 5. "Incluye la excavación, la preparación del terreno, la compactación y la nivelación para la instalación de la conducción enterrada, hormigonada con dimensiones de 2 m de ancho por 1,60 m en alto, para una línea subterránea de doble circuito de 220 o 400 kV de cables entubados y tubos embebidos en hormigón HM-20,. El hormigón se colocará hasta la cota de 760 mm de profundidad, seguido de un relleno compactado al 95% P.M. Además, incluyen 2 ternas de conductos de polietileno (PE) de alta densidad de 250 mm de diámetro exterior para los cables de potencia; 4 tubos de polietileno de doble pared de diámetro exterior 110 mm para la puesta a tierra; y 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones. También incluyen separadores para 3 conductos de diámetro 250 mm, 2 conductos de diámetro 110 mm y soportes de testigo para tetratubo de diámetro 40 mm.. Se colocarán cintas de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. En terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 6. "Se incluye la excavación, preparación, compactación y nivelación del terreno para la instalación de un sistema de conducción enterrada de hormigón para línea subterránea doble circuito de 220 o 400 kV, con cables entubados y tubos embebidos en hormigón de HM-20,. La conducción, con dimensiones de 2 m de ancho por 1,60 m de alto, será hormigonada hasta la cota de 760 mm de profundidad, seguida de un relleno compactado al 95% P.M. Además, se incorporan los siguientes tubos de polietileno (PE) de alta densidad: 2 ternas de 250 mm de diámetro exterior para cables de potencia; 4 tubos de doble pared de 110 mm de diámetro exterior para puesta a tierra; y 2 tetratubos de 4x40 mm de diámetro exterior para telecomunicaciones. También se incluyen separadores para 3 tubos de 250 mm de diámetro y 2 tubos de 110 mm. Se colocará un soporte de testigo para tetratubo de diámetro 40 mm.. Las cintas de señalización de riesgo eléctrico tendrán un ancho de 150 mm y una profundidad de 150 mm desde el firme existente. Todo ello se ejecutará en terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 7. "Incorporación de conducción enterrada hormigonada para línea subterránea doble circuito de 220 o 400 kV, con cables entubados y tubos embebidos en hormigón de HM-20,. La conducción, de dimensiones 2 m de ancho por 1,60 m en alto, se colocará hasta la cota de 760 mm, seguida de un relleno compactado al 95% P.M. Se incluyen 2 ternas de tubos de polietileno (PE) de alta densidad de 250 mm de diámetro exterior para los cables de potencia; 4 tubos de polietileno de doble pared de 110 mm de diámetro exterior para la puesta a tierra; y 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones. Separadores para 3 tubos de diámetro 250 mm, 2 tubos de diámetro 110 mm y testigo soporte para tetratubo de diámetro 40 mm. son incluidos también. Las cintas de señalización de riesgo eléctrico tendrán un ancho de 150 mm y una profundidad de 150 mm desde el firme existente. En terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 8. "Instalación de conducción enterrada para línea subterránea doble circuito de 220 o 400 kV, consistente en cables entubados y conductos embebidos en hormigón HM-20,, con dimensiones totales de 2 m de ancho por 1,60 m de alto, hormigonado hasta la cota 760 mm, seguida del relleno compactado a 95% P.M. Incluye 2 ternas de conductos de polietileno (PE) de alta densidad de 250 mm de diámetro nominal para los cables de potencia; 4 conductos doble pared de 110 mm de diámetro exterior para la puesta a tierra; y 2 tetratubos de polietileno de 4x40 mm de diámetro nominal para telecomunicaciones. Se incluyen separadores para 3 conductos de diámetro 250 mm, 2 conductos de diámetro 110 mm, además del testigo soporte para tetratubo de diámetro 40 mm.. Se colocan cintas de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad desde el firme existente. Se efectúan excavación, preparación de la superficie de asiento, compactación y nivelación. Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares, y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 9. "Proceso de instalación de conducción enterrada para un sistema de línea subterránea de doble circuito de 220 o 400 kV, que incluye cables entubados y conductos embebidos en hormigón HM-20,. Las dimensiones totales de la canalización serán de 2 m de ancho por 1,60 m de alto, con hormigonado hasta una cota de 760 mm de profundidad y posterior compresión hasta el 95% P.M. Incluye 2 ternas de tubos de polietileno (PE) de alta densidad de 250 mm de diámetro exterior para cables de potencia; 4 tubos de doble pared de polietileno de diámetro exterior 110 mm para la puesta a tierra; 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones. También se incorporan separadores para 3 tubos de diámetro 250 mm, 2 tubos de diámetro 110 mm, y soporte de testigo para tetratubo de diámetro 40 mm.. Se implementarán cintas de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad desde la base existente. Las actividades incluyen excavación, preparación de la superficie de asiento, compactación y nivelación. Se incluyen el suministro, transporte, carga y descarga del material a pie de obra, la ejecución, desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares, y el mandrilado de tubos. Situado en terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 10. "Instalación de conducción enterrada para línea subterránea de doble circuito con cables de 220 o 400 kV, en concreto HM-20,, con dimensiones totales de 2 m de ancho por 1,60 m de alto. Se procederá a hormigonado hasta cota 760 mm, seguido de relleno compactado al 95% P.M. Se incluyen 2 ternas de conductos de polietileno de alta densidad 250 mm, 4 conductos de polietileno doble pared 110 mm, y 2 tetratubos 4x40 mm. Separadores para 3 conductos de diámetro 250 mm, 2 tubos de diámetro 110 mm, y soporte testigo para tetratubo de 40 mm.. Se colocarán cintas de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad desde el firme existente. Incluye excavación, preparación de la superficie de asiento, compactación y nivelación. Se abarcan el suministro, transporte, carga y descarga del material a obra, ejecución, desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares, y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 11. "Proceso de enterramiento de conducción para línea de doble circuito con cables de 220 o 400 kV. Se colocarán en concreto HM-20,, con dimensiones de 2 m de ancho por 1,60 m de alto. Se continuará con hormigonado hasta cota 760 mm, seguido de relleno compactado al 95% P.M. Se incluyen 2 conductos de polietileno de alta densidad 250 mm, 4 conductos de doble pared 110 mm, y 2 tetratubos 4x40 mm. Separadores para 3, conductos de diámetro 250 mm, 2 tubos de diámetro 110 mm, y soporte testigo para tetratubo de 40 mm.. Se colocarán cintas de advertencia de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad desde el firme existente. Incluyen excavación, preparación de la superficie de asiento, compactación y nivelación. Se suministrará, transportará, cargará y descargará el material a obra, ejecutará, desplazará, proporcionará pequeño material, herramientas, maquinaria y medios auxiliares, y mandrilará tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/T1 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/T1 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/T1 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/T1 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/T2 [0] sentinels_not_preserved: missing=['P3', 'Q10', 'Q11', 'Q12', 'Q13', 'Q14', 'Q15', 'Q16', 'Q17', 'Q18', 'Q19', 'Q20', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8', 'Q9'] extra_or_dup=[]
+- phi4:latest/T2 [2] sentinels_not_preserved: missing=['P3', 'Q10', 'Q11', 'Q12', 'Q13', 'Q14', 'Q15', 'Q16', 'Q17', 'Q18', 'Q19', 'Q20', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8', 'Q9'] extra_or_dup=[]
+- qwen2.5:14b/T2 [3] sentinels_not_preserved: missing=['Q3'] extra_or_dup=[]
 - [4] near_duplicate_of_kept
+- [5] near_duplicate_of_kept
+- [9] near_duplicate_of_kept
+- [11] near_duplicate_of_kept
+- [12] near_duplicate_of_kept
+- [13] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
+- [16] near_duplicate_of_kept
+- [17] near_duplicate_of_kept
+- [20] near_duplicate_of_kept
 
 ## TEXTO template (OEB050$)
 _Used in 1 concept(s): OEB050$_
 
-- [ ] 1. "Instalación de conducción enterrada para línea subterránea de telecomunicaciones, conectada a arquetas y adyacente a cámaras de empalme, con cables en conductos y conductos incrustados en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, con hormigonado hasta una profundidad de 650 mm, seguido de relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluye excavación, preparación de la superficie de asiento, compactación y nivelación. Incluye el suministro, transporte, carga y descarga del material en el lugar de trabajo, ejecución, desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares, y el mandrilado de conductos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C."
+- [ ] 1. "Conducción enterrada para línea subterránea de telecomunicaciones, con derivación hacia arquetas de telecomunicaciones y proximidad a cámaras de empalme, de cables en conducto y conductos incrustados en hormigón HE-20, con dimensiones totales de 450 mm de ancho por 1 m de alto, hormigonado hasta una profundidad de 650 mm, seguido de relleno compactado hasta 95% P.M. Se incluyen 2 tetratubos de polietileno con un diámetro exterior de 4x40 mm para telecomunicaciones, y los separadores adecuados. Adicionalmente, se colocará cinta de señalización de riesgo eléctrico de 150 mm de ancho a una profundidad de 150 mm bajo el firme existente. Incluye excavación, preparación de la superficie de asiento, compactación y nivelación. También se contemplan el suministro, transporte, carga y descarga del material en el lugar, ejecución, desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares, y el mandrilado de tubos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 2. "Instalación de conducción subterránea para línea de telecomunicaciones, que conecta con arquetas de telecomunicaciones y se extiende a cámaras de empalme, compuesta por cables dentro de tubos y conductos incorporados en concreto HE-20,, con medidas generales 450 mm de ancho por 1 m de altura, enterrados hasta una profundidad 650 mm, seguido de relleno compactado hasta la 95% P.M. Incluye 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores necesarios. Se colocará cinta de advertencia eléctrica de 150 mm de ancho a una profundidad 150 mm del pavimento actual. También se incluyen los trabajos de excavación, preparación de la base de asiento, compactación y nivelación. Se suministra, transporta, carga y descarga el material en el sitio de trabajo, se realiza la instalación, se gestionan los desplazamientos, y se proveen materiales menores, herramientas, maquinaria y medios auxiliares, así como el mandrilado de conductos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 3. "Implementación de conducción enterrada para infraestructura de telecomunicaciones subterránea, conectándose a arquetas de telecomunicaciones y extendiéndose hasta cámaras de empalme, que incluye cables en tubos y conductos incrustados en concreto HE-20, con dimensiones totales 450 mm de ancho por 1 m de alto, enterrados hasta una cota de 650 mm de profundidad, seguido de un relleno compactado hasta la 95% P.M. Se incorporan 2 tetratubos de polietileno con un diámetro exterior de 4x40 mm para telecomunicaciones y los separadores respectivos. Se instalará cinta de advertencia eléctrica de 150 mm de ancho a una profundidad 150 mm del pavimento actual. Se incluyen las tareas de excavación, preparación de la base de asiento, compactación y nivelación. Se suministran, transportan, cargan y descargan los materiales en el lugar de trabajo, se ejecuta la instalación, se gestionan los desplazamientos, y se proporcionan materiales menores, herramientas, maquinaria y medios auxiliares, así como el mandrilado de conductos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 4. "Puesta en marcha de conducción subterránea para telecomunicaciones, conectándose a arquetas y extendiéndose hasta cámaras de empalme, integrando cables en tubos y conductos de concreto HE-20, con dimensiones 450 mm de ancho por 1 m de altura, enterrados hasta una profundidad 650 mm, seguido de un relleno compactado hasta el 95% P.M. Se incluyen 2 tetratubos de polietileno con diámetro exterior de 4x40 mm para uso en telecomunicaciones y los separadores necesarios. Se colocará cinta de advertencia eléctrica de 150 mm de ancho a una profundidad 150 mm del pavimento existente. También se incluyen tareas de excavación, preparación del área de asiento, compactación y nivelación. Se suministran, transportan, cargan y descargan los materiales en el lugar de obra, se realiza la instalación, se gestionan los desplazamientos, y se proporcionan materiales menores, herramientas, maquinaria y medios auxiliares, así como el mandrilado de conductos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 5. "Instalación de tubería subterránea para comunicaciones telefónicas, integrando arquetas y cámaras de empalme, compuesta por cables en tubos y conductos incrustados en concreto HE-20, con dimensiones de 450 mm de ancho por 1 m de altura, incrustados hasta una profundidad 650 mm, seguido de un relleno compactado hasta el 95% P.M. Se incorporan 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores apropiados. Se instalará cinta de advertencia eléctrica de 150 mm de ancho a una profundidad 150 mm del pavimento actual. Este proceso incluye excavación, preparación del área de asiento, compactación y nivelación. Se gestionan el suministro, transporte, carga y descarga de materiales en el lugar de obra, ejecución, desplazamientos, materiales menores, herramientas, maquinaria y medios auxiliares, así como el mandrilado de conductos. En terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 6. "Se realizará la canalización para una línea subterránea de telecomunicaciones, incluyendo derivaciones a arquetas de telecomunicaciones y en áreas cercanas a cámaras de empalme. Se instalarán cables entubados y conductos embebidos en hormigón HE-20, con dimensiones totales de 450 mm de ancho por 1 m de alto, con hormigonado hasta la cota 650 mm de profundidad y posterior relleno compactado hasta el 95% P.M. Se incluirán 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones, junto con los separadores correspondientes. Se colocará una cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad desde el firme existente. Incluye excavación, preparación de la superficie de asiento, compactación y nivelación. Se contempla el suministro, el transporte, la carga y descarga del material a pie de obra, la ejecución, los desplazamientos, el pequeño material, las herramientas, la maquinaria y medios auxiliares y el mandrilado de conductos. La obra se ejecutará en terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 7. "Instalación de conducción enterrada para líneas subterráneas de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, con conductos entubados y tubos embebidos en hormigón HE-20, de dimensiones 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad y relleno compactado hasta 95% P.M. Incluye la excavación, preparación de la superficie de asiento, compactación y nivelación. También incluyen 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes, y cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad desde el firme existente. Se realiza en terreno $A, $B de pavimento, bajo las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 8. "Instalación de tubería para instalación subterránea de telecomunicaciones, que incluye derivaciones a arquetas de telecomunicaciones y conexiones a cámaras de unión, con tubos y conductos entubados embebidos en hormigón HE-20, con dimensiones totales de 450 mm de ancho por 1 m de alto. El hormigón se nivelará hasta una cota de 650 mm de profundidad, seguido de un relleno compactado hasta el nivel de 95% P.M. Incluyen 2 conductos de polietileno de diámetro exterior 4x40 mm para telecomunicaciones y los separadores necesarios. Se implementará una cinta de aviso de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad desde el nivel del terreno actual. El trabajo de excavación, preparación del terreno, compactación y nivelación se incluyen en la ejecución, junto con el suministro, transporte, carga y descarga de material, herramientas y maquinaria necesarias. Se llevará a cabo en terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 9. "Ejecución de la conducción enterrada para instalaciones de telecomunicaciones subterráneas, que incluye derivaciones a arquetas de telecomunicaciones y conexiones a cámaras de empalme, así como tuberías y conductos de hormigón HE-20, con dimensiones totales de 450 mm de ancho por 1 m de alto. Se hormigonará hasta una cota de 650 mm de profundidad, seguido de un relleno compactado hasta el nivel de 95% P.M. Se incluyen 2 conductos de polietileno de diámetro exterior 4x40 mm para telecomunicaciones y los separadores necesarios. Se implementará una cinta de aviso de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad desde la superficie actual. Se realizará la excavación, preparación del terreno, compactación y nivelación. Incluido el suministro, el transporte, la carga y la descarga del material, herramientas y maquinaria necesarias. El trabajo se realizará en terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 10. "Instalación de tubería para línea subterránea de telecomunicaciones que se lleva a cabo en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, incluyendo conductos de hormigón HE-20, con dimensiones de 450 mm de ancho por 1 m de alto. Se procederá a hormigonar hasta la cota de 650 mm de profundidad, seguido de un relleno hasta 95% P.M. Se suministrarán 2 conductos de polietileno de diámetro exterior 4x40 mm para telecomunicaciones y sus separadores correspondientes. Se colocará una cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Se incluye el trabajo de excavación, preparación del terreno, compactación y nivelación. También incluye el suministro, transporte, carga y descarga del material, herramientas y maquinaria necesarias. Se realizará en terreno $A, $B de pavimento. Condiciones de ejecución: $C." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%C)']
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=['P7']
+- qwen2.5:14b/R2 [0] sentinels_not_preserved: missing=['Q6', 'Q7'] extra_or_dup=[]
+- qwen2.5:14b/R2 [2] sentinels_not_preserved: missing=['Q6', 'Q7'] extra_or_dup=[]
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['Q6', 'Q7'] extra_or_dup=[]
 - [1] near_duplicate_of_kept
 - [2] near_duplicate_of_kept
 - [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
+- [9] near_duplicate_of_kept
+- [10] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
 
 ## TEXTO template (OEE040$)
 _Used in 1 concept(s): OEE040$_
 
-- [ ] 1. "Sustitución de barra de anclaje de cimentación con esperas. Actividad: $A. Zona de mantenimiento: $B. Circunstancias de ejecución: $C."
-- [ ] 2. "Renovación de barra de anclaje de cimentación con esperas. Tarea: $A. Sector de mantenimiento: $B. Parámetros de ejecución: $C."
-- [ ] 3. "Reemplazo de barra de anclaje de cimentación con esperas. Operación: $A. Área de mantenimiento: $B. Condiciones de realización: $C."
-- [ ] 4. "Sustitución de barra de anclaje de cimentación con esperas. Labor: $A. Rango de mantenimiento: $B. Condiciones de implementación: $C."
-- [ ] 5. "Renovación de barra de anclaje de cimentación con esperas. Proceso: $A. Zona de mantenimiento: $B. Circunstancias de realización: $C."
-- [ ] 6. "Reemplazo de barra de anclaje de cimentación con esperas. Actividad: $A. Sector de mantenimiento: $B. Parámetros de ejecución: $C."
+- [ ] 1. "Se lleva a cabo la reposición de la barra de anclaje de cimentación con esperas. Trabajo: $A. Banda de mantenimiento: $B. Se definen las condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 2. "Reemplazo efectuado de la barra de anclaje de cimentación, incluyendo esperas. Trabajo: $A. Banda de mantenimiento: $B. Las condiciones para la ejecución son: $C." — _phi4:latest_
+- [ ] 3. "La barra de anclaje de cimentación, con esperas, es reemplazada. Trabajo: $A. Banda de mantenimiento: $B. Se establecen las condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 4. "Se procede a la sustitución de la barra de anclaje de cimentación, incluyendo las esperas. Trabajo: $A. Banda de mantenimiento: $B. Las condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 5. "Trabajo de reposición de barra de anclaje de cimentación con esperas. Se ejecuta bajo las condiciones: $C. La tarea corresponde a: $A. La banda de mantenimiento incluye: $B." — _phi4:latest_
+- [ ] 6. "Con las condiciones de ejecución: $C, se realiza la reposición de barra de anclaje de cimentación con esperas. El trabajo se clasifica bajo: $A. Y la banda de mantenimiento corresponde a: $B." — _phi4:latest_
+- [ ] 7. "Se lleva a cabo la reposición de barra de anclaje de cimentación con esperas, conforme a las condiciones: $C. El trabajo se designa como: $A. La banda de mantenimiento asociada es: $B." — _phi4:latest_
+- [ ] 8. "Bajo las condiciones de ejecución: $C, se realiza la reposición de la barra de anclaje de cimentación con esperas. Incluido está el trabajo: $A. La banda de mantenimiento corresponde a: $B." — _phi4:latest_
+- [ ] 9. "Sustitución de barra de anclaje de cimentación junto con esperas. Tarea: $A. Zona de mantenimiento: $B. Parámetros de ejecución: $C." — _phi4:latest_
+- [ ] 10. "Renovación de barra de amarre de cimentación con esperas. Actividad: $A. Área de intervención: $B. Requisitos de ejecución: $C." — _phi4:latest_
+- [ ] 11. "Renovación de barra de fijación de cimentación con esperas. Operación: $A. Sector de mantenimiento: $B. Condiciones de realización: $C." — _phi4:latest_
+- [ ] 12. "Reemplazo de barra de sujeción de cimentación con esperas. Proceso: $A. Rango de mantenimiento: $B. Parámetros de ejecución: $C." — _phi4:latest_
+- [ ] 13. "Se realiza la reposición de barra de anclaje de cimentación con esperas. Se especifica el trabajo: $A. Se indica la banda de mantenimiento: $B. Se detallan las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 14. "La reposición de la barra de anclaje de cimentación con esperas. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 15. "Se efectúa la reposición de barra de anclaje de cimentación con esperas. Se detalla el trabajo: $A. Se especifica la banda de mantenimiento: $B. Se indican las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 16. "Se lleva a cabo la reposición de barra de anclaje de cimentación con esperas. Se estipula el trabajo: $A. Se señala la banda de mantenimiento: $B. Se describe el entorno de ejecución: $C." — _qwen2.5:14b_
+- [ ] 17. "Trabajo: $A, con reposición de barra de anclaje de cimentación con esperas. Banda de mantenimiento: $B. Incluido en las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 18. "Se realizará la reposición de barra de anclaje de cimentación con esperas. Trabajo: $A, Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 19. "Condiciones de ejecución: $C, banda de mantenimiento: $B, trabajo: reposición de barra de anclaje de cimentación con esperas y $A." — _qwen2.5:14b_
+- [ ] 20. "Instalación de barra de anclaje en cimentación con esperas. Tarea principal: $A. Zona de trabajo: $B. Requisitos operativos: $C." — _qwen2.5:14b_
+- [ ] 21. "Reemplazo de barra de anclaje en cimentación con espaciadores. Operación: $A. Límite del área de intervención: $B. Reglas de colocación: $C." — _qwen2.5:14b_
+- [ ] 22. "Integración de barra de anclaje durante la reparación de cimentación con espaciadores. Actividad: $A. Sección afectada: $B. Criterios de instalación: $C." — _qwen2.5:14b_
+- [ ] 23. "Corrección del anclaje de barra en cimentación con separadores. Ejecución principal: $A. Área de intervención: $B. Normas de operación: $C." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [19] near_duplicate_of_kept
 
 ## TEXTO template (OEE030$)
 _Used in 1 concept(s): OEE030$_
 
-- [ ] 1. "Sustitución de barra de anclaje para postes en viaductos con esperas. Tarea: $A. Zona de mantenimiento: $B. Circunstancias de ejecución: $C."
-- [ ] 2. "Renovación de barra de anclaje para postes en viaductos con esperas. Labor: $A. Área de mantenimiento: $B. Condiciones de realización: $C."
-- [ ] 3. "Reemplazo de barra de anclaje para postes en viaductos con esperas. Actividad: $A. Sector de mantenimiento: $B. Condiciones de implementación: $C."
-- [ ] 4. "Sustitución de barra de anclaje para postes en viaductos con esperas. Operación: $A. Rango de mantenimiento: $B. Condiciones de ejecución: $C."
-- [ ] 5. "Renovación de barra de anclaje para postes en viaductos con esperas. Proyecto: $A. Zona de mantenimiento: $B. Condiciones de ejecución: $C."
-- [ ] 6. "Reemplazo de barra de anclaje para postes en viaductos con esperas. Tarea: $A. Área de mantenimiento: $B. Condiciones de realización: $C."
+- [ ] 1. "Se lleva a cabo la reposición de la barra de anclaje de postes en viaductos con esperas. Actividad: $A. Intervalo de mantenimiento: $B. Regulaciones de ejecución: $C." — _phi4:latest_
+- [ ] 2. "Se efectúa la sustitución de la barra de anclaje de postes en viaductos que cuentan con esperas. Tarea: $A. Período de mantenimiento: $B. Parámetros de ejecución: $C." — _phi4:latest_
+- [ ] 3. "Se ejecuta la reposición de las barras de anclaje de los postes en viaductos dotados de esperas. Labor: $A. Rango de mantenimiento: $B. Directrices de ejecución: $C." — _phi4:latest_
+- [ ] 4. "Se realiza la reposición de barra de anclaje en los postes de viaductos con esperas. Oficio: $A. Cohorte de mantenimiento: $B. Condiciones para la realización: $C." — _phi4:latest_
+- [ ] 5. "Sustitución de barra de sujeción de postes en viaductos que incluyen esperas. Trabajo: $A. Zona de intervención: $B. Parámetros de ejecución: $C." — _phi4:latest_
+- [ ] 6. "Trabajo de sustitución de barra de fijación de postes en viaductos con inclusiones de esperas. Labor: $A. Área de mantenimiento: $B. Circunstancias de implementación: $C." — _phi4:latest_
+- [ ] 7. "Viaductos con esperas: reposición de la barra de fijación de postes. Intervención: $A. Sector de mantenimiento: $B. Requisitos de la ejecución: $C." — _phi4:latest_
+- [ ] 8. "Sustitución de los anclajes de postes en viaductos que cuentan con esperas. Actuación: $A. Zona de atención: $B. Normas de ejecución: $C." — _phi4:latest_
+- [ ] 9. "Cambio de barra de fijación de postes en viaductos equipados con esperas. Actuación: $A. Rango de conservación: $B. Parámetros de implementación: $C." — _phi4:latest_
+- [ ] 10. "Renovación de barra de sujeción de postes en viaductos con sistemas de espera. Operación: $A. Área de mantenimiento: $B. Circunstancias de aplicación: $C." — _phi4:latest_
+- [ ] 11. "Sustitución de barra de sujeción de postes en viaductos dotados de sistemas de esperas. Procedimiento: $A. Zona de mantenimiento: $B. Criterios de realización: $C." — _phi4:latest_
+- [ ] 12. "Reemplazo de barra de amarre de postes en viaductos provistos de sistemas de espera. Actividad: $A. Sector de conservación: $B. Condiciones de puesta en marcha: $C." — _phi4:latest_
+- [ ] 13. "Se realiza la reposición de la barra de anclaje de postes en viaductos equipados con esperas. Se establece el trabajo como $A. Se determina la banda de mantenimiento como $B. Se especifican las condiciones de ejecución como $C." — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la reposición de la barra de anclaje de postes en viaductos dotados de esperas. Se propone el trabajo como $A. Se designa la banda de mantenimiento como $B. Se detallan las condiciones de ejecución como $C." — _qwen2.5:14b_
+- [ ] 15. "Se efectúa la reposición de la barra de anclaje de postes en viaductos con esperas. Se establecen los trabajos según $A. Se señala la banda de mantenimiento de acuerdo a $B. Se detallan las condiciones de ejecución de conformidad con $C." — _qwen2.5:14b_
+- [ ] 16. "Se ejecuta la reposición de la barra de anclaje de postes en viaductos que cuentan con esperas. Se define el trabajo como $A. Se establece la banda de mantenimiento como $B. Se indican las condiciones de ejecución como $C." — _qwen2.5:14b_
+- [ ] 17. "Reemplazo de barras de anclaje para postes en estructuras viarias con zonas de espera. Actividad: $A. Zona de trabajo: $B. Requisitos para la ejecución: $C." — _qwen2.5:14b_
+- [ ] 18. "Actualización de barras de anclaje para postes en viaductos dotados de zonas de espera. Tarea: $A. Zona a intervenir: $B. Normas de realización: $C." — _qwen2.5:14b_
+- [ ] 19. "Sustitución de barras de anclaje destinadas a postes en puentes con áreas de espera. Actividad a realizar: $A. Zona de intervención: $B. Requisitos para la operación: $C." — _qwen2.5:14b_
+- [ ] 20. "Intervención de barras de anclaje en postes para viaductos con sectores de espera. Tarea a efectuar: $A. Zona de trabajo: $B. Condiciones de implementación: $C." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- qwen2.5:14b/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- qwen2.5:14b/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- qwen2.5:14b/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- qwen2.5:14b/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
 
 ## TEXTO template (OED090$)
 _Used in 1 concept(s): OED090$_
 
-- [ ] 1. "Provisión y colocación de base cilíndrica en excavación tipo $B para suelo $A con estructuras de catenaria, desde plataforma o vía, incluyendo los componentes de sujeción del poste. Completamente finalizada. Labor: $C. Zona de conservación: $D. Requisitos de ejecución: $F."
-- [ ] 2. "Entrega y ensamblaje de fundación cilíndrica en excavación tipo $B para terreno $A con soportes de catenaria, desde plataforma o vía, incluyendo los dispositivos de anclaje del poste. Totalmente acabada. Tarea: $C. Área de mantenimiento: $D. Condiciones de ejecución: $F."
+- [ ] 1. "Instalación y entrega de base cilíndrica en excavación tipo $B para suelo $A con bastiones de catenaria CA, desde plataforma o línea, con fijaciones para el bastión incluidas. Elaborada por completo. Trabajo: $C. Zona de cuidado: $D. Términos de realización: $F." — _phi4:latest_
+- [ ] 2. "Entrega y colocación de fundación cilíndrica en zanja tipo $B para terreno $A con aisladores de catenaria CA, desde plataforma o carril, incluyendo componentes de anclaje del aislador. Concluida en su totalidad. Trabajo: $C. Área de mantenimiento: $D. Condiciones de construcción: $F." — _phi4:latest_
+- [ ] 3. "Suministro e instalación de estructura cilíndrica en excavación tipo $B para terreno $A con pilares de catenaria CA, desde plataforma o vía, con anclajes para el pilar incluidos. Acabada en su totalidad. Trabajo: $C. Intervalo de mantenimiento: $D. Requisitos de construcción: $F." — _phi4:latest_
+- [ ] 4. "Suministro e instalación de soporte cilíndrico en corte tipo $B para superficie $A con columnas de catenaria CA, desde plataforma o vía, incluyendo los anclajes del soporte. Finalizada completamente. Trabajo: $C. Zona de cuidado: $D. Términos de ejecución: $F." — _phi4:latest_
+- [ ] 5. "Provisión y colocado de anclaje cilíndrico tipo $B en terreno $A para poste de catenaria CA, desde plataforma o vía, incluye accesorios de sujeción del poste. Completamente acabada. Labor: $C. Zona de conservación: $D. Circunstancias de ejecución: $F." — _phi4:latest_
+- [ ] 6. "Provisión y ensamblaje de soporte cilíndrico en terreno $A para poste de catenaria CA, tipo $B, desde plataforma o vía, con componentes de anclaje del poste integrados. Completamente finalizada. Actividad: $C. Área de mantenimiento: $D. Requisitos de ejecución: $F." — _phi4:latest_
+- [ ] 7. "Abastecimiento y colocación de base cilíndrica en terreno $A para catenaria CA, tipo $B, desde plataforma o vía, con accesorios para postes incluidos. Completamente acabada. Tarea: $C. Límite de cuidado: $D. Parámetros de realización: $F." — _phi4:latest_
+- [ ] 8. "Entrega y colocación de estructura cilíndrica en desmonte $B para terreno $A con postes de electrificación CA, desde plataforma o vía, incluidas piezas de sujeción del poste. Totalmente acabada. Proceso: $C. Sectores de mantenimiento: $D. Circunstancias de implementación: $F." — _phi4:latest_
+- [ ] 9. "Se realizarán las tareas de suministro y montaje para la cimentación cilíndrica tipo $B en terreno de desmonte con postes de catenaria CA en el terreno $A. Abarcará la provisión de elementos de sujección del poste. Se considerará completa la obra una vez cumplidos los trabajos especificados en $C. Se indicará la banda de mantenimiento aplicable en $D. Se establecerán las condiciones de ejecución en $F." — _qwen2.5:14b_
+- [ ] 10. "Se proporcionará y se instalará la cimentación cilíndrica de tipo $B en terreno de desmonte para la colocación de postes de catenaria CA en terreno $A. Se incluirán los componentes de sujección del poste. Se considerará la obra finalizada según las especificaciones detalladas en $C. Se indicará la banda de mantenimiento correspondiente en $D. Se detallarán las condiciones de ejecución en $F." — _qwen2.5:14b_
+- [ ] 11. "Se llevarán a cabo las actividades de suministro y montaje para la cimentación cilíndrica de tipo $B en desmonte para postes de catenaria CA en terreno $A. Se proveerán los componentes de fijación del poste. Se considerará la obra completa de acuerdo a los descriptores en $C. Se indicará la banda de mantenimiento en $D. Se detallarán las condiciones de ejecución en $F." — _qwen2.5:14b_
+- [ ] 12. "Instalación y configuración de fundación cilíndrica tipo $B en terreno $A para postes de catenaria CA, incluido en la oferta los dispositivos de aseguramiento de la estructura. Sistema finalizado. Servicio: $C. Periodo de garantía: $D. Circunstancias de implementación: $F." — _qwen2.5:14b_
+- [ ] 13. "Entrega y colocación de cimentación cilíndrica tipo $B en terreno $A, destinada a soportes de catenaria CA. Incluye los elementos de fijación del poste. Sistema completamente finalizado. Servicio: $C. Banda de mantenimiento: $D. Condiciones de ejecucción: $F." — _qwen2.5:14b_
+- [ ] 14. "Suministro y puesta en marcha de fundación cilíndrica tipo $B, destinada a su instalación en desmonte para terreno $A, incluyendo postes de catenaria CA. Totalmente terminada. Servicio: $C. Periodo de garantía: $D. Condiciones de ejecucción: $F." — _qwen2.5:14b_
+- [ ] 15. "Suministro y montaje de cimentación cilíndrica tipo $B, con destino a terreno $A, para postes de catenaria CA. Incluye elementos de fijación. Sistema terminado. Servicio: $C. Banda de mantenimiento: $D. Condiciones de ejecucción: $F." — _qwen2.5:14b_
+- [ ] 16. "Instalación y finalización de cimentación cilíndrica en desmonte de tipo $B, diseñada para terrenos $A, en estaciones de electrificación CA tanto desde plataforma como desde la vía. Incluye todos los componentes para la fijación del poste. Estado final: completamente terminada. Duración laboral: $C. Posible interrupción: $D. Circunstancias de ejecución: $F." — _qwen2.5:14b_
+- [ ] 17. "Suministro e instalación de cimentación cilíndrica tipo $B en terreno de tipo $A. Este proyecto incluye la colocación de postes de catenaria CA desde la plataforma o la vía, así como los accesorios de fijación necesarios. Condiciones: trabajo total, banda de mantenimiento definida y condiciones de ejecución detalladas en $C, $D y $F respectivamente." — _qwen2.5:14b_
+- [ ] 18. "Entrega e instalación de cimentación cilíndrica en corte tipo $B, para terrenos con características $A. Este servicio incluye la instalación de postes de catenaria CA desde la plataforma o la vía de ferrocarril, con todos los componentes de fijación proporcionados. Proyecto completo: trabajo total, área de mantención establecida y condiciones de ejecución detalladas en $C, $D y $F respectivamente." — _qwen2.5:14b_
+- [ ] 19. "Instalación y montaje de cimentación cilíndrica en desmonte tipo $B, diseñada para terrenos de tipo $A. Este proceso incluye la colocación de postes de catenaria CA desde la plataforma o la vía, junto con todos los elementos de fijación necesarios. Proyecto completado: trabajo total, banda de mantenimiento establecida, y condiciones de ejecución detalladas en $C, $D y $F respectivamente." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
 
 ## TEXTO template (OED100$)
 _Used in 2 concept(s): OED100$, OED140$_
 
-- [ ] 1. "Provisión y colocación de base cilíndrica en terraplén tipo $B para suelo $A con estructuras de catenaria, desde plataforma o vía, incluyendo los componentes de sujeción del poste. Completamente finalizada. Labor: $C. Zona de mantenimiento: $D. Requisitos de ejecución: $F."
-- [ ] 2. "Entrega y ensamblaje de fundación cilíndrica en terraplén tipo $B para terreno $A con postes de catenaria, desde plataforma o vía, incluyendo los dispositivos de anclaje del poste. Totalmente acabada. Tarea: $C. Área de mantenimiento: $D. Condiciones de ejecución: $F."
+- [ ] 1. "Se proveerá y colocará la cimentación cilíndrica en terraplén tipo $B para el terreno $A con postes de electrificación ca, desde plataforma o vía, incorporando los elementos de anclaje del poste. Se terminará completamente. Trabajo: $C. Zona de mantenimiento: $D. Condiciones de realización: $F." — _phi4:latest_
+- [ ] 2. "Se suministrará y montará la cimentación cilíndrica tipo $B en el terraplén para el terreno $A, junto con postes de electrificación ca, desde la plataforma o vía, incluyendo los componentes para la fijación del poste. Se completará el acabado. Trabajo: $C. Ancho de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 3. "La cimentación cilíndrica en terraplén tipo $B se suministrará y montará para el terreno $A con postes de electrificación ca, a partir de la plataforma o vía, incluyendo los elementos necesarios para fijar el poste. Se realizará el acabado completo. Trabajo: $C. Ancho para mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 4. "Se facilitará y se instalará la cimentación cilíndrica en terraplén tipo $B para el terreno $A que incluye postes de electrificación ca, desde la plataforma o vía, incorporando los accesorios de fijación del poste. Se completará hasta el acabado final. Trabajo: $C. Área de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 5. "Entrega y colocación de fundación cilíndrica en terraplén clase $B diseñada para superficie $A con pilares de catenaria CA, desde infraestructura o riel, comprendiendo los accesorios de sujeción del pilar. Completamente finalizada. Obras: $C. Área de cuidado: $D. Normas de realización: $F." — _phi4:latest_
+- [ ] 6. "Provisión e instalación de estructura cilíndrica en terraplén modelo $B para tipo de suelo $A con estacas de alimentación de CA, desde estación o carril, integrando los componentes de sujeción de la estaca. Construcción concluida. Labor: $C. Zona de conservación: $D. Requisitos de ejecución: $F." — _phi4:latest_
+- [ ] 7. "Aporte y colocación de base cilíndrica en terraplén clase $B para tipo de terreno $A con columnas de catenaria CA, desde base o riel, incorporando las partes de anclaje del pilar. Conclusión total del acabado. Empleo: $C. Línea de cuidado: $D. Prescripciones de ejecución: $F." — _phi4:latest_
+- [ ] 8. "Fornecimiento e instalación de fundamento cilíndrico en terraplén tipo $B para suelo $A con pilares de alimentación de CA, desde lecho o vía, conteniendo los accesorios de sujeción del pilar. Construcción completamente finalizada. Empleo: $C. Zona de conservación: $D. Normativas de ejecución: $F." — _phi4:latest_
+- [ ] 9. "Se realiza el suministro y montaje de cimentación cilíndrica tipo $B en terraplén para terreno $A. Se incluyen postes de electrificación de tipo CA desde plataforma o vía, con el suministro de los elementos de fijación necesarios para el poste. Se entrega totalmente terminada. Se especifica el trabajo: $C, banda de mantenimiento: $D, y se detallan las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 10. "Se proporciona y se instala cimentación cilíndrica tipo $B para terrenos $A, con postes de electrificación de tipo CA desde plataforma o vía. Se incluyen todos los materiales de sujeción necesarios para el poste. Se entrega en condiciones completas. Se detallan el trabajo: $C, banda de mantenimiento: $D, y las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 11. "Se lleva a cabo el suministro y montaje de cimentación cilíndrica tipo $B para terraplenes de postes de catenaria CA en terrenos $A. Se proporcionan todos los elementos de fijación para el poste. Se entrega el producto totalmente terminado. Se detallan el trabajo: $C, la banda de mantenimiento: $D, y las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 12. "Se entrega la cimentación cilíndrica tipo $B para terraplén de postes de catenaria CA en terrenos $A. Se proveen los elementos para la fijación del poste desde plataforma o vía. Se entregarán los trabajos completos. Se especifican el trabajo: $C, la banda de mantenimiento: $D, y las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 13. "Suministro y montaje de cimentación cilíndrica en terraplén tipo $B, para su instalación en terreno $A y con postes de electrificación CA desde la plataforma o vía, incluye los elementos de sujeción del poste. La obra está completamente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 14. "Suministro y montaje de cimentación cilíndrica en terraplén tipo $B, para terreno $A, incluye la instalación de postes de electrificación CA desde la plataforma o vía, con los elementos de anclaje. La obra final se entrega totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 15. "Suministro y montaje de cimentación cilíndrica en terraplén tipo $B, para terreno $A, incluido el montaje de postes de electrificación CA desde la plataforma o vía, con los elementos de aseguramiento necesarios. Finalización total de la obra. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 16. "Suministro y montaje de cimentación cilíndrica en terraplén tipo $B. Esta cimentación se instalará en terreno $A, y el trabajo incluirá la colocación de postes de electrificación CA desde la plataforma o vía, con elementos de sujeción. La obra está completamente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 17. "Instalación y suministro de cimentación cilíndrica tipo $B en terraplén con postes de catenaria CA para terreno $A. Incluye los componentes de sujeción. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de realización: $F." — _qwen2.5:14b_
+- [ ] 18. "Suministro e instalación de fundaciones cilíndricas tipo $B en terraplén con postes de catenaria CA para terreno $A. Incluye los mecanismos de sujeción del poste. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 19. "Suministro y colocación de cimentaciones cilíndricas tipo $B en terraplén con postes de catenaria CA para terreno $A. Incluye los elementos de sujeción del poste. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
+- phi4:latest/R2 [0] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R2 [1] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R2 [2] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R2 [3] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- [19] near_duplicate_of_kept
 
 ## TEXTO template (OED030$)
 _Used in 1 concept(s): OED030$_
 
-- [ ] 1. "Provisión e instalación de base cilíndrica en excavación $B para suelo $A con soportes de electrificación, desde plataforma o vía, incluyendo los componentes de sujeción del soporte. Completamente acabada. Labor: $C. Zona de conservación: $D. Circunstancias de realización: $F."
-- [ ] 2. "Entrega e instalación de fundación cilíndrica en excavación $B para terreno $A con estructuras de electrificación, desde plataforma o vía, incluyendo los dispositivos de anclaje del soporte. Totalmente finalizada. Tarea: $C. Área de mantenimiento: $D. Parámetros de ejecución: $F."
-- [ ] 3. "Entrega e instalación de base cilíndrica en excavación $B para suelo $A con estructuras de electrificación, desde plataforma o vía, incluyendo los componentes de sujeción de la estructura. Completamente acabada. Labor: $C. Zona de conservación: $D. Circunstancias de realización: $F."
+- [ ] 1. "Se proveerá y se instalará la cimentación cilíndrica de desmonte $B destinada al terreno $A con postes para electrificación, desde la plataforma o vía, incluida la fijación correspondiente de los postes. Será entregada en obra completamente acabada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 2. "La cimentación cilíndrica en desmonte $B para terreno $A, que incluye postes de electrificación desde plataforma o vía y los accesorios necesarios para su fijación, se suministra y monta. El resultado final será una obra totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 3. "Se suministrará y se montará una cimentación cilíndrica de desmonte $B para uso en terreno $A, incluyendo postes de electrificación desde plataforma o vía, junto con los elementos para la fijación de los postes. La obra será completamente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 4. "La ejecución incluye el suministro y el montaje de la cimentación cilíndrica en desmonte $B para el terreno $A con postes destinados a electrificación, desde la plataforma o vía, e incorpora los elementos necesarios para fijar los postes. La obra se entrega completamente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 5. "Provisión e instalación de base cilíndrica en zanja $B para terreno $A que incluye postes de electrificación, desde plataforma o vía, con elementos de sujeción para los postes. Finalizada en su totalidad. Tarea: $C. Anchura de mantenimiento: $D. Normas de ejecución: $F." — _phi4:latest_
+- [ ] 6. "Entrega e instalación de soporte cilíndrico en excavación $B para superficie $A que comprende postes de alimentación eléctrica, arrancando de plataforma o línea, con accesorios para anclaje del poste. Completada en su totalidad. Operación: $C. Zona de conservación: $D. Directrices de implementación: $F." — _phi4:latest_
+- [ ] 7. "Suministro e instalación de soporte cilíndrico en zanja $B para área $A con postes de electricidad, desde plataforma o vía, contando con piezas de anclaje para el poste. Finalizada por completo. Labor: $C. Margen de mantenimiento: $D. Requisitos de ejecución: $F." — _phi4:latest_
+- [ ] 8. "Provisión e instalación de base cilíndrica en zanja $B para suelo $A con postes de energía, desde plataforma o línea, incluyendo componentes de sujeción para el poste. Totalmente finalizada. Empleo: $C. Límite de mantenimiento: $D. Normativa de ejecución: $F." — _phi4:latest_
+- [ ] 9. "Se proporciona y se instala la cimentación cilíndrica en desmonte $B para terreno $A, que incluye postes de electrificación desde la plataforma o la vía, así como elementos de fijación del poste. Se entrega completamente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 10. "La cimentación cilíndrica en desmonte $B se suministra y se monta para terreno $A, incluyendo postes de electrificación desde plataforma o vía y sus elementos de fijación. Se entrega en perfectas condiciones de terminación. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 11. "Se realiza el suministro y el montaje de la cimentación cilíndrica en desmonte $B para terrenos $A, incluyendo postes de electrificación desde plataforma o vía y elementos de fijación. Se entrega en estado de terminación completo. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 12. "Se provee y se instala la cimentación cilíndrica en desmonte tipo $B para terreno $A, incluyendo postes de electrificación desde plataforma o vía y componentes de fijación del poste. Se entrega ya completada en todas sus partes. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 13. "Suministro y montaje de cimentación cilíndrica en desmonte $B, para terreno $A, desde plataforma o vía y con elementos de fijación del poste. Este servicio incluye la totalidad de los trabajos requeridos hasta su finalización. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 14. "Suministro y montaje de cimentación cilíndrica en desmonte $B, para terreno $A, desde plataforma o vía, que incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 15. "Suministro y montaje de cimentación cilíndrica en desmonte $B, para terreno $A. Este servicio incluye postes de electrificación desde plataforma o vía, así como los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 16. "Instalación e implementación de la cimentación cilíndrica en desmonte tipo $B, adecuada para suelo $A, que incluye el soporte para postes de electricidad. La obra se realiza desde la plataforma o la vía ferroviaria y comprende los componentes para la aseguramiento del poste. Aceptable para uso inmediato. Durante la operación laboral se requiere $C. La zona de seguridad para trabajos posteriores es de $D. Las condiciones de construcción para este proyecto son $F." — _qwen2.5:14b_
+- [ ] 17. "Suministro técnico e instalación de cimentación cilíndrica de tipo $B, diseñada para suelo $A, que incluye todo lo necesario para la colocación de postes de electricidad. El montaje se realiza desde la plataforma o la vía ferroviaria y cubre la fijación y el aseguramiento del poste. La instalación completa se puede usar sin modificaciones adicionales. Se requiere la consideración de $C durante la instalación. El espacio definido para las actividades de mantenimiento es de $D. Las condiciones de trabajo detalladas se presentan en $F." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- qwen2.5:14b/R3 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R3 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- [14] near_duplicate_of_kept
 
 ## TEXTO template (OED130$)
 _Used in 1 concept(s): OED130$_
 
-- [ ] 1. "Provisión y colocación de base cilíndrica para sujeción tipo $A, con estructuras de soporte para electrificación, desde plataforma o vía, incluyendo los componentes de sujeción del soporte. Completamente finalizada. Labor: $B. Zona de mantenimiento: $C. Requisitos de ejecución: $D."
-- [ ] 2. "Entrega y ensamblaje de fundación cilíndrica para sujeción tipo $A, con pilares de electrificación, desde plataforma o vía, incluyendo los dispositivos de sujeción del pilar. Totalmente acabada. Tarea: $B. Área de mantenimiento: $C. Condiciones de realización: $D."
-- [ ] 3. "Entrega y colocación de base cilíndrica para fijación tipo $A, con pilares de electrificación, desde plataforma o vía, incluyendo los componentes de sujeción del pilar. Totalmente acabada. Tarea: $B. Área de mantenimiento: $C. Requisitos de ejecución: $D."
-- [ ] 4. "Provisión y ensamblaje de fundación cilíndrica para sujeción tipo $A, con soportes de electrificación, desde plataforma o vía, incluyendo los dispositivos de sujeción del soporte. Totalmente acabada. Labor: $B. Zona de mantenimiento: $C. Condiciones de realización: $D."
+- [ ] 1. "Se provee y se instala la cimentación cilíndrica para anclaje tipo $A, que incluye postes de electrificación, desde la plataforma o vía, con los componentes de sujeción. El trabajo estará completamente finalizado. Tarea a realizar: $B. Área de mantenimiento: $C. Pautas de ejecución: $D." — _phi4:latest_
+- [ ] 2. "Ejecución del suministro y montaje de la estructura cilíndrica para anclaje tipo $A, que comprende los postes de electrificación desde la plataforma o vía, con los elementos de anclaje incluidos. El proyecto estará completamente concluido. Actividad a realizar: $B. Zona de mantenimiento: $C. Requisitos de implementación: $D." — _phi4:latest_
+- [ ] 3. "La provisión y colocación de la base cilíndrica para el anclaje tipo $A, junto con los postes de electrificación desde la plataforma o vía, incluye los medios de soporte del poste. La labor quedará completamente culminada. Trabajo: $B. Sector de conservación: $C. Normas de realización: $D." — _phi4:latest_
+- [ ] 4. "Se realiza la adquisición y el ensamblaje de la fundación cilíndrica para anclaje tipo $A, que abarca los postes de electrificación desde la plataforma o vía, junto con los componentes de sujeción. La tarea se completará en su totalidad. Proyecto a desarrollar: $B. Zona de mantenimiento: $C. Directrices de ejecución: $D." — _phi4:latest_
+- [ ] 5. "Instalación y provisión de base cilíndrica para sujeción de tipo $A, integrando postes para electrificación, desde plataforma o vía, con todos los componentes necesarios para asegurar los postes. Proyecto finalizado. Labor: $B. Zona de conservación: $C. Circunstancias de realización: $D." — _phi4:latest_
+- [ ] 6. "Entrega y colocación de estructura cilíndrica para sujetar anclajes del tipo $A, incluyendo postes para energía, desde plataforma o vía, con todos los ensamblajes necesarios para la fijación de los postes. Obra finalizada. Proceso: $B. Área de revisión: $C. Parámetros de implementación: $D." — _phi4:latest_
+- [ ] 7. "Suministro y colocación de estructura cilíndrica para fijación de modelo $A, con postes para iluminación, desde plataforma o vía, incorporando todos los componentes de sujeción del poste. Completado. Actividad: $B. Zona de cuidado: $C. Características de operación: $D." — _phi4:latest_
+- [ ] 8. "Consignación y establecimiento de base cilíndrica para el amarre tipo $A, con soportes de electricidad, desde plataforma o vía, que contiene todos los dispositivos de anclaje del soporte. Finalizado. Trabajo: $B. Sector de atención: $C. Requisitos de ejecución: $D." — _phi4:latest_
+- [ ] 9. "Se proporciona y se realiza el montaje de la cimentación cilíndrica tipo $A para anclaje, incluyendo postes de electrificación desde plataforma o vía. Se incluyen los elementos de fijación del poste. Se entrega completamente acabada. Se especifica el trabajo: $B. Se establece la banda de mantenimiento: $C. Se detallan las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 10. "Se suministra y se monta la cimentación cilíndrica de tipo $A para anclaje, junto con postes de electrificación desde plataforma o vía. Se entregan los elementos de fijación del poste. El resultado se presenta completamente terminado. Se indica el trabajo: $B. Se define la banda de mantenimiento: $C. Se describen las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 11. "Se realiza el suministro y montaje de la cimentación cilíndrica de tipo $A para anclaje, junto con postes de electrificación desde plataforma o vía. Se entregan los elementos de fijación del poste. Se presenta totalmente terminada. Se especifica el trabajo: $B. Se define la banda de mantenimiento: $C. Se detallan las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 12. "Suministro e instalación de cimentación cilíndrica para anclaje tipo $A, desde plataforma o vía, que incluye el dispositivo de sujeción del poste. Elemento completamente terminado. Labor: $B. Periodo de mantenimiento: $C. Requisitos de ejecución: $D." — _qwen2.5:14b_
+- [ ] 13. "Instalación y entrega de cimentación cilíndrica para anclaje tipo $A, desde plataforma o vía, que incluye el mecanismo de fijación del poste. El producto es totalmente terminado. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 14. "Suministro e instalación del cimentación cilíndrica para anclaje tipo $A, desde plataforma o vía, incluye el soporte de fijación del poste. Componente totalmente terminado. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 15. "Colocación e instalación de la fundación cilíndrica tipo anclaje $A, compuesta por postes de electricidad, ejecutada tanto desde plataforma como desde el andén. Incluye componentes de fijación. Proceso completo y terminado. Actividades: $B. Cinta de mantenimiento: $C. Circunstancias de implementación: $D." — _qwen2.5:14b_
+- [ ] 16. "Implementación y configuración de la base cilíndrica tipo anclaje $A, provista de postes eléctricos, desde el andén o la plataforma ferroviaria. Incluyen elementos de sujeción. Finalizada en su totalidad. Tareas: $B. Rango de mantenimiento: $C. Cautelas de instalación: $D." — _qwen2.5:14b_
+- [ ] 17. "Ejecución y puesta en marcha de la fundación cilíndrica tipo anclaje $A, dotada de postes de electricidad, desde la plataforma o la vía férrea. Incluye dispositivos de retención. Proceso completo y finalizado. Tareas: $B. Intervalo de mantenimiento: $C. Condiciones de instalación: $D." — _qwen2.5:14b_
+- [ ] 18. "Constitución y armado de la cimentación cilíndrica tipo anclaje $A, equipada con postes eléctricos, desde la plataforma o la pista. Incluye accesorios de fijación. Proceso completo y finalizado. Actividades: $B. Rango de mantenimiento: $C. Condiciones de instalación: $D." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- [11] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
 
 ## TEXTO template (OED080$)
 _Used in 2 concept(s): OED080$, OED150$_
 
-- [ ] 1. "Provisión y colocación de base cilíndrica para sujeción tipo $B, adecuada para terreno $A con estructuras de electrificación, desde plataforma o vía, comprendiendo los componentes de sujeción del poste. Completamente finalizada. Labor: $C. Zona de mantenimiento: $D. Circunstancias de ejecución: $F."
-- [ ] 2. "Entrega y ensamblaje de fundación cilíndrica para fijación tipo $B, destinada a terreno $A con torres de electrificación, desde plataforma o vía, incluyendo los dispositivos de sujeción del poste. Totalmente acabada. Tarea: $C. Área de mantenimiento: $D. Requisitos de ejecución: $F."
+- [ ] 1. "Se proporciona y se instala una cimentación cilíndrica de anclaje tipo $B para terreno $A, destinada a soporte de postes de electrificación, desde la plataforma o vía, y se incluyen los mecanismos de sujeción del poste. Estado final: completamente acabado. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 2. "Se realiza el suministro y se efectúa la instalación de la cimentación cilíndrica para anclaje tipo $B, adaptada para terreno $A con postes de electrificación, desde la plataforma o vía, incorporando los dispositivos de fijación del poste. Trabajo completamente finalizado. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 3. "Se provee y se coloca una cimentación cilíndrica para anclaje tipo $B en terreno $A, destinada para postes de electrificación, desde la plataforma o vía, y se comprenden los elementos de sujeción del poste. Trabajo finalizado. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 4. "Se suministra y se ubica la cimentación cilíndrica de anclaje tipo $B para terreno $A, en función de postes de electrificación, desde la plataforma o vía, incluyendo los mecanismos de fijación del poste. El trabajo está completamente concluido. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 5. "Provisión y colocación de una cimentación cilíndrica para sostener anclajes tipo $B, adecuada para terreno $A con postes de suministro eléctrico, desde plataforma o vía, compuesta con los elementos necesarios para fijar el poste. Elaborada en su totalidad. Tarea: $C. Zona de mantenimiento: $D. Circunstancias de ejecución: $F." — _phi4:latest_
+- [ ] 6. "Entrega e instalación de base cilíndrica para fijación tipo $B, para uso en terreno $A con soportes eléctricos, emplazados desde plataforma o vía, conteniendo los accesorios para fijación del soporte. Únicamente acabada. Labor: $C. Área de conservación: $D. Condiciones de realización: $F." — _phi4:latest_
+- [ ] 7. "Provista y ensamblada, una base cilíndrica para amarre tipo $B, destinada a terreno $A con pilares de corriente, desde plataforma o carril, incorporando los componentes para asegurar el pilar. Finalizada en su conjunto. Empleo: $C. Rango de cuidado: $D. Parámetros de ejecución: $F." — _phi4:latest_
+- [ ] 8. "Suministro e instalación de una fundación cilíndrica para sujeción de modelo $B, destinada a terreno $A con varales de energía, desde plataforma o vía, con los accesorios para la sujeción del varal. Conclusa por completo. Operación: $C. Intervalo de cuidado: $D. Circunstancias de implementación: $F." — _phi4:latest_
+- [ ] 9. "Se proporciona y monta cimentación cilíndrica para anclaje tipo $B, destinada a instalaciones en terreno $A con postes de electrificación, desde plataforma o vía. Se incluyen los elementos de fijación del poste. Se considera totalmente terminada. Se indica el trabajo: $C. Se establece la banda de mantenimiento: $D. Se detallan las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 10. "Se realiza el suministro y montaje de cimentación cilíndrica para anclaje tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía. Se incluyen los elementos de fijación del poste. Se considera como totalmente terminada. Se menciona el trabajo: $C. Se establece la banda de mantenimiento: $D. Se detallan las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 11. "Se efectúa la entrega y montaje de cimentación cilíndrica para anclaje tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía. Se proporcionan los elementos de fijación del poste. Se considera en estado de terminación completa. Se indica el trabajo: $C. Se especifica la banda de mantenimiento: $D. Se detallan las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 12. "Se lleva a cabo la entrega y colocación de cimentación cilíndrica para anclaje tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía. Se ofrecen los elementos de fijación del poste. Se considera completamente finalizada. Se menciona el trabajo: $C. Se establece la banda de mantenimiento: $D. Se detallan las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 13. "Suministro e instalación de cimentación cilíndrica tipo $B para anclaje en terreno $A, que incluye la colocación de postes de electrificación desde la plataforma o vía y la provisión de elementos para su fijación. El conjunto se entrega completamente terminado. Duración: $C. Período de revisión: $D. Condiciones para la ejecución: $F." — _qwen2.5:14b_
+- [ ] 14. "Ofrecemos el suministro e instalación de cimentaciones cilíndricas tipo $B para anclaje, diseñadas para terreno $A, que incluyen la instalación de postes de electrificación desde la plataforma o vía y los materiales necesarios para su fijación. El proyecto se entrega en estado final. Duración del proyecto: $C. Intervalo de mantenimiento: $D. Circunstancias de implementación: $F." — _qwen2.5:14b_
+- [ ] 15. "Suministro e instalación de cimentaciones cilíndricas para anclaje de tipo $B, destinadas a terreno $A, que incluye la colocación de postes de electrificación desde plataforma o vía, así como los materiales de atornillado necesarios. El conjunto se entrega completamente terminado. Trabajo: $C. Período de mantenimiento: $D. Términos de ejecución: $F." — _qwen2.5:14b_
+- [ ] 16. "Se entrega el suministro e instalación de cimentaciones cilíndricas para anclaje de tipo $B, diseñadas para terreno $A, que incluye la instalación de postes de electrificación desde plataforma o vía y los elementos de fijación. Totalmente terminado. Duración: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 17. "Instalación y entrega de fundación cilíndrica de anclaje tipo $B, diseñada para terreno $A, integrando postes de electrificación desde plataforma o vía, con los componentes de sujeción incluidos. Preparada para uso inmediato. Duración del proyecto: $C. Periodo de mantenimiento: $D. Requisitos de implementación: $F." — _qwen2.5:14b_
+- [ ] 18. "Proporcionamiento e instalación de cimentación de anclaje tipo $B, para emplazamiento en terreno $A, en asociación con postes de electrificación desplegados desde plataforma o vía, con el kit de fijación del poste incluido. Lista para operación. Proceso de trabajo: $C. Horizonte de mantenimiento: $D. Condiciones de puesta en marcha: $F." — _qwen2.5:14b_
+- [ ] 19. "Entrega e instalación de cimentación cilíndrica de anclaje tipo $B, para terreno $A, con la colocación de postes de electrificación desde plataforma o vía, incluyendo componentes de sujeción del poste. Lista para operación. Duración del proyecto: $C. Periodo de mantenimiento: $D. Condiciones de puesta en marcha: $F." — _qwen2.5:14b_
+- [ ] 20. "Suministro e instalación de fundación cilíndrica de anclaje tipo $B, en terreno $A, para postes de electrificación montados desde plataforma o vía, con el conjunto de fijación del poste incluido. Lista para uso. Duración del proyecto: $C. Periodo de mantenimiento: $D. Condiciones de implementación: $F." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
 
 ## TEXTO template (OEG010$)
 _Used in 1 concept(s): OEG010$_
 
-- [ ] 1. "Instalación y colocación de base cilíndrica para postes de electrificación, con un diámetro de $C y una profundidad de $B, formada por 4 barras corrugadas roscadas de $A. Realizada desde $D. Completamente finalizada. $L(b,%C). Labor: $L(c,%C)."
-- [ ] 2. "Provisión y ensamblaje de fundación cilíndrica para postes de electrificación, con un diámetro de $C y una profundidad de $B, constituida por 4 barras corrugadas roscadas de $A. Ejecutada desde $D. Totalmente acabada. $L(b,%C). Trabajo: $L(c,%C)."
-- [ ] 3. "Suministro y colocación de base cilíndrica para postes de electrificación, de $C de diámetro y $B de profundidad, integrada por 4 barras corrugadas roscadas de $A. Realizada desde $D. Completamente finalizada. $L(b,%C). Trabajo: $L(c,%C)."
-- [ ] 4. "Provisión y ensamblaje de fundación cilíndrica para postes de electrificación, de $C de diámetro y $B de profundidad, formada por 4 barras corrugadas roscadas de $A. Ejecutada desde $D. Totalmente acabada. $L(b,%C). Labor: $L(c,%C)."
+- [ ] 1. "Montaje y suministro de una fundación cilíndrica para postes eléctricos, con un diámetro de $C y una profundidad de $B, utilizando 4 barras corrugadas roscadas de $A. Realizada desde $D, y completamente finalizada. $L(b,%C). Proporcionado en: $L(c,%C)." — _phi4:latest_
+- [ ] 2. "Se ha realizado el suministro y la instalación de una cimentación cilíndrica para postes de electrificación, con un diámetro de $C y una profundidad de $B, conformada por 4 barras corrugadas roscadas de $A. Hecho desde $D, y completamente concluido. $L(b,%C). Incluido en: $L(c,%C)." — _phi4:latest_
+- [ ] 3. "La cimentación cilíndrica para postes eléctricos, de diámetro $C y profundidad $B, suministrada y montada, está compuesta por 4 barras corrugadas roscadas de $A. Se ejecutó desde $D, y se encuentra totalmente terminada. $L(b,%C). Realizado en: $L(c,%C)." — _phi4:latest_
+- [ ] 4. "Instalación y provisión de cimentación cilíndrica para postes de electrificación, de un diámetro de $C y una profundidad de $B, hecha con 4 barras corrugadas roscadas de $A. Esta instalación fue ejecutada desde $D, y resulta completamente terminada. $L(b,%C). Trabajo: $L(c,%C)." — _phi4:latest_
+- [ ] 5. "Montaje e instalación de cimentación cilíndrica para postes de electrificación de $C de diámetro y de $B de profundidad, constituida por 4 barras corrugadas roscadas de $A. Realizada desde $D, totalmente finalizada. $L(b,%C). Trabajo: $L(c,%C)." — _phi4:latest_
+- [ ] 6. "Cimentación cilíndrica de $C de diámetro y $B de profundidad, para postes de electrificación, suministra e instala, compuesta por 4 barras corrugadas roscadas de $A. Ejecutada desde $D, totalmente terminada. $L(b,%C). Trabajo: $L(c,%C)." — _phi4:latest_
+- [ ] 7. "Suministro y montaje de cimentación cilíndrica para postes de electrificación, realizada desde $D, de $C de diámetro y $B de profundidad, compuesta por 4 barras corrugadas roscadas de $A. Totalmente terminada. $L(b,%C). Trabajo: $L(c,%C)." — _phi4:latest_
+- [ ] 8. "Instalación y abastecimiento de base cilíndrica para estacas de energía, con un diámetro de $C y una profundidad de $B, en la que se integran 4 varillas onduladas con rosca de $A. Finalizada en $D y completamente acabada. $L(b,%C). Obra: $L(c,%C)." — _phi4:latest_
+- [ ] 9. "Suministro e instalación de soporte cilíndrico para estructuras eléctricas, de diámetro $C y profundidad $B, conformado por 4 barras onduladas y enroscadas de $A. Realizado en $D y completamente finalizado. $L(b,%C). Construcción: $L(c,%C)." — _phi4:latest_
+- [ ] 10. "Provistos y colocados los soportes cilíndricos para apoyos eléctricos, con $C de diámetro y $B de hondura, integrados por 4 barras onduladas que enroscan $A. Concluida en $D y completamente completada. $L(b,%C). Actividad: $L(c,%C)." — _phi4:latest_
+- [ ] 11. "Abastecimiento e implementación de base de poste cilíndrica para línea eléctrica, con diámetro $C y profundidad $B, constituida por 4 varillas encofradas y roscadas de $A. Finalizado en $D y totalmente acabado. $L(b,%C). Labor: $L(c,%C)." — _phi4:latest_
+- [ ] 12. "Se proporcionará y montará la cimentación cilíndrica para postes de $C, con una profundidad de $B. La base se compondrá de 4 barras corrugadas roscadas de $A. La instalación se realizará desde $D. El trabajo se considerará completado una vez terminado. $L(b,%C). Tarea: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 13. "Se proporcionará la cimentación cilíndrica para los postes de electrificación con un diámetro de $C y una profundidad de $B. Se instalará una composición de 4 barras corrugadas roscadas de $A. La obra se realizará a partir de $D. Se considerará completada una vez terminada. $L(b,%C). Trabajo: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 14. "Proveerá y se montará la cimentación cilíndrica para postes de electrificación de diámetro $C, y profundidad $B. La cimentación se formará con 4 barras corrugadas roscadas de $A. Se ejecutará desde $D. La obra quedará completada una vez terminada. $L(b,%C). Trabajo: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 15. "Se entregará y se colocará la cimentación cilíndrica para postes de electrificación con un diámetro de $C y una profundidad de $B. La cimentación se conformará con 4 barras corrugadas roscadas de $A. El montaje se iniciará desde $D. Se considera terminado el trabajo una vez finalizado. $L(b,%C). Trabajo: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 16. "Suministro y montaje de cimentación cilíndrica para postes de electrificación, compuesta por 4 barras corrugadas roscadas de $A, con un diámetro de $C y una profundidad de $B. La ejecución se realiza desde $D. Totalmente terminada: $L(b,%C). Trabajo: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 17. "Compuesta por 4 barras corrugadas roscadas de $A, la cimentación cilíndrica para postes de electrificación se suministra y monta, con un diámetro de $C y una profundidad de $B. Ejecución desde $D, totalmente terminada: $L(b,%C). Trabajo: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 18. "Suministro y montaje de cimentación cilíndrica para postes de electrificación. La cimentación, compuesta por 4 barras corrugadas roscadas de $A, tiene un diámetro de $C y una profundidad de $B. Ejecución desde $D, totalmente terminada: $L(b,%C). Trabajo: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 19. "Suministro y montaje de cimentación cilíndrica para postes de electrificación, con un diámetro de $C y una profundidad de $B, compuesta por 4 barras corrugadas roscadas de $A. Ejecución desde $D, totalmente terminada: $L(b,%C). Trabajo: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 20. "Instalación y provisión de fundación cilíndrica para torres de energía eléctrica, con un diámetro de $C y una profundidad de $B, conformada por 4 barras corrugadas de $A. realizada a partir de $D. terminada en su totalidad. $L(b,%C). Operación: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 21. "Suministro e instalación de cimentación cilíndrica para soportes de cableado eléctrico, con diámetro $C y profundidad $B, formada por 4 barras corrugadas roscadas de $A. llevada a cabo a partir de $D. completamente terminada. $L(b,%C). Labor: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 22. "Suministro y colocación de soporte subterráneo cilíndrico para postes de transmisión, de $C de diámetro y $B de profundidad, compuesto por 4 barras corrugadas roscadas de $A. comenzada desde $D. concluida totalmente. $L(b,%C). Tarea: $L(c,%C)." — _qwen2.5:14b_
+- [ ] 23. "Provisión y armado de fundaciones cilíndricas para postes eléctricos, con diámetro $C y profundidad $B, estructurada con 4 barras corrugadas roscadas de $A. iniciada desde $D. finalizada en su totalidad. $L(b,%C). Proceso: $L(c,%C)." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [7] near_duplicate_of_kept
 
 ## TEXTO template (OED040$)
 _Used in 1 concept(s): OED040$_
 
-- [ ] 1. "Provisión y colocación de base cilíndrica en terraplén $B para suelo $A, con soportes para electrificación, desde plataforma o vía, incluyendo los componentes de sujeción del soporte. Completamente finalizada. Labor: $C. Zona de mantenimiento: $D. Circunstancias de ejecución: $F."
-- [ ] 2. "Entrega y ensamblaje de fundación cilíndrica en terraplén $B para terreno $A, con estructuras de electrificación, desde plataforma o vía, incluyendo los dispositivos de anclaje del soporte. Totalmente acabada. Tarea: $C. Área de mantenimiento: $D. Parámetros de ejecución: $F."
+- [ ] 1. "Montaje e instalación de cimentación cilíndrica tipo $B en terraplén para terreno $A con poste de electrificación, desde plataforma o vía, incluidos los elementos de sujeción del poste. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F. Totalmente terminada." — _phi4:latest_
+- [ ] 2. "Instalación y provisión de cimentación cilíndrica en terraplén tipo $B para terreno $A con postes de electrificación, desde plataforma o vía. Incluye los elementos de sujeción del poste. Totalmente terminada. Trabajo: $C. Condiciones de ejecución: $F. Banda de mantenimiento: $D." — _phi4:latest_
+- [ ] 3. "Suministro e instalación de cimentación cilíndrica en terraplén tipo $B para terreno $A con postes de electrificación, desde plataforma o vía, incorporando los elementos de anclaje del poste. Totalmente terminada. Trabajo: $C. Condiciones de ejecución: $F. Banda de mantenimiento: $D." — _phi4:latest_
+- [ ] 4. "Instalación e instalación de cimentación cilíndrica en terraplén tipo $B para terreno $A con postes de electrificación, desde plataforma o vía, los elementos de fijación del poste están incluidos. Trabajo: $C. Condiciones de ejecución: $F. Totalmente terminada. Banda de mantenimiento: $D." — _phi4:latest_
+- [ ] 5. "Fornecimiento e implementación de base en terraplén $B adecuada para suelos $A con estructuras de soporte para postes eléctricos, accesible desde plataforma o vía, comprendiendo los componentes de anclaje. Cabe destacar que el trabajo se encuentra completamente finalizado. Tarea delineada: $C. Zona de conservación: $D. Requisitos de realización: $F." — _phi4:latest_
+- [ ] 6. "Provisión e instalación de soporte cilíndrico en terraplén $B diseñado para terrenos $A con soportes para líneas eléctricas, desde plataforma o vía, incluyendo todos los componentes de sujeción del poste. Proyecto concluido en su totalidad. Actividad: $C. Área de mantenimiento: $D. Normas de realización: $F." — _phi4:latest_
+- [ ] 7. "Entrega e instalación de base en terraplén $B para uso en suelos $A, con soportes para infraestructura eléctrica, desde plataforma o vía, incluyendo los dispositivos de anclaje necesarios. El trabajo está completamente finalizado. Asignación: $C. Ancho de supervisión: $D. Términos de ejecución: $F." — _phi4:latest_
+- [ ] 8. "Suministro e instalación de estructura de soporte en terraplén $B, adecuada para terrenos $A con instalaciones para postes eléctricos, accesible desde plataforma o vía, e incluyendo los mecanismos de sujeción necesarios. El proyecto está completamente completado. Actividad descrita: $C. Zona de cuidado: $D. Pautas de ejecución: $F." — _phi4:latest_
+- [ ] 9. "Se suministrará y montará la cimentación en terraplén tipo $B para el terreno tipo $A, incluyendo postes de electrificación desde la plataforma o vía. Se proporcionan los elementos de fijación del poste. La instalación estará completamente terminada. Se especificará el trabajo: $C. Se establecerá una banda de mantenimiento de: $D. Se establecerán las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 10. "Se presenta la cimentación en terraplén del tipo $B para su instalación en terrenos de tipo $A. Se incluye el montaje de postes de electrificación desde la plataforma o vía, con los elementos de fijación correspondientes. La obra se entregará completamente terminada. Se detallará el trabajo: $C. Se establecerá la banda de mantenimiento: $D. Se indicarán las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 11. "Se realizará el montaje de la cimentación en terraplén tipo $B, destinada a terrenos de tipo $A, con postes de electrificación desde la plataforma o vía. Se incluirán los elementos de fijación. La obra se entregará en totalidad terminada. Se indicará el trabajo: $C. Se fijará la banda de mantenimiento: $D. Se detallarán las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 12. "Se proporcionará el montaje de la cimentación en terraplén tipo $B, orientado para terrenos de tipo $A. Se incluye la instalación de postes de electrificación desde la plataforma o vía, con elementos de fijación. La obra se entregará completamente finalizada. Se detallará el trabajo: $C. Se establecerá una banda de mantenimiento: $D. Se indicarán las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 13. "Se provee y monta la cimentación en terraplén tipo $B, para terreno $A, incluyendo postes de electrificación y sus elementos de anclaje desde la plataforma o vía. La obra está completamente finalizada. Detalle de trabajo: $C. Zona de mantenimiento: $D. Condiciones para la realización: $F." — _qwen2.5:14b_
+- [ ] 14. "Instalación y entrega de cimentaciones en terraplén de tipo $B, destinadas para terreno $A, que incluye postes de electrificación con sus respectivos elementos de fijación instalados desde la plataforma o vía. Proceso completo, sin tareas pendientes. Trabajo requerido: $C. Zona para mantenimiento: $D. Condiciones de realización: $F." — _qwen2.5:14b_
+- [ ] 15. "Se suministran y montan en terraplén tipo $B las cimentaciones para terreno $A. Este montaje incluye la colocación de postes de electrificación y sus elementos de fijación desde la plataforma o vía. La obra se considera terminada. Trabajo requerido: $C. Ancho de la banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 16. "Suministro y colocación de cimentación en terraplén tipo $B, para terreno $A, con instalación de postes de electrificación y sus elementos de anclaje desde la plataforma o vía. La obra está completa y no requiere acciones adicionales. Trabajo previsto: $C. Ancho de la banda de mantenimiento: $D. Condiciones de realización: $F." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R3 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R3 [2] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R3 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
 
 ## TEXTO template (OED050$)
 _Used in 1 concept(s): OED050$_
 
-- [ ] 1. "Provisión y colocación de base rectangular para poste L o R en terreno desmontado, tipo $B, adecuada para terreno $A con estructuras de electrificación, desde plataforma o vía. Completamente finalizada. Labor: $C. Zona de mantenimiento: $D. Requisitos de ejecución: $F."
-- [ ] 2. "Entrega y ensamblaje de fundación rectangular para poste L o R en terreno desmontado, tipo $B, para suelo $A con soportes de electrificación, desde plataforma o vía. Totalmente acabada. Tarea: $C. Área de mantenimiento: $D. Condiciones de realización: $F."
+- [ ] 1. "Se realiza el suministro y montaje de la cimentación rectangular para postes L o R en desmonte, de tipo $B, destinada a terreno $A con postes de electrificación, empezando desde plataforma o vía, y está completamente terminada. Incluye el trabajo: $C. La banda de mantenimiento asignada es: $D. Las condiciones de ejecución son: $F." — _phi4:latest_
+- [ ] 2. "El suministro y montaje de la estructura de cimentación rectangular para postes L o R en zona de desmonte, de especificación $B, se implementa en terreno $A con la instalación de postes de electrificación, partiendo desde plataforma o vía y está totalmente finalizada. Trabajo incluido: $C. Banda de mantenimiento establecida: $D. Condiciones de ejecución descritas: $F." — _phi4:latest_
+- [ ] 3. "Se llevará a cabo el suministro y montaje de cimentación rectangular para postes L o R en terreno de desmonte, del tipo $B, dirigido a terreno $A con postes de electrificación instalados, desde la plataforma o vía, y concluido en su totalidad. El trabajo consiste en: $C. La banda de mantenimiento es de: $D. Las condiciones de ejecución son: $F." — _phi4:latest_
+- [ ] 4. "Se suministrará y montará la cimentación rectangular para postes L o R en área de desmonte, de tipo $B, para uso en terreno $A con postes de electrificación, desde plataforma o vía, y estará completamente terminada. El trabajo involucrado es: $C. La banda de mantenimiento consiste en: $D. Las condiciones de ejecución se definen como: $F." — _phi4:latest_
+- [ ] 5. "Montaje y provisión de cimentación rectangular en desmonte para poste L o R, tipo $B, en terreno $A destinado a postes de electrificación, ejecutado desde plataforma o vía y completamente finalizado. Trabajo: $C. Zona de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 6. "Totalmente realizada, la cimentación rectangular para poste L o R en desmonte, tipo $B, en terreno $A para postes de electrificación se monta desde plataforma o vía. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 7. "La cimentación rectangular para poste L o R en desmonte, tipo $B, diseñada para terreno $A con postes de electrificación, se suministra y monta desde plataforma o vía, quedando completamente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 8. "Instalación y provisión de base rectangular para poste L o R en terreno desmontado, modelo $B, adecuada para $A y postes de electrificación, ejecutada a partir de plataforma o vía. Finalizada en su totalidad. Obra: $C. Zona de mantenimiento: $D. Requisitos de ejecución: $F." — _phi4:latest_
+- [ ] 9. "Ejecución y proveeduría de estructura base rectangular para poste L o R en terreno removido, clase $B, destinada a $A y postes de electrificación, desde plataforma o línea férrea. Completada en su totalidad. Labor: $C. Rango de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 10. "Suministro y colocación de base rectangular para poste L o R en terreno desprovisto, diseño $B, adecuado para $A y postes de electrificación, desde plataforma o camino de ferrocarril. Finalizada completamente. Esfuerzo: $C. Banda de conservación: $D. Requisitos de realización: $F." — _phi4:latest_
+- [ ] 11. "Se proporciona y monta la cimentación rectangular de poste L o R en desmonte, tipo $B, para terrenos $A con postes de electrificación desde plataforma o vía. Se entrega completamente terminada. Se realiza el trabajo: $C. Se establece la banda de mantenimiento: $D. Se definen las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 12. "Se suministra y se instala la cimentación rectangular de poste L o R en desmonte, tipo $B, en terrenos $A con postes de electrificación desde plataforma o vía. Se entrega en perfecto estado. Se realiza el trabajo: $C. Se proporciona la banda de mantenimiento: $D. Se establecen las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 13. "Se entrega la cimentación rectangular de poste L o R en desmonte, tipo $B, para terrenos $A con postes de electrificación desde plataforma o vía. Se garantiza la terminación completa. Se realiza el trabajo: $C. Se designa la banda de mantenimiento: $D. Se definen las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 14. "Suministro e instalación del soporte rectangular para postes L o R en desmonte, tipo $B, en terreno $A, incluido con postes de electrificación, desde plataforma o vía. Banda de mantenimiento: $D. Condiciones de ejecución: $F. Trabajo: $C." — _qwen2.5:14b_
+- [ ] 15. "Suministro y montaje de cimentación rectangular para postes L o R en desmonte, tipo $B, con postes de electrificación en terreno $A, desde plataforma o vía. Totalmente terminada. Condiciones de ejecución: $F, trabajo: $C, banda de mantenimiento: $D." — _qwen2.5:14b_
+- [ ] 16. "Suministro e instalación de los soportes rectangulares para postes L o R en desmonte, tipo $B, en terreno $A, desde plataforma o vía, incluyendo postes de electrificación. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 17. "Confección y asentamiento de cimentación rectangular tipo $B para montaje de postes L o R durante desmontes en terreno $A, incluyendo postes de electrificación desde plataforma o vía. La obra se considera completa. Línea de aforo: $D. Aspectos de la ejecución: $F. Trabajo: $C." — _qwen2.5:14b_
+- [ ] 18. "Furnición y colocación de cimentación recta tipo $B para postes L o R en desmontes, en terreno $A, con postes de electrificación desde plataforma o vía. La instalación se considera terminada. Trayectoria de mantenimiento: $D. Requisitos de montaje: $F. Trabajo: $C." — _qwen2.5:14b_
+- [ ] 19. "Provisión y puesta en obra de fundación rectangular para postes L o R en desmontes, tipo $B, en terreno $A, con postes de electrificación desde plataforma o vía. Trabajo terminado. Carril de mantenimiento: $D. Condiciones de ejecución: $F. Trabajo: $C." — _qwen2.5:14b_
+- [ ] 20. "Entrega y colocación de cimentación de postes L o R en desmonte, tipo $B, para terreno $A, con postes de electrificación desde plataforma o vía. La instalación se considera completa. Pasillo de mantenimiento: $D. Condiciones de instalación: $F. Trabajo: $C." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R3 [2] quantities_not_conserved: numbers []→[('100', 1)], units []→[('%', 1)]
+- [6] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
+- [18] near_duplicate_of_kept
 
 ## TEXTO template (OED060$)
 _Used in 1 concept(s): OED060$_
 
-- [ ] 1. "Provisión y colocación de base rectangular para poste L o R en terraplén, tipo $B, destinada a terreno $A con estructuras de electrificación, desde plataforma o vía. Completamente finalizada. Labor: $C. Zona de mantenimiento: $D. Requisitos de ejecución: $F."
-- [ ] 2. "Entrega y ensamblaje de fundación rectangular para poste L o R en terraplén, tipo $B, para suelo $A con soportes de electrificación, desde plataforma o vía. Totalmente acabada. Tarea: $C. Área de mantenimiento: $D. Parámetros de ejecución: $F."
+- [ ] 1. "Se proporciona y se instala la base rectangular para soporte de poste L o R en terraplén, categoría $B, destinada a suelos $A con soportes eléctricos, a partir de plataforma o vía. Proyecto concluido. Labor: $C. Área de conservación: $D. Normas de implementación: $F." — _phi4:latest_
+- [ ] 2. "Se efectúa el abastecimiento y colocación de base cuadrangular para pilares L o R en terraplén, clasificación $B, adecuado para superficie $A con pilares de corriente, desde plataforma o vía. Concluido en su totalidad. Operación: $C. Zona de cuidado: $D. Criterios de realización: $F." — _phi4:latest_
+- [ ] 3. "Para suelos $A con apoyos de energía, se provoca el abastecimiento y ensamblaje de la base rectangular de soportes L o R en terraplén, de la categoría $B, desde plataforma o vía. Completado en su totalidad. Procedimiento: $C. Rango de cuidado: $D. Requisitos de implementación: $F." — _phi4:latest_
+- [ ] 4. "Desde plataforma o vía, se realiza el aprovisionamiento y ajuste de base de cuatro lados para estacas L o R en terraplén, clasificado como $B, apto para terreno $A con estacas de energía. Culminado por completo. Actividad: $C. Área de cuidado: $D. Normativas de realización: $F." — _phi4:latest_
+- [ ] 5. "Instalación completa de cimentación rectángular para poste L o R en un terraplén de tipo $B, diseñado para terreno $A con estructuras de postes de electrificación, desde plataforma o vía. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 6. "Cimentación rectangular para poste L o R en terraplén, de tipo $B, adecuada para terreno $A con postes de electrificación, desde plataforma o vía, totalmente acabada. Se incluye: Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 7. "Montaje y suministro de cimentación rectangular para poste L o R en terraplén, del tipo $B, destinado a terreno $A con postes de electrificación, desde plataforma o vía. Totalmente finalizado. Detalles: Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 8. "Provisión y emplazamiento de base cuadrada para poste L o R en terraplén, categoría $B, diseñada para suelo $A con apoyos de electrificación, ejecutada desde plataforma o vía. Totalmente acabada. Tarea: $C. Zona de conservación: $D. Estipulaciones de procedimiento: $F." — _phi4:latest_
+- [ ] 9. "Abastecimiento y colocación de soporte cuadrado para poste L o R en terraplén, modelo $B, apto para terreno $A con columnas de electrificación, desde plataforma o vía. Totalmente finalizado. Operación: $C. Corredor de servicio: $D. Directrices de ejecución: $F." — _phi4:latest_
+- [ ] 10. "Entrega y fijación de base rectangular para poste L o R sobre terraplén, clasificación $B, apta para suelo $A con estructuras de electrificación, desde plataforma o vía. Completa en su ejecución. Actividad: $C. Área de conservación: $D. Normas de ejecución: $F." — _phi4:latest_
+- [ ] 11. "Aprovisionamiento y instalación de estribo cuadrado para poste L o R en terraplén, tipo $B, destinado a terreno $A con pilares de electrificación, desde plataforma o vía. Totalmente acabada. Ocupación de trabajo: $C. Sección de mantenimiento: $D. Regulaciones de realización: $F." — _phi4:latest_
+- [ ] 12. "Se proveerá y montará cimentación rectangular de poste L o R en terraplén tipo $B, destinada para terreno $A, para postes de electrificación desde plataforma o vía. Se entrega totalmente terminada. Se requiere trabajo: $C. Se establecerá banda de mantenimiento: $D. Se establecerán condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 13. "Se suministrará y se colocará cimentación rectangular de poste L o R en terraplén tipo $B, para terreno $A, con postes de electrificación desde plataforma o vía. Se entregará lista para uso. Se determinará trabajo: $C. Se definirá banda de mantenimiento: $D. Se detallarán condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 14. "Se suministra y se instala cimentación rectangular de poste L o R en terraplén de tipo $B, para su colocación en terreno $A, en postes de electrificación desde plataforma o vía. Se entrega totalmente terminada. Se define trabajo: $C. Se mantiene banda de mantenimiento: $D. Se especifican condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 15. "Se suministrará y se montará cimentación rectangular de poste L o R en terraplén tipo $B, para terreno $A, para postes de electrificación desde plataforma o vía. Se entrega en su totalidad terminada. Se establecerán las características del trabajo: $C. Se definirá la banda de mantenimiento: $D. Se detallarán las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 16. "Suministro y colocación de fundación rectangular tipo $B para postes L o R en terraplén, en terreno $A, incluso para postes de electrificación a partir de plataforma o vía. Incluye terminación completa. Trabajo: $C. Se requiere banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 17. "Colocación y suministro de fundación rectangular de poste L o R en terraplén tipo $B, en terreno $A, inclusive para postes de electrificación desde plataforma o vía y completamente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 18. "Suministro y colocación de fundación rectangular tipo $B para postes L o R en terraplén en terreno $A. Incluye postes de electrificación desde vía o plataforma y está completamente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 19. "Suministro y colocación de fundación rectangular de poste tipo $B en terraplén para terreno $A. Incluye postes L o R, electrificación desde vía o plataforma y se termina completamente. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 20. "Entrega e instalación de estructura cimentada rectangulada para poste L o R en zona elevada tipo $B, en terreno $A con instalación de linajes energéticos. Montaje desde plataforma o línea férrea. Proceso completo. Ejecución: $C. Zona de precaución: $D. Circunstancias de desarrollo: $F." — _qwen2.5:14b_
+- [ ] 21. "Suministro e instalación de base cimentada para poste L o R en elevación tipo $B, en suelo $A con linajes de energía. Montaje desde plataforma o vía férrea. Instalación completa. Desarrollo: $C. Zona de seguridad: $D. Condiciones para ejecución: $F." — _qwen2.5:14b_
+- [ ] 22. "Suministro e instalación de estructura cimentada rectangular para poste L o R en elevación tipo $B, en terreno $A con postes de electrificación. Montaje desde plataforma o vía. Proceso completo. Procedimiento: $C. Zona de seguridad: $D. Circunstancias de desarrollo: $F." — _qwen2.5:14b_
+- [ ] 23. "Entrega e instalación de cimentación rectangulada para poste L o R en elevación tipo $B, en terreno $A con postes de electrificación. Montaje desde plataforma o vía. Proceso completo. Ejecución: $C. Zona de precaución: $D. Condiciones de construcción: $F." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [7] near_duplicate_of_kept
 
 ## TEXTO template (OED160$)
 _Used in 1 concept(s): OED160$_
 
-- [ ] 1. "Instalación y ensamblaje de base rectangular en excavación $B destinada a terreno $A, incluyendo esperas roscadas para estructuras de electrificación, desde plataforma o vía. Completamente finalizada. Labor: $C. Zona de conservación: $D. Requisitos de ejecución: $F."
-- [ ] 2. "Provisión y colocación de fundación rectangular en excavación $B para suelo $A, con esperas roscadas para torres de electrificación, desde plataforma o vía. Totalmente acabada. Tarea: $C. Área de mantenimiento: $D. Parámetros de ejecución: $F."
-- [ ] 3. "Entrega y ensamblaje de base rectangular en excavación $B para terreno $A, con esperas roscadas para soportes de electrificación, desde plataforma o vía. Completamente finalizada. Actividad: $C. Zona de cuidado: $D. Condiciones de realización: $F."
-- [ ] 4. "Suministro y ensamblaje de base rectangular en excavación $B para suelo $A, con esperas roscadas para estructuras de electrificación, desde plataforma o vía. Totalmente acabada. Labor: $C. Zona de conservación: $D. Requisitos de ejecución: $F."
+- [ ] 1. "Instalación y colocación de fundación rectangular en desmonte tipo $B, adaptada a terreno $A, con soportes roscados para postes de conducción eléctrica. Se realiza tanto desde plataforma como desde vía. Ejecución completa. Zona de mantenimiento: $D. Aspectos técnicos de implementación: $F. Servicio prestado: $C." — _qwen2.5:14b_
+- [ ] 2. "Fornecimiento y armado de cimentación rectangular en taludes tipo $B, destinada para zonas con configuración geológica como $A, con expectativas roscadas para instalaciones de electricidad. Realización tanto en plataforma como vía. Proceso completo. Señal de revisión: $D. Normas de despliegue: $F. Servicio: $C." — _qwen2.5:14b_
+- [ ] 3. "Suministro y configuración de fundación rectangular en taludes tipo $B, en terrenos con características geológicas como $A, con expectativas roscadas para estructuras de electricidad. Procede tanto desde plataforma como desde vía. Ejecución completa. Margen de mantenimiento: $D. Establecimiento de condiciones técnicas: $F. Actividad desempeñada: $C." — _qwen2.5:14b_
+- [ ] 4. "Suministro e instalación de cimentación rectangular en desmonte tipo $B, para terrenos con características de $A, con expectativas roscadas para postes de electricidad. Se realiza tanto desde plataforma como desde vía. Proceso completo. Zona de mantenimiento: $D. Condiciones de despliegue: $F. Servicio proporcionado: $C." — _qwen2.5:14b_
+- [ ] 5. "Colocación y ensamblaje de cimentación rectangular en taludes tipo $B, sobre terreno $A, con soportes roscados para torres de energía, tanto desde la plataforma como desde la vía. Proyecto completo. Margen de conservación: $D. Ambientes: $F. Desarrollo operativo: $C." — _qwen2.5:14b_
+- [ ] 6. "Suministro y configuración de cimentación recta en taludes tipo $B, en terreno $A, con postes roscados para subestaciones eléctricas, tanto desde vía como desde plataforma. Proyecto completo. Zona de conservación: $D. Aspectos de implementación: $F. Proceso operativo: $C." — _qwen2.5:14b_
+- [ ] 7. "Colocación y ensamblaje de base rectangular en talud tipo $B, en terreno $A, con soportes roscados para torres de energía, tanto desde vía como desde plataforma. Proyecto completo. Margen de conservación: $D. Aspectos de ejecución: $F. Trabajo: $C." — _qwen2.5:14b_
+- [ ] 8. "Configuración y ensamblaje de cimentación en desmonte tipo $B, sobre terreno $A, con postes roscados para torres de energía, tanto desde vía como desde plataforma. Proyecto terminado. Margen de mantenimiento: $D. Aspectos de ejecución: $F. Desarrollo operativo: $C." — _qwen2.5:14b_
+- [ ] 9. "Construcción y montaje de cimentación rectangular tipo $B, diseñada para suelo $A, con esperas roscadas para postes de electrificación desde el andén o la vía. Producto listo para su uso. Alcance del trabajo: $C. Zona de protección para el mantenimiento: $D. Acondiciones para la ejecución: $F." — _qwen2.5:14b_
+- [ ] 10. "Entrega y montaje de fundación rectangular en desmonte $B, creada para suelo $A, con esperas roscadas para postes de electrificación desde la vía o plataforma. Producto en condiciones para su uso inmediato. Alcance: $C. Banda de conservación: $D. Condiciones para la ejecución del trabajo: $F." — _qwen2.5:14b_
+- [ ] 11. "Suministro y colocación de estructura portante rectangular tipo $B, adaptada para suelo $A, con esperas roscadas para postes de electrificación desde la plataforma o vía. Producto listo para su uso. Alcance de la obra: $C. Zona de conservación: $D. Circunstancias para la ejecución: $F." — _qwen2.5:14b_
+- [ ] 12. "Proveedor y colocación de cimentación rectangular tipo $B, adecuada para suelo $A, con esperas roscadas para postes de electrificación desde la vía o plataforma. Producto listo para su uso. Alcance del proyecto: $C. Ancho de la franja: $D. Condiciones para la instalación: $F." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%B)', '$M(%C)', '$N(%F)']
+- qwen2.5:14b/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%B)', '$M(%C)', '$N(%F)']
+- qwen2.5:14b/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%B)', '$M(%C)', '$N(%F)']
+- qwen2.5:14b/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%B)', '$M(%C)', '$N(%F)']
+- phi4:latest/T1 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/T1 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/T1 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/T1 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/T2 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/T2 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/T2 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/T2 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
 
 ## TEXTO template (OED010$)
 _Used in 1 concept(s): OED010$_
 
-- [ ] 1. "Instalación y ensamblaje de base rectangular en excavación $B para suelo $A, incluyendo postes de electrificación, desde plataforma o vía. Completamente finalizada. Labor: $C. Zona de mantenimiento: $D. Requisitos de ejecución: $F."
-- [ ] 2. "Provisión y colocación de estructura rectangular en excavación $B para terreno $A, con postes de electrificación, desde plataforma o vía. Totalmente acabada. Tarea: $C. Área de mantenimiento: $D. Parámetros de ejecución: $F."
-- [ ] 3. "Entrega y ensamblaje de base rectangular en excavación $B para suelo $A, con postes de electrificación, desde plataforma o vía. Completamente finalizada. Actividad: $C. Zona de mantenimiento: $D. Condiciones de realización: $F."
-- [ ] 4. "Suministro y colocación de estructura rectangular en excavación $B para terreno $A, con postes de electrificación, desde plataforma o vía. Totalmente acabada. Labor: $C. Zona de mantenimiento: $D. Requisitos de ejecución: $F."
-- [ ] 5. "Provisión y ensamblaje de base rectangular en excavación $B para suelo $A, incluyendo postes de electrificación, desde plataforma o vía. Completamente finalizada. Tarea: $C. Área de mantenimiento: $D. Parámetros de ejecución: $F."
-- [ ] 6. "Entrega y colocación de estructura rectangular en excavación $B para suelo $A, con postes de electrificación, desde plataforma o vía. Totalmente acabada. Actividad: $C. Zona de mantenimiento: $D. Condiciones de realización: $F."
+- [ ] 1. "Instalación completa y entrega de cimentación rectangular en desmonte $B para el tipo de terreno $A, con estructuras de poste para electrificación, accesible desde la plataforma o vía. Trabajo: $C. Ancho de la banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 2. "Montaje e implementación de cimentación rectangular en desmonte $B adaptada para el tipo de terreno $A, que incluye postes para electrificación, desde la plataforma o vía, completamente finalizada. Trabajo: $C. Ancho de la banda para mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 3. "Suministro y configuración de cimentación rectangular en desmonte $B para el terreno tipo $A, incluyendo postes de electrificación, desde la plataforma o vía, en estado final. Trabajo: $C. Anchura de la banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 4. "Entrega y montaje de cimentación rectangular en desmonte $B para el terreno de tipo $A, con postes para electrificación, accesible desde la plataforma o vía, totalmente terminada. Trabajo: $C. Ancho de la banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 5. "Se suministra y monta una cimentación rectangular en desmonte tipo $B, diseñada para terrenos $A, con postes de electrificación, en plataforma o vía. Se entrega completamente terminada. Se incluyen los trabajos: $C. Se considera una banda de mantenimiento de: $D. Se especifican las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 6. "Se proporciona y ejecuta la colocación de una cimentación rectangular en desmonte de tipo $B, concebida para terrenos $A, con postes de electrificación, en plataforma o vía. Se entrega en estado finalizado. Se detallan los trabajos: $C. Se establece una banda de mantenimiento: $D. Se enumeran las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 7. "Se realizará la entrega y montaje de una cimentación rectangular en desmonte tipo $B, adaptada para terrenos $A, con postes de electrificación, en plataforma o vía. Se suministra en estado finalizado. Se incluyen los trabajos: $C. Se determina una banda de mantenimiento: $D. Se detallan las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 8. "Se provee y se monta una cimentación rectangular en desmonte de tipo $B, apropiada para terrenos $A, con postes de electrificación, en plataforma o vía. Se entrega en estado finalizado. Se describen los trabajos: $C. Se establece una banda de mantenimiento: $D. Se detallan las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 9. "Suministro y colocación de cimentación rectangular tipo $B, en terreno $A, con postes de electrificación desde la plataforma o la vía. Incluye todo lo necesario para su terminación. Trabajo: $C. Banda de mantenimiento: $D. (Condiciones de ejecución: $F.)" — _qwen2.5:14b_
+- [ ] 10. "Suministro y montaje de cimentación con postes de electrificación en terreno $A, desde plataforma o vía, tipo $B. Incluido el trabajo final. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 11. "Colocación y entrega de cimentación rectangular tipo $B, en terreno $A, con postes de electrificación. Desde plataforma o vía, completamente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 12. "Suministro y montaje de cimentación en desmonte tipo $B, para terreno $A, con postes de electrificación desde plataforma o vía. El trabajo incluye la terminación completa. Trabajo: $C, Banda de mantenimiento: $D, Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 13. "Instalación y configuración de fundación estructural rectangular tipo $B en terreno $A, incluyendo postes de corriente alterna. Proceso ejecutado desde plataforma ferroviaria o vía. Producto finalizado y listo para uso. Trabajo requerido: $C. Margen de mantenimiento: $D. Consideraciones de implementación: $F." — _qwen2.5:14b_
+- [ ] 14. "Suministro y colocación de estructura de cimiento rectangular en desmonte tipo $B, para terreno $A. Postes de electricidad incluidos. Proceso desde vía o plataforma ferroviaria. Completamente terminado. Trabajo necesario: $C. Ancho de mantenimiento: $D. Condiciones de realización: $F." — _qwen2.5:14b_
+- [ ] 15. "Entrega y montaje de cimentación rectangular para desmonte $B, en terreno $A. Con poste de transmisión eléctrica. Realización desde plataforma o vía ferroviaria. Producto totalmente terminado. Trabajo requerido: $C. Zona de mantenimiento: $D. Criterios de ejecución: $F." — _qwen2.5:14b_
+- [ ] 16. "Colocación y montaje de fundación de cimentación rectangular en terreno de tipo $B, para zona $A. Postes eléctricos incluidos. Realización desde plataforma o vía ferroviaria. Producto finalizado. Trabajo necesario: $C. Área de mantenimiento: $D. Criterios de implementación: $F." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] sentinel_residue
+- phi4:latest/R1 [1] sentinel_residue
+- phi4:latest/R1 [2] sentinel_residue
+- phi4:latest/R1 [3] sentinel_residue
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
 
 ## TEXTO template (OED020$)
 _Used in 2 concept(s): OED020$, OED170$_
 
-- [ ] 1. "Instalación y ensamblaje de base rectangular en terraplén $B para suelo $A, incluyendo postes de electrificación, desde plataforma o vía. Completamente finalizada. Labor: $C. Zona de mantenimiento: $D. Requisitos de ejecución: $F."
-- [ ] 2. "Provisión y colocación de estructura de cimentación rectangular en terraplén $B para terreno $A, con postes de electrificación, desde plataforma o vía. Totalmente acabada. Trabajo: $C. Área de mantenimiento: $D. Condiciones de ejecución: $F."
-- [ ] 3. "Entrega y ensamblaje de base rectangular en terraplén $B para terreno $A, con postes de electrificación, desde plataforma o vía. Totalmente finalizada. Trabajo: $C. Zona de mantenimiento: $D. Condiciones de ejecución: $F."
-- [ ] 4. "Provisión y colocación de estructura de base rectangular en terraplén $B para suelo $A, con postes de electrificación, desde plataforma o vía. Totalmente acabada. Labor: $C. Área de mantenimiento: $D. Requisitos de ejecución: $F."
+- [ ] 1. "Se provee y se instala cimentación rectangular en terraplén $B para su uso en terreno $A con soporte de electrificación, operando desde plataforma o vía. El proyecto está completamente finalizado. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 2. "Se instala cimentación rectangular en terraplén $B, adaptada para terreno $A con soporte de electrificación, procediendo desde plataforma o vía. La obra está completamente finalizada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 3. "Montaje y provisión de cimentación rectangular en terraplén $B para el terreno $A, que incluye postes de electrificación, realizados desde plataforma o vía. Obra completa. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 4. "Cimentación rectangular en terraplén $B para el terreno $A, que incluye postes de electrificación, suministrada y montada desde plataforma o vía, obra terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 5. "Suministro y montaje de cimentación rectangular en terraplén $B que comprende postes de electrificación para el terreno $A, desde plataforma o vía, completamente finalizada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 6. "Montaje y provisión de cimentación rectangular en terraplén $B en el terreno $A, que incluye postes de electrificación, desde plataforma o vía, trabajos totalmente finalizados. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 7. "Se suministrará y montará cimentación rectangular en terraplén tipo $B, adecuada para terreno $A, con instalación de postes de electrificación tanto desde plataforma como desde vía. Se entregará totalmente terminada. Se realizará el trabajo: $C. Se establecerá una banda de mantenimiento: $D. Se considerarán las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 8. "Se proporcionará y se montará una cimentación rectangular adecuada para terraplén tipo $B, en terreno $A, con la colocación de postes de electrificación desde plataforma o vía. La obra se entregará completamente finalizada. Se llevará a cabo el trabajo: $C. Se designará una banda de mantenimiento: $D. Se tendrán en cuenta las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 9. "Se realizará el suministro y el montaje de una cimentación rectangular para terraplén tipo $B, adecuada para condiciones de terreno $A, con la instalación de postes de electrificación desde plataforma o vía. Se entregará en estado completamente terminado. Se llevará a cabo el trabajo: $C. Se definirá una banda de mantenimiento: $D. Se considerarán las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 10. "Se proporcionará y se montará la cimentación rectangular en terraplén tipo $B, para terreno $A, con instalación de postes de electrificación desde plataforma o vía. La obra será entregada completamente terminada. Se realizará el trabajo: $C. Se definirá una banda de mantenimiento: $D. Se tendrán en cuenta las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 11. "Cimentación rectangular en terraplén tipo $B, incluido suministro y montaje sobre terreno $A, con postes de electrificación. El trabajo está completamente terminado. Banda de mantenimiento: $D, condiciones de ejecución: $F. Trabajo: $C." — _qwen2.5:14b_
+- [ ] 12. "Suministro e instalación de cimentación rectangular para terraplén tipo $B, desde plataforma o vía, con postes de electrificación en terreno $A. Totalmente terminada y lista para uso. Trabajo: $C, banda de mantenimiento: $D, condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 13. "Suministro e instalación de cimentación rectangular en terraplén tipo $B, con postes de electrificación, para terreno $A. Trabajo: $C, banda de mantenimiento: $D y condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 14. "Cimentación rectangular en terraplén $B, suministro e instalación, para terreno $A, incluyendo postes de electrificación, des del plataforma o vía. Trabajo total, banda de mantenimiento: $D, condiciones de ejecución: $F. Trabajo: $C." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [0] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)']
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R3 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R3 [2] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R3 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
 
 ## TEXTO template (OED070$)
 _Used in 1 concept(s): OED070$_
 
-- [ ] 1. "Provisión y colocación de base rectangular para fijación tipo $B, adecuada para terreno $A con estructuras de electrificación, desde plataforma o vía. Completamente finalizada. Labor: $C. Zona de conservación: $D. Circunstancias de realización: $F."
-- [ ] 2. "Entrega y ensamblaje de fundación rectangular para sujeción tipo $B, para suelo $A con torres de electrificación, desde plataforma o vía. Totalmente acabada. Tarea: $C. Área de mantenimiento: $D. Parámetros de ejecución: $F."
-- [ ] 3. "Suministro y colocación de base rectangular para sujeción tipo $B, para terreno $A con columnas de electrificación, desde plataforma o vía. Totalmente finalizada. Actividad: $C. Zona de cuidado: $D. Condiciones de implementación: $F."
-- [ ] 4. "Provisión y ensamblaje de base rectangular para fijación tipo $B, para suelo $A con estructuras de electrificación, desde plataforma o vía. Completamente acabada. Labor: $C. Zona de conservación: $D. Circunstancias de realización: $F."
+- [ ] 1. "Instalación y provisión de cimentación rectangular de tipo $B para anclaje, adaptada para el terreno $A con soporte de postes de electrificación, desde plataforma o vía. Totalmente completada. Trabajo: $C. Zona de mantención:$D. Requisitos de ejecución: $F." — _phi4:latest_
+- [ ] 2. "Se proporciona y se instala cimentación rectangular tipo $B para anclaje, diseñada para el terreno $A con postes de electrificación, accesible desde plataforma o vía. Conclusión total de la obra. Trabajo: $C. Área de mantenimiento:$D. Circunstancias de ejecución: $F." — _phi4:latest_
+- [ ] 3. "La cimentación rectangular para anclaje de tipo $B se suministra y se monta para el terreno $A con postes de electrificación, desde plataforma o vía. Obra completamente finalizada. Trabajo: $C. Rango de mantención:$D. Parámetros de ejecución: $F." — _phi4:latest_
+- [ ] 4. "Cimentación rectangular para anclaje tipo $B se suministra y se arma, adecuada para el terreno $A con postes de electrificación, desde plataforma o vía. Obra completamente finalizada. Trabajo: $C. Zona de mantenimiento:$D. Requisitos de ejecución: $F." — _phi4:latest_
+- [ ] 5. "Provisión y colocación de base rectangular para anclaje tipo $B, adaptada a terreno $A con estructuras de electrificación, desde plataforma o vía. Finalizada en su totalidad. Trabajo: $C. Banda de mantenimiento:$D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 6. "Instalación y suministro de base rectangular para anclaje tipo $B, destinada a terreno $A con soportes de electrificación, tanto desde la plataforma como desde la vía. Finalizada completamente. Trabajo: $C. Banda de mantenimiento:$D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 7. "Suministro y instalación de soporte rectangular para anclaje tipo $B, diseñado para terreno $A con soportes de electrificación, desde plataforma o vía. Trabajo completamente terminado. Trabajo: $C. Banda de mantenimiento:$D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 8. "Trabajos de instalación y provisión de base rectangular para anclaje tipo $B, adecuada para terreno $A con infraestructuras de electrificación, en plataforma o vía. Completamente finalizada. Trabajo: $C. Banda de mantenimiento:$D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 9. "Fábrica y colocado de base rectangular para sujeción tipo $B, en terreno $A, incluyendo postes para electricidad, desde plataforma o vía. Completamente finalizada. Tareas: $C. Zona de conservación:$D. Parámetros de realización: $F." — _phi4:latest_
+- [ ] 10. "Entrega y instalación de base cuadrangular para sujeción de tipo $B, adecuada para terreno $A con soportes eléctricos, desde plataforma o riel. Totalmente concluido. Actividades: $C. Área de cuidado:$D. Requisitos de ejecución: $F." — _phi4:latest_
+- [ ] 11. "Provisión y ensamblaje de fundación rectangular para sujeción de modelo $B, destinada a $A con estructuras eléctricas, desde plataforma o vía. Completado por completo. Tareas: $C. Zona de mantenimiento:$D. Criterios de puesta en funcionamiento: $F." — _phi4:latest_
+- [ ] 12. "Fabricación y colocación de estructura rectangular para sujeción de categoría $B, ajustada a $A con elementos para electrificación, desde plataforma o riel. Concluido en su totalidad. Obras: $C. Aproximación de mantenimiento:$D. Parámetros de operación: $F." — _phi4:latest_
+- [ ] 13. "Se suministra y se monta cimentación rectangular tipo $B para anclaje en el terreno $A, con postes de electrificación desde la plataforma o vía. Se entrega completamente terminada. Se especifica el trabajo: $C. Se establece la banda de mantenimiento: $D. Se detallan las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo el suministro y el montaje de la cimentación rectangular tipo $B para anclaje en terreno $A, con postes de electrificación desde la plataforma o vía. Se entrega completamente terminada. Se especifica el trabajo: $C. Se estipula la banda de mantenimiento: $D. Se detallan las condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 15. "Suministro y montaje de cimentación rectangular tipo $B, para terreno $A, incluyendo zonas con postes de electrificación en plataforma o vía. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 16. "Suministro y montaje de cimentación rectangular tipo $B, para terreno $A, desde plataforma o vía y con postes de electrificación. Totalmente terminada. Trabajo: $C, banda de mantenimiento: $D, condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 17. "Proporcionamos y colocamos fundación rectangular tipo $B para anclaje, diseñada para uso en terreno $A, en particular cerca de postes de alimentación eléctrica. La instalación puede efectuarse tanto desde plataforma como desde vía. Producto finalizado. Ámbito laboral: $C. Zona de operación: $D. Criterios de implementación: $F." — _qwen2.5:14b_
+- [ ] 18. "Entrega y colocación de cimentación anclada rectangular tipo $B, adecuada para terreno $A, donde se requieren postes de alta tensión. La montura puede ser realizada desde plataforma o desde carril. Producto ya terminado. Área de trabajo: $C. Zona de intervención: $D. Requisitos para la ejecución: $F." — _qwen2.5:14b_
+- [ ] 19. "Ofrecemos y asistimos en la instalación de la cimentación anclada de sección rectangular tipo $B, ideada para terreno $A, que se encuentra en cercanía de postes de electricidad. Instalación desde plataforma o vía. Producto completo. Zona de labor: $C. Banda de revisión periódica: $D. Cláusulas de instalación: $F." — _qwen2.5:14b_
+- [ ] 20. "Suministración y colocación de cimentación para anclaje de sección rectangular tipo $B, destinada a terreno $A, y que sirve de soporte a postes de electrificación. Instalación desde plataforma o vía. Producto terminado. Ámbito laboral: $C. Zona de mantenimiento: $D. Términos de instalación: $F." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
+- [17] near_duplicate_of_kept
+- [18] near_duplicate_of_kept
 
 ## TEXTO template (OEC050$)
 _Used in 1 concept(s): OEC050$_
 
-- [ ] 1. "Provisión y colocación de cámara de empalme para línea eléctrica subterránea de doble circuito de 220 o 400 kV, con dimensiones exteriores de 2,9 m de ancho x 2,65 m de alto y 12,06 m de longitud, y sección libre interior de 2,5 m de ancho x 2,25 m de alto. Compuesta por 6 módulos estándar prefabricados de hormigón armado de 2,9 m de ancho x 2,65 m de alto x 2 m de largo, a colocar a 1,0 m de profundidad sobre solera de hormigón HE-25, reforzada con mallazo electrosoldado 15x15x8 en acero B-500, con un espesor mínimo de 150 mm. Equipada con boca de acceso de 1180 x 760 mm, cerrada con cerco y tapa de fundición, y provista de pates para el descenso hasta la cámara, hueco sumidero de 400 x 400 mm, dos bocas para tendido hechas con conducto de PE de 250 mm de diámetro, cerradas con marco y tapa de arqueta de fundición de diámetro de paso 600 mm, y conexión a tierra mediante dos anillos, uno superior y otro inferior, de cable de cobre de 2 x 120 mm2 de sección. Incluye excavación, preparación, compactación y nivelación de la superficie de asiento, rellenos posteriores y reposición del pavimento existente en su caso, así como conexión de los distintos conductos de la conducción enterrada con la cámara y sellado posterior de los mismos. Incluye el suministro, transporte, carga y descarga del material en el lugar de trabajo, ejecución, desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares. Trabajo: $A. Condiciones de ejecución: $B."
+- [ ] 1. "Se proveerá y montará una cámara de empalme para la conducción enterrada de doble circuito de 220 o 400 kV, con dimensiones exteriores de 2,9 m de ancho x 2,65 m de alto x 12,06 m de longitud, y una sección interna libre de 2,5 m de ancho x 2,25 m de alto. Estará compuesta por 6 módulos estándar prefabricados de hormigón armado de dimensiones 2,9 m de ancho x 2,65 m de alto x 2 m de largo, ubicados a 1,0 m de profundidad sobre una base de hormigón HE-25, reforzada con mallazo electrosoldado 15x15x8 en acero B-500, de al menos 150 mm de espesor. Cuenta con una entrada para personal de cota de paso 1180 x 760 mm, cerrada con cerco y tapa de fundición, provista de pates para el descenso hasta la cámara, e incluye un hueco sumidero de 400 x 400 mm. Dispone de dos accesos para tendido, realizados con conducto de PE de 250 mm de diámetro, cerrados con marco y tapa de arqueta de fundición de diámetro de paso 600 mm, y un sistema de puesta a tierra formado por dos anillos, uno superior y otro inferior, de cable de cobre de 2 x 120 mm2 de sección. Se incluye la excavación, preparación, compactación y nivelación de la superficie de asiento, los rellenos posteriores y la reposición del pavimento existente en su caso, además de la conexión de los distintos conductos con la cámara y el sellado posterior de los mismos. Se incluye el suministro, transporte, carga y descarga del material a obra, la ejecución del trabajo, el desplazamiento, material auxiliar, herramientas, maquinaria y medios necesarios. Trabajo: $A. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 2. "Se hará el suministro y montaje de una cámara de empalme para una línea eléctrica subterránea de doble circuito de 220 o 400 kV, con dimensiones exteriores 2,9 m de ancho x 2,65 m de alto y 12,06 m de largo. El espacio libre interior de la cámara mide 2,5 m de ancho x 2,25 m de alto. La cámara se conforma con 6 módulos estándar prefabricados de hormigón armado, con dimensiones 2,9 m de ancho x 2,65 m de alto x 2 m de largo, a instalar a una profundidad de 1,0 m sobre un pavimento de hormigón HE-25, reforzado con mallazo electrosoldado 15x15x8 de acero B-500, con un espesor mínimo de 150 mm. Está equipada con una entrada para personal, con dimensiones de paso 1180 x 760 mm, sellada con una cerca y tapa de fundición, y provista de pates para bajar al interior de la cámara, además de un sumidero de dimensiones 400 x 400 mm. Cuenta con dos entradas para tendido, fabricadas con tubo de PE de 250 mm de diámetro, cerradas con un marco y tapa de fundición con un diámetro de paso de 600 mm, y un sistema de puesta a tierra consistente en dos anillos de cable de cobre, uno superior y otro inferior, con una sección de 2 x 120 mm2. Se incluye la excavación, la preparación del terreno, compactación, nivelación de la superficie de soporte, los rellenos de seguimiento y la restauración del pavimento original en su caso, además de la conexión de los diferentes conductos a la cámara y el sellado posterior. También se incluye el suministro, el transporte, la carga y la descarga del material en el lugar de obra, así como la ejecución del trabajo, los desplazamientos, el material auxiliar, las herramientas, la maquinaria y los medios auxiliares. Trabajo: $A. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 3. "Se realizará el suministro y montaje de una cámara de empalme para una línea eléctrica subterránea de doble circuito de 220 o 400 kV, con dimensiones exteriores de 2,9 m de ancho x 2,65 m de alto x 12,06 m de largo, y una sección libre interior de 2,5 m de ancho x 2,25 m de alto. Se compone de 6 módulos estándar prefabricados de hormigón armado, con dimensiones 2,9 m de ancho x 2,65 m de alto x 2 m de largo, que se instalarán a una profundidad de 1,0 m sobre una solera de hormigón HE-25, reforzada con mallazo electrosoldado 15x15x8 en acero B-500, de un espesor mínimo de 150 mm. Cuenta con una apertura para el personal de cota de paso 1180 x 760 mm, cerrada con una verja y tapa fundida, y provista de pates para acceso hasta la cámara, además de un sumidero de 400 x 400 mm. Dispone de dos accesos para tendido, hechos con conducto de PE de 250 mm de diámetro, cerrados con un marco y tapa fundida de diámetro de paso 600 mm, y un sistema de puesta a tierra formado por dos anillos, uno superior y uno inferior, de cable de cobre de 2 x 120 mm2 de sección. Se incluye la excavación, preparación, compactación y nivelación de la superficie de apoyo, rellenos posteriores y restauración del pavimento previo en su caso, junto con la conexión de los distintos conductos a la cámara y el sellado de los mismos. Asimismo, se abarca el suministro, transporte, carga y descarga del material en el lugar de obra, la ejecución del trabajo, los desplazamientos, material auxiliar, herramientas, maquinaria y medios complementarios. Trabajo: $A. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 4. "Se efectuará el suministro y montaje de una cámara de empalme para la conducción subterránea de doble circuito de 220 o 400 kV, con dimensiones exteriores de 2,9 m de ancho x 2,65 m de alto x 12,06 m de longitud, y una sección libre interior de 2,5 m de ancho x 2,25 m de alto. Se constituye con 6 módulos estándar prefabricados de hormigón armado, con dimensiones de 2,9 m de ancho x 2,65 m de alto x 2 m de largo, a instalar a 1,0 m de profundidad sobre una base de hormigón HE-25, armada con mallazo electrosoldado 15x15x8 en acero B-500, de al menos 150 mm de espesor. Está equipada con una entrada para el personal, con dimensiones de cota de paso 1180 x 760 mm, cerrada con una cerca y tapa fundida, y provista de pates para el acceso hasta la cámara, junto con un sumidero de 400 x 400 mm. Cuenta con dos entradas para tendido, confeccionadas con conducto de PE de 250 mm de diámetro, cerradas con un marco y tapa fundida con un diámetro de paso de 600 mm, y un sistema de puesta a tierra formado por dos anillos, uno superior y otro inferior, de cable de cobre de 2 x 120 mm2 de sección. Se incluye la excavación, preparación, compactación y nivelación de la superficie de reposición, los rellenos de seguimiento y la restauración del pavimento anterior en su caso, junto con la conexión de los distintos conductos a la cámara y el sellado de los mismos. También se incluyen el suministro, transporte, carga y descarga del material en el lugar de obra, la ejecución del trabajo, los desplazamientos, material auxiliar, herramientas, maquinaria y medios complementarios. Trabajo: $A. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 5. "Provisión y colocación de una cámara de unión para infraestructuras eléctricas subterráneas dobles de 220 o 400 kV, cuyas dimensiones externas son 2,9 m de ancho por 2,65 m de altura y 12,06 m de longitud, y sección libre interior de 2,5 m por 2,25 m. La estructura se compone de 6 módulos prefabricados de hormigón armado, dimensionados en 2,9 m de ancho x 2,65 m de alto y 2 m de longitud, a colocar a una profundidad de 1,0 m sobre una losa de hormigón HE-25, con refuerzo de mallazo electrosoldado 15x15x8 fabricado en acero B-500, con un espesor mínimo de 150 mm. La cámara cuenta con acceso para trabajadores de cota de paso 1180 x 760 mm, protegido por un cerco y tapa de fundición, y pates para facilitar el descenso a la cámara. Incluye un hueco sumidero de 400 x 400 mm, dos entradas para cables cerradas con un marco y tapa de fundición con diámetro de paso 600 mm, utilizando tubos de PE de 250 mm de diámetro, además de un sistema de puesta a tierra formado por dos anillos de cable de cobre 2 x 120 mm2. Se incluye la excavación, preparación, compactación y nivelación de la superficie de apoyo, así como la reposición del pavimento existente y la conexión de los conductos con la cámara seguido de su sellado. Se comprende el suministro, transporte, carga y descarga de materiales, ejecución, desplazamientos, material menor, herramientas, maquinaria y medios auxiliares. Trabajo: $A. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 6. "Provisión e integración de una cámara de unión para conducción enterrada de líneas eléctricas en doble circuito de 220 o 400 kV, con medidas exteriores 2,9 m de ancho por 2,65 m de alto y 12,06 m de largo, y espacio libre interno de 2,5 m de ancho por 2,25 m de alto. Formada por 6 módulos estándar prefabricados de hormigón armado de 2,9 m de ancho por 2,65 m de alto y 2 m de longitud, a colocar a 1,0 m de profundidad sobre una base de hormigón HE-25, reforzada con enrejado electrosoldado de 15x15x8 en acero B-500, de espesor mínimo de 150 mm. Equipada con acceso para personal con dimensiones de paso 1180 x 760 mm protegido con cerco y cubierta de fundición, provista de escalones para el acceso a la cámara, hueco de desagüe de 400 x 400 mm, y dos aberturas de tendido conformadas por conductos de PE de 250 mm de diámetro, cerradas con protecciones y tapas de arqueta de fundición de diámetro de paso 600 mm. Incorpora un sistema de puesta a tierra compuesto por dos anillos, uno superior y otro inferior, de cable de cobre de 2 x 120 mm2 de sección. Incluye la excavación, el acondicionamiento y el alisado de la superficie de asiento, así como la reposición del pavimento existente cuando proceda, la conexión de los conductos de la canalización con la cámara y el sellado posterior de los mismos. Incluye el suministro del material, su transporte, carga y descarga en el lugar de obra, la ejecución de las labores, los desplazamientos, los materiales menores, herramientas, maquinaria y medios auxiliares. Servicio: $A. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 7. "Instalación y entrega de cámara de conexión para línea de electricidad subterránea en doble circuito de 220 o 400 kV, con dimensiones exteriores 2,9 m de ancho por 2,65 m de alto y 12,06 m de largo, y espacio interior libre de 2,5 m de ancho por 2,25 m de alto. Compuesta por 6 módulos estándar de hormigón armado prefabricados de 2,9 m de ancho por 2,65 m de alto y 2 m de longitud, a colocar a una profundidad de 1,0 m sobre una base de hormigón HE-25, con armado de enrejado electrosoldado de 15x15x8 en acero B-500, con un espesor mínimo de 150 mm. Dispone de una entrada de acceso con medidas de paso de 1180 x 760 mm y protegida por un cerco y cubierta de fundición, así como escalones para el acceso a la cámara, un hueco de desagüe de 400 x 400 mm, y dos aberturas para el tendido formadas por conductos de PE de 250 mm de diámetro, cubiertas con marco y tapa de arqueta de fundición de diámetro de paso 600 mm. Incluye un sistema de tierra con dos anillos, uno superior y otro inferior, formados por cable de cobre de 2 x 120 mm2 de sección. Se incluye la excavación, preparación, compactación y nivelación de la superficie de apoyo, el refuerzo posterior y la restauración del pavimento existente en su caso, así como la conexión de los conductos de la canalización con la cámara y su sellado adecuado. Incluye el suministro del material, su transporte, carga y descarga en el lugar de obra, la realización de las tareas, los desplazamientos, los materiales menores, herramientas, maquinaria y medios auxiliares. Servicio: $A. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 8. "Suministro e instalación de cámara de enlace para red eléctrica subterránea de doble circuito de 220 o 400 kV, con medidas exteriores de 2,9 m de ancho por 2,65 m de alto y 12,06 m de largo, y zona libre interna de 2,5 m de ancho por 2,25 m de alto. Se compone de 6 módulos estándar de hormigón armado prefabricados de 2,9 m de ancho por 2,65 m de alto y 2 m de longitud, a colocar a una profundidad de 1,0 m sobre una plataforma de hormigón HE-25, armada con enrejado electrosoldado de 15x15x8 en acero B-500, de mínimo 150 mm de espesor. Cuenta con un acceso para personal con medidas 1180 x 760 mm protegido con cerco y cubierta de fundición, además de escalones para el acceso a la cámara, un pozo de evacuación de 400 x 400 mm, y dos aberturas de tendido formadas por conductos de PE de 250 mm de diámetro, protegidas con un marco y cubierta de arqueta de fundición de diámetro de paso 600 mm. Incluye un sistema de conexión a tierra con dos anillos, uno superior y otro inferior, de cable de cobre de 2 x 120 mm2 de sección. Incluye la excavación, preparación, compactación y nivelación de la base de apoyo, el relleno posterior y la restauración del pavimento existente en su caso, así como la conexión de los tubos de la conducción con la cámara y su sellado adecuado. Se incluye el suministro del material, su transporte, carga y descarga en el lugar de obra, la realización de las tareas, los desplazamientos, los materiales menores, herramientas, maquinaria y medios auxiliares. Servicio: $A. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 9. "Provisión e integración de cámara de conexión para línea eléctrica subterránea de doble circuito de 220 o 400 kV, con dimensiones exteriores de 2,9 m de ancho por 2,65 m de alto y 12,06 m de largo, y espacio libre interno de 2,5 m de ancho por 2,25 m de alto. Compuesta por 6 módulos estándar prefabricados de hormigón armado de 2,9 m de ancho por 2,65 m de alto y 2 m de longitud, a instalar a una profundidad de 1,0 m sobre una base de hormigón HE-25, armada con enrejado electrosoldado de 15x15x8 en acero B-500, con un espesor de al menos 150 mm. Equipada con acceso para personal de medidas 1180 x 760 mm cerrado con cerco y tapa de fundición, con escalones para el acceso a la cámara, un pozo de evacuación de 400 x 400 mm, y dos aberturas para tendido formadas por conductos de PE de 250 mm de diámetro, cerradas con marco y tapa de arqueta de fundición de diámetro de paso 600 mm. Incluye un sistema de conexión a tierra con dos anillos, uno superior y otro inferior, de cable de cobre de 2 x 120 mm2 de sección. Incluye la excavación, el acondicionamiento y el alisado de la superficie de apoyo, el relleno posterior y la restauración del pavimento existente en su caso, así como la conexión de los conductos de la conducción con la cámara y su sellado adecuado. Incluye el suministro del material, su transporte, carga y descarga en el lugar de obra, la realización de las tareas, los desplazamientos, los materiales menores, herramientas, maquinaria y medios auxiliares. Servicio: $A. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 10. "Se suministrará y montará la cámara de empalme para la línea eléctrica subterránea doble circuito de 220 o 400 kV, cuyas dimensiones exteriores son 2,9 m de ancho x 2,65 m de alto y 12,06 m de longitud, y la sección libre interior es de 2,5 m ancho x 2,25 m alto. La cámara estará formada por 6 módulos estándar prefabricados de hormigón armado, con dimensiones de 2,9 m de ancho x 2,65 m de alto y 2 m de largo, los cuales se instalarán a una profundidad de 1,0 m sobre una solera de hormigón HE-25, reforzada con mallazo electrosoldado 15x15x8 en acero B-500, de al menos 150 mm de espesor. Se dotará la cámara con una boca de acceso de 1180 x 760 mm cerrada mediante cerco y tapa de fundición, además de escaleras para el descenso hacia la cámara, un hueco sumidero de 400 x 400 mm, dos bocas para tendido realizadas mediante tubo de PE de 250 mm de diámetro y cerradas mediante marco y tapa de arqueta de fundición de diámetro de paso 600 mm, y se instalará una puesta a tierra compuesta por dos anillos, uno superior y otro inferior, de cable de cobre de 2 x 120 mm2 de sección. Se realizarán excavación, preparación, compactación y nivelación de la superficie de asiento, rellenos posteriores y reposición del pavimento existente en su caso, y se conectarán los tubos de la canalización con la cámara, sellando los mismos. Se incluirán el suministro, el transporte, la carga y la descarga del material en el lugar de obra, la ejecución, los desplazamientos, el pequeño material, las herramientas, la maquinaria y los medios auxiliares. Trabajo: $A. Condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 11. "Suministro y colocación de una cámara de conector para una línea eléctrica subterránea de doble circuito de 220 o 400 kV, con dimensiones exteriores de 2,9 m de ancho x 2,65 m de alto y 12,06 m de largo, y sección libre interior de 2,5 m de ancho x 2,25 m de alto. La cámara está compuesta por 6 módulos prefabricados de hormigón reforzado con dimensiones de 2,9 m de ancho x 2,65 m de alto y 2 m de largo. Estos módulos se instalarán a una profundidad de 1,0 m, sobre una solera de hormigón HE-25, reforzada con mallazo electrosoldado 15x15x8 en acero B-500, con un espesor mínimo de 150 mm. La cámara incluye un acceso en el nivel 1180 x 760 mm, cerrado con un cerco y una tapa de fundición, además de rampas de acceso a la cámara. Se dotará de un hueco para sumidero de 400 x 400 mm, dos entradas para tendido realizadas mediante tubo de PE de 250 mm de diámetro, cerradas mediante marco y tapa de arqueta de fundición con un diámetro de paso de 600 mm. La puesta a tierra incluirá dos anillos, uno superior y otro inferior, con un cable de cobre de 2 x 120 mm2. El trabajo incluirá excavación, preparación, compactación y nivelación del terreno, rellenos posteriores y reposición del pavimento existente si es necesario, así como la conexión de los tubos de la canalización a la cámara y su sellado posterior. Se incluye la provisión, el transporte, la carga y descarga del material, la ejecución, los desplazamientos, el pequeño equipo, las herramientas, la maquinaria y los medios auxiliares necesarios. Trabajo: $A. Condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 12. "Proporcionar y montar una cámara de conexión para una línea eléctrica subterránea de doble circuito de 220 o 400 kV, con dimensiones exteriores de 2,9 m de ancho x 2,65 m de alto y 12,06 m de largo, y una sección interna libre de 2,5 m de ancho x 2,25 m de alto. La obra consta de 6 módulos de hormigón prefabricados de dimensiones 2,9 m de ancho x 2,65 m de alto y 2 m de largo, a instalar a una profundidad de 1,0 m sobre una base de hormigón HE-25,, reforzada con mallazo electrosoldado 15x15x8 en acero B-500,, con un mínimo de 150 mm de espesor. La cámara tendrá un acceso de 1180 x 760 mm, cerrado con cerco y tapa de fundición, además de rampas para el acceso y un desagüe de 400 x 400 mm. Incluirá dos entradas para tendido de 250 mm de diámetro, cerradas con marco y tapa de arqueta de fundición con un paso de 600 mm. La puesta a tierra será de dos anillos, superior e inferior, con un cable de cobre de 2 x 120 mm2. El trabajo cubrirá la excavación, preparación, compactación y nivelación del terreno, el relleno posterior, reposición del pavimento existente si es necesario, la conexión de los tubos de la canalización con la cámara y su sellado. Incluye la provisión, transporte, carga y descarga del material en pie de obra, la ejecución, los desplazamientos, el equipo pequeño, las herramientas, la maquinaria y los medios auxiliares. Trabajo: $A. Condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 13. "Suministro y colocación de una cámara de conexión para una línea eléctrica subterránea de doble circuito de 220 o 400 kV, con dimensiones exteriores de 2,9 m de ancho x 2,65 m de alto y 12,06 m de largo, y una sección libre interior de 2,5 m de ancho x 2,25 m de alto. La cámara está formada por 6 módulos prefabricados de hormigón armado de dimensiones 2,9 m de ancho x 2,65 m de alto y 2 m de largo. Estos módulos se instalarán a una profundidad de 1,0 m, sobre una base de hormigón HE-25, reforzada con mallazo electrosoldado 15x15x8 en acero B-500, con un espesor mínimo de 150 mm. La cámara cuenta con un acceso de 1180 x 760 mm, cerrado con cerco y tapa de fundición, además de rampas para el descenso y un hueco sumidero de 400 x 400 mm. Incluye dos entradas para tendido de 250 mm de diámetro, cerradas con marco y tapa de arqueta de fundición de paso 600 mm. La puesta a tierra constará de dos anillos, uno superior y otro inferior, con un cable de cobre de 2 x 120 mm2. El trabajo abarcará la excavación, preparación, compactación y nivelación del terreno, el relleno posterior y reposición del pavimento existente si es necesario, la conexión de los tubos de la canalización con la cámara y su sellado. Incluye el suministro, transporte, carga y descarga del material en pie de obra, la ejecución, los desplazamientos, el equipo pequeño, las herramientas, la maquinaria y los medios auxiliares. Trabajo: $A. Condiciones de ejecución: $B." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
+- phi4:latest/R2 [1] sentinels_not_preserved: missing=['Q14'] extra_or_dup=[]
+- phi4:latest/R2 [2] sentinels_not_preserved: missing=['Q14'] extra_or_dup=[]
+- phi4:latest/R2 [3] sentinels_not_preserved: missing=['Q14'] extra_or_dup=[]
+- [10] near_duplicate_of_kept
+- [11] near_duplicate_of_kept
+- [12] near_duplicate_of_kept
+- [16] near_duplicate_of_kept
 
 ## TEXTO template (OEE010$)
 _Used in 1 concept(s): OEE010$_
 
-- [ ] 1. "Provisión y colocación de placas de anclaje para catenaria en viaductos, con perforaciones in-situ, de $A mm de tamaño. Labor: $B. Zona de mantenimiento: $C. Circunstancias de ejecución: $D."
-- [ ] 2. "Entrega y fijación de placas de anclaje para catenaria en viaductos, con perforaciones in-situ, de $A mm de medida. Tarea: $B. Área de mantenimiento: $C. Condiciones de realización: $D."
-- [ ] 3. "Suministro y colocación de placas de anclaje para catenaria en viaductos, con perforaciones in-situ, de $A mm de tamaño. Actividad: $B. Zona de mantenimiento: $C. Condiciones de ejecución: $D."
-- [ ] 4. "Provisión y fijación de placas de anclaje para catenaria en viaductos, con perforaciones in-situ, de $A mm de medida. Labor: $B. Área de mantenimiento: $C. Circunstancias de ejecución: $D."
-- [ ] 5. "Entrega y colocación de placas de anclaje para catenaria en viaductos, con perforaciones in-situ, de $A mm de tamaño. Tarea: $B. Zona de mantenimiento: $C. Condiciones de realización: $D."
-- [ ] 6. "Provisión y fijación de placas de anclaje para catenaria en viaductos, con perforaciones in-situ, de $A mm de tamaño. Actividad: $B. Área de mantenimiento: $C. Condiciones de ejecución: $D."
+- [ ] 1. "Se suministrará y se montará una placa de anclajes de catenaria para viaductos con taladros in-situ, con dimensiones de $A mm. El trabajo a realizar corresponde a $B. La banda de mantenimiento establecida es $C. Las condiciones de ejecución serán $D." — _phi4:latest_
+- [ ] 2. "La placa de anclajes de catenaria, para viaductos con taladros in-situ de $A mm de dimensión, será suministrada y montada. Las tareas corresponden a $B. $C designa la banda de mantenimiento. Las $D establecen las condiciones de ejecución." — _phi4:latest_
+- [ ] 3. "Se ejecutará el suministro y montaje de la placa de anclajes de catenaria, diseñada para viaductos con taladros in-situ de $A mm. El trabajo detallado es $B. La banda de mantenimiento a seguir es $C. Las condiciones específicas de ejecución son $D." — _phi4:latest_
+- [ ] 4. "La placa de anclajes de catenaria, con taladros in-situ en viaductos y dimensiones de $A mm, será suministrada y montada. $B describe el tipo de trabajo. $C es la banda de mantenimiento especificada. Las $D definen las condiciones de ejecución." — _phi4:latest_
+- [ ] 5. "Provisión e instalación de placa de anclajes de catenaria en viaductos con taladros in-situ, con dimensiones de $A mm. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 6. "Instalación y suministro de placa de anclajes de catenaria, específicamente en viaductos con taladros in-situ, con dimensiones de $A mm. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 7. "Montaje y suministro de placa de anclajes de catenaria, de dimensiones de $A mm, para viaductos con taladros in-situ. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 8. "Instalación y provisión de placa de soporte de catenaria para viaductos con perforación directa, de $A mm de dimensión. Tarea: $B. Zona de conservación: $C. Requisitos de ejecución: $D." — _phi4:latest_
+- [ ] 9. "Provisión y colocación de las placas de fijación para catenaria en puentes con taladrados directos, de $A mm de dimensión. Labor: $B. Área de mantenimiento: $C. Parámetros de realización: $D." — _phi4:latest_
+- [ ] 10. "Fuerza y colocación de la placa de sujeción de catenaria en estructuras sobre viaductos con perforaciones del sitio, de $A mm de dimensión. Actividad: $B. Sector de cuidado: $C. Criterios de ejecución: $D." — _phi4:latest_
+- [ ] 11. "Suministro y colocación de la placa de sujeción de la catenaria en estructuras de viaductos con perforaciones en el lugar, de $A mm de dimensión. Operación: $B. Gama de mantenimiento: $C. Normas de implementación: $D." — _phi4:latest_
+- [ ] 12. "Se suministrarán y montarán placas de anclajes para la catenaria, en viaductos dotados de taladros in-situ, con una dimensión de $A mm. Se realizará el trabajo $B. Se establecerá una banda de mantenimiento $C. Se cumplirán las condiciones de ejecución definidas en $D." — _qwen2.5:14b_
+- [ ] 13. "Placa de anclajes para catenaria suministrada y montada en viaductos con taladros in-situ, con una dimensión de $A mm. Trabajo a realizar: $B. Se establecerá una banda de mantenimiento de $C. Condiciones de ejecución: se respetarán las especificadas en $D." — _qwen2.5:14b_
+- [ ] 14. "Se llevará a cabo el suministro y montaje de placas de anclajes para catenaria en viaductos equipados con taladros in-situ, con una dimensión de $A mm. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 15. "Placa de anclajes para la catenaria, suministrada y montada en viaductos dotados de taladros in-situ, con dimensiones de $A mm. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: se aplicarán las indicadas en $D." — _qwen2.5:14b_
+- [ ] 16. "Instalación y proveído de la placa para anclajes de catenaria, dotada de taladros directos en obra en viaductos, de $A mm de dimensión. Incluye: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 17. "Suministro y colocación de placas de clavijas para catenaria, provistas de taladros en sitio en viaductos, de $A mm de dimensión. Condiciones: $D. Banda de mantenimiento: $C. Trabajo: $B." — _qwen2.5:14b_
+- [ ] 18. "Provisión y montaje de placas de anclajes para catenaria, dotadas de taladros directos en viaductos, de $A mm de dimensión. Incluido: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 19. "Suministro e instalación de placas de anclaje para catenaria, con taladros in-situ en viaductos, de $A mm de dimensión. Banda de mantenimiento: $C. Condiciones de ejecución: $D. Trabajo: $B." — _qwen2.5:14b_
+- [ ] 20. "Suministro e instalación de placas de anclajes para catenaria en viaductos con taladros en el lugar, de $A mm de dimensión. Operación: $B. Zona de mantenimiento: $C. Aspectos de ejecución: $D." — _qwen2.5:14b_
+- [ ] 21. "Colocación y entrega de placas de anclajes para catenaria en viaductos con taladros en el terreno, de $A mm de dimensión. Proceso: $B. Área de mantenimiento: $C. Circunstancias de ejecución: $D." — _qwen2.5:14b_
+- [ ] 22. "Proveedor de placas de anclajes para catenaria en viaductos con taladros in-situ, de $A mm de dimensión. Etapa: $B. Zona de mantenimiento: $C. Aspectos de instalación: $D." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [6] near_duplicate_of_kept
+- [23] near_duplicate_of_kept
 
 ## TEXTO template (OEE020$)
 _Used in 1 concept(s): OEE020$_
 
-- [ ] 1. "Provisión y colocación de placa para tirante de anclajes en viaductos con esperas previas. Labor $A. Zona de mantenimiento: $B. Circunstancias de ejecución: $C."
-- [ ] 2. "Entrega y instalación de placa para tirante de anclajes en viaductos con esperas previas. Tarea $A. Área de mantenimiento: $B. Parámetros de ejecución: $C."
-- [ ] 3. "Suministro e instalación de placa para tirante de anclajes en viaductos con esperas previas. Actividad $A. Sector de mantenimiento: $B. Condiciones de ejecución: $C."
-- [ ] 4. "Provisión e instalación de placa para tirante de anclajes en viaductos con esperas previas. Operación $A. Zona de mantenimiento: $B. Circunstancias de ejecución: $C."
+- [ ] 1. "Provisión y colocación de placa de tirante de anclajes en viaductos que incluyen esperas previas. Las labores $A serán realizadas. Zona de mantenimiento: $B. Las condiciones de implementación son $C." — _phi4:latest_
+- [ ] 2. "Se suministra y se instala la placa para tirante de anclajes en viaductos con esperas previas. El trabajo a efectuar es el $A. Señalar la banda de mantenimiento: $B. Las condiciones para la ejecución son $C." — _phi4:latest_
+- [ ] 3. "Suministro y colocación de placa en tirante de anclajes de viaductos, con integración de esperas previas. Se desarrollarán las tareas $A. La banda para el mantenimiento es $B. Las condiciones de ejecución serán $C." — _phi4:latest_
+- [ ] 4. "La provisión y colocación de placa para tirantes de anclaje en estructuras viaducto con integración de esperas previas se llevará a cabo. Las acciones $A están especificadas. La banda de mantenimiento corresponde a $B. Se establecen las condiciones de ejecución en $C." — _phi4:latest_
+- [ ] 5. "Instalación y provisión de placa para tirantes de anclajes en viaductos que incluyen esperas previas. Condiciones de ejecución: $C. Trabajo $A. Banda de mantenimiento: $B." — _phi4:latest_
+- [ ] 6. "Provisión y ensamblaje de placa para tirantes de anclajes en viaductos con esperas previas. Banda de mantenimiento: $B. Trabajo $A. Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 7. "Suministro y montaje de placa para tirantes de anclajes en viaductos, incluyendo esperas previas. Condiciones de ejecución: $C. Banda de mantenimiento: $B. Trabajo $A." — _phi4:latest_
+- [ ] 8. "Se suministrará y montará la placa para tirante de anclajes en viaductos con esperas previas. Se llevará a cabo el trabajo $A. Se establecerá la banda de mantenimiento: $B. Se indicarán las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 9. "La placa para tirante de anclajes en viaductos con esperas previas será suministrada y montada. Se especificará el trabajo $A. Se determinará la banda de mantenimiento: $B. Se establecerán las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 10. "El montaje y suministro de la placa para el tirante de anclajes en viaductos que incluyen esperas previas se realizará de acuerdo con las especificaciones dadas. Se definirá el trabajo $A. Se designará la banda de mantenimiento: $B. Se especificarán las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 11. "Se realizará el suministro y montaje de la placa para el tirante de anclajes en viaductos que cuentan con esperas previas. Se establecerá el trabajo $A. Se designará la banda de mantenimiento: $B. Se indicarán las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 12. "Montaje y provisión de placa para tirante de anclajes en viaductos, incluso aquellos con esperas previas. Labor $A. Zona de preservación: $B. Aspectos operativos de realización: $C." — _qwen2.5:14b_
+- [ ] 13. "Instalación y entrega de placa para tirante de anclajes en viaductos, así como en aquellos con esperas preparadas. Operación $A. Área de mantenimiento: $B. Circunstancias de ejecución: $C." — _qwen2.5:14b_
+- [ ] 14. "Suministro e instalación de placa para tirante de anclajes en estructuras ferroviarias, incluyendo aquellas con espera previa. Tarea $A. Zona de control: $B. Circunstancias de realización: $C." — _qwen2.5:14b_
+- [ ] 15. "Suministro y colocación de placa para tirante de anclajes en viaductos, incluidas las estructuras con espera previa. Ejecución $A. Ámbito de mantenimiento: $B. Condiciones para la realización: $C." — _qwen2.5:14b_
+- [ ] 16. "Instalación y configuración de placas para tensionar anclajes en estructuras ferroviarias que cuentan con zonas de espera previas. Proceso laboral: $A. Zona reservada para seguridad: $B. Criterios para la ejecución: $C." — _qwen2.5:14b_
+- [ ] 17. "Suministro y fijación de placas estructurales para anclajes en viaductos ferroviarios con áreas de espera preparadas. Procedimiento: $A. Zona de seguridad: $B. Requisitos de ejecución: $C." — _qwen2.5:14b_
+- [ ] 18. "Provisión de placas para tensionar anclajes en viaductos ferroviarios que incluyen zonas de espera. Actividad: $A. Área de seguridad: $B. Normas de implementación: $C." — _qwen2.5:14b_
+- [ ] 19. "Entrega y colocación de placas para anclajes en viaductos ferroviarios con zonas de espera preestablecidas. Operación: $A. Espacio de seguridad: $B. Requisitos de implementación: $C." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- [7] near_duplicate_of_kept
 
 ## TEXTO template (OEB250$)
 _Used in 1 concept(s): OEB250$_
 
-- [ ] 1. "$A de conducción de $B conductos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 1. "Se presenta un sistema de $A conductos $B de acero galvanizado, con un diámetro de 100mm, diseñados para instalaciones CMS en transiciones entre distintas plataformas. $Q(%A) Elaboración: $C Línea de atención: $D Circunstancias de implementación: $F" — _phi4:latest_
+- [ ] 2. "La instalación de un sistema de $A conductos $B de acero galvanizado, cada uno con un diámetro de 100mm, está destinada para uso en CMS durante las transiciones de plataformas. $Q(%A) Proceso de trabajo: $C Grupo de mantenimiento: $D Contexto de ejecución: $F" — _phi4:latest_
+- [ ] 3. "Se ofrece un conjunto de $A conductos de acero galvanizado $B, con diámetro de 100mm, para aplicaciones en instalaciones CMS en las transiciones interplataforma. $Q(%A) Actividad: $C Turno de mantenimiento: $D Escenarios de ejecución: $F" — _phi4:latest_
+- [ ] 4. "Se dispone de $A conducciones $B de acero galvanizado, cada una con un diámetro de 100mm, para instalaciones CMS durante las transiciones entre plataformas. $Q(%A) Actividad de trabajo: $C Equipo de soporte: $D Circunstancias de instalación: $F" — _phi4:latest_
+- [ ] 5. "$A de canalización compuesta por $B conductos de acero galvanizado de 100mm de diámetro, destinados a instalaciones CMS en transiciones de plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 6. "Para instalaciones CMS en transiciones entre diferentes plataformas, se utilizan $A de canalización, compuestos por $B conductos de acero galvanizado de 100mm de diámetro. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 7. "$A canalización, formada por $B conductos de acero galvanizado de 100mm de diámetro, es utilizada para instalaciones CMS en transiciones entre distintas plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 8. "En transiciones entre diferentes plataformas se emplean $A canalizaciones, que constan de $B conductos de acero galvanizado de 100mm de diámetro, para instalaciones CMS. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 9. "Sistema de $A de conductos de $B tubos de acero galvanizado de 100mm de diámetro destinados a instalaciones CMS en las áreas de transición entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 10. "$A de conducción compuesta por $B tubos de acero galvanizado de 100mm de diámetro, utilizados en instalaciones CMS en las zonas de conexión entre distintas plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 11. "Conjunto de $A conducciones formadas por $B tubos de acero galvanizado de diámetro 100mm, diseñadas para integración en sistemas CMS durante las transiciones entre plataformas diversas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 12. "$A canalización, integrada por $B tubos de acero galvanizado de 100mm de diámetro, enfocada a instalaciones CMS en las intersecciones entre distintas plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 13. "Instalación $A de conducción con $B tubos de acero galvanizado de diámetro 100mm destinados a las transiciones entre plataformas en instalaciones CMS. $Q(%A) Tareas: $C Límite de mantenimiento: $D Requisitos de implementación: $F" — _qwen2.5:14b_
+- [ ] 14. "Disposición $A de tubería de acero galvanizado con $B conductos de diámetro 100mm, diseñados para las interrupciones entre diferentes estructuras en instalaciones CMS. $Q(%A) Actividad: $C Zona de mantenimiento: $D Aspectos de operación: $F" — _qwen2.5:14b_
+- [ ] 15. "Configuración $A de canalización con $B tubos de acero galvanizado de diámetro nominal 100mm para las transferencias entre plataformas en sistemas CMS. $Q(%A) Ejecución: $C Zona de conservación: $D Condiciones de implementación: $F" — _qwen2.5:14b_
+- [ ] 16. "Implementación $A de conducción con $B tubos de acero galvanizado de diámetro 100mm, especificados para las transiciones entre plataformas en entornos CMS. $Q(%A) Actividad: $C Zona de mantenimiento: $D Requisitos de operación: $F" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R2 [0] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['P1', 'P3'] extra_or_dup=[]
+- qwen2.5:14b/R2 [2] sentinels_not_preserved: missing=['P1', 'P3'] extra_or_dup=[]
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['P1', 'P3'] extra_or_dup=[]
 
 ## TEXTO template (OEC140$)
 _Used in 1 concept(s): OEC140$_
-_Skipped: malformed_list_after_retry: all_elements_rejected_by_schema_
+
+- [ ] 1. "Incluso $T(%A, %B, %C) se implementará con detalles específicos." — _qwen2.5:14b_
+- [ ] 2. "Se instalará $T(%A, %B, %C), incluido en la especificación." — _qwen2.5:14b_
+- [ ] 3. "La instalación incorporará $T(%A, %B, %C) en el diseño." — _qwen2.5:14b_
+- [ ] 4. "Incluido en el diseño, $T(%A, %B, %C) será implementado." — _qwen2.5:14b_
+- [ ] 5. "La implementación de $T se realizará conforme a los valores %A, %B y %C." — _qwen2.5:14b_
+- [ ] 6. "Se procederá a la ejecución de $T utilizando los parámetros %A, %B y %C." — _qwen2.5:14b_
+- [ ] 7. "Para la aplicación de $T, se emplearán los siguientes datos: %A, %B y %C." — _qwen2.5:14b_
+- [ ] 8. "Los valores de %A, %B y %C serán los fundamentos para la configuración de $T." — _qwen2.5:14b_
+- [ ] 9. "Se llevará a cabo la implementación de $T(%A, %B, %C) conforme a los parámetros establecidos." — _qwen2.5:14b_
+- [ ] 10. "La configuración de $T(%A, %B, %C) se realizará conforme a los detalles técnicos proporcionados." — _qwen2.5:14b_
+- [ ] 11. "Se aplicará el procedimiento de $T(%A, %B, %C) según los requerimientos específicos." — _qwen2.5:14b_
+- [ ] 12. "Se realizará la instalación de $T(%A, %B, %C) de acuerdo a los estándares previstos." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T', '$U']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- qwen2.5:14b/R1 [0] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- qwen2.5:14b/R1 [1] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- qwen2.5:14b/R1 [2] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- qwen2.5:14b/R1 [3] placeholders_not_preserved: original=['$T'] new=['$A', '$B', '$C', '$T']
+- phi4:latest/T1 [0] placeholders_not_preserved: original=['$T'] new=['$T', '$U']
+- phi4:latest/T1 [1] placeholders_not_preserved: original=['$T'] new=['$T', '$U']
+- phi4:latest/T1 [2] placeholders_not_preserved: original=['$T'] new=['$T', '$U']
+- phi4:latest/T1 [3] placeholders_not_preserved: original=['$T'] new=['$T', '$U']
 
 ## TEXTO template (OEA150$)
 _Used in 1 concept(s): OEA150$_
 
-- [ ] 1. "Apertura $A de conducto de $B para el tendido de cables, incluyendo excavación del terreno. Trabajo: $C Zona de mantenimiento: $D Condiciones de ejecución: $F"
-- [ ] 2. "Apertura $A de canal de $B para el tendido de cables, incluyendo las labores de excavación del terreno. Trabajo: $C Área de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 1. "Se dispone de una apertura $A de una canaleta $B para la instalación de cables, abarcando las labores de excavación del terreno. Detalles del trabajo: $C Zona de conservación: $D Criterios de realización: $F" — _phi4:latest_
+- [ ] 2. "La apertura $A de una canaleta $B ya existente se emplea para el tendido de cables, con las labores de excavación necesarias del terreno. Actividad: $C Área de conservación: $D Parámetros de ejecución: $F" — _phi4:latest_
+- [ ] 3. "Una apertura $A de canaleta $B existente se destina al tendido de cables, considerando las labores de excavación del terreno. Proceso: $C Cinturón de mantenimiento: $D Condiciones de implementación: $F" — _phi4:latest_
+- [ ] 4. "Se dispone de una apertura $A de una canaleta $B existente para el tendido de los cables, incluyendo las acciones de excavación del terreno. Actividad designada: $C Zona de mantenimiento: $D Criterios de realización: $F" — _phi4:latest_
+- [ ] 5. "Canaleta $B existente con apertura $A para el tendido de cables, incluidos los trabajos de excavación del suelo. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 6. "Para el tendido de cables, se requiere una apertura $A en la canaleta de $B existente, incluyendo el desbroce del terreno. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 7. "Canaleta $B existente con apertura $A para el tendido de cables; incluye cavado del suelo. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 8. "Existe una apertura $A en la canaleta $B para el tendido de cables, incluidas las labores de excavación del terreno. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 9. "Se realiza una apertura $A en la canaleta $B existente destinada al tendido de cables, abarcando las tareas de excavación del suelo. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 10. "Realización de una apertura $A en la canaleta $B ya existente para el tendido de cables, que comprende la excavación del terreno necesaria. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 11. "Apertura $A en la canaleta $B ya existente, dedicada al tendido de cables, que incluye las operaciones de excavación del terreno. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 12. "Se ejecuta una apertura $A en la canaleta $B existente para el tendido de cables, que comprende las labores de excavación del suelo. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 13. "Se realiza la apertura $A de la canaleta de $B existente para la instalación eléctrica, que incluye las excavaciones de terreno. Se especifican las actividades bajo el rubro: $C. Se considera la banda de mantenimiento: $D. Las condiciones de realización son las siguientes: $F" — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la apertura $A de la canalización hormigonada de $B para la colocación de cables, que implica el trabajo de excavación del terreno. El trabajo se detalla como: $C. Se establece la zona de mantenimiento: $D. Se indican las condiciones para la ejecución: $F" — _qwen2.5:14b_
+- [ ] 15. "Se procede con la apertura $A de la canaleta preexistente de $B, con el propósito de acomodar los cables. Se realizan las labores de excavación del terreno necesarias. La actividad se clasifica bajo: $C. Se menciona la banda de resguardo: $D. Se detallan las condiciones de realización: $F" — _qwen2.5:14b_
+- [ ] 16. "Se efectúa la apertura $A de la canalización de $B existente para el tendido de las líneas de cable, incluyendo la excavación del terreno necesaria. Se específica la actividad como: $C. Se indica la zona de protección: $D. Las condiciones de ejecución quedan establecidas de la siguiente manera: $F" — _qwen2.5:14b_
+- [ ] 17. "Se requiere la apertura $A de la canaleta de $B existente para el tendido del cableado, incluyendo la excavación del terreno necesario. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 18. "Para el tendido de cables, se abre $A en la canaleta existente de $B, con la inclusión de las labores de excavación del terreno. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 19. "Se necesita la apertura $A en la canaleta de $B existente para el tendido de los cables, con la excavación del terreno incluida. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 20. "Configuración de apertura $A en la canaleta de $B ya existente, para la instalación de cables, que incluye la preparación del terreno. Actividades: $C Zona de trabajo: $D Circunstancias de ejecución: $F" — _qwen2.5:14b_
+- [ ] 21. "Se efectúa la apertura $A en la canalización de hormigón $B para la instalación de cables, con la labor de excavación del terreno. Tareas a realizar: $C Zona de intervención: $D Sobre las condiciones de realización: $F" — _qwen2.5:14b_
+- [ ] 22. "Apertura $A de la canalización de hormigón $B para la instalación de cables, incluyendo la preparación del terreno. Ejecución: $C Área de trabajo: $D Condiciones de realización: $F" — _qwen2.5:14b_
+- [ ] 23. "Se procede a realizar la apertura $A en la conducción de $B con el propósito de instalar los cables, abarcando el trabajo de excavación del terreno. Trabajos a desempeñar: $C Zona de intervención: $D Condiciones de implementación: $F" — _qwen2.5:14b_
+- [ ] 24. "Procedimiento para la apertura $A en la canalización de hormigón $B para la instalación de cables, incluyendo la excavación del terreno. Tareas: $C Zona de reparación: $D Aspectos de ejecución: $F" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['P5'] extra_or_dup=['P0']
 
 ## TEXTO template (OEB140$)
 _Used in 1 concept(s): OEB140$_
 
-- [ ] 1. "\Apertura y cierre de cata para identificación de conducción enterrada existente, con reparación si es necesario, para la identificación de conducción, obstrucciones, reparación, y el cierre de la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 2. "\Apertura y cierre de cata para detectar canalización existente, con reparación si procede, para la detección de canalización, obstrucciones, reparación, y el cierre de la canalización. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 3. "\Apertura y cierre de cata para ubicar canalización existente, con reparación si es necesario, para la ubicación de canalización, obstrucciones, reparación, y el cierre de la canalización. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 1. "Localización de la conducción enterrada existente mediante apertura y tapado de cata, incluyendo reparación si es necesario, para detectar obstrucciones y efectuar los arreglos precisos y posterior cierre. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 2. "Para localizar la conducción enterrada existente, se realiza apertura y tapado de cata, incluyendo reparaciones cuando sea necesario, para identificar obstrucciones, realizar reparaciones y cerrar la canalización. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 3. "Se efectúa la apertura y tapado de cata para localizar la conducción enterrada existente, con reparación si es necesario, para detectar obstrucciones, ejecutar arreglos y realizar el cierre de la canalización. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 4. "Con la apertura y tapado de cata se localiza la conducción enterrada existente, incluyendo reparaciones si las hay, para identificar obstrucciones, efectuar los arreglos necesarios y cerrar la canalización. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 5. "Incluye la ejecución de apertura y tapado de cata para detectar la conducción enterrada existente, con reparación, si es necesario, para la identificación de la conducción, obstrucciones y reparación, además del sellado de los conductos. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 6. "Se lleva a cabo la apertura y sellado de cata para la detección de la conducción enterrada existente, con opciones de reparación, para la identificación de la conducción, obstrucciones y reparación, así como el sellado de los conductos. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 7. "Se efectúa la apertura y sellado de cata destinado a detectar la conducción enterrada existente, con actuaciones de reparación, en su caso, para localizar la misma, identificar obstrucciones, realizar reparaciones y sellar los conductos. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 8. "Se realiza apertura de cata para la localización de conducciones existentes, con reparación, si es necesario, para identificar obstrucciones, realizar reparaciones y efectuar el cierre de la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 9. "Se realizará la apertura y el cierre de la cata para la localización de los conductos existentes, efectuando reparaciones necesarias para identificar los problemas, realizar las correcciones necesarias y sellar correctamente la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 10. "Se procederá a la apertura y cierre de la cata para la localización de las conducciones existentes, realizando reparaciones cuando sea necesario para identificar posibles obstrucciones, reparar las mismas y finalmente sellar la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 11. "Se llevará a cabo la apertura y el tapado de la cata para la localización de las conducciones existentes, reparando en caso necesario para identificar y solventar obstrucciones, y finalizar el sellado de la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 12. "Operación de apertura y repuesta de cata para el descubrimiento de la conducción enterrada existente, con la posibilidad de reparación de esta, la exploración de posibles obstrucciones y el cierre final de la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 13. "Proceso de apertura de cata para localizar la conducción existente, incluyendo la reparación precisa en caso de necesidad, así como la búsqueda de obstrucciones y la finalización del trabajo con el sellado de la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 14. "Se realizará la apertura y cierre de cata para la localización de la conducción existente, que incluirá la reparación si es requerida, la búsqueda de obstrucciones y la finalización de la obra con el cierre de la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 15. "Procedimiento que incluye la apertura de cata para la localización de la canalización existente, reparación si es necesaria, detección de obstrucciones y cierre final de la canalización. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 16. "Apertura y cierre de cata para la localización y reparación de conducciones existentes, incluyendo la búsqueda de obstrucciones. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 17. "Abrir y cerrar la cata para la identificación y reparación de la conducción subterránea, con la posible búsqueda de obstrucciones y la finalización con el cierre de la misma. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 18. "Proceder a la apertura y cierre de cata para la localización de conducciones existentes, reparación de éstas según sea necesario y la eliminación de posibles obstrucciones. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 19. "Realizar la apertura y cierre de cata con el objetivo de localizar y reparar conducciones ya existentes, así como identificar y solventar posibles obstrucciones. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$M(%B)']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$N(%C)']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)']
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)']
 
 ## TEXTO template (OEC030$)
 _Used in 1 concept(s): OEC030$_
 
-- [ ] 1. "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Obra: $B Zona de mantenimiento: $C Circunstancias de ejecución: $D"
-- [ ] 2. "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Labor: $B Área de mantenimiento: $C Parámetros de ejecución: $D"
-- [ ] 3. "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Proyecto: $B Sector de mantenimiento: $C Requisitos de ejecución: $D"
-- [ ] 4. "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Actividad: $B Rango de mantenimiento: $C Condiciones de implementación: $D"
-- [ ] 5. "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Operación: $B Zona de servicio: $C Circunstancias de realización: $D"
-- [ ] 6. "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Misión: $B Área de cuidado: $C Parámetros de ejecución: $D"
+- [ ] 1. "Se presenta la arqueta de registro compuesta-PRFV tipo AFC-$K(%A), de $A $I(%A). Trabajos incluidos: $B. Se especifica la banda de mantenimiento: $C. Se detallan las condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 2. "Se ofrece la arqueta de registro compuesta-PRFV modelo AFC-$K(%A), correspondiente a $A $I(%A). El trabajo que abarca: $B. La banda de mantenimiento se define como: $C. Las condiciones para la ejecución se expresan en: $D." — _phi4:latest_
+- [ ] 3. "Se describe la arqueta de registro de composite-PRFV, tipo AFC-$K(%A), que corresponde a $A $I(%A). Se incluye el trabajo: $B. Se asigna la banda de mantenimiento: $C. Se determinan las condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 4. "Se hace referencia a la arqueta de registro de composite-PRFV tipo AFC-$K(%A), de $A $I(%A). Se realiza el trabajo: $B. Se define la banda de mantenimiento: $C. Se especifican las condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 5. "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) para $A $I(%A) Ejecución: $B Mantenimiento: $C Condiciones de aplicación: $D" — _phi4:latest_
+- [ ] 6. "Registro de arqueta de composite-PRFV $A $I(%A) tipo AFC-$K(%A), con las siguientes características: Trabajo: $B, Banda de mantenimiento: $C, Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 7. "Tipo AFC-$K(%A) de arqueta de registro de composite-PRFV $A $I(%A), especificaciones: Trabajo: $B, Banda de mantenimiento: $C, Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 8. "Arqueta de registro de composite-PRFV, tipo AFC-$K(%A), correspondiente a $A $I(%A); especificaciones relevantes: Trabajo: $B, Banda de mantenimiento: $C, Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 9. "Arqueta de composite-PRFV tipo AFC-$K(%A) diseñada para $A $I(%A), con las siguientes especificaciones: Trabajo: $B, Banda de mantenimiento: $C, Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 10. "Se caracteriza la arqueta de registro de composite-PRFV tipo AFC-$K(%A) instalada en $A $I(%A). Se especifica el trabajo: $B. Se establece la banda de mantenimiento: $C. Se detallan las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 11. "Se define la arqueta de registro de composite-PRFV tipo AFC-$K(%A), ubicada en $A $I(%A). Se menciona el trabajo a realizar: $B. Se indica la banda de mantenimiento: $C. Se expone las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 12. "Se describe la arqueta de registro de composite-PRFV tipo AFC-$K(%A), situada en $A $I(%A). Se indica el trabajo: $B. Se señala la banda de mantenimiento: $C. Se determinan las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 13. "Se registra la arqueta de registro de composite-PRFV tipo AFC-$K(%A), localizada en $A $I(%A). Se detalla el trabajo: $B. Se establece la banda de mantenimiento: $C. Se especifican las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 14. "Tipo AFC-$K(%A), arqueta de registro de composite-PRFV de $A $I(%A). Incluye trabajo: $B, banda de mantenimiento: $C. Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 15. "Arqueta de registro tipo AFC-$K(%A) de composite-PRFV, perteneciente a $A $I(%A). Trabajo: $B; banda de mantenimiento: $C y condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 16. "Arqueta de registro de composite-PRFV tipo AFC-$K(%A), de la línea $A $I(%A), con trabajo: $B, banda de mantenimiento: $C y condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 17. "Arqueta de registro de composite-PRFV, tipo AFC-$K(%A), de la línea $A $I(%A), trabajo: $B, banda de mantenimiento: $C e incluye condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 18. "Estructura de registro de tipo composite-PRFV modelo AFC-$K(%A), perteneciente a la serie $A, clase $I(%A). Actividad: $B. Zona de conservación: $C. Aspectos a considerar durante la realización del trabajo: $D." — _qwen2.5:14b_
+- [ ] 19. "Unidad de registro de composite-PRFV serie AFC-$K(%A), de la clase $A, subclase $I(%A). Operaciones: $B. Sección de mantenimiento: $C. Consideraciones para la implementación: $D." — _qwen2.5:14b_
+- [ ] 20. "Caja de registro del sistema composite-PRFV especificación AFC-$K(%A), de la serie $A, subserie $I(%A). Tarea: $B. Zona de revisión: $C. Procedimientos a seguir: $D." — _qwen2.5:14b_
+- [ ] 21. "Cuadro de registro de composite-PRFV modelo AFC-$K(%A), perteneciente a la familia $A, subfamilia $I(%A). Actividad programada: $B. Límite de intervención: $C. Directrices para la ejecución: $D." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$I(%A)', '$K(%A)'] new=['$A', '$B', '$C', '$D', '$I(%A)', '$K(%A)', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$I(%A)', '$K(%A)'] new=['$A', '$B', '$C', '$D', '$I(%A)', '$K(%A)', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$I(%A)', '$K(%A)'] new=['$A', '$B', '$C', '$D', '$I(%A)', '$K(%A)', '$L(%B)', '$M(%C)', '$N(%D)']
 
 ## TEXTO template (OEA010$)
 _Used in 1 concept(s): OEA010$_
 
-- [ ] 1. "Canaleta de PVC de $A con cubierta. Tarea: $B. Zona de conservación: $C. Circunstancias de implementación: $D."
-- [ ] 2. "Conducto de PVC de $A con cubierta. Actividad: $B. Área de cuidado: $C. Parámetros de realización: $D."
-- [ ] 3. "Canaleta de PVC de $A con cubierta. Operación: $B. Sector de mantenimiento: $C. Requisitos de ejecución: $D."
-- [ ] 4. "Canaleta de PVC de $A con tapadera. Labor: $B. Zona de cuidado: $C. Condiciones de puesta en marcha: $D."
-- [ ] 5. "Canaleta de PVC de $A con cubierta. Proyecto: $B. Área de mantenimiento: $C. Circunstancias de ejecución: $D."
-- [ ] 6. "Canaleta de PVC de $A con tapa. Misión: $B. Zona de conservación: $C. Parámetros de ejecución: $D."
+- [ ] 1. "Confeccionada en canaleta PVC de $A con tapa integrada, el trabajo realizado es $B. La banda de mantenimiento es descrita como $C. Las condiciones de ejecución se especifican en $D." — _phi4:latest_
+- [ ] 2. "Se ha implementado una canaleta PVC de $A con tapa, realizando el trabajo $B. La banda de mantenimiento correspondiente es $C. En cuanto a las condiciones de ejecución, se detallan en $D." — _phi4:latest_
+- [ ] 3. "Una canaleta PVC de $A se suministra con tapa. El trabajo incluye $B. La banda de mantenimiento se define como $C. Las condiciones de ejecución están detalladas en $D." — _phi4:latest_
+- [ ] 4. "Disponibles en canaleta PVC de $A con tapa, el trabajo es $B. La banda de mantenimiento es $C. Las condiciones de ejecución se describen en $D." — _phi4:latest_
+- [ ] 5. "Canaleta de PVC de $A con tapa que incluye el trabajo: $B. La banda de mantenimiento es: $C. Las condiciones de ejecución son: $D." — _phi4:latest_
+- [ ] 6. "Con una tapa, la canaleta de PVC de $A incluye: trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 7. "Canaleta de PVC de $A, que cuenta con tapa, presenta el trabajo: $B, la banda de mantenimiento: $C, y las condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 8. "Incluyendo tapa, la canaleta de PVC de $A especifica el trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 9. "Se proporciona canaleta de PVC de $A con tapa. Se detalla el trabajo: $B. Se indica la banda de mantenimiento: $C. Se especifican las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 10. "Se presenta la canaleta de PVC de $A con tapa. Se detalla el trabajo: $B. Se menciona la banda de mantenimiento: $C. Se describen las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 11. "Con canaleta de PVC de $A con tapa. Se detallan tareas: $B. Banda de mantenimiento es: $C. Condiciones de ejecución son: $D." — _qwen2.5:14b_
+- [ ] 12. "Se ofrece canaleta de PVC de $A con tapa. Trabajo es: $B. Banda de mantenimiento es: $C. Se indican condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 13. "Canaleta PVC de $A, con tapa. Incluido: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 14. "Canaleta PVC, de $A, con tapa. Condiciones de trabajo: $B, banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 15. "Canaleta PVC con tapa, de $A. $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 16. "Tubo de canalización de PVC de $A, con cubierta. Proceso: $B. Zona de revisión: $C. Establecimientos para operaciones: $D." — _qwen2.5:14b_
+- [ ] 17. "Conducto de PVC tipo $A, con cerradura superior. Operaciones: $B. Area de chequeo: $C. Cláusulas de rendimiento: $D." — _qwen2.5:14b_
+- [ ] 18. "Dispositivo de conducción de PVC, con clasificación $A, y cierre. Ejecución: $B. Sector de supervisión: $C. Reglas de implementación: $D." — _qwen2.5:14b_
+- [ ] 19. "Elemento de canalización en PVC, tipo $A, con tapadera. Actividades: $B. Límite de inspección: $C. Circunstancias de funcionamiento: $D." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R3 [0] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R3 [1] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R3 [2] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R3 [3] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- [13] near_duplicate_of_kept
 
 ## TEXTO template (OEB020$)
 _Used in 1 concept(s): OEB020$_
 
-- [ ] 1. "Conducción enterrada de $A conductos de PVC de diámetro nominal 110 mm $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 1. "Se procederá a la canalización enterrada de $A conductos de PVC de 110 mm con diámetro nominal $I. Incluye $N el relleno y compactado del recinto, $P la provisión y colocación de tubos y hormigón de tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada al lugar de uso. $M Ejecución: $C Límite de mantenimiento: $D Circunstancias de ejecución: $F" — _phi4:latest_
+- [ ] 2. "Por medio de $A tubos de PVC de 110 mm y diámetro $I, se efectuará una canalización enterrada, que comprende $N el relleno y compactación de la zanja, $P la entrega y montaje de tubos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la deposición de los productos en el sitio de uso. $M Realización: $C Zona de mantenimiento: $D Parámetros de ejecución: $F" — _phi4:latest_
+- [ ] 3. "La ejecución de la conducción enterrada se realiza con $A conductos de PVC de 110 mm y $I mm de diámetro. Incluye $N el enrejado y densificación de la zanja, $P el abastecimiento y ensamblaje de tubos y hormigón de calidad HE-20 sin vibrar, la comprobación de los conductos, el traslado y la entrega en el sitio de utilización. $M Obras: $C Área de mantenimiento: $D Modos de ejecución: $F" — _phi4:latest_
+- [ ] 4. "Se llevará a cabo la instalación de una conducción enterrada empleando $A tubos de PVC de 110 mm con un diámetro de $I mm, lo cual abarca $N el llenado y compactación de la fosa, $P el aprovisionamiento y colocación de tubos y hormigón de clase HE-20 sin vibrar, la evaluación de los conductos, el desplazamiento y la entrega en el área de aplicación. $M Obra: $C Perímetro de mantenimiento: $D Normas de ejecución: $F" — _phi4:latest_
+- [ ] 5. "Conducción enterrada de $A conductos de PVC de 110 mm con un diámetro de $I mm, incluido $N el llenado y compactación del pozo, $P el suministro y colocación de los conductos junto con el hormigón de tipo HE-20 sin vibrar, la inspección de los tubos, el traslado y remoción de los materiales al sitio de uso. $M Trabajo: $C Zona de mantenimiento: $D Condiciones de intervención: $F" — _phi4:latest_
+- [ ] 6. "Instalación subterránea de $A tuberías de PVC de 110 mm con un diámetro de $I mm, encargándose de $N el relleno y compactación de la excavación, $P la provisión y el ensamblaje de las tuberías y encofrado de tipo HE-20 sin vibrar, la evaluación de los conductos, el traslado y la eliminación de los artículos al área de aplicación. $M Trabajo: $C Ancho de mantenimiento: $D Circunstancias de realización: $F" — _phi4:latest_
+- [ ] 7. "Conducción subterránea de $A tuberías de PVC de 110 mm con diámetro $I mm, que incluye $N el tapado y compactación del foso, $P el abastecimiento y ensamblaje de las tuberías junto con el hormigón de tipo HE-20 no vibrado, la inspección de los conductos, el desplazamiento y la devolución de los materiales al sitio de uso. $M Trabajo: $C Zona de servicio: $D Condiciones de realización: $F" — _phi4:latest_
+- [ ] 8. "Conducción subterránea de $A tuberías de PVC de tamaño 110 mm y diámetro $I mm, que comprende $N el relleno y compactación de la zanja, $P el abastecimiento y ensamblaje de las tuberías y hormigón de tipo HE-20 sin vibrar, la verificación de los conductos, el traslado y la eliminación de los materiales al espacio de aplicación. $M Trabajo: $C Ancho de servicio: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 9. "Se realiza la conducción enterrada con $A tuberías de PVC de 110 mm con diámetro nominal $I. Se incluye $N el rellenado y compactación de la zanja. $P se suministran y montan los tubos y hormigón tipo HE-20 sin vibrar. Se efectúan pruebas en los conductos, así como el transporte y retiro de materiales en el lugar de trabajo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 10. "Se lleva a cabo la instalación de una conducción enterrada compuesta por $A tuberías de PVC de 110 mm, con diámetro de $I. Se incluyen tareas de relleno y compactación de la zanja según $N. Se procede a la instalación de tubos y hormigón tipo HE-20 sin vibración, según $P. Se efectúan pruebas en los conductos y se retira todo el material en el lugar de trabajo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 11. "Se efectúa la canalización de $A tuberías de PVC de 110 mm, de diámetro nominal $I, incluyendo el relleno y compactación de la zanja $N. Se realizan suministro y montaje de tubos y hormigón tipo HE-20 sin vibrar, según $P. Se realizan pruebas en los conductos y finalmente el transporte y la retirada de materiales en el lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 12. "Conducción enterrada de $A conductos de PVC de 110 mm de diámetro nominal $I, junto con $N el relleno y compactado de la zanja y $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos y el transporte y retirada de los productos al lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 13. "Instalación de conducción enterrada con $A conductos de PVC de 110 mm, con diámetro nominal $I. Incluye $N el relleno de la zanja y el compactado del terreno, así como $P la entrega y colocación de los conductos y el hormigón de tipo HE-20 sin vibrar. Se realizan también las pruebas de la conducción, el transporte y la retirada de los materiales al sitio de trabajo. $M Tarea: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 14. "Instalación de canalización subterránea con $A tuberías de PVC de 110 mm, de diámetro nominal $I. Se incluye $N el relleno de la zanja y el compactado del terreno, $P la entrega de los tubos y el hormigón tipo HE-20 sin vibrar, y la prueba de la conducción, el transporte y la retirada de los materiales al lugar del trabajo. $M Tarea: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 15. "Instalación de tuberías subterráneas de PVC de 110 mm con $A conductos de diámetro nominal $I. Se incluyen $N el relleno de la zanja y el compactado del terreno, $P la entrega y colocación de los tubos y hormigón de tipo HE-20 sin vibrar. Se realiza la prueba de la conducción, el transporte y la retirada de los materiales al lugar de trabajo. $M Tarea: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- phi4:latest/R2 [0] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R2 [1] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R2 [2] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R2 [3] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- qwen2.5:14b/R2 [0] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R2 [2] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- [15] near_duplicate_of_kept
 
 ## TEXTO template (OEB030$)
 _Used in 1 concept(s): OEB030$_
 
-- [ ] 1. "Conducción enterrada de $A conductos de polietileno libre de halógenos de diámetro nominal 110 mm $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 1. "Se instalará una conducción enterrada con $A conductos de polietileno sin halógenos, de diámetro nominal 110 mm $I, incluyendo $N, el relleno y compactación de la zanja, $P, el aprovisionamiento y ensamblaje de los conductos con hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el traslado y la retirada de los materiales al sitio de trabajo $M. Trabajo: $C. Mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 2. "La conducción enterrada consiste en $A conductos de polietileno sin halógenos de diámetro nominal 110 mm $I, además $N, del relleno y compactación de la zanja, $P, suministro e instalación de los conductos y hormigón tipo HE-20 no vibrado, prueba de los conductos, transporte y eliminación de los materiales al área de uso $M. Trabajo: $C. Mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 3. "Se dispone de una canalización enterrada que incluye $A conductos de polietileno sin halógenos, diámetro 110 mm $I, y comprende $N, el relleno y compactación de la zanja, $P, el suministro y montaje de los conductos con hormigón tipo HE-20 no vibrado, la prueba de las tuberías, el transporte y la extracción de los materiales al lugar de implementación $M. Trabajo: $C. Mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 4. "Incluye una conducción enterrada con $A conductos de polietileno sin halógenos, de diámetro 110 mm $I, y abarca $N, el relleno y compactación de la zanja, $P, el abastecimiento e instalación de los conductos y hormigón tipo HE-20 no vibrado, la verificación de los conductos, el transporte y la remoción de los productos al sitio de utilización $M. Trabajo: $C. Mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 5. "Conducción enterrada formada por $A conductos de polietileno sin halógenos, de diámetro $I medida 110 mm, incluyendo $N el relleno y compactado de la zanja, $P el abastecimiento y montaje de los conductos y hormigón no vibrado tipo HE-20, la prueba de los conductos, el traslado y la retirada de los productos al sitio de aplicación $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 6. "Conducción enterrada que incluye $A conductos de polietileno sin halógenos de diámetro $I medida 110 mm, así como $N el relleno y compactado de la zanja, $P el abastecimiento y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 7. "Conducción enterrada realizada con $A conductos de polietileno sin halógenos de diámetro $I medida 110 mm, incluido $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón no vibrado tipo HE-20, la prueba de los conductos, el transporte y la retirada de los productos al sitio de instalación $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 8. "Conducción enterrada con $A conductos de polietileno sin halógenos, de diámetro $I medida 110 mm, abarcando $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón sin vibrar tipo HE-20, la prueba de los conductos, el transporte y la retirada de los productos al lugar de aplicación $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 9. "Se dispone de una conducción enterrada con $A conductos de polietileno sin halógenos de 110 mm con un diámetro de $I, incluyendo $N el acondicionamiento del hueco y su compactación, $P el abastecimiento y colocación de los conductos y concreto tipo HE-20 sin vibrar, la verificación de los conductos, el traslado y remoción de los productos al sitio de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 10. "Conducción enterrada realizada con $A conductos de polietileno sin halógenos de 110 mm y diámetro $I, abarcando $N el enrejado y compactación de la zanja, $P la entrega y colocación de los conductos y concreto tipo HE-20 sin vibrar, la prueba de los conductos, el traslado y retirada de los productos al sitio de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 11. "Conducción subterránea compuesta por $A conductos de polietileno sin halógenos de 110 mm y diámetro $I, incluido $N el relleno y compactación de la zanja, $P el abastecimiento y instalación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y extracción de los productos al destino $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 12. "Se provee una conducción enterrada con $A conductos de polietileno sin halógenos de 110 mm y diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y concreto tipo HE-20 sin vibrar, la verificación de los conductos, el traslado y retirada de los productos al destino $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 13. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 110 mm de diámetro nominal $I, incluido $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 14. "Instalación de conducción enterrada de $A conductos de polietileno libre de halógenos de 110 mm con diámetro nominal $I, incluida la zanja y relleno, $N y compactación, $P suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, prueba de los conductos, transporte y retiro de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 15. "Instalación subterránea de canalización de $A tuberías de polietileno sin halógenos de 110 mm, con diámetro nominal de $I, que comprende $N la excavación y consolidación del surco, $P el suministro y ensamblaje de tuberías y hormigón tipo HE-20 no vibrado, la prueba de las tuberías, la carga y desalojo de materiales al lugar de trabajo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 16. "Instalación de conducción enterrada para $A tuberías de polietileno sin halógenos de 110 mm, con diámetro $I, que incluye $N la excavación y consolidación del surco, $P el suministro y ensamblaje de tuberías y hormigón tipo HE-20 no vibrado, la prueba de la instalación, la carga y descarga de materiales al lugar de trabajo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P1', 'P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P1', 'P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [2] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- [13] near_duplicate_of_kept
 
 ## TEXTO template (OEB040$)
 _Used in 1 concept(s): OEB040$_
 
-- [ ] 1. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 160 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 1. "Se procederá a la instalación de una conducción enterrada compuesta por $A conductos de polietileno sin halógenos de 160 mm, con un diámetro nominal $I. Incluye $N el relleno y compactación de la zanja, $P el abastecimiento y colocación de los conductos y hormigón HE-20 sin vibración, la verificación de los conductos, el traslado y la remoción de los materiales al sitio de uso $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 2. "Incluye la instalación de una canalización enterrada formada por $A conductos de polietileno sin halógenos con 160 mm, un diámetro de $I. Se incluye $N el relleno y compactación de la zanja, $P el provisionamiento y montaje de los conductos y hormigón de tipo HE-20 sin vibrar, la inspección de los conductos, el traslado y la retirada de las mercancías al lugar de uso $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 3. "Se efectuará la instalación de una conducción de hormigón con $A conductos de polietileno exento de halógenos de 160 mm, con un diámetro de $I. Comprende $N el relleno y compactación de la zanja, $P el abastecimiento y ensamblaje de los conductos y hormigón de tipo HE-20 sin vibrar, la inspección de los conductos, el traslado y la evacuación de los productos al lugar de uso $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 4. "Se instalará una canalización de hormigón que incluye $A conductos de polietileno sin halógenos de 160 mm, con un diámetro de $I. Se incluye $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón HE-20 sin vibración, la comprobación de los conductos, el transporte y la eliminación de los productos al lugar de uso $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 5. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 160 mm mm de diámetro nominal $I, donde se incluye $N el relleno y compactado de la zanja, $P la entrega y colocación de los conductos y el hormigón tipo HE-20 sin vibración, la verificación de los conductos, el traslado y la remoción de los productos al sitio de instalación $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 6. "Instalación de conducción enterrada con $A conductos de polietileno sin halógenos de 160 mm mm de diámetro $I, incluyendo $N el relleno y compactado de la zanja. $P Se suministrarán y montarán los conductos y hormigón tipo HE-20 sin vibración, se realizarán pruebas de los conductos, su transporte y retirada al lugar de empleo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 7. "Conducción enterrada en hormigón con $A tubos de polietileno libre de halógenos de diámetro $I y 160 mm mm, $N incluido el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, pruebas de los conductos, transporte y retirada de los productos al lugar de empleo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 8. "Implantación de conducción enterrada compuesta por $A conductos de polietileno libre de halógenos de 160 mm de diámetro nominal $I, incluyendo $N el acondicionamiento y compactación del foso, $P el provisión y colocación de los conductos y hormigón tipo HE-20 sin vibrar, ensayos en los conductos, el desplazamiento y la eliminación de los útiles al sitio de uso $M Tareas: $C Línea de mantenimiento: $D Condiciones de realización: $F" — _phi4:latest_
+- [ ] 9. "Instalación de un sistema de conducción enterrada con $A tuberías de polietileno sin halógenos y de 160 mm con diámetro $I, abarcando $N el llenado y compactación de la excavación, $P el abastecimiento y ajuste de las tuberías y hormigón tipo HE-20 sin vibrar, pruebas de los conductos, desplazamiento y extracción de los componentes al emplazamiento de uso $M Actividades: $C Sector de mantenimiento: $D Normas de ejecución: $F" — _phi4:latest_
+- [ ] 10. "Configuración de conducción subterránea con $A conductos de polietileno no conteniendo halógenos de 160 mm y diámetro $I, incluyendo $N el llenado y compactación del corte, $P el provisión y ensamblaje de los tubos y concreto tipo HE-20 sin vibrar, verificación de los conductos, traslado y remoción de los artículos al punto de utilización $M Labor: $C Rango de mantenimiento: $D Requisitos de ejecución: $F" — _phi4:latest_
+- [ ] 11. "Puesta en marcha de una conducción enterrada con $A tuberías de polietileno exento de halógenos, de 160 mm y diámetro $I, cubriendo $N el acondicionamiento y compactación del foso, $P la provisión y emplazamiento de las tuberías y hormigón tipo HE-20 sin vibraciones, test de los conductos, transporte y extracción de los elementos al sitio de aplicación $M Trabajo: $C Área de mantenimiento: $D Requisitos de ejecución: $F" — _phi4:latest_
+- [ ] 12. "Instalación de $A conductos de polietileno libre de halógenos de 160 mm con diámetro nominal $I, incluyendo $N el relleno y compactado de la zanja y $P el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, así como la prueba de los conductos y el transporte y retiro de los materiales al lugar de empleo $M. Trabajo: $C, banda de mantenimiento: $D, condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 13. "Instalación de $A conducciones de polietileno libre de halógenos de 160 mm de diámetro nominal $I, y $P el suministro y montaje de dichos conducciones y hormigón tipo HE-20 sin vibrar, así como la prueba de los conductos y el transporte y retiro de los materiales al lugar de empleo $M, todo ello comprende $N el rellenado y compactación de la zanja. Trabajo: $C, banda de mantenimiento: $D, condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 14. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 160 mm de diámetro nominal $I, incluyendo $N el relleno y aplanado del tramo, $P la entrega y configuración de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de las canalizaciones, el transporte y la disposición de los materiales en el lugar de trabajo $M Trabajo: $C Banda de seguridad: $D Condiciones requeridas para la ejecución: $F" — _qwen2.5:14b_
+- [ ] 15. "Instalación de $A conductos de polietileno sin halógenos de 160 mm de diámetro nominal $I, incorporando $N el llenado y compactación de la zanja, $P la entrega y ensamblaje de dichos conductos y hormigón sin vibrar tipo HE-20, la prueba de las tuberías, el transporte y la retirada de los materiales al lugar de trabajo $M Trabajo: $C Banda de seguridad: $D Condición de trabajo: $F" — _qwen2.5:14b_
+- [ ] 16. "Conducción enterrada de $A tuberías de polietileno sin halógenos de 160 mm de diámetro nominal $I, que incluye: $N el relleno y compactado de la zanja, $P la entrega y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la remoción de los materiales al lugar de trabajo $M Trabajo: $C Banda de seguridad: $D Condiciones de la ejecución: $F" — _qwen2.5:14b_
+- [ ] 17. "Instalación de $A conductos de polietileno sin halógenos de 160 mm de diámetro nominal $I, que comprende: $N el llenado y aplanado de la zanja, $P el suministro de tuberías y el montaje de hormigón tipo HE-20 sin vibrar, la prueba de los tubos, el transporte y el retiro de los materiales al lugar de trabajo $M Trabajo: $C Banda de seguridad: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- [7] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
 
 ## TEXTO template (OEB230$)
 _Used in 1 concept(s): OEB230$_
 
-- [ ] 1. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 1. "Se ejecutará la conducción enterrada con $A conductos de polietileno libre de halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactado de la zanja, $P la provisión y montaje de los conductos y hormigón tipo HE-20 sin vibrar, así como la prueba de los conductos, el transporte y retirada de los productos al lugar de utilización $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 2. "La instalación consiste en $A conductos de polietileno libre de halógenos de 200 mm de diámetro $I, que incluye $N el relleno y compactado de la zanja, $P la entrega y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 3. "Conducción enterrada constituida por $A conductos de polietileno libre de halógenos de diámetro nominal $I y 200 mm, incluyendo $N el relleno y compactación de la zanja, $P el abastecimiento y montaje de los conductos con el hormigón de clase HE-20 sin vibrar, la verificación de los conductos, así como el transporte y la evacuación de los materiales al emplazamiento $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 4. "Conjunto de conducción enterrada compuesto de $A conductos de polietileno sin halógenos de diámetro $I y 200 mm, con el incluido $N relleno y compactación de la zanja, $P provisión y ensamblaje de los conductos con hormigón tipo HE-20 aplicado sin vibrar, ensayo de los conductos, y transporte y extracción de los productos destino $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 5. "Configuración para conducción enterrada con $A conductos de polietileno exento de halógenos, de 200 mm y diámetro $I, e incluyendo $N el relleno y compactado de la zanja, $P el suministro y colocación de los conductos con hormigón HE-20 aplicado sin vibrar, el ensayo de los conductos, y el transporte y retirada de los productos hacia el lugar de destino $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 6. "Canalización integrada con $A conductos de polietileno exento de halógenos de diámetro $I y 200 mm, en la que se incluye $N el relleno y compactación de la zanja, así como $P el abastecimiento y ensamblaje de los conductos con hormigón HE-20 sin vibrar, la prueba de los conductos, y su transporte y retirada hacia el lugar de destino $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 7. "Conducción enterrada con $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactación de la fosa, $P el aporte y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la devolución de los materiales al sitio de uso $M Trabajo: $C Mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 8. "Instalación de conducción subterránea compuesta por $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, abarcando $N el llenado y apisonamiento del agujero, $P el envío y emplazamiento de los conductos y concreto sin vibrar tipo HE-20, la evaluación de los conductos, el traslado y devolución de los materiales al lugar de utilización $M Trabajo: $C Mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 9. "Sistema de conducción enterrada formado por $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, contemplando $N el relleno y compactación de la excavación, $P el aporte y colocación de los conductos y hormigón de tipo HE-20 sin vibrar, la comprobación de los conductos, el transporte y la devolución de los productos al lugar de uso $M Trabajo: $C Mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 10. "Implementación de conductos subterráneos con $A tubos de polietileno sin halógenos de 200 mm de diámetro $I, con $N el relleno y compactación de la fosa, $P el suministro y colocación de los conductos y hormigón de tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la devolución de los materiales al sitio de aplicación $M Trabajo: $C Mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 11. "Se realiza la canalización hormigonada mediante la utilización de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I. Se incluye el relleno y compactado de la zanja según $N. El suministro y montaje de los conductos y hormigón tipo HE-20 se realizarán de acuerdo con $P. La prueba de conductos y el transporte y retirada de materiales al lugar de empleo se efectuarán conforme a $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 12. "La canalización hormigonada se efectúa con $A conductos de polietileno sin halógenos de 200 mm de diámetro $I. Se cubrirá el relleno y compactación de la zanja en base a $N. Se llevará a cabo el suministro y montaje de los conductos y hormigón tipo HE-20 según $P. Se realizará la prueba de conductos, transporte y retirada de materiales al lugar de empleo conforme a $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 13. "Se proporcionará una conducción enterrada de $A conductos de polietileno libre de halógenos de 200 mm con diámetro $I, incluyendo $N el relleno y compactado de la zanja, así como $P el suministro y montaje de los tubos y hormigón tipo HE-20, sin vibrar. Incluye la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 14. "Proporciona conducción enterrada de $A, suministro de tubos de polietileno libre de halógenos de 200 mm con diámetro $I, hormigón tipo HE-20 sin vibrar, y los servicios conexos como el relleno y compactado de la zanja de $N, así como $P la instalación y prueba de los conductos, transporte y retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 15. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 200 mm, con diámetro nominal $I. Esto incluye $N la preparación de la zanja, $P la instalación de los conductos y hormigón tipo HE-20 sin vibración, así como las pruebas de los conductos, el transporte y la limpieza de la zona de trabajo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 16. "Instalación de $A tuberías de polietileno libre de halógenos de 200 mm, con diámetro $I. Esto abarca $N la excavación y compactación de la zanja, $P la colocación y sellado de los conductos y hormigón tipo HE-20 sin vibración, la verificación de los conductos, el transporte y la retirada de los materiales $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 17. "Instalación de conducciones enterradas de $A tubos de polietileno libre de halógenos de 200 mm, con diámetro nominal $I. La tarea incluye $N la excavación y preparación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibración, además de la prueba, transporte y limpieza de la zona de trabajo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 18. "Conducción enterrada de $A tuberías de polietileno libre de halógenos de 200 mm, de diámetro $I. Este proceso comprende $N la excavación y compactación de la zanja, $P la instalación de los tubos y hormigón tipo HE-20 sin vibración, así como la prueba, transporte y limpieza de la zona de trabajo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
 - [2] near_duplicate_of_kept
 - [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
 
 ## TEXTO template (OEB280$)
 _Used in 1 concept(s): OEB280$_
 
-- [ ] 1. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 40 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 1. "Se realiza una conducción enterrada con $A conductos de polietileno libre de halógenos de diámetro nominal $I 40 mm, incluidos $N el relleno y compactado de la zanja y $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar. Incluye también la prueba de los conductos, el transporte y la retirada de los productos al lugar previsto $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 2. "Conducción enterrada con $A conductos de polietileno libre de halógenos de 40 mm mm de diámetro $I, incluyendo $N el relleno y compactado de la zanja, $P el abastecimiento y colocación de los conductos y hormigón tipo HE-20 sin vibrar, ensayo de los conductos, el traslado y la retirada de los productos al lugar de uso $M Trabajo: $C Correa de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 3. "Conducción enterrada compuesta por $A conductos de polietileno libre de halógenos de 40 mm mm de diámetro $I, incluido $N el relleno y compactado de la zanja, $P el abastecimiento y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al sitio de aplicación $M Trabajo: $C Correa de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 4. "Conducción enterrada hecha con $A conductos de polietileno libre de halógenos de 40 mm mm de diámetro $I, incluido $N el relleno y compactado de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la retirada de los productos al sitio de trabajo $M Trabajo: $C Correa de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 5. "Instalación de conducción bajo hormigón con $A conductos de polietileno sin halógenos de 40 mm mm de diámetro $I, incluyendo $N el llenado y compactación de la zanja, $P la provisión y ensamblaje de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y el retiro de los productos al lugar de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 6. "Emplazamiento de conducción encastrada con $A conductos de polietileno exento de halógenos de 40 mm mm de diámetro $I, incluyendo $N el relleno y compactado de la zanja, $P el abastecimiento y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el traslado y eliminación de los productos al lugar de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 7. "Implementación de conducción subterránea con $A conductos de polietileno sin halógenos de 40 mm mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y ensamblaje de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 8. "Instalación de una conducción subterránea con $A conductos de polietileno sin halógenos de 40 mm mm de espesor en un diámetro $I, incluidos $N el relleno y compactación de la excavación, $P el provecho y ensamblado de los conductos, junto con el hormigón tipo HE-20 no vibrado, verificación de los conductos, el traslado y el retiro de los materiales al sitio de uso $M Trabajo: $C Faja de mantenimiento: $D Circunstancias de implementación: $F" — _phi4:latest_
+- [ ] 9. "Construcción de una conducción enterrada que incluye $A conductos de polietileno exento de halógenos de 40 mm mm y de diámetro $I, en su totalidad $N el llenado y prensado de la excavación, $P la provisión y ajuste de los tubos y hormigón de la clase HE-20 sin compactación vibracional, inspecciones de los conductos, traslado y depósito de los elementos al sitio $M Trabajo: $C Anchura de mantenimiento: $D Cláusulas de construcción: $F" — _phi4:latest_
+- [ ] 10. "Instalación de una red subterránea formada por $A conductos de polietileno libre de halógenos de 40 mm mm de grosor y $I como diámetro, junto con $N la ocupación y compactación del hueco excavado, $P el abastecimiento y colocación de los tubos y hormigón de la variedad HE-20 no vibrado, comprobación de la red de conductos, el traslado y la eliminación de los materiales al lugar de uso $M Trabajos: $C Ancho de mantenimiento: $D Requisitos de ejecución: $F" — _phi4:latest_
+- [ ] 11. "Colocación de una red de tuberías encajonadas formada por $A tubos de polietileno sin halógenos de 40 mm mm de espesor y $I de diámetro, integrando $N el tapado y prensado del canal excavado, $P la entrega y fijación de los conductos y hormigón de la categoría HE-20 no vibrado, inspecciones de los conductos, el desplazamiento y evacuación de los insumos al emplazamiento $M Labor: $C Ancho de conservación: $D Directrices de aplicación: $F" — _phi4:latest_
 
 _Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- phi4:latest/R1 [1] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- phi4:latest/R1 [2] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- phi4:latest/R1 [3] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- phi4:latest/R2 [0] sentinels_not_preserved: missing=['Q1'] extra_or_dup=[]
+- phi4:latest/R2 [2] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R2 [0] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R2 [2] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R3 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R3 [2] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R3 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/T1 [0] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/T1 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/T1 [2] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/T1 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/T2 [0] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/T2 [1] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/T2 [2] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/T2 [3] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
 - [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
 - [5] near_duplicate_of_kept
+- [6] near_duplicate_of_kept
 
 ## TEXTO template (OEB290$)
 _Used in 1 concept(s): OEB290$_
 
-- [ ] 1. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 50 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 1. "Conducción enterrada formada por $A conductos de polietileno libre de halógenos de 50 mm mm, $I de diámetro, incluido $N el relleno y compactado de la zanja. $P Suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, prueba de los conductos, transporte y retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 2. "Instalación de conducción enterrada utilizando $A conductos de polietileno libre de halógenos de 50 mm mm de diámetro $I, incluyendo $N el relleno y compactado de la zanja. $P Proveemos el suministro y montaje de tubos y hormigón tipo HE-20 sin vibrar, seguido de la prueba de conductos, transporte y retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 3. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 50 mm mm, $I de diámetro, con $N relleno y compactado de la zanja. $P Procedencia y colocación de tubos y hormigón tipo HE-20 sin vibrar, verificación de conductos, transporte y eliminación de productos al sitio de uso $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 4. "Conducción subterránea compuesta por $A conductos de polietileno libre de halógenos de 50 mm mm, $I de diámetro, con $N relleno y compactación de la zanja. $P Provisión y ensamblaje de tubos y hormigón tipo HE-20 sin vibrar, inspección de conductos, transporte y deposición de productos en el lugar de uso $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 5. "Conducción enterrada compuesta por $A conductos de polietileno libre de halógenos de 50 mm, con un diámetro de $I, además de $N, el relleno y compactado de la zanja, $P, el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 6. "Instalación de conductos de polietileno libre de halógenos de 50 mm y diámetro $I, compuesta por $A unidades, incluyendo $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 7. "Conjunto de conductos de polietileno libre de halógenos, con $A unidades de diámetro $I y 50 mm, incluyendo $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 8. "Conducción enterrada realizada con $A tubos de polietileno libre de halógenos de 50 mm con diámetro nominal $I. $N incluye el relleno y compactado de la zanja y $P se efectúa el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, así como la prueba de los conductos. Además, se incluye el transporte y la retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 9. "Instalación de conducción enterrada con $A tubos de polietileno libre de halógenos tipo 50 mm de diámetro nominal $I, que comprende el suministro y montaje de dichos tubos y hormigón tipo HE-20 sin vibrar; $N incluye el relleno y compactado de la zanja y $P la prueba de los conductos y el transporte y la retirada de los productos al lugar de empleo $M. Trabajo: $C, Banda de mantenimiento: $D, Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 10. "Enterramiento de conducción con $A tubos de polietileno libre de halógenos de 50 mm de diámetro nominal $I. $N incluye el relleno y compactado de la zanja y $P, la prueba de los conductos y el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar. El transporte y la retirada de los productos al lugar de empleo $M también son responsabilidades del contratista. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F." — _qwen2.5:14b_
+- [ ] 11. "Colocación de zanjeado con conducción enterrada de $A tubos de polietileno de 50 mm y de $I, que incluye $N la excavación, relleno y compactación de la zanja, $P el suministro y colocación de los tubos de polietileno, hormigón tipo HE-20, la prueba de los conductos, y la manipulación de materiales al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 12. "Colocación de conducción enterrada de $A tubos de polietileno de 50 mm con diámetro $I, incluye $N la compactación y relleno de la zanja, $P el suministro y montaje de los conductos y hormigón tipo HE-20, la prueba de los conductos, y la manipulación y transporte de materiales al lugar de trabajo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
+- phi4:latest/R1 [0] sentinels_not_preserved: missing=['P5'] extra_or_dup=[]
+- phi4:latest/R1 [1] sentinels_not_preserved: missing=['P5'] extra_or_dup=[]
+- phi4:latest/R1 [2] sentinels_not_preserved: missing=['P5'] extra_or_dup=[]
+- phi4:latest/R1 [3] sentinels_not_preserved: missing=['P5'] extra_or_dup=[]
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [2] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R3 [3] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- [7] near_duplicate_of_kept
+- [10] near_duplicate_of_kept
 
 ## TEXTO template (OEB300$)
 _Used in 1 concept(s): OEB300$_
 
-- [ ] 1. "Conducción enterrada de $A conductos de polietileno libre de halógenos de 90 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 1. "Conducción enterrada compuesta por $A conductos de polietileno libre de halógenos de diámetro $I y 90 mm, incluido $N el relleno y compactado de la zanja, $P la entrega y colocación de los conductos y hormigón del tipo HE-20 sin vibrar, pruebas en los conductos finalizados, y el transporte junto con la retirada de los productos al lugar de destino $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 2. "Incluida la prueba de los conductos, el transporte y retirada de los productos al sitio de ejecución $M, se provee una conducción en hormigón compuesta por $A conductos de polietileno sin halógenos de diámetro $I y 90 mm, $N el relleno y compactación de la zanja, y $P la entrega y colocación de tubos y hormigón tipo HE-20 sin vibrar. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 3. "Se suministra una canalización en hormigón con $A tubos de polietileno sin halógenos de 90 mm y diámetro $I, $N relleno y compactación de la zanja, y $P montaje de tuberías y hormigón del tipo HE-20 sin vibrar. Incluye la prueba de los conductos, transporte y retirada de los productos al punto de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 4. "Instalación de canalización de hormigón con $A conductos de polietileno libre de halógenos de 90 mm y diámetro $I, incluido $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y del hormigón tipo HE-20 sin vibrar, $M Prueba de los conductos, transporte y colocación de los productos en su lugar de uso. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 5. "Sistema de canalización en hormigón compuesto por $A tubos de polietileno libre de halógenos de corte 90 mm y diámetro $I, con $N el relleno y compactación de la zanja, $P suministro e instalación de los conductos y hormigón tipo HE-20 sin vibrar, $M verificación de los conductos, transporte y disposición de los productos en su lugar de utilización. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 6. "Conducción enterrada con $A conductos de polietileno libre de halógenos de 90 mm y diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P provisión y colocación de los tubos y hormigón tipo HE-20 sin vibrar, $M la verificación de los conductos, el traslado y ubicación de los productos en su lugar de uso. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 7. "Se ejecutará la canalización mediante $A conductos de polietileno 90 mm sin halógenos, de diámetro $I. Se incluirá la preparación y compactación de la zanja $N, el suministro y montaje de los tubos y hormigón tipo HE-20 no vibrado $P, así como la prueba de los conductos, el transporte y la retirada de los materiales al lugar de trabajo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 8. "Conducción enterrada con $A conducciones de polietileno carencia de halógenos 90 mm de diámetro $I, incluido $N el llenado y compactación del zanjón, $P el suministro y ensamblaje de dichas conducciones y hormigón inerte tipo HE-20, la prueba de dichos conductos, el traslado y el retiro de los materiales hasta la ubicación de instalación $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 9. "Instalación de conducción enterrada con $A tubos de polietileno sin halógenos 90 mm de diámetro nominal $I, con $N la preparación del zanjón para el relleno y compactación, $P el suministro y montaje de estos tubos y hormigón tipo HE-20, la prueba de los mismos, el transporte y la retirada de los productos hasta la ubicación de instalación $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 10. "Enterramiento de $A tubos de polietileno sin halógenos 90 mm de diámetro $I, con $N el relleno y compactación del zanjón, y $P la entrega y colocación de dichos tubos y hormigón tipo HE-20, la prueba de conducción, el transporte y retiro de los materiales hasta el lugar de instalación $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 11. "Conducción enterrada mediante $A tubos de polietileno sin halógenos 90 mm de diámetro $I, incluyendo $N la preparación del zanjón con relleno y compactación, $P el suministro y colocación de los tubos y hormigón tipo HE-20, la realización de las pruebas de funcionamiento, y el traslado y retiro de los materiales hasta el lugar de instalación $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R1 [0] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R1 [1] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R1 [2] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R1 [3] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R2 [3] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [0] sentinels_not_preserved: missing=['P3', 'P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [1] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [2] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- qwen2.5:14b/R3 [3] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- [6] near_duplicate_of_kept
 
 ## TEXTO template (OEB170$)
 _Used in 1 concept(s): OEB170$_
 
-- [ ] 1. "Conducción metálica superficial compuesta por $A conductos de acero galvanizado con un diámetro interior de $B, destinada a taludes con pendientes pronunciadas o superficies rocosas, instalada sobre el hastial de túneles o puentes. Incluye el sellado de los extremos, así como las herramientas y medios auxiliares necesarios para la correcta instalación de la unidad. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
-- [ ] 2. "Conjunto de canalización metálica superficial formado por $A conductos de acero galvanizado de diámetro interior $B, adecuado para taludes con pendientes elevadas o superficies rocosas, instalado sobre el hastial de túneles o puentes. Incluye el sellado de los extremos, así como las herramientas y medios auxiliares necesarios para la correcta instalación de la unidad. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 1. "Conducción metálica superficial compuesta por $A conductos de acero galvanizado de diámetro $B de medida interior, destinada a taludes de fuerte pendiente o rocosos, instalada sobre hastial de túnel o puente, incluye el sellado de sus extremos, así como herramientas y medios auxiliares para una correcta ejecución. Trabajo: $C, Banda de mantenimiento: $D, Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 2. "Conducción superficial metálica que consta de $A conductos de acero galvanizado con un diámetro $B de medida interior, empleada en taludes de gran inclinación o terrenos rocosos, colocada en hastial de túnel o puente, incluye el sellado de sus extremos y las herramientas y medios auxiliares necesarios para su correcta instalación. Trabajo: $C, Banda de mantenimiento: $D, Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 3. "Canalización superficial metálica con $A conductos de acero galvanizado, de diámetro $B de medida interior, destinada a taludes de alta inclinación o terrenos rocosos, situada sobre hastial de túnel o puente, y que incluye el sellado de sus extremos, herramientas y medios auxiliares necesarios para una correcta ejecución. Trabajo: $C, Banda de mantenimiento: $D, Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 4. "Instalación de canalización superficial metálica compuesta por $A conductos de acero galvanizado de diámetro $B de medida interior, adecuada para taludes de excesiva inclinación o terrenos rocosos, ubicada sobre hastial de túnel o puente, que incluye el sellado de sus extremos y herramientas, así como medios auxiliares necesarios para una correcta ejecución. Trabajo: $C, Banda de mantenimiento: $D, Condiciones de ejecución: $F." — _phi4:latest_
+- [ ] 5. "Se desarrolla la canalización metálica superficial mediante $A conductos de acero galvanizado con un diámetro de $B, en taludes con una inclinación pronunciada o en terrenos rocosos, así como en la parte superior de túneles o puentes. Dichas instalaciones incluyen el sellado en sus extremos, además de las herramientas y recursos auxiliares requeridos para su adecuada implementación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 6. "Se establece la canalización metálica superficial a través de $A tubos de acero galvanizado con un diámetro interno de $B, colocándose en taludes de gran inclinación o en terrenos rocosos, además en la parte superior de los túneles y puentes. El sellado de los extremos, así como las herramientas y medios auxiliares necesarios para la correcta instalación, se incluyen en la unidad. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 7. "Canalización metálica superficial compuesta por $A conductos de acero galvanizado de $B, con medida interior, diseñada para taludes de pendiente extrema u orográficamente complejos, así como en el hastial de túneles o puentes. Incluye sellado de extremos y herramientas auxiliares para su correcta instalación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 8. "Conducción superficial de acero galvanizado formada por $A tubos de diámetro $B, adecuada para taludes de inclinación extrema o entornos rocosos, así como en la cara externa de túneles o puentes. Esta instalación incluye el sellado de extremos y herramientas auxiliares esenciales para su instalación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 9. "Canalización metálica superficial con $A tubos de acero galvanizado de $B de medida interior, diseñada para aplicarse en taludes de pendientes pronunciadas o geológicamente complejos, así como en la parte externa de túneles o puentes. Incluye sellado de extremos, herramientas y auxiliares necesarios para su correcta instalación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 10. "Conducción metálica superficial compuesta por $A tubos de acero galvanizado con diámetro interior de $B, diseñada para ser instalada en taludes de inclinación excesiva o terrenos rocosos, así como en la parte externa de túneles y puentes. Incluye sellado de extremos y herramientas auxiliares para su correcta instalación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 11. "Instalación metálica superficial compuesta por $A conductos de acero galvanizado con diámetro nominal de $B, diseñada para taludes muy inclinados o rocosos, así como para el hastial de túneles o puentes. El kit incluye sellado de extremidades, herramientas y materiales auxiliares esenciales para su instalación adecuada. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 12. "Conducción metálica superficial realizada con $A tubos de acero galvanizado con diámetro de medida interior de $B, diseñada para ser instalada en taludes con pendientes excesivas o en terrenos rocosos y sobre el hastial de túneles o puentes. El conjunto incluye el sellado de extremidades, herramientas y componentes auxiliares necesarios para su correcta implementación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 13. "Conducción metálica superficial compuesta por $A tubos de acero galvanizado con diámetro de medida interior de $B. Diseñada para taludes de alta inclinación o rocosos, así como para la construcción sobre hastial de túneles y puentes. El kit incluye sellado de extremidades, herramientas y accesorios necesarios para la correcta instalación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 14. "Instalación metálica superficial para taludes muy inclinados o rocosos, y sobre hastial de túneles o puentes, compuesta por $A tubos de acero galvanizado con diámetro de medida interior de $B. Incluye el sellado de extremidades, así como herramientas y medios auxiliares para su correcta implementación. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R1 [0] sentinels_not_preserved: missing=['P2', 'P3', 'P4', 'P5'] extra_or_dup=[]
+- phi4:latest/R1 [1] sentinels_not_preserved: missing=['P2', 'P3', 'P4', 'P5'] extra_or_dup=[]
+- phi4:latest/R1 [2] sentinels_not_preserved: missing=['P2', 'P3', 'P4', 'P5'] extra_or_dup=[]
+- phi4:latest/R1 [3] sentinels_not_preserved: missing=['P2', 'P3', 'P4', 'P5'] extra_or_dup=[]
+- phi4:latest/R3 [0] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R3 [1] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R3 [2] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R3 [3] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- qwen2.5:14b/R1 [1] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
 
 ## TEXTO template (OEB080$)
 _Used in 1 concept(s): OEB080$_
 
-- [ ] 1. "Conducción enterrada de conductos corrugados de $A con núcleo de acero. Condiciones de ejecución: $B."
-- [ ] 2. "Conducción subterránea de tubos corrugados de $A con núcleo de acero. Condiciones de ejecución: $B."
+- [ ] 1. "Se ha diseñado una canalización de conductos corrugados de $A con núcleo de acero. Las condiciones para la instalación son: $B." — _phi4:latest_
+- [ ] 2. "La canalización está compuesta por conductos corrugados de $A con un núcleo de acero. Las condiciones de ejecución son: $B." — _phi4:latest_
+- [ ] 3. "Se dispone de un conducto corrugado para canalización de $A que posee un núcleo de acero. Las condiciones de ejecución establecidas son: $B." — _phi4:latest_
+- [ ] 4. "La canalización de conductos corrugados se presenta con $A y un núcleo de acero. Las condiciones de ejecución son las siguientes: $B." — _phi4:latest_
+- [ ] 5. "Conducción de tubos corrugados de $A y alma metálica de acero. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 6. "Conductos corrugados de $A equipados con alma de acero. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 7. "Tubos de conducción corrugados de $A, con alma de acero. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 8. "Tubería corrugada de $A con alma metálica de acero. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 9. "Conducto corrugado de $A reforzado con alma de acero. Detalles de ejecución: $B." — _phi4:latest_
+- [ ] 10. "Tubería corrugada de $A con refuerzo de alma de acero. Especificaciones de instalación: $B." — _phi4:latest_
+- [ ] 11. "Conducción de tubos corrugados de $A con núcleo de acero. Parámetros de ejecución: $B." — _phi4:latest_
+- [ ] 12. "Conductos corrugados de $A, con alma de acero. Criterios de implementación: $B." — _phi4:latest_
+- [ ] 13. "Se realiza la canalización mediante tubo corrugado de $A con alma de acero. Se especifican las condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 14. "La canalización se lleva a cabo mediante tubo corrugado de $A con alma de acero. La detección de condiciones para la ejecución se realiza de acuerdo a $B." — _qwen2.5:14b_
+- [ ] 15. "Se efectúa la canalización tubo corrugado de $A, caracterizado por la inclusión de un alma de acero. Se recogen las condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 16. "Por medio de tubo corrugado de $A, con alma de acero, se ejecuta la canalización. Se establecen las condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 17. "Conducción tubular corrugada de $A, que incluye un soporte de acero. Condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 18. "Conducción corrugada de $A, con un elemento de refuerzo de acero. Incluido en las condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 19. "Conducción tubular de $A, con un refuerzo de acero. Condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 20. "Conducción tubular corrugada de $A, con alma de acero. Requisitos de implementación: $B." — _qwen2.5:14b_
+- [ ] 21. "Instalación de tubería corrugada de $A con refuerzo de acero. Normas de montaje: $B." — _qwen2.5:14b_
+- [ ] 22. "Conduite tubular corrugado de $A, con estructura reforzada de acero. Estándares de puesta en marcha: $B." — _qwen2.5:14b_
+- [ ] 23. "Tubo corrugado de $A con aporte estructural de acero. Directrices de implementación: $B." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- [19] near_duplicate_of_kept
 
 ## TEXTO template (OEB310$)
 _Used in 1 concept(s): OEB310$_
 
-- [ ] 1. "Inspección y restauración del subconducto existente en $P(%A). Se contempla el abastecimiento de manguitos y conductos necesarios, además de la ejecución del mandrilado para identificar el lugar de obstrucción, la excavación, acceso a conductos PVC enterrados de la conducción, reconstrucción de la conducción, hormigonado y cierre de la zanja."
-- [ ] 2. "Diagnóstico y reparación del subconducto existente en $P(%A). Se proporciona el suministro de manguitos y conductos necesarios, además de la ejecución del mandrilado para determinar el sitio de bloqueo, la excavación, acceso a conductos PVC enterrados de la conducción, reconstrucción de la conducción, hormigonado y sellado de la zanja."
+- [ ] 1. "Se procederá a la cata y reparación del subconducto existente en $P(%A). Incluye el abastecimiento de manguitos y conductos requeridos, y se llevará a cabo el mandrilado para identificar el punto de bloqueo, la excavación, el acceso a conductos PVC embebidos en hormigón de la conducción, así como la restauración de la conducción, el hormigonado y el sellado de la zanja." — _phi4:latest_
+- [ ] 2. "Se llevará a cabo la cata y restauración del subconducto ya existente en $P(%A). Esto comprende el abastecimiento de los manguitos y conductos necesarios, además de efectuar el mandrilado para determinar el lugar de obstrucción, la excavación, el acceso a conductos de PVC incrustados en hormigón de la conducción, la reconstrucción de la conducción, así como el hormigonado y el tapado de la zanja." — _phi4:latest_
+- [ ] 3. "La cata y la reparación del subconducto preexistente en $P(%A) serán ejecutadas. Esto abarca el suministro de manguitos y conductos necesarios, la ejecución del mandrilado para identificar el lugar de bloqueo, la excavación, el acceso a los conductos de PVC incrustados en hormigón de la conducción, la reconstrucción de la conducción, el hormigonado y el sellado de la zanja." — _phi4:latest_
+- [ ] 4. "Se efectuará la cata y la reparación del subconducto ya presente en $P(%A). Incluye el abastecimiento de los manguitos y conductos necesarios, y la realización del mandrilado para localizar el punto de obstrucción, la excavación, el acceso a los conductos de PVC embebidos en hormigón de la conducción, la reconstrucción de la conducción, el hormigonado y el cierre de la zanja." — _phi4:latest_
+- [ ] 5. "Se llevará a cabo la cata y reparación del subconducto existente en $P(%A), incluyendo el suministro de manguitos y conductos necesarios, la realización del mandrilado para localizar el punto de obturación, la excavación, acceso a los conductos PVC hormigonados de la conducción enterrada, reconstrucción de la conducción, hormigonado y tapado de la zanja." — _phi4:latest_
+- [ ] 6. "Incluye la realización del mandrilado para localizar el punto de obturación, la excavación y el acceso a los conductos PVC hormigonados de la conducción enterrada, así como la reconstrucción de la conducción, el hormigonado y el tapado de la zanja. Consta de la cata y reparación del subconducto existente en $P(%A) y el suministro de manguitos y conductos necesarios." — _phi4:latest_
+- [ ] 7. "Con un enfoque en el suministro de manguitos y conductos necesarios, la cata y reparación del subconducto existente en $P(%A) incluye la realización del mandrilado para localizar el punto de obturación, la excavación, el acceso a los conductos PVC hormigonados de la conducción enterrada, la reconstrucción de la conducción, el hormigonado y el tapado de la zanja." — _phi4:latest_
+- [ ] 8. "Inspección y restauración de conducto subterráneo preexistente en $P(%A). Se proveerá de accesorios y conductos requeridos, además del procedimiento de mandrilado para determinar el sitio de obstrucción, excavación, acceso a conductos de PVC entubados de la conducción, reconstrucción de la conducción, apisonamiento y sellado del foso." — _phi4:latest_
+- [ ] 9. "Examen y arreglo del subconducto ya instalado en $P(%A). Contempla el abastecimiento de accesorios y tuberías necesarias, junto con el procedimiento de mandrilado para identificar el lugar de cierre, excavación, acceso a conductos de PVC encajonados en la conducción, reconstrucción de la conducción, concreto y cierre del hueco." — _phi4:latest_
+- [ ] 10. "Revisión y restauración del subconducto ya colocado en $P(%A). Incluye el envío de accesorios y conductos requeridos, además de la ejecución del mandrilado para señalizar el bloqueo, excavación, ingreso a conductos de PVC encajonados en la conducción, renovación de la conducción, concreto y sellado del agujero." — _phi4:latest_
+- [ ] 11. "Evaluación y arreglo del subconducto existente en $P(%A). Se abarca el suministro de arquetas y conducto necesario, el procedimiento de mandrilado para determinar el lugar de tapamiento, excavación, acceso a conductos de PVC encajados en la conducción, remodelación de la conducción, apisonamiento y cerramiento del foso." — _phi4:latest_
+- [ ] 12. "Se realizará la catálogo y reparación del subconducto existente en $P(%A). Se proporcionará el suministro de manguitos y tubería necesarios, además de la ejecución del mandrilado para hallar el punto de obturación, la excavación, el acceso a los conductos de PVC hormigonados de la conducción, la reconstrucción de la conducción, el hormigonado de la zona y la tapa de la zanja." — _qwen2.5:14b_
+- [ ] 13. "Se efectuará la investigación y reparación del subconducto existente en $P(%A). Se proveerá de manguitos y tubería necesaria, junto con el mandrilado para determinar el punto de obturación, la excavación, el acceso a los conductos de PVC hormigonados de la conducción, la reconstrucción de la conducción, el hormigonado de la área y la cobertura de la zanja." — _qwen2.5:14b_
+- [ ] 14. "Se llevará a cabo la catalogación y reparación del subconducto existente en $P(%A). Se suministrarán los manguitos y la tubería necesarios, así como la realización del mandrilado para identificar el punto de obturación, la excavación, el acceso a los conductos de PVC hormigonados de la conducción, la reconstrucción de la conducción, el hormigonado de la zona y el tapado de la zanja." — _qwen2.5:14b_
+- [ ] 15. "Se realizará la inspección y reparación del subconducto existente en $P(%A). Se suministrarán los manguitos y la tubería necesaria, además de la realización del mandrilado para localizar el punto de obturación, la excavación, el acceso a los conductos PVC hormigonados de la conducción, la reconstrucción de la conducción, el hormigonado de la zona y la cobertura de la zanja." — _qwen2.5:14b_
+- [ ] 16. "Se realizará la cata y reparación de subconducto existente en $P(%A). Incluye el suministro de manguitos y tubería necesaria, además del mandrilado para determinar el punto de obturación, así como la excavación, acceso a conductos de PVC hormigonados de la conducción enterrada, la reconstrucción de esta, el hormigonado y la reposición del terreno." — _qwen2.5:14b_
+- [ ] 17. "En base a la cata y reparación de subconducto existente en $P(%A), se proporcionará el suministro de manguitos y tubería necesaria. Además, se efectuarán el mandrilado para identificar el punto de obturación, la excavación, el acceso a conductos de PVC hormigonados de la conducción enterrada y la reconstrucción de dicha conducción, seguida del hormigonado y la reposición del terreno." — _qwen2.5:14b_
+- [ ] 18. "Se llevará a cabo la cata y reparación de subconducto existente en $P(%A). Este trabajo incluye la provisión de manguitos y tubería necesaria, junto con la realización del mandrilado para localizar el punto de obturación. También se efectuarán la excavación, el acceso a conductos de PVC hormigonados de la conducción enterrada, la reconstrucción de esta, el hormigonado y la reposición del terreno." — _qwen2.5:14b_
+- [ ] 19. "Se efectuarán la cata y reparación de subconducto existente en $P(%A). Incluye la provisión de manguitos y tubería necesaria. Además, se realizará el mandrilado para identificar el punto de obturación, la excavación, el acceso a conductos de PVC hormigonados de la conducción enterrada y la reconstrucción de esta, seguida del hormigonado y la reposición del terreno." — _qwen2.5:14b_
+- [ ] 20. "Inspección y reparación de subconducto existente en $P(%A). Se proporcionará el material necesario: manguitos y conductos, ejecutando el mandrilado para la identificación del punto de cierre, excavando para acceder a la conducción enterrada de tubos PVC, reconstruyendo la canalización, hormigonando y rellenando la zanja." — _qwen2.5:14b_
+- [ ] 21. "Revisión y reparación de subconducto existente en $P(%A). Se proveerán manguitos y tuberías necesarias, realizando el mandrilado para localizar el punto de obturación, excavando para acceder a la conducción enterrada de tubos PVC, reconstruyendo la canalización, hormigonando y rellenando la zanja." — _qwen2.5:14b_
+- [ ] 22. "Investigación y reparación de subconducto existente en $P(%A). Se entregará el material necesario, incluyendo manguitos y tuberías, ejecutando el mandrilado para la identificación del punto de cierre, excavando para acceder a la conducción enterrada de tubos PVC, reconstruyendo la canalización, hormigonando y rellenando la zanja." — _qwen2.5:14b_
+- [ ] 23. "Examen y reparación de subconducto existente en $P(%A). Se proporcionará el material necesario, incluyendo manguitos y tuberías, realizando el mandrilado para la ubicación del punto de obturación, excavando para acceder a la conducción enterrada de tubos PVC, reconstruyendo la canalización, hormigonando y rellenando la zanja." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- [6] near_duplicate_of_kept
 
 ## TEXTO template (OEA020$)
 _Used in 1 concept(s): OEA020$_
-_Skipped: malformed_list_after_retry: all_elements_rejected_by_schema_
+
+- [ ] 1. "Se realizará la provisión y colocación de una canaleta metálica de 3 conductos en estructura de puente. Ejecución de la tarea: $A Zona de cuidado: $B Modalidades de ejecución: $C" — _phi4:latest_
+- [ ] 2. "Provisión y montaje de una canaleta metálica con 3 canales en obra de puente. Desarrollo de la labor: $A Área de conservación: $B Parámetros de ejecución: $C" — _phi4:latest_
+- [ ] 3. "Se suministrará y se instalará una canaleta metálica con 3 conductos en infraestructura de puente. Desarrollo de labor: $A Área de mantenimiento: $B Circunstancias de ejecución: $C" — _phi4:latest_
+- [ ] 4. "Instalación y entrega de una canaleta metálica con 3 conductos en estructura de puente. Desarrollo de la tarea: $A Zona mantenimiento: $B Normativas de ejecución: $C" — _phi4:latest_
+- [ ] 5. "Suministro e instalación de canaleta metálica de 3 canales en puente. Condiciones de ejecución: $C Trabajo: $A Banda de mantenimiento: $B" — _phi4:latest_
+- [ ] 6. "Instalación y provisión de canaleta metálica con 3 canales para puente. Banda de mantenimiento: $B Condiciones de ejecución: $C Trabajo: $A" — _phi4:latest_
+- [ ] 7. "Se suministrará y colocará una canaleta metálica de 3 canales para puente. Se indicará el trabajo correspondiente: $A. Se establecerá la banda de mantenimiento: $B. Se determinarán las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 8. "Se llevará a cabo la colocación y el suministro de una canaleta metálica de 3 canales en puente. Se detallará el trabajo: $A. Se asignará la banda de mantenimiento: $B. Se definirán las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 9. "Se proporcionará y se colocará una canaleta metálica de 3 canales en el puente. Se especificará el trabajo: $A. Se establecerá la zona de mantenimiento: $B. Se indicarán las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 10. "Se realizará la colocación y suministro de una canaleta metálica de 3 canales en el puente. Se definirá el trabajo: $A. Se determinará la banda de mantenimiento: $B. Se establecerán las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 11. "Instalación y provisión de canalera metálica con 3 canales en estructura de vía. Ejecución: $A Zona de seguridad: $B Aspectos de desarrollo: $C" — _qwen2.5:14b_
+- [ ] 12. "Suministro e instalación de cañería metálica de 3 canales en construcción del puente. Actividad: $A Zona de seguridad: $B Condiciones del proyecto: $C" — _qwen2.5:14b_
+- [ ] 13. "Proveedor y colocación de canalización metálica de 3 canales en obra del puente. Ejecutor: $A Zona de seguridad: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 14. "Suministro e instalación de canalera metálica de 3 canales en estructura de puente. Ejecución: $A Zona de seguridad: $B Condiciones de desarrollo: $C" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R3 [0] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R3 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R3 [2] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R3 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- [6] near_duplicate_of_kept
+- [7] near_duplicate_of_kept
 
 ## TEXTO template (OEA090$)
 _Used in 1 concept(s): OEA090$_
 
-- [ ] 1. "Acceso a la canaleta existente $P(%D) para identificar o instalar nuevos cables. Actividad: $A Rango de mantenimiento: $B Circunstancias de ejecución: $C"
-- [ ] 2. "Apertura de la canaleta existente $P(%D) con el fin de detectar o colocar cables nuevos. Tarea: $A Área de mantenimiento: $B Parámetros de ejecución: $C"
-- [ ] 3. "Extracción de la canaleta existente $P(%D) para encontrar o instalar cables nuevos. Labor: $A Zona de mantenimiento: $B Condiciones de realización: $C"
-- [ ] 4. "Desbloqueo de la canaleta existente $P(%D) para ubicar o colocar nuevos cables. Actividad: $A Rango de mantenimiento: $B Circunstancias de ejecución: $C"
-- [ ] 5. "Acceso a la canaleta existente $P(%D) para detectar o instalar cables nuevos. Tarea: $A Área de mantenimiento: $B Parámetros de ejecución: $C"
-- [ ] 6. "Apertura de la canaleta existente $P(%D) para encontrar o colocar nuevos cables. Labor: $A Zona de mantenimiento: $B Condiciones de realización: $C"
+- [ ] 1. "Se procederá al destapado de la canaleta existente $P(%D) con el propósito de identificar o instalar nuevos conductores. Tipo de labor: $A Zona de servicio: $B Requisitos de ejecución: $C" — _phi4:latest_
+- [ ] 2. "La operación de destapado de la canaleta preexistente $P(%D) se realiza para hallar o establecer nuevos cables. Actividad realizada: $A Área de mantenimiento: $B Criterios de implementación: $C" — _phi4:latest_
+- [ ] 3. "Se ejecuta el destapado de la canaleta previamente instalada $P(%D) con el fin de detectar o colocar conductos nuevos. Esfuerzo de trabajo: $A Sección de conservación: $B Parámetros de aplicación: $C" — _phi4:latest_
+- [ ] 4. "Se ha programado el destape de la canaleta ya existente $P(%D) a fin de identificar o instalar nuevos cables eléctricos. Operación a desarrollar: $A Región de cuidado: $B Normas de ejecución: $C" — _phi4:latest_
+- [ ] 5. "Remoción de la tapa de la canaleta existente $P(%D) a fin de identificar cables existentes o instalar nuevos. Actividad: $A Zona de mantenimiento: $B Requisitos de ejecución: $C" — _phi4:latest_
+- [ ] 6. "Eliminación de la tapa de la canaleta existente $P(%D) con el objetivo de rastrear cables o colocar cables nuevos. Operación: $A Área de mantenimiento: $B Parámetros de ejecución: $C" — _phi4:latest_
+- [ ] 7. "Para localizar o instalar cables nuevos, se llevará a cabo el desmontaje de la tapa de la canaleta existente $P(%D). Actividad: $A Zona de mantenimiento: $B Requisitos de ejecución: $C" — _phi4:latest_
+- [ ] 8. "Se efectuará el desmontaje de la tapa de la canaleta existente $P(%D), con el fin de identificar cables presentes o agregar nuevos. Labor: $A Área de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 9. "Acceso a la canaleta $P(%D) para inspección o instalación de nuevos conductores. Detalles del trabajo: $A Zona de servicio: $B Requisitos de realización: $C" — _phi4:latest_
+- [ ] 10. "Despeje de la canaleta $P(%D) con el fin de identificar conductos o colocar nuevos. Descripción de la labor: $A Área de conservación: $B Normas de ejecución: $C" — _phi4:latest_
+- [ ] 11. "Retiro del tapón de la canaleta $P(%D) para revisar las redes o instalar líneas adicionales. Tipo de operación: $A Región de intervención: $B Parámetros de ejecución: $C" — _phi4:latest_
+- [ ] 12. "Acceso al interior de la canaleta $P(%D) para verificar o colocar nuevas redes. Procedimiento: $A Sector de mantenimiento: $B Detalles de ejecución: $C" — _phi4:latest_
+- [ ] 13. "Se realiza el destape de la canaleta existente de tipo $P(%D), con el objetivo de localizar o instalar nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones para la ejecución: $C" — _qwen2.5:14b_
+- [ ] 14. "Se llevará a cabo el destape de la conducción existente $P(%D) para la localización de cables o el tiro de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones bajo las cuales se ejecutará el trabajo: $C" — _qwen2.5:14b_
+- [ ] 15. "Se efectuará la apertura de la canalización existente $P(%D) para la detección de cables o la colocación de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de la ejecución: $C" — _qwen2.5:14b_
+- [ ] 16. "Se efectúa el destape de la tubería existente $P(%D) para la identificación de cables o la instalación de nuevos cables. Trabajo: $A Zona de mantenimiento: $B Condiciones para la realización del trabajo: $C" — _qwen2.5:14b_
+- [ ] 17. "Procedimiento para destapar la $P(%D) existente con el fin de identificar o instalar nuevos cables. Este trabajo se realizará conforme a las especificaciones de $A. Para este procedimiento se ocupará la banda de mantenimiento que se indica en $B. Además, se deben tener en cuenta las condiciones de ejecución especificadas en $C." — _qwen2.5:14b_
+- [ ] 18. "Se procederá a destapar la $P(%D) existente para realizar la instalación o localización de nuevos cables. Las características del trabajo incluyen los siguientes puntos: $A. El área de trabajo permitido estará definida en $B, y la ejecución del trabajo deberá seguir las condiciones determinadas en $C." — _qwen2.5:14b_
+- [ ] 19. "Se realizará el destape de la $P(%D) existente con el propósito de instalar o ubicar cables nuevos. Cada aspecto del trabajo, como las especificaciones y la banda de mantenimiento, se detallará en $A y $B, respectivamente. La ejecución del trabajo se regirá por las condiciones indicadas en $C." — _qwen2.5:14b_
+- [ ] 20. "El proceso de destape de la $P(%D) existente se llevará a cabo para la localización o instalación de cables nuevos. Este proceso incluirá los detalles del trabajo en $A, la banda de mantenimiento especificada en $B, y las condiciones de ejecución que se establecen en $C." — _qwen2.5:14b_
+- [ ] 21. "Procedimiento para el destape de canalización existente $P(%D), con el objetivo de instalar o localizar nuevas líneas de cable. Tarea específica: $A Cinta de seguridad: $B Requisitos operativos: $C" — _qwen2.5:14b_
+- [ ] 22. "Operación de destape de conducto existente $P(%D), realizado para la instalación o revisión de cables. Tarea: $A Límite de seguridad: $B Circunstancias de implementación: $C" — _qwen2.5:14b_
+- [ ] 23. "Realización del destape de tubería existente $P(%D), para la identificación o colocación de nuevos cables. Actividad: $A Zona de intervención: $B Aspectos técnicos: $C" — _qwen2.5:14b_
+- [ ] 24. "Trabajos de destape de conducto existente $P(%D), destinado a la localización o instalación de cables nuevos. Descripción del servicio: $A Zona restringida: $B Requisitos para la ejecución: $C" — _qwen2.5:14b_
 
 ## TEXTO template (OEA170$)
 _Used in 1 concept(s): OEA170$_
 
-- [ ] 1. "Conducción enterrada de hormigón y reinstalación en el área de fundación del poste de electrificación. Completado en su totalidad. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 2. "Desvío de conducto de hormigón y su reemplazo en el área de base del poste de electrificación. Finalizado completamente. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 3. "Desvío de canalización hormigonada y su reinstalación en el área de apoyo del poste de electrificación. Totalmente finalizado. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 4. "Desvío de conducto de hormigón y su reposición en el área de soporte del poste de electrificación. Completado en su totalidad. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 5. "Desvío de conducto hormigonado y su reinstalación en el área de fundación del poste de electrificación. Totalmente finalizado. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 1. "Se ha realizado el desvío y reposición de canaleta de hormigón en el área de cimentación para el poste de electrificación, encontrándose el trabajo completamente finalizado. Trabajo: $A Zona de mantenimiento: $B Circunstancias de ejecución: $C" — _phi4:latest_
+- [ ] 2. "Ejecutado el desvío y reposición de canaleta de hormigón alrededor de la cimentación del poste de electrificación, quedando el trabajo en su totalidad acabado. Trabajos: $A Corredor de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 3. "El desvío y reposición de canaleta de hormigón en la zona de cimentación del poste de electrificación se ha completado en su totalidad. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 4. "Se ha llevado a cabo el desvío y reposición de canaleta de hormigón en los alrededores de la cimentación del poste de electrificación, encontrándose el trabajo finalizado en su totalidad. Trabajo: $A Área de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 5. "Reemplazo de conducción enterrada de hormigón y reposición en el área de cimentación del poste de electrificación, completado en su totalidad. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 6. "Reemplazo y reposición en el área de cimentación del poste de electrificación de la conducción enterrada de hormigón, totalmente terminado. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 7. "En el área de cimentación del poste de electrificación, se realizó el reemplazo de la conducción enterrada de hormigón y su reposición, con el trabajo totalmente terminado. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 8. "Reubicación y sustitución de la conducción enterrada de hormigón en la zona de apoyo del poste de electrificación. Finalización completa. Trabajo: $A Zona de mantenimiento: $B Circunstancias de ejecución: $C" — _phi4:latest_
+- [ ] 9. "Reconducción y reemplazo de la canalización hormigonada en el área correspondiente al poste de electrificación. Proceso finalizado. Trabajo: $A Sector de mantenimiento: $B Parámetros de ejecución: $C" — _phi4:latest_
+- [ ] 10. "Desviar y cambiar la conducción de hormigón en el perímetro de soporte del poste de electrificación. Finalizado por completo. Trabajo: $A Área de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 11. "Reposicionar y renovar la canalización enterrada de hormigón en el sector de base del poste de electrificación. Culminado en su totalidad. Trabajo: $A Zona de mantenimiento: $B Circunstancias de ejecución: $C" — _phi4:latest_
+- [ ] 12. "Se lleva a cabo el desvío y la reposición de la conducción enterrada de hormigón en la zona de cimentación del poste de electrificación. Se finaliza totalmente. Trabajo: $A Zona de mantenimiento: $B Circunstancias de la ejecución: $C" — _qwen2.5:14b_
+- [ ] 13. "Se efectúa el desvíe y la sustitución de la canalización de hormigón en la área de fundación del poste de electrificación. Se concluye enteramente. Trabajo: $A Zona de mantenimiento: $B Condiciones de la ejecución: $C" — _qwen2.5:14b_
+- [ ] 14. "Se realiza el desvío y la reposición de la conducción de hormigón en la zona de cimentación del poste de electrificación. Se finaliza en su totalidad. Trabajo: $A Zona de mantenimiento: $B Condiciones de la ejecución: $C" — _qwen2.5:14b_
+- [ ] 15. "Se efectúa el desvío y la reposición de la canalización de hormigón en la zona de fundación del poste de electrificación. Se finaliza por completo. Trabajo: $A Zona de mantenimiento: $B Condiciones de la ejecución: $C" — _qwen2.5:14b_
+- [ ] 16. "Desvío y reposición de la conducción enterrada de hormigón en el área de fundación del poste de electrificación. Totalmente terminado. Condiciones de ejecución: $C, trabajo: $A, banda de mantenimiento: $B" — _qwen2.5:14b_
+- [ ] 17. "Reposición de la conducción enterrada de hormigón y su desvío en el área de fundación del poste de electrificación, totalmente terminado. Banda de mantenimiento: $B, trabajo: $A, condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 18. "Reconducción y reemplazo de canalización de hormigón en la zona de fundación del poste de suministro eléctrico para el ferrocarril. Trabajo finalizado. Tarea: $A Zona de trabajo: $B Limitaciones durante la ejecución: $C" — _qwen2.5:14b_
+- [ ] 19. "Desviación y renovación de tubería de hormigón en la localidad de los cimientos para la estructura de apoyo de la red eléctrica. Proceso concluido. Actividad: $A Límite de intervención: $B Circunstancias de la operación: $C" — _qwen2.5:14b_
+- [ ] 20. "Redirección y sustitución de la canalería de hormigón en la circunferencia de la base del poste que sostiene la instalación eléctrica. Finalización completa. Ejecución: $A Zona de operación: $B Parámetros de implementación: $C" — _qwen2.5:14b_
+- [ ] 21. "Translación y renovación de la conducción de hormigón en la proximidad de la fundación del soporte eléctrico. Trabajo completado. Actividad: $A Límite de interrupción: $B Circunstancias técnicas: $C" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
+- qwen2.5:14b/R2 [2] sentinels_not_preserved: missing=[] extra_or_dup=['P2']
+- [5] near_duplicate_of_kept
+- [18] near_duplicate_of_kept
 
 ## TEXTO template (OEB130$)
 _Used in 1 concept(s): OEB130$_
 
-- [ ] 1. "Realización de los trabajos de conexión de conducción enterrada de conductos de diámetro nominal 110 mm con una cámara o arqueta de registro existente, incluyendo la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 1. "Realización de la unión de conductos de hormigón de 110 mm con una cámara o arqueta de registro existente, incluyendo la demolición y nueva colocación de los muros de hormigón o ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 2. "Incorporación de conductos de hormigón de 110 mm a una arqueta o cámara de registro ya existente, lo que incluye la demolición y restauración de los muros de hormigón o ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 3. "Se realizará el entronque de la conducción enterrada de conductos de 110 mm, a una cámara o arqueta de registro existente, con la demolición y reconstrucción de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 4. "Se llevará a cabo la conexión de los conductos de 110 mm a una cámara o arqueta de registro existente, con la demolición y reconstrucción de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 5. "Se llevarán a cabo los trabajos de entronque de una conducción enterrada de conductos de 110 mm, con una cámara o arqueta existente, incluido el desmantelamiento y reposición de los paramentos de hormigón u obra de ladrillo. Trabajo: $A Banda de mantenimiento: $B. Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 6. "Se realizarán los trabajos de unión de una conducción enterrada de conductos de 110 mm, que incluye la demolición y reposición de los paramentos de hormigón u obra de ladrillo, y con una cámara o arqueta existente. Trabajo: $A Banda de mantenimiento: $B. Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 7. "Realización de los trabajos para conectar una conducción enterrada de conductos de 110 mm, con una cámara o arqueta existente, incluyendo la demolición y reposición de paramentos de hormigón o obra de ladrillo. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 8. "Se efectuarán los trabajos de conexión de una conducción enterrada de conductos de diámetro nominal 110 mm, incluyendo la demolición y reposición de paramentos de hormigón o fábrica de ladrillo, con una cámara o arqueta existente. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 9. "Realización de la conexión de la conducción enterrada de conductos de 110 mm con una cámara o arqueta existente, abarcando la demolición y reposición de los muros de hormigón o la fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 10. "Conexión del entronque de la conducción enterrada de conductos de 110 mm con una cámara o arqueta de registro existente, que incluye la demolición y reposición de las paredes de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 11. "Conexión de la conducción enterrada de conductos de 110 mm con cámara o arqueta existente, que comporta la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- phi4:latest/R1 [0] quantities_not_conserved: numbers [('110', 1)]→[('110', 2)], units [('mm', 1)]→[('mm', 2)]
+- phi4:latest/R1 [1] quantities_not_conserved: numbers [('110', 1)]→[('110', 2)], units [('mm', 1)]→[('mm', 2)]
+- phi4:latest/R1 [2] quantities_not_conserved: numbers [('110', 1)]→[('110', 2)], units [('mm', 1)]→[('mm', 2)]
+- phi4:latest/R1 [3] quantities_not_conserved: numbers [('110', 1)]→[('110', 2)], units [('mm', 1)]→[('mm', 2)]
+- phi4:latest/R2 [0] quantities_not_conserved: numbers [('110', 1)]→[('110', 2)], units [('mm', 1)]→[('mm', 2)]
+- phi4:latest/R2 [3] quantities_not_conserved: numbers [('110', 1)]→[('110', 2)], units [('mm', 1)]→[('mm', 2)]
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)']
+- phi4:latest/R3 [1] quantities_not_conserved: numbers [('110', 1)]→[('110', 2)], units [('mm', 1)]→[('mm', 2)]
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$M(%B)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$N(%C)']
 - [4] near_duplicate_of_kept
 - [5] near_duplicate_of_kept
+- [12] near_duplicate_of_kept
 
 ## TEXTO template (OEC110$)
 _Used in 1 concept(s): OEC110$_
 
-- [ ] 1. "Realización de los trabajos de demolición y reconstrucción de cuneta de hasta 250 cm de ancho con paredes de hasta 15 cm de espesor, incluyendo la limpieza, almacenamiento y traslado de materiales de demolición. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 1. "Se realizarán los trabajos de destrucción y reinstalación de cuneta con un ancho de hasta 250 cm, cuyas paredes no superarán los 15 cm de espesor, procediéndose además a la limpieza, recogida y traslado de desechos. Tarea: $A Zona de cuidado: $B Circunstancias de ejecución: $C" — _phi4:latest_
+- [ ] 2. "Se llevarán a cabo las labores de demolición y reconstrucción de cunetas con un ancho máximo de 250 cm y paredes que no excedan los 15 cm de espesor, incluyendo la limpieza, acumulación y traslado de escombros. Labor: $A Área de conservación: $B Parámetros de ejecución: $C" — _phi4:latest_
+- [ ] 3. "Se efectuarán las operaciones de fractura y reinstalación de cunetas con dimensiones máximas de 250 cm de ancho y 15 cm de espesor en sus paredes, añadiéndose la limpieza, almacenamiento y desplazamiento de residuos. Operación: $A Segmento de mantenimiento: $B Condiciones de operación: $C" — _phi4:latest_
+- [ ] 4. "Se efectuarán las intervenciones de demolición y reconstrucción de cunetas de un ancho no mayor a 250 cm y con espesores de paredes de hasta 15 cm, considerándose también la limpieza, recogida y traslado de materiales resultantes. Actividad: $A Zona de control: $B Circunstancias de implementación: $C" — _phi4:latest_
+- [ ] 5. "Realización de trabajos de demolición y reinstalación de cuneta de hasta 250 cm de ancho, con paredes de hasta 15 cm de espesor, e incluye limpieza, acopio y transporte de materiales de demolición. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 6. "Incluyendo limpieza, acopio y transporte de materiales de derribo, se ejecutarán trabajos de demolición y reposición de cuneta de hasta 250 cm de ancho, con paredes de hasta 15 cm de espesor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 7. "Se llevarán a cabo trabajos de rotura y reposición de cuneta con un ancho de hasta 250 cm y paredes de hasta 15 cm de espesor. Incluye procedimientos de limpieza, acopio y transporte de materiales de desmontaje. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 8. "Trabajos de demolición y nueva colocación de cuneta hasta 250 cm de ancho y paredes de hasta 15 cm de espesor, incluyendo limpieza, acopio y transporte de residuos. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 9. "Implementación de labores de desmantelamiento y reinstalación de cuneta con un máximo de 250 cm de ancho y paredes de hasta 15 cm de espesor, contando con la limpieza, almacenamiento y traslado de sustratos de demolición. Operación: $A Faja de cuidado: $B Circunstancias de desarrollo: $C" — _phi4:latest_
+- [ ] 10. "Realización de operaciones de fractura y reemplazo de cuneta con ancho máximo de 250 cm y grosor de pared de hasta 15 cm, abarcando la purificación, almacenamiento y movilización de residuos de demolición. Actividad: $A Corredor de cuidado: $B Parámetros de ejecución: $C" — _phi4:latest_
+- [ ] 11. "Desarrollo de tareas de fractura y reinstalación de cuneta de ancho no superior a 250 cm y paredes con espesor de hasta 15 cm, que incluye la higienización, acumulación y traslado de materiales de destrucción. Labor: $A Faja de cuidado: $B Requisitos de ejecución: $C" — _phi4:latest_
+- [ ] 12. "Conducción de procedimientos de desmantelamiento y reinstalación de cuneta de hasta 250 cm de ancho y con paredes de espesor máximo de 15 cm, contemplando la limpieza, recolección y desplazamiento de restos de demolición. Operación: $A Faja de mantenimiento: $B Normativas de cumplimiento: $C" — _phi4:latest_
+- [ ] 13. "Se llevan a cabo los trabajos de desmantelamiento y reposición de cuneta con una anchura máxima de 250 cm y paredes de hasta 15 cm de espesor. Se incluye la limpieza, recogida y traslado de los materiales retirados. Trabajo: $A Zona de seguridad: $B Disposiciones para la realización de los trabajos: $C" — _qwen2.5:14b_
+- [ ] 14. "Se realizarán los trabajos de demolición y reconstrucción de la cuneta con un ancho máximo de 250 cm y paredes que no superen los 15 cm de espesor. Se incluirá la limpieza, acumulación y traslado de los materiales retirados. Trabajo: $A Zona de seguridad: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 15. "Se efectuarán los trabajos de destrucción y reconstrucción de la cuneta con un límite de anchura de 250 cm y paredes de hasta 15 cm de espesor. Se incluye la limpieza, recogida y traslado de los materiales de derribo. Trabajo: $A Zona de seguridad: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 16. "Incluye la limpieza, acopio y transporte de materiales de desmonte en los trabajos de rotura y reposición de cuneta de hasta 250 cm de ancho y con paredes de hasta 15 cm de espesor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 17. "Trabajo: $A, banda de mantenimiento: $B y condiciones de ejecución: $C. Se incluyen las tareas de limpieza, acopio y transporte de materiales de desmonte en la rotura y reposición de cunetas de hasta 250 cm de ancho y con paredes de hasta 15 cm de espesor." — _qwen2.5:14b_
+- [ ] 18. "Se llevan a cabo los trabajos de rotura y reposición de cunetas de hasta 250 cm de ancho y con paredes de hasta 15 cm de espesor. Este proceso incluye la limpieza, acopio y transporte de materiales de desmonte. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 19. "Desarrollo de tareas para la demolición y reconstrucción de la cuneta con una anchura máxima de 250 cm, con muros de hasta 15 cm de grosor, y contemplando la limpieza, almacén y traslado de los escombros. Trabajo: $A Zona de servicio: $B Requisitos para la implementación: $C" — _qwen2.5:14b_
+- [ ] 20. "Implementación de labores para la destrucción y renovación de la cuneta de hasta 250 cm de ancho, con lados de hasta 15 cm de grosura, y que incluye la limpieza, almacenamiento y transporte de materiales de demolición. Trabajo: $A Zona de servicio: $B Condiciones para la realización: $C" — _qwen2.5:14b_
+- [ ] 21. "Realización de tareas para la tala y reconstrucción de la cuneta de hasta 250 cm de ancho, con muros de hasta 15 cm de espesor, y que implica la limpieza, almacenamiento y traslado de materiales sobrantes. Trabajo: $A Zona de servicio: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 22. "Desarrollo de labores para la eliminación y renovación de la cuneta de hasta 250 cm de ancho, con lados de hasta 15 cm de espesor, y que contempla la limpieza, almacenamiento y traslado de residuos de demolición. Trabajo: $A Zona de servicio: $B Aspectos para la ejecución: $C" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- qwen2.5:14b/R1 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=['P73']
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=['P1']
 
 ## TEXTO template (OEB180$)
 _Used in 1 concept(s): OEB180$_
 
-- [ ] 1. "Hincas con cable tensor de acero para el tendido de cables en una trinchera de tierra. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 1. "Para el tendido de cables sobre una trinchera de tierra, se utilizan hincas con cable tensor de acero. Sección de trabajo:$A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 2. "Se implementan hincas con cable tensor de acero para el tendido de cables en una trinchera de tierra. Detalles de trabajo:$A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 3. "Con el fin de tender cables sobre una trinchera de tierra, se emplean hincas que incorporan cable tensor de acero. Descripción del trabajo:$A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 4. "Implementadas para el tendido de cables en una trinchera de tierra, las hincas cuentan con cable tensor de acero. Trabajo:$A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 5. "Hincas dotadas de cable tensor de acero, destinadas al tendido de cables sobre una trinchera de tierra. Trabajo:$A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 6. "Hincas provistas de cable tensor de acero, para el tendido de cables en trincheras de tierra. Trabajo:$A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 7. "Elementos con cuerda de tensión de acero diseñados para la colocación de cables en una zanja terrestre. Ejecución:$A Intervalo de mantenimiento: $B Requisitos de implementación: $C" — _phi4:latest_
+- [ ] 8. "Implementos de tensión acerados para la instalación de cables en una fosa de tierra. Desarrollo:$A Ciclo de cuidado: $B Situaciones de aplicación: $C" — _phi4:latest_
+- [ ] 9. "Dispositivos con tendido acerado para la colocación de cableado en una zanja de suelo. Actividad:$A Período de atención: $B Circunstancias de funcionamiento: $C" — _phi4:latest_
+- [ ] 10. "Elementos con cuerda de tensión metálica para la instalación de líneas en una excavación de tierra. Operación:$A Espacio de conservación: $B Parámetros de realización: $C" — _phi4:latest_
+- [ ] 11. "Se utilizan hincas con cable tensor de acero para la instalación subterránea de cables sobre una trinchera de tierra. Se requiere: $A Banda de mantenimiento: $B Condiciones para la ejecución: $C" — _qwen2.5:14b_
+- [ ] 12. "Para el tendido de cables sobre una trinchera de tierra se emplean hincas con cable tensor de acero. Se necesitan: $A Banda de mantenimiento: $B Condiciones bajo las cuales se ejecutará: $C" — _qwen2.5:14b_
+- [ ] 13. "Hincas y cables tensores de acero se colocan para la instalación de cables en una trinchera de tierra. Requisitos: $A Banda de mantenimiento: $B Condiciones bajo las cuales se realizará: $C" — _qwen2.5:14b_
+- [ ] 14. "Se llevan a cabo la instalación de cables con hincas y cables tensores de acero en una trinchera de tierra. Se requieren: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 15. "Hincas con cable tensor de acero destinadas para el tendido de cables en una trinchera de tierra. Incluido: Trabajo:$A Banda de mantenimiento: $B, Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 16. "Hincas con cable tensor de acero para la instalación de cables en una trinchera de tierra. Incluye: Trabajo:$A Banda de mantenimiento: $B, Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 17. "Hincas con cable tensor de acero para el tendido de cables en una trinchera de tierra, con las siguientes consideraciones: Trabajo:$A Banda de mantenimiento: $B, Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 18. "Hincas con cable tensor de acero para el tendido de cables en una trinchera de tierra, incluyendo: Trabajo:$A, Banda de mantenimiento: $B, Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 19. "Instalación de hincas equipadas con cable tensor de acero para la colocación de cables en un canal subterráneo. Trabajo:$A Área de seguridad: $B Aspectos operativos: $C" — _qwen2.5:14b_
+- [ ] 20. "Disposición de hincas con cable tensor de acero para el despliegue de cables en una zanja de tierra. Trabajo:$A Zona de precaución: $B Consideraciones de implementación: $C" — _qwen2.5:14b_
+- [ ] 21. "Implementación de hincas con cable tensor de acero para la instalación de cables en un recorrido subterráneo. Trabajo:$A Distancia de seguridad: $B Circunstancias de realización: $C" — _qwen2.5:14b_
+- [ ] 22. "Colocación de hincas dotadas con cable tensor de acero para el despliegue de cables en una zanja. Trabajo:$A Límite de trabajo seguro: $B Requisitos durante la ejecución: $C" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [3] near_duplicate_of_kept
+- [4] near_duplicate_of_kept
 
 ## TEXTO template (OEF010$)
 _Used in 1 concept(s): OEF010$_
 
-- [ ] 1. "Señalización de cables, con suministro e instalación incluidos. Trabajo: $A. Zona de mantenimiento: $B. Condiciones de ejecución: $C."
-- [ ] 2. "Marcador de cables, con entrega e instalación. Trabajo: $A. Área de mantenimiento: $B. Condiciones de ejecución: $C."
-- [ ] 3. "Indicador de cables, con suministro e instalación. Trabajo: $A. Zona de mantenimiento: $B. Condiciones de ejecución: $C."
-- [ ] 4. "Señal de cables, con suministro e instalación. Trabajo: $A. Área de mantenimiento: $B. Condiciones de ejecución: $C."
-- [ ] 5. "Marcador de cables, con entrega e instalación incluidas. Trabajo: $A. Zona de mantenimiento: $B. Condiciones de ejecución: $C."
-- [ ] 6. "Indicador de cables, con suministro e instalación incluidos. Trabajo: $A. Área de mantenimiento: $B. Condiciones de ejecución: $C."
+- [ ] 1. "Señalización de alambrado, se proporciona y se instala. Actividad: $A. Área de mantenimiento: $B. Requisitos de puesta en obra: $C." — _phi4:latest_
+- [ ] 2. "Se incluye el suministro y el montaje del hito indicador de cables. Se especifica el trabajo: $A. Se establece la banda de mantenimiento: $B. Se detallan las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 3. "Se proporciona el hito indicador de cables con suministro y montaje. Se designa el trabajo: $A. Se determina la banda de mantenimiento: $B. Se describen las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 4. "Se realiza la entrega del hito indicador de cables junto con su montaje. Se indica la labor: $A. Se señala la banda de mantenimiento: $B. Se explican las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 5. "Se realiza la entrega del hito indicador de cables con el suministro y el montaje. Se establece el trabajo: $A. Se fija la banda de mantenimiento: $B. Se mencionan las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 6. "Hito indicador de cables, con suministro y montaje incluidos. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 7. "Hito indicador de cables. Incluye suministro y montaje. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 8. "Hito indicador de cables. Incluye montaje y suministro. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 9. "Elemento de señalización para cables, que abarca la provisión y la instalación. Trabajo: $A. Zona de revisión: $B. Criterios de ejecución: $C." — _qwen2.5:14b_
+- [ ] 10. "Señalización de cables, con entrega y instalación. Trabajo: $A. Límite de mantenimiento: $B. Parámetros de ejecución: $C." — _qwen2.5:14b_
+- [ ] 11. "Referente de señalización para cables, con proveeduría y colocación. Trabajo: $A. Zona de control: $B. Estándares de ejecución: $C." — _qwen2.5:14b_
+- [ ] 12. "Indicador de cables, con entrega y colocación. Trabajo: $A. Área de mantenimiento: $B. Cualidades de ejecución: $C." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$M(%B)']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$N(%C)']
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)']
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$M(%B)']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$N(%C)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)']
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
 
 ## TEXTO template (OEA160$)
 _Used in 1 concept(s): OEA160$_
 
-- [ ] 1. "Excavación de tierras y balasto (20 cm) para exponer la canaleta existente, su posterior cubrición e incorporación de nueva tierra. Trabajo: $A Banda de mantenimiento: $B"
-- [ ] 2. "Remoción de tierras y balasto (20 cm) para revelar la canaleta existente, su recubrimiento y la adición de nueva tierra. Trabajo: $A Banda de mantenimiento: $B"
-- [ ] 3. "Extracción de tierras y balasto (20 cm) para desvelar la canaleta existente, su posterior cubrimiento e incorporación de tierra fresca. Trabajo: $A Banda de mantenimiento: $B"
-- [ ] 4. "Retiro de tierras y balasto (20 cm) para exponer la canaleta existente, su recubrimiento y la inclusión de nueva tierra. Trabajo: $A Banda de mantenimiento: $B"
-- [ ] 5. "Desmonte de tierras y balasto (20 cm) para descubrir la canaleta existente, su cubrición y la adición de nueva tierra. Trabajo: $A Banda de mantenimiento: $B"
-- [ ] 6. "Retiro de tierras y balasto (20 cm) para revelar la canaleta existente, su cubrimiento y la incorporación de nueva tierra. Trabajo: $A Banda de mantenimiento: $B"
+- [ ] 1. "Se realizará el levantamiento de suelos y balasto (20 cm) para exponer la canaleta existente, su posterior cubrición e incorporación de nueva capa de tierra. Procedimiento: $A Zona de gestión: $B" — _phi4:latest_
+- [ ] 2. "Se ejecutará un trabajo de elevación de capas de suelo y balasto (20 cm) con el fin de revelar la canalización existente, su cubrimiento y la integración de tierras frescas. Actividad: $A Región de control: $B" — _phi4:latest_
+- [ ] 3. "Se llevará a cabo el alzamiento de suelos y balasto (20 cm) a fin de desenterrar la canaleta ya existente, su recubrimiento y la adición de tierras nuevas. Operación: $A Área de control: $B" — _phi4:latest_
+- [ ] 4. "Procedimiento de elevación de tierra y balasto (20 cm) destinado a desvelar la canaleta existente, seguido de su recubrimiento y la incorporación de una nueva capa de tierra. Trabajo: $A Zona de cuidado: $B" — _phi4:latest_
+- [ ] 5. "Trabajo: $A Banda de mantenimiento: $B: Levante de tierras y balasto (20 cm para descubrir canaleta existente, tapada e incluyendo nueva aportación de tierras." — _phi4:latest_
+- [ ] 6. "Incluyendo nueva aportación de tierras, levante de tierras y balasto (20 cm para descubrir canaleta existente, tapada. Trabajo: $A Banda de mantenimiento: $B" — _phi4:latest_
+- [ ] 7. "Excavación de superficie y balasto (20 cm para exponer y desobstruir la estructura de la canaleta existente, seguido de su nuevo relleno. Trabajo: $A Banda de mantenimiento: $B" — _phi4:latest_
+- [ ] 8. "Remoción de capa de tierra y balasto (20 cm para desvelar la canaleta preexistente y su subsiguiente relleno. Trabajo: $A Banda de mantenimiento: $B" — _phi4:latest_
+- [ ] 9. "Alzamiento de terreno y balasto (20 cm para accesibilidad de la canaleta subyacente y su relleno posterior. Trabajo: $A Banda de mantenimiento: $B" — _phi4:latest_
+- [ ] 10. "Elevación de suelo y balasto (20 cm para desenmascarar y rellenar la canaleta existente. Trabajo: $A Banda de mantenimiento: $B" — _phi4:latest_
+- [ ] 11. "Se realiza el levantamiento de suelo y balasto (20 cm para la exposición de la conducción enterrada existente, su posterior sellado y la inclusión de una nueva capa de relleno. Tarea: $A Zona de intervención: $B" — _qwen2.5:14b_
+- [ ] 12. "Se lleva a cabo la extracción del suelo y balasto (20 cm para la localización de la canaleta existente y su seguida cubierta, con la adición de nueva tierra. Trabajo: $A Se define la banda de mantenimiento: $B" — _qwen2.5:14b_
+- [ ] 13. "La tarea consiste en el levantamiento del suelo y balasto (20 cm para el descubrimiento de la conducción enterrada existente, su posterior tapado y la inclusión de un aporte de tierras nuevo. Trabajo: $A Zona de intervención: $B" — _qwen2.5:14b_
+- [ ] 14. "Se efectúa la remoción del suelo y balasto (20 cm con el fin de revelar la conducción enterrada existente, su tapado y la adición de una nueva capa de tierra. Trabajo: $A Banda de mantenimiento: $B" — _qwen2.5:14b_
+- [ ] 15. "Proceder al levantamiento de tierras y balasto (20 cm para la exposición de la canaleta existente, seguido del sellado de la misma e incorporando una nueva aportación de tierras. Trabajo: $A Banda de mantenimiento: $B" — _qwen2.5:14b_
+- [ ] 16. "Se realizará el levantamiento de tierras y balasto (20 cm para la desenterración de la conducción enterrada existente, y posteriormente proceder a sellarla y aportar nueva tierra. Trabajo: $A Banda de mantenimiento: $B" — _qwen2.5:14b_
+- [ ] 17. "Para exponer la conducción enterrada existente, proceder al levantamiento de tierras y balasto (20 cm, seguido de su sellado y la incorporación de una nueva aportación de tierras. Trabajo: $A Banda de mantenimiento: $B" — _qwen2.5:14b_
+- [ ] 18. "Proceder al levantamiento de tierras y balasto (20 cm para revelar la conducción enterrada existente, sellarla y añadir nueva aportación de tierras. Trabajo: $A Banda de mantenimiento: $B" — _qwen2.5:14b_
+- [ ] 19. "Exposición de conducto subterráneo mediante remoción de suelo y material de cama ((20 cm). Se incluye sellado del mismo y reposición de suelo. Duración estimada: $A Segmento de operación: $B" — _qwen2.5:14b_
+- [ ] 20. "Excavación del terreno y balasto (cantidad (20 cm) para revelar la canalización existente, seguida de su sellado y reposición de suelo necesario. Tiempo de ejecución: $A Zona de intervención: $B" — _qwen2.5:14b_
+- [ ] 21. "Trabajo de remoción del material y tierra ((20 cm) para la exposición de la conducción enterrada, seguido de sellado y reposición de tierras adicionales. Duración del trabajo: $A Zona afectada: $B" — _qwen2.5:14b_
+- [ ] 22. "Operación de remoción de suelo y balasto (cifra (20 cm) para revelar la canalización previa, seguida de su cierre hermético y reposición de suelo necesario. Duración prevista: $A Zona de trabajo: $B" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- [6] near_duplicate_of_kept
+- [7] near_duplicate_of_kept
 
 ## TEXTO template (OEA140$)
 _Used in 1 concept(s): OEA140$_
 
-- [ ] 1. "Limpieza de conducto de hormigón. Tarea: $A. Condiciones de realización: $B."
-- [ ] 2. "Limpieza de canalización hormigonada. Actividad: $A. Condiciones de implementación: $B."
-- [ ] 3. "Limpieza de conducto de concreto. Operación: $A. Condiciones de ejecución: $B."
-- [ ] 4. "Limpieza de galería de hormigón. Tarea: $A. Condiciones de realización: $B."
-- [ ] 5. "Limpieza de conducto de cemento armado. Actividad: $A. Condiciones de implementación: $B."
-- [ ] 6. "Limpieza de canal de hormigón. Operación: $A. Condiciones de ejecución: $B."
+- [ ] 1. "Se realiza la limpieza de la conducción de hormigón. Trabajo: $A. Bajo las condiciones de ejecución siguientes: $B." — _phi4:latest_
+- [ ] 2. "Se llevará a cabo la limpieza del canal hormigonado. Detalles del trabajo: $A. Con las condiciones de ejecución descritas: $B." — _phi4:latest_
+- [ ] 3. "La higienización de la canalización de hormigón se planifica. Trabajo: $A. Con las condiciones de ejecución estipuladas: $B." — _phi4:latest_
+- [ ] 4. "La conducción de hormigón será despejada. Trabajo: $A. Con las condiciones de ejecución establecidas: $B." — _phi4:latest_
+- [ ] 5. "Trabajo: $A. Limpieza de conductos de hormigón. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 6. "Condiciones de ejecución: $B. Trabajo: $A. Limpieza de canales de hormigón." — _phi4:latest_
+- [ ] 7. "Limpieza de la canaleta de hormigón, Trabajo: $A, y Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 8. "Trabajo: $A, Limpieza de canalización hormigonada. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 9. "Trabajo de saneamiento de conducto de hormigón. Tarea: $A. Circunstancias de ejecución: $B." — _phi4:latest_
+- [ ] 10. "Despeje de la conducción hormigonada. Actividad: $A. Parámetros de ejecución: $B." — _phi4:latest_
+- [ ] 11. "Trabajo de mantenimiento de canales de hormigón. Tarea: $A. Situaciones de operación: $B." — _phi4:latest_
+- [ ] 12. "Desinfección de la canalización de hormigón Trabajo: $A. Condiciones de implementación: $B." — _phi4:latest_
+- [ ] 13. "Se realiza la limpieza de conducción enterrada de hormigón. Se especifican los trabajos: $A. Se detallan las condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la limpieza de la canalización hormigonada. Se describen los trabajos de acuerdo con: $A. Se enumeran las condiciones bajo las cuales se debe realizar la tarea: $B." — _qwen2.5:14b_
+- [ ] 15. "Trabajos de limpieza de la conducción enterrada de hormigón. Se establecen los trabajos: $A. Se indican las condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 16. "La limpieza de la canalización de hormigón se efectúa según lo siguiente: Se detallan los trabajos: $A. Se especifican las condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 17. "Para la canalización de hormigón, se realizará la limpieza Trabajo: $A. Incluidas las Condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 18. "Limpieza de la conducción enterrada de hormigón, Trabajo: $A, incluyendo las Condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 19. "Trabajo de limpieza en la canalización de hormigón, con Trabajo: $A, y Condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 20. "Limpieza de canaleta de hormigón. Trabajo: $A, condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 21. "Procedimiento de desinfección de conducción de concreto. Tarea específica: $A. Aspectos a considerar para la implementación: $B." — _qwen2.5:14b_
+- [ ] 22. "Mantenimiento de la conducción de hormigón. Operación: $A. Instrucciones para la ejecución: $B." — _qwen2.5:14b_
+- [ ] 23. "Servicio de desbloqueo y limpieza de la conducción de concreto. Tarea a realizar: $A. Parámetros para la realización de la tarea: $B." — _qwen2.5:14b_
+- [ ] 24. "Manejo y limpieza de la canalización de concreto. Acción principal: $A. Detalles de la implementación: $B." — _qwen2.5:14b_
 
 ## TEXTO template (OEB150$)
 _Used in 1 concept(s): OEB150$_
 
-- [ ] 1. "Limpieza de conductos de canalización existentes, incluyendo la identificación y eliminación de obstrucciones, antes de instalar nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
-- [ ] 2. "Limpieza de conductos de canalización preexistentes, incluyendo la detección y desobstrucción de bloqueos, antes de la colocación de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
-- [ ] 3. "Limpieza de conductos de canalización ya instalados, incluyendo la identificación y eliminación de bloqueos, antes de la instalación de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
-- [ ] 4. "Limpieza de conductos de canalización ya existentes, incluyendo la detección y desbloqueo de obstrucciones, antes de la colocación de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
-
-_Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [ ] 1. "Se llevará a cabo la limpieza de conductos existentes, abarcando la identificación de bloqueos y su eliminación antes de instalar nuevos cables. Trabajo: $A Zona de trabajo: $B Procedimiento de realización: $C." — _phi4:latest_
+- [ ] 2. "Se realizará la desobstrucción de los conductos existentes, identificando y eliminando los tapones antes de proceder con el tendido de nuevos conductores. Tarea: $A Área de intervención: $B Criterios de ejecución: $C." — _phi4:latest_
+- [ ] 3. "Se efectuará la limpieza de las conducciones preexistentes, que implica localizar y remover obstrucciones antes de extender nuevos empalmes. Labor: $A Límite de intervención: $B Modalidad de ejecución: $C." — _phi4:latest_
+- [ ] 4. "Se procederá a la desobstrucción de los conductos instalados previamente, detectando y eliminando impedimentos antes de continuar con el tendido de nuevas líneas eléctricas. Actividad: $A Sector de mantenimiento: $B Normas de ejecución: $C." — _phi4:latest_
+- [ ] 5. "Limpieza del sistema de conducción enterrada existente, que comprende la identificación y eliminación de obstrucciones, antes de proceder al tendido de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 6. "Antes de instalar nuevos cables, se efectuará la limpieza del conducto existente, incluyendo la detección y eliminación de cualquier obstrucción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 7. "Se incluye la limpieza del conducto de canalización existente, que implica la detección y eliminación de obstrucciones, antes de colocar nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 8. "La tarea consiste en limpiar el sistema de canalización existente, incluyendo la detección y eliminación de obstrucciones, antes de proceder con el tendido de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 9. ""Inspección y purga de conducciones existentes, identificando obstrucciones y realizando su eliminación antes de la colocación de cables nuevos. Tarea: $A Zona de intervención: $B Circunstancias de trabajo: $C."" — _phi4:latest_
+- [ ] 10. ""Desobstrucción y aseo de conductos preexistentes, con detección de bloqueos y su subsiguiente eliminación, antes de instalar nuevos cables. Actividad: $A Área de mantenimiento: $B Parámetros de ejecución: $C."" — _phi4:latest_
+- [ ] 11. ""Purificación de conductos existentes, abarcando la identificación y eliminación de bloqueos, previa al despliegue de nuevos cables. Labor: $A Sector de mantenimiento: $B Condiciones de realización: $C."" — _phi4:latest_
+- [ ] 12. ""Eliminación de obstrucciones en conductos ya instalados, detectando y depurando bloqueos antes del tendido de cables nuevos. Empleo: $A Extensión de mantenimiento: $B Modalidades de ejecución: $C."" — _phi4:latest_
+- [ ] 13. "Se realiza la limpieza de conductos de canalización existente para la detección y eliminación de obstrucciones, con el fin de instalar nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 14. "Se lleva a cabo la limpieza de la conducción enterrada para la identificación y tratamiento de obstrucciones, antes de la instalación de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 15. "Se procederá a la limpieza de la tubería de canalización para la localización y resolución de obstrucciones, y posteriormente se instalarán nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 16. "Se efectuará la limpieza de los conductos de canalización para la detección y remoción de obstrucciones, con la finalidad de proceder al tendido de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 17. "Incluye la limpieza de los conductos de canalización existentes, la ubicación y remoción de obstrucciones, antes de instalar nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 18. "Previo al tendido de nuevos cables, se realizará la limpieza de los conductos de canalización existentes, incluyendo la localización y remoción de obstrucciones. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 19. "Se incluye la limpieza de los conductos de canalización existentes y la eliminación de obstrucciones previo al tendido de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 20. "Antes de la instalación de nuevos cables, se llevará a cabo la limpieza y la remoción de obstrucciones de los conductos de canalización existentes. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 21. "Servicio de mantenimiento para desobstruir y limpiar conducciones existentes antes de la instalación de nuevos cables. Tareas: $A Zona de trabajo: $B Aspectos a cumplir: $C." — _qwen2.5:14b_
+- [ ] 22. "Procedimientos para el mantenimiento y limpieza de conducciones existentes, con la identificación y eliminación de obstáculos, antes de la colocación de nuevos cables. Actividades: $A Área de trabajo: $B Requisitos de implementación: $C." — _qwen2.5:14b_
+- [ ] 23. "Servicio de despeje y mantenimiento de conductos existentes, identificando y removiendo obstrucciones, previo a la instalación de cables nuevos. Proyecto: $A Zona de operación: $B Consideraciones durante la ejecución: $C." — _qwen2.5:14b_
+- [ ] 24. "Operación de mantenimiento para la limpieza y despeje de conducciones existentes, incluyendo la localización y remoción de obstáculos, antes de la colocación de nuevos cables. Tareas: $A Bandera de mantenimiento: $B Condición de implementación: $C." — _qwen2.5:14b_
 
 ## TEXTO template (OEB160$)
 _Used in 1 concept(s): OEB160$_
 
-- [ ] 1. "Mandrilado de la conducción existente. Condiciones de ejecución: $A."
-- [ ] 2. "Mandrilado de la tubería existente. Condiciones de ejecución: $A."
-- [ ] 3. "Mandrilado de la conducción preexistente. Condiciones de ejecución: $A."
-- [ ] 4. "Mandrilado de la instalación de tuberías existente. Condiciones de ejecución: $A."
-- [ ] 5. "Mandrilado de la estructura de tuberías existente. Condiciones de ejecución: $A."
-- [ ] 6. "Mandrilado de la red de tuberías existente. Condiciones de ejecución: $A."
+- [ ] 1. "Se efectúa el mandrilado de canalización preexistente. Estas son las condiciones de ejecución: $A." — _phi4:latest_
+- [ ] 2. "El mandrilado se aplica a la canalización existente. Las condiciones de ejecución son: $A." — _phi4:latest_
+- [ ] 3. "En la canalización existente, se procede al mandrilado. Las condiciones de ejecución son: $A." — _phi4:latest_
+- [ ] 4. "Se llevará a cabo el mandrilado en la canalización ya existente. Se establecen las siguientes condiciones de ejecución: $A." — _phi4:latest_
+- [ ] 5. "Proceso de mandrilado en canalizaciones existentes. Se establecen las condiciones de ejecución: $A." — _phi4:latest_
+- [ ] 6. "Mandrilado en las canalizaciones preexistentes. Las condiciones de ejecución son: $A." — _phi4:latest_
+- [ ] 7. "Mandrilado en canalizaciones ya instaladas. Se definen las condiciones de ejecución: $A." — _phi4:latest_
+- [ ] 8. "Se lleva a cabo mandrilado en canalizaciones existentes. Las condiciones de ejecución incluyen: $A." — _phi4:latest_
+- [ ] 9. "Realización de mandrilado en conductos preexistentes. Condiciones de ejecución: $A." — _phi4:latest_
+- [ ] 10. "Procedimiento de mandrilado en conducciones instaladas previamente. Condiciones de ejecución: $A." — _phi4:latest_
+- [ ] 11. "Aplicación de mandrilado sobre conductos ya existentes. Condiciones de ejecución: $A." — _phi4:latest_
+- [ ] 12. "Operación de mandrilado en canalizaciones previas. Condiciones de ejecución: $A." — _phi4:latest_
+- [ ] 13. "Se realiza el mandrilado de la canalización existente. Las condiciones bajo las cuales se llevará a cabo la ejecución son: $A." — _qwen2.5:14b_
+- [ ] 14. "La canalización existente es mandrilada conforme a las condiciones de ejecución: $A." — _qwen2.5:14b_
+- [ ] 15. "Se ejecuta el mandrilado de la canalización existente con las siguientes condiciones: $A." — _qwen2.5:14b_
+- [ ] 16. "Existe una ejecución de mandrilado en la canalización previa bajo estas condiciones: $A." — _qwen2.5:14b_
+- [ ] 17. "Condiciones de ejecución: $A. Procedimiento técnico: mandrilado de canalización existente." — _qwen2.5:14b_
+- [ ] 18. "Se requieren las siguientes condiciones para el mandrilado de canalización existente: $A." — _qwen2.5:14b_
+- [ ] 19. "El mandrilado de canalización existente se realiza bajo las condiciones de: $A." — _qwen2.5:14b_
+- [ ] 20. "Procedimiento de mandrilado para canalización existente, bajo las siguientes condiciones: $A." — _qwen2.5:14b_
+- [ ] 21. "Proceso de mandrilado en conductos previamente instalados. Requisitos operativos: $A." — _qwen2.5:14b_
+- [ ] 22. "Trabajo de mandrilado en conducciones existentes. Establecimiento de condiciones de trabajo: $A." — _qwen2.5:14b_
+- [ ] 23. "Operación de mandrilado en tuberías existentes. Aspectos de ejecución: $A." — _qwen2.5:14b_
+- [ ] 24. "Labor de mandrilado en instalaciones de conducción preexistentes. Determinación de condiciones de realización: $A." — _qwen2.5:14b_
 
 ## TEXTO template (OEB240$)
 _Used in 1 concept(s): OEB240$_
 
-- [ ] 1. "Relleno específico en instalaciones ferroviarias, accesos y áreas de trabajo, con $W(%A), i/ para su carga, descarga y traslado al sitio designado dentro de la obra, seguido de extensión, humectación, compactación y acabado, utilizando herramientas y medios auxiliares. Trabajo: $B. Banda de mantenimiento: $C."
-
-_Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- [ ] 1. "$W(%A) se encuentra en las obras de instalaciones ferroviarias, accesos y emplazamientos, con $W(%A). Se efectúan la carga, descarga y transporte al lugar designado dentro de la obra. Se lleva a cabo la extensión, humectación, compactación y terminación de las obras, haciendo uso de herramientas y medios auxiliares. El Trabajo es $B. La Banda de mantenimiento es $C." — _phi4:latest_
+- [ ] 2. "La preparación de $W(%A), i/ se realiza en las obras de instalaciones ferroviarias, accesos y emplazamientos, con $W(%A). Se realizan las operaciones de carga, descarga y transporte al área específica dentro de la obra. Se extienden, humectan, compactan y terminan los trabajos, utilizando herramientas y medios auxiliares. El Trabajo es $B. La Banda de mantenimiento es $C." — _phi4:latest_
+- [ ] 3. "Se efectúa el relleno localizado $W(%A), i/ en las obras de instalaciones ferroviarias, accesos y emplazamientos, con $W(%A). Se procede a la carga, descarga y transporte al área asignada dentro de la obra. Posteriormente, se realiza la extensión, humectación, compactación y terminación, utilizando herramientas y medios auxiliares. El trabajo consiste en $B. La Banda de mantenimiento corresponde a $C." — _phi4:latest_
+- [ ] 4. "En las instalaciones ferroviarias, accesos y emplazamientos se ubica el relleno localizado $W(%A), i/, con $W(%A). Se llevan a cabo las operaciones de carga, descarga y transporte al punto destinado dentro de la obra. Se extiende, humecta, compacta y termina el material, utilizando herramientas y medios auxiliares. El trabajo especificado es $B. La Banda de mantenimiento queda definida por $C." — _phi4:latest_
+- [ ] 5. "Trabajo de relleno localizado en emplazamientos y accesos de instalaciones ferroviarias, i/ con $W(%A), i/ incluyendo carga, descarga, transporte al lugar designado dentro de la obra, extendido, humectación, compactación, y terminación, i/ usando herramientas y medios auxiliares. Banda de mantenimiento: $C. Trabajo: $B." — _phi4:latest_
+- [ ] 6. "Para obras de instalaciones ferroviarias, incluyendo emplazamientos y accesos, se realizan trabajos de relleno localizado, i/ incluyendo $W(%A), i/ carga, descarga y transporte al punto designado en la obra, extendido, humectación, compactación, y terminación, i/ con herramientas y medios auxiliares. Trabajo: $B. Banda de mantenimiento: $C." — _phi4:latest_
+- [ ] 7. "Relleno localizado en obras, emplazamientos y accesos de instalaciones ferroviarias, i/ con $W(%A), i/ y trabajos de carga, descarga y transporte al sitio asignado dentro de la obra, extendido, humectación, compactación, y terminación, i/ utilizando herramientas y medios auxiliares. Banda de mantenimiento: $C. Trabajo: $B." — _phi4:latest_
+- [ ] 8. "En obras de instalaciones ferroviarias, incluyendo emplazamientos y accesos, se realiza relleno localizado, i/ con $W(%A), i/ e incluyendo carga, descarga y transporte al lugar destinado dentro de la obra, extendido, humectación, compactación, y terminación, i/ empleando herramientas y medios auxiliares. Trabajo: $B. Banda de mantenimiento: $C." — _phi4:latest_
+- [ ] 9. "Relleno compactado en las obras de instalaciones ferroviarias y accesos, con $W(%A), i/ carga, descarga y transporte al lugar designado dentro de la obra, extendido, humectado, compactado y terminado, i/ con herramientas y medios auxiliares. Trabajo: $B. Mantenimiento: $C." — _phi4:latest_
+- [ ] 10. "Compactación y preparación de relleno en obras de instalaciones ferroviarias, incluyendo las instalaciones y accesos, con $W(%A), i/ carga, descarga y transporte a la posición designada dentro de la obra, extendido, humectado, compactado y terminado, i/ utilizando herramientas y recursos auxiliares. Labor: $B. Mantenimiento: $C." — _phi4:latest_
+- [ ] 11. "Proceso de relleno compactado en las obras de instalaciones ferroviarias, ubicaciones y accesos, con $W(%A), i/ carga, descarga y traslado al lugar especificado dentro de la obra, extendido, humectado, compactado y finalizado, i/ con uso de herramientas y medios auxiliares. Trabajo: $B. Mantenimiento: $C." — _phi4:latest_
+- [ ] 12. "Preparación de relleno compactado en obras de instalaciones ferroviarias, emplazamientos y accesos, con $W(%A), i/ carga, descarga y traslado al lugar indicado dentro de la obra, extendido, humectado, compactado y terminado, i/ usando herramientas y medios auxiliares. Trabajo: $B. Mantenimiento: $C." — _phi4:latest_
+- [ ] 13. "Se utiliza relleno localizado en obras ferroviarias, así como en emplazamientos y accesos, con $W(%A). Se realiza la carga, descarga y transporte hasta el lugar asignado dentro del perímetro de la obra, procediéndose a la extensión, humectación, compactación, terminación y a la preparación de las herramientas y medios auxiliares. Se efectúa el trabajo: $B. Se establece una banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 14. "La colocación de relleno localizado en las obras de infraestructuras ferroviarias, emplazamientos y zonas de acceso, con la inclusión de $W(%A), se realiza a través de la carga, descarga y transporte al interior de la obra, seguido de la extensión, riego, compactación, finalización y preparación de herramientas y medios auxiliares. El trabajo a desarrollar es: $B. Se define una zona de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 15. "El relleno localizado para obras ferroviarias, emplazamientos y accesos, con la especificación de $W(%A), es cargado, descargado y transportado hasta su ubicación asignada en el interior de la obra, donde se extiende, se humecta, se compacta, se termina y se preparan las herramientas y medios necesarios. Se realiza el trabajo: $B. Se establece una banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 16. "Se proporciona relleno localizado para obras de instalaciones ferroviarias, emplazamientos y accesos, incorporando $W(%A). Se lleva a cabo la carga, descarga y transporte hasta el lugar asignado dentro de la obra, seguida por la extensión, humectación, compactación, finalización y preparación de herramientas y medios auxiliares. Se ejecuta el trabajo: $B. Se designa una banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 17. "Material de relleno localizado en proyectos ferroviarios, situado en emplazamientos y accesos, incluido $W(%A), con actividades de carga, descarga y transporte al sitio asignado dentro de la obra, extendido, humectado, compactado y terminado. Además, herramientas y medios auxiliares. Trabajo: $B. Banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 18. "Material de relleno utilizado en trabajos ferroviarios, ubicado en emplazamientos y accesos, con la inclusión de $W(%A), que implica tareas de carga, descarga y traslado al lugar designado dentro de la obra, seguido de extendido, humectación, compactación y finalización. Asimismo, se proporcionarán herramientas y medios auxiliares. Trabajo: $B. Banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 19. "El relleno para proyectos ferroviarios, implementado en emplazamientos y accesos, incluye $W(%A), con procedimientos de carga, descarga y traslado al sitio asignado dentro de la obra, seguidos de extendido, humectación, compactación y finalización. Herramientas y medios auxiliares también son proporcionados. Trabajo: $B. Banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 20. "Relleno específico para la construcción ferroviaria, destinado a emplazamientos y accesos, que incluye $W(%A), con actividades de carga, descarga y transporte al lugar asignado dentro de la obra, seguido de extendido, humectación, compactación y terminación. También se proporcionarán herramientas y medios auxiliares. Trabajo: $B. Banda de mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 21. "Materiales de relleno y compactación para proyectos ferroviarios, aplicados en áreas de construcción, emplazamiento y acceso, con $W(%A), i/ operaciones de carga, descarga y traslado al punto de trabajo dentro del sitio, extensión, húmedo, compactación adecuada y finalización, i/ con el uso de herramientas y equipos auxiliares. Actividades: $B. Zona reservada para mantenimiento: $C." — _qwen2.5:14b_
+- [ ] 22. "Material de relleno y compactación para infraestructuras ferroviarias, ubicación y acceso en los entornos de construcción, con $W(%A), i/ movilización, instalación de material en el lugar designado dentro del recinto de obra, distribución, humectación, compactado, terminación del proceso, i/ apoyo con equipos y herramientas auxiliares. Tareas: $B. Área de conservación: $C." — _qwen2.5:14b_
+- [ ] 23. "Subsuelo rellenado y compactado para el desarrollo de instalaciones ferroviarias, en emplazamientos y vías de acceso, con $W(%A), i/ movilización del material al lugar previsto dentro de la obra, extensión del terreno, humectación, consolidación y acabado del proceso de compactación, i/ junto con el uso de herramientas y dispositivos auxiliares. Actividades ejecutadas: $B. Zona de resguardo para conservación: $C." — _qwen2.5:14b_
+- [ ] 24. "Material de relleno y compactación para la ejecución de obras ferroviarias, en espacios de construcción, emplazamiento y vías de acceso, con $W(%A), i/ operaciones de carga, descarga y traslado del material al lugar asignado de trabajo dentro del sitio, distribución, humectación, compactación y terminación, i/ empleando herramientas y equipos auxiliares. Tareas realizadas: $B. Zona de mantenimiento: $C." — _qwen2.5:14b_
 
 ## TEXTO template (OEA120$)
 _Used in 1 concept(s): OEA120$_
 
-- [ ] 1. "Reorganizar los cables actuales para instalar un nuevo cable debido a la insuficiencia de espacio en la canalización. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 2. "Reconfigurar los cables existentes para acomodar un nuevo cable por limitación de espacio en la canalización. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 3. "Reorganizar los cables preexistentes para el tendido de un nuevo cable por carencia de espacio en la canalización. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 1. "Se reorganizarán los cables existentes para facilitar el tendido de un nuevo cable dada la insuficiencia de espacio en la canaleta. Trabajo: $A Zona de operaciones: $B Requisitos para la ejecución: $C" — _phi4:latest_
+- [ ] 2. "Por la insuficiencia de espacio en la canaleta, se llevará a cabo la reorganización de cables preexistentes para el tendido de un cable nuevo. Operación: $A Área de servicio: $B Condiciones de realización: $C" — _phi4:latest_
+- [ ] 3. "Dada la falta de espacio en la canaleta, será necesario reordenar los cables existentes para permitir el tendido de un nuevo cable. Proceso: $A Zona de intervención: $B Estipulaciones para la ejecución: $C" — _phi4:latest_
+- [ ] 4. "La reubicación de cables preexistentes se efectuará para facilitar el tendido de un nuevo cable debido a la escasez de espacio en la canaleta. Actividad: $A Sector de mantenimiento: $B Requisitos de ejecución: $C" — _phi4:latest_
+- [ ] 5. "Reclasificar los cables actuales para instalar un nuevo cable debido al reducido espacio en el canal. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 6. "Ajustar la disposición de los cables actuales para acomodar un nuevo tendido debido al espacio limitado en la caja. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 7. "Reconfigurar los cables preexistentes para el tendido de un nuevo cable causado por la escasez de espacio en el conducto. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 8. "Modificar la organización de los cables vigentes para instalar un nuevo cable, debido al espacio insuficiente en la canalización. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 9. "Se reorganizarán los cables existentes para la instalación de nuevo cable debido a la insuficiencia de espacio en la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 10. "Se procederá a la reorganización de cables existentes para instalar un nuevo cable debido a la falta de espacio en la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 11. "Se realizará la reorganización de los cables existentes para la colocación de nuevo cable por falta de espacio en la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 12. "Se lleva a cabo la reorganización de los cables existentes para el tendido de nuevo cable debido a la falta de espacio en la conducción. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 13. "Trabajo: $A. Reordenar cables existentes para colocar nuevo cable debido a insuficiencia de espacio en la canalización, incluso considerando: Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 14. "Se requiere reorganizar y recolocar cables existentes para el tendido de nuevo cable debido a falta de espacio en la conducción, incluyendo: Trabajo: $A, Banda de mantenimiento: $B, Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 15. "Para el tendido de nuevo cable debido a insuficiencia de espacio en la canalización, es necesario reorganizar los cables existentes. Incluye: Trabajo: $A, Banda de mantenimiento: $B, Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 16. "Acomodar los cables actuales para instalar nuevo cable debido a falta de espacio en la canalización. Tarea: $A Zona de mantenimiento: $B Requisitos de ejecución: $C" — _qwen2.5:14b_
+- [ ] 17. "Alinear cables antiguos para la instalación de una nueva línea debido a limitaciones espaciales en la tubería. Obra: $A Sector de mantenimiento: $B Criterios de ejecución: $C" — _qwen2.5:14b_
+- [ ] 18. "Mejorar la disposición de los cables existentes para la colocación de cable nuevo debido a restricciones de espacio en el conducto. Actividad: $A Zona afectada: $B Requisitos para la ejecución: $C" — _qwen2.5:14b_
+- [ ] 19. "Reajustar las posiciones de los cables actuales para la instalación de cable nuevo debido a la falta de espacio en la conducción. Ejecución: $A Zona de trabajo: $B Condiciones de la tarea: $C" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
 
 ## TEXTO template (OEA180$)
 _Used in 1 concept(s): OEA180$_
 
-- [ ] 1. "Extracción de cables de la conducción enterrada de hormigón, sin arqueta, abarcando el taladro de la canaleta, la excavación hasta la caja de terminales, la fijación y el sellado. Completamente finalizado. Trabajo: $A"
-- [ ] 2. "Desarrollo de cables desde la canaleta de hormigón, sin arqueta, que incluye el taladro de la canaleta, la excavación hasta la caja de terminales, la fijación y el sellado. Totalmente finalizado. Trabajo: $A"
-- [ ] 3. "Extracción de cables de la canaleta de hormigón, sin arqueta, que comprende el taladro de la canaleta, la excavación hasta la caja de terminales, la fijación y el sellado. Completamente finalizado. Trabajo: $A"
+- [ ] 1. "Ejecutada la salida de cables de la conducción enterrada sin tapa, abarcando el orificio en la loseta, el despliegue de la zanja hasta el cuadro de conexiones, fijaciones y sellado. Se halla en estado concluido. Actividad: $A" — _phi4:latest_
+- [ ] 2. "Se ha realizado la extracción de cables del conducto de hormigón, careciendo de tapa, contemplando el orificio canaletado, el corte de zanja hasta el recinto de empalmes, las instalaciones de seguridad y el cierre hermético. Se considera completada. Operación: $A" — _phi4:latest_
+- [ ] 3. "Concluida la extracción de cables a través del conducto hormigonado desprovisto de cubierta, implicando el taladro en la canaleta, excavación hasta el módulo de terminales, estabilización y sellado final. Se ha completado el empeño. Esfuerzo: $A" — _phi4:latest_
+- [ ] 4. "Se ejecutará la extracción de cables desde la canalización de hormigón sin protección, abarcando el orificio en la canaleta, la excavación hasta el compartimento de empalmes, el anclaje y el tapón final. Se encuentra absolutamente terminado. Faena: $A" — _phi4:latest_
+- [ ] 5. "Trabajo $A: Salida de cables a través de una canaleta de hormigón, sin arqueta, con el taladro de la canaleta, zanja hasta la caja de terminales, fijación y sellado incluidos. Totalmente terminada." — _phi4:latest_
+- [ ] 6. "El trabajo $A cubre la salida de cables en una canaleta de hormigón sin arqueta, con taladro de la misma, zanja extendida hasta la caja de terminales, fijación y sellado, estando completamente terminado." — _phi4:latest_
+- [ ] 7. "Incluye el taladro de la canaleta, zanja hasta la caja de terminales, fijación y sellado en la salida de cables a través de una canaleta de hormigón sin arqueta. Trabajo $A completamente terminado." — _phi4:latest_
+- [ ] 8. "Trabajo $A: Salida de cables sin arqueta en canaleta de hormigón, incluyendo el taladro, zanja hasta la caja de terminales, fijación y sellado, todo completamente terminado." — _phi4:latest_
+- [ ] 9. "Se realiza la salida de los cables de la conducción enterrada de hormigón, sin arqueta, incluyendo el taladro de la misma, la excavación hasta la caja de terminales, la instalación y sellado. Totalmente terminado. Trabajo: $A" — _qwen2.5:14b_
+- [ ] 10. "Se efectúa la salida de los cables de la canalización de hormigón sin arqueta, que incluye el taladro de la misma, la escarpe hasta la caja de terminales, la unión y sellado. Totalmente terminada. Trabajo: $A" — _qwen2.5:14b_
+- [ ] 11. "La canalización de hormigón sin arqueta para la salida de los cables, incluye el taladro de la conducción, la excavación hasta la caja de terminales, así como la instalación y sellado. Totalmente finalizado. Trabajo: $A" — _qwen2.5:14b_
+- [ ] 12. "Se lleva a cabo la salida de los cables a través de la guía de hormigón sin arqueta, que incluye el taladro de la misma, la excavación hasta la caja de terminales, la fijación y sellado. Totalmente finalizado. Trabajo: $A" — _qwen2.5:14b_
+- [ ] 13. "Salida de los cables desde la conducción enterrada de hormigón, sin arqueta, y el trabajo incluye el taladro de la canaleta, la excavación hasta la caja de terminales, así como la fijación y el sellado. Totalmente finalizado. $A" — _qwen2.5:14b_
+- [ ] 14. "Salida de los cables desde la canaleta de hormigón sin arqueta, que comprende el taladro de la misma, la excavación hasta la caja de terminales, la instalación y el sellado. El trabajo se realiza de manera completa. $A" — _qwen2.5:14b_
+- [ ] 15. "Salida de los cables desde la canaleta de hormigón sin arqueta, con la incorporación de las labores de taladro, excavación hasta la caja de terminales, instalación y sellado. El trabajo queda completamente finalizado. $A" — _qwen2.5:14b_
+- [ ] 16. "Salida de los cables desde la canaleta de hormigón sin arqueta, y se incluye el taladro, la excavación hasta la caja de terminales, así como la instalación y sellado final. Trabajo totalmente terminado. $A" — _qwen2.5:14b_
+- [ ] 17. "Instalación de los conductos de cable a través de la canalización de hormigón sin arqueta, con el taladrado de la canalización, excavación hasta la caja de terminación, fijación y sellado. Proceso completo. Trabajo: $A" — _qwen2.5:14b_
+- [ ] 18. "Salida de los cables a través de la conducción hormigonada sin arqueta, incluye perforación de la conducción, excavación hasta la caja de terminación, fijación y sellado. Todo completo. Trabajo: $A" — _qwen2.5:14b_
+- [ ] 19. "Instalación de los cables a través de la canalización hormigonada sin arqueta, incluye perforación de la canalización, excavación hasta la caja de terminación, fijación y sellado. Trabajo completo. Trabajo: $A" — _qwen2.5:14b_
+- [ ] 20. "Salida de los conductos de cable a través de la conducción hormigonada sin arqueta, con el taladrado de la conducción, excavación hasta la caja de terminación, fijación y sellado. Trabajo completamente terminado. Trabajo: $A" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$A'] new=['$A', '$L(%A)']
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$A'] new=['$A', '$L(%A)']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$A'] new=['$A', '$L(%A)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$A'] new=['$A', '$L(%A)']
 
 ## TEXTO template (OEA130$)
 _Used in 1 concept(s): OEA130$_
 
-- [ ] 1. "Proceso de saneamiento de la canaleta antigua instalada, que comprende la limpieza y restauración de la canaleta existente para facilitar el tendido de nuevos cables o su mantenimiento. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 2. "Restauración de la canaleta antigua instalada, que incluye la limpieza y rehabilitación de la misma para el tendido de nuevos cables o su mantenimiento. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 3. "Limpieza y rehabilitación de la canaleta antigua instalada, con el fin de facilitar el tendido de nuevos cables o su mantenimiento. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 1. "Se efectuará el saneamiento de una canaleta antigua instalada, cubriendo su desinfección y renovación para acomodar tendidos eléctricos nuevos o trabajos de mantenimiento. Trabajo: $A Área de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 2. "Se realizará el saneamiento de una canaleta ya instalada de tipo antiguo, que incluye su desinfección y reacondicionamiento para la colocación de nuevos cables o actividades de mantenimiento. Trabajo: $A Zona de mantenimiento: $B Criterios de ejecución: $C" — _phi4:latest_
+- [ ] 3. "Se llevará a cabo el saneamiento de una canaleta previamente instalada, antigua, comprendiendo la purificación y la renovación para el tendido de nuevos cables o labores de mantenimiento. Trabajo: $A Sector de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 4. "Limpieza y rehabilitación para el saneamiento de la conducción antigua instalada, facilitando el tendido de nuevos cables o el mantenimiento. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 5. "Incluyendo la limpieza y rehabilitación, el saneamiento de la conducción antigua instalada se prepara para el tendido de nuevos cables o mantenimiento. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 6. "Preparación mediante saneamiento de la conducción antigua instalada, incluyendo limpieza y rehabilitación, para el tendido de nuevos cables o mantenimiento. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 7. "Se realiza el saneamiento de la canalización instalada de tipo antiguo, lo cual incluye la limpieza y rehabilitación de la conducción antigua para la instalación de nuevos conductos o el mantenimiento. Se especifica el trabajo: $A, la banda de mantenimiento: $B, y las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 8. "La canalización antigua instalada es saneada incluyendo la limpieza y rehabilitación de la conducción instalada para la colocación de nuevos cables o el mantenimiento. Se detalla el trabajo: $A, la banda de mantenimiento: $B, y las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 9. "Para el saneamiento de la canalización de tipo antiguo, se lleva a cabo la limpieza y rehabilitación de la conducción instalada para la instalación de nuevos cables o el mantenimiento. Se indica el trabajo: $A, la banda de mantenimiento: $B, y las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 10. "Se ejecuta el saneamiento de la conducción antigua instalada, lo que implica la limpieza y rehabilitación de la conducción instalada para la colocación de nuevos conductos o el mantenimiento. El trabajo es: $A, la banda de mantenimiento: $B, y las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 11. "Proceso de saneamiento de la conducción enterrada antigua, incluido el mantenimiento y limpieza para la instalación de nuevos conductos o el mantenimiento continuo. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 12. "Saneamiento de la conducción enterrada antigua, incluyendo la rehabilitación y limpieza para instalar nuevos conductos o realizar mantenimiento. Trabajo: $A, banda de mantenimiento: $B, condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 13. "Saneamiento de la canalización hormigonada antigua para el tendido de conductos nuevos o mantenimiento, incluyendo la rehabilitación y limpieza. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 14. "Saneamiento de la conducción enterrada antigua para la instalación de nuevos conductos o mantenimiento, y la rehabilitación y limpieza. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 15. "Trabajos de limpieza y renovación de una conducción enterrada antigua para su reaprovechamiento en el tendido de nuevos cables o para mantenimiento. Descripción de tarea: $A Límite del área de trabajo: $B Especificaciones de implementación: $C" — _qwen2.5:14b_
+- [ ] 16. "Limpieza y renovación de una conducción antigua previamente instalada, destinada a la colocación de nuevos cables o para realizar mantenimiento. Tareas a realizar: $A Zona de trabajo: $B Criterios de ejecución: $C" — _qwen2.5:14b_
+- [ ] 17. "Servicio de limpieza y mejora de una conducción enterrada previamente instalada para adaptarla a nuevas necesidades de cableado o mantenimiento. Descripción del trabajo: $A Límites del trabajo: $B Circunstancias de la ejecución: $C" — _qwen2.5:14b_
+- [ ] 18. "Limpieza y rehabilitación de una conducción enterrada antigua para la instalación de nuevos cables o mantenimiento. Tareas a realizar: $A Zona de trabajo: $B Condiciones de la implementación: $C" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)']
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)']
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
 
 ## TEXTO template (OEA110$)
 _Used in 1 concept(s): OEA110$_
 
-- [ ] 1. "Sellado de conducción enterrada de hormigón. Trabajo: $A. Condiciones de ejecución: $B."
-- [ ] 2. "Protección de la canalización hormigonada. Trabajo: $A. Condiciones de ejecución: $B."
-- [ ] 3. "Cierre de la conducción de hormigón. Trabajo: $A. Condiciones de ejecución: $B."
-- [ ] 4. "Sellado de la canalización de hormigón. Trabajo: $A. Condiciones de ejecución: $B."
-- [ ] 5. "Protección de la conducción enterrada de hormigón. Trabajo: $A. Condiciones de ejecución: $B."
-
-_Dropped by validation gates (not reviewable):_
-- [5] near_duplicate_of_kept
+- [ ] 1. "Se lleva a cabo el sellado de la conducción enterrada de hormigón. Detalles del trabajo: $A. Criterios de ejecución: $B." — _phi4:latest_
+- [ ] 2. "El sellado de conductos hormigonados ha sido programado. Trabajo: $A. Condiciones bajo las cuales se efectúa: $B." — _phi4:latest_
+- [ ] 3. "Programado el sellado de la canalización enterrada de hormigón. Descripción del trabajo: $A. Parámetros de ejecución: $B." — _phi4:latest_
+- [ ] 4. "El sellado de canaletas hormigonadas está en curso. Detalles del trabajo: $A. Requisitos de implementación: $B." — _phi4:latest_
+- [ ] 5. "Protección de canaletas con concreto. $A: Elaboración del trabajo. $B: Requisitos para ejecutar." — _phi4:latest_
+- [ ] 6. "Cierre de canales de hormigón. $A: Desarrollo del trabajo. $B: Estándares de implementación." — _phi4:latest_
+- [ ] 7. "Impermeabilización de cajones hormigonados. Ejecución del trabajo: $A. $B: Criterios de ejecución." — _phi4:latest_
+- [ ] 8. "Protección de conducciones de hormigón. $A: Proceso de trabajo. Condiciones para la ejecución: $B." — _phi4:latest_
+- [ ] 9. "Protección de canalizaciones enterradas de hormigón. Actividad: $A. Parámetros de implementación: $B." — _phi4:latest_
+- [ ] 10. "Cierre de conducciones enterradas en hormigón. Tarea: $A. Circunstancias de realización: $B." — _phi4:latest_
+- [ ] 11. "Aislamiento de estructuras subterráneas de hormigón. Operación: $A. Condiciones de aplicación: $B." — _phi4:latest_
+- [ ] 12. "Resguardo de conductos hormigonados. Proceso: $A. Requisitos de ejecución: $B." — _phi4:latest_
+- [ ] 13. "El sellado de la canaleta de hormigón se efectúa. Se especifica el trabajo: $A. Se indican las condiciones para su ejecución: $B." — _qwen2.5:14b_
+- [ ] 14. "Se realiza el sellado de la canalización de hormigón. Se precisa el trabajo: $A. Se determinan las condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 15. "Se lleva a cabo el sellado de la conducción de hormigón enterrada. Se describe el trabajo: $A. Se detallan las condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 16. "Se efectúa el sellado de la conducción de hormigón. Se menciona el trabajo: $A. Se señalan las condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 17. "Proceso de sellado en canalización de hormigón. Incluido en el trabajo: $A. Consideraciones de implementación: $B." — _qwen2.5:14b_
+- [ ] 18. "Trabajo de sellado en recinto de hormigón. Condiciones de realización: $B, incluyendo el siguiente trabajo: $A." — _qwen2.5:14b_
+- [ ] 19. "Sellado en conducto de hormigón. Incluye el trabajo: $A. Condiciones establecidas: $B." — _qwen2.5:14b_
+- [ ] 20. "Sellado en canalización de hormigón. Con trabajo a realizar: $A, y considerando las siguientes condiciones: $B." — _qwen2.5:14b_
+- [ ] 21. "Procedimiento de sellado en canalización de hormigón. Tareas a desarrollar: $A. Circunstancias de realización: $B." — _qwen2.5:14b_
+- [ ] 22. "Sellado en recinto de hormigón. Actividades programadas: $A. Aspectos de implementación: $B." — _qwen2.5:14b_
+- [ ] 23. "Operación de sellado en conducto de hormigón. Obligaciones laborales: $A. Parámetros operativos: $B." — _qwen2.5:14b_
+- [ ] 24. "Intervención de sellado en canalización de hormigón. Acciones previstas: $A. Medidas de aplicación: $B." — _qwen2.5:14b_
 
 ## TEXTO template (OEB110$)
 _Used in 1 concept(s): OEB110$_
 
-- [ ] 1. "Instalación y suministro de conductos de PVC de diámetro nominal 110 mm para evacuación de arquetas desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y compactación del terreno. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 2. "Provisión e instalación de conductos de PVC de 110 mm de diámetro para el drenaje de arquetas desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y compactación del suelo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 1. "Se proporcionará y se instalará una conducción enterrada de PVC de 110 mm de diámetro nominal para drenaje de arqueta, desde el centro de arqueta hasta el pie de talud, incluyendo el relleno y la compactación de tierras. $A. Zona de mantenimiento: $B. Se cumplirán las $C." — _phi4:latest_
+- [ ] 2. "La instalación y provisión de conductos de PVC de diámetro 110 mm para el drenaje de arquetas, desde el centro de arqueta hasta el pie de talud, se hará incluyendo el relleno y la compactación de suelo. $A. Área de conservación: $B. Se observarán las condiciones $C." — _phi4:latest_
+- [ ] 3. "Se ejecutará el suministro y la colocación de una canalización de PVC de diámetro 110 mm para drenar arquetas, desde el centro de arqueta hasta el pie de talud, incluyendo el relleno y la compactación del terreno. $A. Zona de servicio: $B. Las $C serán de obligatorio cumplimiento." — _phi4:latest_
+- [ ] 4. "Provisión e instalación de conducción subterránea de PVC con un diámetro de 110 mm para el drenaje de arquetas, desde el centro hasta el pie de talud, incluyendo relleno y compactación de tierra. $A. Sector de mantenimiento: $B. Cumplimiento de las $C." — _phi4:latest_
+- [ ] 5. "Colocación e instalación de conductos de PVC con un diámetro nominal de 110 mm mm para el drenaje desde el centro de la arqueta hasta el pie del talud, incluyendo el relleno y la compactación del terreno. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 6. "Desarrollo del drenaje con tubería de PVC de 110 mm de diámetro, desde el centro de la arqueta hasta el pie del talud, incluyendo la compactación y el relleno de tierras. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 7. "Realización del suministro e instalación de tubería de PVC de diámetro 110 mm mm para drenaje desde el centro de la arqueta hasta el pie del talud, incluyendo compactación y relleno del suelo. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 8. "Instalación de conductos de PVC de 110 mm de diámetro para evacuación de aguas desde el centro de la arqueta hasta el pie del talud, comprendiendo el relleno y compactación de suelos. Trabajo: $A Zona de mantenimiento: $B Circunstancias de realización: $C" — _phi4:latest_
+- [ ] 9. "Instalación de tubería de PVC con diámetro de 110 mm para drenaje de bocas de registro, extendiendo desde la cota de la arqueta hasta el talud, incluyendo la colocación y compactación del terreno. Trabajo: $A Área de servicio: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 10. "Colocación de canalización de PVC de 110 mm de diámetro para evacuar aguas desde el punto central de arqueta hasta el pie del talud, incluyendo el acondicionamiento y compactación del terreno. Trabajo: $A Zona de cuidado: $B Situaciones de desarrollo: $C" — _phi4:latest_
+- [ ] 11. "Colocación de conducción de PVC de 110 mm de diámetro para el drenaje de arquetas, desde el centro de la misma hasta el borde del talud, añadiendo el relleno y compactación del terreno. Trabajo: $A Zona de conservación: $B Condiciones de desarrollo: $C" — _phi4:latest_
+- [ ] 12. "Se suministrará y colocará tubería de PVC de diámetro 110 mm para el drenaje de la arqueta desde el centro de la arqueta hasta el pie de talud, incluyendo el relleno y compactación de la tierra. Se indicará el trabajo: $A. Se establecerá la banda de mantenimiento: $B. Se detallarán las condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 13. "Se efectuará el suministro y la colocación de la tubería de PVC con diámetro 110 mm para el drenaje de la arqueta desde el centro de la misma hasta el pie de talud, con el relleno y compactación de tierras. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 14. "Se suministrarán y colocarán tuberías de PVC con diámetro 110 mm para el drenaje de la arqueta desde el centro de la misma hasta el pie de talud, incluyendo la compactación y relleno de tierras. Se detallarán: Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 15. "Suministro y colocación de tubería de PVC de 110 mm de diámetro para la canalización del drenaje de arqueta, desde el centro de la arqueta hasta el pie del talud, incluyendo relleno y compactación de tierras. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 16. "Se realizará el suministro y colocación de tubería de PVC de 110 mm de diámetro, con el objetivo de canalizar el drenaje de arqueta desde el centro de la misma hasta el pie del talud, incluyendo la compactación y relleno de tierras. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 17. "Instalación y provisión de conductos de PVC de diámetro nominal 110 mm para el drenaje de la arqueta, desde el centro hasta el pie del talud, con el relleno y compactación del terreno. Tareas: $A Banda de conservación: $B Circunstancias de implementación: $C" — _qwen2.5:14b_
+- [ ] 18. "Colocación y entrega de tuberías de PVC de diámetro 110 mm para el drenaje de la arqueta, desde el centro hasta el pie del talud, incluyendo relleno y compactación del terreno. Tareas: $A Zona de resguardo: $B Condiciones para la ejecución: $C" — _qwen2.5:14b_
+- [ ] 19. "Suministro e instalación de tuberías de PVC de diámetro 110 mm para el drenaje de la arqueta, desde el centro hasta el pie del talud, incluyendo relleno y compactación del terreno. Tareas: $A Zona de seguridad: $B Condiciones de implementación: $C" — _qwen2.5:14b_
+- [ ] 20. "Colocación y distribución de tuberías de PVC de diámetro nominal 110 mm para drenaje, desde el centro de la arqueta al pie del talud, con relleno y compactación del terreno. Tareas: $A Zona de protección: $B Condiciones de instalación: $C" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [6] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
+- [18] near_duplicate_of_kept
+- [19] near_duplicate_of_kept
 
 ## TEXTO template (OEA040$)
 _Used in 1 concept(s): OEA040$_
 
-- [ ] 1. "Provisión e instalación de canal $A con $B cavidades de composite-PTR 1000x264x266 mm, $T(%A), conforme a ET 03.365.064.9. Labor: $C Zona de mantenimiento: $D Requisitos de ejecución: $F"
-- [ ] 2. "Suministro e instalación de conducto $A con $B huecos de composite-PTR 1000x264x266 mm, $T(%A), de acuerdo con ET 03.365.064.9. Tarea: $C Área de mantenimiento: $D Condiciones de ejecución: $F"
-- [ ] 3. "Entrega e implementación de canalización $A con $B celdas de composite-PTR 1000x264x266 mm, $T(%A), conforme a ET 03.365.064.9. Actividad: $C Zona de mantenimiento: $D Requisitos de ejecución: $F"
-- [ ] 4. "Provisión e instalación de conducto $A con $B cavidades de composite-PTR 1000x264x266 mm, $T(%A), de acuerdo con ET 03.365.064.9. Labor: $C Área de mantenimiento: $D Condiciones de ejecución: $F"
-- [ ] 5. "Suministro e instalación de canal $A con $B huecos de composite-PTR 1000x264x266 mm, $T(%A), conforme a ET 03.365.064.9. Tarea: $C Zona de mantenimiento: $D Requisitos de ejecución: $F"
+- [ ] 1. "Provisión e instalación de conducto $A con $B celdas de composite-PTR 1000x264x266 mm, $T(%A), conforme a la ET 03.365.064.9. Actividad: $C Línea de servicio: $D Requisitos de ejecución: $F" — _phi4:latest_
+- [ ] 2. "Suministro e implementación de canalización $A equipada con $B huecos de composite-PTR 1000x264x266 mm, $T(%A), de acuerdo con la ET 03.365.064.9. Empleo: $C Sector de mantenimiento: $D Parámetros de ejecución: $F" — _phi4:latest_
+- [ ] 3. "Provisión y montaje de conducción $A con $B cavidades de composite-PTR 1000x264x266 mm, $T(%A), ajustado a la ET 03.365.064.9. Labor: $C Rango de mantenimiento: $D Condiciones de operación: $F" — _phi4:latest_
+- [ ] 4. "Entrega y colocación de canal $A con $B cámaras de composite-PTR 1000x264x266 mm, $T(%A), conforme al ET 03.365.064.9. Tarea: $C Zona de servicio: $D Requisitos de ejecución: $F" — _phi4:latest_
+- [ ] 5. "Se suministra y ejecuta la canaleta $A con $B alveolos de composite-PTR 1000x264x266 mm, $T(%A), conforme a la ET 03.365.064.9.. Se realiza el trabajo: $C. Se establece la banda de mantenimiento: $D. Se detallan las condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 6. "Se ha de prestar el suministro y realizar la ejecución de la canaleta $A con $B alveolos de composite-PTR 1000x264x266 mm, $T(%A), conforme a lo establecido en la ET 03.365.064.9.. Se efectuará el trabajo: $C. Se determinará la banda de mantenimiento: $D. Se especificarán las condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 7. "Se realizará el suministro y la ejecución de la canaleta $A con $B alveolos de composite-PTR 1000x264x266 mm, $T(%A), de acuerdo con la ET 03.365.064.9.. Se llevará a cabo el trabajo: $C. Se establecerá la banda de mantenimiento: $D. Se indican las condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 8. "Se efectúa la provisión y la implementación de la canaleta $A con $B alveolos de composite-PTR 1000x264x266 mm, $T(%A), en conformidad con la ET 03.365.064.9.. Se llevará a cabo el trabajo: $C. Se delimitará la banda de mantenimiento: $D. Se especificarán las condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 9. "Se proporcionará y llevará a cabo la instalación de la canaleta $A, equipada con $B alveolos de composite-PTR 1000x264x266 mm, $T(%A), de acuerdo al ET 03.365.064.9.. El trabajo comprende: $C. La zona de trabajo estará definida por la banda de mantenimiento: $D. Las condiciones de ejecución serán las siguientes: $F." — _qwen2.5:14b_
+- [ ] 10. "Instalación y suministro de la canaleta $A, con $B alveolos de composite-PTR 1000x264x266 mm, $T(%A), conforme al ET 03.365.064.9.. El trabajo se realizará en base a: $C, con banda de mantenimiento: $D. Las condiciones de ejecución son: $F." — _qwen2.5:14b_
+- [ ] 11. "Suministro e instalación de la canaleta $A, dotada de $B alveolos de composite-PTR 1000x264x266 mm, $T(%A), según lo especificado en el ET 03.365.064.9.. El trabajo incluye: $C, y la banda de mantenimiento será: $D. Las condiciones de ejecución son: $F." — _qwen2.5:14b_
+- [ ] 12. "Instalación y provisión de la canaleta $A, que cuenta con $B alveolos de composite-PTR 1000x264x266 mm, $T(%A), conforme al ET 03.365.064.9.. El ámbito de trabajo se define por: $C, y la banda de mantenimiento será: $D. Las condiciones para la ejecución son: $F." — _qwen2.5:14b_
+- [ ] 13. "Instalación y entrega de canalización $A con $B huecos en material composite-PTR 1000x264x266 mm, $T(%A), en conformidad con ET 03.365.064.9.. Actividad: $C. Zona de operación: $D. Criterios de implementación: $F." — _qwen2.5:14b_
+- [ ] 14. "Entrega y montaje de canalización $A con $B cavidades en composite-PTR 1000x264x266 mm, $T(%A), conforme a ET 03.365.064.9.. Actividad: $C. Banda de trabajo: $D. Requisitos de ejecución: $F." — _qwen2.5:14b_
+- [ ] 15. "Colocación y provisión de canalización $A con $B huecos en composite-PTR 1000x264x266 mm, $T(%A), bajo las condiciones de ET 03.365.064.9.. Actividad: $C. Banda de operación: $D. Parámetros de montaje: $F." — _qwen2.5:14b_
+- [ ] 16. "Implementación y entrega de canalización $A con $B huecos en composite-PTR 1000x264x266 mm, $T(%A), conforme al ET 03.365.064.9.. Actividad: $C. Zona de operación: $D. Criterios de instalación: $F." — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F', '$T(%A)'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)', '$T(%A)']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F', '$T(%A)'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)', '$T(%A)']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F', '$T(%A)'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)', '$T(%A)']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D', '$F', '$T(%A)'] new=['$A', '$B', '$C', '$D', '$F', '$L(%C)', '$M(%D)', '$N(%F)', '$T(%A)']
+- phi4:latest/R2 [0] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R2 [1] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R2 [2] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
+- phi4:latest/R2 [3] sentinels_not_preserved: missing=['P3'] extra_or_dup=[]
 
 ## TEXTO template (OEB070$)
 _Used in 1 concept(s): OEB070$_
 
-- [ ] 1. "Provisión y colocación de $A conducto(s) de polietileno de diámetro nominal 110 mm 5 At. con topo bajo vías. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 1. "Provision y colocación de conducciones de $A conductos de polietileno 110 mm 5 At. con corte en la superficie debajo de las vías ferroviarias. Actividad: $B Zona de mantenimiento: $C Circunstancias de ejecución: $D" — _phi4:latest_
+- [ ] 2. "Provisión y realización de conducción enterrada de $A conductos de polietileno 110 mm 5 At. con excavación subterránea bajo las vías. Operación: $B Zona de conservación: $C Condiciones de realización: $D" — _phi4:latest_
+- [ ] 3. "Suministro y realización de un sistema de conducción de $A tubos de polietileno 110 mm 5 At. con excavación superficial bajo las vías. Trabajo: $B Área de mantenimiento: $C Condiciones de puesta en marcha: $D" — _phi4:latest_
+- [ ] 4. "Entrega y colocación de conducciones con $A conductos de polietileno 110 mm 5 At. y corte de superficie bajo las vías. Tarea: $B Rango de mantenimiento: $C Condiciones de instalación: $D" — _phi4:latest_
+- [ ] 5. "Se suministrarán y ejecutarán $A tubo(s) de polietileno 110 mm 5 At., con ubicación bajo vías. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 6. "Se realizará la instalación y suministro de $A tubo(s) de polietileno 110 mm 5 At., con acomodo bajo vías. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 7. "La canalización de $A tubo(s) de polietileno 110 mm 5 At., con colocación bajo vías, será suministrada y ejecutada. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 8. "Se ejecutará la instalación subviaria de $A tubo(s) de polietileno 110 mm 5 At., con suministro incluido. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 9. "Instalación y suministro de conducción subviaria con $A tubo(s) de polietileno 110 mm 5 At.. Tareas: $B, banda de mantenimiento: $C, condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 10. "Suministro e instalación de $A conducto(s) de polietileno 110 mm 5 At., colocados en tramos subviarios. Ejecución: $B, restricción de mantenimiento: $C, requisitos de ejecución: $D" — _qwen2.5:14b_
+- [ ] 11. "Entrega y montaje de $A tubo(s) de polietileno 110 mm 5 At. en tramos subviarios. Tareas: $B, zona de mantenimiento: $C, condiciones de montaje: $D" — _qwen2.5:14b_
+- [ ] 12. "Suministro e instalación subviaria de $A tubo(s) de polietileno 110 mm 5 At.. Trabajos: $B, área de mantenimiento: $C, condiciones de colocación: $D" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R1 [0] quantities_not_conserved: numbers [('110', 1), ('5', 1)]→[('110', 2), ('5', 1)], units [('at', 1), ('mm', 1)]→[('at', 1), ('mm', 2)]
+- phi4:latest/R1 [1] quantities_not_conserved: numbers [('110', 1), ('5', 1)]→[('110', 2), ('5', 1)], units [('at', 1), ('mm', 1)]→[('at', 1), ('mm', 2)]
+- phi4:latest/R1 [2] quantities_not_conserved: numbers [('110', 1), ('5', 1)]→[('110', 2), ('5', 1)], units [('at', 1), ('mm', 1)]→[('at', 1), ('mm', 2)]
+- phi4:latest/R1 [3] quantities_not_conserved: numbers [('110', 1), ('5', 1)]→[('110', 2), ('5', 1)], units [('at', 1), ('mm', 1)]→[('at', 1), ('mm', 2)]
+- phi4:latest/R2 [0] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- phi4:latest/R2 [1] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- phi4:latest/R2 [2] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- phi4:latest/R2 [3] sentinels_not_preserved: missing=['P1'] extra_or_dup=[]
+- qwen2.5:14b/R2 [0] sentinels_not_preserved: missing=['Q2'] extra_or_dup=[]
+- qwen2.5:14b/R2 [1] sentinels_not_preserved: missing=['Q2'] extra_or_dup=[]
+- qwen2.5:14b/R2 [2] sentinels_not_preserved: missing=['Q2'] extra_or_dup=[]
+- qwen2.5:14b/R2 [3] sentinels_not_preserved: missing=['Q2'] extra_or_dup=[]
 
 ## TEXTO template (OEB100$)
 _Used in 1 concept(s): OEB100$_
 
-- [ ] 1. "Instalación y montaje de conducción enterrada en túnel para acceso a interfonía desde canaleta de hormigón, empleando conductos de acero hasta el repartidor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
-- [ ] 2. "Provisión y colocación de conductos en túnel para acceso a interfonía desde canaleta de hormigón, usando tubería de acero hasta el repartidor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
-- [ ] 3. "Suministro y montaje de conducción en túnel para acceso a interfonía desde canaleta de hormigón, utilizando tubería de acero hasta el repartidor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C."
-
-_Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [ ] 1. "La canalización para acceso a interfonía en túnel se suministra y ejecuta desde una canaleta de hormigón, utilizando conductos de acero hasta llegar al repartidor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 2. "Se ejecutará la instalación de canalización en túnel para interfonía desde una canaleta hormigonada, utilizando conductos metálicos hasta el repartidor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 3. "El acceso a interfonía en túnel se facilita mediante la canalización, suministrada y ejecutada desde una canaleta de hormigón, con conductos de acero hasta el repartidor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 4. "Se llevará a cabo la instalación de una canalización en túnel para acceso a interfonía, desde una canaleta de hormigón hasta el repartidor, utilizando conductos de acero. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _phi4:latest_
+- [ ] 5. "Instalación de conducción enterrada en túnel para acceso a interfonía desde canaleta de hormigón con conductos de acero hasta el repartidor, incluidas las condiciones de ejecución: $C, Trabajo: $A y Banda de mantenimiento: $B." — _phi4:latest_
+- [ ] 6. "Ejecución de la instalación de conductos de acero en túnel para el acceso a interfonía desde la canaleta de hormigón hasta el repartidor, incluidas las condiciones de ejecución: $C, Trabajo: $A, y Banda de mantenimiento: $B." — _phi4:latest_
+- [ ] 7. "Suministro y ejecución de conducción enterrada en túnel desde canaleta de hormigón hacia el repartidor con tubo de acero para acceso a interfonía, incluidas las condiciones de ejecución: $C, Trabajo: $A, y Banda de mantenimiento: $B." — _phi4:latest_
+- [ ] 8. "Instalación de conductos de acero en túnel desde la canaleta de hormigón hacia el repartidor para acceso a interfonía, incluidas las condiciones de ejecución: $C, Trabajo: $A, y Banda de mantenimiento: $B." — _phi4:latest_
+- [ ] 9. "Instalación de sistema de tuberías en túnel para conexión a interfonía, desde la canaleta de hormigón con conducto de acero hasta el distribuidor. Trabajo: $A Intervalo de mantenimiento: $B Requisitos de ejecución: $C." — _phi4:latest_
+- [ ] 10. "Implementación de conducto en túnel para acceso interfonía desde cajetín de hormigón, empleando tubería de acero hasta el divisor. Tarea: $A Ciclo de mantenimiento: $B Normas de ejecución: $C." — _phi4:latest_
+- [ ] 11. "Desarrollo de trazado de tuberías en túnel para conexión a interfonía desde canalete de hormigón, usando tubo metálico hasta el repartidor. Tarea: $A Periodo de conservación: $B Criterios de ejecución: $C." — _phi4:latest_
+- [ ] 12. "Instalación de estructura de tuberías en túnel para acceso a interfonía a través de cajón de hormigón, con tubo de hierro hasta el distribuidor. Labor: $A Frecuencia de mantenimiento: $B Condiciones de implementación: $C." — _phi4:latest_
+- [ ] 13. "Se llevará a cabo el suministro y la instalación de la conducción enterrada en túnel para el acceso a interfonía a partir de la canaleta de hormigón, utilizando conductos de acero hasta el repartidor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 14. "Se instalará la canalización en el túnel para proporcionar acceso a interfonía desde la canaleta de hormigón hasta el repartidor, utilizando tubos de acero. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 15. "Para el acceso a interfonía, se suministrará y se ejecutará la canalización desde la canaleta de hormigón hasta el repartidor en el túnel, con tubos de acero. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 16. "Se efectuará la colocación de la canalización para el acceso a interfonía en el túnel a partir de la canaleta de hormigón, usando conductos de acero hasta llegar al repartidor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 17. "Colocación y montaje de conducción enterrada en túnel para el acceso a interfonía, que incluye el uso de tubos de acero desde el canal hormigonado hasta el repartidor. Trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 18. "Instalación y ejecución de tubería enterrada para acceso a interfonía en túnel, a partir de la canaleta de hormigón y hasta el repartidor, utilizando conductos de acero. Trabajo: $A, banda de mantenimiento: $B, condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 19. "Colocación de conducción en túnel para el acceso interfonía, desde el canal hormigonado y hasta el repartidor mediante tubos de acero. Se incluye el trabajo: $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 20. "Instalación de tubería enterrada en túnel para el acceso interfonía, desde canaleta de hormigón y hasta el repartidor, utilizando conductos de acero. Condiciones: Trabajo: $A, banda de mantenimiento: $B, condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 21. "Instalación y montaje de conductos para interconexión telefónica en túnel, desde cañería de concreto, con utilización de tubería de acero hasta el distribuidor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 22. "Colocación de conducción subterránea para intercomunicación en túnel mediante el empleo de tuberías desde el canal de hormigón hasta la central. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 23. "Instalación de conductos subterráneos para el sistema de intercomunicación en túnel, desde la guía de hormigón, con tubos de acero hasta el repartidor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 24. "Colocación de tuberías para intercomunicación en túnel a través de conducción de hormigón, con canalización de acero hasta el repartidor. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C." — _qwen2.5:14b_
 
 ## TEXTO template (OEB120$)
 _Used in 1 concept(s): OEB120$_
 
-- [ ] 1. "Provisión y montaje de entrada de conductos de $A en arqueta o cámara ya existente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
-- [ ] 2. "Suministro y colocación de entrada de tubería de $A en arqueta o cámara preexistente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
-- [ ] 3. "Suministro y realización de entrada de conductos de $A en arqueta o cámara ya instalada. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 1. "Ejecución del suministro y montaje de una embocadura de canalización utilizando $A conductos en arqueta o cámara existente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 2. "Se suministrará y ejecutará una embocadura para canalización con $A conductos en una arqueta o cámara ya existente. Detalles del trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 3. "La ejecución del suministro y montaje de una embocadura de canalización se llevará a cabo con $A conductos en arqueta o cámara existente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 4. "Se realizará el suministro y ejecución de embocadura de canalización mediante $A conductos en arqueta o cámara existente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 5. "Ejecución del suministro de embocadura para canalización de $A conductos en arqueta o cámara existente, trabajando: $B, banda de mantenimiento: $C, bajo las siguientes condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 6. "Suministro y ejecución de una embocadura para el sistema de canalización de $A tubos, instalados en arqueta o cámara ya existente, incluyendo el trabajo: $B y banda de mantenimiento: $C, con las condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 7. "Trabajo: $B y banda de mantenimiento: $C para el suministro y ejecución de embocadura en canalización de $A conductos dentro de una arqueta o cámara existente, conforme a las condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 8. "Suministro y ejecución de embocadura para canalización de $A tubos en una arqueta o cámara existente, con el trabajo: $B, banda de mantenimiento: $C, y de acuerdo a las condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 9. "Obras de instalación y aprovisionamiento de abertura para conductos de $A en estructuras de arqueta o cámara ya existentes. Línea de trabajo: $B Zona de conservación: $C Pautas de realización: $D" — _phi4:latest_
+- [ ] 10. "Fase de provisión y montaje de acceso para conductos de $A dentro de arquetas o cámaras ya instaladas. Tarea esencial: $B Área de mantenimiento: $C Parámetros de implementación: $D" — _phi4:latest_
+- [ ] 11. "Instalación y suministro de interfaz para conductos de $A en arquetas o cámaras preexistentes. Trabajo correspondiente: $B Zona de supervisión: $C Requisitos de ejecución: $D" — _phi4:latest_
+- [ ] 12. "Provisión y realización de entrada para conductos de $A en estructuras de arqueta o cámaras ya configuradas. Labor a llevar a cabo: $B Rango de mantenimiento: $C Directrices de ejecución: $D" — _phi4:latest_
+- [ ] 13. "Se suministrarán y ejecutarán los adaptadores para la conducción de $A conductos en arqueta o cámara existente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 14. "La conducción de $A conductos se efectuará a través de la instalación de adaptadores en una arqueta o cámara existente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 15. "Se llevará a cabo la instalación de adaptadores para la conducción de $A conductos dentro de una arqueta o cámara existente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 16. "Suministro y ejecución de embocadura para una conducción enterrada de $A conductos dentro de una arqueta o cámara existente. Trabajo: $B, Banda de mantenimiento: $C, Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 17. "Ejecución y provisión de embocadura para la instalación de $A conductos en arqueta o cámara existente. Incluido en el trabajo: $B, Banda de mantenimiento: $C, Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 18. "Instalación y provisión de embocadura para canalización de $A conductos dentro de una arqueta o cámara existente: Trabajo: $B, Banda de mantenimiento: $C, Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 19. "Suministro y colocación de embocadura para la canalización de $A conductos en arqueta o cámara existente. Asignación: Trabajo: $B, Banda de mantenimiento: $C, Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 20. "Instalación y provisión de conexión de la conducción de $A en arqueta o cámara preexistente. Proyecto: $B, Área de trabajo: $C, Criterios de realización: $D" — _qwen2.5:14b_
+- [ ] 21. "Provisión y montaje de adaptadores de canalización de $A conductos en arqueta o cámara existente. Tarea: $B, Zona de trabajo: $C, Requisitos de implementación: $D" — _qwen2.5:14b_
+- [ ] 22. "Colocación y entrega de conexiones de la conducción de $A en arqueta o cámara preexistente. Misión: $B, Ámbito de intervención: $C, Estándares de ejecución: $D" — _qwen2.5:14b_
+- [ ] 23. "Suministro y montaje de adaptadores de canalización de $A conductos en arqueta o cámara preexistente. Proceso: $B, Zona de intervención: $C, Condiciones de operación: $D" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [13] near_duplicate_of_kept
 
 ## TEXTO template (OEC070$)
 _Used in 1 concept(s): OEC070$_
 
-- [ ] 1. "Provisión y realización de sustitución de $A, abarcando la limpieza, la eliminación de residuos y con la parte correspondiente de los medios auxiliares. Tarea: $B Zona de mantenimiento: $C Circunstancias de ejecución: $D"
-- [ ] 2. "Suministro y ejecución de reemplazo de $A, incluyendo la limpieza, la extracción de escombros y con la parte adecuada de los medios auxiliares. Labor: $B Área de mantenimiento: $C Condiciones de realización: $D"
-- [ ] 3. "Suministro y ejecución de sustitución de $A, que comprende la limpieza, la remoción de escombros y con la parte proporcional de los medios auxiliares. Actividad: $B Zona de mantenimiento: $C Condiciones de ejecución: $D"
-- [ ] 4. "Provisión y realización de reemplazo de $A, incluyendo la limpieza, la eliminación de escombros y con la parte correspondiente de los medios auxiliares. Tarea: $B Área de mantenimiento: $C Circunstancias de ejecución: $D"
-- [ ] 5. "Suministro y ejecución de sustitución de $A, abarcando la limpieza, la extracción de escombros y con la parte adecuada de los medios auxiliares. Labor: $B Zona de mantenimiento: $C Condiciones de realización: $D"
-- [ ] 6. "Provisión y realización de reemplazo de $A, que comprende la limpieza, la remoción de escombros y con la parte proporcional de los medios auxiliares. Actividad: $B Área de mantenimiento: $C Circunstancias de ejecución: $D"
+- [ ] 1. "Se realizará el suministro y la ejecución de la reposición de $A, incluyendo la limpieza, la eliminación de escombros y utilizando medios auxiliares proporcionales. Trabajo a efectuar: $B. Sección de mantenimiento: $C. Condiciones para la ejecución: $D." — _phi4:latest_
+- [ ] 2. "La reposición de $A se suministrará y ejecutará, abarcando la limpieza, la extracción de escombros y con medios auxiliares proporcionales. Trabajo a realizar: $B. Área de mantenimiento: $C. Detalles de ejecución: $D." — _phi4:latest_
+- [ ] 3. "Se ejecutará el suministro y la reposición de $A, que incluye la limpieza, la eliminación de escombros y el uso de medios auxiliares proporcionales. Tarea a realizar: $B. Zona de mantenimiento: $C. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 4. "Con la ejecución y suministro de la reposición de $A, se incluye la limpieza, la retirada de escombros y la utilización proporcional de medios auxiliares. Trabajo involucrado: $B. Banda de mantenimiento: $C. Criterios de ejecución: $D." — _phi4:latest_
+- [ ] 5. "Se realizará la reposición de $A, que incluirá la limpieza correspondiente, la remoción de residuos y la proporcion de medios auxiliares necesarios. Se detallará el trabajo en: $B. Se establecerá la banda de mantenimiento en: $C. Se especificarán las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 6. "Se efectuará la reposición de $A, con la limpieza y remoción de escombros pertinentes, así como la proporcion de medios auxiliares requeridos. Se definirán los detalles del trabajo en: $B. Se determinará la banda de mantenimiento: $C. Se especificarán las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 7. "La reposición de $A se llevará a cabo con la limpieza necesaria, la eliminación de escombros y la proporcion de medios auxiliares proporcionados. Se detallará el trabajo en: $B. Se establecerá la banda de mantenimiento en: $C. Se especificarán las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 8. "Se efectuará la reposición de $A, incluyendo la limpieza, la remoción de escombros y la proporcion de medios auxiliares requeridos. Se detallará el trabajo en: $B. Se establecerá la banda de mantenimiento: $C. Se especificarán las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 9. "Suministro y ejecución de reposición de $A, con la parte proporcional de los medios auxiliares y la inclusión de la limpieza y la retirada de escombros. Trabajo: $B Banda de mantenimiento: $C. Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 10. "Suministro y ejecución de reposición de $A, que incluye la limpieza y la retirada de escombros, y la proporción de medios auxiliares proporcionados. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 11. "Suministro y ejecución de reposición de $A, que incluye la limpieza, la eliminación de escombros y la proporcionación de la parte proporcional de los medios auxiliares. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 12. "Suministro y ejecución de reposición de $A, con la inclusión de labores de limpieza, retirada de escombros y proporcionación de los medios auxiliares necesarios. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 13. "Ejecución del reemplazo de $A, que incluye la sanitización del área, la eliminación de residuos y el uso de medios auxiliares proporcionados. Actividades especificadas: $B, cinta de mantenimiento: $C, requisitos de ejecución: $D" — _qwen2.5:14b_
+- [ ] 14. "Entrega y realización del reemplazo de $A, con la inclusión de la limpieza del terreno, la retirada de desechos y la utilización de medios auxiliares proporcionales. Tareas: $B, sección de mantenimiento: $C, condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 15. "Provisión y puesta en marcha del reemplazo de $A, que comprende la limpieza de la zona, la remoción de escombros y la adopción de medios auxiliares proporcionales. Tareas incluidas: $B, zona de mantenimiento: $C, condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 16. "Suministro y realización del reemplazo de $A, con la limpieza del área, la retirada de desechos y la utilización proporcional de medios auxiliares. Trabajo especificado: $B, área de mantenimiento: $C, condiciones de realización: $D" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R2 [0] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- phi4:latest/R2 [1] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- phi4:latest/R2 [2] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- phi4:latest/R2 [3] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- phi4:latest/R3 [0] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- phi4:latest/R3 [1] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- phi4:latest/R3 [2] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
+- phi4:latest/R3 [3] sentinels_not_preserved: missing=['P4'] extra_or_dup=[]
 
 ## TEXTO template (OEC080$)
 _Used in 1 concept(s): OEC080$_
 
-- [ ] 1. "Provisión y realización del sellado de arqueta o cámara de registro, utilizando ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 1. ""Se proporcionará y llevará a cabo el sellado de la arqueta o cámara de registro, utilizando ladrillo sencillo de  24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R. Trabajo: $A Mantenimiento: $B Condiciones: $C"" — _phi4:latest_
+- [ ] 2. ""Se ejecutará el sellado de la arqueta o cámara de registro, suministrando ladrillo sencillo de  24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R. Trabajo: $A Mantenimiento: $B Condiciones: $C"" — _phi4:latest_
+- [ ] 3. ""Para el sellado de la arqueta o cámara de registro, se suministrará e implementará ladrillo sencillo de  24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R. Trabajo: $A Mantenimiento: $B Condiciones: $C"" — _phi4:latest_
+- [ ] 4. "Ejecución del sellado de arqueta o cámara de registro, que consiste en el uso de ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R para sellar. Incluye: Trabajo: $A, Banda de mantenimiento: $B, Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 5. "Incluyendo ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R, se efectúa el sellado de la arqueta o cámara de registro. Detalles: Trabajo: $A, Banda de mantenimiento: $B, Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 6. "Se realiza el sellado de arqueta o cámara de registro, utilizando ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R. Trabajo: $A, Banda de mantenimiento: $B, Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 7. "El sellado de arqueta o cámara de registro incluye ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R. Detalles: Trabajo: $A, Banda de mantenimiento: $B, Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 8. "Provisión y realización del sellado de arquetas o cámaras de registro, empleando ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R para el sellado. Descripción del trabajo: $A Ancho de mantenimiento: $B Requisitos de ejecución: $C" — _phi4:latest_
+- [ ] 9. "Suministro y ejecución para el sellado de arquetas o cámaras de registro, utilizando ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R en el sellado. Detalle de trabajo: $A Ancho de conservación: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 10. "Provisión y puesta en marcha del sellado de arquetas o cámaras de registro, con ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R destinado al sellado. Descripción del trabajo a realizar: $A Anchura para el mantenimiento: $B Requisitos durante la ejecución: $C" — _phi4:latest_
+- [ ] 11. "Provisión y aplicación del sellado en arquetas o cámaras de registro, utilizando ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R para el sellado. Actividad a ejecutar: $A Ancho de intervención: $B Requisitos de ejecución: $C" — _phi4:latest_
+- [ ] 12. "Se suministrará y ejecutará el sellado de la arqueta o cámara de registro, que incluirá ladrillo sencillo de  24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R para realizar la impermeabilización. Se llevará a cabo el trabajo de $A, con banda de mantenimiento de $B, bajo las condiciones de ejecución de $C." — _qwen2.5:14b_
+- [ ] 13. "El sellado de la arqueta o cámara de registro se llevará a cabo con ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R. Se especificará el trabajo de $A, la banda de mantenimiento de $B, y se detallarán las condiciones de ejecución de $C." — _qwen2.5:14b_
+- [ ] 14. "Se proporcionará y se implementará el sellado de arqueta o cámara de registro, empleando ladrillo sencillo de 24X11,5X4 cm y mortero de cemento de marca CEM II/A-P/32.5 R. Las condiciones de trabajo serán $A, la banda de mantenimiento será de $B, y las condiciones de ejecución se detallan en $C." — _qwen2.5:14b_
+- [ ] 15. "La ejecución del sellado de la arqueta o cámara de registro se realizará con ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R. El trabajo será de $A, la banda de mantenimiento se establecerá en $B, y las condiciones de ejecución se especificarán en $C." — _qwen2.5:14b_
+- [ ] 16. "Suministro y ejecución de sellado en arqueta o cámara de registro, trabajo: $A. Incluye ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R para el sellado. Banda de mantenimiento: $B. Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 17. "Suministro y ejecución de sellado en arqueta o cámara de registro, se incluye ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R para el sellado. Trabajo: $A, banda de mantenimiento: $B, condiciones de ejecución: $C." — _qwen2.5:14b_
+- [ ] 18. "Servicio de sellado de arqueta o cámara de registro, que incluye ladrillos estándar de 24X11,5X4 cm y mortero de cemento tipo CEM II/A-P/32.5 R para la impermeabilización. Tareas: $A. Zona de intervención: $B. Requisitos de ejecución: $C" — _qwen2.5:14b_
+- [ ] 19. "Ejecución y provisión de sellado para arqueta o cámara de registro, con ladrillos simples de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R para la impermeabilización. Tareas: $A. Zona de trabajo: $B. Condiciones de realización: $C" — _qwen2.5:14b_
+- [ ] 20. "Instalación y sellado de arqueta o cámara de registro, que utiliza ladrillos sencillos de 24X11,5X4 cm y mortero de cemento tipo CEM II/A-P/32.5 R. Tareas: $A. Zona de intervención: $B. Requisitos de construcción: $C" — _qwen2.5:14b_
+- [ ] 21. "Suministro y realización del sellado de arqueta o cámara de registro, con ladrillos estándar de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R. Tareas: $A. Zona de trabajo: $B. Condiciones de ejecución: $C" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
 - [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- [17] near_duplicate_of_kept
+- [19] near_duplicate_of_kept
 
 ## TEXTO template (OEA070$)
 _Used in 1 concept(s): OEA070$_
 
-- [ ] 1. "Provisión e instalación de $A para conducto composite-PTR, con elementos para unir las secciones, conforme a ET 03.365.064.9. Labor: $B Zona de mantenimiento: $C Circunstancias de ejecución: $D"
-- [ ] 2. "Suministro e instalación de $A para canalización composite-PTR, con componentes para unir las partes, de acuerdo con ET 03.365.064.9. Tarea: $B Área de mantenimiento: $C Condiciones de ejecución: $D"
-- [ ] 3. "Entrega e instalación de $A para conducto composite-PTR, con elementos para unir las secciones, conforme a ET 03.365.064.9. Actividad: $B Zona de mantenimiento: $C Condiciones de ejecución: $D"
-- [ ] 4. "Provisión e instalación de $A para canalización composite-PTR, con componentes para unir las partes, de acuerdo con ET 03.365.064.9. Labor: $B Área de mantenimiento: $C Circunstancias de ejecución: $D"
-
-_Dropped by validation gates (not reviewable):_
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- [ ] 1. "$A se suministrará y montará para la canaleta composite-PTR, con piezas para el cosido entre las mismas, conforme a la ET 03.365.064.9.. El trabajo consistirá en $B, con una banda de mantenimiento de $C, y se realizará bajo las condiciones de ejecución $D." — _phi4:latest_
+- [ ] 2. "Se suministrará y montará $A para la canaleta composite-PTR, incorporando piezas para el cosido entre las mismas, según la ET 03.365.064.9.. El trabajo de $B incluye una banda de mantenimiento de $C, y las condiciones de ejecución serán $D." — _phi4:latest_
+- [ ] 3. "Para la canaleta composite-PTR, se llevará a cabo el suministro y el montaje de $A, que incluye piezas para el cosido entre las mismas, de acuerdo con la ET 03.365.064.9.. Las tareas a realizar son $B, con una banda de mantenimiento de $C, y las condiciones de ejecución $D serán aplicables." — _phi4:latest_
+- [ ] 4. "El suministro y montaje de $A para la canaleta composite-PTR, que incluye piezas para el cosido entre las mismas, se efectuará conforme a la ET 03.365.064.9.. El $B está definido como el trabajo, con una banda de mantenimiento de $C, y las $D serán las condiciones de ejecución." — _phi4:latest_
+- [ ] 5. "Provisión e instalación de $A para canaleta composite-PTR, abarcando elementos para la unión entre ellas, conforme a ET 03.365.064.9. Labor: $B Zona de conservación: $C Circunstancias de puesta en marcha: $D" — _phi4:latest_
+- [ ] 6. "Instalación y provisión de $A para canaleta composite-PTR, con elementos para el acople entre ellas, según ET 03.365.064.9. Operación: $B Faja de retención: $C Requisitos de despliegue: $D" — _phi4:latest_
+- [ ] 7. "Acometida y provisión de $A para canaleta composite-PTR, incluidos componentes para el ensamblaje entre sí, conforme a ET 03.365.064.9. Actividad: $B Área de vigilancia: $C Parámetros de implementación: $D" — _phi4:latest_
+- [ ] 8. "Fornecimiento e instalación de $A para canaleta composite-PTR, que incluyen piezas para el enlace entre ellas, de acuerdo con ET 03.365.064.9. Tarea: $B Zona de custodia: $C Condiciones de puesta en marcha: $D" — _phi4:latest_
+- [ ] 9. "Fase de provision y ensamblaje de $A destinada a la canaleta composite-PTR, contemplando elementos para unir las estructuras, de acuerdo a ET 03.365.064.9. Labor: $B Área de cuidado: $C Parámetros de desarrollo: $D" — _phi4:latest_
+- [ ] 10. "Desarrollo y emplazamiento de $A en la canaleta composite-PTR, añadiendo componentes para unir las unidades, conforme a ET 03.365.064.9. Tarea: $B Zona de seguimiento: $C Criterios de ejecución: $D" — _phi4:latest_
+- [ ] 11. "Adquisición e integración de $A para canaleta composite-PTR, incorporando elementos para unir las secciones, bajo ET 03.365.064.9. Actividad: $B Sector de cuidado: $C Estándares de construcción: $D" — _phi4:latest_
+- [ ] 12. "Entrega e instalación de $A para canaleta composite-PTR, con la inclusión de componentes para conectar las partes, según ET 03.365.064.9. Asignación de tareas: $B Área de vigilancia: $C Normas de implementación: $D" — _phi4:latest_
+- [ ] 13. "Se realizará el suministro y montaje de $A para canaleta composite-PTR, incluidas las piezas necesarias para el cosido entre las mismas, de acuerdo con el ET 03.365.064.9.. Se especificará el trabajo: $B, la banda de mantenimiento: $C y las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 14. "Se llevará a cabo el suministro y la instalación de $A para canaleta composite-PTR, incluyendo los elementos de unión necesarios, en conformidad con el ET 03.365.064.9.. Se detallará el trabajo: $B, la banda de mantenimiento: $C y las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 15. "Se ejecutará el suministro e instalarán $A para canaleta composite-PTR, con el suministro de piezas para el cosido entre las mismas, conforme al ET 03.365.064.9.. Se definirá el trabajo: $B, la banda de mantenimiento: $C y las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 16. "Se procederá al suministro y montaje de $A para canaleta composite-PTR, incluyendo los componentes para el cosido entre las mismas, de acuerdo con el ET 03.365.064.9.. Se establecerán el trabajo: $B, la banda de mantenimiento: $C y las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 17. "Provisión y colocación de $A, con canaleta composite-PTR, que incluye piezas para la unión entre ellas, según el ET 03.365.064.9.. Trabajo: $B, banda de mantenimiento: $C, condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 18. "Suministro e instalación de $A, con canaleta composite-PTR, que incluye piezas para la unión entre ellas, y de acuerdo al ET 03.365.064.9.. Trabajo: $B, banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 19. "Suministro y montaje de $A en canaleta composite-PTR, que incluye piezas para su unión, según ET 03.365.064.9.. Trabajo: $B, banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 20. "Colocación y suministro de $A, en canaleta composite-PTR, con inclusión de piezas para su unión, conforme ET 03.365.064.9.. Trabajo: $B, banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 21. "Instalación y provisión de $A para canaleta composite-PTR, con elementos para la unión de piezas, conforme a ET 03.365.064.9.. Tarea: $B Intervalo de mantenimiento: $C. Aspectos de desempeño: $D" — _qwen2.5:14b_
+- [ ] 22. "Entrega y colocación de $A para canaleta composite-PTR, junto con componentes para la unión, de acuerdo con ET 03.365.064.9.. Ensayo: $B. Periodo de revisión: $C. Características del despliegue: $D" — _qwen2.5:14b_
+- [ ] 23. "Colocación y entrega de $A para canaleta composite-PTR, junto con accesorios para la unión, según ET 03.365.064.9.. Proceso: $B. Ciclo de mantenimiento: $C. Consideraciones del trabajo: $D" — _qwen2.5:14b_
+- [ ] 24. "Puesta a disposición y montaje de $A para canaleta composite-PTR, junto con piezas para la unión, conforme a ET 03.365.064.9.. Ejecución: $B. Duración de mantenimiento: $C. Aspectos a considerar: $D" — _qwen2.5:14b_
 
 ## TEXTO template (OEC100$)
 _Used in 1 concept(s): OEC100$_
 
-- [ ] 1. "Provisión y colocación de bandeja de rejilla galvanizada de $A, que incluye pletinas con tornillos, ménsulas de acero galvanizado y elementos de fijación, además de la conexión a tierra de las mismas. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
-- [ ] 2. "Entrega y ensamblaje de bandeja de rejilla galvanizada de $A, con pletinas atornilladas, ménsulas de acero galvanizado y elementos de sujeción, además de la conexión a tierra de las mismas. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 1. "Incluyendo pletinas con tornillos, ménsulas de acero galvanizado y fijaciones, se suministrará y montará la bandeja de rejilla galvanizada de $A, además de efectuarse la conexión a tierra de las mismas. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 2. "Se procederá al suministro y montaje de la bandeja de rejilla galvanizada de $A, que comprende pletinas con tornillos, ménsulas de acero galvanizado y fijaciones, así como su conexión a tierra. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 3. "La bandeja de rejilla galvanizada de $A se suministrará y montará, comprendiendo pletinas con tornillos, ménsulas de acero galvanizado y fijaciones, además de la conexión a tierra. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 4. "Con pletinas con tornillos, ménsulas de acero galvanizado y fijaciones, se llevará a cabo el suministro y montaje de la bandeja de rejilla galvanizada de $A, junto con su conexión a tierra. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 5. "Montaje y provisión de bandeja de rejilla galvanizada de $A, con pletinas sujetas por tornillos, ménsulas y fijaciones de acero galvanizado, además de su conexión a tierra. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 6. "Montaje y suministro de bandeja de rejilla galvanizada de $A, que comprende pletinas con tornillos, ménsulas de acero galvanizado y fijaciones, además de su adecuada conexión a tierra. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 7. "Provisión e instalación de estructura de rejilla de acero galvanizado de $A, equipada con pletinas sujetadas por tornillos y soportes de acero galvanizado, además de la conexión a tierra. Tareas: $B Zona de mantenimiento: $C Modalidades de realización: $D" — _phi4:latest_
+- [ ] 8. "Entrega e instalación de plataforma de rejilla con tratamiento galvánico de $A, con la incorporación de pletinas atornilladas, soportes de acero galvanizado y elementos de fijación, más la conexión eléctrica a tierra. Actividades: $B Zona de servicio: $C Circunstancias de implementación: $D" — _phi4:latest_
+- [ ] 9. "Suministro e instalación de estructura de rejilla recubierta de zinc $A, que consta de pletinas con tornillos, ménsulas de acero galvanizado y sistemas de fijación, además de su conexión a la red eléctrica. Operaciones: $B Área de mantenimiento: $C Parámetros de ejecución: $D" — _phi4:latest_
+- [ ] 10. "Entrega e ensamblaje de plataforma de rejilla protegida por galvanizado $A, integrando pletinas sujetas por tornillos, ménsulas de material galvanizado y componentes de anclaje, además de su conexión a tierra. Tareas: $B Sección de mantenimiento: $C Condiciones de realización: $D" — _phi4:latest_
+- [ ] 11. "Se proporciona y monta la bandeja de rejilla galvanizada de $A, incluyendo pletinas con tornillos, ménsulas de acero galvanizado y fijaciones, así como la puesta a tierra correspondiente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 12. "Se efectúa el suministro y el montaje de la bandeja de rejilla galvanizada de $A, que incluye pletinas con tornillos, ménsulas de acero galvanizado y fijaciones. Se realiza la puesta a tierra correspondiente. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 13. "Se entrega y se instala la bandeja de rejilla galvanizada de $A, que incluye pletinas con tornillos, ménsulas de acero galvanizado y fijaciones, así como la puesta a tierra necesaria. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 14. "Suministro y montaje de bandeja de rejilla galvanizada de $A, junto con el montaje de pletinas con tornillos, ménsulas de acero galvanizado y fijaciones, y la implementación de la puesta a tierra. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 15. "Suministro y montaje de bandeja de rejilla galvanizada de $A, que incluye el montaje de pletinas con tornillos, ménsulas de acero galvanizado y fijaciones, así como la realización de la puesta a tierra. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 16. "Suministro y montaje de bandeja de rejilla galvanizada de $A, con la inclusión de pletinas con tornillos y ménsulas de acero galvanizado, fijaciones y el trabajo de la puesta a tierra. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
+- [6] near_duplicate_of_kept
+- [7] near_duplicate_of_kept
+- [15] near_duplicate_of_kept
+- [19] near_duplicate_of_kept
 
 ## TEXTO template (OEA030$)
 _Used in 1 concept(s): OEA030$_
 
-- [ ] 1. "Provisión e instalación de conducto UNEX o similar de 1000x150x60 mm, destinado a la conexión con puesto de mando o sistema de videovigilancia local. Completa y conectada. Horario: $A Zona de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 2. "Entrega e instalación de canal UNEX o similar de 1000x150x60 mm, para conexión a puesto de mando o sistema de videovigilancia local. Montaje completo y conexiones realizadas. Horario: $A Área de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 3. "Suministro e instalación de conducto UNEX o similar de 1000x150x60 mm, para conexión a puesto de mando o sistema de videovigilancia local. Montado y conectado en su totalidad. Horario: $A Zona de mantenimiento: $B Condiciones de ejecución: $C"
-- [ ] 4. "Entrega e instalación de conducto UNEX o similar de 1000x150x60 mm, para conexión a puesto de mando o sistema de videovigilancia local. Montaje y conexiones completos. Horario: $A Zona de mantenimiento: $B Condiciones de ejecución: $C"
+- [ ] 1. "El suministro y la instalación de una canaleta UNEX o de un producto equivalente de 1000x150x60 mm se llevan a cabo para la conexión con un puesto de mando o un sistema videográfico local. La canaleta será montada completamente y se realizarán todas las conexiones. Se designa un horario para la instalación: $A, una banda de mantenimiento: $B, y se describen las condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 2. "Para la acometida a un puesto de mando o a un sistema videográfico de control local, se suministrará y montará una canaleta UNEX o su equivalente de 1000x150x60 mm. La instalación incluirá el montaje completo y las conexiones necesarias. Se establece el siguiente horario: $A, se define una banda de mantenimiento: $B, y se fijan las condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 3. "Se llevará a cabo el montaje y el suministro de una canaleta UNEX o de un producto equivalente de 1000x150x60 mm, específicamente para su uso en la conexión a un puesto de mando o a un sistema videográfico de control local. La canaleta será instalada en su totalidad y se conectarán sus componentes. Se indicará el horario de instalación: $A, se asignará una banda de mantenimiento: $B, y se establecerán las condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 4. "Provisión y ensamblaje de conducto UNEX o similar de 1000x150x60 mm, destinado a la conexión de un puesto de mando o sistema de videovigilancia de control local. Instalado y conectado en su totalidad. Horario: $A Zona de mantenimiento: $B Requisitos de ejecución: $C" — _phi4:latest_
+- [ ] 5. "Instalación y entrega de gaveta UNEX o comparable de 1000x150x60 mm, para la conexión a un puesto de control o sistema de CCTV de gestión local. Montado y conectado completamente. Cronograma: $A Rango de mantenimiento: $B Condiciones de puesta en obra: $C" — _phi4:latest_
+- [ ] 6. "Fornecimiento e instalación de bandeja UNEX o similar de 1000x150x60 mm, destinado a la conexión de un puesto de comando o sistema de videocontrol local. Completa y cableada. Horario: $A Zona de mantenimiento: $B Condiciones de ejecución: $C" — _phi4:latest_
+- [ ] 7. "Entrega y colocación de canalización UNEX o equiparable de 1000x150x60 mm, para la acometida a un puesto de control o sistema de vigilancia por video local. Montaje y connexión completados. Programación: $A Área de mantenimiento: $B Condiciones de implementación: $C" — _phi4:latest_
+- [ ] 8. "Se proporcionará y se instalará una canaleta UNEX o su equivalente de 1000x150x60 mm, destinada a la entrada de cableado para el puesto de mando o para el sistema videográfico de mando local. Se completará el montaje y la conexión. Horario: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 9. "Se efectuará el suministro e instalación de una canaleta UNEX o alternativa de 1000x150x60 mm, con destino a la conexión eléctrica o señales del centro de mando o sistema de videomando. Se concluirá con el montaje y soldadura. Horario: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 10. "Se llevará a cabo la entrega y la colocación de una canaleta UNEX o variante de 1000x150x60 mm, con finalidad de la acometida al puesto de mando o al sistema de videomando. Se completa con la instalación y la unión. Horario: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 11. "Se proveerá y se montará una canaleta UNEX o alternativa de 1000x150x60 mm, orientada hacia la alimentación eléctrica o señales del puesto de mando o del sistema videográfico de mando local. Se finalizará con el montaje y la conexión. Horario: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 12. "Suministro y montaje de canalón UNEX o similar de 1000x150x60 mm, para suministro de puesto de mando o sistema videográfico de mando local. Instalación y conexiones completas. Condiciones de ejecución: $C, horario: $A, banda de mantenimiento: $B" — _qwen2.5:14b_
+- [ ] 13. "Suministro y colocación de canalización UNEX o alternativa de 1000x150x60 mm, para entrada a puesto de mando o a sistema de monitorización de control. Instalación completa, incluyendo conexiones. Banda de mantenimiento: $B, horario: $A, condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 14. "Suministro y instalación de canalización UNEX o de similar a 1000x150x60 mm, para conexión con puesto de mando o sistema de videovigilancia de control. Integración completa, incluyendo el ensamblaje y la conexión. Condiciones de ejecución: $C, banda de mantenimiento: $B, horario: $A" — _qwen2.5:14b_
+- [ ] 15. "Suministro y montaje de canalización UNEX o igual a 1000x150x60 mm, para conexión al puesto de mando o al sistema de videovigilancia de control. Instalación completa, con ensamblaje y conexión. Horario: $A, banda de mantenimiento: $B, condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 16. "Instalación y entrega de canalón UNEX o de marca similar de 1000x150x60 mm, destinado para la conexión al puesto de control o al sistema de vigilancia local. Montaje completo y conexiones incluidas. Horario de trabajo: $A Período de mantenimiento: $B Circunstancias de ejecución: $C" — _qwen2.5:14b_
+- [ ] 17. "Suministro e instalación de canalización UNEX o de otra marca análoga de 1000x150x60 mm, para la distribución eléctrica al puesto de mando o al sistema de vigilancia. Montaje y conexiones completadas. Horario: $A Intervalo de mantenimiento: $B Condiciones de instalación: $C" — _qwen2.5:14b_
+- [ ] 18. "Suministro y colocación de canalón UNEX o similar de 1000x150x60 mm, destinado a la conexión al puesto de control o al sistema videográfico de mando local. Montaje completo y conexiones incluidas. Horario: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
+- [ ] 19. "Entrega e instalación de canalización UNEX o equivalente de 1000x150x60 mm, para distribución eléctrica al puesto de mando o al sistema de vigilancia local. Montaje y conexiones completadas. Horario de trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)']
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C'] new=['$A', '$B', '$C', '$L(%A)', '$M(%B)', '$N(%C)']
 
 ## TEXTO template (OED110$)
 _Used in 1 concept(s): OED110$_
 
-- [ ] 1. "Instalación y ensamblaje de base cilíndrica en roca tipo $A con micropilotes para postes de catenaria CA, desde plataforma o vía. Completamente finalizada. Trabajo: $B. Zona de mantenimiento: $C. Condiciones de ejecución: $D."
-- [ ] 2. "Provisión y colocación de fundación cilíndrica en roca tipo $A con micropilotes para postes de catenaria CA, desde plataforma o vía. Totalmente acabada. Trabajo: $B. Área de mantenimiento: $C. Condiciones de ejecución: $D."
+- [ ] 1. "Instalación de cimentación cilíndrica en roca tipo $A, con micropilotes de tipo $A, para postes de catenaria CA. Se efectúa desde la plataforma o vía, culminada en su totalidad. Trabajo: $B. Zona de conservación: $C. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 2. "Montaje de estructura cimentada cilíndrica sobre roca, dotada con micropilotes $A, destinada a postes de catenaria CA. Se realiza desde plataforma o vía y se considera completamente finalizado. Trabajo: $B. Área de cuidado: $C. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 3. "Se efectúa el suministro y colocación de cimentación cilíndrica en roca, equipada con micropilotes $A, para postes de catenaria CA. Se lleva a cabo desde la plataforma o vía, estando totalmente concluida. Trabajo: $B. Zona de mantenimiento: $C. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 4. "Ejecutada la cimentación cilíndrica en roca con micropilotes de tipo $A, dirigida a postes de catenaria CA, desde la plataforma o vía. Se considera totalmente concluida. Trabajo: $B. Sector de mantenimiento: $C. Condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 5. "Entrega y colocación de base cilíndrica sobre roca con micropilotes modelo $A destinada a soportar postes de catenaria CA, efectuada desde plataforma o vía. Finalizada en su totalidad. Labor: $B. Área de mantenimiento: $C. Circunstancias de ejecución: $D." — _phi4:latest_
+- [ ] 6. "Provisión y instalación de estructura cimentada cilíndrica sobre roca, con micropilotes clase $A, para sustentar postes catenaria CA desde la plataforma o vía. Proyecto finalizado. Tarea: $B. Región de mantenimiento: $C. Requisitos de ejecución: $D." — _phi4:latest_
+- [ ] 7. "Provisión y establecimiento de base cilíndrica sobre roca con micropilotes, tipo $A, para postes de línea catenaria CA, desde la plataforma o vía. Conclusión completa. Labor asignada: $B. Área de cuidado: $C. Aspectos de realización: $D." — _phi4:latest_
+- [ ] 8. "Se realiza el suministro y montaje de cimentación cilíndrica tipo $A en roca con micropilotes destinados a postes de catenaria CA, desde plataforma o vía. La obra se entrega completamente terminada. Se especifican los trabajos: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 9. "La entrega y configuración de cimentación cilíndrica en roca se efectúa con micropilotes tipo $A, destinados a postes de catenaria CA, desde plataforma o vía. Se completa el proyecto en su totalidad. Se indica el tipo de trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 10. "Se efectúa el suministro y montaje de cimentación cilíndrica tipo $A en roca con micropilotes, especialmente diseñados para postes de catenaria CA, desde plataforma o vía. Se entrega la obra en estado completo. Se detallan los trabajos: $B. Banda de mantenimiento: $C. Se definen las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 11. "Se lleva a cabo la instalación y suministro de cimentación cilíndrica con micropilotes tipo $A en roca, especialmente para postes de la catenaria CA, desde plataforma o vía. Se entrega la obra completamente finalizada. Se especifican los trabajos: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 12. "Suministro y colocación de fundación cilíndrica tipo $A en roca con micropilotes para postes de catenaria CA, tanto desde plataforma como vía. Incluye todos los trabajos: $B. La banda de mantenimiento es: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 13. "Colocación y suministro de cimentación cilíndrica en roca tipo $A con micropilotes para postes de catenaria CA, realizada tanto desde plataforma como vía. Incluye finalización total. El trabajo incluye: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 14. "Suministro e instalación de fundación cilíndrica tipo $A en roca con micropilotes para postes de catenaria CA, efectuada desde plataforma o vía. Incluye terminación completa. Los trabajos incluidos son: $B. La banda de mantenimiento requerida es: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 15. "Provisión y colocación de la fundación cilíndrica tipo $A en roca con micropilotes para postes de catenaria CA, realizada desde plataforma o vía. Incluye finalización completa. Trabajos incluidos: $B. Banda de mantenimiento requerida: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 16. "Instalación y provisión de soporte cilíndrico en roca tipo $A, con micropilotes para apoyos de catenaria CA, ejecutado desde plataforma o vía. Producto completo. Actividades: $B. Zona de mantenimiento: $C. Criterios de desarrollo: $D." — _qwen2.5:14b_
+- [ ] 17. "Provisión y colocación de fundación cilíndrica en roca tipo $A, con micropilotes para postes de catenaria CA, desde plataforma o vía. Ejecución completa. Tareas: $B. Manto de conservación: $C. Especificaciones de desarrollo: $D." — _qwen2.5:14b_
+- [ ] 18. "Colocación y entrega de soporte cilíndrico en roca tipo $A, con micropilotes para apoyos de catenaria CA, desde plataforma o vía. Integralmente completado. Actividades: $B. Área de mantenimiento: $C. Criterios de realización: $D." — _qwen2.5:14b_
+- [ ] 19. "Distribución e instalación de fundación cilíndrica en roca tipo $A, con micropilotes para postes de catenaria CA, desde plataforma o vía. Totalmente acabado. Trabajos: $B. Zona de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [1] quantities_not_conserved: numbers []→[('100', 1)], units []→[('%', 1)]
 
 ## TEXTO template (OEC090$)
 _Used in 1 concept(s): OEC090$_
 
-- [ ] 1. "Instalación y provisión de percha para cables con $A fichas, incluyendo los materiales necesarios para su montaje como tacos de acero, tornillos y topes. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 1. "Se suministrará y montará una percha para cables con $A fichas, incluyendo los materiales necesarios para su instalación como tacos de acero, tornillos y topes. La ejecución del trabajo: $B, banda de mantenimiento: $C, y las condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 2. "La percha para cables con $A fichas será suministrada y montada, incluyendo los materiales necesarios para su instalación como tacos de acero, tornillos y topes. Se llevará a cabo el trabajo: $B, banda de mantenimiento: $C, bajo las condiciones de ejecución: $D." — _phi4:latest_
+- [ ] 3. "Será realizado el suministro y montaje de una percha para cables con $A fichas, incluyendo los materiales necesarios para su instalación, tales como tacos de acero, tornillos y topes. Se describirá el trabajo: $B, banda de mantenimiento: $C, y las condiciones de ejecución serán: $D." — _phi4:latest_
+- [ ] 4. "El montaje de la percha para cables, que incluye $A fichas y los materiales necesarios como tacos de acero, tornillos y topes, será suministrado. El trabajo: $B, banda de mantenimiento: $C, y las condiciones de ejecución: $D serán consideradas." — _phi4:latest_
+- [ ] 5. "Instalación y provisión de percha para cables con $A fichas, para lo cual se incluirán tacos de acero, tornillos y topes necesarios. Condiciones de ejecución: $D Trabajo: $B Banda de mantenimiento: $C" — _phi4:latest_
+- [ ] 6. "Incluyendo tacos de acero, tornillos y topes necesarios, se realiza el suministro y montaje de percha para cables con $A fichas. Condiciones de ejecución: $D Banda de mantenimiento: $C Trabajo: $B" — _phi4:latest_
+- [ ] 7. "Con la instalación de percha para cables con $A fichas incluyéndose los materiales necesarios como tacos de acero, tornillos y topes. Condiciones de ejecución: $D Trabajo: $B Banda de mantenimiento: $C" — _phi4:latest_
+- [ ] 8. "Percha para cables con $A fichas se suministra e instala, incluyendo tacos de acero, tornillos y topes necesarios. Trabajo: $B Condiciones de ejecución: $D Banda de mantenimiento: $C" — _phi4:latest_
+- [ ] 9. "Se suministra y se monta percha para cables con $A fichas, incluyendo materiales necesarios para su instalación, tales como tacos de acero, tornillos y topes. Se realiza el trabajo: $B. Se establece la banda de mantenimiento: $C. Se definen las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 10. "Se proporciona y se instala percha para cables con $A fichas, junto con los materiales necesarios para su montaje, entre ellos tacos de acero, tornillos y topes. Se efectúa el trabajo: $B. Se designa la banda de mantenimiento: $C. Se determinan las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 11. "Se entrega y se coloca percha para cables con $A fichas, junto con los materiales requeridos para su instalación, tales como tacos de acero, tornillos y topes. Se ejecuta el trabajo: $B. Se establece la banda de mantenimiento: $C. Se determinan las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 12. "Instalación y provisión de percha para cables con $A fichas, incluyendo los materiales necesarios para su colocación, tales como tacos de acero, tornillos y topes. Condiciones de trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 13. "Se realiza el suministro y montaje de percha para cables con $A fichas, incluyendo los materiales requeridos para su instalación, como tacos de acero, tornillos y topes. Condiciones de trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 14. "Se llevará a cabo la instalación y el suministro de percha para cables con $A fichas, incluyendo los materiales necesarios para su instalación, tales como tacos de acero, tornillos y topes. Condiciones de trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 15. "Instalación y provisión de soporte para cables equipado con $A fichas, junto con todos los elementos esenciales para su configuración, como clavijas de acero, tuercas y abrazaderas. Actividad: $B Periodo de mantenimiento: $C Aspectos de realización: $D" — _qwen2.5:14b_
+- [ ] 16. "Entrega y colocación de soporte para cable con $A fichas, en conjunto con accesorios indispensables para su instalación, tales como clavijas de acero, tuercas y mordazas. Ejecución: $B Intervalo de mantenimiento: $C Requisitos de ejecución: $D" — _qwen2.5:14b_
+- [ ] 17. "Configuración y entrega de soporte para cable con $A fichas, acompañado de componentes esenciales para su instalación, tales como clavijas de acero, tuercas y abrazaderas. Tarea: $B Período de mantenimiento: $C Criterios de ejecución: $D" — _qwen2.5:14b_
+- [ ] 18. "Entrega y colocación de soporte para cable con $A fichas, junto con elementos necesarios para su instalación, tales como piquetas de acero, tuercas y mordazas. Desempeño: $B Fase de mantenimiento: $C Aspectos de realización: $D" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
-- [2] near_duplicate_of_kept
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R3 [0] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R3 [1] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R3 [2] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- phi4:latest/R3 [3] sentinels_not_preserved: missing=['P2', 'P3', 'P4'] extra_or_dup=[]
+- [11] near_duplicate_of_kept
+- [14] near_duplicate_of_kept
 
 ## TEXTO template (OEC120$)
 _Used in 1 concept(s): OEC120$_
 
-- [ ] 1. "Provisión e instalación de complemento de caja de registro de composite-PRFV tipo $A ya existente. Trabajo: $B Zona de mantenimiento: $C Condiciones de ejecución: $D"
-- [ ] 2. "Suministro e instalación de aditamento de caja de registro de composite-PRFV tipo $A ya instalado. Trabajo: $B Área de mantenimiento: $C Condiciones de ejecución: $D"
-- [ ] 3. "Entrega e instalación de accesorio de caja de registro de composite-PRFV tipo $A ya existente. Trabajo: $B Sector de mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 1. "Montaje y suministro de suplemento para arqueta de registro de composite-PRFV tipo $A ya existente, con las condiciones de ejecución: $D, para el trabajo: $B y en la banda de mantenimiento: $C" — _phi4:latest_
+- [ ] 2. "Trabajo: $B - Suministro y montaje de suplemento de arqueta de registro de composite-PRFV tipo $A existente, con condiciones de ejecución: $D, y dentro de la banda de mantenimiento: $C" — _phi4:latest_
+- [ ] 3. "Instalación y entrega de adición a la arqueta de registro de composite-PRFV tipo $A previamente existente. Proyecto: $B. Área de servicio: $C. Requisitos de implementación: $D." — _phi4:latest_
+- [ ] 4. "Entrega y colocación de complemento a la caja de registro de materiales compuestos-PRFV tipo $A ya instalado. Labor: $B. Zona de explotación: $C. Parámetros de ejecución: $D." — _phi4:latest_
+- [ ] 5. "Provisión y ensamblaje de extensión para la arqueta de registro de composite-PRFV tipo $A ya en funcionamiento. Actividad: $B. Sector de conservación: $C. Criterios de realización: $D." — _phi4:latest_
+- [ ] 6. "Suministro y ensamblaje de añadido a la caja de registro de composite-PRFV tipo $A ya ubicada. Empleo: $B. Sección de cuidado: $C. Normas de realización: $D." — _phi4:latest_
+- [ ] 7. "Se suministrarán y montarán los suplementos de arqueta de registro de composite-PRFV tipo $A. Se detallará el trabajo: $B. Se indicará la banda de mantenimiento: $C, y se especificarán las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 8. "El suministro y el montaje de suplementos de arqueta de registro de composite-PRFV tipo $A se realizarán. Se definirá la labor correspondiente: $B. Se mencionará la franja de mantenimiento: $C, y se detallarán las circunstancias para la ejecución: $D." — _qwen2.5:14b_
+- [ ] 9. "Se efectuarán el suministro y montaje de los suplementos de arqueta de registro de composite-PRFV del tipo $A. Se describirá el trabajo: $B. Se indicará la sección para mantenimiento: $C, y se enumerarán las condiciones de la ejecución: $D." — _qwen2.5:14b_
+- [ ] 10. "Se llevará a cabo el suministro y montaje de suplementos de arqueta de registro de composite-PRFV tipo $A. Se especificará el trabajo: $B. Se mencionará la banda de mantenimiento: $C, y se detallarán las condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 11. "Montaje y provisión del suplemento de arqueta de registro composite-PRFV tipo $A, incluido trabajo: $B, banda de mantenimiento: $C, y condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 12. "Incluye el suministro y montaje del suplemento de arqueta de registro composite-PRFV tipo $A, además del trabajo: $B, banda de mantenimiento: $C, y condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 13. "Se entrega y monta un suplemento de arqueta de registro composite-PRFV tipo $A. Las condiciones del trabajo son: $B. La banda de mantenimiento es: $C. Las condiciones de ejecución son: $D." — _qwen2.5:14b_
+- [ ] 14. "Se realiza el montaje y se proporciona el suplemento de arqueta de registro composite-PRFV tipo $A. Esto incluye las especificaciones de trabajo: $B, banda de mantenimiento: $C, y condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 15. "Instalación y dotación de complemento de arqueta de registro composite-PRFV tipo $A actual Trabajo: $B Zona de conservación: $C Aspectos operativos: $D" — _qwen2.5:14b_
+- [ ] 16. "Provisión y colocación de aditamento de arqueta de registro composite-PRFV modelo $A vigente Ejecución: $B Zona de intervención: $C Circunstancias de explotación: $D" — _qwen2.5:14b_
+- [ ] 17. "Suministro y puesta en obra de complemento de caja de registro composite-PRFV tipo $A disponible Tarea: $B Sector de mantenimiento: $C Consideraciones de implementación: $D" — _qwen2.5:14b_
+- [ ] 18. "Entrega y emplazamiento de componente adicionado a arqueta de registro composite-PRFV tipo $A actual Ejecución: $B Zona de preservación: $C Normas de implementación: $D" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R1 [1] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R1 [2] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- phi4:latest/R1 [3] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- [2] near_duplicate_of_kept
 - [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
 
 ## TEXTO template (OEA080$)
 _Used in 1 concept(s): OEA080$_
 
-- [ ] 1. "Provisión y colocación de cubierta para conducto de hormigón tipo $A, que comprende la instalación y la eliminación de tierras excedentes. Labor: $B Zona de conservación: $C Circunstancias de realización: $D"
-- [ ] 2. "Entrega y fijación de tapa para canalización hormigonada tipo $A, incluyendo instalación y desecho de tierras sobrantes. Actividad: $B Zona de cuidado: $C Parámetros de ejecución: $D"
-- [ ] 3. "Suministro y colocación de cubierta para conducto de hormigón tipo $A, que incluye instalación y extracción de tierras excedentes. Tarea: $B Área de mantenimiento: $C Condiciones de ejecución: $D"
-- [ ] 4. "Provisión y fijación de tapa para canal de hormigón tipo $A, que abarca la instalación y la eliminación de tierras sobrantes. Trabajo: $B Zona de mantenimiento: $C Condiciones de ejecución: $D"
-- [ ] 5. "Entrega y colocación de cubierta para conducto de hormigón tipo $A, que comprende la instalación y la retirada de tierras excedentes. Labor: $B Zona de cuidado: $C Circunstancias de ejecución: $D"
-- [ ] 6. "Suministro y fijación de tapa para canalización hormigonada tipo $A, incluyendo instalación y desecho de tierras sobrantes. Actividad: $B Área de mantenimiento: $C Parámetros de ejecución: $D"
+- [ ] 1. "Incluyendo el montaje y la retirada de las tierras sobrantes, se suministra y monta la tapa para la canaleta de hormigón tipo $A. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 2. "Se incluye el montaje y la retirada de las tierras sobrantes para el suministro y montaje de la tapa de canaleta de hormigón tipo $A. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 3. "Montaje e instalación de tapa para canaleta de hormigón tipo $A, que incluye la retirada de tierras sobrantes. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 4. "La tapa para canaleta de hormigón tipo $A se suministra y monta, incluyendo el desmontaje y retirada de tierras sobrantes. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _phi4:latest_
+- [ ] 5. "Se proporcionará y se instalará la tapa para la conducción enterrada de hormigón tipo $A, incluyendo la remoción de tierras innecesarias después del montaje. Se determinará el trabajo según $B. La banda de mantenimiento será de $C. Se garantizarán las condiciones de ejecución conforme a $D." — _qwen2.5:14b_
+- [ ] 6. "Se realizará la entrega y montaje de la tapa para el canalón de hormigón tipo $A, incluyendo la extracción de tierras adicionales posteriores al montaje. La extensión del trabajo estará definida por $B. El área de mantenimiento requerida será de $C. Se especificarán las condiciones de ejecución según $D." — _qwen2.5:14b_
+- [ ] 7. "Se efectuará el suministro y montaje de la tapa para el canal de hormigón tipo $A, incluyendo la limpieza de tierras adicionales después del montaje. Se especificará la duración y el alcance del trabajo conforme a $B. Se establecerá la banda de mantenimiento en $C. Se detallarán las condiciones de ejecución según $D." — _qwen2.5:14b_
+- [ ] 8. "Se realizará la entrega y colocación de la tapa para la conducción enterrada de hormigón tipo $A, incluyendo la eliminación de tierras excedentes tras el montaje. Se determinará el trabajo según los parámetros especificados en $B. Se definirá el área de mantenimiento como $C. Se establecerán las condiciones de ejecución conforme a $D." — _qwen2.5:14b_
+- [ ] 9. "Suministro y montaje de tapa ajustada para la canalización de hormigón de tipo $A. Este proceso incluye la instalación y la eliminación de tierras residuales. A continuación se detallan las condiciones: Trabajo: $B, Banda de mantenimiento: $C, Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 10. "Ofrecemos el suministro y el montaje de tapas para canaletas de hormigón tipo $A, incluido el despeje de tierras no utilizadas durante el proceso. Se especifican las siguientes condiciones: Trabajo: $B, Banda de mantenimiento: $C, y Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 11. "Se proporciona el suministro y el montaje de la tapa para la canalización de hormigón tipo $A. Este servicio incluye la instalación y la eliminación de los residuos de tierra generados. Las condiciones específicas son: Trabajo: $B, Banda de mantenimiento: $C, y Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 12. "Suministro y montaje de tapa para la conducción enterrada de hormigón tipo $A, incluyendo la instalación y la remoción de tierras sobrantes. Condiciones: Trabajo: $B, Banda de mantenimiento: $C, y Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 13. "Instalación y configuración de la tapa para la canalización de hormigón tipo $A, que incluye la colocación y la eliminación de tierras adicionales. Operaciones: $B Zona de trabajo: $C Circunstancias de implementación: $D" — _qwen2.5:14b_
+- [ ] 14. "Entrega y colocación de tapa para canalización de hormigón tipo $A, compuesta por la instalación y limpieza de tierras restantes. Actividades: $B Límite de trabajo: $C Condiciones de despliegue: $D" — _qwen2.5:14b_
+- [ ] 15. "Provisión y ajuste de tapa para conducción enterrada de hormigón tipo $A, con la finalidad de colocar y remover tierras inútiles. Tareas: $B Límite operacional: $C Ambientación de ejecución: $D" — _qwen2.5:14b_
+- [ ] 16. "Suministro e instalación de tapa para canalización de hormigón tipo $A, que comprende la ubicación de la tapa y la eliminación de tierras sobrantes. Tareas: $B Zona de intervención: $C Consideraciones de implementación: $D" — _qwen2.5:14b_
+
+_Dropped by validation gates (not reviewable):_
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
 
 ## TEXTO template (OEB090$)
 _Used in 1 concept(s): OEB090$_
 
-- [ ] 1. "Provisión e instalación de conducto de acero galvanizado de $A, incluyendo herrajes de sujeción y caja de registro en proporción adecuada, con mandrilado incluido. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
-- [ ] 2. "Suministro e instalación de tubería de acero galvanizado de $A, con herrajes de sujeción y caja de registro proporcionales, incluyendo mandrilado. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
-- [ ] 3. "Entrega e instalación de tubo de acero galvanizado de $A, con herrajes de sujeción y caja de registro en proporción adecuada, incluyendo mandrilado. Trabajo: $B Mantenimiento: $C Condiciones de ejecución: $D"
+- [ ] 1. "Se proporcionará y montará el tubo de acero galvanizado de $A, incluyendo la proporción apropiada de herrajes de sujeción y caja de registro, con mandrilado incluido. Se llevará a cabo el trabajo: $B, con banda de mantenimiento: $C, bajo las condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 2. "Se efectuará el suministro y montaje del tubo de acero galvanizado de $A, incluyendo la proporción necesaria de herrajes de sujeción y caja de registro, con mandrilado incluido. Se realizará el trabajo: $B, con banda de mantenimiento: $C, bajo las condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 3. "Se realizará el montaje y suministro del tubo de acero galvanizado de $A, incluyendo la proporción de herrajes de sujeción y caja de registro necesaria, con mandrilado incluido. El trabajo se llevará a cabo: $B, con banda de mantenimiento: $C, bajo las condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 4. "Se realizará el montaje del tubo de acero galvanizado de $A, incluyendo los herrajes de sujeción y de caja de registro proporcionados en la proporción adecuada, con mandrilado incluido. El trabajo se realizará: $B, con banda de mantenimiento: $C, bajo las condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 5. "Suministro y colocación de tubo de acero galvanizado de $A, con mandrilado incluido, y proporcionando los herrajes de sujeción y la caja de registro necesarios. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 6. "Instalación de tubo de acero galvanizado de $A, con mandrilado incluido, y proporcionando herrajes de sujeción y caja de registro en proporción adecuada. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D" — _qwen2.5:14b_
+- [ ] 7. "Suministro y colocación de tubo de acero galvanizado de $A con mandrilado incluido y proporcionando herrajes de sujeción y caja de registro en proporción adecuada. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 8. "Proporcionar y colocar tubo de acero galvanizado de $A, incluyendo mandrilado y proporcionando herrajes de sujeción y caja de registro en proporción adecuada. Trabajo: $B, Banda de mantenimiento: $C, Condiciones de ejecución: $D." — _qwen2.5:14b_
+- [ ] 9. "Furnicionamiento e instalación de tubo de acero galvanizado de $A, con entrega incluida de piezas auxiliares para soporte y caja de distribución, así como pasante. Tareas a realizar: $B Periodo de mantenimiento: $C Requisitos de despliegue: $D" — _qwen2.5:14b_
+- [ ] 10. "Provisión y colocación de tubo de acero galvanizado de $A, junto con la proporción de accesorios para apoyo y caja de registro, incluyendo mandrilado. Actividades a ejecutar: $B Ciclo de mantenimiento: $C Cláusulas de implementación: $D" — _qwen2.5:14b_
+- [ ] 11. "Entrega y fijación de tubo de acero galvanizado de $A, con adición de material para fijación y caja de distribución, incluyendo mandrilado. Tareas: $B Horario de mantenimiento: $C Reglas de despliegue: $D" — _qwen2.5:14b_
+- [ ] 12. "Suministro e instalación de tubo de acero galvanizado de $A, con entrega de accesorios para sujeción y caja de registro, incluyendo mandrilado. Actividades: $B Periodo de mantenimiento: $C Condiciones de implementación: $D" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [3] near_duplicate_of_kept
-- [4] near_duplicate_of_kept
-- [5] near_duplicate_of_kept
+- phi4:latest/R1 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R1 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R1 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R1 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R2 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [0] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [1] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [2] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
+- phi4:latest/R3 [3] placeholders_not_preserved: original=['$A', '$B', '$C', '$D'] new=['$A', '$B', '$C', '$D', '$L(%B)', '$M(%C)', '$N(%D)']
 
 ## TEXTO template (OEA100$)
 _Used in 1 concept(s): OEA100$_
 
-- [ ] 1. "Cierre de conducto de $A. Requisitos de implementación: $B."
-- [ ] 2. "Sellado de canal de $A. Parámetros de ejecución: $B."
-- [ ] 3. "Obturación de conducto de $A. Condiciones de realización: $B."
-- [ ] 4. "Cierre de conducto de $A. Especificaciones de ejecución: $B."
-- [ ] 5. "Obturación de canal de $A. Requisitos de ejecución: $B."
-- [ ] 6. "Cierre de canal de $A. Parámetros de ejecución: $B."
+- [ ] 1. "Cierre de conducto de $A. Se especifican las condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 2. "Conducción enterrada del tapado de $A. Las condiciones de ejecución son: $B." — _phi4:latest_
+- [ ] 3. "Se realiza el relleno del conducto de $A con las siguientes condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 4. "Se efectúa el tapado de la conductura de $A, para lo cual se aplican las condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 5. "Condiciones de ejecución: $B. Tapado de estructura de $A." — _phi4:latest_
+- [ ] 6. "Tapado de estructura para $A, con las condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 7. "Para $A, se realiza el tapado de estructura. Condiciones de ejecución: $B." — _phi4:latest_
+- [ ] 8. "Se efectúa el tapado de estructura para $A. Las condiciones de ejecución son: $B." — _phi4:latest_
+- [ ] 9. "Cerramiento para la canaleta de $A. Especificaciones de implementación: $B." — _phi4:latest_
+- [ ] 10. "Protección de la canaleta de $A. Requisitos de ejecución: $B." — _phi4:latest_
+- [ ] 11. "Cobertura aplicada a la canaleta de $A. Normas de ejecución: $B." — _phi4:latest_
+- [ ] 12. "Sellado de la canaleta de $A. Criterios de ejecución: $B." — _phi4:latest_
+- [ ] 13. "Se procederá al tapado de canaleta tipo $A. Se establecerán las condiciones para su ejecución según $B." — _qwen2.5:14b_
+- [ ] 14. "La canalización será tapada conforme a las especificaciones $A. Las condiciones para su realización se detallarán en $B." — _qwen2.5:14b_
+- [ ] 15. "Se realizará el tapado de la canaleta de acuerdo con las características $A. Las condiciones de ejecución se definirán en $B." — _qwen2.5:14b_
+- [ ] 16. "Se llevará a cabo el tapado de canaletas según las normas $A. Se detallarán las condiciones de ejecución en $B." — _qwen2.5:14b_
+- [ ] 17. "Protección de la canalización de $A, incluido el tapado de canaleta. Condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 18. "Tapado de canaleta de $A, con consideración de las siguientes condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 19. "Ejecución del tapado de canaleta de $A, con las siguientes condiciones: $B." — _qwen2.5:14b_
+- [ ] 20. "Tapado de la canalización de $A, incluyendo las condiciones de ejecución: $B." — _qwen2.5:14b_
+- [ ] 21. "Protección de la conducción enterrada de $A. Normas para la ejecución: $B." — _qwen2.5:14b_
+- [ ] 22. "Cubrimiento de la canalización de $A. Requisitos de colocación: $B." — _qwen2.5:14b_
+- [ ] 23. "Sellado de la conducción subterránea de $A. Especificaciones para la obra: $B." — _qwen2.5:14b_
+- [ ] 24. "Cierre de la canalización enterrada de $A. Guías para la realización: $B." — _qwen2.5:14b_
 
 ## TEXTO template (OEB190$)
 _Used in 2 concept(s): OEB190$, OEB200$_
 
-- [ ] 1. "Excavación para cables de $A de profundidad y 0,60 m de anchura máxima, $R(%B), con relleno compactado de material escogido de la excavación, capa de arena de $X(%A) de espesor, malla plástica identificadora, carga, descarga y transporte al lugar designado en la obra. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F"
+- [ ] 1. "Se realiza una zanja con una profundidad de $A y una anchura máxima de 0,60 m. El relleno se compacta utilizando material reciclado de la excavación, $R(%B). Se instala una capa de arena de $X(%A) de espesor, junto con una malla de plástico para identificación, y se lleva a cabo la carga, descarga y transporte al sitio designado dentro de la obra. El proceso: $C Banda de mantenimiento: $D Bajo las siguientes condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 2. "Se ejecutará una zanja para cableado de $A de profundidad y 0,60 m de anchura máxima, $R(%B). Se compactará el relleno con material obtenido de la excavación, y se coloca una capa de arena de $X(%A) de espesor, una malla de identificación de plástico, y se gestionará el transporte al lugar especificado en la obra. Tareas: $C Banda de mantenimiento: $D Condiciones bajo las cuales se ejecuta: $F" — _phi4:latest_
+- [ ] 3. "Se crea una zanja para el tendido de cables con $A de profundidad y hasta 0,60 m de anchura, $R(%B). El relleno se compacta con material reciclado de la excavación, se coloca una capa de arena de $X(%A) de espesor, y se instala una malla de identificación de plástico. Además, se maneja la carga, descarga, y transporte al área designada dentro de la obra. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 4. "Se efectúa una zanja con $A de profundidad y 0,60 m de anchura máxima, $R(%B), siendo el relleno compactado con material de la excavación. Se coloca una capa de arena de $X(%A) de espesor, junto con una malla identificadora de plástico, y se procede con la carga, descarga y transporte al lugar predeterminado dentro de la obra. Proceso: $C Banda de mantenimiento: $D Bajo las condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 5. "Conducción subterránea para cables de $A de profundidad y 0,60 m de anchura máxima, $R(%B), con relleno compactado del material escogido de la excavación en su interior, incluyendo una capa de arena de $X(%A) de espesor, rejilla plástica para identificación, y carga, descarga y transporte hasta el lugar de destino dentro de la obra. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 6. "Zanja para cableado de $A de profundidad y 0,60 m de anchura máxima, $R(%B), rellena con material compacto escogido de la excavación; incluye una capa de arena de $X(%A) de espesor y rejilla plástica identificadora. Incluye carga, descarga y transporte hasta el lugar destinado en la obra. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 7. "Zanja para instalación de cables de $A de profundidad y 0,60 m de anchura máxima, $R(%B), rellena con material seleccionado y compactado procedente de la excavación. Incluye una cama de arena de $X(%A) de espesor y una rejilla plástica para identificación. También incluye carga, descarga y transporte al lugar asignado en el interior de la obra. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 8. "Zanja para cableado de $A de profundidad y 0,60 m de anchura máxima, $R(%B), con relleno compactado del material escogido de la excavación. Incluye una capa de arena de $X(%A) de espesor y una rejilla plástica identificadora, además de carga, descarga y transporte hasta el lugar asignado en la obra. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 9. "Excavación para cableado de $A de profundidad y 0,60 m de ancho máximo, $R(%B), y compactación del relleno con material escogido de la zanja, capa de arena de $X(%A) de grosor, placa identificadora de plástico, procedimientos de carga, descarga y traslado al área designada en las instalaciones. Tarea: $C Zona de mantenimiento: $D Circunstancias de ejecución: $F" — _phi4:latest_
+- [ ] 10. "Soterrado para cables de $A de profundidad y 0,60 m de anchura máxima, $R(%B), con rellenado compactado de material extraído en la excavación, base de arena de $X(%A) de grosor, identificador de plástico, y operaciones de carga, descarga, y traslado al sitio especificado dentro de la obra. Labor: $C Área de mantenimiento: $D Condiciones de ejecución: $F" — _phi4:latest_
+- [ ] 11. "Hoyo realizado a $A de profundidad y 0,60 m de ancho total, $R(%B), con compactación del relleno usando material extraído y seleccionado, capa de arena de $X(%A) de grosor, placa identificativa de plástico, y movimientos de carga, descarga y traslado al sitio destinado en la obra. Actividad: $C Zona de conservación: $D Condiciones de implementación: $F" — _phi4:latest_
+- [ ] 12. "Excavación subterránea para cables de $A de profundidad y 0,60 m de anchura máxima, $R(%B), con compactación del material rellenado seleccionado de la excavación, capa de arena de $X(%A) de espesor, marcador de plástico, y procedimientos de carga, descarga y transporte al área designada en la obra. Labor: $C Espacio de mantenimiento: $D Condiciones de realización: $F" — _phi4:latest_
+- [ ] 13. "Se realiza una zanja de profundidad $A y ancho máximo 0,60 m, utilizando $R(%B). La excavación se rellena con material de la misma, compactado y una capa de arena de $X(%A) de espesor. Se instala una malla identificadora de plástico, se realiza la carga, descarga y transporte a la ubicación designada dentro del proyecto. Se especifica el trabajo como $C, se designa una banda de mantenimiento de $D y se establecen las condiciones de ejecución como $F." — _qwen2.5:14b_
+- [ ] 14. "Se proporciona una zanja con una profundidad de $A y ancho de 0,60 m, con la utilización de $R(%B). Se realiza un relleno compactado con material de la misma excavación, incluyendo una capa de arena de $X(%A) de espesor. También se instala una malla de plástico para identificación, y se realiza el transporte, carga y descarga al sitio designado dentro de la obra. Se detallan las tareas como $C, con una banda de mantenimiento de $D y condiciones de ejecución establecidas en $F." — _qwen2.5:14b_
+- [ ] 15. "Se ejecuta una zanja con una profundidad de $A y un ancho máximo de 0,60 m, utilizando $R(%B). El relleno se compacta con el material extraído durante la excavación, incluyendo una capa de arena de $X(%A) de espesor. Se coloca una malla identificadora de plástico, y se realizan las operaciones de carga, descarga y transporte hacia la ubicación designada dentro del proyecto. Los trabajos se especifican como $C, se designa una banda de mantenimiento de $D, y se definen las condiciones de ejecución en $F." — _qwen2.5:14b_
+- [ ] 16. "Se prepara una zanja a una profundidad de $A y un ancho máximo de 0,60 m, empleando $R(%B). Se utiliza el material de la excavación para rellenar y compactar, con una capa de arena de $X(%A) de espesor. Se instala una malla de plástico identificadora, y se realiza la carga, descarga y transporte a la ubicación designada en el sitio de construcción. Se indica el trabajo a realizar en $C, se designa una banda de mantenimiento de $D, y se establecen las condiciones de ejecución en $F." — _qwen2.5:14b_
+- [ ] 17. "Se efectuará una zanja de profundidad $A y anchura máxima 0,60 m, $R(%B), incluido el relleno compactado con material seleccionado de la excavación, cama de arena de $X(%A) de espesor, y rejilla plástica identificadora. Se realizará la carga, descarga y transporte al lugar asignado dentro de la obra. Trabajo: $C. Banda de mantenimiento: $D Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 18. "Se realizará una zanja con profundidad de $A y anchura máxima de 0,60 m, $R(%B), con relleno compactado de material seleccionado de la excavación, cama de arena de $X(%A) de espesor y rejilla plástica identificadora. Se efectuará la carga, descarga y transporte a la ubicación asignada dentro de la obra. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 19. "Se procederá a la excavación de una zanja de $A de profundidad y 0,60 m de anchura máxima, $R(%B). Incluye la colocación de relleno compactado con material seleccionado de la excavación, así como una cama de arena de $X(%A) de espesor y una rejilla plástica identificadora. Se efectuará la carga, descarga y transporte a la ubicación asignada dentro de la obra. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 20. "Excavación de $A de profundidad y 0,60 m como ancho máximo, $R(%B), seguida de compactación del material de excavación, cubierta de arena de $X(%A), colocación de la rejilla de identificación, y la respectiva carga y transportación a la ubicación marcada en las obras. Tareas: $C, zonas de seguridad: $D, condiciones de realización: $F" — _qwen2.5:14b_
+- [ ] 21. "Excavación de zanja para la instalación de cables a una $A de profundidad y 0,60 m de ancho máximo, $R(%B), con relleno compactado del material extranjero de la excavación, cama de arena de $X(%A) de espesor, colocación de la rejilla de identificación, y la correspondiente carga, descarga y transporte al lugar de la obra designado. Trabajos: $C, banda de seguridad: $D, condiciones de ejecución: $F" — _qwen2.5:14b_
+- [ ] 22. "Excavación para la colocación de cables con una profundidad de $A y un ancho máximo de 0,60 m, $R(%B), seguida de relleno compactado con el material extraído, una capa de arena de $X(%A), colocación de la banda de identificación, y la correspondiente carga, descarga y transporte al lugar de la obra designado. Trabajos: $C, banda de seguridad para la obra: $D, condiciones de ejecución: $F" — _qwen2.5:14b_
 
 _Dropped by validation gates (not reviewable):_
-- [1] near_duplicate_of_kept
+- qwen2.5:14b/R3 [0] sentinels_not_preserved: missing=['P2'] extra_or_dup=[]
+- [19] near_duplicate_of_kept
 

@@ -8,25 +8,24 @@ original leaf, summed over (resumen, texto).
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | single_paraphrase | 246 | 470 | 224 | 111 | 4 | 224 | 0 | 0 | 0 | 0 | 0 | 6.11 |
 | single_expansion | 222 | 484 | 262 | 120 | 3 | 262 | 0 | 0 | 0 | 0 | 0 | 14.10 |
-| single_template_paraphrase | 719 | 720 | 1 | 230 | 12 | 0 | 0 | 0 | 0 | 0 | 1 | 12.27 |
+| single_template_paraphrase | 720 | 721 | 1 | 567 | 3 | 0 | 0 | 0 | 0 | 0 | 1 | 19.94 |
 | single_synonym_label | 446 | 447 | 1 | 99 | 7 | 1 | 0 | 0 | 0 | 0 | 0 | 4.57 |
 | single_compression | 272 | 303 | 31 | 50 | 20 | 31 | 0 | 0 | 0 | 0 | 0 | 7.33 |
 | single_reorder | 723 | 726 | 3 | 228 | 10 | 3 | 0 | 0 | 0 | 0 | 0 | 12.25 |
 | single_num_to_text | 181 | 181 | 0 | 39 | 7 | 0 | 0 | 0 | 0 | 0 | 0 | 5.93 |
 | single_unit_expansion | 213 | 216 | 3 | 37 | 20 | 3 | 0 | 0 | 0 | 0 | 0 | 8.64 |
 | single_unit_conversion | 101 | 103 | 2 | 25 | 20 | 2 | 0 | 0 | 0 | 0 | 0 | 6.19 |
-| all_combined | 1414 | 1416 | 2 | 1165 | 130 | 0 | 0 | 0 | 0 | 0 | 2 | 49.29 |
+| all_combined | 1413 | 1415 | 2 | 1981 | 49 | 0 | 0 | 0 | 0 | 0 | 2 | 74.25 |
 
 **all_combined type presence** (variants carrying ≥1 rewrite of the type):
 
 - compression: 466
-- expansion: 1290
+- expansion: 1289
 - num_to_text: 693
-- paraphrase: 1294
-- reorder: 9
-- synonym_label: 1406
-- template_paraphrase (RESUMEN): 1412
-- template_paraphrase (TEXTO): 1392
+- paraphrase: 1293
+- synonym_label: 1405
+- template_paraphrase (RESUMEN): 1413
+- template_paraphrase (TEXTO): 1413
 - unit_conversion: 126
 - unit_expansion: 297
 
