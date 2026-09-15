@@ -71,6 +71,7 @@ __all__ = [
     "Budgets",
     "LeafInventory",
     "PlannedVariant",
+    "is_compatible",
     "load_budgets",
     "leaf_inventory_from_frame",
     "leaf_inventory_from_frames",
@@ -305,14 +306,24 @@ def _axis_value_pairs(parameters: object) -> tuple[tuple[str, str], ...]:
     return tuple(pairs)
 
 
-def leaf_inventory_from_frames(long_df, short_df) -> LeafInventory:
+def leaf_inventory_from_frames(long_df, short_df, *, text_field: str = "combined") -> LeafInventory:
     """The real-data loader: join the long (texto) and short (resumen)
     parquets on ``item_key`` and build the inventory with each leaf's
-    combined original text plus its selected `(axis_label, value)` pairs
-    (from the long frame's ``parameters`` column, when present). Fails loud
-    on a leaf missing from the short frame or on any concept-rule violation
-    (see :func:`_check_parent_rule`).
+    original text plus its selected `(axis_label, value)` pairs (from the
+    long frame's ``parameters`` column, when present). Fails loud on a leaf
+    missing from the short frame or on any concept-rule violation (see
+    :func:`_check_parent_rule`).
+
+    ``text_field`` selects the surface compatibility is judged against:
+    ``"combined"`` (default, ``resumen + " " + texto``) or ``"texto"`` — the
+    latter for TEXTO-only corpora, where a rewrite whose surface appears only
+    in the resumen must NOT count as compatible.
     """
+    if text_field not in ("combined", "texto"):
+        raise ValueError(
+            f"inventory_invalid: text_field must be 'combined' or 'texto', "
+            f"got {text_field!r}"
+        )
     resumen_by_key = dict(zip(short_df["item_key"], short_df["text"]))
     params_by_key = (
         dict(zip(long_df["item_key"], long_df["parameters"]))
@@ -333,7 +344,7 @@ def leaf_inventory_from_frames(long_df, short_df) -> LeafInventory:
         grouped.setdefault(parent_key, []).append(
             (
                 item_key,
-                f"{resumen} {texto}",
+                texto if text_field == "texto" else f"{resumen} {texto}",
                 _axis_value_pairs(params_by_key.get(item_key)),
             )
         )
@@ -448,6 +459,16 @@ def _rewrite_capacity(
 
 
 def _condition_type(condition: str) -> ModificationType:
+    """The modification type a ``single_<type>`` condition isolates.
+
+    Fails loud on any other condition family (``dose_*``, ``probe_*``): those
+    are planned by `dose_ladder`, which never routes through here, so reaching
+    this with one of them is a wiring bug, not a missing feature.
+    """
+    if not condition.startswith(_SINGLE_PREFIX):
+        raise ValueError(
+            f"condition_unknown: {condition!r} is not a single_<type> condition"
+        )
     return ModificationType(condition[len(_SINGLE_PREFIX):])
 
 
@@ -538,6 +559,11 @@ def _compatible(
             return False  # only surfaces inside a longer selected value
 
     return _boundary_search(original_norm, leaf_text)
+
+
+#: Public alias — `dose_ladder` is a second, legitimate consumer of the
+#: leaf<->rewrite compatibility rule; it must not reimplement it.
+is_compatible = _compatible
 
 
 def _draw_rewrites(

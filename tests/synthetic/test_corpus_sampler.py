@@ -414,3 +414,31 @@ def test_proportional_allocation():
     assert n1 + n2 == 6
     assert abs(n1 - 4) <= 1
     assert abs(n2 - 2) <= 1
+
+
+def test_is_compatible_is_public_and_matches_private():
+    from synthetic.corpus_sampler import is_compatible
+    r = _rewrite(ModificationType.NUM_TO_TEXT, "n-alpha")
+    assert is_compatible(r, TOY_TEXT, ()) is True
+    assert is_compatible(r, "texto sin la superficie", ()) is False
+
+
+def test_condition_type_rejects_unknown_family():
+    from synthetic.corpus_sampler import _condition_type
+    with pytest.raises(ValueError, match="condition_unknown"):
+        _condition_type("dose_3")
+
+
+def test_inventory_text_field_texto_excludes_resumen():
+    import pandas as pd
+    long_df = pd.DataFrame({
+        "item_key": ["C1aa"], "parent_key": ["C1$"], "text": ["solo-texto"],
+    })
+    short_df = pd.DataFrame({
+        "item_key": ["C1aa"], "parent_key": ["C1$"], "text": ["solo-resumen"],
+    })
+    from synthetic.corpus_sampler import leaf_inventory_from_frames
+    combined = leaf_inventory_from_frames(long_df, short_df)
+    assert combined.text("C1aa") == "solo-resumen solo-texto"
+    texto_only = leaf_inventory_from_frames(long_df, short_df, text_field="texto")
+    assert texto_only.text("C1aa") == "solo-texto"
