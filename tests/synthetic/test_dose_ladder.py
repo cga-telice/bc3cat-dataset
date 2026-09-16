@@ -653,3 +653,22 @@ def test_build_dose_plan_is_deterministic():
     a = build_dose_plan(pantry, inventory, order, pool, reuse_cap={}, per_count=10)
     b = build_dose_plan(pantry, inventory, order, pool, reuse_cap={}, per_count=10)
     assert key(a) == key(b)
+
+
+def test_committed_dose_configs_load():
+    from pathlib import Path
+    from synthetic.dose_ladder import LADDER_MAX, load_dose_budgets
+
+    root = Path(__file__).resolve().parents[2] / "configs" / "synthetic"
+    dose = load_dose_budgets(root / "variant_budgets_OE_dose.yaml")
+    assert dose.per_count >= 600                 # their §3
+    assert dose.structural_threshold > LADDER_MAX
+    assert dose.reuse_cap.get("num_to_text") == 20
+    # a reserve exists: select_pool returns exactly pool_min leaves and
+    # build_dose_plan raises rather than deliver fewer than per_count ladders
+    assert dose.effective_pool_min > dose.per_count
+
+    probe = load_dose_budgets(root / "variant_budgets_OE_probe.yaml")
+    assert probe.candidate_cap >= dose.effective_pool_min
+    # the probe measures availability, which D1 requires to be cap-free
+    assert probe.reuse_cap == {}

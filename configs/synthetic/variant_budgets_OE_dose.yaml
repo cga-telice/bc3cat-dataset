@@ -1,0 +1,25 @@
+# E3 — DOSE ladder: dose_1..dose_5 over one common leaf pool, nested
+# composition (types(dose_k) subset of types(dose_k+1)), >= 600 items per rung.
+# Caps match the OE corpora so a thin type is not repeated more here than there;
+# they count per RUN, since a leaf's five rungs are built together.
+seed: 42
+per_count: 600
+# The reserve, stated explicitly: select_pool returns exactly pool_min leaves and
+# build_dose_plan raises rather than deliver fewer than per_count ladders, so a
+# pool_min equal to per_count leaves no slack for a leaf whose ladder cannot be
+# built. 750 gives a 25 % margin. Note the trade-off: a larger pool_min demands
+# more leaves at the chosen depth, so it can force select_pool to a shallower d.
+pool_min: 750
+# structural_threshold and candidate_cap are unused by the dose pass itself —
+# build_dose_plan receives the already-selected pool, not the raw candidate
+# set — but load_dose_budgets requires both fields, and select_pool's chosen
+# depth (>= structural_threshold, bounded by what the probe's candidate_cap
+# could surface) depends on the SAME probe run these values describe. Keep
+# them identical to variant_budgets_OE_probe.yaml; a drift here would not
+# fail loudly, only quietly mis-describe what the pool was drawn from.
+structural_threshold: 6
+candidate_cap: 1500
+reuse_cap:
+  num_to_text: 20
+  unit_expansion: 20
+  unit_conversion: 20

@@ -1,0 +1,24 @@
+# E3 — PROBE pass: one single-modification variant per (leaf, available type),
+# TEXTO field only. Two jobs: measure which types really change each leaf's
+# TEXTO (so the dose ladder can promise k planned = k applied, D2), and be the
+# isolated-effects deliverable over the ladder's own leaves (D6).
+# Candidates come from the structural pre-filter: leaves admitting >= 6 types,
+# capped at 1500 to bound render cost (probing all 5000 would be ~30-45k renders
+# for a pool that needs ~750). The cap is split ACROSS concepts by
+# corpus_sampler.allocate, never by truncating the sorted leaf keys.
+#
+# No reuse_cap here, deliberately: this pass MEASURES per-leaf availability, and
+# D1 requires availability to be cap-free. A cap would make a type look
+# unavailable for one leaf and available for another purely by processing order,
+# and would do it with no trace — a capped-out pair never becomes a variant, so
+# the driver never sees it. Caps apply to the ladder config instead, where an
+# exhausted leaf is reverted whole and therefore visible.
+#
+# per_count is carried here only because load_dose_budgets requires the field;
+# the probe pass does not read it (it has no notion of "items per condition" —
+# it emits one variant per (leaf, available type)). Kept equal to the dose
+# config's per_count so the two files do not silently drift.
+seed: 42
+per_count: 600
+structural_threshold: 6
+candidate_cap: 1500
