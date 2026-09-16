@@ -514,14 +514,6 @@ def test_deterministic_output(tmp_path):
 # ----- Task 6: dose_*/probe_* recognition -----------------------------------
 
 
-def test_dose_conditions_are_counted_as_multi_type():
-    from synthetic.corpus_driver import _counts_type_presence
-    assert _counts_type_presence("all_combined") is True
-    assert _counts_type_presence("dose_3") is True
-    assert _counts_type_presence("single_reorder") is False
-    assert _counts_type_presence("probe_reorder") is False
-
-
 def test_dose_condition_expected_count_is_parsed():
     from synthetic.corpus_driver import _expected_applied_count
     assert _expected_applied_count("dose_4") == 4

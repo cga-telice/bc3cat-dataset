@@ -122,16 +122,6 @@ _DOSE_PREFIX = "dose_"
 _PROBE_PREFIX = "probe_"
 
 
-def _counts_type_presence(condition: str) -> bool:
-    """Whether per-type presence is worth tallying for this condition.
-
-    True for the multi-type families — ``all_combined`` and the ``dose_*``
-    rungs, where "which types rode this item" is the thing the QA report has
-    to show. A single-modification condition's presence is its own count.
-    """
-    return condition == _ALL_COMBINED or condition.startswith(_DOSE_PREFIX)
-
-
 def _expected_applied_count(condition: str) -> Optional[int]:
     """The exact number of APPLIED modifications this condition promises.
 
@@ -139,6 +129,11 @@ def _expected_applied_count(condition: str) -> Optional[int]:
     availability, so a shortfall is a bug — see D2). ``None`` where no exact
     promise exists (``all_combined`` stacks whatever applies; ``single_*``
     items are already dropped when their one modification no-ops).
+
+    Per-type presence per dose rung is NOT tallied here: the driver's shared
+    `presence` counter is only surfaced for ``all_combined``, and
+    `scripts/report_dose_ladder.py` computes per-cell presence from the
+    released parquet instead — what shipped, not what was planned.
     """
     if condition.startswith(_DOSE_PREFIX):
         return int(condition[len(_DOSE_PREFIX):])
@@ -669,7 +664,7 @@ def run_corpus(
         row["produced"] += 1
         for rewrite in planned.rewrites:
             uses[planned.condition][rewrite.uid] += 1
-            if _counts_type_presence(planned.condition):
+            if planned.condition == _ALL_COMBINED:
                 key = rewrite.mtype.value
                 if (
                     rewrite.mtype is ModificationType.TEMPLATE_PARAPHRASE
