@@ -270,6 +270,9 @@ def build_probe_plan(
                 continue
             pick = _least_used(cands, None, usage)
             usage[pick.uid] = usage.get(pick.uid, 0) + 1
+            # `corpus_driver._expected_applied_count` relies on every probe_*
+            # variant carrying exactly ONE rewrite (-> expects 1 applied
+            # modification). Keep this a single-rewrite tuple, always.
             plan.append(PlannedVariant(
                 condition=f"probe_{mtype.value}", concept_key=concept,
                 leaf_item_key=leaf, rewrites=(pick,),

@@ -552,3 +552,71 @@ def test_probe_condition_does_not_raise_on_legitimate_noop(tmp_path):
     row = stats.per_condition["probe_synonym_label"]
     assert row["noop_dropped"] == 1
     assert row["produced"] == 0
+
+
+def test_dose_raises_when_a_planned_rewrite_does_not_apply(tmp_path):
+    # Distinguishes an APPLIED-count check from a PLANNED-rewrite-count
+    # check: both rewrites are planned and both pass emission/composition
+    # (so `len(planned.rewrites) == 2`), but the template_paraphrase's
+    # `original` text does not actually occur in CTEST010$'s TEXTO template,
+    # so bc3param's substring splice raises and `apply_rules_logged` skips
+    # it — it never becomes an applied Modification, so
+    # `len(modifications) == 1`. A test built on `len(planned.rewrites)`
+    # instead (e.g. a ghost/unscanned target, as in
+    # `test_target_not_found_skipped_and_counted`) would never reach this
+    # code at all: that failure mode drops the WHOLE variant at emission
+    # (`target_not_found`), before `modifications` is ever built. Only a
+    # rewrite that emits and composes cleanly, then fails to splice at
+    # render time, exercises the applied-count comparison this assertion
+    # exists for.
+    stage = _tiny_stage()
+    inv = scan_chapter(copy.deepcopy(stage))
+    target = next(
+        t
+        for t in inv.by_type[ModificationType.TEMPLATE_PARAPHRASE]
+        if t.dedup_key[0] == "TEXTO" and t.usages[0].concept_key == C1
+    )
+    ghost_splice = _rewrite(
+        ModificationType.TEMPLATE_PARAPHRASE,
+        target.dedup_key,
+        {"original": "this text is not in the template", "new": "irrelevant"},
+        concepts=(C1,),
+    )
+    plan = (
+        PlannedVariant("dose_2", C1, "CTEST010aa", (_syn_diurno(), ghost_splice)),
+    )
+    with pytest.raises(ValueError, match="applied_count_mismatch"):
+        _run(tmp_path, plan, stage=stage)
+
+
+def test_dose_raises_when_more_than_k_rewrites_apply(tmp_path):
+    # The overshoot direction: three rewrites all apply cleanly under a
+    # dose_2 condition (`len(modifications) == 3 != 2`). This is exactly
+    # where an off-by-one in the ladder builder (task 9) would land — a
+    # rung whose rewrite tuple disagrees with the numeral in its own
+    # condition string — and the plain `!=` comparison must catch it too,
+    # not just the shortfall direction.
+    stage = _tiny_stage()
+    inv = scan_chapter(copy.deepcopy(stage))
+    target = next(
+        t
+        for t in inv.by_type[ModificationType.TEMPLATE_PARAPHRASE]
+        if t.dedup_key[0] == "TEXTO" and t.usages[0].concept_key == C1
+    )
+    tipo_rw = _rewrite(
+        ModificationType.SYNONYM_LABEL,
+        ("TIPO", "Normal"),
+        {"original": "Normal", "new": "Estandar"},
+        concepts=(C1,),
+    )
+    tex_rw = _rewrite(
+        ModificationType.TEMPLATE_PARAPHRASE,
+        target.dedup_key,
+        {"original": "Prueba uno con $A en $B", "new": "Prueba uno realizada con $A en $B"},
+        concepts=(C1,),
+    )
+    plan = (
+        PlannedVariant("dose_2", C1, "CTEST010aa", (_syn_diurno(), tipo_rw, tex_rw)),
+    )
+    with pytest.raises(ValueError, match="applied_count_mismatch"):
+        _run(tmp_path, plan, stage=stage)

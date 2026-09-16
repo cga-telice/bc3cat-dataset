@@ -130,6 +130,12 @@ def _expected_applied_count(condition: str) -> Optional[int]:
     promise exists (``all_combined`` stacks whatever applies; ``single_*``
     items are already dropped when their one modification no-ops).
 
+    The ``dose_k`` half of this contract is upheld by the ladder builder
+    (task 9, ``dose_ladder``), which must keep ``len(rewrites) == k`` for
+    every ``dose_k`` variant it plans. The ``probe_*`` half is upheld by
+    :func:`~synthetic.dose_ladder.build_probe_plan`, which always plans a
+    single-rewrite variant per probe (see its ``rewrites=(pick,)``).
+
     Per-type presence per dose rung is NOT tallied here: the driver's shared
     `presence` counter is only surfaced for ``all_combined``, and
     `scripts/report_dose_ladder.py` computes per-cell presence from the
