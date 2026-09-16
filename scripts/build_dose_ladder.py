@@ -83,6 +83,26 @@ def _surviving_types(items_path: Path) -> dict[str, frozenset]:
     return {k: frozenset(v) for k, v in out.items()}
 
 
+def applicability_rows(available, structural, dose_plan) -> list[dict]:
+    """One sidecar row per probed leaf, sorted by leaf.
+
+    ``in_pool`` marks the leaves that got a ladder, not every leaf
+    `select_pool` returned: the pool carries a reserve (``pool_min >
+    per_count``) and an unused reserve leaf has no ladder, so delivering its
+    isolated effects (D6) would pair them with dose effects that do not exist.
+    """
+    ladder_leaves = {p.leaf_item_key for p in dose_plan}
+    return [
+        {
+            "leaf_item_key": leaf,
+            "applicable_types": sorted(t.value for t in structural.get(leaf, ())),
+            "available_types": sorted(t.value for t in available[leaf]),
+            "in_pool": leaf in ladder_leaves,
+        }
+        for leaf in sorted(available)
+    ]
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage-json", required=True)
@@ -229,26 +249,17 @@ def main() -> int:
     }
     out_side = Path(a.applicability)
     out_side.parent.mkdir(parents=True, exist_ok=True)
-    pool_set = set(pool)
+    rows = applicability_rows(available, structural, dose_plan)
     with out_side.open("w", encoding="utf-8", newline="\n") as fh:
-        for leaf in sorted(available):
-            fh.write(json.dumps({
-                "leaf_item_key": leaf,
-                "applicable_types": sorted(t.value for t in structural.get(leaf, ())),
-                "available_types": sorted(t.value for t in available[leaf]),
-                # D6: the isolated-effects deliverable is the probe output
-                # RESTRICTED to the ladder's pool. Everything probed outside it
-                # stays in the release for the report's counts but must not be
-                # delivered, so packaging filters on this flag.
-                "in_pool": leaf in pool_set,
-            }, ensure_ascii=False) + "\n")
+        for row in rows:
+            fh.write(json.dumps(row, ensure_ascii=False) + "\n")
 
     print(json.dumps({
         "candidates": len(candidates),
         "probe_produced": probe_stats.totals["produced"],
         "depth": depth,
         "pool": len(pool),
-        "pool_leaves": len(pool_set),
+        "pool_leaves": sum(row["in_pool"] for row in rows),
         "dose_produced": dose_stats.totals["produced"],
         "depth_histogram": histogram,
         "placeable_histogram": placeable_histogram,

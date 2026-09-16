@@ -54,7 +54,9 @@ def render_report(items: pd.DataFrame, *, depth: int, histogram: dict,
         "construcción (D2): el sondeo verificó la disponibilidad antes de sortear.",
         "",
         f"- profundidad elegida **d = {depth}**",
-        f"- fondo común: **{pool_size} hojas**, las mismas en las cinco celdas",
+        f"- fondo común: **{items['original_key'].nunique()} hojas**, las mismas "
+        f"en las cinco celdas ({pool_size} seleccionadas, "
+        f"{pool_size - items['original_key'].nunique()} de reserva sin usar)",
         f"- histograma de profundidad admitida: `{histogram}`",
         *_placeable_lines(placeable_histogram),
         f"- ítems: **{len(items)}**, hojas distintas: **{items['original_key'].nunique()}**",

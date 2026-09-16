@@ -60,10 +60,11 @@ def load_applicability(path):
     not of the synthetic item: the same leaf's five rungs share it, so storing it
     once avoids repeating the two lists on every record.
 
-    ``in_pool`` says whether the leaf is in the ladder's common pool. D6 delivers
-    the isolated-effects set RESTRICTED to that pool — what was probed outside it
-    stays in the release for the report's counts but is not delivered — so the
-    isolated records are filtered on this flag.
+    ``in_pool`` says whether the leaf got a ladder — the pool's unused reserve
+    leaves are NOT in it. D6 delivers the isolated-effects set RESTRICTED to
+    those leaves — what was probed outside them stays in the release for the
+    report's counts but is not delivered — so the isolated records are filtered
+    on this flag.
     """
     table = {}
     for line in Path(path).read_text(encoding="utf-8").splitlines():
@@ -99,7 +100,7 @@ def apply_applicability(record, table):
 
 
 def in_pool(record, table):
-    """Whether this record's leaf belongs to the ladder's common pool (D6).
+    """Whether this record's leaf got a ladder (D6; see `load_applicability`).
 
     Used to restrict the isolated-effects delivery: the probe release covers
     every candidate leaf that survived, because the corpus report needs those
@@ -272,8 +273,8 @@ def main() -> int:
                 recs = [r for r in recs if in_pool(r, table)]
                 print(f"isolated restricted to the pool: {len(recs)} of {before}")
             if name == "dose":
-                # Every dose leaf is in the pool by construction (task 9 builds
-                # the ladder over exactly select_pool's output), so this cannot
+                # Every dose leaf is in_pool by construction (the orchestrator
+                # sets the flag from the dose plan's own leaves), so this cannot
                 # fail today. It is here because if it ever did — a sidecar
                 # generated from a different run than the plan, or an
                 # orchestrator edit letting a leaf slip out — the delivery would

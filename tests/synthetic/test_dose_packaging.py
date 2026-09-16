@@ -23,6 +23,44 @@ def _load_packager():
     return module
 
 
+def _load_builder():
+    """Import the orchestration script by path, like the other two."""
+    sys.path.insert(0, str(ROOT / "src"))
+    spec = importlib.util.spec_from_file_location(
+        "build_dose_ladder", ROOT / "scripts" / "build_dose_ladder.py",
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_sidecar_marks_in_pool_only_the_leaves_that_got_a_ladder():
+    """El fondo lleva reserva (pool_min > per_count): las hojas de reserva no
+    usadas no tienen escalera, y D6 entrega efectos aislados solo sobre las
+    hojas de la escalera. Marcar el fondo entero entregaría ~150 hojas con
+    efectos aislados y sin escalera."""
+    from synthetic.corpus_sampler import PlannedVariant
+    from synthetic.taxonomy import ModificationType as MT
+
+    mod = _load_builder()
+    available = {"A": frozenset({MT.REORDER}), "B": frozenset({MT.REORDER}),
+                 "C": frozenset({MT.PARAPHRASE})}
+    structural = {"A": frozenset({MT.REORDER, MT.PARAPHRASE})}
+    dose_plan = (
+        PlannedVariant(condition="dose_1", concept_key="C1$", leaf_item_key="A",
+                       rewrites=()),
+    )
+    rows = mod.applicability_rows(available, structural, dose_plan)
+
+    assert [r["leaf_item_key"] for r in rows] == ["A", "B", "C"]
+    assert {r["leaf_item_key"]: r["in_pool"] for r in rows} == {
+        "A": True, "B": False, "C": False,
+    }
+    assert rows[0]["applicable_types"] == ["paraphrase", "reorder"]
+    assert rows[0]["available_types"] == ["reorder"]
+    assert rows[1]["applicable_types"] == []
+
+
 def _sidecar(tmp_path, rows):
     p = tmp_path / "applicability.jsonl"
     p.write_text(
@@ -178,3 +216,20 @@ def test_dose_report_shows_how_many_modifications_fit_per_leaf():
     assert "caben en tramos distintos" not in mod.render_report(
         items, depth=6, histogram={6: 1}, pool_size=1,
     )
+
+
+def test_dose_report_counts_the_ladder_leaves_not_the_reserve():
+    """El fondo seleccionado incluye la reserva; «las mismas en las cinco
+    celdas» solo es cierto de las hojas que recibieron escalera."""
+    mod = _load_reporter()
+
+    items = pd.DataFrame({
+        "item_key": ["a1", "a2", "b1", "b2"],
+        "original_key": ["L1", "L1", "L2", "L2"],
+        "concept_key": ["C1$"] * 4,
+        "modification_types": [["reorder"], ["reorder", "paraphrase"]] * 2,
+        "modification_count": [1, 2, 1, 2],
+    })
+    text = mod.render_report(items, depth=6, histogram={6: 3}, pool_size=3)
+    assert "**2 hojas**, las mismas en las cinco celdas" in text
+    assert "3 seleccionadas" in text and "1 de reserva sin usar" in text

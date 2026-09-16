@@ -2666,6 +2666,24 @@ El esquema de su §5 con los dos campos de D1, más `MANIFEST.md` y
 > tras estos endurecimientos, porque tocan codigo a nivel de modulo que la ruta
 > antigua tambien importa). Ese script produce artefactos ya entregados.
 
+> **Corregido tras la prueba de humo de la tarea 14: `in_pool` marca las hojas
+> con escalera, no el fondo entero.** El fondo lleva reserva (`pool_min: 750`
+> frente a `per_count: 600`, tarea 9), y el sidecar marcaba `in_pool` sobre
+> todo lo que devolvía `select_pool`. Las hojas de reserva no usadas no tienen
+> escalera, pero sí se entregaban sus efectos aislados: unas 150 hojas en la
+> corrida real, justo el desajuste de población que D6 existe para evitar. La
+> afirmación `dose_leaf_outside_pool` no podía verlo, porque comprueba el
+> sentido contrario. En la prueba de humo: efectos aislados sobre 8 hojas y
+> escalera sobre 5.
+>
+> Ahora `applicability_rows` (función pura en `build_dose_ladder.py`, antes sin
+> test) toma la marca de las hojas del propio plan de dosis, y `pool_leaves` en
+> el JSON de salida cuenta esas hojas. El informe decía «fondo común: N hojas,
+> las mismas en las cinco celdas» con N = fondo seleccionado; ahora cuenta las
+> hojas de la escalera y muestra aparte las seleccionadas y la reserva sin usar.
+> Relanzada la prueba de humo: aislados y escalera sobre las mismas 5 hojas, y
+> el parquet de dosis byte a byte idéntico a la corrida anterior.
+
 - [ ] **Paso 1: Escribe los tests que fallan**
 
 Crea `tests/synthetic/test_dose_packaging.py`:
