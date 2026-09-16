@@ -107,12 +107,19 @@ def test_manifest_lists_a_sha256_per_file(tmp_path):
     assert hashlib.sha256(b"[]").hexdigest() in text
 
 
-def test_dose_report_shows_per_cell_type_presence(tmp_path):
+def _load_reporter():
+    """Import the script by path (it lives in scripts/, not a package)."""
+    sys.path.insert(0, str(ROOT / "src"))
     spec = importlib.util.spec_from_file_location(
         "report_dose_ladder", ROOT / "scripts" / "report_dose_ladder.py",
     )
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_dose_report_shows_per_cell_type_presence(tmp_path):
+    mod = _load_reporter()
 
     items = pd.DataFrame({
         "item_key": ["a_syn_1", "b_syn_1", "c_syn_1"],
@@ -125,3 +132,28 @@ def test_dose_report_shows_per_cell_type_presence(tmp_path):
     assert "dose_1" in text and "dose_2" in text
     assert "reorder" in text and "paraphrase" in text
     assert "| 1 | 2 |" in text or "dose_1 | 2" in text   # 2 items at count 1
+    # the nine admitted types are always columns, even ones never seen here —
+    # a type absent from the whole corpus must still show as a visible 0.
+    assert "unit_conversion" in text and "unit_expansion" in text
+    assert "template_paraphrase" in text
+
+
+def test_dose_report_flags_cells_below_target(tmp_path):
+    mod = _load_reporter()
+
+    items = pd.DataFrame({
+        "item_key": ["a_syn_1", "b_syn_1", "c_syn_1"],
+        "original_key": ["L1", "L1", "L2"],
+        "concept_key": ["C1$", "C1$", "C1$"],
+        "modification_types": [["reorder"], ["reorder", "paraphrase"], ["paraphrase"]],
+        "modification_count": [1, 1, 2],
+    })
+    # dose_1 has 2 items (meets target=2), dose_2 has 1 item (short by 1).
+    text = mod.render_report(items, depth=6, histogram={6: 2}, pool_size=2, target=2)
+    assert "| dose_1 | 2 | ok |" in text
+    assert "| dose_2 | 1 | SHORT by 1 |" in text
+    assert "Aviso" in text and "1 celdas" in text and "objetivo de 2" in text
+
+    # no short cells -> no warning line
+    ok_text = mod.render_report(items, depth=6, histogram={6: 2}, pool_size=2, target=1)
+    assert "Aviso" not in ok_text

@@ -14,10 +14,16 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from collections import Counter
 from pathlib import Path
 
 import pandas as pd
+
+REPO = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO / "src"))
+
+from synthetic.corpus_sampler import NINE_TYPES  # noqa: E402
 
 
 def _types(value):
@@ -25,7 +31,7 @@ def _types(value):
 
 
 def render_report(items: pd.DataFrame, *, depth: int, histogram: dict,
-                  pool_size: int) -> str:
+                  pool_size: int, target: int = 600) -> str:
     counts = Counter(int(c) for c in items["modification_count"])
     lines = [
         "# E3 — informe del corpus de dosis (escalera anidada)",
@@ -41,13 +47,40 @@ def render_report(items: pd.DataFrame, *, depth: int, histogram: dict,
         "",
         "## Celdas por dosis",
         "",
-        "| dosis | ítems |",
-        "|---|---|",
+        f"El plan construye exactamente `per_count` escaleras completas o levanta",
+        f"(`pool_too_small`/`DoseLadderError`); una celda por debajo de **{target}**",
+        "aquí solo puede venir del emisor filtrando ítems ya planificados —",
+        "duplicado exacto de `(resumen, texto)` en el corpus.",
+        "",
+        "| dosis | ítems | estado |",
+        "|---|---|---|",
     ]
+    short_cells: list[tuple[int, int]] = []
     for k in sorted(counts):
-        lines.append(f"| dose_{k} | {counts[k]} |")
+        n = counts[k]
+        if n >= target:
+            estado = "ok"
+        else:
+            deficit = target - n
+            estado = f"SHORT by {deficit}"
+            short_cells.append((k, deficit))
+        lines.append(f"| dose_{k} | {n} | {estado} |")
 
-    all_types = sorted({t for v in items["modification_types"] for t in _types(v)})
+    if short_cells:
+        lines += [
+            "",
+            f"**Aviso: {len(short_cells)} celdas por debajo del objetivo de {target}.**"
+            " El plan construye exactamente `per_count` escaleras o levanta, asi que "
+            "un deficit aqui viene del emisor: ítems descartados despues de "
+            "planificarse, por duplicado exacto de `(resumen, texto)` en el corpus. "
+            "Revisa el informe QA de la pasada de dosis.",
+        ]
+
+    # The nine admitted types (E3_DOSE_DESIGN.md §3), always the columns — a
+    # type that never fired anywhere in the corpus must still show as a zero,
+    # not disappear from the table, so a hollowed-out thin type (small pantry,
+    # e.g. unit_conversion/unit_expansion) cannot go unnoticed.
+    all_types = [t.value for t in NINE_TYPES]
     lines += [
         "",
         "## Presencia por tipo dentro de cada celda",
@@ -56,6 +89,9 @@ def render_report(items: pd.DataFrame, *, depth: int, histogram: dict,
         "sistemáticamente sobre-representado. La tasa de un tipo CRECE con la",
         "dosis por construcción (k tipos de un repertorio de d), y eso es una",
         "propiedad de la dosis, no un sesgo.",
+        "",
+        "Las columnas son los nueve tipos admitidos (fijos); un 0 significa que",
+        "el tipo nunca disparó en esa celda, no que quedó sin tabular.",
         "",
         "| dosis | " + " | ".join(all_types) + " |",
         "|" + "---|" * (len(all_types) + 1),
@@ -76,13 +112,15 @@ def main() -> int:
     ap.add_argument("--pool-size", type=int, required=True)
     ap.add_argument("--histogram", default="{}",
                     help="JSON dict from build_dose_ladder.py's output")
+    ap.add_argument("--target", type=int, default=600,
+                    help="minimum items expected per dose cell (§3); default 600")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
 
     items = pd.read_parquet(a.items)
     text = render_report(
         items, depth=a.depth, histogram=json.loads(a.histogram),
-        pool_size=a.pool_size,
+        pool_size=a.pool_size, target=a.target,
     )
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_text(text, encoding="utf-8")
