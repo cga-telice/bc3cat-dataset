@@ -1734,6 +1734,30 @@ git commit -m "synthetic: dose_ladder — seleccion del fondo comun por profundi
 Refinamiento 3: las cinco escaleras de una hoja se construyen juntas; si un
 peldaño no sale, se revierte la hoja entera y se pasa a la reserva.
 
+> **Ampliado durante la tarea 9 (commits `6a5eb79` y `17bb27d`).** El plan
+> original dejaba dos huecos que la propia estructura de la funcion puso a la
+> vista, y los dos los senalo el implementador al pedirsele juicio sobre ellos:
+>
+> 1. **No habia reserva.** `select_pool` devuelve exactamente `pool_min` hojas y
+>    `effective_pool_min` cae por defecto en `per_count`, asi que la primera hoja
+>    cuyo peldano fallara reducia en silencio lo entregado en TODOS los peldanos
+>    a la vez. No hace falta tocar `build_dose_plan`: ya recorre el fondo entero
+>    y para al llegar a `per_count`, asi que un fondo mas largo *ya es* una
+>    reserva. Lo que faltaba era pedirla, y se pide en el YAML —`pool_min: 750`
+>    frente a `per_count: 600`—, con el numero visible donde se busca. Cambiar el
+>    valor por defecto en silencio solo habria movido la sorpresa.
+> 2. **El deficit no dejaba rastro.** Ahora `build_dose_plan` **levanta**
+>    (`pool_exhausted`) si no puede construir las `per_count` escaleras: entrega
+>    exactamente lo pedido o para. Un deficit acorta todos los peldanos por igual
+>    y el conjunto incumpliria el suelo del §3, y la pauta del repo —la
+>    afirmacion del emisor de la tarea 6— es parar antes de publicar un artefacto
+>    degradado.
+>
+> Con ello desaparece tambien una asercion floja del plan: el test del tope
+> afirmaba `len(leaves) < 12`, que habria pasado igual con cero escaleras
+> construidas. Lo sustituyen dos tests que fijan las dos mitades del contrato
+> por separado.
+
 - [ ] **Paso 1: Escribe los tests que fallan**
 
 ```python
@@ -1788,22 +1812,41 @@ def test_build_dose_plan_uses_the_same_leaves_at_every_rung():
     assert len(set(map(frozenset, per_rung.values()))) == 1   # one population
 
 
-def test_build_dose_plan_skips_a_leaf_whose_ladder_cannot_be_built():
-    """A cap that exhausts mid-ladder must drop the WHOLE leaf and move to the
-    reserve — a partial ladder would break the common population (D5)."""
+def test_build_dose_plan_raises_when_the_pool_cannot_fill_the_request():
+    """A shortfall is loud, not silent: every rung would be short by the same
+    amount, so the delivered set would miss the per-count floor. The cap here
+    allows only 2 uses of `paraphrase` in the whole run, so most leaves that
+    need it cannot build a ladder."""
+    from synthetic.dose_ladder import DoseLadderError, build_dose_plan, nested_order
+
+    inventory, pantry = _ladder_setup(n_leaves=12)
+    pool = tuple(f"C1{i:03d}" for i in range(12))
+    order = nested_order({leaf: frozenset(NINE_SUBSET) for leaf in pool}, seed=42)
+    with pytest.raises(DoseLadderError, match="pool_exhausted"):
+        build_dose_plan(
+            pantry, inventory, order, pool,
+            reuse_cap={"paraphrase": 1}, per_count=12,
+        )
+
+
+def test_build_dose_plan_draws_on_the_reserve_when_a_ladder_fails():
+    """A pool longer than `per_count` IS the reserve: leaves whose ladder
+    cannot be built are skipped whole (D5 — a partial ladder would break the
+    common population) and later candidates take their place, so the request
+    is still met in full."""
     from synthetic.dose_ladder import LADDER_MAX, build_dose_plan, nested_order
 
     inventory, pantry = _ladder_setup(n_leaves=12)
     pool = tuple(f"C1{i:03d}" for i in range(12))
     order = nested_order({leaf: frozenset(NINE_SUBSET) for leaf in pool}, seed=42)
-    # 2 rewrites x cap 1 = 2 uses of paraphrase in the whole run: at most 2
-    # leaves can carry it, so fewer than 12 ladders are buildable
     plan = build_dose_plan(
-        pantry, inventory, order, pool, reuse_cap={"paraphrase": 1}, per_count=12,
+        pantry, inventory, order, pool,
+        reuse_cap={"paraphrase": 1}, per_count=4,
     )
     leaves = {p.leaf_item_key for p in plan}
-    assert len(plan) == len(leaves) * LADDER_MAX     # every kept leaf is complete
-    assert len(leaves) < 12                          # some were skipped
+    assert len(leaves) == 4                      # request met exactly
+    assert len(plan) == 4 * LADDER_MAX           # every accepted leaf complete
+    assert leaves <= set(pool)
 
 
 def test_build_dose_plan_is_deterministic():
@@ -1848,6 +1891,13 @@ def build_dose_plan(
 
     Reuse caps count per RUN here, not per condition: the five rungs of a leaf
     are built together, so a single counter is the only coherent accounting.
+
+    Either delivers exactly ``per_count`` complete ladders or raises
+    :class:`DoseLadderError` — it never returns a short plan. A partial
+    delivery would be silent (every rung short by the same amount, with
+    nothing in the return value to say so), and this repo's pattern for that
+    class of degradation (see the emitter's ``applied_count_mismatch``) is to
+    stop rather than let it ship unnoticed.
     """
     concept_of = _concept_of(inventory)
     # resolved once per concept, not once per leaf (see `compatible_rewrites`)
@@ -1891,7 +1941,238 @@ def build_dose_plan(
             ))
         accepted += 1
 
+    if accepted < per_count:
+        raise DoseLadderError(
+            f"pool_exhausted: only {accepted} of {per_count} requested ladders "
+            f"could be built from a pool of {len(pool)} leaves. Every rung is "
+            f"short by the same amount, so the delivered set would miss the "
+            f"per-count floor. Raise `pool_min` above `per_count` in the dose "
+            f"config to give the run a reserve, or lower `per_count`"
+        )
+
     return tuple(plan)
+
+
+def nested_order(
+    admitted: Mapping[str, frozenset],
+    seed: int,
+) -> dict[str, tuple[ModificationType, ...]]:
+    """Per-leaf type order whose prefixes ARE the ladder rungs (D4).
+
+    Two greedy stages, both least-used-first with the leaf's own deterministic
+    shuffle as tie-break:
+
+    1. WHICH types the leaf uses — the ``LADDER_MAX`` types used fewest times
+       across leaves so far. A leaf admitting more types than there are rungs
+       must leave some out, and leaving that unbalanced skews the top cell
+       directly: ``presence(t, LADDER_MAX) = n_leaves - n_leaves_excluding_t``.
+    2. In WHICH ORDER — the type placed at this position across the fewest
+       leaves so far, among the ones stage 1 chose.
+
+    ``types(dose_k)`` is the length-``k`` prefix, so consecutive rungs differ
+    by exactly one added modification (D4).
+
+    On balance (their §3), stated honestly: stage 1 makes the top cell even.
+    Cells below it cannot be made exactly even by a greedy, because the
+    positions are NOT independent — which type a leaf places at position ``p``
+    constrains what remains for ``p+1`` — so a small residual spread survives.
+    It is a residual of a few leaves per cell against cells of order a
+    hundred, and it is noise rather than bias: it does not favour particular
+    types across seeds (measured — see the corpus report). On real data the
+    binding constraint is admission anyway (types are admitted by very
+    different numbers of leaves), which no ordering policy can undo.
+
+    Raises :class:`DoseLadderError` for a leaf admitting fewer than
+    ``LADDER_MAX`` types — the pool selection must have excluded it already.
+    """
+    inclusion: Counter = Counter()
+    per_position: list[Counter] = [Counter() for _ in range(LADDER_MAX)]
+    order: dict[str, tuple[ModificationType, ...]] = {}
+    for leaf in sorted(admitted):
+        types = admitted[leaf]
+        if len(types) < LADDER_MAX:
+            raise DoseLadderError(
+                f"ladder_too_deep: leaf {leaf!r} admits {len(types)} types, "
+                f"needs {LADDER_MAX} — it should not be in the pool"
+            )
+        rng = random.Random(seed ^ zlib.crc32(leaf.encode("utf-8")))
+        shuffled = rng.sample(sorted(types, key=lambda t: t.value), len(types))
+        rank = {t: i for i, t in enumerate(shuffled)}
+
+        # stage 1: which types ride this leaf's ladder at all
+        used = sorted(shuffled, key=lambda t: (inclusion[t], rank[t]))[:LADDER_MAX]
+        for mtype in used:
+            inclusion[mtype] += 1
+
+        # stage 2: their order, so each position stays even too.
+        # `rank[t]` is load-bearing here, not decorative: only for the first
+        # leaf does `used` come out in shuffle order (all `inclusion` counters
+        # are 0, so stage 1's key degenerates to `rank`). From the second leaf
+        # on, `inclusion` dominates stage 1's sort, so `remaining`'s order says
+        # nothing about the leaf's shuffle — without this key the tie-break
+        # would be an artifact of stage 1 rather than the documented policy.
+        chosen: list[ModificationType] = []
+        for position in range(LADDER_MAX):
+            remaining = [t for t in used if t not in chosen]
+            pick = min(remaining, key=lambda t: (per_position[position][t], rank[t]))
+            chosen.append(pick)
+            per_position[position][pick] += 1
+        order[leaf] = tuple(chosen)
+    return order
+
+
+def depth_histogram(available: Mapping[str, frozenset]) -> dict[int, int]:
+    """``{number of available types: number of leaves}`` — the measurement D5
+    defers to, and a row of the corpus report."""
+    return dict(sorted(Counter(len(v) for v in available.values()).items()))
+
+
+def select_pool(
+    available: Mapping[str, frozenset],
+    concept_of: Mapping[str, str],
+    *,
+    pool_min: int,
+    min_depth: int,
+) -> tuple[int, tuple[str, ...]]:
+    """The common leaf pool (D5): ``(depth, leaves)``.
+
+    Picks the DEEPEST ``d >= min_depth`` for which at least ``pool_min`` leaves
+    admit ``d`` types, then draws ``pool_min`` of them SPREAD ACROSS CONCEPTS
+    via :func:`_spread_across_concepts` — including the note there on keeping
+    ``pool_min`` comfortably above the number of concepts, since under-
+    provisioning it drops whole concepts silently rather than erroring.
+
+    All five rungs run on these same leaves, so the count cells share one
+    population and the dose effect carries no leaf-difficulty selection. That
+    is D5's guarantee, and it is unaffected by how the pool is spread: which
+    leaves are chosen is orthogonal to every rung using the identical set.
+
+    ``concept_of`` must cover every key of ``available``; use
+    :func:`leaf_concept_map` on the inventory the probe ran on. A gap raises
+    :class:`DoseLadderError` — see below — rather than a bare ``KeyError``,
+    since both this function and ``leaf_concept_map`` are public and an
+    external caller can trip it.
+
+    Raises :class:`DoseLadderError` when ``concept_of`` is missing a leaf, or
+    when no depth fills the pool — silently dropping to a shallower ladder
+    would void D5's guarantee.
+    """
+    if min_depth <= LADDER_MAX:
+        raise DoseLadderError(
+            f"min_depth_too_shallow: {min_depth} <= LADDER_MAX={LADDER_MAX} "
+            f"would leave rung {LADDER_MAX} with no choice of composition (D5)"
+        )
+    missing = sorted(set(available) - set(concept_of))
+    if missing:
+        raise DoseLadderError(
+            f"concept_of_incomplete: {len(missing)} leaf/leaves in `available` "
+            f"have no concept, e.g. {missing[:3]} — pass "
+            f"`leaf_concept_map(inventory)` for the inventory the probe ran on"
+        )
+    histogram = depth_histogram(available)
+    deepest = max(histogram, default=0)
+    for depth in range(deepest, min_depth - 1, -1):
+        eligible = tuple(sorted(k for k, v in available.items() if len(v) >= depth))
+        if len(eligible) >= pool_min:
+            qualifying: dict[str, list[str]] = {}
+            for leaf in eligible:
+                qualifying.setdefault(concept_of[leaf], []).append(leaf)
+            return depth, _spread_across_concepts(pool_min, qualifying)
+    raise DoseLadderError(
+        f"pool_too_small: no depth >= {min_depth} yields {pool_min}+ leaves; "
+        f"depth histogram = {histogram}"
+    )
+
+
+@dataclass(frozen=True)
+class DoseBudgets:
+    """Validated E3 budgets.
+
+    ``per_count`` items per rung (their §3 asks for >= 600);
+    ``structural_threshold`` is the minimum number of STRUCTURALLY applicable
+    types a leaf needs to enter the probe candidate set (D5 wants room to
+    choose at rung 5, so it must exceed ``LADDER_MAX``); ``candidate_cap``
+    bounds the probe's render cost.
+    """
+
+    seed: int
+    per_count: int
+    structural_threshold: int
+    candidate_cap: int
+    reuse_cap: Mapping[str, int]
+    pool_min: Optional[int] = None
+
+    @property
+    def effective_pool_min(self) -> int:
+        """Leaves the pool must reach: ``pool_min`` when given, else one leaf
+        per rung item (the ladder uses the SAME leaves at every rung).
+
+        Leaving ``pool_min`` unset is a trap: the fallback to ``per_count``
+        gives :func:`build_dose_plan` NO reserve, so any leaf whose ladder
+        fails to build (a capped-out type) reduces the delivered count below
+        ``per_count`` and the run raises rather than silently shipping short
+        (D-shortfall). A config that wants the ``per_count`` floor honoured
+        must set ``pool_min`` above it. That reserve is not free, though: a
+        larger ``pool_min`` demands more leaves at the chosen depth, which
+        can force :func:`select_pool` to settle for a shallower ``d``.
+        """
+        return self.per_count if self.pool_min is None else self.pool_min
+
+    def to_driver_budgets(self) -> Budgets:
+        """Adapter for `run_corpus(budgets=...)`, which only reads
+        ``targets``/``seed``/``reuse_cap`` to render the QA report."""
+        return Budgets(
+            seed=self.seed,
+            targets={f"dose_{k}": self.per_count for k in range(1, LADDER_MAX + 1)},
+            reuse_cap=dict(self.reuse_cap),
+        )
+
+
+def _positive_int(value: object, what: str) -> int:
+    if type(value) is not int or value <= 0:
+        raise ValueError(
+            f"dose_budgets_invalid: {what} must be a positive int, got {value!r}"
+        )
+    return value
+
+
+def load_dose_budgets(path: Path) -> DoseBudgets:
+    """Read + validate the E3 budgets YAML. Fails loud
+    (``ValueError("dose_budgets_invalid: ...")``)."""
+    raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+    if not isinstance(raw, dict):
+        raise ValueError(f"dose_budgets_invalid: {Path(path).name} is not a mapping")
+
+    seed = _positive_int(raw.get("seed"), "seed")
+    per_count = _positive_int(raw.get("per_count"), "per_count")
+    threshold = _positive_int(raw.get("structural_threshold"), "structural_threshold")
+    candidate_cap = _positive_int(raw.get("candidate_cap"), "candidate_cap")
+    if threshold <= LADDER_MAX:
+        raise ValueError(
+            f"dose_budgets_invalid: structural_threshold must exceed "
+            f"LADDER_MAX={LADDER_MAX} so rung {LADDER_MAX} still has a choice "
+            f"(D5), got {threshold}"
+        )
+    pool_min = raw.get("pool_min")
+    if pool_min is not None:
+        pool_min = _positive_int(pool_min, "pool_min")
+
+    reuse_cap = raw.get("reuse_cap") or {}
+    if not isinstance(reuse_cap, dict):
+        raise ValueError("dose_budgets_invalid: reuse_cap is not a mapping")
+    valid = {t.value for t in NINE_TYPES}
+    for mtype, cap in reuse_cap.items():
+        if mtype not in valid:
+            raise ValueError(
+                f"dose_budgets_invalid: reuse_cap type {mtype!r} is not one of "
+                f"the nine admitted types"
+            )
+        _positive_int(cap, f"reuse_cap[{mtype}]")
+
+    return DoseBudgets(
+        seed=seed, per_count=per_count, structural_threshold=threshold,
+        candidate_cap=candidate_cap, reuse_cap=dict(reuse_cap), pool_min=pool_min,
+    )
 ```
 
 Añade `"build_dose_plan"` a `__all__`.
@@ -1974,6 +2255,12 @@ candidate_cap: 1500
 # they count per RUN, since a leaf's five rungs are built together.
 seed: 42
 per_count: 600
+# The reserve, stated explicitly: select_pool returns exactly pool_min leaves and
+# build_dose_plan raises rather than deliver fewer than per_count ladders, so a
+# pool_min equal to per_count leaves no slack for a leaf whose ladder cannot be
+# built. 750 gives a 25 % margin. Note the trade-off: a larger pool_min demands
+# more leaves at the chosen depth, so it can force select_pool to a shallower d.
+pool_min: 750
 structural_threshold: 6
 candidate_cap: 1500
 reuse_cap:
