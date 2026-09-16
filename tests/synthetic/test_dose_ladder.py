@@ -5,6 +5,8 @@ pantry. No real parquet, no LLM, no bc3param.
 """
 from __future__ import annotations
 
+from collections import Counter
+
 import pytest
 
 from synthetic.corpus_sampler import LeafInventory
@@ -14,6 +16,10 @@ from synthetic.taxonomy import ModificationType
 
 MT = ModificationType
 C1, C2 = "C1$", "C2$"
+NINE_SUBSET = (
+    MT.PARAPHRASE, MT.EXPANSION, MT.TEMPLATE_PARAPHRASE, MT.SYNONYM_LABEL,
+    MT.COMPRESSION, MT.REORDER,
+)
 
 
 def _target(dedup, concepts=(C1,)):
@@ -275,3 +281,99 @@ def test_build_probe_plan_is_deterministic():
     b = build_probe_plan(pantry, inventory, ("C1aa", "C1ab"))
     key = lambda pl: [(p.condition, p.leaf_item_key, tuple(r.uid for r in p.rewrites)) for p in pl]
     assert key(a) == key(b)
+
+
+def test_nested_order_prefixes_are_the_rungs():
+    from synthetic.dose_ladder import LADDER_MAX, nested_order
+
+    admitted = {f"L{i:03d}": frozenset(NINE_SUBSET) for i in range(20)}
+    order = nested_order(admitted, seed=42)
+    for leaf, types in order.items():
+        assert len(types) == LADDER_MAX
+        assert len(set(types)) == LADDER_MAX            # no repeats
+        assert set(types) <= admitted[leaf]
+        for k in range(1, LADDER_MAX):
+            assert set(types[:k]) < set(types[:k + 1])  # strictly nested
+
+
+def test_nested_order_is_deterministic():
+    from synthetic.dose_ladder import nested_order
+
+    admitted = {f"L{i:03d}": frozenset(NINE_SUBSET) for i in range(20)}
+    assert nested_order(admitted, seed=42) == nested_order(admitted, seed=42)
+    assert nested_order(admitted, seed=43) != nested_order(admitted, seed=42)
+
+
+def test_nested_order_balances_the_top_cell_exactly():
+    """Stage 1 balances WHICH types ride each ladder, and the top cell is
+    exactly that: presence(t, LADDER_MAX) = n_leaves - n_leaves_excluding_t.
+    With a uniform admitted set and n divisible by the type count, the optimum
+    is reachable, so anything but an exact split means stage 1 is not working.
+    """
+    from synthetic.dose_ladder import LADDER_MAX, nested_order
+
+    admitted = {f"L{i:03d}": frozenset(NINE_SUBSET) for i in range(180)}
+    order = nested_order(admitted, seed=42)
+    presence = Counter(t for types in order.values() for t in types)
+    assert set(presence) == set(NINE_SUBSET)
+    assert max(presence.values()) == min(presence.values())
+
+
+def test_nested_order_keeps_every_cell_near_even():
+    """Their §3, achievable half. Cells below the top cannot be exactly even —
+    the positions are correlated, since what a leaf places early constrains
+    what remains — so this pins that the residual spread stays small relative
+    to the cell, not that it is zero. The tolerance is deliberately far below
+    any effect size the dose-response study could resolve; its purpose is to
+    catch a mechanism that has stopped balancing, not to certify optimality.
+    """
+    from synthetic.dose_ladder import LADDER_MAX, nested_order
+
+    admitted = {f"L{i:03d}": frozenset(NINE_SUBSET) for i in range(180)}
+    order = nested_order(admitted, seed=42)
+    for k in range(1, LADDER_MAX + 1):
+        presence = Counter(t for types in order.values() for t in types[:k])
+        assert set(presence) == set(NINE_SUBSET)
+        mean = sum(presence.values()) / len(presence)
+        assert max(presence.values()) - min(presence.values()) <= max(2, 0.05 * mean)
+
+
+def test_nested_order_has_no_systematic_per_type_bias():
+    """Their §3, stated so it can actually be measured.
+
+    Averaged over many seeds, every type's presence at a rung must sit close
+    to the cell mean. Spread under a single seed is noise — averaging shrinks
+    it by roughly sqrt(n_seeds) — while a type that is systematically favoured
+    survives the average. That is the failure their §3 names (in the existing
+    stacked set `template_paraphrase` rides 100 % of items), and it is what
+    this pins.
+
+    Deliberately NOT phrased as "which type is most present": with inclusion
+    balanced exactly, cells tie outright under most seeds, and on a tie the
+    "most present" type is decided by sort order rather than by anything this
+    function did.
+    """
+    from synthetic.dose_ladder import LADDER_MAX, nested_order
+
+    admitted = {f"L{i:03d}": frozenset(NINE_SUBSET) for i in range(180)}
+    seeds = tuple(range(1, 13))
+    for k in range(1, LADDER_MAX + 1):
+        totals: Counter = Counter()
+        for seed in seeds:
+            for types in nested_order(admitted, seed).values():
+                totals.update(types[:k])
+        assert set(totals) == set(NINE_SUBSET)
+        means = {t: totals[t] / len(seeds) for t in NINE_SUBSET}
+        cell_mean = sum(means.values()) / len(means)
+        worst = max(abs(m - cell_mean) for m in means.values())
+        assert worst <= 0.05 * cell_mean, (
+            f"rung {k}: per-type mean presence {means} deviates by {worst:.2f} "
+            f"from the cell mean {cell_mean:.2f}"
+        )
+
+
+def test_nested_order_rejects_a_leaf_that_cannot_fill_the_ladder():
+    from synthetic.dose_ladder import DoseLadderError, nested_order
+
+    with pytest.raises(DoseLadderError, match="ladder_too_deep"):
+        nested_order({"L1": frozenset(list(NINE_SUBSET)[:2])}, seed=42)

@@ -63,6 +63,7 @@ __all__ = [
     "load_dose_budgets",
     "candidate_leaves",
     "build_probe_plan",
+    "nested_order",
 ]
 
 #: Rungs of the ladder: dose_1 .. dose_5 (their §1).
@@ -278,6 +279,68 @@ def build_probe_plan(
                 leaf_item_key=leaf, rewrites=(pick,),
             ))
     return tuple(plan)
+
+
+def nested_order(
+    admitted: Mapping[str, frozenset],
+    seed: int,
+) -> dict[str, tuple[ModificationType, ...]]:
+    """Per-leaf type order whose prefixes ARE the ladder rungs (D4).
+
+    Two greedy stages, both least-used-first with the leaf's own deterministic
+    shuffle as tie-break:
+
+    1. WHICH types the leaf uses — the ``LADDER_MAX`` types used fewest times
+       across leaves so far. A leaf admitting more types than there are rungs
+       must leave some out, and leaving that unbalanced skews the top cell
+       directly: ``presence(t, LADDER_MAX) = n_leaves - n_leaves_excluding_t``.
+    2. In WHICH ORDER — the type placed at this position across the fewest
+       leaves so far, among the ones stage 1 chose.
+
+    ``types(dose_k)`` is the length-``k`` prefix, so consecutive rungs differ
+    by exactly one added modification (D4).
+
+    On balance (their §3), stated honestly: stage 1 makes the top cell even.
+    Cells below it cannot be made exactly even by a greedy, because the
+    positions are NOT independent — which type a leaf places at position ``p``
+    constrains what remains for ``p+1`` — so a small residual spread survives.
+    It is far below any effect size the dose-response study could resolve, and
+    it is noise rather than bias: it does not favour particular types across
+    seeds. On real data the binding constraint is admission anyway (types are
+    admitted by very different numbers of leaves), which no ordering policy
+    can undo.
+
+    Raises :class:`DoseLadderError` for a leaf admitting fewer than
+    ``LADDER_MAX`` types — the pool selection must have excluded it already.
+    """
+    inclusion: Counter = Counter()
+    per_position: list[Counter] = [Counter() for _ in range(LADDER_MAX)]
+    order: dict[str, tuple[ModificationType, ...]] = {}
+    for leaf in sorted(admitted):
+        types = admitted[leaf]
+        if len(types) < LADDER_MAX:
+            raise DoseLadderError(
+                f"ladder_too_deep: leaf {leaf!r} admits {len(types)} types, "
+                f"needs {LADDER_MAX} — it should not be in the pool"
+            )
+        rng = random.Random(seed ^ zlib.crc32(leaf.encode("utf-8")))
+        shuffled = rng.sample(sorted(types, key=lambda t: t.value), len(types))
+        rank = {t: i for i, t in enumerate(shuffled)}
+
+        # stage 1: which types ride this leaf's ladder at all
+        used = sorted(shuffled, key=lambda t: (inclusion[t], rank[t]))[:LADDER_MAX]
+        for mtype in used:
+            inclusion[mtype] += 1
+
+        # stage 2: their order, so each position stays even too
+        chosen: list[ModificationType] = []
+        for position in range(LADDER_MAX):
+            remaining = [t for t in used if t not in chosen]
+            pick = min(remaining, key=lambda t: (per_position[position][t], rank[t]))
+            chosen.append(pick)
+            per_position[position][pick] += 1
+        order[leaf] = tuple(chosen)
+    return order
 
 
 @dataclass(frozen=True)
