@@ -49,7 +49,7 @@ from .corpus_sampler import (
     PlannedVariant,
     is_compatible,
 )
-from .pantry import ApprovedRewrite
+from .pantry import ApprovedRewrite, Pantry
 from .target_scanner import ChapterInventory
 from .taxonomy import ModificationType
 
@@ -60,6 +60,8 @@ __all__ = [
     "compatible_rewrites",
     "DoseBudgets",
     "load_dose_budgets",
+    "candidate_leaves",
+    "build_probe_plan",
 ]
 
 #: Rungs of the ladder: dose_1 .. dose_5 (their §1).
@@ -149,6 +151,104 @@ def compatible_rewrites(
         if hits:
             out[mtype] = hits
     return out
+
+
+def _concept_of(inventory: LeafInventory) -> dict[str, str]:
+    """``{leaf_item_key: concept_key}`` for the whole inventory."""
+    return {
+        leaf: concept
+        for concept in inventory.concepts()
+        for leaf in inventory.leaves(concept)
+    }
+
+
+def candidate_leaves(
+    chapter_inventory: ChapterInventory,
+    inventory: LeafInventory,
+    *,
+    threshold: int,
+    cap: int,
+) -> tuple[str, ...]:
+    """Leaves worth probing: at least ``threshold`` STRUCTURALLY applicable
+    types, capped at ``cap`` (deterministic, sorted by item key).
+
+    The filter is structural on purpose (D5): it costs no renders and cannot
+    bias the pool by anything that depends on the pantry or the seed.
+    """
+    picked: list[str] = []
+    for leaf, concept in sorted(_concept_of(inventory).items()):
+        types = structural_types(
+            chapter_inventory, concept, inventory.text(leaf),
+            inventory.axis_values(leaf),
+        )
+        if len(types) >= threshold:
+            picked.append(leaf)
+        if len(picked) >= cap:
+            break
+    return tuple(picked)
+
+
+def _least_used(
+    candidates: Sequence[ApprovedRewrite],
+    cap: Optional[int],
+    usage: Mapping[str, int],
+    used_dedup: frozenset = frozenset(),
+) -> Optional[ApprovedRewrite]:
+    """Least-used-first pick honouring ``cap`` and the per-variant dedup set.
+
+    ``None`` when every candidate is capped out or dedup-blocked. Ties break on
+    ``uid`` so the pick is reproducible.
+    """
+    for rewrite in sorted(candidates, key=lambda r: (usage.get(r.uid, 0), r.uid)):
+        if cap is not None and usage.get(rewrite.uid, 0) >= cap:
+            continue
+        if rewrite.dedup_key in used_dedup:
+            continue
+        return rewrite
+    return None
+
+
+def build_probe_plan(
+    pantry: Pantry,
+    inventory: LeafInventory,
+    leaves: Sequence[str],
+    *,
+    reuse_cap: Optional[Mapping[str, int]] = None,
+) -> tuple[PlannedVariant, ...]:
+    """One single-modification variant per (leaf, available type).
+
+    Condition ``probe_<type>``, so leaves stay unique within a condition and
+    the driver's report breaks the probe down per type. Caps (when given) only
+    throttle WHICH rewrite is picked; a type with every candidate capped out is
+    skipped for that leaf and the deficit shows up in the report.
+    """
+    caps = dict(reuse_cap or {})
+    concept_of = _concept_of(inventory)
+    # `Pantry.for_concept` walks the whole pantry but its result depends only
+    # on the concept, so resolve it once per concept rather than once per leaf.
+    applicable: dict[str, dict] = {}
+    usage: dict[str, int] = {}
+    plan: list[PlannedVariant] = []
+    for leaf in sorted(leaves):
+        concept = concept_of[leaf]
+        if concept not in applicable:
+            applicable[concept] = pantry.for_concept(concept)
+        by_type = compatible_rewrites(
+            applicable[concept], inventory.text(leaf), inventory.axis_values(leaf),
+        )
+        for mtype in NINE_TYPES:
+            cands = by_type.get(mtype)
+            if not cands:
+                continue
+            pick = _least_used(cands, caps.get(mtype.value), usage)
+            if pick is None:
+                continue
+            usage[pick.uid] = usage.get(pick.uid, 0) + 1
+            plan.append(PlannedVariant(
+                condition=f"probe_{mtype.value}", concept_key=concept,
+                leaf_item_key=leaf, rewrites=(pick,),
+            ))
+    return tuple(plan)
 
 
 @dataclass(frozen=True)

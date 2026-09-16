@@ -191,3 +191,61 @@ def test_effective_pool_min_falls_back_to_per_count():
                     candidate_cap=10, reuse_cap={})
     assert b.effective_pool_min == 7
     assert dataclasses.replace(b, pool_min=3).effective_pool_min == 3
+
+
+def _toy_setup():
+    """2 conceptos; C1 con 3 hojas que admiten 3 tipos, C2 con 1 hoja que admite 1."""
+    text = "obra frag-a frag-b tpl"
+    inventory = LeafInventory({
+        C1: [(f"C1a{i}", text, (("eje", "v"),)) for i in "abc"],
+        C2: [("C2aa", "otra obra", ())],
+    })
+    pantry = Pantry(by_type={
+        MT.PARAPHRASE: (_rewrite(MT.PARAPHRASE, "frag-a", concepts=(C1,)),),
+        MT.COMPRESSION: (_rewrite(MT.COMPRESSION, "frag-b", concepts=(C1,)),),
+        MT.REORDER: (
+            _rewrite(MT.REORDER, "tpl", concepts=(C1,), dedup=("TEXTO", "tpl")),
+            _rewrite(MT.REORDER, "tpl2", concepts=(C2,), dedup=("TEXTO", "tpl2")),
+        ),
+    })
+    return inventory, pantry
+
+
+def test_candidate_leaves_applies_the_structural_threshold_and_cap():
+    from synthetic.dose_ladder import candidate_leaves
+
+    inventory, _ = _toy_setup()
+    inv = _chapter_inventory({
+        MT.PARAPHRASE: (_target(("frag-a",)),),
+        MT.COMPRESSION: (_target(("frag-b",)),),
+        MT.REORDER: (_target(("TEXTO", "tpl")),),
+    })
+    got = candidate_leaves(inv, inventory, threshold=3, cap=2)
+    assert got == ("C1aa", "C1ab")          # sorted, capped, C2 excluded (1 type)
+    assert candidate_leaves(inv, inventory, threshold=4, cap=10) == ()
+
+
+def test_build_probe_plan_is_one_single_modification_per_leaf_and_type():
+    from synthetic.dose_ladder import build_probe_plan
+
+    inventory, pantry = _toy_setup()
+    plan = build_probe_plan(pantry, inventory, ("C1aa", "C1ab"))
+    assert {p.condition for p in plan} == {
+        "probe_paraphrase", "probe_compression", "probe_reorder",
+    }
+    assert all(len(p.rewrites) == 1 for p in plan)
+    assert len(plan) == 6                    # 2 leaves x 3 types
+    # a leaf never repeats within a condition
+    for cond in {p.condition for p in plan}:
+        leaves = [p.leaf_item_key for p in plan if p.condition == cond]
+        assert len(leaves) == len(set(leaves))
+
+
+def test_build_probe_plan_is_deterministic():
+    from synthetic.dose_ladder import build_probe_plan
+
+    inventory, pantry = _toy_setup()
+    a = build_probe_plan(pantry, inventory, ("C1aa", "C1ab"))
+    b = build_probe_plan(pantry, inventory, ("C1aa", "C1ab"))
+    key = lambda pl: [(p.condition, p.leaf_item_key, tuple(r.uid for r in p.rewrites)) for p in pl]
+    assert key(a) == key(b)
