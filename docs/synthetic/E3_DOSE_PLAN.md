@@ -1212,7 +1212,7 @@ NINE_SUBSET = (
 )
 ```
 
-y los seis tests:
+y los nueve tests (seis del diseno original mas tres de admision no uniforme, anadidos tras la revision de calidad):
 
 ```python
 def test_nested_order_prefixes_are_the_rungs():
@@ -1255,9 +1255,11 @@ def test_nested_order_keeps_every_cell_near_even():
     """Their §3, achievable half. Cells below the top cannot be exactly even —
     the positions are correlated, since what a leaf places early constrains
     what remains — so this pins that the residual spread stays small relative
-    to the cell, not that it is zero. The tolerance is deliberately far below
-    any effect size the dose-response study could resolve; its purpose is to
-    catch a mechanism that has stopped balancing, not to certify optimality.
+    to the cell, not that it is zero. The tolerance is a few leaves against
+    cells of order a hundred; its purpose is to catch a mechanism that has
+    stopped balancing, not to certify optimality. Whether a type is
+    systematically favoured is a separate question, measured across seeds by
+    `test_nested_order_has_no_systematic_per_type_bias`.
     """
     from synthetic.dose_ladder import LADDER_MAX, nested_order
 
@@ -1309,12 +1311,63 @@ def test_nested_order_rejects_a_leaf_that_cannot_fill_the_ladder():
 
     with pytest.raises(DoseLadderError, match="ladder_too_deep"):
         nested_order({"L1": frozenset(list(NINE_SUBSET)[:2])}, seed=42)
+
+
+def test_nested_order_handles_a_leaf_admitting_exactly_the_ladder_depth():
+    """No exclusion is possible at exactly LADDER_MAX admitted types: the
+    ladder must be those types, in some order, with no error."""
+    from synthetic.dose_ladder import LADDER_MAX, nested_order
+
+    exact = frozenset(NINE_SUBSET[:LADDER_MAX])
+    order = nested_order({"L000": exact}, seed=42)
+    assert set(order["L000"]) == set(exact)
+    assert len(order["L000"]) == LADDER_MAX
+
+
+def test_nested_order_handles_non_uniform_admitted_sets():
+    """Real data: leaves admit different numbers of types. Every leaf must
+    still get a full ladder drawn only from what IT admits."""
+    from synthetic.dose_ladder import LADDER_MAX, nested_order
+
+    admitted = {}
+    for i in range(30):
+        size = LADDER_MAX + (i % 2)          # alternate 5 and 6 admitted types
+        admitted[f"L{i:03d}"] = frozenset(NINE_SUBSET[:size])
+    order = nested_order(admitted, seed=42)
+    assert set(order) == set(admitted)
+    for leaf, types in order.items():
+        assert len(types) == LADDER_MAX
+        assert len(set(types)) == LADDER_MAX
+        assert set(types) <= admitted[leaf]
+
+
+def test_nested_order_does_not_starve_a_thinly_admitted_type():
+    """Stage 1 picks the globally LEAST-included types, so a type only a few
+    leaves admit should ride all of them rather than being crowded out by the
+    abundant ones. On real data the thin types (`unit_conversion`,
+    `unit_expansion`) depend on this: a mechanism that dropped them would
+    hollow out the very cells the study measures.
+
+    The rare leaves are named to sort LAST, so by the time they are processed
+    the abundant types already carry high inclusion counts — which is the
+    situation where starvation would show up.
+    """
+    from synthetic.dose_ladder import nested_order
+
+    common = frozenset(NINE_SUBSET)
+    rare_type = MT.NUM_TO_TEXT               # not in NINE_SUBSET
+    admitted = {f"L{i:03d}": common for i in range(100)}
+    for i in range(5):
+        admitted[f"Z{i:03d}"] = frozenset(list(NINE_SUBSET)[:5]) | {rare_type}
+    order = nested_order(admitted, seed=42)
+    carried = [k for k in admitted if rare_type in order[k]]
+    assert sorted(carried) == [f"Z{i:03d}" for i in range(5)]
 ```
 
 - [ ] **Paso 2: Corre los tests y comprueba que fallan**
 
 Ejecuta: `python -m pytest tests/synthetic/test_dose_ladder.py -q -k nested -p no:cacheprovider`
-Esperado: 6 FAILED — `ImportError: cannot import name 'nested_order'`.
+Esperado: 9 FAILED — `ImportError: cannot import name 'nested_order'`.
 
 - [ ] **Paso 3: Implementa**
 
@@ -1342,11 +1395,11 @@ def nested_order(
     Cells below it cannot be made exactly even by a greedy, because the
     positions are NOT independent — which type a leaf places at position ``p``
     constrains what remains for ``p+1`` — so a small residual spread survives.
-    It is far below any effect size the dose-response study could resolve, and
-    it is noise rather than bias: it does not favour particular types across
-    seeds. On real data the binding constraint is admission anyway (types are
-    admitted by very different numbers of leaves), which no ordering policy
-    can undo.
+    It is a residual of a few leaves per cell against cells of order a
+    hundred, and it is noise rather than bias: it does not favour particular
+    types across seeds (measured — see the corpus report). On real data the
+    binding constraint is admission anyway (types are admitted by very
+    different numbers of leaves), which no ordering policy can undo.
 
     Raises :class:`DoseLadderError` for a leaf admitting fewer than
     ``LADDER_MAX`` types — the pool selection must have excluded it already.
@@ -1370,7 +1423,13 @@ def nested_order(
         for mtype in used:
             inclusion[mtype] += 1
 
-        # stage 2: their order, so each position stays even too
+        # stage 2: their order, so each position stays even too.
+        # `rank[t]` is load-bearing here, not decorative: only for the first
+        # leaf does `used` come out in shuffle order (all `inclusion` counters
+        # are 0, so stage 1's key degenerates to `rank`). From the second leaf
+        # on, `inclusion` dominates stage 1's sort, so `remaining`'s order says
+        # nothing about the leaf's shuffle — without this key the tie-break
+        # would be an artifact of stage 1 rather than the documented policy.
         chosen: list[ModificationType] = []
         for position in range(LADDER_MAX):
             remaining = [t for t in used if t not in chosen]

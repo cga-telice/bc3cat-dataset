@@ -323,9 +323,11 @@ def test_nested_order_keeps_every_cell_near_even():
     """Their §3, achievable half. Cells below the top cannot be exactly even —
     the positions are correlated, since what a leaf places early constrains
     what remains — so this pins that the residual spread stays small relative
-    to the cell, not that it is zero. The tolerance is deliberately far below
-    any effect size the dose-response study could resolve; its purpose is to
-    catch a mechanism that has stopped balancing, not to certify optimality.
+    to the cell, not that it is zero. The tolerance is a few leaves against
+    cells of order a hundred; its purpose is to catch a mechanism that has
+    stopped balancing, not to certify optimality. Whether a type is
+    systematically favoured is a separate question, measured across seeds by
+    `test_nested_order_has_no_systematic_per_type_bias`.
     """
     from synthetic.dose_ladder import LADDER_MAX, nested_order
 
