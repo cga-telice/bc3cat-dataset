@@ -105,3 +105,23 @@ def test_manifest_lists_a_sha256_per_file(tmp_path):
     # the digest of an empty JSON list, to pin the hashing itself
     import hashlib
     assert hashlib.sha256(b"[]").hexdigest() in text
+
+
+def test_dose_report_shows_per_cell_type_presence(tmp_path):
+    spec = importlib.util.spec_from_file_location(
+        "report_dose_ladder", ROOT / "scripts" / "report_dose_ladder.py",
+    )
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+
+    items = pd.DataFrame({
+        "item_key": ["a_syn_1", "b_syn_1", "c_syn_1"],
+        "original_key": ["L1", "L1", "L2"],
+        "concept_key": ["C1$", "C1$", "C1$"],
+        "modification_types": [["reorder"], ["reorder", "paraphrase"], ["paraphrase"]],
+        "modification_count": [1, 2, 1],
+    })
+    text = mod.render_report(items, depth=6, histogram={6: 2}, pool_size=2)
+    assert "dose_1" in text and "dose_2" in text
+    assert "reorder" in text and "paraphrase" in text
+    assert "| 1 | 2 |" in text or "dose_1 | 2" in text   # 2 items at count 1
