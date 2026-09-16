@@ -20,7 +20,11 @@ Two notions of per-leaf applicability, both free of reuse caps (D1):
 * :func:`structural_types` — the grammar admits the type. Comes from the
   chapter's *targets* (:func:`~synthetic.target_scanner.scan_chapter`), i.e.
   what exists before any LLM proposal.
-* :func:`available_types` — an approved AND compatible rewrite also exists.
+* per-leaf AVAILABILITY is decided empirically, not statically: the probe
+  pass renders one single-modification variant per (leaf, compatible type)
+  and keeps those whose TEXTO actually changed. This module supplies the
+  static half — :func:`compatible_rewrites` — and the build script turns
+  probe survival into the delivered ``available_types`` (D1).
 
 Determinism: same inputs -> same plan, byte for byte. Every seed derivation
 uses ``zlib.crc32`` (never ``hash()``, salted per process).
@@ -45,7 +49,7 @@ from .corpus_sampler import (
     PlannedVariant,
     is_compatible,
 )
-from .pantry import ApprovedRewrite, Pantry
+from .pantry import ApprovedRewrite
 from .target_scanner import ChapterInventory
 from .taxonomy import ModificationType
 
@@ -54,7 +58,6 @@ __all__ = [
     "DoseLadderError",
     "structural_types",
     "compatible_rewrites",
-    "available_types",
 ]
 
 #: Rungs of the ladder: dose_1 .. dose_5 (their §1).
@@ -117,16 +120,23 @@ def structural_types(
 
 
 def compatible_rewrites(
-    pantry: Pantry,
-    concept_key: str,
+    applicable: Mapping[ModificationType, Sequence[ApprovedRewrite]],
     leaf_text: str,
     leaf_axis_values: tuple[tuple[str, str], ...] = (),
 ) -> dict[ModificationType, tuple[ApprovedRewrite, ...]]:
-    """Per type, this leaf's approved AND compatible rewrites (cap-free).
+    """Per type, the rewrites among ``applicable`` that are compatible with
+    this leaf (cap-free), sorted by ``uid`` so downstream picking is
+    deterministic.
 
-    Sorted by ``uid`` so downstream picking is deterministic.
+    ``applicable`` is one concept's rewrites — ``Pantry.for_concept(key)``.
+    It is taken already resolved because it depends only on the concept,
+    while this function is called once per LEAF: resolving it here would
+    re-walk the whole pantry for every leaf of the same concept.
+
+    A type with no compatible rewrite is absent from the result — callers
+    read the key set as "the types this leaf can take", so mapping it to an
+    empty tuple would report it as available when it is not.
     """
-    applicable = pantry.for_concept(concept_key)
     out: dict[ModificationType, tuple[ApprovedRewrite, ...]] = {}
     for mtype in NINE_TYPES:
         hits = tuple(sorted(
@@ -137,16 +147,3 @@ def compatible_rewrites(
         if hits:
             out[mtype] = hits
     return out
-
-
-def available_types(
-    pantry: Pantry,
-    concept_key: str,
-    leaf_text: str,
-    leaf_axis_values: tuple[tuple[str, str], ...] = (),
-) -> frozenset[ModificationType]:
-    """The types this leaf can REALLY take (D1, realizable half): an approved,
-    compatible rewrite exists. Cap-free by design — see D1's rationale."""
-    return frozenset(compatible_rewrites(
-        pantry, concept_key, leaf_text, leaf_axis_values,
-    ))

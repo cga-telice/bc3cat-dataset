@@ -99,27 +99,28 @@ def _rewrite(mtype, original, ci=0, concepts=(C1,), dedup=None):
     )
 
 
-def test_available_types_requires_an_approved_compatible_rewrite():
-    from synthetic.dose_ladder import available_types
+def test_compatible_rewrites_keeps_only_the_compatible_ones():
+    from synthetic.dose_ladder import compatible_rewrites
 
     pantry = Pantry(by_type={
         MT.PARAPHRASE: (_rewrite(MT.PARAPHRASE, "fragmento-a"),),
         MT.COMPRESSION: (_rewrite(MT.COMPRESSION, "ausente-del-texto"),),
     })
-    got = available_types(pantry, C1, leaf_text="obra con fragmento-a de base",
-                          leaf_axis_values=())
-    assert got == frozenset({MT.PARAPHRASE})
+    applicable = pantry.for_concept(C1)
+    got = compatible_rewrites(
+        applicable, leaf_text="obra con fragmento-a de base", leaf_axis_values=(),
+    )
+    assert set(got) == {MT.PARAPHRASE}
+    assert got[MT.PARAPHRASE] == (pantry.by_type[MT.PARAPHRASE][0],)
 
 
-def test_available_types_is_cap_free():
-    """A reuse cap must not make a type look unavailable: availability is a
-    population descriptor, caps are per-run accounting."""
-    from synthetic.dose_ladder import available_types
-
-    pantry = Pantry(by_type={MT.PARAPHRASE: (_rewrite(MT.PARAPHRASE, "frag"),)})
-    got = available_types(pantry, C1, leaf_text="obra frag", leaf_axis_values=())
-    assert got == frozenset({MT.PARAPHRASE})
-    # the signature takes no usage/cap argument at all
+def test_compatible_rewrites_signature_is_cap_free():
+    """A reuse cap must not enter this function: availability is a population
+    descriptor, caps are per-run accounting. Assert the parameter set EXACTLY,
+    so a future cap parameter under any name is caught."""
+    from synthetic.dose_ladder import compatible_rewrites
     import inspect
-    assert "usage" not in inspect.signature(available_types).parameters
-    assert "reuse_cap" not in inspect.signature(available_types).parameters
+
+    assert set(inspect.signature(compatible_rewrites).parameters) == {
+        "applicable", "leaf_text", "leaf_axis_values",
+    }
