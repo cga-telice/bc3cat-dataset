@@ -71,6 +71,27 @@ def test_missing_sidecar_entry_fails_loud(tmp_path):
         mod.apply_applicability({"item_key": "x", "gold_item_key": "OEA010aaba"}, table)
 
 
+def test_git_commit_fails_loud_without_git(tmp_path, monkeypatch):
+    """A provenance stamp reading "unknown" looks like a complete delivery while
+    dropping the only field that makes it traceable."""
+    mod = _load_packager()
+    monkeypatch.setattr(mod, "REPO", tmp_path)          # no .git here
+    with pytest.raises(SystemExit, match="provenance_commit_unavailable"):
+        mod.git_commit()
+    assert mod.git_commit(allow_unknown=True) == "unknown"
+
+
+def test_dose_records_outside_the_pool_fail_loud(tmp_path):
+    """The sidecar and the dose plan must come from the same run; a dose leaf the
+    sidecar does not mark in_pool means they disagree."""
+    mod = _load_packager()
+    table = mod.load_applicability(_sidecar(tmp_path, [
+        {"leaf_item_key": "OUT", "applicable_types": [], "available_types": [],
+         "in_pool": False},
+    ]))
+    assert mod.in_pool({"item_key": "a", "gold_item_key": "OUT"}, table) is False
+
+
 def test_manifest_lists_a_sha256_per_file(tmp_path):
     mod = _load_packager()
     (tmp_path / "a.json").write_text("[]", encoding="utf-8")

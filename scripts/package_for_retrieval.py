@@ -31,6 +31,7 @@ import zipfile
 from pathlib import Path
 
 import pandas as pd
+import yaml
 
 REPO = Path(__file__).resolve().parents[1]
 
@@ -117,15 +118,29 @@ def _sha256(path):
     return h.hexdigest()
 
 
-def git_commit():
-    """The bc3cat-dataset commit that produced this delivery (their §6)."""
+def git_commit(allow_unknown=False):
+    """The bc3cat-dataset commit that produced this delivery (their §6).
+
+    Fails loud by default: a provenance stamp reading "unknown" looks like a
+    complete delivery while silently dropping the field that makes it
+    traceable. `allow_unknown` exists for the one legitimate case — packaging
+    from an export with no `.git` — and has to be asked for explicitly, so it
+    shows up in the invocation rather than in a default.
+    """
     try:
         return subprocess.run(
             ["git", "rev-parse", "HEAD"], cwd=str(REPO), capture_output=True,
             text=True, check=True,
         ).stdout.strip()
-    except Exception:            # a delivery from a tarball is still deliverable
-        return "unknown"
+    except Exception as exc:
+        if allow_unknown:
+            return "unknown"
+        raise SystemExit(
+            f"provenance_commit_unavailable: could not read HEAD from {REPO} "
+            f"({exc}). The delivery would be stamped 'unknown', which is not "
+            f"traceable. Pass --allow-unknown-commit if you are packaging from "
+            f"an export with no git metadata"
+        )
 
 
 def render_manifest(out_dir, filenames, provenance):
@@ -159,6 +174,15 @@ def main() -> int:
     ap.add_argument("--applicability", default=None,
                     help="OE_leaf_applicability.jsonl (required with --dose/--probe)")
     ap.add_argument("--run-id", default=None)
+    ap.add_argument(
+        "--dose-config", default=None,
+        help="the dose budgets YAML this run used. Required with --dose/--probe: "
+             "provenance records the seed that actually produced the corpus, "
+             "not a constant that happens to match today's config.",
+    )
+    ap.add_argument("--allow-unknown-commit", action="store_true",
+                    help="stamp provenance commit as 'unknown' instead of failing "
+                         "when HEAD cannot be read (packaging from an export)")
     a = ap.parse_args()
 
     stage = json.loads(Path(a.stage_json).read_text(encoding="utf-8"))
@@ -231,6 +255,9 @@ def main() -> int:
     if a.dose or a.probe:
         if not a.applicability:
             raise SystemExit("--applicability is required with --dose/--probe")
+        if not a.dose_config:
+            raise SystemExit("--dose-config is required with --dose/--probe")
+        seed = yaml.safe_load(Path(a.dose_config).read_text(encoding="utf-8"))["seed"]
         table = load_applicability(a.applicability)
         for flag, name in ((a.dose, "dose"), (a.probe, "isolated")):
             if not flag:
@@ -244,6 +271,24 @@ def main() -> int:
                 before = len(recs)
                 recs = [r for r in recs if in_pool(r, table)]
                 print(f"isolated restricted to the pool: {len(recs)} of {before}")
+            if name == "dose":
+                # Every dose leaf is in the pool by construction (task 9 builds
+                # the ladder over exactly select_pool's output), so this cannot
+                # fail today. It is here because if it ever did — a sidecar
+                # generated from a different run than the plan, or an
+                # orchestrator edit letting a leaf slip out — the delivery would
+                # silently pair dose items with isolated effects on leaves that
+                # have none, which is the confound the whole set exists to
+                # remove. Filtering would hide that; asserting surfaces it.
+                outside = [r["gold_item_key"] for r in recs if not in_pool(r, table)]
+                if outside:
+                    raise SystemExit(
+                        f"dose_leaf_outside_pool: {len(outside)} dose records "
+                        f"have leaves the sidecar does not mark in_pool, e.g. "
+                        f"{sorted(set(outside))[:3]}. The sidecar and the dose "
+                        f"plan disagree about the pool — they must come from "
+                        f"the same run"
+                    )
             fn = f"{col}_{name}_texto.json"
             (out / fn).write_text(json.dumps(recs, ensure_ascii=False), encoding="utf-8")
             written.append(fn)
@@ -255,9 +300,10 @@ def main() -> int:
         written.append(side_name)
         provenance = {
             "run_id": a.run_id or _dt.datetime.now(_dt.timezone.utc).strftime("e3-%Y%m%dT%H%M%SZ"),
-            "seed": 42,
+            "seed": seed,
+            "dose_config": str(a.dose_config),
             "script": "scripts/build_dose_ladder.py",
-            "commit": git_commit(),
+            "commit": git_commit(allow_unknown=a.allow_unknown_commit),
             "generated_utc": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
         }
         (out / "provenance.json").write_text(
