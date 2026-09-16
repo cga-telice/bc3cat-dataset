@@ -119,7 +119,7 @@ implementación no detecta una regresión de diseño.
 |---|---|
 | `src/synthetic/dose_ladder.py` | **Nuevo.** Todo el planificador E3: aplicabilidad estructural y realizable por hoja, presupuestos de dosis, plan de sondeo, orden anidado equilibrado, selección del fondo, plan de dosis. Única responsabilidad: *decidir qué se genera*. No renderiza, no escribe. |
 | `src/synthetic/corpus_sampler.py` | **Modificar.** Cuatro añadidos pequeños para que `dose_ladder` no importe nada privado ni duplique nada: `is_compatible()` público, `leaf_inventory_from_frames(..., text_field=...)`, un guardián en `_condition_type` (tarea 1), `L1_VALUE_TYPES` (tarea 2, tras revisión) y `allocate` (tarea 5, tras revisión). |
-| `src/synthetic/corpus_driver.py` | **Modificar.** Reconocer las familias `dose_*` / `probe_*` en el recuento de presencia por tipo, y afirmar el count exacto. |
+| `src/synthetic/corpus_driver.py` | **Modificar.** Afirmar el count exacto de las familias `dose_*` / `probe_*`: si el emisor aplica menos modificaciones de las que la condición promete, levanta en vez de publicar el ítem con el count rebajado. |
 | `configs/synthetic/variant_budgets_OE_probe.yaml` | **Nuevo.** Parámetros del sondeo. |
 | `configs/synthetic/variant_budgets_OE_dose.yaml` | **Nuevo.** Parámetros de la escalera. |
 | `scripts/build_dose_ladder.py` | **Nuevo.** Orquestación de las dos pasadas + sidecar de aplicabilidad + informe. Es el único fichero que hace E/S de la generación. |
@@ -1047,16 +1047,27 @@ git commit -m "synthetic: dose_ladder — pre-filtro estructural y plan de sonde
 
 ---
 
-## Tarea 6: El emisor reconoce las familias nuevas
+## Tarea 6: El emisor afirma el count exacto
 
 **Ficheros:**
-- Modificar: `src/synthetic/corpus_driver.py:633-641` (recuento de presencia) y el bucle de emisión
+- Modificar: `src/synthetic/corpus_driver.py` (bucle de emisión)
 - Test: `tests/synthetic/test_corpus_driver.py`
 
-Dos cambios. El recuento de presencia por tipo hoy solo se lleva para
-`all_combined`; las dosis lo necesitan igual (es lo que documenta el equilibrio
-por celda). Y el count exacto de D2 debe **afirmarse**: si el sondeo verificó la
-disponibilidad y el emisor aplica menos de *k*, eso es un bug, no un dato.
+Un cambio: el count exacto de D2 debe **afirmarse**. Si el sondeo verificó la
+disponibilidad y el emisor aplica menos de *k*, eso es un bug, no un dato que
+filtrar — y el código actual publicaría el ítem con un `modification_count` más
+bajo, corrompiendo la variable independiente del estudio.
+
+> **Corregido durante la tarea 6 (commit `8c03459`).** El plan pedía además
+> extender a `dose_*` el recuento de presencia por tipo del emisor. Se revirtió:
+> el contador `presence` del driver solo se publica bajo
+> `if _ALL_COMBINED in stats` (`corpus_driver.py:699`), así que en una corrida
+> E3 —donde `all_combined` no existe como condición— se acumulaba y **se
+> descartaba**. Era una función con aspecto de prestación que no hacía nada.
+> La presencia por celda la calcula la tarea 13 desde el parquet publicado, que
+> además es la mejor fuente: refleja lo que se entregó, no lo que se planificó.
+> Lo detectó el propio implementador al trazar los demás usos de
+> `_ALL_COMBINED`.
 
 - [ ] **Paso 1: Escribe los tests que fallan**
 
@@ -1065,14 +1076,6 @@ reutiliza su `_stage_json()`/helpers; si su corrida mínima se apoya en un
 `monkeypatch` del render, reutilízalo igual):
 
 ```python
-def test_dose_conditions_are_counted_as_multi_type():
-    from synthetic.corpus_driver import _counts_type_presence
-    assert _counts_type_presence("all_combined") is True
-    assert _counts_type_presence("dose_3") is True
-    assert _counts_type_presence("single_reorder") is False
-    assert _counts_type_presence("probe_reorder") is False
-
-
 def test_dose_condition_expected_count_is_parsed():
     from synthetic.corpus_driver import _expected_applied_count
     assert _expected_applied_count("dose_4") == 4
@@ -1083,8 +1086,8 @@ def test_dose_condition_expected_count_is_parsed():
 
 - [ ] **Paso 2: Corre los tests y comprueba que fallan**
 
-Ejecuta: `python -m pytest tests/synthetic/test_corpus_driver.py -q -k "dose_conditions or expected_count"`
-Esperado: 2 FAILED — `ImportError: cannot import name '_counts_type_presence'`.
+Ejecuta: `python -m pytest tests/synthetic/test_corpus_driver.py -q -k expected_count`
+Esperado: 1 FAILED — `ImportError: cannot import name '_expected_applied_count'`.
 
 - [ ] **Paso 3: Implementa**
 
@@ -1096,16 +1099,6 @@ _DOSE_PREFIX = "dose_"
 _PROBE_PREFIX = "probe_"
 
 
-def _counts_type_presence(condition: str) -> bool:
-    """Whether per-type presence is worth tallying for this condition.
-
-    True for the multi-type families — ``all_combined`` and the ``dose_*``
-    rungs, where "which types rode this item" is the thing the QA report has
-    to show. A single-modification condition's presence is its own count.
-    """
-    return condition == _ALL_COMBINED or condition.startswith(_DOSE_PREFIX)
-
-
 def _expected_applied_count(condition: str) -> Optional[int]:
     """The exact number of APPLIED modifications this condition promises.
 
@@ -1113,6 +1106,11 @@ def _expected_applied_count(condition: str) -> Optional[int]:
     availability, so a shortfall is a bug — see D2). ``None`` where no exact
     promise exists (``all_combined`` stacks whatever applies; ``single_*``
     items are already dropped when their one modification no-ops).
+
+    Per-type presence per dose rung is NOT tallied here: the driver's shared
+    `presence` counter is only surfaced for ``all_combined``, and
+    `scripts/report_dose_ladder.py` computes per-cell presence from the
+    released parquet instead — what shipped, not what was planned.
     """
     if condition.startswith(_DOSE_PREFIX):
         return int(condition[len(_DOSE_PREFIX):])
@@ -1121,14 +1119,7 @@ def _expected_applied_count(condition: str) -> Optional[int]:
     return None
 ```
 
-En el bucle de emisión, sustituye la condición del recuento de presencia
-(`if planned.condition == _ALL_COMBINED:`) por:
-
-```python
-            if _counts_type_presence(planned.condition):
-```
-
-Y justo después de construir `modifications` (antes del `items.append(...)`),
+Justo después de construir `modifications` (antes del `items.append(...)`),
 añade la afirmación:
 
 ```python
