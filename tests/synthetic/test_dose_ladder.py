@@ -178,3 +178,16 @@ def test_dose_budgets_to_driver_budgets_has_one_target_per_rung():
     drv = b.to_driver_budgets()
     assert drv.targets == {f"dose_{k}": 7 for k in range(1, LADDER_MAX + 1)}
     assert drv.seed == 1
+
+
+def test_effective_pool_min_falls_back_to_per_count():
+    """Both committed configs omit `pool_min`, so the fallback is the branch
+    that actually runs; and Task 11 feeds this to `select_pool`, where a wrong
+    value would look like "not enough leaves" rather than an obvious error."""
+    import dataclasses
+    from synthetic.dose_ladder import DoseBudgets
+
+    b = DoseBudgets(seed=1, per_count=7, structural_threshold=6,
+                    candidate_cap=10, reuse_cap={})
+    assert b.effective_pool_min == 7
+    assert dataclasses.replace(b, pool_min=3).effective_pool_min == 3
