@@ -410,6 +410,11 @@ def test_nested_order_handles_non_uniform_admitted_sets():
 
 
 def test_select_pool_takes_the_deepest_level_that_still_fills():
+    """Single concept here: this test pins the DEPTH-selection policy, not
+    the concept spread (that is `test_select_pool_spreads_the_pool_across_
+    concepts`), so every leaf maps to the same concept and `allocate`
+    collapses to a plain sorted take — depth and pool size are unaffected
+    by spreading."""
     from synthetic.dose_ladder import select_pool
 
     avail = {}
@@ -417,20 +422,23 @@ def test_select_pool_takes_the_deepest_level_that_still_fills():
         avail[f"D8_{i:02d}"] = frozenset(list(NINE_SUBSET)[:6]) | {MT.NUM_TO_TEXT, MT.UNIT_EXPANSION}
     for i in range(50):                      # 50 more admit 6
         avail[f"D6_{i:02d}"] = frozenset(NINE_SUBSET)
-    depth, pool = select_pool(avail, pool_min=40, min_depth=6)
+    concept_of = {leaf: C1 for leaf in avail}
+    depth, pool = select_pool(avail, concept_of, pool_min=40, min_depth=6)
     assert depth == 6                        # 8 would only give 10 leaves
     assert len(pool) == 40
     assert pool == tuple(sorted(pool))       # deterministic, sorted
 
 
 def test_select_pool_prefers_depth_when_supply_allows():
+    """Single concept — see the note on the previous test."""
     from synthetic.dose_ladder import select_pool
 
     avail = {
         f"D8_{i:02d}": frozenset(list(NINE_SUBSET)[:6]) | {MT.NUM_TO_TEXT, MT.UNIT_EXPANSION}
         for i in range(50)
     }
-    depth, pool = select_pool(avail, pool_min=40, min_depth=6)
+    concept_of = {leaf: C1 for leaf in avail}
+    depth, pool = select_pool(avail, concept_of, pool_min=40, min_depth=6)
     assert depth == 8
 
 
@@ -438,8 +446,29 @@ def test_select_pool_fails_loud_when_no_depth_fills():
     from synthetic.dose_ladder import DoseLadderError, select_pool
 
     avail = {f"L{i}": frozenset(NINE_SUBSET) for i in range(5)}
+    concept_of = {leaf: C1 for leaf in avail}
     with pytest.raises(DoseLadderError, match="pool_too_small"):
-        select_pool(avail, pool_min=600, min_depth=6)
+        select_pool(avail, concept_of, pool_min=600, min_depth=6)
+
+
+def test_select_pool_spreads_the_pool_across_concepts():
+    """The pool must not be a prefix of the sorted leaf keys: those start with
+    the concept code, so truncation would shut whole concepts out of a set the
+    consumer partitions by concept. D5 is unaffected — it requires every rung
+    to use the SAME leaves, not any particular leaves."""
+    from synthetic.dose_ladder import select_pool
+
+    deep = frozenset(list(NINE_SUBSET)[:6]) | {MT.NUM_TO_TEXT}
+    available, concept_of = {}, {}
+    for prefix, concept in (("C1", C1), ("C2", C2)):
+        for i in range(20):
+            leaf = f"{prefix}x{i:02d}"
+            available[leaf] = deep
+            concept_of[leaf] = concept
+    depth, pool = select_pool(available, concept_of, pool_min=10, min_depth=6)
+    assert depth == 7
+    assert len(pool) == 10
+    assert len({concept_of[k] for k in pool}) == 2   # both concepts represented
 
 
 def test_depth_histogram_reports_the_distribution():

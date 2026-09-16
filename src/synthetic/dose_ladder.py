@@ -66,6 +66,7 @@ __all__ = [
     "nested_order",
     "select_pool",
     "depth_histogram",
+    "leaf_concept_map",
 ]
 
 #: Rungs of the ladder: dose_1 .. dose_5 (their §1).
@@ -164,6 +165,11 @@ def _concept_of(inventory: LeafInventory) -> dict[str, str]:
         for concept in inventory.concepts()
         for leaf in inventory.leaves(concept)
     }
+
+
+#: Public alias — the build script needs this mapping to feed `select_pool`,
+#: and rebuilding it at the call site would duplicate a two-line invariant.
+leaf_concept_map = _concept_of
 
 
 def candidate_leaves(
@@ -359,6 +365,7 @@ def depth_histogram(available: Mapping[str, frozenset]) -> dict[int, int]:
 
 def select_pool(
     available: Mapping[str, frozenset],
+    concept_of: Mapping[str, str],
     *,
     pool_min: int,
     min_depth: int,
@@ -366,9 +373,22 @@ def select_pool(
     """The common leaf pool (D5): ``(depth, leaves)``.
 
     Picks the DEEPEST ``d >= min_depth`` for which at least ``pool_min`` leaves
-    admit ``d`` types, then takes the first ``pool_min`` of them in sorted
-    order. All five rungs run on these same leaves, so the count cells share
-    one population and the dose effect carries no leaf-difficulty selection.
+    admit ``d`` types, then draws ``pool_min`` of them SPREAD ACROSS CONCEPTS
+    via :func:`~synthetic.corpus_sampler.allocate` — never as a prefix of the
+    sorted leaf keys, which begin with the concept code and would hand the
+    whole pool to the alphabetically-first concepts, undoing the spread
+    `candidate_leaves` performed upstream. The consumer partitions the
+    delivered set by concept against its own dev/test split, so concept
+    coverage is load-bearing.
+
+    All five rungs run on these same leaves, so the count cells share one
+    population and the dose effect carries no leaf-difficulty selection. That
+    is D5's guarantee, and it is unaffected by how the pool is spread: which
+    leaves are chosen is orthogonal to every rung using the identical set.
+
+    ``concept_of`` must cover every key of ``available`` — a leaf missing from
+    it raises ``KeyError``, an acceptable loud failure for an internal
+    invariant (every probed leaf came from some concept).
 
     Raises :class:`DoseLadderError` when no depth fills the pool — silently
     dropping to a shallower ladder would void D5's guarantee.
@@ -383,7 +403,16 @@ def select_pool(
     for depth in range(deepest, min_depth - 1, -1):
         eligible = tuple(sorted(k for k, v in available.items() if len(v) >= depth))
         if len(eligible) >= pool_min:
-            return depth, eligible[:pool_min]
+            qualifying: dict[str, list[str]] = {}
+            for leaf in eligible:
+                qualifying.setdefault(concept_of[leaf], []).append(leaf)
+            alloc = allocate(pool_min, {c: len(v) for c, v in qualifying.items()})
+            picked = [
+                leaf
+                for concept in sorted(alloc)
+                for leaf in qualifying[concept][: alloc[concept]]
+            ]
+            return depth, tuple(sorted(picked))
     raise DoseLadderError(
         f"pool_too_small: no depth >= {min_depth} yields {pool_min}+ leaves; "
         f"depth histogram = {histogram}"
