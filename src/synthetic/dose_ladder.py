@@ -184,6 +184,13 @@ def candidate_leaves(
     chapter out of the pool; the consumer partitions the delivered set by
     concept against its own dev/test split, so concept coverage is
     load-bearing.
+
+    Keep ``cap`` comfortably above the number of qualifying concepts. Below
+    it, no budget remains to give every concept its floor of one, and which
+    concepts survive is then decided by ``allocate``'s tie-break — leaf count,
+    then concept key — so the alphabetical bias this split exists to remove
+    creeps back in at the level of WHICH concepts appear at all. The committed
+    config (1500 against ~83 concepts) is far from that regime.
     """
     qualifying: dict[str, list[str]] = {}
     for leaf, concept in sorted(_concept_of(inventory).items()):
