@@ -562,6 +562,48 @@ def test_build_dose_plan_uses_the_same_leaves_at_every_rung():
     assert len(set(map(frozenset, per_rung.values()))) == 1   # one population
 
 
+def test_build_dose_plan_revert_frees_capacity_for_later_leaves():
+    """The revert must restore `usage`, not just drop the leaf.
+
+    With `paraphrase` capped at 1 (2 rewrites x cap 1 = total capacity 2,
+    exhausted by leaves C1000/C1001) and `compression` capped at 2, leaves
+    C1004 and C1007 each successfully pick a `compression` rewrite before
+    blocking on the now-exhausted `paraphrase` later in their own order, and
+    get reverted whole. If those `compression` picks were not given back, both
+    `compression` rewrites would sit at their cap by the time leaf C1008 is
+    tried — and C1008 needs `compression` FIRST in its order, so it would
+    block immediately instead of completing a ladder: a leaked increment from
+    a leaf that was never emitted would silently starve a later, unrelated
+    leaf. Traced by hand at seed=42 and cross-checked against the real
+    algorithm outside pytest: with the revert, the 4 accepted leaves are
+    exactly C1000, C1001, C1002, C1008; breaking the revert (commenting out
+    `usage[pick.uid] -= 1`) drops C1008 and the run raises `pool_exhausted`
+    instead of returning 4 ladders.
+    """
+    from synthetic.dose_ladder import LADDER_MAX, build_dose_plan, nested_order
+
+    inventory, pantry = _ladder_setup(n_leaves=12)
+    pool = tuple(f"C1{i:03d}" for i in range(12))
+    order = nested_order({leaf: frozenset(NINE_SUBSET) for leaf in pool}, seed=42)
+    plan = build_dose_plan(
+        pantry, inventory, order, pool,
+        reuse_cap={"paraphrase": 1, "compression": 2}, per_count=4,
+    )
+    leaves = {p.leaf_item_key for p in plan}
+    assert leaves == {"C1000", "C1001", "C1002", "C1008"}
+    assert len(plan) == 4 * LADDER_MAX
+    # no rewrite is used more times than its cap allows across the whole run
+    used = Counter(
+        r.uid for p in plan if p.condition == f"dose_{LADDER_MAX}"
+        for r in p.rewrites
+    )
+    caps = {"paraphrase": 1, "compression": 2}
+    for uid, n in used.items():
+        mtype = uid.split(":", 1)[0]
+        if mtype in caps:
+            assert n <= caps[mtype], f"{uid} used {n} times over its cap"
+
+
 def test_build_dose_plan_raises_when_the_pool_cannot_fill_the_request():
     """A shortfall is loud, not silent: every rung would be short by the same
     amount, so the delivered set would miss the per-count floor. The cap here

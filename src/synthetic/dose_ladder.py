@@ -331,10 +331,14 @@ def build_dose_plan(
     # resolved once per concept, not once per leaf (see `compatible_rewrites`)
     applicable: dict[str, dict] = {}
     usage: dict[str, int] = {}
+    blocked: Counter = Counter()
     plan: list[PlannedVariant] = []
     accepted = 0
 
     for leaf in pool:
+        # `pool_min > per_count` by config, so the tail is reserve: leaves whose
+        # ladder cannot be built are skipped and later candidates take their
+        # place. See `DoseBudgets.effective_pool_min`.
         if accepted >= per_count:
             break
         concept = concept_of[leaf]
@@ -353,6 +357,7 @@ def build_dose_plan(
                 frozenset(used_dedup),
             )
             if pick is None:
+                blocked[mtype.value] += 1
                 ok = False
                 break
             picks.append(pick)
@@ -374,8 +379,12 @@ def build_dose_plan(
             f"pool_exhausted: only {accepted} of {per_count} requested ladders "
             f"could be built from a pool of {len(pool)} leaves. Every rung is "
             f"short by the same amount, so the delivered set would miss the "
-            f"per-count floor. Raise `pool_min` above `per_count` in the dose "
-            f"config to give the run a reserve, or lower `per_count`"
+            f"per-count floor. Ladders were blocked by these types running out "
+            f"of uncapped rewrites: {dict(blocked.most_common())}. If one type "
+            f"dominates that list its `reuse_cap` is the binding constraint and "
+            f"raising `pool_min` will NOT help; if the list is empty or thinly "
+            f"spread, the pool is simply too short — raise `pool_min` above "
+            f"`per_count`, or lower `per_count`"
         )
 
     return tuple(plan)
