@@ -141,8 +141,7 @@ de sorteo distintos conviviendo.
   `tests/synthetic/test_dose_ladder.py` importan nombres que la tarea en curso
   todavía no usa: son para las tareas siguientes, que extienden esos mismos dos
   ficheros. No los quites; quitarlos solo obliga a re-añadirlos una o dos tareas
-  después. Lo mismo con `"available_types"` en `__all__` antes de que la función
-  exista (tarea 3).
+  después.
 - **Fuente única de las familias de tipos.** `corpus_sampler` expone
   `L1_VALUE_TYPES` (alias público de su conjunto privado, añadido en la tarea 2
   tras la revisión): `dose_ladder` lo importa y **no** mantiene una copia. Si
@@ -429,7 +428,11 @@ Two notions of per-leaf applicability, both free of reuse caps (D1):
 * :func:`structural_types` — the grammar admits the type. Comes from the
   chapter's *targets* (:func:`~synthetic.target_scanner.scan_chapter`), i.e.
   what exists before any LLM proposal.
-* :func:`available_types` — an approved AND compatible rewrite also exists.
+* per-leaf AVAILABILITY is decided empirically, not statically: the probe pass
+  renders one single-modification variant per (leaf, compatible type) and keeps
+  those whose TEXTO actually changed. This module supplies the static half —
+  :func:`compatible_rewrites` — and the build script turns probe survival into
+  the delivered ``available_types`` (D1).
 
 Determinism: same inputs -> same plan, byte for byte. Every seed derivation uses
 ``zlib.crc32`` (never ``hash()``, salted per process).
@@ -462,7 +465,6 @@ __all__ = [
     "LADDER_MAX",
     "DoseLadderError",
     "structural_types",
-    "available_types",
 ]
 
 #: Rungs of the ladder: dose_1 .. dose_5 (their §1).
@@ -537,15 +539,35 @@ git commit -m "synthetic: dose_ladder — aplicabilidad estructural por hoja"
 
 ---
 
-## Tarea 3: Aplicabilidad realizable (`available_types`)
+## Tarea 3: Compatibilidad por hoja (`compatible_rewrites`)
 
 **Ficheros:**
 - Modificar: `src/synthetic/dose_ladder.py`
 - Test: `tests/synthetic/test_dose_ladder.py`
 
-D1, mitad realizable: existe una reescritura **aprobada y compatible**. Sin
-topes: el tope es contabilidad de la ejecución y haría que el campo dependiera
-del orden de proceso.
+D1, mitad realizable: qué reescrituras **aprobadas y compatibles** admite la
+hoja. Sin topes: el tope es contabilidad de la ejecución y haría que el
+resultado dependiera del orden de proceso.
+
+> **Corregido tras la revisión de la tarea 3 (commit `15fd4a9`).** El plan
+> original añadía aquí también una función `available_types()`. Se eliminó por
+> dos motivos, y la corrección vale para todo el plan:
+>
+> 1. **No la llama nadie.** Las tareas 5 y 9 usan `compatible_rewrites`
+>    directamente, y el campo `available_types` que se entrega lo calcula
+>    `_surviving_types()` en la tarea 11, leyendo qué ítems del sondeo
+>    sobrevivieron.
+> 2. **Era una trampa de nombres.** La función significaba «existe reescritura
+>    compatible»; el campo entregado significa «existe reescritura compatible
+>    **y cambia el TEXTO de esa hoja**», que es estrictamente más estrecho.
+>    Cablear la primera donde toca la segunda entregaría en silencio un
+>    superconjunto — justo el descriptor de población del que depende su §4.
+>
+> Además, `compatible_rewrites` recibe el concepto **ya resuelto**
+> (`Pantry.for_concept(key)`) en vez de `(pantry, concept_key)`: el resultado
+> solo depende del concepto, pero la función se llama una vez por HOJA, así que
+> resolverlo dentro re-recorría la despensa entera (~5 900 reescrituras) para
+> cada una de las ~1 500 hojas.
 
 - [ ] **Paso 1: Escribe los tests que fallan**
 
@@ -563,54 +585,61 @@ def _rewrite(mtype, original, ci=0, concepts=(C1,), dedup=None):
     )
 
 
-def test_available_types_requires_an_approved_compatible_rewrite():
-    from synthetic.dose_ladder import available_types
+def test_compatible_rewrites_keeps_only_the_compatible_ones():
+    from synthetic.dose_ladder import compatible_rewrites
 
     pantry = Pantry(by_type={
         MT.PARAPHRASE: (_rewrite(MT.PARAPHRASE, "fragmento-a"),),
         MT.COMPRESSION: (_rewrite(MT.COMPRESSION, "ausente-del-texto"),),
     })
-    got = available_types(pantry, C1, leaf_text="obra con fragmento-a de base",
-                          leaf_axis_values=())
-    assert got == frozenset({MT.PARAPHRASE})
+    applicable = pantry.for_concept(C1)
+    got = compatible_rewrites(
+        applicable, leaf_text="obra con fragmento-a de base", leaf_axis_values=(),
+    )
+    assert set(got) == {MT.PARAPHRASE}
+    assert got[MT.PARAPHRASE] == (pantry.by_type[MT.PARAPHRASE][0],)
 
 
-def test_available_types_is_cap_free():
-    """A reuse cap must not make a type look unavailable: availability is a
-    population descriptor, caps are per-run accounting."""
-    from synthetic.dose_ladder import available_types
-
-    pantry = Pantry(by_type={MT.PARAPHRASE: (_rewrite(MT.PARAPHRASE, "frag"),)})
-    got = available_types(pantry, C1, leaf_text="obra frag", leaf_axis_values=())
-    assert got == frozenset({MT.PARAPHRASE})
-    # the signature takes no usage/cap argument at all
+def test_compatible_rewrites_signature_is_cap_free():
+    """A reuse cap must not enter this function: availability is a population
+    descriptor, caps are per-run accounting. Assert the parameter set EXACTLY,
+    so a future cap parameter under any name is caught."""
+    from synthetic.dose_ladder import compatible_rewrites
     import inspect
-    assert "usage" not in inspect.signature(available_types).parameters
-    assert "reuse_cap" not in inspect.signature(available_types).parameters
+
+    assert set(inspect.signature(compatible_rewrites).parameters) == {
+        "applicable", "leaf_text", "leaf_axis_values",
+    }
 ```
 
 - [ ] **Paso 2: Corre los tests y comprueba que fallan**
 
-Ejecuta: `python -m pytest tests/synthetic/test_dose_ladder.py -q -k available`
-Esperado: 2 FAILED — `ImportError: cannot import name 'available_types'`.
+Ejecuta: `python -m pytest tests/synthetic/test_dose_ladder.py -q -k compatible_rewrites`
+Esperado: 2 FAILED — `ImportError: cannot import name 'compatible_rewrites'`.
 
 - [ ] **Paso 3: Implementa**
 
-Añade a `src/synthetic/dose_ladder.py` (y `"available_types"` ya está en
-`__all__`):
+Añade a `src/synthetic/dose_ladder.py`:
 
 ```python
 def compatible_rewrites(
-    pantry: Pantry,
-    concept_key: str,
+    applicable: Mapping[ModificationType, Sequence[ApprovedRewrite]],
     leaf_text: str,
     leaf_axis_values: tuple[tuple[str, str], ...] = (),
 ) -> dict[ModificationType, tuple[ApprovedRewrite, ...]]:
-    """Per type, this leaf's approved AND compatible rewrites (cap-free).
+    """Per type, the rewrites among ``applicable`` that are compatible with
+    this leaf (cap-free), sorted by ``uid`` so downstream picking is
+    deterministic.
 
-    Sorted by ``uid`` so downstream picking is deterministic.
+    ``applicable`` is one concept's rewrites — ``Pantry.for_concept(key)``.
+    It is taken already resolved because it depends only on the concept,
+    while this function is called once per LEAF: resolving it here would
+    re-walk the whole pantry for every leaf of the same concept.
+
+    A type with no compatible rewrite is absent from the result — callers
+    read the key set as "the types this leaf can take", so mapping it to an
+    empty tuple would report it as available when it is not.
     """
-    applicable = pantry.for_concept(concept_key)
     out: dict[ModificationType, tuple[ApprovedRewrite, ...]] = {}
     for mtype in NINE_TYPES:
         hits = tuple(sorted(
@@ -621,19 +650,6 @@ def compatible_rewrites(
         if hits:
             out[mtype] = hits
     return out
-
-
-def available_types(
-    pantry: Pantry,
-    concept_key: str,
-    leaf_text: str,
-    leaf_axis_values: tuple[tuple[str, str], ...] = (),
-) -> frozenset[ModificationType]:
-    """The types this leaf can REALLY take (D1, realizable half): an approved,
-    compatible rewrite exists. Cap-free by design — see D1's rationale."""
-    return frozenset(compatible_rewrites(
-        pantry, concept_key, leaf_text, leaf_axis_values,
-    ))
 ```
 
 Añade `"compatible_rewrites"` a `__all__`.
@@ -973,12 +989,17 @@ def build_probe_plan(
     """
     caps = dict(reuse_cap or {})
     concept_of = _concept_of(inventory)
+    # `Pantry.for_concept` walks the whole pantry but its result depends only
+    # on the concept, so resolve it once per concept rather than once per leaf.
+    applicable: dict[str, dict] = {}
     usage: dict[str, int] = {}
     plan: list[PlannedVariant] = []
     for leaf in sorted(leaves):
         concept = concept_of[leaf]
+        if concept not in applicable:
+            applicable[concept] = pantry.for_concept(concept)
         by_type = compatible_rewrites(
-            pantry, concept, inventory.text(leaf), inventory.axis_values(leaf),
+            applicable[concept], inventory.text(leaf), inventory.axis_values(leaf),
         )
         for mtype in NINE_TYPES:
             cands = by_type.get(mtype)
@@ -1506,6 +1527,8 @@ def build_dose_plan(
     are built together, so a single counter is the only coherent accounting.
     """
     concept_of = _concept_of(inventory)
+    # resolved once per concept, not once per leaf (see `compatible_rewrites`)
+    applicable: dict[str, dict] = {}
     usage: dict[str, int] = {}
     plan: list[PlannedVariant] = []
     accepted = 0
@@ -1514,8 +1537,10 @@ def build_dose_plan(
         if accepted >= per_count:
             break
         concept = concept_of[leaf]
+        if concept not in applicable:
+            applicable[concept] = pantry.for_concept(concept)
         by_type = compatible_rewrites(
-            pantry, concept, inventory.text(leaf), inventory.axis_values(leaf),
+            applicable[concept], inventory.text(leaf), inventory.axis_values(leaf),
         )
         types = order[leaf]
         picks: list[ApprovedRewrite] = []
@@ -2427,8 +2452,8 @@ medición**, con el procedimiento y el criterio de fallo escritos, no marcadores
 
 **Consistencia de tipos.** `is_compatible(rewrite, leaf_text, leaf_axis_values)`,
 `structural_types(chapter_inventory, concept_key, leaf_text, leaf_axis_values)`,
-`available_types(pantry, concept_key, leaf_text, leaf_axis_values)`,
-`compatible_rewrites(...)` → `dict[ModificationType, tuple[ApprovedRewrite, ...]]`,
+`compatible_rewrites(applicable, leaf_text, leaf_axis_values)` →
+`dict[ModificationType, tuple[ApprovedRewrite, ...]]`,
 `nested_order(admitted, seed)` → `dict[str, tuple[ModificationType, ...]]`,
 `select_pool(available, *, pool_min, min_depth)` → `(int, tuple[str, ...])`,
 `build_probe_plan(pantry, inventory, leaves, *, reuse_cap)`,
