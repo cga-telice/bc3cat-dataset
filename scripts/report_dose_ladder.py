@@ -69,9 +69,11 @@ def render_report(items: pd.DataFrame, *, depth: int, histogram: dict,
     if short_cells:
         lines += [
             "",
-            f"**Aviso: {len(short_cells)} celdas por debajo del objetivo de {target}.**"
-            " El plan construye exactamente `per_count` escaleras o levanta, asi que "
-            "un deficit aqui viene del emisor: ítems descartados despues de "
+            f"**Aviso: {len(short_cells)} "
+            f"{'celda' if len(short_cells) == 1 else 'celdas'} por debajo del "
+            f"objetivo de {target}.**"
+            " El plan construye exactamente `per_count` escaleras o levanta, así que "
+            "un déficit aquí viene del emisor: ítems descartados después de "
             "planificarse, por duplicado exacto de `(resumen, texto)` en el corpus. "
             "Revisa el informe QA de la pasada de dosis.",
         ]

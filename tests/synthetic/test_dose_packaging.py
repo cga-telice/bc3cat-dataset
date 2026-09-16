@@ -152,7 +152,9 @@ def test_dose_report_flags_cells_below_target(tmp_path):
     text = mod.render_report(items, depth=6, histogram={6: 2}, pool_size=2, target=2)
     assert "| dose_1 | 2 | ok |" in text
     assert "| dose_2 | 1 | SHORT by 1 |" in text
-    assert "Aviso" in text and "1 celdas" in text and "objetivo de 2" in text
+    # singular agreement: one short cell is "1 celda", not "1 celdas"
+    assert "Aviso" in text and "1 celda por debajo" in text
+    assert "objetivo de 2" in text
 
     # no short cells -> no warning line
     ok_text = mod.render_report(items, depth=6, histogram={6: 2}, pool_size=2, target=1)
