@@ -86,3 +86,40 @@ def test_compatibility_ignores_the_fields_as_rewrite_leaves_empty():
                            usages=(Usage(C1, None),), **kwargs)
     leaf = ("canalizacion de 5 tubos", (("N TUBOS", "5"),))
     assert is_compatible(bare, *leaf) == is_compatible(rich, *leaf) is True
+
+
+def _rewrite(mtype, original, ci=0, concepts=(C1,), dedup=None):
+    return ApprovedRewrite(
+        mtype=mtype,
+        dedup_key=tuple(dedup) if dedup else (original,),
+        canonical=original,
+        candidate_index=ci,
+        payload={"original": original, "new": f"{original}-v{ci}"},
+        usages=tuple(Usage(c, None) for c in concepts),
+    )
+
+
+def test_available_types_requires_an_approved_compatible_rewrite():
+    from synthetic.dose_ladder import available_types
+
+    pantry = Pantry(by_type={
+        MT.PARAPHRASE: (_rewrite(MT.PARAPHRASE, "fragmento-a"),),
+        MT.COMPRESSION: (_rewrite(MT.COMPRESSION, "ausente-del-texto"),),
+    })
+    got = available_types(pantry, C1, leaf_text="obra con fragmento-a de base",
+                          leaf_axis_values=())
+    assert got == frozenset({MT.PARAPHRASE})
+
+
+def test_available_types_is_cap_free():
+    """A reuse cap must not make a type look unavailable: availability is a
+    population descriptor, caps are per-run accounting."""
+    from synthetic.dose_ladder import available_types
+
+    pantry = Pantry(by_type={MT.PARAPHRASE: (_rewrite(MT.PARAPHRASE, "frag"),)})
+    got = available_types(pantry, C1, leaf_text="obra frag", leaf_axis_values=())
+    assert got == frozenset({MT.PARAPHRASE})
+    # the signature takes no usage/cap argument at all
+    import inspect
+    assert "usage" not in inspect.signature(available_types).parameters
+    assert "reuse_cap" not in inspect.signature(available_types).parameters

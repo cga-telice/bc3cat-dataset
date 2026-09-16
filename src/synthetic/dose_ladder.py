@@ -53,6 +53,7 @@ __all__ = [
     "LADDER_MAX",
     "DoseLadderError",
     "structural_types",
+    "compatible_rewrites",
     "available_types",
 ]
 
@@ -113,3 +114,39 @@ def structural_types(
                 out.add(mtype)
                 break
     return frozenset(out)
+
+
+def compatible_rewrites(
+    pantry: Pantry,
+    concept_key: str,
+    leaf_text: str,
+    leaf_axis_values: tuple[tuple[str, str], ...] = (),
+) -> dict[ModificationType, tuple[ApprovedRewrite, ...]]:
+    """Per type, this leaf's approved AND compatible rewrites (cap-free).
+
+    Sorted by ``uid`` so downstream picking is deterministic.
+    """
+    applicable = pantry.for_concept(concept_key)
+    out: dict[ModificationType, tuple[ApprovedRewrite, ...]] = {}
+    for mtype in NINE_TYPES:
+        hits = tuple(sorted(
+            (r for r in applicable.get(mtype, ())
+             if is_compatible(r, leaf_text, leaf_axis_values)),
+            key=lambda r: r.uid,
+        ))
+        if hits:
+            out[mtype] = hits
+    return out
+
+
+def available_types(
+    pantry: Pantry,
+    concept_key: str,
+    leaf_text: str,
+    leaf_axis_values: tuple[tuple[str, str], ...] = (),
+) -> frozenset[ModificationType]:
+    """The types this leaf can REALLY take (D1, realizable half): an approved,
+    compatible rewrite exists. Cap-free by design — see D1's rationale."""
+    return frozenset(compatible_rewrites(
+        pantry, concept_key, leaf_text, leaf_axis_values,
+    ))
