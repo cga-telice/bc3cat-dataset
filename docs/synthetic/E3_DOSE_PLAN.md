@@ -1469,10 +1469,32 @@ git commit -m "synthetic: dose_ladder - equilibra la inclusion y luego el orden"
 D5: la mayor profundidad *d* que aún deje suficientes hojas, con *d* >
 `LADDER_MAX`. El valor lo decide la medición, no el spec.
 
+> **Corregido durante la tarea 8 (commit `adc4d0b`).** El plan original cerraba
+> con `eligible[:pool_min]`, que es el MISMO defecto que la tarea 5 ya habia
+> arreglado en `candidate_leaves`: las claves de hoja empiezan por el codigo de
+> concepto, asi que recortar la lista ordenada reparte por orden alfabetico. Con
+> `candidate_cap=1500` y `pool_min=600` el recorte es del 40 %, de modo que el
+> fondo habria cubierto unos 33 de los 83 conceptos y **cero hojas** de la
+> cincuentena restante — deshaciendo aguas abajo el reparto que `candidate_leaves`
+> acababa de hacer aguas arriba.
+>
+> `select_pool` recibe ahora un `concept_of` y reparte el cupo con `allocate`.
+> D5 no se ve afectada, y conviene dejarlo escrito porque la duda es razonable:
+> D5 exige que los cinco peldanos usen LAS MISMAS hojas, no unas hojas
+> concretas, asi que como se reparta el fondo es ortogonal a esa garantia.
+>
+> Se expone ademas `leaf_concept_map` (alias publico de `_concept_of`) para que
+> el script de la tarea 11 construya ese mapeo sin importar un privado.
+
 - [ ] **Paso 1: Escribe los tests que fallan**
 
 ```python
 def test_select_pool_takes_the_deepest_level_that_still_fills():
+    """Single concept here: this test pins the DEPTH-selection policy, not
+    the concept spread (that is `test_select_pool_spreads_the_pool_across_
+    concepts`), so every leaf maps to the same concept and `allocate`
+    collapses to a plain sorted take — depth and pool size are unaffected
+    by spreading."""
     from synthetic.dose_ladder import select_pool
 
     avail = {}
@@ -1480,20 +1502,23 @@ def test_select_pool_takes_the_deepest_level_that_still_fills():
         avail[f"D8_{i:02d}"] = frozenset(list(NINE_SUBSET)[:6]) | {MT.NUM_TO_TEXT, MT.UNIT_EXPANSION}
     for i in range(50):                      # 50 more admit 6
         avail[f"D6_{i:02d}"] = frozenset(NINE_SUBSET)
-    depth, pool = select_pool(avail, pool_min=40, min_depth=6)
+    concept_of = {leaf: C1 for leaf in avail}
+    depth, pool = select_pool(avail, concept_of, pool_min=40, min_depth=6)
     assert depth == 6                        # 8 would only give 10 leaves
     assert len(pool) == 40
     assert pool == tuple(sorted(pool))       # deterministic, sorted
 
 
 def test_select_pool_prefers_depth_when_supply_allows():
+    """Single concept — see the note on the previous test."""
     from synthetic.dose_ladder import select_pool
 
     avail = {
         f"D8_{i:02d}": frozenset(list(NINE_SUBSET)[:6]) | {MT.NUM_TO_TEXT, MT.UNIT_EXPANSION}
         for i in range(50)
     }
-    depth, pool = select_pool(avail, pool_min=40, min_depth=6)
+    concept_of = {leaf: C1 for leaf in avail}
+    depth, pool = select_pool(avail, concept_of, pool_min=40, min_depth=6)
     assert depth == 8
 
 
@@ -1501,8 +1526,29 @@ def test_select_pool_fails_loud_when_no_depth_fills():
     from synthetic.dose_ladder import DoseLadderError, select_pool
 
     avail = {f"L{i}": frozenset(NINE_SUBSET) for i in range(5)}
+    concept_of = {leaf: C1 for leaf in avail}
     with pytest.raises(DoseLadderError, match="pool_too_small"):
-        select_pool(avail, pool_min=600, min_depth=6)
+        select_pool(avail, concept_of, pool_min=600, min_depth=6)
+
+
+def test_select_pool_spreads_the_pool_across_concepts():
+    """The pool must not be a prefix of the sorted leaf keys: those start with
+    the concept code, so truncation would shut whole concepts out of a set the
+    consumer partitions by concept. D5 is unaffected — it requires every rung
+    to use the SAME leaves, not any particular leaves."""
+    from synthetic.dose_ladder import select_pool
+
+    deep = frozenset(list(NINE_SUBSET)[:6]) | {MT.NUM_TO_TEXT}
+    available, concept_of = {}, {}
+    for prefix, concept in (("C1", C1), ("C2", C2)):
+        for i in range(20):
+            leaf = f"{prefix}x{i:02d}"
+            available[leaf] = deep
+            concept_of[leaf] = concept
+    depth, pool = select_pool(available, concept_of, pool_min=10, min_depth=6)
+    assert depth == 7
+    assert len(pool) == 10
+    assert len({concept_of[k] for k in pool}) == 2   # both concepts represented
 
 
 def test_depth_histogram_reports_the_distribution():
@@ -1515,7 +1561,7 @@ def test_depth_histogram_reports_the_distribution():
 - [ ] **Paso 2: Corre los tests y comprueba que fallan**
 
 Ejecuta: `python -m pytest tests/synthetic/test_dose_ladder.py -q -k "pool or histogram"`
-Esperado: 4 FAILED — `ImportError: cannot import name 'select_pool'`.
+Esperado: FAILED — `ImportError: cannot import name 'select_pool'`.
 
 - [ ] **Paso 3: Implementa**
 
@@ -1528,6 +1574,7 @@ def depth_histogram(available: Mapping[str, frozenset]) -> dict[int, int]:
 
 def select_pool(
     available: Mapping[str, frozenset],
+    concept_of: Mapping[str, str],
     *,
     pool_min: int,
     min_depth: int,
@@ -1535,9 +1582,22 @@ def select_pool(
     """The common leaf pool (D5): ``(depth, leaves)``.
 
     Picks the DEEPEST ``d >= min_depth`` for which at least ``pool_min`` leaves
-    admit ``d`` types, then takes the first ``pool_min`` of them in sorted
-    order. All five rungs run on these same leaves, so the count cells share
-    one population and the dose effect carries no leaf-difficulty selection.
+    admit ``d`` types, then draws ``pool_min`` of them SPREAD ACROSS CONCEPTS
+    via :func:`~synthetic.corpus_sampler.allocate` — never as a prefix of the
+    sorted leaf keys, which begin with the concept code and would hand the
+    whole pool to the alphabetically-first concepts, undoing the spread
+    `candidate_leaves` performed upstream. The consumer partitions the
+    delivered set by concept against its own dev/test split, so concept
+    coverage is load-bearing.
+
+    All five rungs run on these same leaves, so the count cells share one
+    population and the dose effect carries no leaf-difficulty selection. That
+    is D5's guarantee, and it is unaffected by how the pool is spread: which
+    leaves are chosen is orthogonal to every rung using the identical set.
+
+    ``concept_of`` must cover every key of ``available`` — a leaf missing from
+    it raises ``KeyError``, an acceptable loud failure for an internal
+    invariant (every probed leaf came from some concept).
 
     Raises :class:`DoseLadderError` when no depth fills the pool — silently
     dropping to a shallower ladder would void D5's guarantee.
@@ -1552,10 +1612,100 @@ def select_pool(
     for depth in range(deepest, min_depth - 1, -1):
         eligible = tuple(sorted(k for k, v in available.items() if len(v) >= depth))
         if len(eligible) >= pool_min:
-            return depth, eligible[:pool_min]
+            qualifying: dict[str, list[str]] = {}
+            for leaf in eligible:
+                qualifying.setdefault(concept_of[leaf], []).append(leaf)
+            alloc = allocate(pool_min, {c: len(v) for c, v in qualifying.items()})
+            picked = [
+                leaf
+                for concept in sorted(alloc)
+                for leaf in qualifying[concept][: alloc[concept]]
+            ]
+            return depth, tuple(sorted(picked))
     raise DoseLadderError(
         f"pool_too_small: no depth >= {min_depth} yields {pool_min}+ leaves; "
         f"depth histogram = {histogram}"
+    )
+
+
+@dataclass(frozen=True)
+class DoseBudgets:
+    """Validated E3 budgets.
+
+    ``per_count`` items per rung (their §3 asks for >= 600);
+    ``structural_threshold`` is the minimum number of STRUCTURALLY applicable
+    types a leaf needs to enter the probe candidate set (D5 wants room to
+    choose at rung 5, so it must exceed ``LADDER_MAX``); ``candidate_cap``
+    bounds the probe's render cost.
+    """
+
+    seed: int
+    per_count: int
+    structural_threshold: int
+    candidate_cap: int
+    reuse_cap: Mapping[str, int]
+    pool_min: Optional[int] = None
+
+    @property
+    def effective_pool_min(self) -> int:
+        """Leaves the pool must reach: ``pool_min`` when given, else one leaf
+        per rung item (the ladder uses the SAME leaves at every rung)."""
+        return self.per_count if self.pool_min is None else self.pool_min
+
+    def to_driver_budgets(self) -> Budgets:
+        """Adapter for `run_corpus(budgets=...)`, which only reads
+        ``targets``/``seed``/``reuse_cap`` to render the QA report."""
+        return Budgets(
+            seed=self.seed,
+            targets={f"dose_{k}": self.per_count for k in range(1, LADDER_MAX + 1)},
+            reuse_cap=dict(self.reuse_cap),
+        )
+
+
+def _positive_int(value: object, what: str) -> int:
+    if type(value) is not int or value <= 0:
+        raise ValueError(
+            f"dose_budgets_invalid: {what} must be a positive int, got {value!r}"
+        )
+    return value
+
+
+def load_dose_budgets(path: Path) -> DoseBudgets:
+    """Read + validate the E3 budgets YAML. Fails loud
+    (``ValueError("dose_budgets_invalid: ...")``)."""
+    raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+    if not isinstance(raw, dict):
+        raise ValueError(f"dose_budgets_invalid: {Path(path).name} is not a mapping")
+
+    seed = _positive_int(raw.get("seed"), "seed")
+    per_count = _positive_int(raw.get("per_count"), "per_count")
+    threshold = _positive_int(raw.get("structural_threshold"), "structural_threshold")
+    candidate_cap = _positive_int(raw.get("candidate_cap"), "candidate_cap")
+    if threshold <= LADDER_MAX:
+        raise ValueError(
+            f"dose_budgets_invalid: structural_threshold must exceed "
+            f"LADDER_MAX={LADDER_MAX} so rung {LADDER_MAX} still has a choice "
+            f"(D5), got {threshold}"
+        )
+    pool_min = raw.get("pool_min")
+    if pool_min is not None:
+        pool_min = _positive_int(pool_min, "pool_min")
+
+    reuse_cap = raw.get("reuse_cap") or {}
+    if not isinstance(reuse_cap, dict):
+        raise ValueError("dose_budgets_invalid: reuse_cap is not a mapping")
+    valid = {t.value for t in NINE_TYPES}
+    for mtype, cap in reuse_cap.items():
+        if mtype not in valid:
+            raise ValueError(
+                f"dose_budgets_invalid: reuse_cap type {mtype!r} is not one of "
+                f"the nine admitted types"
+            )
+        _positive_int(cap, f"reuse_cap[{mtype}]")
+
+    return DoseBudgets(
+        seed=seed, per_count=per_count, structural_threshold=threshold,
+        candidate_cap=candidate_cap, reuse_cap=dict(reuse_cap), pool_min=pool_min,
     )
 ```
 
@@ -2005,8 +2155,10 @@ def main() -> int:
 
     # ----- pool ------------------------------------------------------------
     histogram = dose_ladder.depth_histogram(available)
+    concept_of = dose_ladder.leaf_concept_map(inventory)
     depth, pool = dose_ladder.select_pool(
         available,
+        concept_of,
         pool_min=dose_budgets.effective_pool_min,
         min_depth=dose_budgets.structural_threshold,
     )
