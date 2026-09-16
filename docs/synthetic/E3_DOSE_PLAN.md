@@ -2409,6 +2409,22 @@ def main() -> int:
     probe_budgets = dose_ladder.load_dose_budgets(Path(a.probe_budgets))
     dose_budgets = dose_ladder.load_dose_budgets(Path(a.dose_budgets))
 
+    # Cross-config invariant, enforceable only here: `load_dose_budgets` sees one
+    # file at a time, but the probe's structural_threshold/candidate_cap decide
+    # which leaves ever reach the pool, and the dose config carries descriptive
+    # copies of both. A drift — someone tuning the probe and forgetting the dose
+    # file — would silently mean the pool was selected under different terms than
+    # the config documents, so fail loud instead.
+    for field in ("structural_threshold", "candidate_cap"):
+        pv, dv = getattr(probe_budgets, field), getattr(dose_budgets, field)
+        if pv != dv:
+            raise SystemExit(
+                f"config_drift: {field} is {pv} in {a.probe_budgets} but {dv} in "
+                f"{a.dose_budgets}. The probe's value is what actually governs "
+                f"which leaves reach the pool; the dose copy is descriptive. "
+                f"Make them agree."
+            )
+
     long_df = pd.read_parquet(a.inventory_long)
     short_df = pd.read_parquet(a.inventory_short)
     # compatibility is judged against the TEXTO alone: a rewrite surfacing only
@@ -2953,6 +2969,14 @@ PYTHONPATH=src python scripts/build_dose_ladder.py \
 
 Esperado en el JSON final: `dose_produced == 5 * pool`, `depth >= 6`,
 `pool >= 600`. Anota `depth_histogram`: va al informe y a la respuesta.
+
+**Mira el margen, no solo el exito.** El recuento de hojas a profundidad >= 6 en
+el histograma deberia quedar COMODAMENTE por encima de 750 (el `pool_min` con
+reserva), no justo. Si queda cerca, la reserva es mas fina de lo previsto aunque
+la corrida pase: significa que las candidatas se apilan en el suelo de
+profundidad 6 en vez de repartirse por profundidades mayores, y conviene
+revisarlo —subiendo `candidate_cap`— antes de fiarse del fondo de 750. Anotalo en
+el informe pase lo que pase.
 
 **Si `pool_too_small`:** el fondo no llega a 600 hojas a profundidad ≥6. NO bajes
 `structural_threshold` por tu cuenta — rompe D5. Sube `candidate_cap` (más
