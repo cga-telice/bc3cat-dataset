@@ -672,3 +672,176 @@ def test_committed_dose_configs_load():
     assert probe.candidate_cap >= dose.effective_pool_min
     # the probe measures availability, which D1 requires to be cap-free
     assert probe.reuse_cap == {}
+
+
+# ---------------------------------------------------------------------------
+# Tramos compartidos. Los tipos de una familia compiten por el mismo tramo de
+# texto: los L2 por fragmento, los L1 por (eje, valor), los L3 por plantilla.
+# Los fixtures de arriba dan a cada tipo un tramo exclusivo, así que no podían
+# verlo; la prueba de humo sobre el stage de 2024 lo encontró (0 de 5 escaleras).
+
+FRAG = ("en cualquier clase de terreno, excepto roca",)
+
+
+def _shared_slots():
+    """Siete tipos disponibles, los tres L2 sobre un único fragmento: caben 5."""
+    return {
+        MT.PARAPHRASE: frozenset({FRAG}),
+        MT.EXPANSION: frozenset({FRAG}),
+        MT.COMPRESSION: frozenset({FRAG}),
+        MT.SYNONYM_LABEL: frozenset({("TIPO", "Normal")}),
+        MT.NUM_TO_TEXT: frozenset({("Nº TUBOS", "2")}),
+        MT.UNIT_CONVERSION: frozenset({("DIAMETRO", "110 mm")}),
+        MT.REORDER: frozenset({("TEXTO", "tpl")}),
+    }
+
+
+def test_placeable_depth_counts_distinct_spans_not_types():
+    from synthetic.dose_ladder import placeable_depth
+
+    assert placeable_depth(_shared_slots()) == 5
+    assert placeable_depth({}) == 0
+
+
+def test_placeable_depth_finds_the_assignment_a_greedy_would_miss():
+    """A admite dos tramos y B solo el primero: caben los dos si A cede."""
+    from synthetic.dose_ladder import placeable_depth
+
+    k1, k2 = ("EJE", "1"), ("EJE", "2")
+    assert placeable_depth({
+        MT.NUM_TO_TEXT: frozenset({k1, k2}),
+        MT.UNIT_CONVERSION: frozenset({k1}),
+    }) == 2
+
+
+def test_leaf_slots_maps_available_types_to_their_compatible_spans():
+    from synthetic.dose_ladder import leaf_slots
+
+    frag = "excepto roca"
+    inventory = LeafInventory({C1: [("C1000", f"zanja {frag} normal", ())]})
+    pantry = Pantry(by_type={
+        MT.PARAPHRASE: (_rewrite(MT.PARAPHRASE, frag, ci=0),
+                        _rewrite(MT.PARAPHRASE, frag, ci=1)),
+        MT.EXPANSION: (_rewrite(MT.EXPANSION, frag),),
+        MT.COMPRESSION: (_rewrite(MT.COMPRESSION, "no aparece"),),
+    })
+    slots = leaf_slots(
+        pantry, inventory,
+        {"C1000": frozenset({MT.PARAPHRASE, MT.COMPRESSION})},
+    )
+    # EXPANSION no está disponible; COMPRESSION no tiene reescritura compatible
+    assert slots == {"C1000": {MT.PARAPHRASE: frozenset({(frag,)})}}
+
+
+def test_nested_order_with_slots_never_puts_two_types_on_one_span():
+    from synthetic.dose_ladder import LADDER_MAX, nested_order, placeable_depth
+
+    slots = {f"L{i:03d}": _shared_slots() for i in range(30)}
+    admitted = {k: frozenset(v) for k, v in slots.items()}
+    # sin tramos, el equilibrio mete dos L2 en alguna hoja: el test tiene dientes
+    plain = nested_order(admitted, seed=42)
+    assert any(
+        placeable_depth({t: slots[leaf][t] for t in types}) < LADDER_MAX
+        for leaf, types in plain.items()
+    )
+    order = nested_order(admitted, seed=42, slots=slots)
+    for leaf, types in order.items():
+        assert placeable_depth({t: slots[leaf][t] for t in types}) == LADDER_MAX
+        for k in range(1, LADDER_MAX):
+            assert set(types[:k]) < set(types[:k + 1])
+
+
+def test_nested_order_with_slots_keeps_the_top_cell_balanced():
+    """Un L2 por hoja, repartido a partes iguales entre los tres."""
+    from synthetic.dose_ladder import nested_order
+
+    slots = {f"L{i:03d}": _shared_slots() for i in range(30)}
+    order = nested_order({k: frozenset(v) for k, v in slots.items()}, seed=42,
+                         slots=slots)
+    inclusion = Counter(t for types in order.values() for t in types)
+    for t in (MT.PARAPHRASE, MT.EXPANSION, MT.COMPRESSION):
+        assert inclusion[t] == 10
+    for t in (MT.SYNONYM_LABEL, MT.NUM_TO_TEXT, MT.UNIT_CONVERSION, MT.REORDER):
+        assert inclusion[t] == 30
+
+
+def test_nested_order_with_disjoint_slots_is_the_plain_order():
+    from synthetic.dose_ladder import nested_order
+
+    admitted = {f"L{i:03d}": frozenset(NINE_SUBSET) for i in range(20)}
+    slots = {k: {t: frozenset({(t.value,)}) for t in v} for k, v in admitted.items()}
+    assert nested_order(admitted, seed=42, slots=slots) == nested_order(admitted, seed=42)
+
+
+def test_nested_order_rejects_a_leaf_whose_spans_cannot_fill_the_ladder():
+    from synthetic.dose_ladder import DoseLadderError, nested_order
+
+    slots = _shared_slots()
+    del slots[MT.REORDER]                    # 6 tipos, pero solo 4 tramos
+    with pytest.raises(DoseLadderError, match="ladder_too_deep"):
+        nested_order({"L000": frozenset(slots)}, seed=42, slots={"L000": slots})
+
+
+def _shared_span_setup(n_leaves=6):
+    """Los tres L2 comparten fragmento; dos reescrituras por tipo."""
+    frag = "en cualquier clase de terreno"
+    own = {MT.SYNONYM_LABEL: "s-syn", MT.NUM_TO_TEXT: "s-num",
+           MT.UNIT_CONVERSION: "s-unit", MT.REORDER: "s-reo"}
+    text = f"zanja {frag} " + " ".join(own.values())
+    inventory = LeafInventory({C1: [(f"C1{i:03d}", text, ()) for i in range(n_leaves)]})
+    by_type = {
+        t: tuple(_rewrite(t, frag, ci=ci, dedup=(frag,)) for ci in range(2))
+        for t in (MT.PARAPHRASE, MT.EXPANSION, MT.COMPRESSION)
+    }
+    by_type.update({
+        t: tuple(_rewrite(t, s, ci=ci, dedup=(s,)) for ci in range(2))
+        for t, s in own.items()
+    })
+    return inventory, Pantry(by_type=by_type)
+
+
+def test_build_dose_plan_fills_ladders_when_types_share_a_span():
+    from synthetic.dose_ladder import (
+        LADDER_MAX, build_dose_plan, leaf_slots, nested_order,
+    )
+
+    inventory, pantry = _shared_span_setup()
+    pool = tuple(f"C1{i:03d}" for i in range(6))
+    available = {leaf: frozenset(pantry.by_type) for leaf in pool}
+    slots = leaf_slots(pantry, inventory, available)
+    order = nested_order(available, seed=42, slots=slots)
+    plan = build_dose_plan(pantry, inventory, order, pool, reuse_cap={}, per_count=6)
+
+    assert len(plan) == 6 * LADDER_MAX
+    for p in plan:
+        keys = [r.dedup_key for r in p.rewrites]
+        assert len(keys) == len(set(keys))           # un tramo por modificación
+
+
+def test_build_dose_plan_backtracks_over_the_span_assignment():
+    """NUM_TO_TEXT puede ir a span1 o span2; UNIT_CONVERSION solo a span1.
+    Elegir primero el uid menor (span1) bloquearía la escalera: el constructor
+    tiene que ceder span1 en vez de descartar la hoja."""
+    from synthetic.dose_ladder import LADDER_MAX, build_dose_plan
+
+    text = "a-uno b-dos u-uno s-syn s-reo s-comp"
+    inventory = LeafInventory({C1: [("C1000", text, ())]})
+    pantry = Pantry(by_type={
+        MT.NUM_TO_TEXT: (_rewrite(MT.NUM_TO_TEXT, "a-uno", dedup=("span1",)),
+                         _rewrite(MT.NUM_TO_TEXT, "b-dos", dedup=("span2",))),
+        MT.UNIT_CONVERSION: (_rewrite(MT.UNIT_CONVERSION, "u-uno", dedup=("span1",)),),
+        MT.SYNONYM_LABEL: (_rewrite(MT.SYNONYM_LABEL, "s-syn"),),
+        MT.REORDER: (_rewrite(MT.REORDER, "s-reo"),),
+        MT.COMPRESSION: (_rewrite(MT.COMPRESSION, "s-comp"),),
+    })
+    order = {"C1000": (MT.NUM_TO_TEXT, MT.UNIT_CONVERSION, MT.SYNONYM_LABEL,
+                       MT.REORDER, MT.COMPRESSION)}
+    plan = build_dose_plan(pantry, inventory, order, ("C1000",),
+                           reuse_cap={}, per_count=1)
+
+    top = next(p for p in plan if p.condition == f"dose_{LADDER_MAX}")
+    by_type = {r.mtype: r.dedup_key for r in top.rewrites}
+    assert by_type[MT.NUM_TO_TEXT] == ("span2",)
+    assert by_type[MT.UNIT_CONVERSION] == ("span1",)
+    # el anidamiento se conserva: el peldaño k es el prefijo de longitud k
+    assert [p.rewrites for p in plan] == [top.rewrites[:k] for k in range(1, LADDER_MAX + 1)]

@@ -65,6 +65,8 @@ __all__ = [
     "build_probe_plan",
     "build_dose_plan",
     "nested_order",
+    "placeable_depth",
+    "leaf_slots",
     "select_pool",
     "depth_histogram",
     "leaf_concept_map",
@@ -72,6 +74,9 @@ __all__ = [
 
 #: Rungs of the ladder: dose_1 .. dose_5 (their §1).
 LADDER_MAX = 5
+
+#: Diagnostic bucket in ``pool_exhausted`` for ladders blocked by span clashes.
+SPAN_CONFLICT = "<span_conflict>"
 
 
 class DoseLadderError(RuntimeError):
@@ -252,6 +257,93 @@ def _least_used(
     return None
 
 
+def placeable_depth(slots: Mapping[ModificationType, frozenset]) -> int:
+    """How many of these types fit on pairwise-distinct spans at once.
+
+    ``slots`` maps each type to the spans (``dedup_key``\\ s) it can rewrite on
+    one leaf. Types of a family share spans — L2 by fragment, L1 by
+    ``(axis, value)``, L3 by template — so this is a maximum bipartite
+    matching, not ``len(slots)``.
+    """
+    owner: dict = {}
+
+    def augment(mtype: ModificationType, seen: set) -> bool:
+        for key in sorted(slots[mtype], key=repr):
+            if key in seen:
+                continue
+            seen.add(key)
+            if key not in owner or augment(owner[key], seen):
+                owner[key] = mtype
+                return True
+        return False
+
+    return sum(augment(t, set()) for t in sorted(slots, key=lambda t: t.value))
+
+
+def leaf_slots(
+    pantry: Pantry,
+    inventory: LeafInventory,
+    available: Mapping[str, frozenset],
+) -> dict[str, dict[ModificationType, frozenset]]:
+    """Per leaf, each AVAILABLE type -> the spans its compatible rewrites touch.
+
+    Cap-free, like availability itself (D1). Feeds :func:`placeable_depth` and
+    ``nested_order(slots=...)``.
+    """
+    concept_of = _concept_of(inventory)
+    applicable: dict[str, dict] = {}
+    out: dict[str, dict[ModificationType, frozenset]] = {}
+    for leaf in sorted(available):
+        concept = concept_of[leaf]
+        if concept not in applicable:
+            applicable[concept] = pantry.for_concept(concept)
+        by_type = compatible_rewrites(
+            applicable[concept], inventory.text(leaf), inventory.axis_values(leaf),
+        )
+        out[leaf] = {
+            t: frozenset(r.dedup_key for r in rewrites)
+            for t, rewrites in by_type.items() if t in available[leaf]
+        }
+    return out
+
+
+def _assign_spans(
+    types: Sequence[ModificationType],
+    by_type: Mapping[ModificationType, Sequence[ApprovedRewrite]],
+    reuse_cap: Mapping[str, int],
+    usage: Mapping[str, int],
+) -> Optional[tuple[ApprovedRewrite, ...]]:
+    """One uncapped rewrite per type, on pairwise-distinct spans, or ``None``.
+
+    Depth-first over least-used-first candidates, so whenever the plain greedy
+    pick succeeds it is exactly what this returns; the search only differs when
+    an early pick takes the one span a later type needs. Per level only the
+    least-used rewrite of each span is tried: what stays feasible downstream
+    depends on the spans taken, not on which rewrite took them.
+    """
+    picks: list[ApprovedRewrite] = []
+
+    def search(i: int, taken: frozenset) -> bool:
+        if i == len(types):
+            return True
+        cap = reuse_cap.get(types[i].value)
+        tried: set = set()
+        for rewrite in sorted(by_type.get(types[i], ()),
+                              key=lambda r: (usage.get(r.uid, 0), r.uid)):
+            if cap is not None and usage.get(rewrite.uid, 0) >= cap:
+                continue
+            if rewrite.dedup_key in taken or rewrite.dedup_key in tried:
+                continue
+            tried.add(rewrite.dedup_key)
+            picks.append(rewrite)
+            if search(i + 1, taken | {rewrite.dedup_key}):
+                return True
+            picks.pop()
+        return False
+
+    return tuple(picks) if search(0, frozenset()) else None
+
+
 def build_probe_plan(
     pantry: Pantry,
     inventory: LeafInventory,
@@ -317,6 +409,10 @@ def build_dose_plan(
     accepted leaves always carry a COMPLETE ladder and the five count cells
     share one population. Stops at ``per_count`` accepted leaves.
 
+    Each leaf's rewrites sit on pairwise-distinct spans; when an early type's
+    least-used pick would take the only span a later type can use, another
+    assignment is searched before the leaf is given up (:func:`_assign_spans`).
+
     Reuse caps count per RUN here, not per condition: the five rungs of a leaf
     are built together, so a single counter is the only coherent accounting.
 
@@ -348,25 +444,16 @@ def build_dose_plan(
             applicable[concept], inventory.text(leaf), inventory.axis_values(leaf),
         )
         types = order[leaf]
-        picks: list[ApprovedRewrite] = []
-        used_dedup: set = set()
-        ok = True
-        for mtype in types:
-            pick = _least_used(
-                by_type.get(mtype, ()), reuse_cap.get(mtype.value), usage,
-                frozenset(used_dedup),
-            )
-            if pick is None:
-                blocked[mtype.value] += 1
-                ok = False
-                break
-            picks.append(pick)
-            used_dedup.add(pick.dedup_key)
-            usage[pick.uid] = usage.get(pick.uid, 0) + 1
-        if not ok:
-            for pick in picks:            # revert this leaf's whole ladder
-                usage[pick.uid] -= 1
+        picks = _assign_spans(types, by_type, reuse_cap, usage)
+        if picks is None:
+            exhausted = [
+                t.value for t in types
+                if _least_used(by_type.get(t, ()), reuse_cap.get(t.value), usage) is None
+            ]
+            blocked.update(exhausted or [SPAN_CONFLICT])
             continue
+        for pick in picks:
+            usage[pick.uid] = usage.get(pick.uid, 0) + 1
         for k in range(1, LADDER_MAX + 1):
             plan.append(PlannedVariant(
                 condition=f"dose_{k}", concept_key=concept,
@@ -380,7 +467,11 @@ def build_dose_plan(
             f"could be built from a pool of {len(pool)} leaves. Every rung is "
             f"short by the same amount, so the delivered set would miss the "
             f"per-count floor. Ladders were blocked by these types running out "
-            f"of uncapped rewrites: {dict(blocked.most_common())}. If one type "
+            f"of uncapped rewrites: {dict(blocked.most_common())} "
+            f"({SPAN_CONFLICT!r} counts ladders whose types all had uncapped "
+            f"rewrites but no assignment to distinct spans: the order was "
+            f"built without `slots`, or caps left only colliding spans). "
+            f"If one type "
             f"dominates that list its `reuse_cap` is the binding constraint and "
             f"raising `pool_min` will NOT help; if the list is empty or thinly "
             f"spread, the pool is simply too short — raise `pool_min` above "
@@ -393,6 +484,8 @@ def build_dose_plan(
 def nested_order(
     admitted: Mapping[str, frozenset],
     seed: int,
+    *,
+    slots: Optional[Mapping[str, Mapping[ModificationType, frozenset]]] = None,
 ) -> dict[str, tuple[ModificationType, ...]]:
     """Per-leaf type order whose prefixes ARE the ladder rungs (D4).
 
@@ -408,6 +501,14 @@ def nested_order(
 
     ``types(dose_k)`` is the length-``k`` prefix, so consecutive rungs differ
     by exactly one added modification (D4).
+
+    ``slots`` (from :func:`leaf_slots`) makes stage 1 skip a type that no
+    longer fits on a distinct span next to the ones already chosen; without it
+    every type is taken to have a span of its own. The sets of types that fit
+    together form a transversal matroid, so this greedy still returns the
+    least-used feasible choice, and a leaf where ``LADDER_MAX`` types fit and
+    six or more are available has at least two feasible top-rung
+    compositions — D5's reason for ``d >= 6`` carries over unchanged.
 
     On balance (their §3), stated honestly: stage 1 makes the top cell even.
     Cells below it cannot be made exactly even by a greedy, because the
@@ -427,17 +528,29 @@ def nested_order(
     order: dict[str, tuple[ModificationType, ...]] = {}
     for leaf in sorted(admitted):
         types = admitted[leaf]
-        if len(types) < LADDER_MAX:
+        spans = (
+            {t: slots[leaf].get(t, frozenset()) for t in types}
+            if slots is not None else {t: frozenset({t}) for t in types}
+        )
+        fits = placeable_depth(spans)
+        if fits < LADDER_MAX:
             raise DoseLadderError(
-                f"ladder_too_deep: leaf {leaf!r} admits {len(types)} types, "
-                f"needs {LADDER_MAX} — it should not be in the pool"
+                f"ladder_too_deep: leaf {leaf!r} admits {len(types)} types on "
+                f"{fits} distinct spans, needs {LADDER_MAX} — it should not be "
+                f"in the pool"
             )
         rng = random.Random(seed ^ zlib.crc32(leaf.encode("utf-8")))
         shuffled = rng.sample(sorted(types, key=lambda t: t.value), len(types))
         rank = {t: i for i, t in enumerate(shuffled)}
 
         # stage 1: which types ride this leaf's ladder at all
-        used = sorted(shuffled, key=lambda t: (inclusion[t], rank[t]))[:LADDER_MAX]
+        used: list[ModificationType] = []
+        for mtype in sorted(shuffled, key=lambda t: (inclusion[t], rank[t])):
+            candidate = {t: spans[t] for t in (*used, mtype)}
+            if placeable_depth(candidate) == len(candidate):
+                used.append(mtype)
+                if len(used) == LADDER_MAX:
+                    break
         for mtype in used:
             inclusion[mtype] += 1
 

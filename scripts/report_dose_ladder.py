@@ -30,8 +30,21 @@ def _types(value):
     return list(value) if not isinstance(value, str) else json.loads(value)
 
 
+def _placeable_lines(placeable_histogram: dict | None) -> list[str]:
+    if placeable_histogram is None:
+        return []
+    placeable_histogram = {int(k): v for k, v in placeable_histogram.items()}
+    short = sum(n for k, n in placeable_histogram.items() if k < 5)
+    return [
+        f"- histograma de modificaciones que caben en tramos distintos: "
+        f"`{dict(sorted(placeable_histogram.items()))}` — "
+        f"{short} hojas sondeadas admiten menos de 5 y no entran al fondo",
+    ]
+
+
 def render_report(items: pd.DataFrame, *, depth: int, histogram: dict,
-                  pool_size: int, target: int = 600) -> str:
+                  pool_size: int, target: int = 600,
+                  placeable_histogram: dict | None = None) -> str:
     counts = Counter(int(c) for c in items["modification_count"])
     lines = [
         "# E3 — informe del corpus de dosis (escalera anidada)",
@@ -43,6 +56,7 @@ def render_report(items: pd.DataFrame, *, depth: int, histogram: dict,
         f"- profundidad elegida **d = {depth}**",
         f"- fondo común: **{pool_size} hojas**, las mismas en las cinco celdas",
         f"- histograma de profundidad admitida: `{histogram}`",
+        *_placeable_lines(placeable_histogram),
         f"- ítems: **{len(items)}**, hojas distintas: **{items['original_key'].nunique()}**",
         "",
         "## Celdas por dosis",
@@ -114,6 +128,8 @@ def main() -> int:
     ap.add_argument("--pool-size", type=int, required=True)
     ap.add_argument("--histogram", default="{}",
                     help="JSON dict from build_dose_ladder.py's output")
+    ap.add_argument("--placeable-histogram", default=None,
+                    help="JSON dict `placeable_histogram` from build_dose_ladder.py")
     ap.add_argument("--target", type=int, default=600,
                     help="minimum items expected per dose cell (§3); default 600")
     ap.add_argument("--out", required=True)
@@ -123,6 +139,8 @@ def main() -> int:
     text = render_report(
         items, depth=a.depth, histogram=json.loads(a.histogram),
         pool_size=a.pool_size, target=a.target,
+        placeable_histogram=(json.loads(a.placeable_histogram)
+                             if a.placeable_histogram else None),
     )
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_text(text, encoding="utf-8")

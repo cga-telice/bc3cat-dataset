@@ -159,3 +159,22 @@ def test_dose_report_flags_cells_below_target(tmp_path):
     # no short cells -> no warning line
     ok_text = mod.render_report(items, depth=6, histogram={6: 2}, pool_size=2, target=1)
     assert "Aviso" not in ok_text
+
+
+def test_dose_report_shows_how_many_modifications_fit_per_leaf():
+    """Una hoja con 9 tipos puede tener solo 4 tramos distintos: el informe
+    tiene que dejar ver cuántas se quedaron fuera del fondo por eso."""
+    mod = _load_reporter()
+
+    items = pd.DataFrame({
+        "item_key": ["a_syn_1"], "original_key": ["L1"], "concept_key": ["C1$"],
+        "modification_types": [["reorder"]], "modification_count": [1],
+    })
+    text = mod.render_report(items, depth=6, histogram={6: 1, 9: 2}, pool_size=1,
+                             placeable_histogram={4: 2, 5: 1})
+    assert "caben en tramos distintos" in text
+    assert "`{4: 2, 5: 1}`" in text
+    assert "2 hojas" in text and "menos de 5" in text
+    assert "caben en tramos distintos" not in mod.render_report(
+        items, depth=6, histogram={6: 1}, pool_size=1,
+    )

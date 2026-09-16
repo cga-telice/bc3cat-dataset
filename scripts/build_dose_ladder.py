@@ -31,6 +31,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from collections import Counter
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
@@ -177,20 +178,31 @@ def main() -> int:
           f"hojas con >=1 tipo disponible: {len(available)}")
 
     # ----- pool ------------------------------------------------------------
+    # Types of one family compete for the same span, so a leaf can have more
+    # available types than modifications that fit together. Only leaves where
+    # a full ladder fits may enter the pool; D5's depth still counts types.
+    slots = dose_ladder.leaf_slots(pantry, inventory, available)
+    placeable = {leaf: dose_ladder.placeable_depth(s) for leaf, s in slots.items()}
+    placeable_histogram = dict(sorted(Counter(placeable.values()).items()))
+    fits = {
+        leaf: types for leaf, types in available.items()
+        if placeable[leaf] >= dose_ladder.LADDER_MAX
+    }
     histogram = dose_ladder.depth_histogram(available)
     concept_of = dose_ladder.leaf_concept_map(inventory)
     depth, pool = dose_ladder.select_pool(
-        available,
+        fits,
         concept_of,
         pool_min=dose_budgets.effective_pool_min,
         min_depth=dose_budgets.structural_threshold,
     )
     print(f"[E3] profundidad elegida d={depth}; fondo={len(pool)} hojas; "
-          f"histograma={histogram}")
+          f"histograma={histogram}; caben en tramos distintos={placeable_histogram}")
 
     # ----- pass 2: dose ladder --------------------------------------------
     order = dose_ladder.nested_order(
         {leaf: available[leaf] for leaf in pool}, seed=dose_budgets.seed,
+        slots=slots,
     )
     dose_plan = dose_ladder.build_dose_plan(
         pantry, inventory, order, pool,
@@ -239,6 +251,7 @@ def main() -> int:
         "pool_leaves": len(pool_set),
         "dose_produced": dose_stats.totals["produced"],
         "depth_histogram": histogram,
+        "placeable_histogram": placeable_histogram,
         "probe_items": str(probe_stats.items_path),
         "dose_items": str(dose_stats.items_path),
         "applicability": str(out_side),

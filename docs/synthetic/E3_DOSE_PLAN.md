@@ -1758,6 +1758,47 @@ peldaño no sale, se revierte la hoja entera y se pasa a la reserva.
 > construidas. Lo sustituyen dos tests que fijan las dos mitades del contrato
 > por separado.
 
+> **Corregido tras la prueba de humo de la tarea 14 (opción «B barata»).** Un
+> defecto de diseño que ningún test hermético podía ver: **los tipos de una
+> misma familia compiten por el mismo tramo de texto** —los tres L2 por el
+> fragmento, los seis L1 por `(eje, valor)`, los dos L3 por la plantilla—, y
+> una escalera necesita sus cinco modificaciones en tramos distintos. El orden
+> anidado elegía tipos sin saberlo, y `build_dose_plan` descartaba la hoja
+> entera en cuanto dos caían en el mismo tramo. Sobre el stage de 2024: **0 de
+> 5 escaleras**. El fixture `_ladder_setup` daba a cada tipo un tramo
+> exclusivo, así que la colisión era imposible por construcción.
+>
+> Medido sobre las 60 hojas del sondeo: solo en 29 caben 5 modificaciones en
+> tramos distintos. De las 35 con ≥6 tipos disponibles, 6 no caben de ninguna
+> manera. Y de las 24 con 9 tipos, 19 tienen exactamente 5 tramos: ahí un
+> «seguir bajando por la lista» (opción A) puede fallar aunque exista solución.
+>
+> El arreglo, en tres piezas:
+>
+> 1. **`placeable_depth(slots)`**: cuántos tipos caben a la vez en tramos
+>    distintos (emparejamiento bipartito tipo↔tramo). `leaf_slots` construye
+>    los tramos por hoja a partir de la disponibilidad del sondeo, sin topes
+>    (D1). El script solo deja entrar al fondo las hojas donde caben
+>    `LADDER_MAX`. **`available_types` no cambia** —es lo prometido a
+>    `bc3cat-retrieval`—, y la *d* de D5 sigue contando tipos.
+> 2. **`nested_order(..., slots=)`**: la etapa 1 salta el tipo que ya no cabe
+>    junto a los elegidos. Los conjuntos de tipos que caben forman un matroide
+>    transversal, así que el greedy sigue dando la elección menos usada, sin
+>    desviación del equilibrio que documentar. Por la misma estructura, una
+>    hoja donde caben 5 y hay ≥6 tipos disponibles tiene al menos dos
+>    composiciones posibles del peldaño 5: el motivo de D5 para `d ≥ 6` se
+>    conserva intacto.
+> 3. **`build_dose_plan` busca la asignación de tramos** (`_assign_spans`,
+>    búsqueda en profundidad) en vez de coger por orden. Cuando el greedy
+>    funciona, devuelve exactamente lo mismo: el test de reversión trazado a
+>    mano sigue pasando sin tocarlo. El diagnóstico de `pool_exhausted`
+>    atribuía el bloqueo a «quedarse sin reescrituras sin tope» aunque no
+>    hubiera topes; ahora esos casos van a `<span_conflict>`.
+>
+> Nueve tests nuevos con tramos compartidos; dos mutantes (sin vuelta atrás, y
+> etapa 1 ciega a tramos) quedan detectados. La planificación de la prueba de
+> humo pasa de 0 a 5 de 5 escaleras, con los nueve tipos presentes en `dose_5`.
+
 - [ ] **Paso 1: Escribe los tests que fallan**
 
 ```python
@@ -3087,8 +3128,14 @@ PYTHONPATH=src python scripts/build_dose_ladder.py \
 Esperado en el JSON final: `dose_produced == 5 * pool`, `depth >= 6`,
 `pool >= 600`. Anota `depth_histogram`: va al informe y a la respuesta.
 
+**Anota también `placeable_histogram`**: cuántas modificaciones caben en tramos
+distintos por hoja sondeada. Solo entran al fondo las hojas con ≥5 (ver la
+corrección de la tarea 9). En la prueba de humo sobre 2024 fue la mitad de las
+candidatas: con `candidate_cap: 1500` eso rondaría 720 hojas, **por debajo de
+750**. Si el catálogo real se parece, sube `candidate_cap` antes de relanzar.
+
 **Mira el margen, no solo el exito.** El recuento de hojas a profundidad >= 6 en
-el histograma deberia quedar COMODAMENTE por encima de 750 (el `pool_min` con
+las que caben 5 deberia quedar COMODAMENTE por encima de 750 (el `pool_min` con
 reserva), no justo. Si queda cerca, la reserva es mas fina de lo previsto aunque
 la corrida pase: significa que las candidatas se apilan en el suelo de
 profundidad 6 en vez de repartirse por profundidades mayores, y conviene
@@ -3134,6 +3181,7 @@ PYTHONPATH=src python scripts/report_dose_ladder.py \
   --items data/synthetic/processed_OE_dose/BC3CAT_Syn_items.parquet \
   --depth <d del paso 2> --pool-size <pool del paso 2> \
   --histogram '<depth_histogram del paso 2>' \
+  --placeable-histogram '<placeable_histogram del paso 2>' \
   --out docs/synthetic/OE_dose_report.md
 ```
 
