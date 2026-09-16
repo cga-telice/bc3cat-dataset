@@ -562,22 +562,41 @@ def test_build_dose_plan_uses_the_same_leaves_at_every_rung():
     assert len(set(map(frozenset, per_rung.values()))) == 1   # one population
 
 
-def test_build_dose_plan_skips_a_leaf_whose_ladder_cannot_be_built():
-    """A cap that exhausts mid-ladder must drop the WHOLE leaf and move to the
-    reserve — a partial ladder would break the common population (D5)."""
+def test_build_dose_plan_raises_when_the_pool_cannot_fill_the_request():
+    """A shortfall is loud, not silent: every rung would be short by the same
+    amount, so the delivered set would miss the per-count floor. The cap here
+    allows only 2 uses of `paraphrase` in the whole run, so most leaves that
+    need it cannot build a ladder."""
+    from synthetic.dose_ladder import DoseLadderError, build_dose_plan, nested_order
+
+    inventory, pantry = _ladder_setup(n_leaves=12)
+    pool = tuple(f"C1{i:03d}" for i in range(12))
+    order = nested_order({leaf: frozenset(NINE_SUBSET) for leaf in pool}, seed=42)
+    with pytest.raises(DoseLadderError, match="pool_exhausted"):
+        build_dose_plan(
+            pantry, inventory, order, pool,
+            reuse_cap={"paraphrase": 1}, per_count=12,
+        )
+
+
+def test_build_dose_plan_draws_on_the_reserve_when_a_ladder_fails():
+    """A pool longer than `per_count` IS the reserve: leaves whose ladder
+    cannot be built are skipped whole (D5 — a partial ladder would break the
+    common population) and later candidates take their place, so the request
+    is still met in full."""
     from synthetic.dose_ladder import LADDER_MAX, build_dose_plan, nested_order
 
     inventory, pantry = _ladder_setup(n_leaves=12)
     pool = tuple(f"C1{i:03d}" for i in range(12))
     order = nested_order({leaf: frozenset(NINE_SUBSET) for leaf in pool}, seed=42)
-    # 2 rewrites x cap 1 = 2 uses of paraphrase in the whole run: at most 2
-    # leaves can carry it, so fewer than 12 ladders are buildable
     plan = build_dose_plan(
-        pantry, inventory, order, pool, reuse_cap={"paraphrase": 1}, per_count=12,
+        pantry, inventory, order, pool,
+        reuse_cap={"paraphrase": 1}, per_count=4,
     )
     leaves = {p.leaf_item_key for p in plan}
-    assert len(plan) == len(leaves) * LADDER_MAX     # every kept leaf is complete
-    assert len(leaves) < 12                          # some were skipped
+    assert len(leaves) == 4                      # request met exactly
+    assert len(plan) == 4 * LADDER_MAX           # every accepted leaf complete
+    assert leaves <= set(pool)
 
 
 def test_build_dose_plan_is_deterministic():

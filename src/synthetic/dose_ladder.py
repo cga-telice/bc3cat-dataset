@@ -319,6 +319,13 @@ def build_dose_plan(
 
     Reuse caps count per RUN here, not per condition: the five rungs of a leaf
     are built together, so a single counter is the only coherent accounting.
+
+    Either delivers exactly ``per_count`` complete ladders or raises
+    :class:`DoseLadderError` — it never returns a short plan. A partial
+    delivery would be silent (every rung short by the same amount, with
+    nothing in the return value to say so), and this repo's pattern for that
+    class of degradation (see the emitter's ``applied_count_mismatch``) is to
+    stop rather than let it ship unnoticed.
     """
     concept_of = _concept_of(inventory)
     # resolved once per concept, not once per leaf (see `compatible_rewrites`)
@@ -361,6 +368,15 @@ def build_dose_plan(
                 leaf_item_key=leaf, rewrites=tuple(picks[:k]),
             ))
         accepted += 1
+
+    if accepted < per_count:
+        raise DoseLadderError(
+            f"pool_exhausted: only {accepted} of {per_count} requested ladders "
+            f"could be built from a pool of {len(pool)} leaves. Every rung is "
+            f"short by the same amount, so the delivered set would miss the "
+            f"per-count floor. Raise `pool_min` above `per_count` in the dose "
+            f"config to give the run a reserve, or lower `per_count`"
+        )
 
     return tuple(plan)
 
@@ -517,7 +533,17 @@ class DoseBudgets:
     @property
     def effective_pool_min(self) -> int:
         """Leaves the pool must reach: ``pool_min`` when given, else one leaf
-        per rung item (the ladder uses the SAME leaves at every rung)."""
+        per rung item (the ladder uses the SAME leaves at every rung).
+
+        Leaving ``pool_min`` unset is a trap: the fallback to ``per_count``
+        gives :func:`build_dose_plan` NO reserve, so any leaf whose ladder
+        fails to build (a capped-out type) reduces the delivered count below
+        ``per_count`` and the run raises rather than silently shipping short
+        (D-shortfall). A config that wants the ``per_count`` floor honoured
+        must set ``pool_min`` above it. That reserve is not free, though: a
+        larger ``pool_min`` demands more leaves at the chosen depth, which
+        can force :func:`select_pool` to settle for a shallower ``d``.
+        """
         return self.per_count if self.pool_min is None else self.pool_min
 
     def to_driver_budgets(self) -> Budgets:
