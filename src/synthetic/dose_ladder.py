@@ -58,6 +58,8 @@ __all__ = [
     "DoseLadderError",
     "structural_types",
     "compatible_rewrites",
+    "DoseBudgets",
+    "load_dose_budgets",
 ]
 
 #: Rungs of the ladder: dose_1 .. dose_5 (their §1).
@@ -147,3 +149,84 @@ def compatible_rewrites(
         if hits:
             out[mtype] = hits
     return out
+
+
+@dataclass(frozen=True)
+class DoseBudgets:
+    """Validated E3 budgets.
+
+    ``per_count`` items per rung (their §3 asks for >= 600);
+    ``structural_threshold`` is the minimum number of STRUCTURALLY applicable
+    types a leaf needs to enter the probe candidate set (D5 wants room to
+    choose at rung 5, so it must exceed ``LADDER_MAX``); ``candidate_cap``
+    bounds the probe's render cost.
+    """
+
+    seed: int
+    per_count: int
+    structural_threshold: int
+    candidate_cap: int
+    reuse_cap: Mapping[str, int]
+    pool_min: Optional[int] = None
+
+    @property
+    def effective_pool_min(self) -> int:
+        """Leaves the pool must reach: ``pool_min`` when given, else one leaf
+        per rung item (the ladder uses the SAME leaves at every rung)."""
+        return self.per_count if self.pool_min is None else self.pool_min
+
+    def to_driver_budgets(self) -> Budgets:
+        """Adapter for `run_corpus(budgets=...)`, which only reads
+        ``targets``/``seed``/``reuse_cap`` to render the QA report."""
+        return Budgets(
+            seed=self.seed,
+            targets={f"dose_{k}": self.per_count for k in range(1, LADDER_MAX + 1)},
+            reuse_cap=dict(self.reuse_cap),
+        )
+
+
+def _positive_int(value: object, what: str) -> int:
+    if type(value) is not int or value <= 0:
+        raise ValueError(
+            f"dose_budgets_invalid: {what} must be a positive int, got {value!r}"
+        )
+    return value
+
+
+def load_dose_budgets(path: Path) -> DoseBudgets:
+    """Read + validate the E3 budgets YAML. Fails loud
+    (``ValueError("dose_budgets_invalid: ...")``)."""
+    raw = yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+    if not isinstance(raw, dict):
+        raise ValueError(f"dose_budgets_invalid: {Path(path).name} is not a mapping")
+
+    seed = _positive_int(raw.get("seed"), "seed")
+    per_count = _positive_int(raw.get("per_count"), "per_count")
+    threshold = _positive_int(raw.get("structural_threshold"), "structural_threshold")
+    candidate_cap = _positive_int(raw.get("candidate_cap"), "candidate_cap")
+    if threshold <= LADDER_MAX:
+        raise ValueError(
+            f"dose_budgets_invalid: structural_threshold must exceed "
+            f"LADDER_MAX={LADDER_MAX} so rung {LADDER_MAX} still has a choice "
+            f"(D5), got {threshold}"
+        )
+    pool_min = raw.get("pool_min")
+    if pool_min is not None:
+        pool_min = _positive_int(pool_min, "pool_min")
+
+    reuse_cap = raw.get("reuse_cap") or {}
+    if not isinstance(reuse_cap, dict):
+        raise ValueError("dose_budgets_invalid: reuse_cap is not a mapping")
+    valid = {t.value for t in NINE_TYPES}
+    for mtype, cap in reuse_cap.items():
+        if mtype not in valid:
+            raise ValueError(
+                f"dose_budgets_invalid: reuse_cap type {mtype!r} is not one of "
+                f"the nine admitted types"
+            )
+        _positive_int(cap, f"reuse_cap[{mtype}]")
+
+    return DoseBudgets(
+        seed=seed, per_count=per_count, structural_threshold=threshold,
+        candidate_cap=candidate_cap, reuse_cap=dict(reuse_cap), pool_min=pool_min,
+    )

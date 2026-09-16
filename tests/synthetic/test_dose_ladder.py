@@ -124,3 +124,57 @@ def test_compatible_rewrites_signature_is_cap_free():
     assert set(inspect.signature(compatible_rewrites).parameters) == {
         "applicable", "leaf_text", "leaf_axis_values",
     }
+
+
+def test_load_dose_budgets_reads_and_validates(tmp_path):
+    from synthetic.dose_ladder import load_dose_budgets
+
+    p = tmp_path / "dose.yaml"
+    p.write_text(
+        "seed: 42\n"
+        "per_count: 600\n"
+        "structural_threshold: 6\n"
+        "candidate_cap: 1500\n"
+        "reuse_cap:\n"
+        "  num_to_text: 20\n",
+        encoding="utf-8",
+    )
+    b = load_dose_budgets(p)
+    assert (b.seed, b.per_count, b.structural_threshold, b.candidate_cap) == (42, 600, 6, 1500)
+    assert b.reuse_cap == {"num_to_text": 20}
+
+
+def test_load_dose_budgets_rejects_a_threshold_below_the_ladder(tmp_path):
+    from synthetic.dose_ladder import LADDER_MAX, load_dose_budgets
+
+    p = tmp_path / "dose.yaml"
+    p.write_text(
+        f"seed: 42\nper_count: 10\nstructural_threshold: {LADDER_MAX - 1}\n"
+        "candidate_cap: 100\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="dose_budgets_invalid"):
+        load_dose_budgets(p)
+
+
+def test_load_dose_budgets_rejects_unknown_reuse_cap_type(tmp_path):
+    from synthetic.dose_ladder import load_dose_budgets
+
+    p = tmp_path / "dose.yaml"
+    p.write_text(
+        "seed: 42\nper_count: 10\nstructural_threshold: 6\ncandidate_cap: 100\n"
+        "reuse_cap:\n  no_such_type: 5\n",
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="dose_budgets_invalid"):
+        load_dose_budgets(p)
+
+
+def test_dose_budgets_to_driver_budgets_has_one_target_per_rung():
+    from synthetic.dose_ladder import LADDER_MAX, DoseBudgets
+
+    b = DoseBudgets(seed=1, per_count=7, structural_threshold=6, candidate_cap=10,
+                    reuse_cap={})
+    drv = b.to_driver_budgets()
+    assert drv.targets == {f"dose_{k}": 7 for k in range(1, LADDER_MAX + 1)}
+    assert drv.seed == 1
