@@ -64,6 +64,8 @@ __all__ = [
     "candidate_leaves",
     "build_probe_plan",
     "nested_order",
+    "select_pool",
+    "depth_histogram",
 ]
 
 #: Rungs of the ladder: dose_1 .. dose_5 (their §1).
@@ -347,6 +349,45 @@ def nested_order(
             per_position[position][pick] += 1
         order[leaf] = tuple(chosen)
     return order
+
+
+def depth_histogram(available: Mapping[str, frozenset]) -> dict[int, int]:
+    """``{number of available types: number of leaves}`` — the measurement D5
+    defers to, and a row of the corpus report."""
+    return dict(sorted(Counter(len(v) for v in available.values()).items()))
+
+
+def select_pool(
+    available: Mapping[str, frozenset],
+    *,
+    pool_min: int,
+    min_depth: int,
+) -> tuple[int, tuple[str, ...]]:
+    """The common leaf pool (D5): ``(depth, leaves)``.
+
+    Picks the DEEPEST ``d >= min_depth`` for which at least ``pool_min`` leaves
+    admit ``d`` types, then takes the first ``pool_min`` of them in sorted
+    order. All five rungs run on these same leaves, so the count cells share
+    one population and the dose effect carries no leaf-difficulty selection.
+
+    Raises :class:`DoseLadderError` when no depth fills the pool — silently
+    dropping to a shallower ladder would void D5's guarantee.
+    """
+    if min_depth <= LADDER_MAX:
+        raise DoseLadderError(
+            f"min_depth_too_shallow: {min_depth} <= LADDER_MAX={LADDER_MAX} "
+            f"would leave rung {LADDER_MAX} with no choice of composition (D5)"
+        )
+    histogram = depth_histogram(available)
+    deepest = max(histogram, default=0)
+    for depth in range(deepest, min_depth - 1, -1):
+        eligible = tuple(sorted(k for k, v in available.items() if len(v) >= depth))
+        if len(eligible) >= pool_min:
+            return depth, eligible[:pool_min]
+    raise DoseLadderError(
+        f"pool_too_small: no depth >= {min_depth} yields {pool_min}+ leaves; "
+        f"depth histogram = {histogram}"
+    )
 
 
 @dataclass(frozen=True)

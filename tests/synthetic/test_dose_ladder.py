@@ -409,6 +409,46 @@ def test_nested_order_handles_non_uniform_admitted_sets():
         assert set(types) <= admitted[leaf]
 
 
+def test_select_pool_takes_the_deepest_level_that_still_fills():
+    from synthetic.dose_ladder import select_pool
+
+    avail = {}
+    for i in range(10):                      # 10 leaves admit 8 types
+        avail[f"D8_{i:02d}"] = frozenset(list(NINE_SUBSET)[:6]) | {MT.NUM_TO_TEXT, MT.UNIT_EXPANSION}
+    for i in range(50):                      # 50 more admit 6
+        avail[f"D6_{i:02d}"] = frozenset(NINE_SUBSET)
+    depth, pool = select_pool(avail, pool_min=40, min_depth=6)
+    assert depth == 6                        # 8 would only give 10 leaves
+    assert len(pool) == 40
+    assert pool == tuple(sorted(pool))       # deterministic, sorted
+
+
+def test_select_pool_prefers_depth_when_supply_allows():
+    from synthetic.dose_ladder import select_pool
+
+    avail = {
+        f"D8_{i:02d}": frozenset(list(NINE_SUBSET)[:6]) | {MT.NUM_TO_TEXT, MT.UNIT_EXPANSION}
+        for i in range(50)
+    }
+    depth, pool = select_pool(avail, pool_min=40, min_depth=6)
+    assert depth == 8
+
+
+def test_select_pool_fails_loud_when_no_depth_fills():
+    from synthetic.dose_ladder import DoseLadderError, select_pool
+
+    avail = {f"L{i}": frozenset(NINE_SUBSET) for i in range(5)}
+    with pytest.raises(DoseLadderError, match="pool_too_small"):
+        select_pool(avail, pool_min=600, min_depth=6)
+
+
+def test_depth_histogram_reports_the_distribution():
+    from synthetic.dose_ladder import depth_histogram
+
+    avail = {"a": frozenset(NINE_SUBSET), "b": frozenset(list(NINE_SUBSET)[:3])}
+    assert depth_histogram(avail) == {3: 1, 6: 1}
+
+
 def test_nested_order_does_not_starve_a_thinly_admitted_type():
     """Stage 1 picks the globally LEAST-included types, so a type only a few
     leaves admit should ride all of them rather than being crowded out by the
