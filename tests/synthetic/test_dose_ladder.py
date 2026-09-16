@@ -377,3 +377,54 @@ def test_nested_order_rejects_a_leaf_that_cannot_fill_the_ladder():
 
     with pytest.raises(DoseLadderError, match="ladder_too_deep"):
         nested_order({"L1": frozenset(list(NINE_SUBSET)[:2])}, seed=42)
+
+
+def test_nested_order_handles_a_leaf_admitting_exactly_the_ladder_depth():
+    """No exclusion is possible at exactly LADDER_MAX admitted types: the
+    ladder must be those types, in some order, with no error."""
+    from synthetic.dose_ladder import LADDER_MAX, nested_order
+
+    exact = frozenset(NINE_SUBSET[:LADDER_MAX])
+    order = nested_order({"L000": exact}, seed=42)
+    assert set(order["L000"]) == set(exact)
+    assert len(order["L000"]) == LADDER_MAX
+
+
+def test_nested_order_handles_non_uniform_admitted_sets():
+    """Real data: leaves admit different numbers of types. Every leaf must
+    still get a full ladder drawn only from what IT admits."""
+    from synthetic.dose_ladder import LADDER_MAX, nested_order
+
+    admitted = {}
+    for i in range(30):
+        size = LADDER_MAX + (i % 2)          # alternate 5 and 6 admitted types
+        admitted[f"L{i:03d}"] = frozenset(NINE_SUBSET[:size])
+    order = nested_order(admitted, seed=42)
+    assert set(order) == set(admitted)
+    for leaf, types in order.items():
+        assert len(types) == LADDER_MAX
+        assert len(set(types)) == LADDER_MAX
+        assert set(types) <= admitted[leaf]
+
+
+def test_nested_order_does_not_starve_a_thinly_admitted_type():
+    """Stage 1 picks the globally LEAST-included types, so a type only a few
+    leaves admit should ride all of them rather than being crowded out by the
+    abundant ones. On real data the thin types (`unit_conversion`,
+    `unit_expansion`) depend on this: a mechanism that dropped them would
+    hollow out the very cells the study measures.
+
+    The rare leaves are named to sort LAST, so by the time they are processed
+    the abundant types already carry high inclusion counts — which is the
+    situation where starvation would show up.
+    """
+    from synthetic.dose_ladder import nested_order
+
+    common = frozenset(NINE_SUBSET)
+    rare_type = MT.NUM_TO_TEXT               # not in NINE_SUBSET
+    admitted = {f"L{i:03d}": common for i in range(100)}
+    for i in range(5):
+        admitted[f"Z{i:03d}"] = frozenset(list(NINE_SUBSET)[:5]) | {rare_type}
+    order = nested_order(admitted, seed=42)
+    carried = [k for k in admitted if rare_type in order[k]]
+    assert sorted(carried) == [f"Z{i:03d}" for i in range(5)]

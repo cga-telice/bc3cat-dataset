@@ -304,11 +304,11 @@ def nested_order(
     Cells below it cannot be made exactly even by a greedy, because the
     positions are NOT independent — which type a leaf places at position ``p``
     constrains what remains for ``p+1`` — so a small residual spread survives.
-    It is far below any effect size the dose-response study could resolve, and
-    it is noise rather than bias: it does not favour particular types across
-    seeds. On real data the binding constraint is admission anyway (types are
-    admitted by very different numbers of leaves), which no ordering policy
-    can undo.
+    It is a residual of a few leaves per cell against cells of order a
+    hundred, and it is noise rather than bias: it does not favour particular
+    types across seeds (measured — see the corpus report). On real data the
+    binding constraint is admission anyway (types are admitted by very
+    different numbers of leaves), which no ordering policy can undo.
 
     Raises :class:`DoseLadderError` for a leaf admitting fewer than
     ``LADDER_MAX`` types — the pool selection must have excluded it already.
@@ -332,7 +332,13 @@ def nested_order(
         for mtype in used:
             inclusion[mtype] += 1
 
-        # stage 2: their order, so each position stays even too
+        # stage 2: their order, so each position stays even too.
+        # `rank[t]` is load-bearing here, not decorative: only for the first
+        # leaf does `used` come out in shuffle order (all `inclusion` counters
+        # are 0, so stage 1's key degenerates to `rank`). From the second leaf
+        # on, `inclusion` dominates stage 1's sort, so `remaining`'s order says
+        # nothing about the leaf's shuffle — without this key the tie-break
+        # would be an artifact of stage 1 rather than the documented policy.
         chosen: list[ModificationType] = []
         for position in range(LADDER_MAX):
             remaining = [t for t in used if t not in chosen]
