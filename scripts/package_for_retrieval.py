@@ -22,12 +22,17 @@ Run (PYTHONPATH=src):
 from __future__ import annotations
 
 import argparse
+import datetime as _dt
+import hashlib
 import json
+import subprocess
 import uuid
 import zipfile
 from pathlib import Path
 
 import pandas as pd
+
+REPO = Path(__file__).resolve().parents[1]
 
 _NS = uuid.UUID("6f9619ff-8b86-d011-b42d-00cf4fc964ff")  # fixed namespace → stable ids
 
@@ -47,6 +52,99 @@ def _jsonable(v):
     return v
 
 
+def load_applicability(path):
+    """`{leaf_item_key: {applicable_types, available_types, in_pool}}` from the sidecar.
+
+    The sidecar is keyed by LEAF because applicability is a property of the leaf,
+    not of the synthetic item: the same leaf's five rungs share it, so storing it
+    once avoids repeating the two lists on every record.
+
+    ``in_pool`` says whether the leaf is in the ladder's common pool. D6 delivers
+    the isolated-effects set RESTRICTED to that pool — what was probed outside it
+    stays in the release for the report's counts but is not delivered — so the
+    isolated records are filtered on this flag.
+    """
+    table = {}
+    for line in Path(path).read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        row = json.loads(line)
+        table[row["leaf_item_key"]] = {
+            "applicable_types": list(row.get("applicable_types") or []),
+            "available_types": list(row.get("available_types") or []),
+            "in_pool": bool(row.get("in_pool")),
+        }
+    return table
+
+
+def apply_applicability(record, table):
+    """Add the two D1 fields to one query record, joined on `gold_item_key`.
+
+    Fails loud: a delivered record whose leaf is absent from the sidecar would
+    silently ship an empty population descriptor, which is exactly the "compares
+    different populations in silence" failure their §4 asks us to prevent.
+    """
+    leaf = record["gold_item_key"]
+    if leaf not in table:
+        raise KeyError(
+            f"applicability_missing: leaf {leaf!r} (item {record['item_key']!r}) "
+            f"has no sidecar entry"
+        )
+    entry = table[leaf]
+    out = dict(record)
+    out["applicable_types"] = entry["applicable_types"]
+    out["available_types"] = entry["available_types"]
+    return out
+
+
+def in_pool(record, table):
+    """Whether this record's leaf belongs to the ladder's common pool (D6).
+
+    Used to restrict the isolated-effects delivery: the probe release covers
+    every candidate leaf that survived, because the corpus report needs those
+    counts, but only the pool's leaves are delivered — they are the ones the
+    ladder also runs on, which is what makes the isolated effects and the dose
+    effects comparable within the same leaf.
+    """
+    return table[record["gold_item_key"]]["in_pool"]
+
+
+def _sha256(path):
+    h = hashlib.sha256()
+    with Path(path).open("rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def git_commit():
+    """The bc3cat-dataset commit that produced this delivery (their §6)."""
+    try:
+        return subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=str(REPO), capture_output=True,
+            text=True, check=True,
+        ).stdout.strip()
+    except Exception:            # a delivery from a tarball is still deliverable
+        return "unknown"
+
+
+def render_manifest(out_dir, filenames, provenance):
+    """The §6 manifest: one SHA-256 per delivered file plus the provenance stamp."""
+    lines = [
+        "# BC3CAT-Syn — E3 dose delivery manifest",
+        "",
+        "| clave | valor |",
+        "|---|---|",
+    ]
+    for key in sorted(provenance):
+        lines.append(f"| `{key}` | `{provenance[key]}` |")
+    lines += ["", "| fichero | bytes | sha256 |", "|---|---|---|"]
+    for name in filenames:
+        p = Path(out_dir) / name
+        lines.append(f"| `{name}` | {p.stat().st_size} | `{_sha256(p)}` |")
+    return "\n".join(lines) + "\n"
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage-json", required=True)
@@ -56,6 +154,11 @@ def main() -> int:
     ap.add_argument("--single", default="data/synthetic/processed_OE_ablation_single")
     ap.add_argument("--out-dir", default="data/synthetic/handoff_OE")
     ap.add_argument("--collection", default="OE")
+    ap.add_argument("--dose", default=None, help="dose-ladder release dir")
+    ap.add_argument("--probe", default=None, help="isolated-effects release dir")
+    ap.add_argument("--applicability", default=None,
+                    help="OE_leaf_applicability.jsonl (required with --dose/--probe)")
+    ap.add_argument("--run-id", default=None)
     a = ap.parse_args()
 
     stage = json.loads(Path(a.stage_json).read_text(encoding="utf-8"))
@@ -122,6 +225,48 @@ def main() -> int:
     sgl = query_records(a.single)
     (out / f"{col}_stacked_texto.json").write_text(json.dumps(stk, ensure_ascii=False), encoding="utf-8")
     (out / f"{col}_single_texto.json").write_text(json.dumps(sgl, ensure_ascii=False), encoding="utf-8")
+
+    # 3b) E3 dose ladder + isolated-effects releases (optional, additive)
+    written = []
+    if a.dose or a.probe:
+        if not a.applicability:
+            raise SystemExit("--applicability is required with --dose/--probe")
+        table = load_applicability(a.applicability)
+        for flag, name in ((a.dose, "dose"), (a.probe, "isolated")):
+            if not flag:
+                continue
+            recs = [apply_applicability(r, table) for r in query_records(flag)]
+            if name == "isolated":
+                # D6: deliver only the pool's leaves. The probe release keeps
+                # every survivor for the report's counts; delivering the rest
+                # would break the "same leaves as the ladder" claim the isolated
+                # set exists to support.
+                before = len(recs)
+                recs = [r for r in recs if in_pool(r, table)]
+                print(f"isolated restricted to the pool: {len(recs)} of {before}")
+            fn = f"{col}_{name}_texto.json"
+            (out / fn).write_text(json.dumps(recs, ensure_ascii=False), encoding="utf-8")
+            written.append(fn)
+            print(f"{fn}: {len(recs)} queries")
+        side_name = Path(a.applicability).name
+        (out / side_name).write_text(
+            Path(a.applicability).read_text(encoding="utf-8"), encoding="utf-8",
+        )
+        written.append(side_name)
+        provenance = {
+            "run_id": a.run_id or _dt.datetime.now(_dt.timezone.utc).strftime("e3-%Y%m%dT%H%M%SZ"),
+            "seed": 42,
+            "script": "scripts/build_dose_ladder.py",
+            "commit": git_commit(),
+            "generated_utc": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
+        }
+        (out / "provenance.json").write_text(
+            json.dumps(provenance, ensure_ascii=False, indent=2), encoding="utf-8",
+        )
+        (out / "MANIFEST.md").write_text(
+            render_manifest(out, written, provenance), encoding="utf-8",
+        )
+        print(f"MANIFEST.md + provenance.json written to {out}")
 
     # 4) README
     readme = f"""# BC3CAT-Syn — OE synthetic benchmark (handoff for bc3cat-retrieval)
