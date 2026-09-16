@@ -118,6 +118,34 @@ DEFAULT_INVENTORY_SHORT_PARQUET = config.PROCESSED_DIR / "OEB_short_norm.parquet
 _RESIDUE_RE = re.compile(r"\$[A-Za-z0-9]|\[\[")
 
 _ALL_COMBINED = "all_combined"
+_DOSE_PREFIX = "dose_"
+_PROBE_PREFIX = "probe_"
+
+
+def _counts_type_presence(condition: str) -> bool:
+    """Whether per-type presence is worth tallying for this condition.
+
+    True for the multi-type families — ``all_combined`` and the ``dose_*``
+    rungs, where "which types rode this item" is the thing the QA report has
+    to show. A single-modification condition's presence is its own count.
+    """
+    return condition == _ALL_COMBINED or condition.startswith(_DOSE_PREFIX)
+
+
+def _expected_applied_count(condition: str) -> Optional[int]:
+    """The exact number of APPLIED modifications this condition promises.
+
+    ``dose_k`` -> k and ``probe_*`` -> 1 (E3 plans them from verified
+    availability, so a shortfall is a bug — see D2). ``None`` where no exact
+    promise exists (``all_combined`` stacks whatever applies; ``single_*``
+    items are already dropped when their one modification no-ops).
+    """
+    if condition.startswith(_DOSE_PREFIX):
+        return int(condition[len(_DOSE_PREFIX):])
+    if condition.startswith(_PROBE_PREFIX):
+        return 1
+    return None
+
 
 # Per-condition counter keys, in report order.
 _COUNTER_KEYS = (
@@ -614,6 +642,16 @@ def run_corpus(
         modifications = _per_rewrite_modifications(
             planned.rewrites, group_mods[gid],
         )
+        expected = _expected_applied_count(planned.condition)
+        if expected is not None and len(modifications) != expected:
+            raise ValueError(
+                f"applied_count_mismatch: {planned.condition} on leaf "
+                f"{leaf_key!r} applied {len(modifications)} modifications, "
+                f"expected {expected}. E3 plans from verified availability, so "
+                f"this is a planning/emission bug, not data to filter "
+                f"(types planned: "
+                f"{[r.mtype.value for r in planned.rewrites]})"
+            )
         items.append(
             SyntheticItem(
                 item_key=f"{leaf_key}{_SYN_MARK}{variante_id}",
@@ -631,7 +669,7 @@ def run_corpus(
         row["produced"] += 1
         for rewrite in planned.rewrites:
             uses[planned.condition][rewrite.uid] += 1
-            if planned.condition == _ALL_COMBINED:
+            if _counts_type_presence(planned.condition):
                 key = rewrite.mtype.value
                 if (
                     rewrite.mtype is ModificationType.TEMPLATE_PARAPHRASE

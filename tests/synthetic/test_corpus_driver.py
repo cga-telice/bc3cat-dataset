@@ -509,3 +509,54 @@ def test_deterministic_output(tmp_path):
             )
         )
     assert hashes[0] == hashes[1]
+
+
+# ----- Task 6: dose_*/probe_* recognition -----------------------------------
+
+
+def test_dose_conditions_are_counted_as_multi_type():
+    from synthetic.corpus_driver import _counts_type_presence
+    assert _counts_type_presence("all_combined") is True
+    assert _counts_type_presence("dose_3") is True
+    assert _counts_type_presence("single_reorder") is False
+    assert _counts_type_presence("probe_reorder") is False
+
+
+def test_dose_condition_expected_count_is_parsed():
+    from synthetic.corpus_driver import _expected_applied_count
+    assert _expected_applied_count("dose_4") == 4
+    assert _expected_applied_count("all_combined") is None
+    assert _expected_applied_count("single_reorder") is None
+    assert _expected_applied_count("probe_num_to_text") == 1
+
+
+def test_dose_condition_raises_on_applied_count_mismatch(tmp_path):
+    # dose_2 promises exactly 2 APPLIED modifications; only one rewrite is
+    # planned here, so at most one can apply. E3 plans dose_k from *verified*
+    # availability, so a shortfall is a planning/emission bug — must raise,
+    # never silently ship a mislabeled `modification_count`.
+    plan = (
+        PlannedVariant("dose_2", C1, "CTEST010aa", (_syn_diurno(),)),
+    )
+    with pytest.raises(ValueError, match="applied_count_mismatch"):
+        _run(tmp_path, plan)
+
+
+def test_probe_condition_does_not_raise_on_legitimate_noop(tmp_path):
+    # A probe variant whose single rewrite renders as a no-op is the probe
+    # DISCOVERING that this type doesn't change this leaf — an expected
+    # outcome, not a bug. It must be dropped by the existing no-op filter
+    # (which runs before the exact-count assertion), never raise.
+    noop = _rewrite(
+        ModificationType.SYNONYM_LABEL,
+        ("TRABAJO", "Diurno"),
+        {"original": "Diurno", "new": "Diurno"},  # applies, changes nothing
+        concepts=(C1,),
+    )
+    plan = (
+        PlannedVariant("probe_synonym_label", C1, "CTEST010aa", (noop,)),
+    )
+    stats, out_dir, _ = _run(tmp_path, plan)
+    row = stats.per_condition["probe_synonym_label"]
+    assert row["noop_dropped"] == 1
+    assert row["produced"] == 0
