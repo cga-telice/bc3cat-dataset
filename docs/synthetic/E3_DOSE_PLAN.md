@@ -135,6 +135,20 @@ de sorteo distintos conviviendo.
 
 ---
 
+## Notas para quien revise las tareas (evitan re-plantear lo ya decidido)
+
+- **Imports «sin usar» a propósito.** Tanto `src/synthetic/dose_ladder.py` como
+  `tests/synthetic/test_dose_ladder.py` importan nombres que la tarea en curso
+  todavía no usa: son para las tareas siguientes, que extienden esos mismos dos
+  ficheros. No los quites; quitarlos solo obliga a re-añadirlos una o dos tareas
+  después. Lo mismo con `"available_types"` en `__all__` antes de que la función
+  exista (tarea 3).
+- **Fuente única de las familias de tipos.** `corpus_sampler` expone
+  `L1_VALUE_TYPES` (alias público de su conjunto privado, añadido en la tarea 2
+  tras la revisión): `dose_ladder` lo importa y **no** mantiene una copia. Si
+  alguna tarea futura necesita clasificar familias, importa, no copies.
+- **Docstrings en inglés**, español en `docs/` y commits.
+
 ## Tres refinamientos de diseño fijados al escribir este plan
 
 Van aquí porque cambian el código y el spec no los pinaba:
@@ -387,31 +401,38 @@ Esperado: 3 FAILED — `ModuleNotFoundError: No module named 'synthetic.dose_lad
 
 Crea `src/synthetic/dose_ladder.py`:
 
+> **Nota (aplicada en `1bfe4ea`).** El docstring de módulo va **en inglés**, como
+> el de todos los módulos hermanos (`corpus_sampler`, `pantry`, `target_scanner`):
+> el español es para `docs/` y los mensajes de commit. Lo mismo para el docstring
+> del fichero de test. Vale para todas las tareas de este plan.
+
 ```python
-"""E3 — planificador de la escalera de dosis equilibrada (spec: E3_DOSE_DESIGN.md).
+"""E3 — balanced dose-ladder planner (spec: E3_DOSE_DESIGN.md).
 
-Decide QUÉ se genera; no renderiza y no escribe. Produce
-:class:`~synthetic.corpus_sampler.PlannedVariant`s que
-:func:`~synthetic.corpus_driver.run_corpus` materialisa.
+Decides WHAT gets generated; it does not render and does not write. Produces
+:class:`~synthetic.corpus_sampler.PlannedVariant`s that
+:func:`~synthetic.corpus_driver.run_corpus` materialises.
 
-Dos familias de condición:
+Two condition families:
 
-* ``probe_<type>`` — una variante por (hoja, tipo admitido) con UNA sola
-  modificación, campo TEXTO. Mide qué tipos cambian de verdad el TEXTO de cada
-  hoja y, restringida al fondo, es el entregable de efectos aislados (D6).
-* ``dose_1..dose_5`` — la escalera anidada: ``types(dose_k)`` es el prefijo de
-  longitud ``k`` del orden de tipos de la hoja, así que entre peldaños
-  consecutivos cambia exactamente una modificación añadida (D4).
+* ``probe_<type>`` — one variant per (leaf, admitted type) with a SINGLE
+  modification, TEXTO field. Measures which types actually change each leaf's
+  TEXTO, and, restricted to the leaf POOL, is the isolated-effects deliverable
+  (D6). (The pool is the common set of leaves the ladder runs on — not the
+  pantry, which is the stock of approved rewrites.)
+* ``dose_1..dose_5`` — the nested ladder: ``types(dose_k)`` is the length-``k``
+  prefix of the leaf's type order, so exactly one modification is added between
+  consecutive rungs (D4).
 
-Dos nociones de aplicabilidad por hoja, ambas libres de topes de reuso (D1):
+Two notions of per-leaf applicability, both free of reuse caps (D1):
 
-* :func:`structural_types` — la gramática admite el tipo. Sale de los *targets*
-  del capítulo (:func:`~synthetic.target_scanner.scan_chapter`), o sea de lo que
-  existe antes de cualquier propuesta del LLM.
-* :func:`available_types` — existe además una reescritura aprobada y compatible.
+* :func:`structural_types` — the grammar admits the type. Comes from the
+  chapter's *targets* (:func:`~synthetic.target_scanner.scan_chapter`), i.e.
+  what exists before any LLM proposal.
+* :func:`available_types` — an approved AND compatible rewrite also exists.
 
-Determinismo: mismas entradas -> mismo plan, byte a byte. Toda derivación de
-semilla usa ``zlib.crc32`` (nunca ``hash()``, salado por proceso).
+Determinism: same inputs -> same plan, byte for byte. Every seed derivation uses
+``zlib.crc32`` (never ``hash()``, salted per process).
 """
 
 from __future__ import annotations
@@ -428,6 +449,7 @@ import yaml
 from .corpus_sampler import (
     NINE_TYPES,
     Budgets,
+    L1_VALUE_TYPES,
     LeafInventory,
     PlannedVariant,
     is_compatible,
@@ -446,18 +468,6 @@ __all__ = [
 #: Rungs of the ladder: dose_1 .. dose_5 (their §1).
 LADDER_MAX = 5
 
-#: L1 per-value types, whose ``dedup_key`` is ``(axis_label, value)`` — the
-#: reviewed surface is the SECOND element. Mirrors the sampler's own set.
-_L1_VALUE_TYPES = frozenset({
-    ModificationType.SYNONYM_LABEL,
-    ModificationType.NUM_TO_TEXT,
-    ModificationType.UNIT_CONVERSION,
-    ModificationType.UNIT_EXPANSION,
-    ModificationType.ABBREV_EXPANSION,
-    ModificationType.CODE_EXPANSION,
-})
-
-
 class DoseLadderError(RuntimeError):
     """A guarantee this module promises has been violated."""
 
@@ -469,7 +479,7 @@ def _surface(mtype: ModificationType, dedup_key: Sequence) -> str:
     L3: the template body, which `is_compatible` ignores anyway (L3 rewrites
     touch the shared template, so they surface in every leaf).
     """
-    if mtype in _L1_VALUE_TYPES and len(dedup_key) >= 2:
+    if mtype in L1_VALUE_TYPES and len(dedup_key) >= 2:
         return str(dedup_key[1])
     return str(dedup_key[0]) if dedup_key else ""
 

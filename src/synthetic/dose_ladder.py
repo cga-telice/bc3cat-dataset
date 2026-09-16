@@ -8,8 +8,9 @@ Two condition families:
 
 * ``probe_<type>`` — one variant per (leaf, admitted type) with a SINGLE
   modification, TEXTO field. Measures which types actually change each
-  leaf's TEXTO, and, restricted to the pantry, is the isolated-effects
-  deliverable (D6).
+  leaf's TEXTO, and, restricted to the leaf POOL, is the isolated-effects
+  deliverable (D6). (The pool is the common set of leaves the ladder runs
+  on — not the pantry, which is the stock of approved rewrites.)
 * ``dose_1..dose_5`` — the nested ladder: ``types(dose_k)`` is the
   length-``k`` prefix of the leaf's type order, so exactly one modification
   is added between consecutive rungs (D4).
