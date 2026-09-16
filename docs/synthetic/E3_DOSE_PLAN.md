@@ -350,9 +350,12 @@ def test_structural_types_l1_requires_the_leaf_to_select_the_pair():
         MT.NUM_TO_TEXT: (_target(("N TUBOS", "5")),),
         MT.UNIT_CONVERSION: (_target(("SECCION", "150 mm2")),),
     })
-    # the leaf selects N TUBOS=5 but not SECCION=150 mm2
+    # the leaf selects N TUBOS=5 but not SECCION=150 mm2. The axis label must
+    # match the dedup_key's case: both normalisers (corpus_sampler._norm_ws,
+    # target_scanner._norm) fold whitespace only, never case, and in real data
+    # both sides read the same catalogue label.
     got = structural_types(
-        inv, C1, leaf_text="canalizacion de 5 tubos", leaf_axis_values=(("n tubos", "5"),),
+        inv, C1, leaf_text="canalizacion de 5 tubos", leaf_axis_values=(("N TUBOS", "5"),),
     )
     assert got == frozenset({MT.NUM_TO_TEXT})
 
