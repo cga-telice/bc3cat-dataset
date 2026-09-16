@@ -22,6 +22,8 @@ Deterministic, no LLM. Run (PYTHONPATH=src):
     --out-probe data/synthetic/processed_OE_probe \
     --out-dose  data/synthetic/processed_OE_dose \
     --applicability data/synthetic/handoff_OE/OE_leaf_applicability.jsonl \
+    --report-probe docs/synthetic/sprints/E3_probe_qa.md \
+    --report-dose  docs/synthetic/sprints/E3_dose_qa.md \
     --source data/raw/BPA_2026.bc3
 """
 from __future__ import annotations
@@ -92,11 +94,27 @@ def main() -> int:
     ap.add_argument("--out-probe", required=True)
     ap.add_argument("--out-dose", required=True)
     ap.add_argument("--applicability", required=True)
-    ap.add_argument("--report-probe", default=None)
-    ap.add_argument("--report-dose", default=None)
+    ap.add_argument(
+        "--report-probe", required=True,
+        help="QA report path for the probe pass. Required on purpose: "
+             "run_corpus falls back to the Sprint-39 pilot report, which "
+             "belongs to an already-delivered corpus.",
+    )
+    ap.add_argument(
+        "--report-dose", required=True,
+        help="QA report path for the dose pass. Required for the same reason, "
+             "and it must differ from --report-probe or the second pass "
+             "overwrites the first.",
+    )
     ap.add_argument("--source", default=None, help="BC3 catalogue for bc3param")
     ap.add_argument("--workers", type=int, default=None)
     a = ap.parse_args()
+
+    if Path(a.report_probe) == Path(a.report_dose):
+        raise SystemExit(
+            "report_paths_collide: --report-probe and --report-dose must differ; "
+            "the second pass would overwrite the first pass's report"
+        )
 
     if a.source:
         bc3param_backend.set_source(a.source)
@@ -149,7 +167,7 @@ def main() -> int:
     probe_stats = run_corpus(
         stage_json, probe_plan,
         out_dir=Path(a.out_probe),
-        report_path=Path(a.report_probe) if a.report_probe else None,
+        report_path=Path(a.report_probe),
         budgets=probe_budgets.to_driver_budgets(),
         workers=a.workers,
         require_texto_changed=True,
@@ -182,7 +200,7 @@ def main() -> int:
     dose_stats = run_corpus(
         stage_json, dose_plan,
         out_dir=Path(a.out_dose),
-        report_path=Path(a.report_dose) if a.report_dose else None,
+        report_path=Path(a.report_dose),
         budgets=dose_budgets.to_driver_budgets(),
         workers=a.workers,
         require_texto_changed=True,
@@ -199,12 +217,18 @@ def main() -> int:
     }
     out_side = Path(a.applicability)
     out_side.parent.mkdir(parents=True, exist_ok=True)
+    pool_set = set(pool)
     with out_side.open("w", encoding="utf-8", newline="\n") as fh:
         for leaf in sorted(available):
             fh.write(json.dumps({
                 "leaf_item_key": leaf,
                 "applicable_types": sorted(t.value for t in structural.get(leaf, ())),
                 "available_types": sorted(t.value for t in available[leaf]),
+                # D6: the isolated-effects deliverable is the probe output
+                # RESTRICTED to the ladder's pool. Everything probed outside it
+                # stays in the release for the report's counts but must not be
+                # delivered, so packaging filters on this flag.
+                "in_pool": leaf in pool_set,
             }, ensure_ascii=False) + "\n")
 
     print(json.dumps({
@@ -212,6 +236,7 @@ def main() -> int:
         "probe_produced": probe_stats.totals["produced"],
         "depth": depth,
         "pool": len(pool),
+        "pool_leaves": len(pool_set),
         "dose_produced": dose_stats.totals["produced"],
         "depth_histogram": histogram,
         "probe_items": str(probe_stats.items_path),
