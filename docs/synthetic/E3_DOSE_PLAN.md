@@ -1160,12 +1160,59 @@ git commit -m "synthetic: el emisor reconoce dose_*/probe_* y afirma el count ex
 - Modificar: `src/synthetic/dose_ladder.py`
 - Test: `tests/synthetic/test_dose_ladder.py`
 
-El corazón de D4 + §3. El orden de tipos de cada hoja se sortea con la semilla de
-la hoja, pero cada posición se rellena con el tipo **menos colocado en esa misma
-posición** hasta ahora, así que las celdas quedan parejas sin romper el
-anidamiento.
+El corazon de D4 y de la mitad alcanzable del §3.
+
+> **Reescrita tras tres paradas del implementador (commit `d5a0a41`).** El plan
+> original proponia un unico barrido codicioso que equilibraba cada POSICION, y
+> afirmaba que eso equilibraba cada celda «porque la celda k es la union de las
+> posiciones 1..k». La mitad algebraica es cierta; la otra es falsa: las
+> posiciones **no** son independientes. Con 6 tipos admitidos y 5 peldanos cada
+> hoja **excluye** un tipo, y nada equilibraba cual, asi que el sesgo se filtraba
+> a las celdas altas: dispersion de hasta 5 con algunas semillas, cuando el
+> optimo alcanzable era 0.
+>
+> Arreglo: **dos etapas**. La etapa 1 elige QUE tipos usa la hoja (los menos
+> incluidos globalmente), lo que hace exacta la celda superior —que es
+> literalmente `presencia(t, LADDER_MAX) = hojas - hojas que lo excluyen`—; la
+> etapa 2 elige su ORDEN por posicion. Las celdas intermedias conservan una
+> dispersion residual pequena que ningun codicioso elimina, porque lo que una
+> hoja coloca temprano condiciona lo que le queda despues.
+>
+> El test se reescribio dos veces mas, y ambas correcciones eran mias tambien.
+> La cota `max - min <= 1` era un numero arbitrario disfrazado de requisito; y la
+> formulacion «que tipo es el mas presente» es inservible cuando la distribucion
+> es exacta, porque en un empate `max()` devuelve el primero en orden alfabetico:
+> medía el desempate de Python, no el sesgo. La version final mide la propiedad
+> directamente —promediada sobre 12 semillas, ningun tipo se aparta mas del 5 %
+> de la media de su celda—, porque promediar reduce el ruido por raiz de n y deja
+> en pie el sesgo, que es la distincion que pide su §3.
+
+**Medicion de la version entregada** (N=180, T=6). Dispersion por celda y semilla:
+
+| k | s1 | s3 | s7 | s42 | s43 |
+|---|---|---|---|---|---|
+| 1 | 0 | 0 | 0 | 2 | 0 |
+| 2 | 0 | 2 | 0 | 2 | 0 |
+| 3 | 0 | 3 | 2 | 2 | 0 |
+| 4 | 2 | 3 | 2 | 2 | 2 |
+| 5 | 0 | 0 | 0 | 0 | 0 |
+
+Presencia media por tipo sobre 12 semillas: en k=1 la desviacion peor es **0,083**
+frente a un umbral de 1,5; en k=5 es **exactamente 0** (los seis tipos a 150,0).
+Estos numeros van al informe de corpus y a la respuesta a `bc3cat-retrieval`.
 
 - [ ] **Paso 1: Escribe los tests que fallan**
+
+Junto a las fixtures del fichero, anade:
+
+```python
+NINE_SUBSET = (
+    MT.PARAPHRASE, MT.EXPANSION, MT.TEMPLATE_PARAPHRASE, MT.SYNONYM_LABEL,
+    MT.COMPRESSION, MT.REORDER,
+)
+```
+
+y los seis tests:
 
 ```python
 def test_nested_order_prefixes_are_the_rungs():
@@ -1189,19 +1236,72 @@ def test_nested_order_is_deterministic():
     assert nested_order(admitted, seed=43) != nested_order(admitted, seed=42)
 
 
-def test_nested_order_balances_types_within_each_rung():
-    """Their §3, achievable half: within a count cell no type may be
-    systematically over-represented."""
+def test_nested_order_balances_the_top_cell_exactly():
+    """Stage 1 balances WHICH types ride each ladder, and the top cell is
+    exactly that: presence(t, LADDER_MAX) = n_leaves - n_leaves_excluding_t.
+    With a uniform admitted set and n divisible by the type count, the optimum
+    is reachable, so anything but an exact split means stage 1 is not working.
+    """
     from synthetic.dose_ladder import LADDER_MAX, nested_order
 
     admitted = {f"L{i:03d}": frozenset(NINE_SUBSET) for i in range(180)}
     order = nested_order(admitted, seed=42)
-    from collections import Counter
+    presence = Counter(t for types in order.values() for t in types)
+    assert set(presence) == set(NINE_SUBSET)
+    assert max(presence.values()) == min(presence.values())
+
+
+def test_nested_order_keeps_every_cell_near_even():
+    """Their §3, achievable half. Cells below the top cannot be exactly even —
+    the positions are correlated, since what a leaf places early constrains
+    what remains — so this pins that the residual spread stays small relative
+    to the cell, not that it is zero. The tolerance is deliberately far below
+    any effect size the dose-response study could resolve; its purpose is to
+    catch a mechanism that has stopped balancing, not to certify optimality.
+    """
+    from synthetic.dose_ladder import LADDER_MAX, nested_order
+
+    admitted = {f"L{i:03d}": frozenset(NINE_SUBSET) for i in range(180)}
+    order = nested_order(admitted, seed=42)
     for k in range(1, LADDER_MAX + 1):
         presence = Counter(t for types in order.values() for t in types[:k])
-        # every admitted type present, and the spread within one item
         assert set(presence) == set(NINE_SUBSET)
-        assert max(presence.values()) - min(presence.values()) <= 1
+        mean = sum(presence.values()) / len(presence)
+        assert max(presence.values()) - min(presence.values()) <= max(2, 0.05 * mean)
+
+
+def test_nested_order_has_no_systematic_per_type_bias():
+    """Their §3, stated so it can actually be measured.
+
+    Averaged over many seeds, every type's presence at a rung must sit close
+    to the cell mean. Spread under a single seed is noise — averaging shrinks
+    it by roughly sqrt(n_seeds) — while a type that is systematically favoured
+    survives the average. That is the failure their §3 names (in the existing
+    stacked set `template_paraphrase` rides 100 % of items), and it is what
+    this pins.
+
+    Deliberately NOT phrased as "which type is most present": with inclusion
+    balanced exactly, cells tie outright under most seeds, and on a tie the
+    "most present" type is decided by sort order rather than by anything this
+    function did.
+    """
+    from synthetic.dose_ladder import LADDER_MAX, nested_order
+
+    admitted = {f"L{i:03d}": frozenset(NINE_SUBSET) for i in range(180)}
+    seeds = tuple(range(1, 13))
+    for k in range(1, LADDER_MAX + 1):
+        totals: Counter = Counter()
+        for seed in seeds:
+            for types in nested_order(admitted, seed).values():
+                totals.update(types[:k])
+        assert set(totals) == set(NINE_SUBSET)
+        means = {t: totals[t] / len(seeds) for t in NINE_SUBSET}
+        cell_mean = sum(means.values()) / len(means)
+        worst = max(abs(m - cell_mean) for m in means.values())
+        assert worst <= 0.05 * cell_mean, (
+            f"rung {k}: per-type mean presence {means} deviates by {worst:.2f} "
+            f"from the cell mean {cell_mean:.2f}"
+        )
 
 
 def test_nested_order_rejects_a_leaf_that_cannot_fill_the_ladder():
@@ -1211,19 +1311,10 @@ def test_nested_order_rejects_a_leaf_that_cannot_fill_the_ladder():
         nested_order({"L1": frozenset(list(NINE_SUBSET)[:2])}, seed=42)
 ```
 
-Y arriba, junto a las fixtures del fichero:
-
-```python
-NINE_SUBSET = (
-    MT.PARAPHRASE, MT.EXPANSION, MT.TEMPLATE_PARAPHRASE, MT.SYNONYM_LABEL,
-    MT.COMPRESSION, MT.REORDER,
-)
-```
-
 - [ ] **Paso 2: Corre los tests y comprueba que fallan**
 
-Ejecuta: `python -m pytest tests/synthetic/test_dose_ladder.py -q -k nested`
-Esperado: 4 FAILED — `ImportError: cannot import name 'nested_order'`.
+Ejecuta: `python -m pytest tests/synthetic/test_dose_ladder.py -q -k nested -p no:cacheprovider`
+Esperado: 6 FAILED — `ImportError: cannot import name 'nested_order'`.
 
 - [ ] **Paso 3: Implementa**
 
@@ -1234,21 +1325,33 @@ def nested_order(
 ) -> dict[str, tuple[ModificationType, ...]]:
     """Per-leaf type order whose prefixes ARE the ladder rungs (D4).
 
-    Position ``p`` of a leaf is filled with the type that the leaf admits, is
-    not already placed for it, and has been placed at position ``p`` across the
-    fewest leaves so far — ties broken by that leaf's own deterministic
-    shuffle. Two properties follow:
+    Two greedy stages, both least-used-first with the leaf's own deterministic
+    shuffle as tie-break:
 
-    * ``types(dose_k)`` is the length-``k`` prefix, so consecutive rungs differ
-      by exactly one added modification (D4);
-    * within every rung the admitted types come out as even as admission
-      allows (their §3, achievable half), because the greedy sweep equalises
-      each position independently and a count cell is the union of positions
-      ``1..k``.
+    1. WHICH types the leaf uses — the ``LADDER_MAX`` types used fewest times
+       across leaves so far. A leaf admitting more types than there are rungs
+       must leave some out, and leaving that unbalanced skews the top cell
+       directly: ``presence(t, LADDER_MAX) = n_leaves - n_leaves_excluding_t``.
+    2. In WHICH ORDER — the type placed at this position across the fewest
+       leaves so far, among the ones stage 1 chose.
+
+    ``types(dose_k)`` is the length-``k`` prefix, so consecutive rungs differ
+    by exactly one added modification (D4).
+
+    On balance (their §3), stated honestly: stage 1 makes the top cell even.
+    Cells below it cannot be made exactly even by a greedy, because the
+    positions are NOT independent — which type a leaf places at position ``p``
+    constrains what remains for ``p+1`` — so a small residual spread survives.
+    It is far below any effect size the dose-response study could resolve, and
+    it is noise rather than bias: it does not favour particular types across
+    seeds. On real data the binding constraint is admission anyway (types are
+    admitted by very different numbers of leaves), which no ordering policy
+    can undo.
 
     Raises :class:`DoseLadderError` for a leaf admitting fewer than
     ``LADDER_MAX`` types — the pool selection must have excluded it already.
     """
+    inclusion: Counter = Counter()
     per_position: list[Counter] = [Counter() for _ in range(LADDER_MAX)]
     order: dict[str, tuple[ModificationType, ...]] = {}
     for leaf in sorted(admitted):
@@ -1261,9 +1364,16 @@ def nested_order(
         rng = random.Random(seed ^ zlib.crc32(leaf.encode("utf-8")))
         shuffled = rng.sample(sorted(types, key=lambda t: t.value), len(types))
         rank = {t: i for i, t in enumerate(shuffled)}
+
+        # stage 1: which types ride this leaf's ladder at all
+        used = sorted(shuffled, key=lambda t: (inclusion[t], rank[t]))[:LADDER_MAX]
+        for mtype in used:
+            inclusion[mtype] += 1
+
+        # stage 2: their order, so each position stays even too
         chosen: list[ModificationType] = []
         for position in range(LADDER_MAX):
-            remaining = [t for t in shuffled if t not in chosen]
+            remaining = [t for t in used if t not in chosen]
             pick = min(remaining, key=lambda t: (per_position[position][t], rank[t]))
             chosen.append(pick)
             per_position[position][pick] += 1
@@ -1271,24 +1381,22 @@ def nested_order(
     return order
 ```
 
-Añade `"nested_order"` a `__all__`.
+Anade `"nested_order"` a `__all__`.
 
 - [ ] **Paso 4: Corre los tests y comprueba que pasan**
 
-Ejecuta: `python -m pytest tests/synthetic/test_dose_ladder.py -q`
-Esperado: 16 passed.
+Ejecuta `python -m pytest tests/synthetic/test_dose_ladder.py -q -p no:cacheprovider`, y
+luego la suite completa en PRIMER PLANO.
 
-Si `test_nested_order_balances_types_within_each_rung` falla por 1 unidad con
-180 hojas y 6 tipos (180 no es múltiplo de 6 en las posiciones altas), **no
-relajes la cota sin pensar**: comprueba primero el reparto real
-(`print(presence)`), porque una desviación > 1 indica que el barrido no está
-equilibrando y eso sí es un fallo de diseño.
+Si `test_nested_order_has_no_systematic_per_type_bias` falla, **no ensanches la
+cota del 5 %**: significaria que un tipo esta sistematicamente favorecido, que es
+un fallo del mecanismo y no del test. Imprime las medias por tipo y para.
 
 - [ ] **Paso 5: Commit**
 
 ```bash
 git add src/synthetic/dose_ladder.py tests/synthetic/test_dose_ladder.py
-git commit -m "synthetic: dose_ladder — orden anidado equilibrado por posicion"
+git commit -m "synthetic: dose_ladder - equilibra la inclusion y luego el orden"
 ```
 
 ---
