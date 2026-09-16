@@ -2598,6 +2598,33 @@ git commit -m "synthetic: script de orquestacion de la escalera E3"
 El esquema de su §5 con los dos campos de D1, más `MANIFEST.md` y
 `provenance.json` de su §6.
 
+> **Tres endurecimientos aplicados durante la tarea 12 (commits `3cc1775` y
+> `a7702f4`); el codigo entregado esta en esos commits.** Los tres los propuso
+> el implementador y son de la misma familia que lo corregido en otras tareas:
+> datos sin verificar dentro de un artefacto que se entrega.
+>
+> 1. **`git_commit()` ya no se inventa el commit.** Devolvia `"unknown"` al
+>    tragarse cualquier excepcion, de modo que la entrega parecia completa
+>    mientras descartaba el unico campo cuya razon de ser es la trazabilidad.
+>    Ahora levanta `provenance_commit_unavailable`, con `--allow-unknown-commit`
+>    para el unico caso legitimo —empaquetar desde un export sin `.git`—, que asi
+>    queda visible en la invocacion y no en un valor por defecto.
+> 2. **La semilla sale de la config que uso la corrida.** Estaba clavada a 42 en
+>    el empaquetador, que no leia la config de dosis: un sello que afirma una
+>    semilla que nadie comprobo. Ahora `--dose-config` es obligatoria con
+>    `--dose`/`--probe`, la semilla se lee de ahi y `provenance.json` registra
+>    tambien de que fichero salio.
+> 3. **Los items de dosis se AFIRMAN, no se filtran.** Toda hoja de dosis esta en
+>    el fondo por construccion, asi que filtrarlas seria inocuo; en cambio
+>    `dose_leaf_outside_pool` detecta que el sidecar y el plan vengan de corridas
+>    distintas, que entregaria items de dosis emparejados con efectos aislados de
+>    hojas que no los tienen. Filtrar lo esconderia; afirmarlo lo saca.
+>
+> Verificado ademas que una invocacion SIN `--dose/--probe` produce una salida
+> byte a byte identica a la del script anterior (comprobado dos veces, la segunda
+> tras estos endurecimientos, porque tocan codigo a nivel de modulo que la ruta
+> antigua tambien importa). Ese script produce artefactos ya entregados.
+
 - [ ] **Paso 1: Escribe los tests que fallan**
 
 Crea `tests/synthetic/test_dose_packaging.py`:
@@ -2694,7 +2721,7 @@ def test_manifest_lists_a_sha256_per_file(tmp_path):
 - [ ] **Paso 2: Corre los tests y comprueba que fallan**
 
 Ejecuta: `python -m pytest tests/synthetic/test_dose_packaging.py -q`
-Esperado: 3 FAILED — `AttributeError: module has no attribute 'load_applicability'`.
+Esperado: 4 FAILED — `AttributeError: module has no attribute 'load_applicability'` / `'render_manifest'`.
 
 - [ ] **Paso 3: Implementa en `scripts/package_for_retrieval.py`**
 
