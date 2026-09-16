@@ -1,7 +1,7 @@
-"""E3 — tests herméticos de :mod:`synthetic.dose_ladder`.
+"""E3 — hermetic tests for :mod:`synthetic.dose_ladder`.
 
-Fixtures diminutas: 2 conceptos, hojas con pares (eje, valor) conocidos y una
-despensa de juguete. Sin parquet real, sin LLM, sin bc3param.
+Tiny fixtures: 2 concepts, leaves with known (axis, value) pairs, and a toy
+pantry. No real parquet, no LLM, no bc3param.
 """
 from __future__ import annotations
 
@@ -43,6 +43,7 @@ def test_structural_types_l1_requires_the_leaf_to_select_the_pair():
         inv, C1, leaf_text="canalizacion de 5 tubos", leaf_axis_values=(("N TUBOS", "5"),),
     )
     assert got == frozenset({MT.NUM_TO_TEXT})
+    assert isinstance(got, frozenset)  # pin the return type, not just its contents
 
 
 def test_structural_types_l3_applies_to_every_leaf():
@@ -53,11 +54,35 @@ def test_structural_types_l3_applies_to_every_leaf():
     assert got == frozenset({MT.REORDER})
 
 
-def test_structural_types_ignores_other_concepts_and_excluded_types():
+def test_structural_types_ignores_other_concepts():
     from synthetic.dose_ladder import structural_types
 
     inv = _chapter_inventory({
         MT.REORDER: (_target(("TEXTO", "plantilla"), concepts=(C2,)),),
+    })
+    assert structural_types(inv, C1, leaf_text="x", leaf_axis_values=()) == frozenset()
+
+
+def test_structural_types_ignores_excluded_types():
+    from synthetic.dose_ladder import structural_types
+
+    inv = _chapter_inventory({
         MT.OMISSION: (_target(("TEXTO", "plantilla", "$L"), concepts=(C1,)),),
     })
     assert structural_types(inv, C1, leaf_text="x", leaf_axis_values=()) == frozenset()
+
+
+def test_compatibility_ignores_the_fields_as_rewrite_leaves_empty():
+    """`structural_types` fabricates an ApprovedRewrite whose `canonical`,
+    `candidate_index` and `usages` are empty sentinels, so the compatibility
+    rule must not read them. If this fails, `_as_rewrite`'s shortcut is no
+    longer safe and the module needs a real surface-matching entry point."""
+    from synthetic.corpus_sampler import is_compatible
+
+    kwargs = dict(mtype=MT.NUM_TO_TEXT, dedup_key=("N TUBOS", "5"),
+                  payload={"original": "5"})
+    bare = ApprovedRewrite(canonical="", candidate_index=-1, usages=(), **kwargs)
+    rich = ApprovedRewrite(canonical="N TUBOS / 5", candidate_index=7,
+                           usages=(Usage(C1, None),), **kwargs)
+    leaf = ("canalizacion de 5 tubos", (("N TUBOS", "5"),))
+    assert is_compatible(bare, *leaf) == is_compatible(rich, *leaf) is True

@@ -72,6 +72,7 @@ __all__ = [
     "LeafInventory",
     "PlannedVariant",
     "is_compatible",
+    "L1_VALUE_TYPES",
     "load_budgets",
     "leaf_inventory_from_frame",
     "leaf_inventory_from_frames",
@@ -495,6 +496,10 @@ _L1_VALUE_TYPES = frozenset({
     ModificationType.ABBREV_EXPANSION,
     ModificationType.CODE_EXPANSION,
 })
+
+#: Public alias — `dose_ladder` classifies `dedup_key` shapes by the same
+#: families and must not keep a second copy of this set.
+L1_VALUE_TYPES = _L1_VALUE_TYPES
 
 
 def _boundary_search(needle_norm: str, haystack: str) -> bool:
