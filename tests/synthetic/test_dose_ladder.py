@@ -451,6 +451,16 @@ def test_select_pool_fails_loud_when_no_depth_fills():
         select_pool(avail, concept_of, pool_min=600, min_depth=6)
 
 
+def test_select_pool_rejects_an_incomplete_concept_map():
+    """`concept_of` must cover every leaf in `available`; a bare KeyError would
+    name no contract, and both this function and `leaf_concept_map` are public."""
+    from synthetic.dose_ladder import DoseLadderError, select_pool
+
+    avail = {f"L{i:02d}": frozenset(NINE_SUBSET) for i in range(3)}
+    with pytest.raises(DoseLadderError, match="concept_of_incomplete"):
+        select_pool(avail, {"L00": C1}, pool_min=2, min_depth=6)
+
+
 def test_select_pool_spreads_the_pool_across_concepts():
     """The pool must not be a prefix of the sorted leaf keys: those start with
     the concept code, so truncation would shut whole concepts out of a set the

@@ -172,6 +172,35 @@ def _concept_of(inventory: LeafInventory) -> dict[str, str]:
 leaf_concept_map = _concept_of
 
 
+def _spread_across_concepts(
+    n: int,
+    grouped: Mapping[str, Sequence[str]],
+) -> tuple[str, ...]:
+    """Draw ``n`` leaves from ``grouped`` ({concept: leaves, each list already
+    sorted}), spread across concepts by
+    :func:`~synthetic.corpus_sampler.allocate` — proportional, floor of one per
+    concept, capped at each concept's supply.
+
+    Never a prefix of the sorted leaf keys: those begin with the concept code,
+    so truncating them spends the whole budget on the alphabetically-first
+    concepts. Both the probe candidate set and the ladder pool need this, and
+    the consumer partitions the delivered set by concept, so concept coverage
+    is load-bearing in both.
+
+    Keep ``n`` comfortably above the number of concepts in ``grouped``: below
+    it there is no budget left to give every concept its floor of one, and
+    which concepts survive falls to ``allocate``'s tie-break (leaf count, then
+    concept key), so the alphabetical bias this exists to remove creeps back
+    in at the level of WHICH concepts appear at all.
+    """
+    alloc = allocate(n, {c: len(v) for c, v in grouped.items()})
+    return tuple(sorted(
+        leaf
+        for concept in sorted(alloc)
+        for leaf in grouped[concept][: alloc[concept]]
+    ))
+
+
 def candidate_leaves(
     chapter_inventory: ChapterInventory,
     inventory: LeafInventory,
@@ -180,26 +209,12 @@ def candidate_leaves(
     cap: int,
 ) -> tuple[str, ...]:
     """Leaves worth probing: at least ``threshold`` STRUCTURALLY applicable
-    types, at most ``cap`` in total, spread ACROSS concepts.
+    types, at most ``cap`` in total, spread ACROSS concepts (see
+    :func:`_spread_across_concepts` — including the note on keeping ``cap``
+    comfortably above the number of qualifying concepts).
 
     The threshold is structural on purpose (D5): it costs no renders and
     cannot bias the pool by anything that depends on the pantry or the seed.
-
-    The cap is applied by :func:`~synthetic.corpus_sampler.allocate` — the
-    same proportional, floor-1, supply-capped split the ablation inventory
-    was built with — and NOT by truncating the sorted leaf keys. Leaf keys
-    begin with their concept code, so a plain truncation would spend the
-    whole budget on the alphabetically-first concepts and leave most of the
-    chapter out of the pool; the consumer partitions the delivered set by
-    concept against its own dev/test split, so concept coverage is
-    load-bearing.
-
-    Keep ``cap`` comfortably above the number of qualifying concepts. Below
-    it, no budget remains to give every concept its floor of one, and which
-    concepts survive is then decided by ``allocate``'s tie-break — leaf count,
-    then concept key — so the alphabetical bias this split exists to remove
-    creeps back in at the level of WHICH concepts appear at all. The committed
-    config (1500 against ~83 concepts) is far from that regime.
     """
     qualifying: dict[str, list[str]] = {}
     for leaf, concept in sorted(_concept_of(inventory).items()):
@@ -210,13 +225,7 @@ def candidate_leaves(
         if len(types) >= threshold:
             qualifying.setdefault(concept, []).append(leaf)
 
-    alloc = allocate(cap, {c: len(v) for c, v in qualifying.items()})
-    picked = [
-        leaf
-        for concept in sorted(alloc)
-        for leaf in qualifying[concept][: alloc[concept]]
-    ]
-    return tuple(sorted(picked))
+    return _spread_across_concepts(cap, qualifying)
 
 
 def _least_used(
@@ -374,29 +383,36 @@ def select_pool(
 
     Picks the DEEPEST ``d >= min_depth`` for which at least ``pool_min`` leaves
     admit ``d`` types, then draws ``pool_min`` of them SPREAD ACROSS CONCEPTS
-    via :func:`~synthetic.corpus_sampler.allocate` — never as a prefix of the
-    sorted leaf keys, which begin with the concept code and would hand the
-    whole pool to the alphabetically-first concepts, undoing the spread
-    `candidate_leaves` performed upstream. The consumer partitions the
-    delivered set by concept against its own dev/test split, so concept
-    coverage is load-bearing.
+    via :func:`_spread_across_concepts` — including the note there on keeping
+    ``pool_min`` comfortably above the number of concepts, since under-
+    provisioning it drops whole concepts silently rather than erroring.
 
     All five rungs run on these same leaves, so the count cells share one
     population and the dose effect carries no leaf-difficulty selection. That
     is D5's guarantee, and it is unaffected by how the pool is spread: which
     leaves are chosen is orthogonal to every rung using the identical set.
 
-    ``concept_of`` must cover every key of ``available`` — a leaf missing from
-    it raises ``KeyError``, an acceptable loud failure for an internal
-    invariant (every probed leaf came from some concept).
+    ``concept_of`` must cover every key of ``available``; use
+    :func:`leaf_concept_map` on the inventory the probe ran on. A gap raises
+    :class:`DoseLadderError` — see below — rather than a bare ``KeyError``,
+    since both this function and ``leaf_concept_map`` are public and an
+    external caller can trip it.
 
-    Raises :class:`DoseLadderError` when no depth fills the pool — silently
-    dropping to a shallower ladder would void D5's guarantee.
+    Raises :class:`DoseLadderError` when ``concept_of`` is missing a leaf, or
+    when no depth fills the pool — silently dropping to a shallower ladder
+    would void D5's guarantee.
     """
     if min_depth <= LADDER_MAX:
         raise DoseLadderError(
             f"min_depth_too_shallow: {min_depth} <= LADDER_MAX={LADDER_MAX} "
             f"would leave rung {LADDER_MAX} with no choice of composition (D5)"
+        )
+    missing = sorted(set(available) - set(concept_of))
+    if missing:
+        raise DoseLadderError(
+            f"concept_of_incomplete: {len(missing)} leaf/leaves in `available` "
+            f"have no concept, e.g. {missing[:3]} — pass "
+            f"`leaf_concept_map(inventory)` for the inventory the probe ran on"
         )
     histogram = depth_histogram(available)
     deepest = max(histogram, default=0)
@@ -406,13 +422,7 @@ def select_pool(
             qualifying: dict[str, list[str]] = {}
             for leaf in eligible:
                 qualifying.setdefault(concept_of[leaf], []).append(leaf)
-            alloc = allocate(pool_min, {c: len(v) for c, v in qualifying.items()})
-            picked = [
-                leaf
-                for concept in sorted(alloc)
-                for leaf in qualifying[concept][: alloc[concept]]
-            ]
-            return depth, tuple(sorted(picked))
+            return depth, _spread_across_concepts(pool_min, qualifying)
     raise DoseLadderError(
         f"pool_too_small: no depth >= {min_depth} yields {pool_min}+ leaves; "
         f"depth histogram = {histogram}"
