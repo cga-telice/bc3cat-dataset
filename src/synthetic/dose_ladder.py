@@ -63,6 +63,7 @@ __all__ = [
     "load_dose_budgets",
     "candidate_leaves",
     "build_probe_plan",
+    "build_dose_plan",
     "nested_order",
     "select_pool",
     "depth_histogram",
@@ -295,6 +296,72 @@ def build_probe_plan(
                 condition=f"probe_{mtype.value}", concept_key=concept,
                 leaf_item_key=leaf, rewrites=(pick,),
             ))
+    return tuple(plan)
+
+
+def build_dose_plan(
+    pantry: Pantry,
+    inventory: LeafInventory,
+    order: Mapping[str, tuple[ModificationType, ...]],
+    pool: Sequence[str],
+    *,
+    reuse_cap: Mapping[str, int],
+    per_count: int,
+) -> tuple[PlannedVariant, ...]:
+    """The five rungs, built leaf-atomically over a common pool (D4 + D5).
+
+    For each candidate leaf in ``pool`` order, all ``LADDER_MAX`` rungs are
+    built together from the leaf's nested type order. If any rung cannot be
+    filled — every compatible rewrite of the type it needs is capped out — the
+    leaf's whole ladder is reverted and the next candidate is tried, so the
+    accepted leaves always carry a COMPLETE ladder and the five count cells
+    share one population. Stops at ``per_count`` accepted leaves.
+
+    Reuse caps count per RUN here, not per condition: the five rungs of a leaf
+    are built together, so a single counter is the only coherent accounting.
+    """
+    concept_of = _concept_of(inventory)
+    # resolved once per concept, not once per leaf (see `compatible_rewrites`)
+    applicable: dict[str, dict] = {}
+    usage: dict[str, int] = {}
+    plan: list[PlannedVariant] = []
+    accepted = 0
+
+    for leaf in pool:
+        if accepted >= per_count:
+            break
+        concept = concept_of[leaf]
+        if concept not in applicable:
+            applicable[concept] = pantry.for_concept(concept)
+        by_type = compatible_rewrites(
+            applicable[concept], inventory.text(leaf), inventory.axis_values(leaf),
+        )
+        types = order[leaf]
+        picks: list[ApprovedRewrite] = []
+        used_dedup: set = set()
+        ok = True
+        for mtype in types:
+            pick = _least_used(
+                by_type.get(mtype, ()), reuse_cap.get(mtype.value), usage,
+                frozenset(used_dedup),
+            )
+            if pick is None:
+                ok = False
+                break
+            picks.append(pick)
+            used_dedup.add(pick.dedup_key)
+            usage[pick.uid] = usage.get(pick.uid, 0) + 1
+        if not ok:
+            for pick in picks:            # revert this leaf's whole ladder
+                usage[pick.uid] -= 1
+            continue
+        for k in range(1, LADDER_MAX + 1):
+            plan.append(PlannedVariant(
+                condition=f"dose_{k}", concept_key=concept,
+                leaf_item_key=leaf, rewrites=tuple(picks[:k]),
+            ))
+        accepted += 1
+
     return tuple(plan)
 
 

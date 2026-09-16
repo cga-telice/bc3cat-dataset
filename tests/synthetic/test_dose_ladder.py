@@ -509,3 +509,86 @@ def test_nested_order_does_not_starve_a_thinly_admitted_type():
     order = nested_order(admitted, seed=42)
     carried = [k for k in admitted if rare_type in order[k]]
     assert sorted(carried) == [f"Z{i:03d}" for i in range(5)]
+
+
+def _ladder_setup(n_leaves=12):
+    """n hojas de un concepto, cada una compatible con 6 tipos (2 reescrituras/tipo)."""
+    surfaces = {t: f"s-{t.value}" for t in NINE_SUBSET}
+    text = "obra " + " ".join(surfaces.values())
+    inventory = LeafInventory({C1: [(f"C1{i:03d}", text, ()) for i in range(n_leaves)]})
+    pantry = Pantry(by_type={
+        t: tuple(
+            _rewrite(t, surfaces[t], ci=ci, concepts=(C1,), dedup=(f"{t.value}-{ci}",))
+            for ci in range(2)
+        )
+        for t in NINE_SUBSET
+    })
+    return inventory, pantry
+
+
+def test_build_dose_plan_has_exact_counts_and_nesting():
+    from synthetic.dose_ladder import (
+        LADDER_MAX, build_dose_plan, nested_order,
+    )
+
+    inventory, pantry = _ladder_setup()
+    pool = tuple(f"C1{i:03d}" for i in range(10))
+    order = nested_order({leaf: frozenset(NINE_SUBSET) for leaf in pool}, seed=42)
+    plan = build_dose_plan(pantry, inventory, order, pool, reuse_cap={}, per_count=10)
+
+    assert len(plan) == 10 * LADDER_MAX
+    by_leaf = {}
+    for p in plan:
+        k = int(p.condition[len("dose_"):])
+        assert len(p.rewrites) == k                      # exact count
+        by_leaf.setdefault(p.leaf_item_key, {})[k] = {r.mtype for r in p.rewrites}
+    for leaf, rungs in by_leaf.items():
+        assert set(rungs) == set(range(1, LADDER_MAX + 1))   # complete ladder
+        for k in range(1, LADDER_MAX):
+            assert rungs[k] < rungs[k + 1]                   # strictly nested
+
+
+def test_build_dose_plan_uses_the_same_leaves_at_every_rung():
+    from synthetic.dose_ladder import LADDER_MAX, build_dose_plan, nested_order
+
+    inventory, pantry = _ladder_setup()
+    pool = tuple(f"C1{i:03d}" for i in range(10))
+    order = nested_order({leaf: frozenset(NINE_SUBSET) for leaf in pool}, seed=42)
+    plan = build_dose_plan(pantry, inventory, order, pool, reuse_cap={}, per_count=10)
+    per_rung = {}
+    for p in plan:
+        per_rung.setdefault(p.condition, set()).add(p.leaf_item_key)
+    assert len(per_rung) == LADDER_MAX
+    assert len(set(map(frozenset, per_rung.values()))) == 1   # one population
+
+
+def test_build_dose_plan_skips_a_leaf_whose_ladder_cannot_be_built():
+    """A cap that exhausts mid-ladder must drop the WHOLE leaf and move to the
+    reserve — a partial ladder would break the common population (D5)."""
+    from synthetic.dose_ladder import LADDER_MAX, build_dose_plan, nested_order
+
+    inventory, pantry = _ladder_setup(n_leaves=12)
+    pool = tuple(f"C1{i:03d}" for i in range(12))
+    order = nested_order({leaf: frozenset(NINE_SUBSET) for leaf in pool}, seed=42)
+    # 2 rewrites x cap 1 = 2 uses of paraphrase in the whole run: at most 2
+    # leaves can carry it, so fewer than 12 ladders are buildable
+    plan = build_dose_plan(
+        pantry, inventory, order, pool, reuse_cap={"paraphrase": 1}, per_count=12,
+    )
+    leaves = {p.leaf_item_key for p in plan}
+    assert len(plan) == len(leaves) * LADDER_MAX     # every kept leaf is complete
+    assert len(leaves) < 12                          # some were skipped
+
+
+def test_build_dose_plan_is_deterministic():
+    from synthetic.dose_ladder import build_dose_plan, nested_order
+
+    inventory, pantry = _ladder_setup()
+    pool = tuple(f"C1{i:03d}" for i in range(10))
+    order = nested_order({leaf: frozenset(NINE_SUBSET) for leaf in pool}, seed=42)
+    key = lambda pl: [
+        (p.condition, p.leaf_item_key, tuple(r.uid for r in p.rewrites)) for p in pl
+    ]
+    a = build_dose_plan(pantry, inventory, order, pool, reuse_cap={}, per_count=10)
+    b = build_dose_plan(pantry, inventory, order, pool, reuse_cap={}, per_count=10)
+    assert key(a) == key(b)
