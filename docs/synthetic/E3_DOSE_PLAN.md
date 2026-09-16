@@ -2293,6 +2293,28 @@ sidecar de aplicabilidad. Sigue el patrón del CLI de `corpus_driver`
 (`corpus_driver.py:790-835`): cargar stage JSON → despensa → filtro TEXTO →
 inventario → plan → `run_corpus`.
 
+> **Dos defectos corregidos durante la tarea 11 (commit `ea56b51`).** Los dos los
+> encontro el implementador al leer que hace el codigo en vez de suponerlo.
+>
+> 1. **El script habria destruido un artefacto ya entregado.** `run_corpus` cae
+>    por defecto en `docs/synthetic/sprints/SPRINT_39_corpus_report.md` cuando no
+>    se le pasa `report_path` — el informe QA del corpus piloto ya entregado a
+>    `bc3cat-retrieval` — y la invocacion de ejemplo de este mismo docstring
+>    omitia las dos banderas de informe. Las dos pasadas de E3 habrian escrito
+>    ahi, y la de dosis encima de la del sondeo. Ahora `--report-probe` y
+>    `--report-dose` son **obligatorias**, con el motivo en su texto de ayuda, y
+>    un guardian rechaza que coincidan.
+> 2. **Faltaba la restriccion al fondo de D6.** El spec dice que lo sondeado
+>    fuera del fondo «queda en el informe como recuento, no como entrega», pero
+>    el script escribia el conjunto completo y la tarea 12 lo empaquetaba tal
+>    cual. La release del sondeo sigue completa —el informe necesita esos
+>    recuentos— y la restriccion pasa a la **entrega**: cada registro del sidecar
+>    lleva ahora `in_pool`, y la tarea 12 filtra por ese campo. Se eligio un campo
+>    en el sidecar en vez de un manifiesto aparte porque el sidecar ya es la
+>    superficie de join que la tarea 12 lee, y porque el dato es informativo para
+>    el consumidor: le dice que hojas llevan escalera, que es el join que necesita
+>    para emparejar efectos aislados con items de dosis.
+
 - [ ] **Paso 1: Escribe el script**
 
 ```python
@@ -2320,6 +2342,8 @@ Deterministic, no LLM. Run (PYTHONPATH=src):
     --out-probe data/synthetic/processed_OE_probe \
     --out-dose  data/synthetic/processed_OE_dose \
     --applicability data/synthetic/handoff_OE/OE_leaf_applicability.jsonl \
+    --report-probe docs/synthetic/sprints/E3_probe_qa.md \
+    --report-dose  docs/synthetic/sprints/E3_dose_qa.md \
     --source data/raw/BPA_2026.bc3
 """
 from __future__ import annotations
@@ -2390,11 +2414,27 @@ def main() -> int:
     ap.add_argument("--out-probe", required=True)
     ap.add_argument("--out-dose", required=True)
     ap.add_argument("--applicability", required=True)
-    ap.add_argument("--report-probe", default=None)
-    ap.add_argument("--report-dose", default=None)
+    ap.add_argument(
+        "--report-probe", required=True,
+        help="QA report path for the probe pass. Required on purpose: "
+             "run_corpus falls back to the Sprint-39 pilot report, which "
+             "belongs to an already-delivered corpus.",
+    )
+    ap.add_argument(
+        "--report-dose", required=True,
+        help="QA report path for the dose pass. Required for the same reason, "
+             "and it must differ from --report-probe or the second pass "
+             "overwrites the first.",
+    )
     ap.add_argument("--source", default=None, help="BC3 catalogue for bc3param")
     ap.add_argument("--workers", type=int, default=None)
     a = ap.parse_args()
+
+    if Path(a.report_probe) == Path(a.report_dose):
+        raise SystemExit(
+            "report_paths_collide: --report-probe and --report-dose must differ; "
+            "the second pass would overwrite the first pass's report"
+        )
 
     if a.source:
         bc3param_backend.set_source(a.source)
@@ -2447,7 +2487,7 @@ def main() -> int:
     probe_stats = run_corpus(
         stage_json, probe_plan,
         out_dir=Path(a.out_probe),
-        report_path=Path(a.report_probe) if a.report_probe else None,
+        report_path=Path(a.report_probe),
         budgets=probe_budgets.to_driver_budgets(),
         workers=a.workers,
         require_texto_changed=True,
@@ -2480,7 +2520,7 @@ def main() -> int:
     dose_stats = run_corpus(
         stage_json, dose_plan,
         out_dir=Path(a.out_dose),
-        report_path=Path(a.report_dose) if a.report_dose else None,
+        report_path=Path(a.report_dose),
         budgets=dose_budgets.to_driver_budgets(),
         workers=a.workers,
         require_texto_changed=True,
@@ -2497,12 +2537,18 @@ def main() -> int:
     }
     out_side = Path(a.applicability)
     out_side.parent.mkdir(parents=True, exist_ok=True)
+    pool_set = set(pool)
     with out_side.open("w", encoding="utf-8", newline="\n") as fh:
         for leaf in sorted(available):
             fh.write(json.dumps({
                 "leaf_item_key": leaf,
                 "applicable_types": sorted(t.value for t in structural.get(leaf, ())),
                 "available_types": sorted(t.value for t in available[leaf]),
+                # D6: the isolated-effects deliverable is the probe output
+                # RESTRICTED to the ladder's pool. Everything probed outside it
+                # stays in the release for the report's counts but must not be
+                # delivered, so packaging filters on this flag.
+                "in_pool": leaf in pool_set,
             }, ensure_ascii=False) + "\n")
 
     print(json.dumps({
@@ -2510,6 +2556,7 @@ def main() -> int:
         "probe_produced": probe_stats.totals["produced"],
         "depth": depth,
         "pool": len(pool),
+        "pool_leaves": len(pool_set),
         "dose_produced": dose_stats.totals["produced"],
         "depth_histogram": histogram,
         "probe_items": str(probe_stats.items_path),
@@ -2595,7 +2642,7 @@ def test_applicability_fields_are_joined_onto_every_record(tmp_path):
     side = _sidecar(tmp_path, [
         {"leaf_item_key": "OEA010aaba",
          "applicable_types": ["paraphrase", "reorder"],
-         "available_types": ["reorder"]},
+         "available_types": ["reorder"], "in_pool": True},
     ])
     table = mod.load_applicability(side)
     rec = mod.apply_applicability(
@@ -2603,6 +2650,23 @@ def test_applicability_fields_are_joined_onto_every_record(tmp_path):
     )
     assert rec["applicable_types"] == ["paraphrase", "reorder"]
     assert rec["available_types"] == ["reorder"]
+
+
+def test_isolated_delivery_is_restricted_to_the_pool(tmp_path):
+    """D6: the probe release keeps every survivor for the report's counts, but
+    only the pool's leaves are delivered — they are the ones the ladder also
+    runs on, which is what makes isolated and dose effects comparable within
+    the same leaf."""
+    mod = _load_packager()
+    side = _sidecar(tmp_path, [
+        {"leaf_item_key": "IN", "applicable_types": [], "available_types": [],
+         "in_pool": True},
+        {"leaf_item_key": "OUT", "applicable_types": [], "available_types": [],
+         "in_pool": False},
+    ])
+    table = mod.load_applicability(side)
+    assert mod.in_pool({"item_key": "a", "gold_item_key": "IN"}, table) is True
+    assert mod.in_pool({"item_key": "b", "gold_item_key": "OUT"}, table) is False
 
 
 def test_missing_sidecar_entry_fails_loud(tmp_path):
@@ -2639,21 +2703,27 @@ Añade estas funciones a nivel de módulo (y `import hashlib`, `import subproces
 
 ```python
 def load_applicability(path):
-    """`{leaf_item_key: (applicable_types, available_types)}` from the sidecar.
+    """`{leaf_item_key: {applicable_types, available_types, in_pool}}` from the sidecar.
 
     The sidecar is keyed by LEAF because applicability is a property of the leaf,
     not of the synthetic item: the same leaf's five rungs share it, so storing it
     once avoids repeating the two lists on every record.
+
+    ``in_pool`` says whether the leaf is in the ladder's common pool. D6 delivers
+    the isolated-effects set RESTRICTED to that pool — what was probed outside it
+    stays in the release for the report's counts but is not delivered — so the
+    isolated records are filtered on this flag.
     """
     table = {}
     for line in Path(path).read_text(encoding="utf-8").splitlines():
         if not line.strip():
             continue
         row = json.loads(line)
-        table[row["leaf_item_key"]] = (
-            list(row.get("applicable_types") or []),
-            list(row.get("available_types") or []),
-        )
+        table[row["leaf_item_key"]] = {
+            "applicable_types": list(row.get("applicable_types") or []),
+            "available_types": list(row.get("available_types") or []),
+            "in_pool": bool(row.get("in_pool")),
+        }
     return table
 
 
@@ -2670,11 +2740,23 @@ def apply_applicability(record, table):
             f"applicability_missing: leaf {leaf!r} (item {record['item_key']!r}) "
             f"has no sidecar entry"
         )
-    applicable, available = table[leaf]
+    entry = table[leaf]
     out = dict(record)
-    out["applicable_types"] = applicable
-    out["available_types"] = available
+    out["applicable_types"] = entry["applicable_types"]
+    out["available_types"] = entry["available_types"]
     return out
+
+
+def in_pool(record, table):
+    """Whether this record's leaf belongs to the ladder's common pool (D6).
+
+    Used to restrict the isolated-effects delivery: the probe release covers
+    every candidate leaf that survived, because the corpus report needs those
+    counts, but only the pool's leaves are delivered — they are the ones the
+    ladder also runs on, which is what makes the isolated effects and the dose
+    effects comparable within the same leaf.
+    """
+    return table[record["gold_item_key"]]["in_pool"]
 
 
 def _sha256(path):
@@ -2735,6 +2817,14 @@ y, tras la emisión de los conjuntos existentes:
             if not flag:
                 continue
             recs = [apply_applicability(r, table) for r in query_records(flag)]
+            if name == "isolated":
+                # D6: deliver only the pool's leaves. The probe release keeps
+                # every survivor for the report's counts; delivering the rest
+                # would break the "same leaves as the ladder" claim the isolated
+                # set exists to support.
+                before = len(recs)
+                recs = [r for r in recs if in_pool(r, table)]
+                print(f"isolated restricted to the pool: {len(recs)} of {before}")
             fn = f"{col}_{name}_texto.json"
             (out / fn).write_text(json.dumps(recs, ensure_ascii=False), encoding="utf-8")
             written.append(fn)
