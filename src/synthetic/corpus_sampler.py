@@ -78,6 +78,7 @@ __all__ = [
     "leaf_inventory_from_frames",
     "build_plan",
     "plan_report",
+    "allocate",
 ]
 
 #: The nine information-preserving modification types of the pilot
@@ -434,6 +435,11 @@ def _allocate(
         surplus -= 1
 
     return {k: a for k, a in alloc.items() if a > 0}
+
+
+#: Public alias — `dose_ladder` needs the same proportional, floor-1,
+#: supply-capped split across concepts; a second implementation would drift.
+allocate = _allocate
 
 
 def _rewrite_capacity(

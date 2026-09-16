@@ -47,6 +47,7 @@ from .corpus_sampler import (
     L1_VALUE_TYPES,
     LeafInventory,
     PlannedVariant,
+    allocate,
     is_compatible,
 )
 from .pantry import ApprovedRewrite, Pantry
@@ -170,22 +171,36 @@ def candidate_leaves(
     cap: int,
 ) -> tuple[str, ...]:
     """Leaves worth probing: at least ``threshold`` STRUCTURALLY applicable
-    types, capped at ``cap`` (deterministic, sorted by item key).
+    types, at most ``cap`` in total, spread ACROSS concepts.
 
-    The filter is structural on purpose (D5): it costs no renders and cannot
-    bias the pool by anything that depends on the pantry or the seed.
+    The threshold is structural on purpose (D5): it costs no renders and
+    cannot bias the pool by anything that depends on the pantry or the seed.
+
+    The cap is applied by :func:`~synthetic.corpus_sampler.allocate` — the
+    same proportional, floor-1, supply-capped split the ablation inventory
+    was built with — and NOT by truncating the sorted leaf keys. Leaf keys
+    begin with their concept code, so a plain truncation would spend the
+    whole budget on the alphabetically-first concepts and leave most of the
+    chapter out of the pool; the consumer partitions the delivered set by
+    concept against its own dev/test split, so concept coverage is
+    load-bearing.
     """
-    picked: list[str] = []
+    qualifying: dict[str, list[str]] = {}
     for leaf, concept in sorted(_concept_of(inventory).items()):
         types = structural_types(
             chapter_inventory, concept, inventory.text(leaf),
             inventory.axis_values(leaf),
         )
         if len(types) >= threshold:
-            picked.append(leaf)
-        if len(picked) >= cap:
-            break
-    return tuple(picked)
+            qualifying.setdefault(concept, []).append(leaf)
+
+    alloc = allocate(cap, {c: len(v) for c, v in qualifying.items()})
+    picked = [
+        leaf
+        for concept in sorted(alloc)
+        for leaf in qualifying[concept][: alloc[concept]]
+    ]
+    return tuple(sorted(picked))
 
 
 def _least_used(
@@ -197,7 +212,10 @@ def _least_used(
     """Least-used-first pick honouring ``cap`` and the per-variant dedup set.
 
     ``None`` when every candidate is capped out or dedup-blocked. Ties break on
-    ``uid`` so the pick is reproducible.
+    ``uid`` so the pick is reproducible. ``cap=0`` blocks every candidate —
+    this is a public function and callers other than
+    :func:`load_dose_budgets` (whose positive-int validation forbids it) may
+    pass it directly.
     """
     for rewrite in sorted(candidates, key=lambda r: (usage.get(r.uid, 0), r.uid)):
         if cap is not None and usage.get(rewrite.uid, 0) >= cap:
@@ -212,17 +230,20 @@ def build_probe_plan(
     pantry: Pantry,
     inventory: LeafInventory,
     leaves: Sequence[str],
-    *,
-    reuse_cap: Optional[Mapping[str, int]] = None,
 ) -> tuple[PlannedVariant, ...]:
     """One single-modification variant per (leaf, available type).
 
     Condition ``probe_<type>``, so leaves stay unique within a condition and
-    the driver's report breaks the probe down per type. Caps (when given) only
-    throttle WHICH rewrite is picked; a type with every candidate capped out is
-    skipped for that leaf and the deficit shows up in the report.
+    the driver's report breaks the probe down per type.
+
+    No reuse cap applies here. This pass's survivors define per-leaf
+    availability, which D1 requires to be cap-free: a cap would make a type
+    look unavailable for one leaf and available for another purely because of
+    processing order, and — since a capped-out pair never becomes a variant —
+    it would do so with no trace in the driver's report. Least-used-first
+    still spreads reuse across the pool. Caps belong to the ladder (task 9),
+    where an exhausted leaf is reverted whole and therefore visible.
     """
-    caps = dict(reuse_cap or {})
     concept_of = _concept_of(inventory)
     # `Pantry.for_concept` walks the whole pantry but its result depends only
     # on the concept, so resolve it once per concept rather than once per leaf.
@@ -240,9 +261,7 @@ def build_probe_plan(
             cands = by_type.get(mtype)
             if not cands:
                 continue
-            pick = _least_used(cands, caps.get(mtype.value), usage)
-            if pick is None:
-                continue
+            pick = _least_used(cands, None, usage)
             usage[pick.uid] = usage.get(pick.uid, 0) + 1
             plan.append(PlannedVariant(
                 condition=f"probe_{mtype.value}", concept_key=concept,

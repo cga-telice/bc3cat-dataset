@@ -220,9 +220,35 @@ def test_candidate_leaves_applies_the_structural_threshold_and_cap():
         MT.COMPRESSION: (_target(("frag-b",)),),
         MT.REORDER: (_target(("TEXTO", "tpl")),),
     })
+    # C1 is the only qualifying concept here (C2's single leaf admits just 1
+    # type, below the threshold), so the per-concept allocation collapses to
+    # the same prefix a plain truncation would have picked.
     got = candidate_leaves(inv, inventory, threshold=3, cap=2)
     assert got == ("C1aa", "C1ab")          # sorted, capped, C2 excluded (1 type)
     assert candidate_leaves(inv, inventory, threshold=4, cap=10) == ()
+
+
+def test_candidate_leaves_spreads_the_cap_across_concepts():
+    """The cap must not be a prefix of the sorted leaf keys: those start with
+    the concept code, so truncation would spend the whole budget on the
+    alphabetically-first concepts and leave the rest of the chapter out of
+    the pool the consumer partitions by concept."""
+    from synthetic.dose_ladder import candidate_leaves
+
+    text = "obra frag-a frag-b tpl"
+    inventory = LeafInventory({
+        C1: [(f"C1a{i:02d}", text, ()) for i in range(10)],
+        C2: [(f"C2a{i:02d}", text, ()) for i in range(10)],
+    })
+    inv = _chapter_inventory({
+        MT.PARAPHRASE: (_target(("frag-a",), concepts=(C1, C2)),),
+        MT.COMPRESSION: (_target(("frag-b",), concepts=(C1, C2)),),
+        MT.REORDER: (_target(("TEXTO", "tpl"), concepts=(C1, C2)),),
+    })
+    got = candidate_leaves(inv, inventory, threshold=3, cap=6)
+    assert len(got) == 6
+    # both concepts represented, not six leaves of C1 and none of C2
+    assert len({k[:2] for k in got}) == 2
 
 
 def test_build_probe_plan_is_one_single_modification_per_leaf_and_type():
