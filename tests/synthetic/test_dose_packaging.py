@@ -218,6 +218,24 @@ def test_dose_report_shows_how_many_modifications_fit_per_leaf():
     )
 
 
+def test_dose_report_shows_concept_coverage():
+    """bc3cat-retrieval parte dev/test por concepto: cuántos conceptos cubre la
+    escalera, y con cuántas hojas cada uno, tiene que estar a la vista."""
+    mod = _load_reporter()
+
+    items = pd.DataFrame({
+        "item_key": ["a1", "a2", "b1", "c1"],
+        "original_key": ["L1", "L2", "L3", "L4"],
+        "concept_key": ["C1$", "C1$", "C2$", "C2$"],
+        "modification_types": [["reorder"]] * 4,
+        "modification_count": [1, 1, 1, 1],
+    })
+    text = mod.render_report(items, depth=6, histogram={6: 4}, pool_size=4)
+    assert "## Cobertura por concepto" in text
+    assert "**2 conceptos**" in text
+    assert "| C1$ | 2 |" in text and "| C2$ | 2 |" in text
+
+
 def test_dose_report_counts_the_ladder_leaves_not_the_reserve():
     """El fondo seleccionado incluye la reserva; «las mismas en las cinco
     celdas» solo es cierto de las hojas que recibieron escalera."""

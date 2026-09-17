@@ -120,6 +120,20 @@ def render_report(items: pd.DataFrame, *, depth: int, histogram: dict,
         lines.append(
             f"| dose_{k} | " + " | ".join(str(presence.get(t, 0)) for t in all_types) + " |"
         )
+
+    leaves_per_concept = items.groupby("concept_key")["original_key"].nunique()
+    lines += [
+        "",
+        "## Cobertura por concepto",
+        "",
+        f"La escalera cubre **{len(leaves_per_concept)} conceptos**. Una partición",
+        "dev/test por concepto solo puede repartir estos.",
+        "",
+        "| concepto | hojas con escalera |",
+        "|---|---|",
+    ]
+    for concept, n in leaves_per_concept.sort_values(ascending=False).items():
+        lines.append(f"| {concept} | {n} |")
     return "\n".join(lines) + "\n"
 
 

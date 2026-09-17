@@ -226,11 +226,9 @@ def test_candidate_leaves_applies_the_structural_threshold_and_cap():
         MT.COMPRESSION: (_target(("frag-b",)),),
         MT.REORDER: (_target(("TEXTO", "tpl")),),
     })
-    # C1 is the only qualifying concept here (C2's single leaf admits just 1
-    # type, below the threshold), so the per-concept allocation collapses to
-    # the same prefix a plain truncation would have picked.
     got = candidate_leaves(inv, inventory, threshold=3, cap=2)
-    assert got == ("C1aa", "C1ab")          # sorted, capped, C2 excluded (1 type)
+    assert len(got) == 2 and set(got) <= {"C1aa", "C1ab", "C1ac"}   # capped, C2 excluded
+    assert got == candidate_leaves(inv, inventory, threshold=3, cap=2)  # deterministic
     assert candidate_leaves(inv, inventory, threshold=4, cap=10) == ()
 
 
@@ -426,7 +424,7 @@ def test_select_pool_takes_the_deepest_level_that_still_fills():
     depth, pool = select_pool(avail, concept_of, pool_min=40, min_depth=6)
     assert depth == 6                        # 8 would only give 10 leaves
     assert len(pool) == 40
-    assert pool == tuple(sorted(pool))       # deterministic, sorted
+    assert pool == select_pool(avail, concept_of, pool_min=40, min_depth=6)[1]  # deterministic
 
 
 def test_select_pool_prefers_depth_when_supply_allows():
@@ -1062,3 +1060,61 @@ def test_planners_drop_rewrites_the_texto_does_not_show():
     with pytest.raises(DoseLadderError, match="pool_exhausted"):
         build_dose_plan(pantry, inventory, order, ("C1ba",), reuse_cap={},
                         per_count=1, surface=surface)
+
+
+# ---------------------------------------------------------------------------
+# Sesgo alfabético dentro del concepto y en el corte de reserva. La clave de hoja
+# codifica los valores de los parámetros, así que tomar un prefijo ordenado deja
+# fuera los valores altos: en la corrida real OEB020$ solo usó los valores a–c
+# de su primer eje (de 8), y el corte de las 600 hojas usadas sobre un fondo
+# ordenado dejó OEB300$ entero en la reserva.
+
+
+def test_spread_does_not_take_a_sorted_prefix_within_a_concept():
+    from synthetic.dose_ladder import _spread_across_concepts
+
+    leaves = [f"C1{v}{i:02d}" for v in "abcdefghij" for i in range(10)]
+    got = _spread_across_concepts(30, {C1: leaves})
+    assert len(got) == 30
+    assert len({leaf[2] for leaf in got}) >= 8      # a prefix would give only "a", "b", "c"
+    assert got == _spread_across_concepts(30, {C1: leaves})
+
+
+def test_spread_order_keeps_every_prefix_proportional_across_concepts():
+    """El constructor consume el fondo por delante; cualquier prefijo tiene que
+    estar repartido entre conceptos, o la reserva sin usar es un concepto entero."""
+    from synthetic.dose_ladder import _spread_across_concepts
+
+    grouped = {c: [f"{c[:2]}x{i:02d}" for i in range(30)] for c in ("C1$", "C2$", "C3$")}
+    order = _spread_across_concepts(60, grouped)
+    for prefix in (15, 30, 45):
+        counts = Counter(leaf[:2] for leaf in order[:prefix])
+        assert set(counts) == {"C1", "C2", "C3"}
+        assert max(counts.values()) - min(counts.values()) <= 1
+
+
+def test_build_dose_plan_draws_the_ladder_from_every_concept_of_the_pool():
+    from synthetic.dose_ladder import (
+        LADDER_MAX, build_dose_plan, leaf_rewrites, nested_order, select_pool,
+    )
+
+    surfaces = {t: f"s-{t.value}" for t in NINE_SUBSET}
+    text = "obra " + " ".join(surfaces.values())
+    concepts = ("C1$", "C2$", "C3$")
+    inventory = LeafInventory({
+        c: [(f"{c[:2]}x{i:02d}", text, ()) for i in range(10)] for c in concepts
+    })
+    pantry = Pantry(by_type={
+        t: tuple(_rewrite(t, surfaces[t], ci=ci, concepts=concepts, dedup=(f"{t.value}-{ci}",))
+                 for ci in range(2))
+        for t in NINE_SUBSET
+    })
+    available = {leaf: frozenset(NINE_SUBSET) for c in concepts for leaf in inventory.leaves(c)}
+    concept_of = {leaf: c for c in concepts for leaf in inventory.leaves(c)}
+    _, pool = select_pool(available, concept_of, pool_min=24, min_depth=6)
+    order = nested_order({k: available[k] for k in pool}, seed=42,
+                         rewrites=leaf_rewrites(pantry, inventory, available))
+    plan = build_dose_plan(pantry, inventory, order, pool, reuse_cap={}, per_count=12)
+    assert len(plan) == 12 * LADDER_MAX
+    assert Counter(concept_of[p.leaf_item_key] for p in plan if p.condition == "dose_1") == {
+        "C1$": 4, "C2$": 4, "C3$": 4}

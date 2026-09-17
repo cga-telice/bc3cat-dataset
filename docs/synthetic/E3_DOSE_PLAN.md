@@ -1845,6 +1845,21 @@ peldaño no sale, se revierte la hoja entera y se pasa a la reserva.
 > aparece en el TEXTO. El STACKED ya entregado muestra el mismo patrón (~1 800
 > modificaciones); queda como tarea aparte.
 
+> **Corregido tras la tercera corrida real: sin prefijos alfabéticos dentro del
+> concepto ni en el corte de reserva.** La tercera corrida salió limpia (3 000
+> ítems, 600 escaleras completas, cero modificaciones invisibles), pero la
+> escalera cubría 6 conceptos de un fondo de 7 y, dentro de cada concepto,
+> solo los valores bajos del primer eje: `OEB020$` usaba a–c de 8 valores,
+> `OEB290$` y `OEB040$` a–d de 11. Dos causas en `_spread_across_concepts`:
+> tomaba un prefijo ORDENADO de las hojas de cada concepto (la clave de hoja
+> deletrea los valores de los parámetros), y devolvía el fondo ordenado, así que
+> el constructor —que consume por delante— dejaba en la reserva un concepto
+> entero (`OEB300$`) y parte de otro. Ahora toma las hojas en un orden hash fijo
+> (`crc32`) y ordena el resultado de modo que todo prefijo quede proporcional
+> entre conceptos. Dos tests antiguos afirmaban el orden alfabético como
+> contrato; ahora afirman determinismo. Sobre el inventario real, las
+> candidatas cubren todos los valores del primer eje (8/8, 11/11, 11/11).
+
 - [ ] **Paso 1: Escribe los tests que fallan**
 
 ```python

@@ -37,6 +37,7 @@ import re
 import zlib
 from collections import Counter
 from dataclasses import dataclass
+from fractions import Fraction
 from pathlib import Path
 from typing import Mapping, Optional, Sequence
 
@@ -318,13 +319,30 @@ def _spread_across_concepts(
     which concepts survive falls to ``allocate``'s tie-break (leaf count, then
     concept key), so the alphabetical bias this exists to remove creeps back
     in at the level of WHICH concepts appear at all.
+
+    The same holds WITHIN a concept: a leaf key spells its parameter values, so
+    a sorted prefix keeps only the low values of the first axis. Leaves are
+    taken in a fixed hash order instead (``crc32``, deterministic). And the
+    result is ordered so that EVERY prefix stays proportional across concepts
+    — the ladder builder consumes the pool from the front and leaves the tail
+    as unused reserve, which must not be one whole concept.
     """
     alloc = allocate(n, {c: len(v) for c, v in grouped.items()})
-    return tuple(sorted(
-        leaf
-        for concept in sorted(alloc)
-        for leaf in grouped[concept][: alloc[concept]]
-    ))
+
+    def hash_order(leaf: str) -> tuple[int, str]:
+        return zlib.crc32(leaf.encode("utf-8")), leaf
+
+    taken = {
+        concept: sorted(grouped[concept], key=hash_order)[: alloc[concept]]
+        for concept in sorted(alloc) if alloc[concept]
+    }
+    return tuple(
+        leaf for _, _, leaf in sorted(
+            (Fraction(2 * i + 1, 2 * len(leaves)), concept, leaf)
+            for concept, leaves in taken.items()
+            for i, leaf in enumerate(leaves)
+        )
+    )
 
 
 def candidate_leaves(
