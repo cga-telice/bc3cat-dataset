@@ -1823,6 +1823,28 @@ peldaño no sale, se revierte la hoja entera y se pasa a la reserva.
 > `unit_conversion` queda en ~160 escaleras frente a ~385 de `num_to_text`: un
 > equilibrio limitado por capacidad que el informe tiene que mostrar.
 
+> **Corregido tras la segunda corrida real: solo cuentan los cambios que el
+> TEXTO muestra (D2).** La corrida completó 2 968 de 3 000 ítems, pero una
+> auditoría encontró modificaciones aplicadas y contadas que no aparecían en el
+> TEXTO: ~28 % de `dose_5` decía 5 cambios con 4 visibles, 21 hojas perdieron
+> `dose_1` (su único cambio era invisible) y solo 568 escaleras quedaron
+> completas. Causa: `is_compatible` compara cadenas. En `OEB020$` la reescritura
+> de `$K` («bajo vías», solo en el RESUMEN) pasaba porque «bajo vías» aparece en
+> el TEXTO dentro de `$I` («en cruce bajo vías»). El sondeo no lo veía porque
+> mide cada TIPO con una sola reescritura.
+>
+> Arreglo sin tocar la regla compartida con SINGLE/STACKED: `TextoSurface`
+> (desde el stage) acepta una reescritura L2 solo si su variable es un token de
+> la plantilla del TEXTO y su condición se cumple en la hoja (letras de opción
+> tomadas de la clave de hoja), y una L1 solo si el marcador de su eje está en el
+> TEXTO; lo que no puede confirmar lo rechaza. Sondeo, orden y constructor pasan
+> por el mismo filtro (`_leaf_candidates`). Validado sobre la entrega fallida:
+> 2 805 modificaciones L2 visibles aceptadas y 402 invisibles rechazadas, cero
+> desacuerdos. Como última red, el script falla con
+> `texto_invisible_modification` si alguna modificación L1/L2 de la entrega no
+> aparece en el TEXTO. El STACKED ya entregado muestra el mismo patrón (~1 800
+> modificaciones); queda como tarea aparte.
+
 - [ ] **Paso 1: Escribe los tests que fallan**
 
 ```python

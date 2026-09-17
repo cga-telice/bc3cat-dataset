@@ -233,3 +233,30 @@ def test_dose_report_counts_the_ladder_leaves_not_the_reserve():
     text = mod.render_report(items, depth=6, histogram={6: 3}, pool_size=3)
     assert "**2 hojas**, las mismas en las cinco celdas" in text
     assert "3 seleccionadas" in text and "1 de reserva sin usar" in text
+
+
+def test_release_audit_flags_a_modification_the_texto_does_not_show(tmp_path):
+    """Última red: cada modificación L1/L2 de la entrega tiene que verse en el
+    TEXTO. Los cambios de plantilla no se comprueban así (su `new` lleva $X)."""
+    mod = _load_builder()
+
+    items = pd.DataFrame({
+        "item_key": ["ok", "bad"],
+        "texto": ["zanja en cruce  debajo de las vias, banda dos horas",
+                  "zanja en cruce bajo vias"],
+    })
+    items_path = tmp_path / "items.parquet"
+    items.to_parquet(items_path)
+    mods_path = tmp_path / "mods.jsonl"
+    mods_path.write_text("\n".join(json.dumps(r, ensure_ascii=False) for r in [
+        {"item_key": "ok", "modifications": [
+            {"type": "compression", "layer": "text_variable", "new": "debajo de las vias"},
+            {"type": "num_to_text", "layer": "param_value", "new": "dos"},
+            {"type": "reorder", "layer": "template", "new": "$A tubos"},
+        ]},
+        {"item_key": "bad", "modifications": [
+            {"type": "paraphrase", "layer": "text_variable", "new": "debajo de las vias"},
+        ]},
+    ]) + "\n", encoding="utf-8")
+
+    assert mod.invisible_modifications(items_path, mods_path) == [("bad", "paraphrase")]

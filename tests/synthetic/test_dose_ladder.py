@@ -938,3 +938,127 @@ def test_leaf_slots_is_the_span_view_of_leaf_rewrites():
         leaf: {t: frozenset(r.dedup_key for r in rws) for t, rws in by_type.items()}
         for leaf, by_type in rewrites.items()
     }
+
+
+# ---------------------------------------------------------------------------
+# Visibilidad en el TEXTO. La compatibilidad compara cadenas: una reescritura de
+# $K ("bajo vías", solo en el RESUMEN) pasaba por compatible porque "bajo vías"
+# aparece en el TEXTO dentro de $I ("en cruce bajo vías"). Se aplicaba, se
+# contaba y no se veía: en la corrida real ~28 % de dose_5 decía 5 cambios con 4
+# visibles, y 21 hojas se quedaron sin dose_1.
+
+
+def _surface_stage():
+    return {"C1$": {
+        "ud": "m", "concept": "zanja",
+        "parameters": {
+            "A": {"label": "TIPO DE TERRENO ", "values": [
+                {"label": "a", "value": "Normal"}, {"label": "b", "value": "Bajo vías"}]},
+            "B": {"label": "BANDA", "values": [
+                {"label": "a", "value": "5 horas"}, {"label": "b", "value": "3 horas"}]},
+        },
+        "texto": "Zanja $I, banda $B",
+        "resumen": "Zanja $K ($A)",
+        "text_variables": {},
+    }}
+
+
+def _l2(mtype, fragment, var, condition, ci=0):
+    from synthetic.pantry import Usage
+
+    return ApprovedRewrite(
+        mtype=mtype, dedup_key=(fragment,), canonical=f"${var} / {condition}: {fragment}",
+        candidate_index=ci, payload={"original": fragment, "new": f"{fragment}-v{ci}"},
+        usages=(Usage(C1, None, f"${var} / {condition}: {fragment}"),),
+    )
+
+
+def test_texto_surface_rejects_a_fragment_whose_variable_only_feeds_the_resumen():
+    from synthetic.dose_ladder import TextoSurface
+
+    surface = TextoSurface.from_stage(_surface_stage())
+    in_resumen = _l2(MT.PARAPHRASE, "bajo vías", "K", '%A=="b"')
+    in_texto = _l2(MT.COMPRESSION, "en cruce bajo vías", "I", '%A=="b"')
+    assert surface.shows(in_resumen, C1, "C1ba") is False
+    assert surface.shows(in_texto, C1, "C1ba") is True
+
+
+def test_texto_surface_requires_the_condition_to_bind_the_leaf():
+    from synthetic.dose_ladder import TextoSurface
+
+    surface = TextoSurface.from_stage(_surface_stage())
+    assert surface.shows(_l2(MT.EXPANSION, "roca", "I", '%A=="b"'), C1, "C1ab") is False
+    assert surface.shows(_l2(MT.EXPANSION, "roca", "I", "%A=b"), C1, "C1ba") is True
+    either = _l2(MT.EXPANSION, "roca", "I", '%A=="a"  or  %A=="b"')
+    assert surface.shows(either, C1, "C1ab") is True
+
+
+def test_texto_surface_rejects_what_it_cannot_parse():
+    """No confirmar la visibilidad es no ofrecerla: el conteo exacto (D2) pesa
+    más que una reescritura de menos."""
+    from synthetic.dose_ladder import TextoSurface
+
+    surface = TextoSurface.from_stage(_surface_stage())
+    assert surface.shows(_l2(MT.PARAPHRASE, "roca", "I", "%A>1"), C1, "C1ab") is False
+
+
+def test_texto_surface_checks_value_types_by_their_axis_placeholder():
+    from synthetic.dose_ladder import TextoSurface
+
+    surface = TextoSurface.from_stage(_surface_stage())
+    only_resumen = _rewrite(MT.SYNONYM_LABEL, "Normal", dedup=("TIPO DE TERRENO", "Normal"))
+    in_texto = _rewrite(MT.UNIT_EXPANSION, "5 horas", dedup=("BANDA", "5 horas"))
+    assert surface.shows(only_resumen, C1, "C1aa") is False
+    assert surface.shows(in_texto, C1, "C1aa") is True
+
+
+def test_texto_surface_passes_template_types_through():
+    from synthetic.dose_ladder import TextoSurface
+
+    surface = TextoSurface.from_stage(_surface_stage())
+    assert surface.shows(_rewrite(MT.REORDER, "tpl", dedup=("TEXTO", "tpl")), C1, "C1aa")
+
+
+def test_texto_surface_rejects_a_leaf_key_that_does_not_match_the_axes():
+    from synthetic.dose_ladder import DoseLadderError, TextoSurface
+
+    surface = TextoSurface.from_stage(_surface_stage())
+    with pytest.raises(DoseLadderError, match="leaf_key_axes"):
+        surface.shows(_l2(MT.PARAPHRASE, "roca", "I", "%A=a"), C1, "C1abc")
+
+
+def test_planners_drop_rewrites_the_texto_does_not_show():
+    """Sondeo, orden y constructor ven las mismas candidatas filtradas."""
+    from synthetic.dose_ladder import (
+        TextoSurface, build_dose_plan, build_probe_plan, leaf_rewrites,
+    )
+
+    from synthetic.dose_ladder import DoseLadderError
+
+    text = "Zanja en cruce bajo vías, banda 5 horas"
+    inventory = LeafInventory({C1: [("C1ba", text, (("BANDA", "5 horas"),))]})
+    pantry = Pantry(by_type={
+        MT.COMPRESSION: (_l2(MT.COMPRESSION, "en cruce bajo vías", "I", '%A=="b"'),),
+        MT.PARAPHRASE: (_l2(MT.PARAPHRASE, "bajo vías", "K", '%A=="b"'),),
+        MT.UNIT_EXPANSION: (_rewrite(MT.UNIT_EXPANSION, "5 horas", dedup=("BANDA", "5 horas")),),
+        MT.REORDER: (_rewrite(MT.REORDER, "t1", dedup=("TEXTO", "t1")),),
+        MT.TEMPLATE_PARAPHRASE: (_rewrite(MT.TEMPLATE_PARAPHRASE, "t2", dedup=("TEXTO", "t2")),),
+    })
+    surface = TextoSurface.from_stage(_surface_stage())
+    every = frozenset(pantry.by_type)
+
+    probe = build_probe_plan(pantry, inventory, ["C1ba"], surface=surface)
+    assert "probe_paraphrase" in {p.condition for p in build_probe_plan(pantry, inventory, ["C1ba"])}
+    assert {p.condition for p in probe} == {
+        "probe_compression", "probe_unit_expansion", "probe_reorder",
+        "probe_template_paraphrase"}
+
+    rewrites = leaf_rewrites(pantry, inventory, {"C1ba": every}, surface=surface)
+    assert MT.PARAPHRASE not in rewrites["C1ba"]
+
+    order = {"C1ba": (MT.PARAPHRASE, MT.COMPRESSION, MT.UNIT_EXPANSION,
+                      MT.REORDER, MT.TEMPLATE_PARAPHRASE)}
+    build_dose_plan(pantry, inventory, order, ("C1ba",), reuse_cap={}, per_count=1)
+    with pytest.raises(DoseLadderError, match="pool_exhausted"):
+        build_dose_plan(pantry, inventory, order, ("C1ba",), reuse_cap={},
+                        per_count=1, surface=surface)

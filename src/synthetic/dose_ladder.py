@@ -33,6 +33,7 @@ uses ``zlib.crc32`` (never ``hash()``, salted per process).
 from __future__ import annotations
 
 import random
+import re
 import zlib
 from collections import Counter
 from dataclasses import dataclass
@@ -68,6 +69,7 @@ __all__ = [
     "placeable_depth",
     "leaf_slots",
     "leaf_rewrites",
+    "TextoSurface",
     "select_pool",
     "depth_histogram",
     "leaf_concept_map",
@@ -137,6 +139,119 @@ def structural_types(
                 out.add(mtype)
                 break
     return frozenset(out)
+
+
+_L2_TYPES = frozenset({
+    ModificationType.PARAPHRASE, ModificationType.EXPANSION, ModificationType.COMPRESSION,
+})
+_DISPLAY_RE = re.compile(r"^\$(\w+)\s*/\s*(.*?):\s")
+_ATOM_RE = re.compile(r'^%([A-Z])\s*==?\s*"?([a-z])"?$')
+_TOKEN_RE = re.compile(r"\$([A-Za-z]\w*)")
+
+
+def _ws(text: object) -> str:
+    return " ".join(str(text).split())
+
+
+def _binds(condition: str, options: Mapping[str, str]) -> bool:
+    """Whether a target condition (``%B=c``, ``%B=="c"``, ``... or ...``,
+    ``@``/``&``) holds for a leaf's option letters. Unparsable -> ``False``."""
+    for alternative in re.split(r"\s+or\s+|@", condition.strip()):
+        holds = True
+        for atom in re.split(r"\s+and\s+|&", alternative.strip()):
+            m = _ATOM_RE.match(atom.strip())
+            if not m:
+                return False
+            holds &= options.get(m.group(1)) == m.group(2)
+        if holds:
+            return True
+    return False
+
+
+@dataclass(frozen=True)
+class TextoSurface:
+    """What each concept's TEXTO template actually renders (D2).
+
+    `is_compatible` matches surface strings, so a rewrite of a text variable
+    used only in the RESUMEN passes whenever the same phrase also occurs in the
+    TEXTO through another variable ($K "bajo vías" vs $I "en cruce bajo vías").
+    It is then applied and counted without changing the query. This checks the
+    source instead: an L2 rewrite shows when its variable is a TEXTO token and
+    its condition binds the leaf; an L1 value when its axis placeholder is a
+    TEXTO token. L3 rewrites are already restricted to the TEXTO field.
+    Anything it cannot confirm counts as not shown.
+    """
+
+    tokens: Mapping[str, frozenset]
+    axes: Mapping[str, tuple[str, ...]]
+    axis_by_label: Mapping[str, Mapping[str, str]]
+
+    @classmethod
+    def from_stage(cls, stage_json: Mapping[str, dict]) -> "TextoSurface":
+        tokens: dict[str, frozenset] = {}
+        axes: dict[str, tuple[str, ...]] = {}
+        axis_by_label: dict[str, dict[str, str]] = {}
+        for key, concept in stage_json.items():
+            if not key.endswith("$"):
+                continue
+            texto = concept.get("texto") or ""
+            if not isinstance(texto, str):
+                texto = " ".join(map(str, texto))
+            params = concept.get("parameters") or {}
+            tokens[key] = frozenset(_TOKEN_RE.findall(texto))
+            axes[key] = tuple(params)
+            axis_by_label[key] = {_ws(v["label"]): letter for letter, v in params.items()}
+        return cls(tokens, axes, axis_by_label)
+
+    def shows(self, rewrite: ApprovedRewrite, concept_key: str, leaf_key: str) -> bool:
+        tokens = self.tokens.get(concept_key, frozenset())
+        if rewrite.mtype in L1_VALUE_TYPES:
+            if len(rewrite.dedup_key) < 2:
+                return False
+            letter = self.axis_by_label.get(concept_key, {}).get(_ws(rewrite.dedup_key[0]))
+            return letter is not None and letter in tokens
+        if rewrite.mtype not in _L2_TYPES:
+            return True
+        options = self._options(concept_key, leaf_key)
+        for usage in rewrite.usages:
+            if usage.concept_key != concept_key or not usage.display:
+                continue
+            m = _DISPLAY_RE.match(usage.display)
+            if m and m.group(1) in tokens and _binds(m.group(2), options):
+                return True
+        return False
+
+    def _options(self, concept_key: str, leaf_key: str) -> dict[str, str]:
+        axes = self.axes.get(concept_key, ())
+        prefix = concept_key[:-1]
+        suffix = leaf_key[len(prefix):]
+        if not leaf_key.startswith(prefix) or len(suffix) != len(axes):
+            raise DoseLadderError(
+                f"leaf_key_axes: leaf {leaf_key!r} should be {prefix!r} plus one "
+                f"option letter per axis {axes} of {concept_key!r}"
+            )
+        return dict(zip(axes, suffix))
+
+
+def _leaf_candidates(
+    applicable: Mapping[ModificationType, Sequence[ApprovedRewrite]],
+    inventory: LeafInventory,
+    leaf: str,
+    concept: str,
+    surface: Optional[TextoSurface],
+) -> dict[ModificationType, tuple[ApprovedRewrite, ...]]:
+    """`compatible_rewrites`, narrowed to what the TEXTO shows when a
+    ``surface`` is given. The probe, the order and the builder all go through
+    here, so they see the same candidates."""
+    by_type = compatible_rewrites(applicable, inventory.text(leaf), inventory.axis_values(leaf))
+    if surface is None:
+        return by_type
+    out: dict[ModificationType, tuple[ApprovedRewrite, ...]] = {}
+    for mtype, rewrites in by_type.items():
+        kept = tuple(r for r in rewrites if surface.shows(r, concept, leaf))
+        if kept:
+            out[mtype] = kept
+    return out
 
 
 def compatible_rewrites(
@@ -289,6 +404,8 @@ def leaf_rewrites(
     pantry: Pantry,
     inventory: LeafInventory,
     available: Mapping[str, frozenset],
+    *,
+    surface: Optional[TextoSurface] = None,
 ) -> dict[str, dict[ModificationType, tuple[ApprovedRewrite, ...]]]:
     """Per leaf, each AVAILABLE type -> its compatible rewrites (cap-free, D1).
 
@@ -303,9 +420,7 @@ def leaf_rewrites(
         concept = concept_of[leaf]
         if concept not in applicable:
             applicable[concept] = pantry.for_concept(concept)
-        by_type = compatible_rewrites(
-            applicable[concept], inventory.text(leaf), inventory.axis_values(leaf),
-        )
+        by_type = _leaf_candidates(applicable[concept], inventory, leaf, concept, surface)
         out[leaf] = {t: rws for t, rws in by_type.items() if t in available[leaf]}
     return out
 
@@ -364,6 +479,8 @@ def build_probe_plan(
     pantry: Pantry,
     inventory: LeafInventory,
     leaves: Sequence[str],
+    *,
+    surface: Optional[TextoSurface] = None,
 ) -> tuple[PlannedVariant, ...]:
     """One single-modification variant per (leaf, available type).
 
@@ -388,9 +505,7 @@ def build_probe_plan(
         concept = concept_of[leaf]
         if concept not in applicable:
             applicable[concept] = pantry.for_concept(concept)
-        by_type = compatible_rewrites(
-            applicable[concept], inventory.text(leaf), inventory.axis_values(leaf),
-        )
+        by_type = _leaf_candidates(applicable[concept], inventory, leaf, concept, surface)
         for mtype in NINE_TYPES:
             cands = by_type.get(mtype)
             if not cands:
@@ -415,6 +530,7 @@ def build_dose_plan(
     *,
     reuse_cap: Mapping[str, int],
     per_count: int,
+    surface: Optional[TextoSurface] = None,
 ) -> tuple[PlannedVariant, ...]:
     """The five rungs, built leaf-atomically over a common pool (D4 + D5).
 
@@ -459,9 +575,7 @@ def build_dose_plan(
         concept = concept_of[leaf]
         if concept not in applicable:
             applicable[concept] = pantry.for_concept(concept)
-        by_type = compatible_rewrites(
-            applicable[concept], inventory.text(leaf), inventory.axis_values(leaf),
-        )
+        by_type = _leaf_candidates(applicable[concept], inventory, leaf, concept, surface)
         types = order[leaf]
         picks = _assign_spans(types, by_type, reuse_cap, usage)
         if picks is None:

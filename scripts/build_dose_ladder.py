@@ -83,6 +83,40 @@ def _surviving_types(items_path: Path) -> dict[str, frozenset]:
     return {k: frozenset(v) for k, v in out.items()}
 
 
+def invisible_modifications(items_path, modifications_path) -> list[tuple[str, str]]:
+    """``(item_key, type)`` for each L1/L2 modification whose ``new`` text does
+    not appear in the item's TEXTO (whitespace-normalised). Template rewrites
+    are skipped: their ``new`` carries ``$X`` placeholders.
+
+    The release's last check on D2: the query is the TEXTO, so a modification
+    it does not show must not be counted.
+    """
+    frame = pd.read_parquet(items_path, columns=["item_key", "texto"])
+    texto = {k: " ".join(str(t).split()) for k, t in zip(frame["item_key"], frame["texto"])}
+    out = []
+    for line in Path(modifications_path).read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        rec = json.loads(line)
+        for m in rec["modifications"]:
+            if m.get("layer") == "template":
+                continue
+            new = " ".join(str(m.get("new", "")).split())
+            if new and new not in texto[rec["item_key"]]:
+                out.append((rec["item_key"], m["type"]))
+    return out
+
+
+def _fail_on_invisible(stats, label: str) -> None:
+    bad = invisible_modifications(stats.items_path, stats.modifications_path)
+    if bad:
+        raise SystemExit(
+            f"texto_invisible_modification: {len(bad)} {label} modifications are "
+            f"counted but not visible in the TEXTO, e.g. {bad[:3]}; by type "
+            f"{dict(Counter(t for _, t in bad))}"
+        )
+
+
 def applicability_rows(available, structural, dose_plan) -> list[dict]:
     """One sidecar row per probed leaf, sorted by leaf.
 
@@ -183,7 +217,9 @@ def main() -> int:
     print(f"[E3] candidatas tras el pre-filtro estructural: {len(candidates)}")
 
     # ----- pass 1: probe --------------------------------------------------
-    probe_plan = dose_ladder.build_probe_plan(pantry, inventory, candidates)
+    # Only rewrites the TEXTO really shows (D2); see TextoSurface.
+    surface = dose_ladder.TextoSurface.from_stage(stage_json)
+    probe_plan = dose_ladder.build_probe_plan(pantry, inventory, candidates, surface=surface)
     print(f"[E3] sondeo planificado: {len(probe_plan)} items")
     probe_stats = run_corpus(
         stage_json, probe_plan,
@@ -193,6 +229,7 @@ def main() -> int:
         workers=a.workers,
         require_texto_changed=True,
     )
+    _fail_on_invisible(probe_stats, "probe")
     available = _surviving_types(Path(probe_stats.items_path))
     print(f"[E3] sondeo producido: {probe_stats.totals['produced']} items; "
           f"hojas con >=1 tipo disponible: {len(available)}")
@@ -201,7 +238,7 @@ def main() -> int:
     # Types of one family compete for the same span, so a leaf can have more
     # available types than modifications that fit together. Only leaves where
     # a full ladder fits may enter the pool; D5's depth still counts types.
-    rewrites = dose_ladder.leaf_rewrites(pantry, inventory, available)
+    rewrites = dose_ladder.leaf_rewrites(pantry, inventory, available, surface=surface)
     placeable = {
         leaf: dose_ladder.placeable_depth(
             {t: frozenset(r.dedup_key for r in rws) for t, rws in by_type.items()}
@@ -232,6 +269,7 @@ def main() -> int:
     dose_plan = dose_ladder.build_dose_plan(
         pantry, inventory, order, pool,
         reuse_cap=dose_budgets.reuse_cap, per_count=dose_budgets.per_count,
+        surface=surface,
     )
     print(f"[E3] escalera planificada: {len(dose_plan)} items")
     dose_stats = run_corpus(
@@ -242,6 +280,7 @@ def main() -> int:
         workers=a.workers,
         require_texto_changed=True,
     )
+    _fail_on_invisible(dose_stats, "dose")
 
     # ----- applicability sidecar ------------------------------------------
     structural = {
