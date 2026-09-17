@@ -29,6 +29,66 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### 2026-09-17 — E3: conjunto de dosis entregado (escalera anidada + efectos aislados)
+
+**Entrega.** `OE_dose_texto.json` (3 000 consultas = 600 hojas × 5 peldaños) y
+`OE_isolated_texto.json` (5 400 = 9 tipos × las mismas 600 hojas), más
+`OE_leaf_applicability.jsonl` (1 500 hojas sondeadas). `run_id`
+`e3-20260917T093057Z`, commit de generación `e057907`, semilla 42.
+
+| fichero | sha256 |
+|---|---|
+| `handoff_OE/OE_dose_texto.json` | `555fab84d134886f85ece40115ffd485e796fd4e96291e6a9af3129004a80819` |
+| `handoff_OE/OE_isolated_texto.json` | `054041ff05349fae79fd5b91ff111f4fe574b37f7f8ee9647cea044503c5e3ce` |
+| `handoff_OE/OE_leaf_applicability.jsonl` | `eda12d17c323add48a7d8deac0f93e767188824950357303b497a7ca8d3fbaa3` |
+| `processed_OE_dose/BC3CAT_Syn_items.parquet` | `2ab77eb948c161207f52f92e440abda903e4201a050a70d3204bb4f2e99699c4` |
+| `processed_OE_dose/BC3CAT_Syn_modifications.jsonl` | `4e4c37419739f3dcfcdac0838e88307d4da177e7da31795f355b68b078cd415e` |
+| `processed_OE_probe/BC3CAT_Syn_items.parquet` | `b7c08df5f7e7d38a0ab76d1e04234af63fa8c529e05009b7c66b6ec5478b0e13` |
+| `processed_OE_probe/BC3CAT_Syn_modifications.jsonl` | `983228e4eaf0f4edae5794e9b254968bd14962b51f7658dfa701558c2ab47726` |
+
+**Resultados.** Sondeo: 1 500 candidatas, 12 236 planificados, 11 895 producidos.
+Fondo *d* = 9, 750 hojas (600 usadas). Cinco celdas de 600, 0 déficit, 0 no-ops,
+0 duplicados. Distancia media de tokens al original: 13,9 → 28,2 → 42,1 → 56,2 →
+66,9. Guard #1: 0 colisiones introducidas (corpus y plantilla; 158 760 heredadas
+del par gemelo `OED020`/`OED170`). Determinismo: segunda corrida idéntica en los
+cinco ficheros.
+
+**Entrada que faltaba.** `data/synthetic/intermediate/OE_2026_stage.json` no
+existía en ningún sitio. Se reconstruyó con el código de los notebooks s01/s02
+sobre `BPA_2026.bc3`. Validación: escanearlo reproduce exactamente los objetivos
+de `menus_OE` en los 13 tipos (84 conceptos).
+
+**Cuatro corridas reales y cinco defectos de diseño**, todos en el plan
+(`E3_DOSE_PLAN.md`, notas de las tareas 9 y 12):
+
+1. *Tramos compartidos* (prueba de humo, 0 de 5 escaleras): los tipos de una
+   familia compiten por el mismo fragmento o plantilla. Arreglo: emparejamiento
+   tipo↔tramo (`placeable_depth`, `_assign_spans`).
+2. *`in_pool` marcaba la reserva*: se habrían entregado efectos aislados de 150
+   hojas sin escalera.
+3. *Topes de reuso* (corrida 1: 260 de 600). En el fondo, `unit_conversion` tiene
+   4 reescrituras distintas. El orden anidado ahora gasta la capacidad. Con tope
+   20 el máximo alcanzable es 429 escaleras, así que por decisión de César el
+   tope sube a 40.
+4. *Modificaciones invisibles en el TEXTO* (corrida 2: ~28 % de `dose_5`
+   sobrecontaba). `is_compatible` compara cadenas, no variables. Arreglo:
+   `TextoSurface`, validado con 2 805/402 aciertos y 0 desacuerdos. Red final en
+   el script. **STACKED ya entregado tiene el mismo patrón (~1 800
+   modificaciones)**; se abrió como tarea aparte.
+5. *Prefijos alfabéticos* (corrida 3: 6 de 7 conceptos, valores a–c de 8): la
+   clave de hoja deletrea los parámetros. Arreglo: orden hash dentro del concepto
+   y prefijos proporcionales entre conceptos.
+
+**Decisiones de César.** Prueba limpia con pocos conceptos (7) en vez de relajar
+D5. Reparto ajustado a la capacidad en lugar de quitar topes, con tope 40.
+
+**CLAUDE_SYNTHETIC.md updated:** no
+**Next step:** comunicar la entrega a `bc3cat-retrieval` (cobertura de 7 conceptos
+y presencia reducida de `unit_conversion`), y resolver la tarea de auditoría de
+STACKED antes de que se usen sus conteos.
+
+---
+
 ### 2026-09-02 — Sprint 39: presupuestos + sampler determinista + driver — corpus piloto generado
 
 - **Módulos nuevos sobre la costura congelada** (TDD, sin LLM en ningún punto):

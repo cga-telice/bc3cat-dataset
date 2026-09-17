@@ -132,3 +132,59 @@ rows).
 
 See [`DATA_CARD.md`](DATA_CARD.md) for the full schema, taxonomy, slices, and
 provenance.
+
+
+## 5. E3 — conjunto de dosis
+
+Entrega del 2026-09-17 (`run_id` `e3-20260917T093057Z`, commit de generación
+`e057907`, semilla 42 leída de `configs/synthetic/variant_budgets_OE_dose.yaml`).
+Catálogo BPA 2026, capítulo OE. Informe completo: `docs/synthetic/OE_dose_report.md`.
+
+### Ficheros (`data/synthetic/handoff_OE/`)
+
+| fichero | contenido |
+|---|---|
+| `OE_dose_texto.json` | **3 000 consultas**: 600 hojas × 5 peldaños (`modification_count` 1–5) |
+| `OE_isolated_texto.json` | **5 400 consultas**: los 9 tipos por separado sobre **las mismas 600 hojas** |
+| `OE_leaf_applicability.jsonl` | una fila por hoja sondeada (1 500): `applicable_types`, `available_types`, `in_pool` |
+| `MANIFEST.md`, `provenance.json` | SHA-256 por fichero, commit, semilla y configuración |
+
+Convención de gold idéntica a STACKED/SINGLE: la consulta es el TEXTO modificado
+y el objetivo es el TEXTO original (`parent_key` + `gold_item_key`). Cada registro
+lleva además `applicable_types` (la gramática admite el tipo) y `available_types`
+(hay una reescritura aprobada que cambia el TEXTO de esa hoja). Ambos son
+independientes de los topes de reuso. `in_pool` marca las 600 hojas con escalera.
+
+### Garantías
+
+- **Escalera anidada:** los tipos del peldaño *k* son los del peldaño *k*−1 más
+  uno. Entre peldaños consecutivos cambia exactamente una modificación.
+- **Población común:** los cinco peldaños y los efectos aislados usan las mismas
+  600 hojas. El efecto de la dosis no se mezcla con la dificultad de la hoja.
+- **Conteo exacto sobre el TEXTO:** cada modificación contada aparece en el TEXTO
+  de la consulta, en tramos distintos. La generación falla si alguna no se ve.
+- **Profundidad** *d* = 9 tipos disponibles y al menos 5 que caben en tramos
+  distintos. Fondo de 750 hojas seleccionadas, de las que se usan 600.
+- Reproducible byte a byte (verificado con una segunda corrida) y sin colisiones
+  entre conceptos introducidas, ni a nivel de corpus ni de plantilla.
+
+### Limitaciones que conviene citar
+
+1. **Cobertura por concepto: 7 conceptos** de 83, todos canalizaciones de OEB
+   (`OEB020`, `030`, `040`, `230`, `280`, `290`, `300`; entre 61 y 96 hojas cada
+   uno). Es estructural, no un fallo: solo esas familias tienen descripciones con
+   ≥6 tipos de cambio que además caben en tramos distintos del TEXTO. Se decidió
+   no relajar el criterio. Con menos tipos, la composición del peldaño 5 quedaría
+   fijada y la dosis se confundiría con el tipo. Una partición dev/test por
+   concepto solo puede repartir estos 7.
+2. **Presencia por tipo (salvedad de su §3).** Que cada tipo aparezca a tasas
+   parejas *entre* peldaños es inalcanzable por construcción: con *k* tipos de un
+   repertorio de *d*, la tasa de cada tipo crece con la dosis. Lo alcanzable es el
+   equilibrio *dentro* de cada peldaño, y se cumple para ocho de los nueve tipos
+   (p. ej. peldaño 1: 70–71 hojas por tipo). **`unit_conversion` queda por debajo**
+   (39 en el peldaño 1, 160 en el 5), porque en estos conceptos solo tiene 4
+   reescrituras distintas. Para no repetir siempre la misma, cada reescritura se
+   usa como mucho 40 veces (`num_to_text`, `unit_expansion` y `unit_conversion`),
+   y el reparto se ajusta a esa capacidad.
+3. Los efectos aislados son completos (9 tipos × 600 hojas), así que la suma de
+   efectos aislados es intra-hoja y comparable con la escalera.

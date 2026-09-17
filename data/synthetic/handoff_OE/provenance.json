@@ -1,0 +1,8 @@
+{
+  "run_id": "e3-20260917T093057Z",
+  "seed": 42,
+  "dose_config": "configs/synthetic/variant_budgets_OE_dose.yaml",
+  "script": "scripts/build_dose_ladder.py",
+  "commit": "e0579077f435d6194e50e1510cb647f5363c6895",
+  "generated_utc": "2026-09-17T09:30:57+00:00"
+}
