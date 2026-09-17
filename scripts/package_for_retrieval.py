@@ -26,6 +26,7 @@ import datetime as _dt
 import hashlib
 import json
 import subprocess
+import sys
 import uuid
 import zipfile
 from pathlib import Path
@@ -34,6 +35,9 @@ import pandas as pd
 import yaml
 
 REPO = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(REPO / "src"))
+
+from synthetic.dose_ladder import TextoSurface  # noqa: E402
 
 _NS = uuid.UUID("6f9619ff-8b86-d011-b42d-00cf4fc964ff")  # fixed namespace → stable ids
 
@@ -144,10 +148,46 @@ def git_commit(allow_unknown=False):
         )
 
 
+def add_texto_visibility(records, modifications_path, surface):
+    """STACKED records plus the counts the TEXTO query really shows.
+
+    `modification_count`/`modification_types` count every applied record,
+    including the RESUMEN-field template rewrite and rewrites of variables or
+    axes the TEXTO template never renders (audit:
+    docs/synthetic/OE_stacked_texto_visibility_audit.md). The query is the
+    TEXTO, so `texto_modification_count`/`texto_modification_types` are added
+    next to them, judged by `TextoSurface.shows_record`. The recorded fields
+    and the texts are left as delivered.
+    """
+    by_item = {}
+    for line in Path(modifications_path).read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            rec = json.loads(line)
+            by_item[rec["item_key"]] = [
+                m for m in rec["modifications"] if m.get("status") == "applied"
+            ]
+    out = []
+    for record in records:
+        shown = [
+            m["type"] for m in by_item[record["item_key"]]
+            if surface.shows_record(m, record["parent_key"], record["gold_item_key"])
+        ]
+        out.append({**record, "texto_modification_count": len(shown),
+                    "texto_modification_types": shown})
+    return out
+
+
+def repackaged_provenance(original, *, commit, now):
+    """Provenance for re-packaging an already generated delivery: the original
+    stamp (run, seed, generating commit and time) is kept verbatim and the
+    re-packaging is recorded next to it, never over it."""
+    return {**original, "repackaged_commit": commit, "repackaged_utc": now}
+
+
 def render_manifest(out_dir, filenames, provenance):
     """The §6 manifest: one SHA-256 per delivered file plus the provenance stamp."""
     lines = [
-        "# BC3CAT-Syn — E3 dose delivery manifest",
+        "# BC3CAT-Syn — OE handoff manifest",
         "",
         "| clave | valor |",
         "|---|---|",
@@ -175,6 +215,13 @@ def main() -> int:
     ap.add_argument("--applicability", default=None,
                     help="OE_leaf_applicability.jsonl (required with --dose/--probe)")
     ap.add_argument("--run-id", default=None)
+    ap.add_argument(
+        "--reuse-provenance", default=None,
+        help="provenance.json of the delivery being re-packaged. Its stamp is "
+             "kept verbatim and the re-packaging commit/time are added next to "
+             "it, so re-packaging never rewrites when or where the corpus was "
+             "generated.",
+    )
     ap.add_argument(
         "--dose-config", default=None,
         help="the dose budgets YAML this run used. Required with --dose/--probe: "
@@ -246,13 +293,17 @@ def main() -> int:
             })
         return recs
 
-    stk = query_records(a.stacked)
+    stk = add_texto_visibility(
+        query_records(a.stacked),
+        Path(a.stacked) / "BC3CAT_Syn_modifications.jsonl",
+        TextoSurface.from_stage(stage),
+    )
     sgl = query_records(a.single)
     (out / f"{col}_stacked_texto.json").write_text(json.dumps(stk, ensure_ascii=False), encoding="utf-8")
     (out / f"{col}_single_texto.json").write_text(json.dumps(sgl, ensure_ascii=False), encoding="utf-8")
 
     # 3b) E3 dose ladder + isolated-effects releases (optional, additive)
-    written = []
+    written = [f"{col}_stacked_texto.json", f"{col}_single_texto.json"]
     if a.dose or a.probe:
         if not a.applicability:
             raise SystemExit("--applicability is required with --dose/--probe")
@@ -299,14 +350,28 @@ def main() -> int:
             Path(a.applicability).read_text(encoding="utf-8"), encoding="utf-8",
         )
         written.append(side_name)
-        provenance = {
-            "run_id": a.run_id or _dt.datetime.now(_dt.timezone.utc).strftime("e3-%Y%m%dT%H%M%SZ"),
-            "seed": seed,
-            "dose_config": str(a.dose_config),
-            "script": "scripts/build_dose_ladder.py",
-            "commit": git_commit(allow_unknown=a.allow_unknown_commit),
-            "generated_utc": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
-        }
+        now = _dt.datetime.now(_dt.timezone.utc)
+        if a.reuse_provenance:
+            original = json.loads(Path(a.reuse_provenance).read_text(encoding="utf-8"))
+            if original.get("seed") != seed:
+                raise SystemExit(
+                    f"provenance_seed_mismatch: {a.reuse_provenance} records seed "
+                    f"{original.get('seed')} but {a.dose_config} has {seed}"
+                )
+            provenance = repackaged_provenance(
+                original,
+                commit=git_commit(allow_unknown=a.allow_unknown_commit),
+                now=now.isoformat(timespec="seconds"),
+            )
+        else:
+            provenance = {
+                "run_id": a.run_id or now.strftime("e3-%Y%m%dT%H%M%SZ"),
+                "seed": seed,
+                "dose_config": str(a.dose_config),
+                "script": "scripts/build_dose_ladder.py",
+                "commit": git_commit(allow_unknown=a.allow_unknown_commit),
+                "generated_utc": now.isoformat(timespec="seconds"),
+            }
         (out / "provenance.json").write_text(
             json.dumps(provenance, ensure_ascii=False, indent=2), encoding="utf-8",
         )
@@ -322,6 +387,15 @@ Query = a MODIFIED `text` (TEXTO); target = the ORIGINAL TEXTO of the same conce
 All files are JSON lists of records with the project's schema:
 `{{id, item_key, parent_key, ud, concept, parameters, text}}` (query files add
 `gold_item_key`, `modification_types`, `modification_count`).
+
+**Dose seen by the query.** `modification_count`/`modification_types` count every
+applied modification record. The query is the TEXTO, and in STACKED some records
+never reach it: the RESUMEN-field template rewrite (one per item) and rewrites of
+text variables or axes the TEXTO template does not render. STACKED records therefore
+also carry `texto_modification_count`/`texto_modification_types`, the modifications
+visible in the TEXTO; use those for any analysis by dose or type. The texts are
+unchanged. SINGLE, dose and isolated sets are exact by construction
+(`modification_count` = visible in the TEXTO).
 
 ## Files
 - `{col}_texto.json` — document corpus: original OE TEXTOs (retrieval **targets**). {len(texto_docs)} docs.

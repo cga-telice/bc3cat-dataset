@@ -278,3 +278,58 @@ def test_release_audit_flags_a_modification_the_texto_does_not_show(tmp_path):
     ]) + "\n", encoding="utf-8")
 
     assert mod.invisible_modifications(items_path, mods_path) == [("bad", "paraphrase")]
+
+
+# ---------------------------------------------------------------------------
+# STACKED: conteo visible en el TEXTO. La auditoría encontró que
+# `modification_count` cuenta la reescritura de la plantilla del RESUMEN y
+# cambios que el TEXTO no renderiza. Opción elegida: añadir los campos
+# corregidos sin tocar los textos ni los campos existentes.
+
+_STAGE = {"C1$": {
+    "ud": "m", "concept": "zanja",
+    "parameters": {"A": {"label": "TIPO", "values": [{"label": "a", "value": "x"},
+                                                      {"label": "b", "value": "y"}]}},
+    "texto": "Zanja $I",
+    "resumen": "Zanja $K ($A)",
+    "text_variables": {},
+}}
+
+
+def test_stacked_records_gain_texto_visible_counts_and_keep_the_recorded_ones(tmp_path):
+    from synthetic.dose_ladder import TextoSurface
+
+    mod = _load_packager()
+    mods_path = tmp_path / "BC3CAT_Syn_modifications.jsonl"
+    mods_path.write_text(json.dumps({"item_key": "q1", "modifications": [
+        {"type": "template_paraphrase", "layer": "template", "field": "RESUMEN", "status": "applied"},
+        {"type": "template_paraphrase", "layer": "template", "field": "TEXTO", "status": "applied"},
+        {"type": "paraphrase", "layer": "text_variable", "var": "K", "condition": "%A=b",
+         "status": "applied"},
+        {"type": "compression", "layer": "text_variable", "var": "I", "condition": "%A=b",
+         "status": "applied"},
+    ]}) + "\n", encoding="utf-8")
+    records = [{"item_key": "q1", "parent_key": "C1$", "gold_item_key": "C1b",
+                "modification_count": 4,
+                "modification_types": ["template_paraphrase", "template_paraphrase",
+                                       "paraphrase", "compression"]}]
+
+    out = mod.add_texto_visibility(records, mods_path, TextoSurface.from_stage(_STAGE))
+
+    assert out[0]["modification_count"] == 4                      # recorded, untouched
+    assert out[0]["texto_modification_count"] == 2
+    assert out[0]["texto_modification_types"] == ["template_paraphrase", "compression"]
+    assert records[0].keys() == {"item_key", "parent_key", "gold_item_key",
+                                 "modification_count", "modification_types"}
+
+
+def test_repackaging_keeps_the_original_provenance_and_records_the_repackaging():
+    """Re-empaquetar no puede reescribir cuándo ni con qué commit se GENERÓ el
+    corpus: eso inventaría la procedencia."""
+    mod = _load_packager()
+    original = {"run_id": "e3-x", "seed": 42, "commit": "gen", "generated_utc": "t0",
+                "script": "s", "dose_config": "c"}
+    got = mod.repackaged_provenance(original, commit="head", now="t1")
+    assert {k: got[k] for k in original} == original
+    assert got["repackaged_commit"] == "head" and got["repackaged_utc"] == "t1"
+    assert "repackaged_commit" not in original
