@@ -663,7 +663,10 @@ def test_committed_dose_configs_load():
     dose = load_dose_budgets(root / "variant_budgets_OE_dose.yaml")
     assert dose.per_count >= 600                 # their §3
     assert dose.structural_threshold > LADDER_MAX
-    assert dose.reuse_cap.get("num_to_text") == 20
+    # 40: the lowest cap that reaches per_count on the real pool (see the YAML)
+    assert dose.reuse_cap == {
+        "num_to_text": 40, "unit_expansion": 40, "unit_conversion": 40,
+    }
     # a reserve exists: select_pool returns exactly pool_min leaves and
     # build_dose_plan raises rather than deliver fewer than per_count ladders
     assert dose.effective_pool_min > dose.per_count
@@ -693,6 +696,18 @@ def _shared_slots():
         MT.NUM_TO_TEXT: frozenset({("Nº TUBOS", "2")}),
         MT.UNIT_CONVERSION: frozenset({("DIAMETRO", "110 mm")}),
         MT.REORDER: frozenset({("TEXTO", "tpl")}),
+    }
+
+
+def _as_rewrites(slots_by_leaf):
+    """One rewrite per (type, span): the rewrites view of a slots fixture."""
+    return {
+        leaf: {
+            t: tuple(_rewrite(t, f"{t.value}|{key}", dedup=key)
+                     for key in sorted(keys, key=repr))
+            for t, keys in slots.items()
+        }
+        for leaf, slots in slots_by_leaf.items()
     }
 
 
@@ -744,7 +759,7 @@ def test_nested_order_with_slots_never_puts_two_types_on_one_span():
         placeable_depth({t: slots[leaf][t] for t in types}) < LADDER_MAX
         for leaf, types in plain.items()
     )
-    order = nested_order(admitted, seed=42, slots=slots)
+    order = nested_order(admitted, seed=42, rewrites=_as_rewrites(slots))
     for leaf, types in order.items():
         assert placeable_depth({t: slots[leaf][t] for t in types}) == LADDER_MAX
         for k in range(1, LADDER_MAX):
@@ -757,7 +772,7 @@ def test_nested_order_with_slots_keeps_the_top_cell_balanced():
 
     slots = {f"L{i:03d}": _shared_slots() for i in range(30)}
     order = nested_order({k: frozenset(v) for k, v in slots.items()}, seed=42,
-                         slots=slots)
+                         rewrites=_as_rewrites(slots))
     inclusion = Counter(t for types in order.values() for t in types)
     for t in (MT.PARAPHRASE, MT.EXPANSION, MT.COMPRESSION):
         assert inclusion[t] == 10
@@ -770,7 +785,8 @@ def test_nested_order_with_disjoint_slots_is_the_plain_order():
 
     admitted = {f"L{i:03d}": frozenset(NINE_SUBSET) for i in range(20)}
     slots = {k: {t: frozenset({(t.value,)}) for t in v} for k, v in admitted.items()}
-    assert nested_order(admitted, seed=42, slots=slots) == nested_order(admitted, seed=42)
+    assert (nested_order(admitted, seed=42, rewrites=_as_rewrites(slots))
+            == nested_order(admitted, seed=42))
 
 
 def test_nested_order_rejects_a_leaf_whose_spans_cannot_fill_the_ladder():
@@ -779,7 +795,8 @@ def test_nested_order_rejects_a_leaf_whose_spans_cannot_fill_the_ladder():
     slots = _shared_slots()
     del slots[MT.REORDER]                    # 6 tipos, pero solo 4 tramos
     with pytest.raises(DoseLadderError, match="ladder_too_deep"):
-        nested_order({"L000": frozenset(slots)}, seed=42, slots={"L000": slots})
+        nested_order({"L000": frozenset(slots)}, seed=42,
+                     rewrites=_as_rewrites({"L000": slots}))
 
 
 def _shared_span_setup(n_leaves=6):
@@ -802,14 +819,14 @@ def _shared_span_setup(n_leaves=6):
 
 def test_build_dose_plan_fills_ladders_when_types_share_a_span():
     from synthetic.dose_ladder import (
-        LADDER_MAX, build_dose_plan, leaf_slots, nested_order,
+        LADDER_MAX, build_dose_plan, leaf_rewrites, nested_order,
     )
 
     inventory, pantry = _shared_span_setup()
     pool = tuple(f"C1{i:03d}" for i in range(6))
     available = {leaf: frozenset(pantry.by_type) for leaf in pool}
-    slots = leaf_slots(pantry, inventory, available)
-    order = nested_order(available, seed=42, slots=slots)
+    order = nested_order(available, seed=42,
+                         rewrites=leaf_rewrites(pantry, inventory, available))
     plan = build_dose_plan(pantry, inventory, order, pool, reuse_cap={}, per_count=6)
 
     assert len(plan) == 6 * LADDER_MAX
@@ -845,3 +862,79 @@ def test_build_dose_plan_backtracks_over_the_span_assignment():
     assert by_type[MT.UNIT_CONVERSION] == ("span1",)
     # el anidamiento se conserva: el peldaño k es el prefijo de longitud k
     assert [p.rewrites for p in plan] == [top.rewrites[:k] for k in range(1, LADDER_MAX + 1)]
+
+
+# ---------------------------------------------------------------------------
+# Topes de reuso en el orden anidado. Con el catálogo real, unit_conversion tenía
+# 4 reescrituras distintas en el fondo (capacidad 4 x 20 = 80) y el reparto
+# equilibrado le pedía 375 escaleras: 260 de 600. El orden reparte ahora según
+# la capacidad que queda, y el constructor reproduce sus decisiones.
+
+
+def test_nested_order_leaves_a_capped_out_type_out_instead_of_the_leaf():
+    """Mismo escenario que el test de `pool_exhausted` de arriba (paraphrase con
+    capacidad 2), pero con el orden informado: sale entero."""
+    from synthetic.dose_ladder import (
+        LADDER_MAX, build_dose_plan, leaf_rewrites, nested_order,
+    )
+
+    inventory, pantry = _ladder_setup(n_leaves=12)
+    pool = tuple(f"C1{i:03d}" for i in range(12))
+    available = {leaf: frozenset(NINE_SUBSET) for leaf in pool}
+    caps = {"paraphrase": 1}
+    order = nested_order(available, seed=42,
+                         rewrites=leaf_rewrites(pantry, inventory, available),
+                         reuse_cap=caps)
+
+    assert set(order) == set(pool)          # quedan 5 tipos: ninguna hoja se pierde
+    assert sum(MT.PARAPHRASE in types for types in order.values()) == 2
+    plan = build_dose_plan(pantry, inventory, order, pool, reuse_cap=caps, per_count=12)
+    assert len(plan) == 12 * LADDER_MAX
+
+
+def test_nested_order_omits_a_leaf_it_cannot_fill_under_caps():
+    """Hojas con exactamente 5 tipos: agotado uno, no queda escalera posible.
+    La hoja pasa a la reserva en vez de romper la corrida."""
+    from synthetic.dose_ladder import (
+        DoseLadderError, build_dose_plan, leaf_rewrites, nested_order,
+    )
+
+    inventory, pantry = _ladder_setup(n_leaves=6)
+    pool = tuple(f"C1{i:03d}" for i in range(6))
+    available = {leaf: frozenset(NINE_SUBSET[:5]) for leaf in pool}
+    caps = {"paraphrase": 1}
+    order = nested_order(available, seed=42,
+                         rewrites=leaf_rewrites(pantry, inventory, available),
+                         reuse_cap=caps)
+
+    assert list(order) == ["C1000", "C1001"]
+    build_dose_plan(pantry, inventory, order, pool, reuse_cap=caps, per_count=2)
+    with pytest.raises(DoseLadderError, match="pool_exhausted"):
+        build_dose_plan(pantry, inventory, order, pool, reuse_cap=caps, per_count=3)
+
+
+def test_nested_order_spends_capacity_in_the_given_leaf_order():
+    """El constructor recorre el fondo en su orden; el orden anidado tiene que
+    gastar la capacidad en ese mismo orden o sus decisiones no se reproducen."""
+    from synthetic.dose_ladder import leaf_rewrites, nested_order
+
+    inventory, pantry = _ladder_setup(n_leaves=6)
+    pool = tuple(f"C1{i:03d}" for i in reversed(range(6)))
+    available = {leaf: frozenset(NINE_SUBSET[:5]) for leaf in pool}
+    order = nested_order(available, seed=42,
+                         rewrites=leaf_rewrites(pantry, inventory, available),
+                         reuse_cap={"paraphrase": 1})
+    assert list(order) == ["C1005", "C1004"]
+
+
+def test_leaf_slots_is_the_span_view_of_leaf_rewrites():
+    from synthetic.dose_ladder import leaf_rewrites, leaf_slots
+
+    inventory, pantry = _shared_span_setup(n_leaves=2)
+    available = {"C1000": frozenset(pantry.by_type), "C1001": frozenset({MT.REORDER})}
+    rewrites = leaf_rewrites(pantry, inventory, available)
+    assert set(rewrites["C1001"]) == {MT.REORDER}
+    assert leaf_slots(pantry, inventory, available) == {
+        leaf: {t: frozenset(r.dedup_key for r in rws) for t, rws in by_type.items()}
+        for leaf, by_type in rewrites.items()
+    }

@@ -67,6 +67,7 @@ __all__ = [
     "nested_order",
     "placeable_depth",
     "leaf_slots",
+    "leaf_rewrites",
     "select_pool",
     "depth_histogram",
     "leaf_concept_map",
@@ -77,6 +78,10 @@ LADDER_MAX = 5
 
 #: Diagnostic bucket in ``pool_exhausted`` for ladders blocked by span clashes.
 SPAN_CONFLICT = "<span_conflict>"
+
+#: Diagnostic bucket for pool leaves ``nested_order`` left out: under the reuse
+#: caps no ``LADDER_MAX`` types still fit on them.
+NOT_ORDERED = "<not_ordered>"
 
 
 class DoseLadderError(RuntimeError):
@@ -280,19 +285,20 @@ def placeable_depth(slots: Mapping[ModificationType, frozenset]) -> int:
     return sum(augment(t, set()) for t in sorted(slots, key=lambda t: t.value))
 
 
-def leaf_slots(
+def leaf_rewrites(
     pantry: Pantry,
     inventory: LeafInventory,
     available: Mapping[str, frozenset],
-) -> dict[str, dict[ModificationType, frozenset]]:
-    """Per leaf, each AVAILABLE type -> the spans its compatible rewrites touch.
+) -> dict[str, dict[ModificationType, tuple[ApprovedRewrite, ...]]]:
+    """Per leaf, each AVAILABLE type -> its compatible rewrites (cap-free, D1).
 
-    Cap-free, like availability itself (D1). Feeds :func:`placeable_depth` and
-    ``nested_order(slots=...)``.
+    Exactly what :func:`build_dose_plan` computes per leaf, restricted to the
+    available types — ``nested_order(rewrites=...)`` must see the same
+    candidates the builder will, or its decisions do not replay.
     """
     concept_of = _concept_of(inventory)
     applicable: dict[str, dict] = {}
-    out: dict[str, dict[ModificationType, frozenset]] = {}
+    out: dict[str, dict[ModificationType, tuple[ApprovedRewrite, ...]]] = {}
     for leaf in sorted(available):
         concept = concept_of[leaf]
         if concept not in applicable:
@@ -300,11 +306,21 @@ def leaf_slots(
         by_type = compatible_rewrites(
             applicable[concept], inventory.text(leaf), inventory.axis_values(leaf),
         )
-        out[leaf] = {
-            t: frozenset(r.dedup_key for r in rewrites)
-            for t, rewrites in by_type.items() if t in available[leaf]
-        }
+        out[leaf] = {t: rws for t, rws in by_type.items() if t in available[leaf]}
     return out
+
+
+def leaf_slots(
+    pantry: Pantry,
+    inventory: LeafInventory,
+    available: Mapping[str, frozenset],
+) -> dict[str, dict[ModificationType, frozenset]]:
+    """The span view of :func:`leaf_rewrites`: each available type -> the spans
+    its compatible rewrites touch. Feeds :func:`placeable_depth`."""
+    return {
+        leaf: {t: frozenset(r.dedup_key for r in rws) for t, rws in by_type.items()}
+        for leaf, by_type in leaf_rewrites(pantry, inventory, available).items()
+    }
 
 
 def _assign_spans(
@@ -437,6 +453,9 @@ def build_dose_plan(
         # place. See `DoseBudgets.effective_pool_min`.
         if accepted >= per_count:
             break
+        if leaf not in order:
+            blocked[NOT_ORDERED] += 1
+            continue
         concept = concept_of[leaf]
         if concept not in applicable:
             applicable[concept] = pantry.for_concept(concept)
@@ -468,7 +487,9 @@ def build_dose_plan(
             f"short by the same amount, so the delivered set would miss the "
             f"per-count floor. Ladders were blocked by these types running out "
             f"of uncapped rewrites: {dict(blocked.most_common())} "
-            f"({SPAN_CONFLICT!r} counts ladders whose types all had uncapped "
+            f"({NOT_ORDERED!r} counts pool leaves `nested_order` left out "
+            f"because the caps left no {LADDER_MAX} types that fit; "
+            f"{SPAN_CONFLICT!r} counts ladders whose types all had uncapped "
             f"rewrites but no assignment to distinct spans: the order was "
             f"built without `slots`, or caps left only colliding spans). "
             f"If one type "
@@ -485,7 +506,8 @@ def nested_order(
     admitted: Mapping[str, frozenset],
     seed: int,
     *,
-    slots: Optional[Mapping[str, Mapping[ModificationType, frozenset]]] = None,
+    rewrites: Optional[Mapping[str, Mapping[ModificationType, Sequence[ApprovedRewrite]]]] = None,
+    reuse_cap: Optional[Mapping[str, int]] = None,
 ) -> dict[str, tuple[ModificationType, ...]]:
     """Per-leaf type order whose prefixes ARE the ladder rungs (D4).
 
@@ -502,13 +524,23 @@ def nested_order(
     ``types(dose_k)`` is the length-``k`` prefix, so consecutive rungs differ
     by exactly one added modification (D4).
 
-    ``slots`` (from :func:`leaf_slots`) makes stage 1 skip a type that no
-    longer fits on a distinct span next to the ones already chosen; without it
-    every type is taken to have a span of its own. The sets of types that fit
-    together form a transversal matroid, so this greedy still returns the
-    least-used feasible choice, and a leaf where ``LADDER_MAX`` types fit and
-    six or more are available has at least two feasible top-rung
-    compositions — D5's reason for ``d >= 6`` carries over unchanged.
+    ``rewrites`` (from :func:`leaf_rewrites`) makes stage 1 skip a type that no
+    longer has an assignment next to the ones already chosen: a rewrite on a
+    span of its own, under ``reuse_cap``. Without it every type is taken to
+    have a span of its own and no cap. Ignoring caps, the sets of types that
+    fit form a transversal matroid, so the greedy still returns the least-used
+    feasible choice, and a leaf where ``LADDER_MAX`` types fit and six or more
+    are available has at least two feasible top-rung compositions — D5's
+    reason for ``d >= 6`` carries over unchanged.
+
+    With caps, a thin type (few distinct rewrites) is included only while it
+    has capacity left, and the other types fill in: the top cell's balance
+    becomes capacity-limited, which the corpus report shows. Capacity is spent
+    in ``admitted``'s own order and committed with the very call
+    :func:`build_dose_plan` makes, so pass the pool in pool order and the
+    builder replays every decision without reverting a leaf. A leaf left with
+    fewer than ``LADDER_MAX`` feasible types is omitted — it is reserve, and
+    the builder skips it.
 
     On balance (their §3), stated honestly: stage 1 makes the top cell even.
     Cells below it cannot be made exactly even by a greedy, because the
@@ -520,17 +552,20 @@ def nested_order(
     binding constraint is admission anyway (types are admitted by very
     different numbers of leaves), which no ordering policy can undo.
 
-    Raises :class:`DoseLadderError` for a leaf admitting fewer than
-    ``LADDER_MAX`` types — the pool selection must have excluded it already.
+    Raises :class:`DoseLadderError` for a leaf where fewer than ``LADDER_MAX``
+    types fit even without caps — the pool selection must have excluded it.
     """
+    caps = reuse_cap or {}
+    usage: dict[str, int] = {}
     inclusion: Counter = Counter()
     per_position: list[Counter] = [Counter() for _ in range(LADDER_MAX)]
     order: dict[str, tuple[ModificationType, ...]] = {}
-    for leaf in sorted(admitted):
+    for leaf in admitted:
         types = admitted[leaf]
+        by_type = rewrites[leaf] if rewrites is not None else None
         spans = (
-            {t: slots[leaf].get(t, frozenset()) for t in types}
-            if slots is not None else {t: frozenset({t}) for t in types}
+            {t: frozenset(r.dedup_key for r in by_type.get(t, ())) for t in types}
+            if by_type is not None else {t: frozenset({t}) for t in types}
         )
         fits = placeable_depth(spans)
         if fits < LADDER_MAX:
@@ -546,11 +581,12 @@ def nested_order(
         # stage 1: which types ride this leaf's ladder at all
         used: list[ModificationType] = []
         for mtype in sorted(shuffled, key=lambda t: (inclusion[t], rank[t])):
-            candidate = {t: spans[t] for t in (*used, mtype)}
-            if placeable_depth(candidate) == len(candidate):
+            if by_type is None or _assign_spans((*used, mtype), by_type, caps, usage):
                 used.append(mtype)
                 if len(used) == LADDER_MAX:
                     break
+        if len(used) < LADDER_MAX:
+            continue
         for mtype in used:
             inclusion[mtype] += 1
 
@@ -568,6 +604,9 @@ def nested_order(
             chosen.append(pick)
             per_position[position][pick] += 1
         order[leaf] = tuple(chosen)
+        if by_type is not None:
+            for pick in _assign_spans(order[leaf], by_type, caps, usage):
+                usage[pick.uid] = usage.get(pick.uid, 0) + 1
     return order
 
 

@@ -201,8 +201,13 @@ def main() -> int:
     # Types of one family compete for the same span, so a leaf can have more
     # available types than modifications that fit together. Only leaves where
     # a full ladder fits may enter the pool; D5's depth still counts types.
-    slots = dose_ladder.leaf_slots(pantry, inventory, available)
-    placeable = {leaf: dose_ladder.placeable_depth(s) for leaf, s in slots.items()}
+    rewrites = dose_ladder.leaf_rewrites(pantry, inventory, available)
+    placeable = {
+        leaf: dose_ladder.placeable_depth(
+            {t: frozenset(r.dedup_key for r in rws) for t, rws in by_type.items()}
+        )
+        for leaf, by_type in rewrites.items()
+    }
     placeable_histogram = dict(sorted(Counter(placeable.values()).items()))
     fits = {
         leaf: types for leaf, types in available.items()
@@ -222,7 +227,7 @@ def main() -> int:
     # ----- pass 2: dose ladder --------------------------------------------
     order = dose_ladder.nested_order(
         {leaf: available[leaf] for leaf in pool}, seed=dose_budgets.seed,
-        slots=slots,
+        rewrites=rewrites, reuse_cap=dose_budgets.reuse_cap,
     )
     dose_plan = dose_ladder.build_dose_plan(
         pantry, inventory, order, pool,

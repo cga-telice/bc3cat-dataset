@@ -1799,6 +1799,30 @@ peldaño no sale, se revierte la hoja entera y se pasa a la reserva.
 > etapa 1 ciega a tramos) quedan detectados. La planificación de la prueba de
 > humo pasa de 0 a 5 de 5 escaleras, con los nueve tipos presentes en `dose_5`.
 
+> **Corregido tras la primera corrida real de la tarea 14: el orden anidado
+> gasta los topes de reuso.** El sondeo salió bien (1 500 candidatas, 11 388
+> ítems, fondo de 750 hojas a *d* = 8), pero la escalera paró con 260 de 600.
+> El fondo quedó en 7 conceptos de OEB, donde tres tipos L1 tienen muy poca
+> variedad: `unit_conversion` 4 reescrituras distintas, `unit_expansion` 9,
+> `num_to_text` 18. Con tope 20 eso da capacidad para 80, 180 y 360
+> escaleras, y el equilibrio pedía 375, 375 y 452.
+>
+> Decisión del usuario (opción «repartir según la variedad»): `nested_order`
+> recibe `rewrites=` (de `leaf_rewrites`) y `reuse_cap=`, salta el tipo que ya
+> no tiene asignación bajo los topes, recorre las hojas en el orden del fondo y
+> registra el uso con la misma llamada que hace el constructor, que así
+> reproduce cada decisión sin revertir hojas. Una hoja sin 5 tipos posibles se
+> omite (reserva) y el constructor la cuenta como `<not_ordered>`.
+>
+> Eso no bastaba, y la razón es estructural: en esas hojas los L2 suelen
+> compartir fragmento y los L3 plantilla, así que cada escalera necesita de 1 a
+> 3 tipos L1, y tres de ellos son los escasos. Con tope 20 el mejor reparto da
+> 429 escaleras; con 30, 584; **con 40, 600**. Segunda decisión del usuario:
+> tope 40 para esos tres tipos. Cada reescritura se repite como mucho 40 veces
+> (sin tope, una de `unit_conversion` se repetiría 107), y en `dose_5`
+> `unit_conversion` queda en ~160 escaleras frente a ~385 de `num_to_text`: un
+> equilibrio limitado por capacidad que el informe tiene que mostrar.
+
 - [ ] **Paso 1: Escribe los tests que fallan**
 
 ```python

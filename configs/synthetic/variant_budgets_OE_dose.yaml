@@ -1,7 +1,8 @@
 # E3 — DOSE ladder: dose_1..dose_5 over one common leaf pool, nested
 # composition (types(dose_k) subset of types(dose_k+1)), >= 600 items per rung.
-# Caps match the OE corpora so a thin type is not repeated more here than there;
-# they count per RUN, since a leaf's five rungs are built together.
+# Caps count per RUN, since a leaf's five rungs are built together, and
+# nested_order spends them (rewrites=, reuse_cap=) so a thin type drops out
+# instead of blocking ladders.
 seed: 42
 per_count: 600
 # The reserve, stated explicitly: select_pool returns exactly pool_min leaves and
@@ -19,7 +20,14 @@ pool_min: 750
 # fail loudly, only quietly mis-describe what the pool was drawn from.
 structural_threshold: 6
 candidate_cap: 1500
+# 40, not the OE corpora's 20. Measured on the real pool (7 OEB concepts): the
+# L2 types usually share one fragment and the L3 types one template, so a
+# ladder needs 1-3 of its five types from the L1 value types, and three of those
+# are thin here — num_to_text 18 distinct rewrites, unit_expansion 9,
+# unit_conversion 4. With 20 no ordering reaches 600 ladders (429; 30 gives
+# 584); 40 is the lowest that does, with each rewrite used at most 40 times
+# (no cap at all repeats one unit_conversion rewrite 107 times).
 reuse_cap:
-  num_to_text: 20
-  unit_expansion: 20
-  unit_conversion: 20
+  num_to_text: 40
+  unit_expansion: 40
+  unit_conversion: 40
