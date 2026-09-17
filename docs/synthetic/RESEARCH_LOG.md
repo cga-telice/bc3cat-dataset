@@ -29,6 +29,36 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### 2026-09-17 (cont.) — Auditoría de STACKED: el conteo no era el que ve la consulta
+
+**Hallazgo.** Mientras se construía E3 apareció que `is_compatible` compara
+cadenas, no variables. Auditado STACKED con el juicio estructural de
+`TextoSurface.shows_record` y contrastado con una comprobación por subcadena: 10
+desacuerdos, todos falsos positivos de la subcadena. **Las 4 998 consultas
+sobrecuentan**: media 4,69 registrada frente a 3,31 visible. Causas: la reescritura
+de la plantilla del RESUMEN en todas (4 998), variables que el TEXTO no renderiza
+o cuya condición no se cumple (1 756) y ejes solo del RESUMEN (110). SINGLE está
+limpio (4 439/4 439).
+
+**Decisión de César (opción 1).** No se regenera nada: los cambios invisibles no
+alteran el TEXTO, así que regenerar produciría las mismas consultas. Se añaden a
+STACKED `texto_modification_count` y `texto_modification_types`, y se conservan
+textos, identificadores y campos existentes. Reempaquetado verificado: los demás
+ficheros del handoff son byte a byte idénticos; STACKED solo añade los dos campos,
+que coinciden con la auditoría en los 4 998 registros. El empaquetador gana
+`--reuse-provenance`, para no reescribir el commit ni la fecha de generación del
+E3 al reempaquetar.
+
+- `scripts/audit_texto_visibility.py` (auditoría de solo lectura) y sus informes
+  `docs/synthetic/OE_{stacked,single}_texto_visibility_audit.md`.
+- STACKED nuevo: `c34a222ae2af05a0b5335b774cb7fb45f14064cc17234d9d885e809fb29b6f45`.
+
+**CLAUDE_SYNTHETIC.md updated:** no
+**Next step:** que `bc3cat-retrieval` rehaga con los campos `texto_*` sus análisis
+de S2 por dosis o por tipo sobre STACKED.
+
+---
+
 ### 2026-09-17 — E3: conjunto de dosis entregado (escalera anidada + efectos aislados)
 
 **Entrega.** `OE_dose_texto.json` (3 000 consultas = 600 hojas × 5 peldaños) y

@@ -5,6 +5,15 @@ All files are JSON lists of records with the project's schema:
 `{id, item_key, parent_key, ud, concept, parameters, text}` (query files add
 `gold_item_key`, `modification_types`, `modification_count`).
 
+**Dose seen by the query.** `modification_count`/`modification_types` count every
+applied modification record. The query is the TEXTO, and in STACKED some records
+never reach it: the RESUMEN-field template rewrite (one per item) and rewrites of
+text variables or axes the TEXTO template does not render. STACKED records therefore
+also carry `texto_modification_count`/`texto_modification_types`, the modifications
+visible in the TEXTO; use those for any analysis by dose or type. The texts are
+unchanged. SINGLE, dose and isolated sets are exact by construction
+(`modification_count` = visible in the TEXTO).
+
 ## Files
 - `OE_texto.json` — document corpus: original OE TEXTOs (retrieval **targets**). 70242 docs.
 - `OE_resumen.json` — same leaves, original RESUMEN (for the resumen→texto **baseline**). 70242 docs.

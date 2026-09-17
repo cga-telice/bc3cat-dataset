@@ -188,3 +188,43 @@ independientes de los topes de reuso. `in_pool` marca las 600 hojas con escalera
    y el reparto se ajusta a esa capacidad.
 3. Los efectos aislados son completos (9 tipos × 600 hojas), así que la suma de
    efectos aislados es intra-hoja y comparable con la escalera.
+
+
+## 6. STACKED — conteo visible en el TEXTO (corrección del 2026-09-17)
+
+**Qué estaba mal.** En `OE_stacked_texto.json`, `modification_count` y
+`modification_types` cuentan todos los registros de modificación aplicados. La
+consulta es el TEXTO, y algunos registros no llegan a él:
+
+- la reescritura de la plantilla del **RESUMEN**, presente en las 4 998 consultas
+  (por eso `template_paraphrase` salía dos veces en la lista);
+- 1 756 reescrituras de variables de texto que la plantilla del TEXTO no usa, o
+  cuya condición no se cumple en la hoja (`paraphrase` 918, `expansion` 794,
+  `compression` 44);
+- 110 cambios de valor de ejes que solo aparecen en el RESUMEN.
+
+Las 4 998 consultas sobrecuentan: la media registrada es 4,69 y la visible 3,31.
+Auditoría completa en `docs/synthetic/OE_stacked_texto_visibility_audit.md`.
+SINGLE está limpio (`docs/synthetic/OE_single_texto_visibility_audit.md`).
+
+**Qué cambia.** Cada registro de STACKED añade:
+
+- `texto_modification_count`: modificaciones visibles en el TEXTO;
+- `texto_modification_types`: sus tipos, en el orden de aplicación.
+
+**Qué no cambia.** Los textos, los identificadores, el orden de los registros y los
+campos existentes son idénticos. Por tanto siguen valiendo los resultados de
+recuperación por consulta (Acc@1, rankings); solo hay que rehacer los análisis que
+agrupan por número o por tipo de modificación. Usad los campos `texto_*`.
+
+- STACKED antes: `1bde21157ef974218b9e26ae7eecb8f5ba2a25a42b66034143201165ad015116` (entregado) · ahora:
+  `c34a222ae2af05a0b5335b774cb7fb45f14064cc17234d9d885e809fb29b6f45`.
+- Distribución del conteo visible: 1 → 5 · 2 → 1 252 · 3 → 1 465 · 4 → 1 799 ·
+  5 → 401 · 6 → 76 (el registrado iba de 2 a 8).
+- Aun con el conteo corregido, `template_paraphrase` es visible en las 4 998
+  consultas y `reorder` en ninguna: la confusión entre dosis y composición que
+  describe su petición E3 sigue en STACKED. El conjunto E3 existe para eso.
+
+`provenance.json` conserva el sello original del E3 y anota el reempaquetado
+(`repackaged_commit`, `repackaged_utc`). `MANIFEST.md` lista ahora también
+STACKED y SINGLE.
