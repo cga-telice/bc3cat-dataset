@@ -222,6 +222,25 @@ class TextoSurface:
                 return True
         return False
 
+    def shows_record(self, record: Mapping, concept_key: str, leaf_key: str) -> bool:
+        """The same judgement for an already-emitted modification record (the
+        corpus sidecar), so delivered corpora can be audited without replanning:
+        a template record shows when its field is the TEXTO, a ``param_value``
+        record when its axis placeholder is a TEXTO token, a ``text_variable``
+        record when its variable is a TEXTO token and its condition binds the
+        leaf. Any other layer counts as not shown."""
+        layer = record.get("layer")
+        tokens = self.tokens.get(concept_key, frozenset())
+        if layer == "template":
+            return record.get("field") == "TEXTO"
+        if layer == "param_value":
+            return record.get("param") in tokens
+        if layer == "text_variable":
+            return (record.get("var") in tokens
+                    and _binds(str(record.get("condition", "")),
+                               self._options(concept_key, leaf_key)))
+        return False
+
     def _options(self, concept_key: str, leaf_key: str) -> dict[str, str]:
         axes = self.axes.get(concept_key, ())
         prefix = concept_key[:-1]

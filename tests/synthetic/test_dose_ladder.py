@@ -1118,3 +1118,51 @@ def test_build_dose_plan_draws_the_ladder_from_every_concept_of_the_pool():
     assert len(plan) == 12 * LADDER_MAX
     assert Counter(concept_of[p.leaf_item_key] for p in plan if p.condition == "dose_1") == {
         "C1$": 4, "C2$": 4, "C3$": 4}
+
+
+# ---------------------------------------------------------------------------
+# Visibilidad de un registro de modificación ya emitido (sidecar). Sirve para
+# auditar corpus entregados sin volver a planificarlos: STACKED contaba la
+# reescritura de la plantilla del RESUMEN y cambios de variables del RESUMEN.
+
+
+def test_texto_surface_judges_template_records_by_field():
+    from synthetic.dose_ladder import TextoSurface
+
+    surface = TextoSurface.from_stage(_surface_stage())
+    texto = {"type": "template_paraphrase", "layer": "template", "field": "TEXTO"}
+    resumen = {"type": "template_paraphrase", "layer": "template", "field": "RESUMEN"}
+    assert surface.shows_record(texto, C1, "C1ab") is True
+    assert surface.shows_record(resumen, C1, "C1ab") is False
+
+
+def test_texto_surface_judges_param_value_records_by_axis_placeholder():
+    from synthetic.dose_ladder import TextoSurface
+
+    surface = TextoSurface.from_stage(_surface_stage())
+    in_texto = {"type": "unit_expansion", "layer": "param_value", "param": "B", "value": "a"}
+    only_resumen = {"type": "synonym_label", "layer": "param_value", "param": "A", "value": "a"}
+    assert surface.shows_record(in_texto, C1, "C1aa") is True
+    assert surface.shows_record(only_resumen, C1, "C1aa") is False
+
+
+def test_texto_surface_judges_text_variable_records_by_variable_and_condition():
+    from synthetic.dose_ladder import TextoSurface
+
+    surface = TextoSurface.from_stage(_surface_stage())
+
+    def rec(var, condition):
+        return {"type": "paraphrase", "layer": "text_variable", "var": var,
+                "condition": condition}
+
+    assert surface.shows_record(rec("I", '%A=="b"'), C1, "C1ba") is True
+    assert surface.shows_record(rec("I", '%A=="b"'), C1, "C1ab") is False
+    assert surface.shows_record(rec("K", '%A=="b"'), C1, "C1ba") is False
+
+
+def test_texto_surface_rejects_a_record_layer_it_does_not_know():
+    from synthetic.dose_ladder import TextoSurface
+
+    surface = TextoSurface.from_stage(_surface_stage())
+    assert surface.shows_record({"type": "new_param", "layer": "param_definition"},
+                                C1, "C1aa") is False
