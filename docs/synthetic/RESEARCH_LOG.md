@@ -29,6 +29,31 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### 2026-09-27 — D-031 entregado: las hojas con el TEXTO idéntico van marcadas
+
+**Contexto.** `syn/stacked-audit` (conteo visible en el TEXTO para STACKED, y el
+análisis de los 292 grupos / 776 hojas con TEXTO idéntico) llevaba desde el 17/09
+sin fusionar. Fusionada por fast-forward en `synthetic` (`903d07b`) y subida.
+
+**Entrega.** El empaquetador añade `duplicate_texto_group` a cada registro de
+`OE_texto.json` / `OE_resumen.json` (id = `item_key` mínimo del grupo; `null` fuera
+de grupo; los grupos se forman por (parent_key, texto), nunca cruzan conceptos) y
+escribe `OE_duplicate_texto_groups.json`, versionado, para que retrieval tome la
+marca sin re‑tomar el corpus. Reempaquetado con `--reuse-provenance`: los seis
+ficheros ya entregados son byte a byte idénticos (sha256 comprobado); 292 grupos y
+776 hojas, las mismas cifras que midió retrieval en S2; 0 grupos inconsistentes
+(todo miembro comparte el TEXTO y el id es un miembro).
+
+- `HANDOFF.md` §7; `OE_duplicate_texto_groups.md` cierra su «pendiente de decisión».
+- Sidecar: `b3cfcad47c71c5ebaf86b0e77eaa741c8f6111efd4e8543262b4f1b8e4ced0df`.
+- Tests: `test_dose_packaging.py` +3 (id mínimo, sin cruce de conceptos, sidecar).
+
+**CLAUDE_SYNTHETIC.md updated:** no
+**Next step:** que `bc3cat-retrieval` tome (a) STACKED con `texto_*` (su P2) y (b) el
+sidecar de grupos (su P1), y abra S3.
+
+---
+
 ### 2026-09-17 (cont.) — Auditoría de STACKED: el conteo no era el que ve la consulta
 
 **Hallazgo.** Mientras se construía E3 apareció que `is_compatible` compara

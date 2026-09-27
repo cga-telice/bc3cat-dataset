@@ -228,3 +228,39 @@ agrupan por número o por tipo de modificación. Usad los campos `texto_*`.
 `provenance.json` conserva el sello original del E3 y anota el reempaquetado
 (`repackaged_commit`, `repackaged_utc`). `MANIFEST.md` lista ahora también
 STACKED y SINGLE.
+
+
+## 7. Hojas con el TEXTO idéntico — marcadas, no colapsadas (D-031, 2026-09-27)
+
+**Qué pasa.** 776 hojas del corpus (292 grupos) tienen el mismo TEXTO que una hermana
+del mismo concepto: `OEA050$` (192 grupos de 3) y `OEG050$` (100 de 2). La plantilla
+del TEXTO de esos conceptos no cita uno de sus ejes, así que las hojas que solo
+difieren en él rinden igual; el RESUMEN sí las separa, y por eso la deduplicación
+por pareja (resumen, texto) las conservó. Análisis completo en
+`docs/synthetic/OE_duplicate_texto_groups.md`.
+
+**Decisión (César, 2026-09-17, D-031 en `bc3cat-retrieval`).** Se **marcan**, no se
+colapsan: colapsar cambiaría el conjunto de objetivos ya entregado (70 242 hojas) y
+con él el digest sobre el que están sellados los runs de S2. Ningún grupo cruza
+conceptos, así que la puntuación por `parent_key` no tiene techo; la identidad a
+nivel de hoja de un método que solo indexa el TEXTO queda acotada en
+1 − 776/70 242 ≈ 0,989 (el techo que ellos midieron, 0,9863, es sobre dev).
+
+**Qué cambia.**
+
+- Cada registro de `OE_texto.json` y `OE_resumen.json` lleva `duplicate_texto_group`:
+  el `item_key` **mínimo** del grupo (estable, legible, y la hoja canónica si algún
+  día se colapsa), o `null` fuera de grupo.
+- Nuevo fichero pequeño y versionado `OE_duplicate_texto_groups.json`
+  (`{group_id: [miembros]}`, con `n_groups` y `n_leaves`), sha256 `b3cfcad47c71c5ebaf86b0e77eaa741c8f6111efd4e8543262b4f1b8e4ced0df`.
+  Es la misma agrupación en forma tomable **sin re‑tomar el corpus**: los digests de
+  los ficheros sobre los que están sellados los runs de S2 no cambian.
+
+**Qué no cambia.** Textos, identificadores, orden y campos existentes de todos los
+ficheros. STACKED, SINGLE, dose, isolated, applicability y concept_schema son byte a
+byte idénticos a la entrega anterior (verificado por sha256). El corpus completo
+reempaquetado: texto `54c83faadd41bd86177006c5d7dc85e2145fa35f4bf98450870598bff70f23e9` · resumen `4511eeac0135f594ecb9094e1831abe1cbb6ef2286c12de8a86e16381a9bafde`.
+
+`provenance.json` conserva el sello del E3 y actualiza `repackaged_commit` /
+`repackaged_utc` (el commit que anota es el que estaba en HEAD al empaquetar, es
+decir, el anterior al que versiona esta entrega, como en §6).

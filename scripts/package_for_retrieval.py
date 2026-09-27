@@ -57,6 +57,43 @@ def _jsonable(v):
     return v
 
 
+def duplicate_texto_groups(target_long):
+    """`{item_key: group_id}` for every leaf whose TEXTO equals a sibling's.
+
+    D-031 (bc3cat-retrieval, 2026-09-17): those leaves are FLAGGED, never
+    collapsed — collapsing would change the delivered target pool and with it
+    every run stamped on its digest. A group is keyed by (parent_key, text):
+    the same TEXTO under two concepts is not a group, because cross-concept
+    twins were already dropped upstream and a group spanning concepts would
+    put a ceiling on parent-level scoring, which D-031 rules out. The group
+    id is the smallest item_key of the group — stable, readable, and the
+    canonical leaf should anyone collapse later. Leaves outside any group are
+    absent from the mapping (the record field reads `null`).
+    """
+    groups = {}
+    for (_, _), members in target_long.groupby(["parent_key", "text"])["item_key"]:
+        if len(members) > 1:
+            keys = sorted(members)
+            for k in keys:
+                groups[k] = keys[0]
+    return groups
+
+
+def duplicate_texto_sidecar(groups):
+    """The small, versionable form of `duplicate_texto_groups`: group id ->
+    sorted members. Lets a consumer take the flag without re-taking the
+    corpus files, whose digests its runs are stamped on."""
+    by_group = {}
+    for k, g in groups.items():
+        by_group.setdefault(g, []).append(k)
+    return {
+        "group_id": "smallest item_key of the group",
+        "n_groups": len(by_group),
+        "n_leaves": len(groups),
+        "groups": {g: sorted(m) for g, m in sorted(by_group.items())},
+    }
+
+
 def load_applicability(path):
     """`{leaf_item_key: {applicable_types, available_types, in_pool}}` from the sidecar.
 
@@ -242,18 +279,25 @@ def main() -> int:
     lo = pd.read_parquet(a.target_long)
     sh = pd.read_parquet(a.target_short).set_index("item_key")["text"].to_dict()
     params_by_leaf = {r.item_key: _jsonable(r.parameters) for r in lo.itertuples(index=False)}
+    dup_groups = duplicate_texto_groups(lo)          # D-031: flag, never collapse
 
     def doc_record(item_key, parent_key, text):
         m = meta.get(parent_key, {"ud": "", "concept": parent_key})
         return {"id": _sid(item_key), "item_key": item_key, "parent_key": parent_key,
                 "ud": m["ud"], "concept": m["concept"],
-                "parameters": params_by_leaf.get(item_key, {}), "text": text}
+                "parameters": params_by_leaf.get(item_key, {}), "text": text,
+                "duplicate_texto_group": dup_groups.get(item_key)}
 
     # 1) document corpus (original OE leaves): texto (targets) + resumen (baseline queries)
     texto_docs = [doc_record(r.item_key, r.parent_key, r.text) for r in lo.itertuples(index=False)]
     resumen_docs = [doc_record(r.item_key, r.parent_key, sh.get(r.item_key, "")) for r in lo.itertuples(index=False)]
     (out / f"{col}_texto.json").write_text(json.dumps(texto_docs, ensure_ascii=False), encoding="utf-8")
     (out / f"{col}_resumen.json").write_text(json.dumps(resumen_docs, ensure_ascii=False), encoding="utf-8")
+    dup_side = duplicate_texto_sidecar(dup_groups)
+    (out / f"{col}_duplicate_texto_groups.json").write_text(
+        json.dumps(dup_side, ensure_ascii=False, indent=1), encoding="utf-8",
+    )
+    print(f"duplicate-texto groups: {dup_side['n_groups']} ({dup_side['n_leaves']} leaves)")
 
     # 2) concept schema (per concept: name, axes label->values, item_keys, num_items)
     schema = {}
@@ -303,7 +347,8 @@ def main() -> int:
     (out / f"{col}_single_texto.json").write_text(json.dumps(sgl, ensure_ascii=False), encoding="utf-8")
 
     # 3b) E3 dose ladder + isolated-effects releases (optional, additive)
-    written = [f"{col}_stacked_texto.json", f"{col}_single_texto.json"]
+    written = [f"{col}_stacked_texto.json", f"{col}_single_texto.json",
+               f"{col}_duplicate_texto_groups.json"]
     if a.dose or a.probe:
         if not a.applicability:
             raise SystemExit("--applicability is required with --dose/--probe")
@@ -397,12 +442,20 @@ visible in the TEXTO; use those for any analysis by dose or type. The texts are
 unchanged. SINGLE, dose and isolated sets are exact by construction
 (`modification_count` = visible in the TEXTO).
 
+**Leaves that share a TEXTO (D-031: flagged, not collapsed).** In `{col}_texto.json` /
+`{col}_resumen.json` every record carries `duplicate_texto_group`: the smallest
+`item_key` of the leaves whose TEXTO is identical (`null` outside any group). Groups
+never cross concepts, so parent-level scoring has no ceiling from them; item-level
+identity caps below 1.0. `{col}_duplicate_texto_groups.json` is the same grouping as a
+small file, so the flag can be taken without re-taking the corpus.
+
 ## Files
 - `{col}_texto.json` — document corpus: original OE TEXTOs (retrieval **targets**). {len(texto_docs)} docs.
 - `{col}_resumen.json` — same leaves, original RESUMEN (for the resumen→texto **baseline**). {len(resumen_docs)} docs.
 - `{col}_stacked_texto.json` — **STACKED** queries: every applicable modification stacked. {len(stk)} queries.
 - `{col}_single_texto.json` — **SINGLE** queries: one modification each (stratify by `modification_types[0]`). {len(sgl)} queries.
 - `{col}_concept_schema.json` — per concept: name, axes, item_keys, num_items. {len(schema)} concepts.
+- `{col}_duplicate_texto_groups.json` — leaves sharing a TEXTO: group id → members. {dup_side['n_groups']} groups, {dup_side['n_leaves']} leaves.
 
 ## Gold / scoring
 The harness reports parent-level Acc@1: a query is correct if the retrieved item's

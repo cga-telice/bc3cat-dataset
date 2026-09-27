@@ -5,6 +5,6 @@
   "script": "scripts/build_dose_ladder.py",
   "commit": "e0579077f435d6194e50e1510cb647f5363c6895",
   "generated_utc": "2026-09-17T09:30:57+00:00",
-  "repackaged_commit": "104de15f56e35514f4b111dfcc94812861527021",
-  "repackaged_utc": "2026-09-17T15:42:00+00:00"
+  "repackaged_commit": "903d07b83b840646694003d6e33a72076f59bed8",
+  "repackaged_utc": "2026-09-27T11:44:46+00:00"
 }

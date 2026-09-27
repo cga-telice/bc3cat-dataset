@@ -25,12 +25,15 @@ En `OEG050$` el RESUMEN sí separa las hojas porque indexa la misma tabla de con
 por otro eje (`$L(b,%C)` frente a `$L(b,%D)` en el TEXTO); es una peculiaridad de la
 plantilla del propio catálogo BPA 2026.
 
-## Pendiente de decisión
+## Decisión: marcar, no colapsar (D-031, 2026-09-17; entregado 2026-09-27)
 
-Colapsar estas hojas cambiaría el conjunto de objetivos ya entregado, así que queda
-como decisión de César, igual que las duplicadas intra-concepto de `OEG010$`
-señaladas en su día. Alternativa menos invasiva: marcar cada grupo en los registros
-del corpus para que el consumidor pueda excluirlas o agruparlas al puntuar.
+César eligió la alternativa menos invasiva: colapsar cambiaría el conjunto de
+objetivos ya entregado y con él el digest sobre el que `bc3cat-retrieval` sella sus
+runs de S2. Cada registro del corpus lleva ahora `duplicate_texto_group` (el
+`item_key` mínimo del grupo, o `null`), y el handoff incluye
+`OE_duplicate_texto_groups.json` con la misma agrupación en un fichero pequeño y
+versionado. Detalle en `HANDOFF.md` §7. El consumidor puede excluir o agrupar estas
+hojas al puntuar a nivel de hoja; a nivel de concepto no hace falta.
 
 ## Grupos
 

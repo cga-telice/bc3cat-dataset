@@ -333,3 +333,51 @@ def test_repackaging_keeps_the_original_provenance_and_records_the_repackaging()
     assert {k: got[k] for k in original} == original
     assert got["repackaged_commit"] == "head" and got["repackaged_utc"] == "t1"
     assert "repackaged_commit" not in original
+
+
+# ---------------------------------------------------------------------------
+# D-031 (bc3cat-retrieval, 2026-09-17): las hojas cuyo TEXTO coincide con el de
+# una hermana se MARCAN, no se colapsan. El id de grupo es el item_key mínimo
+# del grupo: estable, legible y la hoja canónica si algún día se colapsa.
+
+def _target_long(rows):
+    return pd.DataFrame(rows, columns=["item_key", "parent_key", "text"])
+
+
+def test_duplicate_texto_groups_are_keyed_by_the_smallest_item_key():
+    mod = _load_packager()
+    lo = _target_long([
+        ("OEA050aaac", "OEA050$", "mismo texto"),
+        ("OEA050aaaa", "OEA050$", "mismo texto"),
+        ("OEA050aaab", "OEA050$", "mismo texto"),
+        ("OEA050abaa", "OEA050$", "otro texto"),
+        ("OEG050aa",   "OEG050$", "par"),
+        ("OEG050ab",   "OEG050$", "par"),
+    ])
+    groups = mod.duplicate_texto_groups(lo)
+    assert groups == {
+        "OEA050aaaa": "OEA050aaaa", "OEA050aaab": "OEA050aaaa", "OEA050aaac": "OEA050aaaa",
+        "OEG050aa": "OEG050aa", "OEG050ab": "OEG050aa",
+    }
+    assert "OEA050abaa" not in groups          # una hoja sola no es un grupo
+
+
+def test_duplicate_texto_groups_never_cross_concepts():
+    """El mismo TEXTO en dos conceptos distintos NO es un grupo: la dedup
+    cross-concepto ya se hizo aguas arriba, y un grupo que cruzara conceptos
+    pondría techo a la puntuación por parent_key, cosa que D-031 excluye."""
+    mod = _load_packager()
+    lo = _target_long([
+        ("OED020a", "OED020$", "gemelo"),
+        ("OED170a", "OED170$", "gemelo"),
+    ])
+    assert mod.duplicate_texto_groups(lo) == {}
+
+
+def test_duplicate_texto_sidecar_lists_every_group_with_its_members():
+    mod = _load_packager()
+    groups = {"A1": "A1", "A2": "A1", "A3": "A1", "B2": "B1", "B1": "B1"}
+    side = mod.duplicate_texto_sidecar(groups)
+    assert side["n_groups"] == 2 and side["n_leaves"] == 5
+    assert side["groups"] == {"A1": ["A1", "A2", "A3"], "B1": ["B1", "B2"]}
+    assert side["group_id"] == "smallest item_key of the group"
