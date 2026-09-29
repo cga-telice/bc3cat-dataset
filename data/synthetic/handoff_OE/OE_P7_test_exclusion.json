@@ -1,0 +1,9 @@
+{
+  "reason": "P7: SINGLE test queries rendered from a withdrawn reorder rule (not referent-preserving); exclude from item-level scoring, keep at parent level",
+  "file": "OE_single_texto.json",
+  "split": "test",
+  "item_keys": [
+    "OEG020babaa_syn_13c9e9d5143c",
+    "OEG020bcaaa_syn_4757f9ac4b30"
+  ]
+}

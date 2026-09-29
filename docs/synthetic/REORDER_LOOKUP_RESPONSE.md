@@ -1,7 +1,8 @@
 # Response to `bc3cat-retrieval` — `reorder` permutes lookup arguments (P7)
 
 **Answers:** `bc3cat-retrieval/docs/synthetic-oe/requests/REORDER_LOOKUP_ARGUMENTS.md` (`DATASET_DEFECTS.md` P7)
-**Answered:** 2026-09-29 · **Branch:** `synthetic` (on top of `f2457fa`; the fix is not committed yet, pending owner review)
+**Answered:** 2026-09-29 · **Branch:** `synthetic` · fix committed in `7bff777`. Exclusion list
+(D-043 Q1): `handoff_OE/OE_P7_test_exclusion.json`, sha256 `96fe3854…a011`
 **Status:** fix and test in place, rules withdrawn for future builds. **No re-delivery.**
 `OE_single_texto.json` is untouched: sha256 still `b6a43961…d839a`.
 
@@ -82,7 +83,7 @@ the gold leaf does not have. We recommend treating both queries as you treat P7:
 scoring, kept at parent level.
 
 As asked, this response gives no examples, concepts or keys. To exclude the two at scoring time you
-need their `item_key`s. We can send a key-only exclusion list (no text) if you ask for it.
+need their `item_key`s. The key-only list is `handoff_OE/OE_P7_test_exclusion.json` (sent on request, D-043 Q1).
 
 ### §3 RESUMEN side (`$U`) — **no delivered artefact affected**
 

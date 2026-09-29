@@ -1,0 +1,17 @@
+{
+  "request": "bc3cat-retrieval WIDER_THIN_SLICES.md (D-043)",
+  "script": "scripts/build_single_l2.py",
+  "commit": "90a318fcb67217802d353bbd8f235ca3dbd01185",
+  "generated_utc": "2026-09-29T17:59:51+00:00",
+  "menus": "data/synthetic/menus_OE (frozen)",
+  "per_concept": 20,
+  "selection": "crc32 leaf order per concept; least-used rewrite first",
+  "queries": 1092,
+  "dropped_as_already_in_single": {
+    "same_text_as_single": 1
+  },
+  "files": {
+    "OE_single_l2_texto.json": "fff7dd3be023125bc5641ccd9632d2761675d7467eace9ab515ac1d299cd73ce",
+    "OE_single_l2_modifications.jsonl": "e1e5adbb8824bd34abe08972c8ed9c66ad6fdf4cf8231c67182026efa7a7cc29"
+  }
+}

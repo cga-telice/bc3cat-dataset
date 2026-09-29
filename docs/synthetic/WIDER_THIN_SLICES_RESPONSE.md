@@ -1,72 +1,119 @@
 # Response to `bc3cat-retrieval` — wider L2 slices
 
-**Answers:** `bc3cat-retrieval/docs/synthetic-oe/requests/WIDER_THIN_SLICES.md` (S4 work item 7, needed by S6)
-**Answered:** 2026-09-29 · **Branch:** `synthetic` (on top of `f2457fa`)
-**Status:** **not built yet.** Measured what is reachable. The ≥ 15 dev-concept target cannot be
-met by any menu. The frozen menus can take each L2 type from 5 to 8–9 dev concepts.
+**Answers:** `bc3cat-retrieval/docs/synthetic-oe/requests/WIDER_THIN_SLICES.md` (S4 work item 7), decided as D-043 (option A)
+**Delivered:** 2026-09-29 · **Branch:** `synthetic` · generated at `90a318f`
+**Status:** **delivered.** 9 / 9 / 8 dev concepts (paraphrase / expansion / compression), the most
+the frozen menus reach.
 
-## The limit, measured
+## File
 
-Script: `scripts/l2_reachability.py`. It uses the E3 probe's judgement: an approved rewrite
-counts for a leaf only when it is compatible with the leaf **and visible in its TEXTO**. It runs
-over the full delivered corpus (70 242 leaves, 83 concepts), counts only, split by your
-`SPLITS.md`.
+In `bc3cat-dataset/data/synthetic/handoff_OE/`. New files only: `OE_single_texto.json` is untouched
+(sha256 still `b6a43961…d839a`).
 
-| type | concepts in SINGLE now (dev / test) | reachable with frozen menus (dev / test) | leaves at ≤ 20 per concept (dev / test) | distinct concept × rewrite pairs (dev / test) |
-|---|---|---|---|---|
-| `paraphrase` | 5 / 3 | **9 / 11** | 180 / 203 | 376 / 363 |
-| `expansion` | 5 / 3 | **9 / 11** | 180 / 203 | 407 / 379 |
-| `compression` | 5 / 3 | **8 / 9** | 160 / 168 | 196 / 165 |
+| file | content | sha256 |
+|---|---|---|
+| `OE_single_l2_texto.json` | **1 092 queries**, one L2 modification each | `fff7dd3be023125bc5641ccd9632d2761675d7467eace9ab515ac1d299cd73ce` |
+| `OE_single_l2_modifications.jsonl` | modifications sidecar, one row per query | `e1e5adbb8824bd34abe08972c8ed9c66ad6fdf4cf8231c67182026efa7a7cc29` |
+| `OE_single_l2_provenance.json` | commit, script, selection rule, both digests | — |
 
-**Hard ceiling: 13 dev / 12 test concepts.** An L2 rewrite changes a text variable. It only
-reaches the query if the concept's TEXTO template renders a text variable, and only 13 dev and
-12 test concepts do. The rest put only axis values into the TEXTO. A rewrite menu cannot change
-that, so **≥ 15 dev concepts per type is out of reach** under this grammar. S6 should state it as
-a structural limitation.
+Schema: the SINGLE record schema (`id`, `item_key`, `parent_key`, `gold_item_key`, `ud`, `concept`,
+`parameters`, `text`, `modification_types`, `modification_count`). `modification_count` is 1 on
+every record, and every modification is visible in the TEXTO (generation fails otherwise).
 
-Between the frozen reach (8–9) and the ceiling (13) lie about 4 dev concepts per type. Their TEXTO
-has a text variable, but the menus hold no approved, visible rewrite for it. Reaching them means a
-new LLM menu pass plus review. That would be a new menu release, not a recombination.
+## Coverage
 
-## Point by point
+| type | dev concepts | dev queries | test concepts | test queries |
+|---|---:|---:|---:|---:|
+| `paraphrase` | **9** | 179 | 11 | 203 |
+| `expansion` | **9** | 180 | 11 | 203 |
+| `compression` | **8** | 159 | 9 | 168 |
 
-### 1. Breadth first — **partly achievable: 9 / 9 / 8 dev concepts, not 15**
+- Dev concepts get 19–20 queries each. Some test concepts have fewer eligible leaves: 3 to 20
+  per concept.
+- These counts are for the new file alone. Together with `OE_single_texto.json`, the concept
+  sets overlap: the 5 dev concepts already in SINGLE are among the 9 / 9 / 8.
 
-The 9 / 9 / 8 in the table all come from the frozen menus. The current SINGLE reaches only 5
-because it was drawn from the 5 000-leaf shared sample under caps, not from the full corpus. The
-extra concepts come from sampling all 70 242 leaves.
+## Correction to our first answer
 
-### 2. Depth second — **met**
+Our first answer gave 9 / 9 / 8 as reachable, and then the first build reached only the 5 dev
+concepts SINGLE already had. That check tested that a rewrite is visible in the TEXTO, not that the
+render engine could apply it:
+- 25 concepts render a text variable in their TEXTO: 8 store it as a conditional formula
+  (`"frag"*(%B=a)+…`), 17 as a list indexed by one axis (`$T(2)="…","…"` referenced as `$T(%B)`).
+- The engine edited only the formula form, so rules on the 17 list-form concepts rendered as
+  no-ops.
 
-The ≤ 20 leaves per concept and type is not binding for most concepts: every reachable concept has
-far more eligible leaves. The totals above are with the cap applied, about 160–180 dev queries per
-type. They are more than your current 108 / 130 / 306, except `compression` (160 against 306).
-There, breadth rises from 5 to 8 concepts while the query count falls. Tell us if you want
-compression's per-concept depth raised to keep n.
+The fix (D-043, option A) is described below. With it, the frozen menus reach exactly the 9 / 9 / 8
+first measured. The 13 dev / 12 test ceiling would need new menus, which D-043 Q3 ruled out.
 
-Per concept, the leaves would be spread across axis values, as in E3.
+## D-043 conditions
 
-### 3. A new file — **agreed**
+### (1) Engine change and reorder fix committed, with tests, before the build — **met**
 
-`OE_single_l2_texto.json`. `OE_single_texto.json` is not touched (sha256 `b6a43961…d839a`).
+| commit | content |
+|---|---|
+| `7bff777` | reorder fix: the placeholder check compares whole calls; `load_pantry` withdraws the 28 stale rules (P7) |
+| `90a318f` | list-form L2 rules applied |
 
-### 4. Schema, sidecar, reorder fix — **agreed**
+**The list-form rule.** In `src/synthetic/bc3param_backend.py`, an L2 rule `%B=b` on a list
+variable rewrites element *b*, but only when all of these hold:
+- the list is one-dimensional and made of strings, with one element per option of `B`;
+- every reference to the variable, anywhere in the concept, is exactly `$T(%B)`.
 
-The schema is the SINGLE record schema, with its own modifications sidecar. The `reorder` fix
-(`REORDER_LOOKUP_RESPONSE.md`) is already in the pantry every builder reads. It does not touch L2.
-Every `gold_item_key` will resolve against the delivered corpus, and the build fails if one does
-not.
+Anything else (a matrix, a list indexed by two axes, a compound condition, an option out of range)
+still skips as before.
 
-### "If the menus are the limit, tell us how many concepts are reachable"
+The change lives in the synthetic backend. `bc3param`, the engine shared with `main`, is not
+modified. Tests: `tests/synthetic/test_bc3param_backend_list_l2.py`. The full suite passes:
+1 370 passed, 2 skipped.
 
-Frozen menus: **9 / 9 / 8 dev** and **11 / 11 / 9 test**, for paraphrase / expansion /
-compression. With new menus: at most **13 dev / 12 test**. The grammar is the limit, then the
-menus.
+### (2) Regression: delivered sets re-rendered with the new engine — **byte-identical**
 
-## What we need from you
+`scripts/regress_render_replay.py` re-renders every delivered query with the engine at `90a318f`.
+It replays the modifications recorded in each query's sidecar and compares the TEXTO byte for byte
+with the delivered file.
 
-1. **Go / no-go** on the frozen-menu build (9 / 9 / 8 dev concepts). It is a deterministic
-   recombination and fast.
-2. Whether a **new menu pass** toward the 13-concept ceiling is worth it for S6. It is slower,
-   and the new rewrites need review.
-3. For `compression`: keep ≤ 20 per concept (fewer queries, more concepts), or raise depth.
+| file | queries | byte-identical | recorded modification no longer applied |
+|---|---:|---:|---:|
+| `OE_single_texto.json` | 4 439 | 4 439 | 0 |
+| `OE_stacked_texto.json` | 4 998 | 4 998 | 0 |
+| `OE_dose_texto.json` | 3 000 | 3 000 | 0 |
+| `OE_isolated_texto.json` | 5 400 | 5 400 | 0 |
+
+**Scope of this check.** The replay applies the modifications each query *carries*. A planned
+L2 rule on a list-form variable that the old engine skipped left no record, so it is not replayed.
+The delivered texts therefore stand as they are, but rebuilding STACKED, dose or isolated from
+scratch at a later commit would not reproduce them. Such a rebuild draws from the corrected pantry
+(P7) and may apply list-form rules that were skipped before. The delivered files stay reproducible
+from their stamped commits.
+
+### (3) Frozen menus only — **confirmed: at most 9 / 9 / 8 dev, and reached**
+
+`data/synthetic/menus_OE` as frozen, no new menu pass. 9 / 9 / 8 dev (11 / 11 / 9 test) is the
+maximum under the frozen menus, and the build reaches it. 13 dev / 12 test would need new menus.
+
+## Point by point (original request)
+
+1. **Breadth:** 9 / 9 / 8 dev concepts, against your target of ≥ 15. The target is out of reach
+   under this grammar; report it as a limitation in S6.
+2. **Depth:** ≤ 20 leaves per concept and type (D-043 Q4). Leaves are taken in a fixed crc32
+   order per concept, never a sorted prefix, so they spread across axis values. Each takes the
+   least-used compatible rewrite.
+3. **New file:** `OE_single_l2_texto.json`. It is additive: 0 `item_key`s and 0 texts are shared
+   with `OE_single_texto.json`, and one generated query was dropped because its text was already
+   there.
+4. **Schema, sidecar, reorder fix:** as above.
+
+## Checks on the delivered file
+
+- Every `gold_item_key` resolves against `OE_texto.json`.
+- No query equals its gold TEXTO. No query equals any other leaf's TEXTO, on either split.
+- No duplicate keys or texts, and no `$`/`%` residue.
+- **Deterministic.** A second full build gave identical digests for both files.
+
+## How to reproduce
+
+```bash
+PYTHONPATH=src python scripts/build_single_l2.py --source data/raw/BPA_2026.bc3
+PYTHONPATH=src python scripts/regress_render_replay.py --source data/raw/BPA_2026.bc3
+```
