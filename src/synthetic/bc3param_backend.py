@@ -6,18 +6,22 @@ consumes.
 
 Skip semantics mirror the legacy `stage_b.apply_variant_rules`: a rule whose
 target cannot be edited (e.g. an L2 condition-addressed rule aimed at a
-lookup-table text variable that has no conditional fragments) is skipped and
-logged, exactly as the legacy mutators raise ValueError/KeyError and stage_b
+lookup-table text variable that is not a one-axis list, see `_list_element`)
+is skipped and logged, exactly as the legacy mutators raise ValueError/KeyError and stage_b
 catches it. An *unmapped rule type* or `new_param` still raises loudly — those
 are programming/scope errors, not data-driven skips.
 """
 from __future__ import annotations
 
+import dataclasses
 import logging
+import re
 from pathlib import Path
 
 from bc3param import mutate
 from bc3param.fiebdc import Catalog
+from bc3param.param.ast import Assign, Decomp, Index, NumVar, Str, Text, TextList, TextVar
+from bc3param.param.codes import letter_to_index
 from utils import config
 
 logger = logging.getLogger(__name__)
@@ -67,6 +71,120 @@ def _concept_meta(concept_key: str) -> tuple[str, str]:
     return (c.unit if c else "", c.summary if c else "")
 
 
+# L2 rules on a LIST-form text variable (`$T(2)="…","…"`, referenced as `$T(%B)`)
+# carry `%B=<option>`, the l2_repr LIST_plain convention. `mutate` only edits the
+# `"frag"*(cond)` form, so these fell through as skips (retrieval D-043). They
+# are mapped to the list element of that option, but only when the list is a
+# plain one-dimensional list of strings, one per option of B, and every
+# reference to it anywhere is exactly `$T(%B)`: then `%B=b` selects precisely
+# the leaves that show element b. Anything else still skips.
+_LIST_CONDITION_RE = re.compile(r"^%([A-Z])=([A-Za-z0-9])$")
+_TEXT_REF_RE = re.compile(r"\$([A-Za-z0-9]+)(?:\(([^)]*)\))?")
+
+
+def _expr_refs(expr, var: str, out: set) -> None:
+    """Collect how `expr` references text variable `var` (argument text, '' if bare)."""
+    if isinstance(expr, TextVar):
+        if expr.name == var:
+            out.add("")
+        return
+    if isinstance(expr, Index):
+        if isinstance(expr.var, TextVar) and expr.var.name == var:
+            args = expr.args
+            out.add(",".join(f"%{a.name}" if isinstance(a, NumVar) else repr(a) for a in args))
+        for a in expr.args:
+            _expr_refs(a, var, out)
+        return
+    for child in (getattr(expr, "left", None), getattr(expr, "right", None),
+                  getattr(expr, "operand", None)):
+        if child is not None:
+            _expr_refs(child, var, out)
+    for a in getattr(expr, "args", ()) or ():
+        _expr_refs(a, var, out)
+
+
+def _list_element(fam, var: str, condition: str) -> tuple[int, int]:
+    """`(statement index, element index)` that `%AXIS=opt` selects in list `$var`.
+
+    Raises KeyError unless the mapping is unambiguous (see the note above).
+    """
+    m = _LIST_CONDITION_RE.match(mutate.normalize_condition(condition))
+    if m is None:
+        raise KeyError(f"list form needs a single '%AXIS=option' condition, got {condition!r}")
+    axis, letter = m.groups()
+    refs: set = set()
+    assigns = []
+    for i, st in enumerate(fam.statements):
+        texts = ()
+        if isinstance(st, Text):
+            texts = (st.template,)
+        elif isinstance(st, TextList):
+            texts = st.items
+        elif isinstance(st, Decomp):
+            texts = (st.code_template,)
+        for text in texts:
+            for name, args in _TEXT_REF_RE.findall(text):
+                if name == var:
+                    refs.add(re.sub(r"\s+", "", args))
+        if isinstance(st, Assign):
+            if st.kind == "$" and st.name == var:
+                assigns.append((i, st))
+            for v in st.values:
+                _expr_refs(v, var, refs)
+        elif isinstance(st, Decomp):
+            for e in (st.expr, st.factor):
+                if e is not None:
+                    _expr_refs(e, var, refs)
+    if refs != {f"%{axis}"}:
+        raise KeyError(f"${var} is not referenced only as ${var}(%{axis}): {sorted(refs)}")
+    if len(assigns) != 1:
+        raise KeyError(f"${var} is assigned {len(assigns)} times in {fam.code}")
+    i, st = assigns[0]
+    if (st.dims is not None and len(st.dims) != 1) or not all(isinstance(v, Str) for v in st.values):
+        raise KeyError(f"${var} is not a plain list of strings in {fam.code}")
+    param = next((p for p in fam.params if p.var == axis), None)
+    if param is None or len(param.options) != len(st.values):
+        raise KeyError(f"${var} has {len(st.values)} elements, axis {axis} does not match")
+    k = letter_to_index(letter) - 1
+    if not 0 <= k < len(st.values):
+        raise KeyError(f"option {letter!r} out of range for ${var}")
+    return i, k
+
+
+def _list_fragment(fam, var: str, condition: str) -> str:
+    i, k = _list_element(fam, var, condition)
+    return fam.statements[i].values[k].value
+
+
+def _replace_list_element(fam, var: str, condition: str, new_value: str):
+    i, k = _list_element(fam, var, condition)
+    statements = list(fam.statements)
+    values = list(statements[i].values)
+    values[k] = Str(new_value)
+    statements[i] = dataclasses.replace(statements[i], values=tuple(values))
+    return mutate._rebuild(fam, statements)
+
+
+def _text_fragment(fam, var: str, condition: str) -> str:
+    try:
+        return mutate.text_fragment(fam, var, condition)
+    except KeyError as exc:
+        try:
+            return _list_fragment(fam, var, condition)
+        except KeyError:
+            raise exc from None
+
+
+def _replace_text_fragment(fam, var: str, condition: str, new_value: str):
+    try:
+        return mutate.replace_text_fragment(fam, var, condition, new_value)
+    except KeyError as exc:
+        try:
+            return _replace_list_element(fam, var, condition, new_value)
+        except KeyError:
+            raise exc from None
+
+
 def _edit_for_rule(fam, rule):
     """Apply one rule to a Family, returning the new Family. May raise.
 
@@ -79,7 +197,7 @@ def _edit_for_rule(fam, rule):
     if rtype == "new_param":
         raise NotImplementedError("new_param is excluded from the pilot corpus (Phase 2)")
     if rtype in _L2:
-        return mutate.replace_text_fragment(fam, rule["var"], rule["condition"], rule["new"])
+        return _replace_text_fragment(fam, rule["var"], rule["condition"], rule["new"])
     if rtype in _L1:
         return mutate.replace_option_value(fam, rule["param"], rule["value"], rule["new"])
     if rtype in _FIELD:
@@ -107,7 +225,7 @@ def apply_rules_logged(fam, rules, concept_key: str = "?"):
         original = None
         if rule.get("type") in _L2 and "original" not in rule:
             try:
-                original = mutate.text_fragment(out, rule["var"], rule["condition"])
+                original = _text_fragment(out, rule["var"], rule["condition"])
             except (KeyError, ValueError, TypeError):
                 original = None
         try:
