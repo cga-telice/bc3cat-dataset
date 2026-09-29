@@ -299,12 +299,19 @@ def _validate_omission(payload: dict) -> None:
 # template-rewriting modification (reorder keeps all; omission drops only the
 # omitted variable's tokens) — otherwise the rerun renders broken templates and
 # retrieval degrades. The string-only checks above do not catch corruption.
-_PLACEHOLDER_RE = re.compile(r"\$[A-Za-z0-9]+(?:\(%[A-Z]\))?")
+# A placeholder is the whole call with its arguments in order: `$T(%A,%B,%C)`
+# indexes a table by (A, B, C), so `$T(%C,%A,%B)` renders another leaf's cell
+# (retrieval P7). Arguments are axes (`%B`) or literal rows (`b` in `$L(b,%C)`);
+# whitespace inside the call is dropped before comparing.
+_PLACEHOLDER_ARG = r"(?:%[A-Z]|[A-Za-z0-9]+)"
+_PLACEHOLDER_RE = re.compile(
+    rf"\$[A-Za-z0-9]+(?:\(\s*{_PLACEHOLDER_ARG}(?:\s*,\s*{_PLACEHOLDER_ARG})*\s*\))?"
+)
 _PLACEHOLDER_VAR_RE = re.compile(r"\$([A-Za-z0-9]+)")
 
 
 def _placeholders(text: str) -> set[str]:
-    return set(_PLACEHOLDER_RE.findall(text))
+    return {re.sub(r"\s+", "", t) for t in _PLACEHOLDER_RE.findall(text)}
 
 
 def _placeholder_var(token: str) -> str:

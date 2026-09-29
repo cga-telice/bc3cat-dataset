@@ -68,3 +68,19 @@ def test_load_pantry_fails_loud_on_misaligned_files(tmp_path):
     _write_pair(tmp_path, "reorder", menu, verd)
     with pytest.raises(ValueError, match="pantry_misaligned"):
         load_pantry(menus_dir=tmp_path / "menus")
+
+
+def test_load_pantry_withdraws_stale_lookup_permutations(tmp_path):
+    # Retrieval P7: verdicts approved `$T(%A,%B,%C)` -> `$T(%C,%A,%B)` before the
+    # whole-call placeholder check existed. The pantry must never serve them.
+    cands = [{"original": "$T(%A,%B,%C)", "new": "$T(%C,%A,%B)", "preserves_meaning": True},
+             {"original": "Obra $T(%A,%B,%C) en $B", "new": "En $B, obra $T(%A,%B,%C)",
+              "preserves_meaning": True}]
+    menu = [{"canonical": "TEXTO template (C1$)", "dedup_key": ["TEXTO", "x"],
+             "modification_type": "reorder", "skipped_reason": None, "dropped_reasons": [],
+             "usages": [{"concept_key": "C1$", "slot_extractor_target_id": None, "display": "x"}],
+             "candidates": [{"approved": None, "payload": c} for c in cands]}]
+    verd = [dict(menu[0], candidates=[{"approved": True, "payload": c} for c in cands])]
+    _write_pair(tmp_path, "reorder", menu, verd)
+    rs = load_pantry(menus_dir=tmp_path / "menus").by_type[ModificationType.REORDER]
+    assert [r.candidate_index for r in rs] == [1]

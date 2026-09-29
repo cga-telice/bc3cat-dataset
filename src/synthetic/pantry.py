@@ -28,8 +28,18 @@ from typing import Optional
 
 from utils import config
 from .taxonomy import ModificationType
+from .variant_proposer import _placeholders
 
 EXCLUDED_TYPES = frozenset({ModificationType.OMISSION, ModificationType.NEW_PARAM})
+
+# Template rewrites whose verdicts predate the whole-call placeholder check
+# (retrieval P7): an approved `$T(%A,%B,%C)` -> `$T(%C,%A,%B)` renders another
+# leaf's cell. They are re-checked here, so a stale approval is never sampled.
+_TEMPLATE_TYPES = frozenset({ModificationType.REORDER, ModificationType.TEMPLATE_PARAPHRASE})
+
+
+def _placeholders_intact(payload: dict) -> bool:
+    return _placeholders(payload["original"]) == _placeholders(payload["new"])
 
 
 @dataclass(frozen=True)
@@ -96,6 +106,8 @@ def load_pantry(menus_dir: Optional[Path] = None) -> Pantry:
             for ci, (mc, vc) in enumerate(zip(menu_row["candidates"], verd_row["candidates"])):
                 if not vc.get("approved"):
                     continue
+                if mtype in _TEMPLATE_TYPES and not _placeholders_intact(mc["payload"]):
+                    continue  # withdrawn (retrieval P7): approved before the whole-call check
                 by_type.setdefault(mtype, []).append(ApprovedRewrite(
                     mtype=mtype, dedup_key=tuple(menu_row["dedup_key"]),
                     canonical=menu_row["canonical"], candidate_index=ci,
