@@ -10,7 +10,10 @@ not read test-split queries before its final evaluation.
    groups are not counted).
 3. Per modifications sidecar: applied records that use a rule from (1), by field.
 
-Usage: python scripts/audit_lookup_permutations.py [path/to/SPLITS.md]
+Usage: python scripts/audit_lookup_permutations.py [path/to/SPLITS.md] [exclusion.json]
+
+With a second argument, also writes the key-only exclusion list of the SINGLE
+test queries built from a rejected rule (keys are written, never printed).
 """
 from __future__ import annotations
 
@@ -66,7 +69,7 @@ def concept(item_key: str) -> str:
     return item_key[:6] + "$"
 
 
-def main(splits_path: Path = DEFAULT_SPLITS) -> int:
+def main(splits_path: Path = DEFAULT_SPLITS, exclusion_path: Path | None = None) -> int:
     split_of = load_splits(splits_path)
 
     rules = withdrawn_rules()
@@ -94,17 +97,34 @@ def main(splits_path: Path = DEFAULT_SPLITS) -> int:
         print(f"  {name}: dev {hit['dev']} of {total['dev']}, test {hit['test']} of {total['test']}")
 
     print("\n## 3. Applied sidecar records using a rejected rule")
+    delivered_test_keys = set()
     for d in SIDECARS:
         hit = Counter()
         for line in (SYN / d / "BC3CAT_Syn_modifications.jsonl").read_text(encoding="utf-8").splitlines():
             rec = json.loads(line)
             for m in rec["modifications"]:
                 if m.get("status") == "applied" and (m["type"], m.get("original"), m.get("new")) in rules:
-                    hit[(split_of[concept(rec["item_key"])], m.get("field"))] += 1
+                    s = split_of[concept(rec["item_key"])]
+                    hit[(s, m.get("field"))] += 1
+                    if d == "processed_OE_ablation_single" and s == "test":
+                        delivered_test_keys.add(rec["item_key"])
         summary = ", ".join(f"{s}/{f}: {n}" for (s, f), n in sorted(hit.items())) or "0"
         print(f"  {d}: {summary}")
+
+    if exclusion_path is not None:
+        # Keys only, never printed: retrieval applies them blind at the final
+        # test evaluation (D-043 Q1).
+        exclusion_path.write_text(json.dumps({
+            "reason": "P7: SINGLE test queries rendered from a withdrawn reorder rule "
+                      "(not referent-preserving); exclude from item-level scoring, "
+                      "keep at parent level",
+            "file": "OE_single_texto.json",
+            "split": "test",
+            "item_keys": sorted(delivered_test_keys),
+        }, indent=2) + "\n", encoding="utf-8")
+        print(f"\nexclusion list: {len(delivered_test_keys)} keys -> {exclusion_path}")
     return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main(*(Path(a) for a in sys.argv[1:2])))
+    raise SystemExit(main(*(Path(a) for a in sys.argv[1:3])))
