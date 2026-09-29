@@ -326,6 +326,36 @@ class TestProposeType:
             "Turno diurno", "Turno de día",
         )
 
+    def test_l1_case_variant_of_original_dropped(self):
+        # P8 / D-044: "semi-rocoso" -> "Semi-Rocoso" was approved as a
+        # synonym; a lower-casing retriever sees the original label.
+        stage, inv = self._tiny_inventory()
+        trabajo_targets = tuple(
+            t for t in inv.by_type[ModificationType.SYNONYM_LABEL]
+            if t.dedup_key[0] == "TRABAJO"
+        )
+        fake_inv = ChapterInventory(
+            concept_keys=inv.concept_keys,
+            by_type={ModificationType.SYNONYM_LABEL: trabajo_targets, **{
+                m: () for m in ModificationType if m is not ModificationType.SYNONYM_LABEL
+            }},
+        )
+        response = _l1_list_response([
+            [("Diurno", "DIURNO"), ("Nocturno", "Turno nocturno")],
+            [("Diurno", " diurno "), ("Nocturno", "Nocturno")],
+            [("Diurno", "Turno de día"), ("Nocturno", "Nocturnidad")],
+        ])
+        client = _StubLLMClient([response])
+        result = propose_type(
+            stage, fake_inv, ModificationType.SYNONYM_LABEL, client, n=3,
+        )
+        assert tuple(c.payload["new"] for c in result[("TRABAJO", "Diurno")].candidates) == (
+            "Turno de día",
+        )
+        assert tuple(c.payload["new"] for c in result[("TRABAJO", "Nocturno")].candidates) == (
+            "Turno nocturno", "Nocturnidad",
+        )
+
     def test_l2_one_call_per_fragment(self):
         stage, inv = self._tiny_inventory()
         para_targets = inv.by_type[ModificationType.PARAPHRASE]

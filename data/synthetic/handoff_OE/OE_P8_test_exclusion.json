@@ -1,0 +1,9 @@
+{
+  "reason": "P8: SINGLE test synonym_label queries whose synonym is a case variant of the label; equal to the gold TEXTO after lower-casing (D-044)",
+  "file": "OE_single_texto.json",
+  "split": "test",
+  "item_keys": [
+    "OED160bgadb_syn_8db53e240adc",
+    "OED180aacaa_syn_a3ed493be2b1"
+  ]
+}

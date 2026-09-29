@@ -313,7 +313,10 @@ def _extract_l1_candidates_for_value(
     only, case preserved). Match ``entry["original"]`` with the same
     normaliser so the LLM's exact-echo pins to the same dedup key.
     """
-    seen: set[str] = set()
+    # Seeded with the original itself: a candidate equal to the label
+    # after casefolding ("semi-rocoso" -> "Semi-Rocoso") is not a
+    # modification for a lower-casing retriever (P8 / D-044).
+    seen: set[str] = {_normalise(value_norm)}
     out: list[CandidateProposal] = []
     for variant in variants:
         entries = None
