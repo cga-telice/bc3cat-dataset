@@ -32,7 +32,7 @@ bt:
   batch_size: 16
   # Estrategia de máscara: la decide el miniexperimento de T4 (bt_mask_experiment.py).
   mask_strategy: xml
-  mask_strategies: [sentinel, xml, none]
+  mask_strategies: [sentinel, xml]
   mask_experiment_size: 100
   pilot_size: 300
   audit_bt_orig: 50

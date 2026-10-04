@@ -62,8 +62,7 @@ _BT_META = {"pivot": "en", "engine": "marian", "mask_strategy": "xml"}
 
 
 def test_stacked_bt_record():
-    rec = bt.output_record("stacked_bt_en", _SRC, "nuevo texto", _Res(), _BT_META,
-                           ["phi4:latest", "qwen2.5:14b"])
+    rec = bt.output_record("stacked_bt_en", _SRC, "nuevo texto", _Res(), _BT_META, 6)
     assert rec["item_key"] == "OEB030jcaaa_syn_7460ba334a18_bt_en"
     assert rec["source_item_key"] == _SRC["item_key"]
     assert rec["gold_item_key"] == "OEB030jcaaa"
@@ -78,7 +77,9 @@ def test_stacked_bt_record():
                                                        "back_translation"]
     assert rec["texto_modification_count_post_bt"] == 2
     assert rec["reverted_types"] == ["num_to_text"]
-    assert rec["characterization_check"]["axes"] == {"A": "ok", "B": "ok"}
+    assert rec["characterization_check"] == {
+        "protocol_version": bt.PROTOCOL_VERSION, "mode": "structural_masked",
+        "masked_values": 6, "not_rendered": ["F"]}
     assert rec["id"] == bt.stable_id(rec["item_key"])
     assert len(rec["source_text_sha256"]) == 64
 
@@ -91,7 +92,7 @@ def test_bt_orig_record():
     class R(_Res):
         surviving_types, reverted_types = [], []
 
-    rec = bt.output_record("bt_orig_en", gold, "gold traducido", R(), _BT_META, ["m"])
+    rec = bt.output_record("bt_orig_en", gold, "gold traducido", R(), _BT_META, 5)
     assert rec["item_key"] == "OEB030jcaaa_btorig_en"
     assert rec["source_item_key"] == rec["gold_item_key"] == "OEB030jcaaa"
     assert rec["parameters"] == {"A": "12"}
@@ -135,14 +136,21 @@ def test_bm25_acc1_counts_group_members_as_hits():
     assert bt.bm25_acc1(index, queries, groups) == pytest.approx(2 / 3)
 
 
-def test_mask_experiment_choice_never_raises_g1_rejections():
+def _mx():
     spec = importlib.util.spec_from_file_location("bt_mask_experiment", _SCRIPTS / "bt_mask_experiment.py")
     mx = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = mx
     spec.loader.exec_module(mx)
-    summary = {
-        "sentinel": {"g1_rejected": 2, "passed_g2": 40, "accepted": 38},
-        "xml": {"g1_rejected": 2, "passed_g2": 80, "accepted": 75},
-        "none": {"g1_rejected": 9, "passed_g2": 90, "accepted": 85},  # más G2 pero sube G1
-    }
-    assert mx.choose(summary) == "xml"
+    return mx
+
+
+def test_mask_experiment_chooses_most_accepted():
+    summary = {"sentinel": {"accepted": 38, "mask_lost": 50},
+               "xml": {"accepted": 75, "mask_lost": 10}}
+    assert _mx().choose(summary) == "xml"
+
+
+def test_mask_experiment_tie_breaks_on_fewer_lost_masks():
+    summary = {"sentinel": {"accepted": 70, "mask_lost": 5},
+               "xml": {"accepted": 70, "mask_lost": 9}}
+    assert _mx().choose(summary) == "sentinel"

@@ -5,18 +5,22 @@ Dos condiciones emparejadas por hoja sobre STACKED-P:
 * ``stacked_bt_en`` — BT del TEXTO de la consulta STACKED (rodaja de robustez);
 * ``bt_orig_en`` — BT del TEXTO gold de la misma hoja (control).
 
+Rediseño tras CP2: cada valor de eje y cada fragmento L2 se localiza con
+:mod:`bt_alignment` y se enmascara entero, así que sale literalmente igual; la
+BT solo traduce la prosa de la plantilla. La verificación es estructural, sin
+LLM: máscaras preservadas y en el mismo orden, G0, G1, G3, G6 y la señal de
+deriva para ordenar la auditoría humana.
+
 Parte del fichero STACKED entregado (sha256 ``c34a…``) y su sidecar, nunca de
-una regeneración. Fases (el motor y los extractores nunca a la vez en GPU):
+una regeneración. Fases:
 
   .venv-bt/Scripts/python scripts/build_bt.py --pilot --translate
-  bash scripts/bt_run_extractors.sh scripts/build_bt.py --pilot
   .venv-bt/Scripts/python scripts/build_bt.py --pilot --report
 
 ``--translate`` rellena la caché de traducción (``data/synthetic/bt_OE/cache/``);
-``--extract MODELO`` la de los extractores; ``--report`` solo reproduce las dos
-cachés (modo replay: falla si falta algo), verifica G0–G6 y escribe salidas e
-informes. ``--fresh-check`` traduce de nuevo en GPU sin caché e informa de cuántos
-segmentos coinciden con la caché (la caché manda).
+``--report`` solo la reproduce (modo replay: falla si falta algo), verifica y
+escribe salidas e informes. ``--fresh-check`` traduce de nuevo en GPU sin caché
+e informa de cuántos textos coinciden con la caché (la caché manda).
 """
 from __future__ import annotations
 
@@ -46,11 +50,13 @@ from synthetic.back_translation import (  # noqa: E402
     MarianEngine,
     back_translate_many,
 )
-from synthetic.characterization import PROTOCOL_VERSION, ExtractionError, norm_text  # noqa: E402
+from synthetic.bt_alignment import AlignmentError, gold_slots, stacked_slots  # noqa: E402
+from synthetic.characterization import norm_text  # noqa: E402
 
 # mismo namespace que scripts/package_for_retrieval.py
 _NS = uuid.UUID("6f9619ff-8b86-d011-b42d-00cf4fc964ff")
 CONDITIONS = ("stacked_bt", "bt_orig")
+PROTOCOL_VERSION = "bt-masked-1"  # rediseño CP2: valores enmascarados, verificación estructural
 
 
 def stable_id(key: str) -> str:
@@ -113,7 +119,7 @@ def _flat_params(params: Mapping) -> dict:
 
 
 def output_record(condition: str, src: Mapping, text: str, res, bt_meta: Mapping,
-                  extractors: Sequence[str]) -> dict:
+                  masked_values: int) -> dict:
     pivot = bt_meta["pivot"]
     if condition.startswith("stacked_bt"):
         item_key = f"{src['item_key']}_bt_{pivot}"
@@ -146,8 +152,8 @@ def output_record(condition: str, src: Mapping, text: str, res, bt_meta: Mapping
         "reverted_types": list(res.reverted_types),
         "bt": dict(bt_meta),
         "characterization_check": {"protocol_version": PROTOCOL_VERSION,
-                                   "extractors": list(extractors),
-                                   "axes": dict(res.axes),
+                                   "mode": "structural_masked",
+                                   "masked_values": masked_values,
                                    "not_rendered": list(res.not_rendered)},
     }
 
@@ -259,9 +265,29 @@ def make_engine(cfg, mode: str) -> CachedEngine:
     return CachedEngine(marian, REPO / b["cache_dir"], mode=mode)
 
 
-def translate(cfg, jobs, engine, strategy):
+def value_spans(jobs, stage, corpus, sidecar) -> list[list[tuple[int, int]]]:
+    """Tramos de valores de eje y fragmentos L2 de cada texto de origen. STACKED-P
+    solo contiene consultas que alinean (T3) y el gold alinea siempre: un fallo
+    aquí es un error; nunca se traduce sin proteger los valores."""
+    out = []
+    for cond, src in jobs:
+        concept = stage[src["parent_key"]]
+        try:
+            if cond == "stacked_bt":
+                gold = corpus[src["gold_item_key"]]
+                slots = stacked_slots(concept, gold["item_key"], gold["text"], src["text"],
+                                      sidecar[src["item_key"]])
+            else:
+                slots = gold_slots(concept, src["item_key"], src["text"])
+        except AlignmentError as err:
+            raise SystemExit(f"alineación imposible en {src['item_key']}: {err}") from err
+        out.append([(s.start, s.end) for s in slots if s.end > s.start])
+    return out
+
+
+def translate(cfg, jobs, engine, strategy, spans):
     texts = [src["text"] for _, src in jobs]
-    return back_translate_many(texts, cfg["bt"]["pivot"], engine, strategy)
+    return back_translate_many(texts, cfg["bt"]["pivot"], engine, strategy, spans=spans)
 
 
 def git_commit() -> str:
@@ -271,20 +297,9 @@ def git_commit() -> str:
         return "unknown"
 
 
-def ollama_digests(cfg) -> dict:
-    import urllib.request
-    try:
-        base = cfg["llm_base_url"].rsplit("/v1", 1)[0]
-        with urllib.request.urlopen(base + "/api/tags", timeout=10) as fh:
-            tags = json.load(fh)["models"]
-        return {m["name"]: m.get("digest") for m in tags if m["name"] in cfg["extractors"]}
-    except Exception:  # noqa: BLE001
-        return {m: None for m in cfg["extractors"]}
-
-
 def verify(cfg, ctx, jobs, results, sidecar, forbidden):
-    """Aplica G0–G6 a cada salida de BT. Devuelve filas con el resultado."""
-    extractors = [cal.make_extractor(cfg, m, replay=True) for m in cfg["extractors"]]
+    """Verificación estructural (sin LLM) de cada salida de BT: los fallos de
+    máscara u orden ya vienen del motor; aquí G0, G1, G3, G5 (informa) y G6."""
     rows, seen = [], {c: {} for c in CONDITIONS}
     for (cond, src), bt_res in zip(jobs, results):
         gold = src.get("gold_item_key", src["item_key"])
@@ -297,7 +312,7 @@ def verify(cfg, ctx, jobs, results, sidecar, forbidden):
             rows.append((row, None, bt_res))
             continue
         records = sidecar.get(src["item_key"], []) if cond == "stacked_bt" else None
-        r = ctx.check(bt_res.text, gold, extractors=extractors, source_text=src["text"],
+        r = ctx.check(bt_res.text, gold, extractors=(), source_text=src["text"],
                       records=records, query_key=src["item_key"], forbidden=forbidden)
         if r.ok:
             nt = norm_text(bt_res.text)
@@ -305,8 +320,8 @@ def verify(cfg, ctx, jobs, results, sidecar, forbidden):
                 r.ok, r.gate, r.reason = False, "G6", f"duplicate_within_set:{seen[cond][nt]}"
             else:
                 seen[cond][nt] = src["item_key"]
-        row.update(ok=r.ok, gate=r.gate, axis=r.axis, reason=r.reason, axes=r.axes,
-                   extractions=r.extractions, surviving_types=r.surviving_types,
+        row.update(ok=r.ok, gate=r.gate, axis=r.axis, reason=r.reason,
+                   surviving_types=r.surviving_types,
                    reverted_types=r.reverted_types, drift=r.drift.get("score"))
         rows.append((row, r, bt_res))
     return rows
@@ -329,6 +344,7 @@ def metrics(cfg, ctx, rows, corpus, groups, stacked_p_keys, stacked, bm25=True) 
             "n": len(rs), "accepted": len(acc),
             "no_op": sum(r.get("reason") == "no_op" for r in rs),
             "mask_lost": sum(r.get("reason") == "mask_lost" for r in rs),
+            "value_order_changed": sum(r.get("reason") == "value_order_changed" for r in rs),
             "by_gate": Counter(r["gate"] for r in rs if not r["ok"]),
             "by_gate_axis": Counter(f"{r['gate']} {r['parent_key']} {r['axis'] or ''} "
                                     f"{(r['reason'] or '').split(':')[0]}".strip()
@@ -371,12 +387,14 @@ def report_markdown(title, cfg, m, rows, provenance, thresholds=True) -> str:
              f"Pivote EN, MarianMT (`{cfg['bt']['model_es_en']}@{cfg['bt']['revision_es_en'][:7]}`, "
              f"`{cfg['bt']['model_en_es']}@{cfg['bt']['revision_en_es'][:7]}`), beam "
              f"{cfg['bt']['decoding']['num_beams']} sin muestreo, máscara `{cfg['bt']['mask_strategy']}`. "
-             f"Extractores {', '.join(cfg['extractors'])}. Commit `{provenance['commit'][:7]}`.", "",
+             "Valores de eje y fragmentos L2 enmascarados; verificación estructural sin LLM. "
+             f"Commit `{provenance['commit'][:7]}`.", "",
              "| Métrica | Valor | Umbral |", "|---|---:|---|",
              f"| Aceptación `stacked_bt_en` | {s['accepted']}/{s['n']} ({_pct(s['accepted'], s['n'])}) | ≥ 80 % → {'cumple' if acc_s >= 0.8 else '**no cumple**'} |",
              f"| Aceptación `bt_orig_en` | {o['accepted']}/{o['n']} ({_pct(o['accepted'], o['n'])}) | se reporta |",
              f"| No-ops `stacked_bt_en` | {s['no_op']} ({_pct(s['no_op'], s['n'])}) | ≤ 10 % → {'cumple' if noop <= 0.10 else '**no cumple**'} |",
              f"| Máscara perdida `stacked_bt_en` / `bt_orig_en` | {s['mask_lost']} / {o['mask_lost']} | se reporta |",
+             f"| Valores cambiados de orden `stacked_bt_en` / `bt_orig_en` | {s['value_order_changed']} / {o['value_order_changed']} | se reporta |",
              f"| Mediana de distancia en tokens al gold, antes → después (`stacked_bt`) | {_median(s['dist_before'])} → {_median(s['dist_after'])} | se reporta |",
              f"| Mediana de distancia en tokens al gold, antes → después (`bt_orig`) | 0 → {_median(o['dist_after'])} | se reporta |"]
     if "bm25" in m:
@@ -425,7 +443,6 @@ def main(argv=None) -> int:
     scope.add_argument("--full", action="store_true")
     phase = ap.add_mutually_exclusive_group(required=True)
     phase.add_argument("--translate", action="store_true")
-    phase.add_argument("--extract", metavar="MODELO")
     phase.add_argument("--report", action="store_true")
     phase.add_argument("--fresh-check", action="store_true")
     a = ap.parse_args(argv)
@@ -437,39 +454,28 @@ def main(argv=None) -> int:
     jobs = jobs_for(keys, stacked, corpus)
     strategy = cfg["bt"]["mask_strategy"]
     print(f"{mode}: {len(keys)} consultas STACKED-P, {len(jobs)} trabajos de BT, máscara {strategy}")
+    stage = cal._load(REPO / cfg["stage_json"])
+    sidecar = cal.load_sidecar(REPO / cfg["stacked_sidecar"])
+    spans = value_spans(jobs, stage, corpus, sidecar)
 
     if a.translate:
-        res = translate(cfg, jobs, make_engine(cfg, "record"), strategy)
-        print(f"traducidas; máscara perdida en {sum(not r.ok for r in res)}")
+        res = translate(cfg, jobs, make_engine(cfg, "record"), strategy, spans)
+        print(f"traducidas; fallos de máscara u orden: {Counter(r.reason for r in res if not r.ok)}")
         return 0
 
     if a.fresh_check:
         cached = make_engine(cfg, "replay")
         fresh = make_engine(cfg, "record")
         fresh._dir = REPO / cfg["bt"]["cache_dir"] / f"fresh-{datetime.now(timezone.utc):%Y%m%dT%H%M%SZ}"
-        r1 = translate(cfg, jobs, cached, strategy)
-        r2 = translate(cfg, jobs, fresh, strategy)
+        r1 = translate(cfg, jobs, cached, strategy, spans)
+        r2 = translate(cfg, jobs, fresh, strategy, spans)
         same = sum(x.back_masked == y.back_masked and x.pivot_text == y.pivot_text for x, y in zip(r1, r2))
         print(json.dumps({"jobs": len(jobs), "identical": same}))
         return 0
 
-    results = translate(cfg, jobs, make_engine(cfg, "replay"), strategy)
-    ctx = cal.load_context(cfg)
-
-    if a.extract:
-        ex = cal.make_extractor(cfg, a.extract, replay=False)
-        for i, ((cond, src), r) in enumerate(zip(jobs, results), 1):
-            if r.ok:
-                try:
-                    ex.extract(r.text, ctx.concepts[src["parent_key"]])
-                except ExtractionError:
-                    pass
-            if i % 100 == 0:
-                print(f"  {i}/{len(jobs)}", flush=True)
-        return 0
-
     # --report
-    sidecar = cal.load_sidecar(REPO / cfg["stacked_sidecar"])
+    results = translate(cfg, jobs, make_engine(cfg, "replay"), strategy, spans)
+    ctx = cal.load_context(cfg)
     forbidden = audit.forbidden_texts(handoff) | {norm_text(q["text"]) for q in stacked.values()}
     rows = verify(cfg, ctx, jobs, results, sidecar, forbidden)
     groups = ctx.groups
@@ -495,7 +501,7 @@ def main(argv=None) -> int:
                 rejected.append({k: row.get(k) for k in ("condition", "source_item_key", "gold_item_key",
                                                          "gate", "axis", "reason", "bt_text")})
                 continue
-            rec = output_record(f"{cond}_{pivot}", src, row["bt_text"], r, bt_meta, cfg["extractors"])
+            rec = output_record(f"{cond}_{pivot}", src, row["bt_text"], r, bt_meta, len(bt_res.values))
             recs.append(rec)
             mods = list(sidecar.get(src["item_key"], [])) if cond == "stacked_bt" else []
             mods.append({"type": "back_translation", "layer": "surface", "pivot": pivot,
@@ -526,7 +532,7 @@ def main(argv=None) -> int:
     provenance = {"commit": git_commit(), "run_id": f"bt-{mode}-{datetime.now(timezone.utc):%Y%m%dT%H%M%SZ}",
                   "mode": mode, "seed": cfg["seed"], "bt": bt_meta,
                   "translation_cache": cfg["bt"]["cache_dir"],
-                  "extractors": ollama_digests(cfg), "protocol_version": PROTOCOL_VERSION,
+                  "verification": "structural_masked", "protocol_version": PROTOCOL_VERSION,
                   "inputs_sha256": inputs, "outputs_sha256": shas,
                   "counts": {c: {"n": m[c]["n"], "accepted": m[c]["accepted"]} for c in CONDITIONS}}
     audit.write_atomic(out_dir / "OE_bt_provenance.json",
