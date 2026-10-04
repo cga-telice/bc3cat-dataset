@@ -1,0 +1,45 @@
+{
+ "commit": "babbe635cb5c8226918a3b64bd4a74c3e02cab96",
+ "run_id": "bt-pilot-20261004T214032Z",
+ "mode": "pilot",
+ "seed": 42,
+ "bt": {
+  "pivot": "en",
+  "engine": "marian",
+  "model_es_en": "Helsinki-NLP/opus-mt-es-en@c96e2c5399ebfae4fc43d9669556b9afa74bb69d",
+  "model_en_es": "Helsinki-NLP/opus-mt-en-es@5bc4493d463cf000c1f0b50f8d56886a392ed4ab",
+  "license": "apache-2.0",
+  "decoding": {
+   "num_beams": 4,
+   "do_sample": false
+  },
+  "mask_strategy": "bracket"
+ },
+ "translation_cache": "data/synthetic/bt_OE/cache",
+ "verification": "structural_masked",
+ "protocol_version": "bt-masked-1",
+ "inputs_sha256": {
+  "OE_stacked_texto.json": "c34a222ae2af05a0b5335b774cb7fb45f14064cc17234d9d885e809fb29b6f45",
+  "OE_texto.json": "54c83faadd41bd86177006c5d7dc85e2145fa35f4bf98450870598bff70f23e9",
+  "BC3CAT_Syn_modifications.jsonl": "4ece3203027b61d9fa2c61859e8bd034ac44fac27f64ea6ecfcccef9a165531c",
+  "OE_stacked_P_keys.json": "e7b894bc93881a80b1eedd9ed70faa11676e6cff790d07e4e0906ff3481a1118",
+  "OE_2026_stage.json": "2882113b9fe4b23c401de8d1059ede52a762068eb96b99d7de309733fc2a078b"
+ },
+ "outputs_sha256": {
+  "OE_stacked_bt_en_texto.json": "5d5f7c49f6c88171092a48812c1cb8e7ad9e9b0b56aa44f71efe68f37cc94cb4",
+  "OE_stacked_bt_en_modifications.jsonl": "6527fe89c95bcdbd7d31883c51cbf931e8d982a7e265840f5106817bfe738e55",
+  "OE_bt_orig_en_texto.json": "8d0a999dff551a93b7365894c68637a5515a6855fbaf9df365bc294768594d99",
+  "OE_bt_orig_en_modifications.jsonl": "88bae08c18e438d0022bc732acd0511ef12d5d7779d3ab73f93d1f903872b40a",
+  "OE_bt_rejected.jsonl": "445119a641b52419eb35f5f22fa5a1c016395cec3c2d84785162bc690e1d4e33"
+ },
+ "counts": {
+  "stacked_bt": {
+   "n": 300,
+   "accepted": 294
+  },
+  "bt_orig": {
+   "n": 300,
+   "accepted": 296
+  }
+ }
+}
