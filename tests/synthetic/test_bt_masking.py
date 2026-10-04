@@ -81,6 +81,12 @@ def test_quantities_and_codes_are_protected(text, literal):
     assert literal in _literals(text)
 
 
+@pytest.mark.parametrize("text", ["hasta 1 m. , desde", "hasta 1 m.. Profundidad"])
+def test_unit_followed_by_periods(text):
+    # OED180: "hasta 1 m. ." en el gold, "hasta 1 m.." tras deshacer la expansión
+    assert _literals(text) == ["1 m"]
+
+
 def test_non_unit_word_after_number_is_not_swallowed():
     assert _literals("2 ternas de tubos") == ["2"]
 

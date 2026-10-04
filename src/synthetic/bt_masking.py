@@ -62,8 +62,9 @@ def _unit_end(text: str, end: int) -> int:
     word = m.group(1)
     if word.lower() in _UNIT_TOKENS:
         return m.end()
-    if word.endswith(".") and word[:-1].lower() in _UNIT_TOKENS:
-        return m.end() - 1
+    bare = word.rstrip(".")
+    if bare != word and bare.lower() in _UNIT_TOKENS:
+        return m.start(1) + len(bare)  # los puntos son puntuación de frase
     return end
 
 
