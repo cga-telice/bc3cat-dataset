@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import re
 from collections import Counter
+from typing import Sequence
 
 from .slot_extractor import _UNIT_TOKENS
 
@@ -47,7 +48,7 @@ _ACRONYM = rf"(?<![\w$.])(?:[{_CAPS}]\.){{2,}}|(?<![\w$])[{_CAPS}]{{2,}}(?!\w)"
 _SCAN_RE = re.compile(rf"(?P<B>{_BAND})|(?P<Q>{_QTY})|(?P<S>{_ACRONYM})")
 _UNIT_PEEK_RE = re.compile(r"\s+([^\s\d\[\]$<>()«»\",;:]+)")
 
-MARKER_RE = re.compile(r"\[\[[BQS]\d+\]\]|<x\d+/>")
+MARKER_RE = re.compile(r"\[\[[BQSV]\d+\]\]|<x\d+/>")
 
 
 class MaskError(ValueError):
@@ -75,32 +76,76 @@ def mask_surface(text: str, strategy: str) -> tuple[str, dict[str, str]]:
     en orden de aparición. Con ``strategy="none"`` devuelve el texto tal
     cual y un mapping vacío.
     """
+    masked, mapping, _ = _mask(text, strategy, ())
+    return masked, mapping
+
+
+def mask_with_values(text: str, strategy: str,
+                     spans: Sequence[tuple[int, int]]) -> tuple[str, dict[str, str], list[str]]:
+    """Como :func:`mask_surface`, pero cada tramo de ``spans`` (valores de eje
+    y fragmentos L2, de :mod:`bt_alignment`) se enmascara entero como ``V``;
+    bandas, cantidades y siglas se buscan solo fuera de esos tramos. Devuelve
+    también los marcadores ``V`` en orden de texto, para
+    :func:`check_value_order`."""
+    return _mask(text, strategy, spans)
+
+
+def _mask(text: str, strategy: str, spans) -> tuple[str, dict[str, str], list[str]]:
     if strategy not in STRATEGIES:
         raise ValueError(f"estrategia desconocida: {strategy!r}")
     if strategy == "none":
-        return text, {}
+        return text, {}, []
+    spans = sorted((a, b) for a, b in spans if b > a)
+    for (_, b1), (a2, _) in zip(spans, spans[1:]):
+        if a2 < b1:
+            raise ValueError("tramos de valor solapados")
 
     mapping: dict[str, str] = {}
-    counters = {"B": 0, "Q": 0, "S": 0}
+    values: list[str] = []
+    counters = {"B": 0, "Q": 0, "S": 0, "V": 0}
     out: list[str] = []
-    pos = 0
-    while True:
-        m = _SCAN_RE.search(text, pos)
-        if m is None:
-            break
-        kind = m.lastgroup
-        end = m.end() if kind == "S" else _unit_end(text, m.end())
+
+    def emit(kind: str, literal: str) -> None:
         counters[kind] += 1
         if strategy == "sentinel":
             marker = f"[[{kind}{counters[kind]}]]"
         else:
             marker = f"<x{len(mapping) + 1}/>"
-        mapping[marker] = text[m.start():end]
-        out.append(text[pos:m.start()])
+        mapping[marker] = literal
         out.append(marker)
-        pos = end
-    out.append(text[pos:])
-    return "".join(out), mapping
+        if kind == "V":
+            values.append(marker)
+
+    def scan(gap: str) -> None:
+        pos = 0
+        while True:
+            m = _SCAN_RE.search(gap, pos)
+            if m is None:
+                break
+            kind = m.lastgroup
+            end = m.end() if kind == "S" else _unit_end(gap, m.end())
+            out.append(gap[pos:m.start()])
+            emit(kind, gap[m.start():end])
+            pos = end
+        out.append(gap[pos:])
+
+    pos = 0
+    for a, b in spans:
+        scan(text[pos:a])
+        emit("V", text[a:b])
+        pos = b
+    scan(text[pos:])
+    return "".join(out), mapping, values
+
+
+def check_value_order(text: str, values: Sequence[str]) -> None:
+    """Los marcadores de valor aparecen en ``text`` en el mismo orden que en el
+    origen (los demás marcadores pueden moverse). Un valor cambiado de sitio
+    puede quedar asociado a otra etiqueta: decisión de César, se rechaza."""
+    wanted = set(values)
+    found = [m for m in MARKER_RE.findall(text) if m in wanted]
+    if found != list(values):
+        raise MaskError(f"value_order_changed: {found} != {list(values)}")
 
 
 def unmask_surface(text: str, mapping: dict[str, str]) -> str:

@@ -131,3 +131,46 @@ def test_cache_key_depends_on_signature_and_direction(tmp_path):
 def test_cache_unknown_mode(tmp_path):
     with pytest.raises(ValueError):
         CachedEngine(Identity(), tmp_path, mode="fresh")
+
+
+# --- valores de eje enmascarados (rediseño tras CP2) ----------------------
+
+_VT = "Trabajo: Turno de día. Banda: i < 3 horas. Condiciones: Volumen escaso."
+
+
+def _spans(text, *subs):
+    return [(text.index(s), text.index(s) + len(s)) for s in subs]
+
+
+class SwapValues(Identity):
+    """En la vuelta al español intercambia los dos primeros valores."""
+    signature = {"engine": "swap"}
+
+    def translate(self, segments, src, tgt):
+        joined = "\x00".join(segments)
+        if tgt == "es":
+            joined = joined.replace("[[V1]]", "@@").replace("[[V2]]", "[[V1]]").replace("@@", "[[V2]]")
+        return joined.split("\x00")
+
+
+def test_values_are_hidden_from_the_translator():
+    eng = Identity()
+    spans = _spans(_VT, "Turno de día", "Volumen escaso")
+    r = back_translate_many([_VT], "en", eng, "sentinel", spans=[spans])[0]
+    assert r.ok and r.text == _VT
+    sent = " ".join(s for call in eng.calls for s in call[0])
+    assert "Turno" not in sent and "escaso" not in sent
+    assert r.values == ["[[V1]]", "[[V2]]"]
+
+
+def test_swapped_values_are_rejected():
+    spans = _spans(_VT, "Turno de día", "Volumen escaso")
+    r = back_translate_many([_VT], "en", SwapValues(), "sentinel", spans=[spans])[0]
+    assert (r.ok, r.reason) == (False, "value_order_changed")
+
+
+def test_spans_are_optional_per_text():
+    out = back_translate_many([_VT, _VT], "en", Identity(), "xml",
+                              spans=[_spans(_VT, "Volumen escaso"), None])
+    assert [r.ok for r in out] == [True, True]
+    assert len(out[0].values) == 1 and out[1].values == []

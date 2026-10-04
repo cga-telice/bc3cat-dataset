@@ -208,3 +208,51 @@ def test_no_digit_or_operator_survives_masking(name):
         masked, _ = mask_surface(text, "sentinel")
         residue = MARKER_RE.sub("", masked)
         assert not _RESIDUE.search(residue), (text, residue)
+
+
+# --- valores de eje protegidos (rediseño tras CP2) ------------------------
+
+from synthetic.bt_masking import check_value_order, mask_with_values  # noqa: E402
+
+_VTEXT = "Canaleta PVC de 30x15 mm. Trabajo: Turno de día 2. Banda: i < 3 horas."
+
+
+def _span(text, sub):
+    i = text.index(sub)
+    return (i, i + len(sub))
+
+
+def test_value_spans_become_v_markers():
+    spans = [_span(_VTEXT, "Turno de día 2"), _span(_VTEXT, "i < 3 horas")]
+    masked, mapping, values = mask_with_values(_VTEXT, "sentinel", spans)
+    assert masked == "Canaleta [[S1]] de [[Q1]]. Trabajo: [[V1]]. Banda: [[V2]]."
+    assert values == ["[[V1]]", "[[V2]]"]
+    assert mapping["[[V1]]"] == "Turno de día 2"  # el dígito va dentro del valor
+
+
+def test_value_markers_xml_numbering_in_text_order():
+    spans = [_span(_VTEXT, "Turno de día 2")]
+    masked, mapping, values = mask_with_values(_VTEXT, "xml", spans)
+    assert masked == "Canaleta <x1/> de <x2/>. Trabajo: <x3/>. Banda: <x4/>."
+    assert values == ["<x3/>"]
+
+
+def test_empty_spans_are_ignored():
+    masked, mapping, values = mask_with_values("A B", "sentinel", [(1, 1)])
+    assert values == [] and masked == "A B"
+
+
+@pytest.mark.parametrize("strategy", ["sentinel", "xml"])
+def test_value_roundtrip_identity(strategy):
+    spans = [_span(_VTEXT, "Turno de día 2"), _span(_VTEXT, "i < 3 horas")]
+    masked, mapping, _ = mask_with_values(_VTEXT, strategy, spans)
+    check_masks(masked, mapping)
+    assert unmask_surface(masked, mapping) == _VTEXT
+
+
+def test_value_order_check():
+    values = ["[[V1]]", "[[V2]]"]
+    check_value_order("x [[Q1]] [[V1]] y [[S1]] [[V2]]", values)
+    check_value_order("[[S1]] [[V1]] [[Q1]] [[V2]]", values)  # otros marcadores pueden moverse
+    with pytest.raises(MaskError, match="value_order_changed"):
+        check_value_order("[[V2]] y [[V1]]", values)

@@ -17,11 +17,17 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Mapping, Optional, Protocol, Sequence
 
-from .bt_masking import MaskError, check_masks, mask_surface, unmask_surface
+from .bt_masking import (
+    MaskError,
+    check_masks,
+    check_value_order,
+    mask_with_values,
+    unmask_surface,
+)
 
 
 class BTEngine(Protocol):
@@ -89,34 +95,43 @@ class BTResult:
     pivot_text: str
     back_masked: str
     segments: int
+    values: list = field(default_factory=list)  # marcadores de valor de eje, en orden de origen
 
 
 def back_translate_many(texts: Sequence[str], pivot: str, engine: BTEngine,
-                        mask_strategy: str, src: str = "es") -> list[BTResult]:
-    """Una llamada al motor por dirección para todos los segmentos."""
+                        mask_strategy: str, src: str = "es",
+                        spans: Optional[Sequence[Optional[Sequence[tuple[int, int]]]]] = None,
+                        ) -> list[BTResult]:
+    """Una llamada al motor por dirección para todos los segmentos.
+
+    ``spans`` (uno por texto, o ``None``) son los tramos de valores de eje y
+    fragmentos L2 (:mod:`bt_alignment`): se enmascaran enteros y, además de
+    preservarse, tienen que volver en el mismo orden (``value_order_changed``)."""
+    spans = list(spans) if spans is not None else [None] * len(texts)
     prepared = []
     flat: list[str] = []
-    for text in texts:
-        masked, mapping = mask_surface(text, mask_strategy)
+    for text, sp in zip(texts, spans):
+        masked, mapping, values = mask_with_values(text, mask_strategy, sp or ())
         pieces = segment(masked)
         segs = [p.text for p in pieces if p.translate]
-        prepared.append((masked, mapping, pieces, len(flat), len(segs)))
+        prepared.append((masked, mapping, list(values), pieces, len(flat), len(segs)))
         flat.extend(segs)
     there = engine.translate(flat, src, pivot)
     back = engine.translate(there, pivot, src)
 
     out = []
-    for masked, mapping, pieces, start, n in prepared:
+    for masked, mapping, values, pieces, start, n in prepared:
         pivot_text = reassemble(pieces, there[start:start + n])
         back_masked = reassemble(pieces, back[start:start + n])
+        reason = None
         try:
             check_masks(back_masked, mapping)
-        except MaskError:
-            out.append(BTResult(None, False, "mask_lost", mapping, masked,
-                                pivot_text, back_masked, n))
-            continue
-        out.append(BTResult(unmask_surface(back_masked, mapping), True, None, mapping,
-                            masked, pivot_text, back_masked, n))
+            check_value_order(back_masked, values)
+        except MaskError as err:
+            reason = "value_order_changed" if str(err).startswith("value_order") else "mask_lost"
+        text = None if reason else unmask_surface(back_masked, mapping)
+        out.append(BTResult(text, reason is None, reason, mapping, masked,
+                            pivot_text, back_masked, n, values))
     return out
 
 
