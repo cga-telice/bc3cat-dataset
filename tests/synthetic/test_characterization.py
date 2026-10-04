@@ -399,35 +399,65 @@ def test_prompt_lists_every_axis_with_lettered_options(ctx):
     assert _QUERY in prompt
     assert "B — TIPO DE TERRENO\n  a) Normal\n  b) Rocoso\n  c) Cualquiera" in prompt
     assert "D — VOLUMEN\n  a) Volumen escaso\n  b) Volumen relevante" in prompt
+    assert '"cita"' in prompt
+
+
+def _ans(**axes):
+    """Respuesta v3: {"A": {"opcion": "a", "cita": "..."}, "D": null}."""
+    out = {}
+    for k, v in axes.items():
+        out[k] = None if v is None else {"opcion": v[0], "cita": v[1]}
+    return json.dumps(out, ensure_ascii=False)
+
+
+_FULL = dict(A=("a", "1 tubos"), B=("b", "en terreno rocoso"), C=("a", "trabajo Diurno"))
 
 
 @pytest.mark.parametrize(
     "raw",
     [
-        '{"A": "a", "B": "b", "C": "a", "D": null}',
-        'Respuesta:\n```json\n{"A": "A", "B": "b", "C": "a", "D": null}\n```',
-        '{"A": "a", "B": "b", "C": "a", "D": "0"}',
-        '{"A": "a)", "B": "b", "C": "a", "D": ""}',
+        _ans(**_FULL, D=None),
+        "Respuesta:\n```json\n" + _ans(**_FULL, D=None) + "\n```",
+        _ans(**_FULL),                                   # D omitido → null
+        _ans(**_FULL).replace("}}", '}, "D": "null"}'),  # "null" como texto
+        _ans(**dict(_FULL, B=("B)", "Terreno  ROCOSO"))), # mayúsculas y espacios
     ],
 )
 def test_parse_extraction_ok(ctx, raw):
-    got = parse_extraction(raw, ctx.concepts["OEX010$"])
+    got = parse_extraction(raw, ctx.concepts["OEX010$"], _QUERY)
     assert got == {"A": 1, "B": 2, "C": 1, "D": NO_DET}
+
+
+@pytest.mark.parametrize(
+    "c_answer",
+    [
+        ("a", "turno de mañana"),  # la cita no está en la descripción
+        ("a", "trabajo"),          # la cita solo repite la etiqueta del parámetro
+        ("a", ""),                 # sin cita
+    ],
+)
+def test_choice_without_valid_evidence_is_null(ctx, c_answer):
+    raw = _ans(**dict(_FULL, C=c_answer))
+    assert parse_extraction(raw, ctx.concepts["OEX010$"], _QUERY)["C"] == NO_DET
+
+
+def test_flat_letter_without_evidence_is_null(ctx):
+    raw = json.dumps({"A": "a", "B": {"opcion": "b", "cita": "rocoso"}, "C": None, "D": None})
+    assert parse_extraction(raw, ctx.concepts["OEX010$"], _QUERY) == {"A": 0, "B": 2, "C": 0, "D": 0}
 
 
 @pytest.mark.parametrize(
     "raw",
     [
         "no sé",
-        '{"A": "a", "B": "b", "C": "a"}',              # falta un eje
-        '{"A": "a", "B": "z", "C": "a", "D": null}',   # fuera de rango
-        '{"A": "a", "B": 2, "C": "a", "D": null}',     # número en vez de letra
-        '{"A": "a", "B": "Rocoso", "C": "a", "D": null}',  # valor en vez de letra
+        _ans(**dict(_FULL, B=("z", "rocoso"))),       # fuera de rango
+        _ans(**dict(_FULL, B=("Rocoso", "rocoso"))),  # valor en vez de letra
+        json.dumps({"A": {"opcion": 1, "cita": "1 tubos"}}),  # número en vez de letra
     ],
 )
 def test_parse_extraction_rejects(ctx, raw):
     with pytest.raises(ExtractionError):
-        parse_extraction(raw, ctx.concepts["OEX010$"])
+        parse_extraction(raw, ctx.concepts["OEX010$"], _QUERY)
 
 
 class _Client:
@@ -441,7 +471,7 @@ class _Client:
 
 
 def test_llm_extractor_roundtrip(ctx):
-    client = _Client(json.dumps({"A": "a", "B": "b", "C": "a", "D": None}))
+    client = _Client(_ans(**_FULL, D=None))
     ex = LLMExtractor("phi4:latest", client)
     got = ex.extract(_QUERY, ctx.concepts["OEX010$"])
     assert got == {"A": 1, "B": 2, "C": 1, "D": 0}

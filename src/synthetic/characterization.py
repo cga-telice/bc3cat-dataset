@@ -58,7 +58,7 @@ from .bt_masking import mask_surface
 from .dose_ladder import TextoSurface
 
 NO_DET = 0
-PROTOCOL_VERSION = "2"  # v2: opciones con letras, null, regla de genéricas; G4 por grupo
+PROTOCOL_VERSION = "3"  # v3: opción con cita literal comprobada; v2: letras, null, G4 por grupo
 
 _PROMPT_PATH = Path(__file__).parent / "prompts_bt" / "characterization_extract.txt"
 _CALL_RE = re.compile(r"\$([A-Za-z]\w*)(?:\(([^)]*)\))?")
@@ -257,40 +257,77 @@ def build_extraction_prompt(text: str, concept: ConceptInfo,
                     .replace("{parameters}", "\n".join(lines)))
 
 
-_JSON_RE = re.compile(r"\{[^{}]*\}", re.S)
-_NULLS = (None, "", "0", 0)
+_NULLS = (None, "", "0", 0, "null", "none", "ninguna")
 
 
-def parse_extraction(raw: str, concept: ConceptInfo) -> dict[str, int]:
-    """Primer objeto JSON de la respuesta; una clave por eje con la letra de
-    la opción (``"b"``, ``"B"``, ``"b)"``) o ``null`` (``no_determinable``,
-    devuelto como :data:`NO_DET`). Cualquier otra cosa —un número, el valor
-    en vez de la letra, una letra fuera de rango, un eje que falta— lanza
-    :class:`ExtractionError`."""
-    m = _JSON_RE.search(raw or "")
-    if m is None:
-        raise ExtractionError("no_json")
-    try:
-        obj = json.loads(m.group(0))
-    except json.JSONDecodeError as err:
-        raise ExtractionError(f"bad_json: {err}") from err
+def _first_json_object(raw: str) -> dict:
+    dec = json.JSONDecoder()
+    for i, ch in enumerate(raw or ""):
+        if ch == "{":
+            try:
+                obj, _ = dec.raw_decode(raw, i)
+            except json.JSONDecodeError:
+                continue
+            if isinstance(obj, dict):
+                return obj
+    raise ExtractionError("no_json")
+
+
+def _is_null(v) -> bool:
+    if isinstance(v, bool):
+        return False
+    if isinstance(v, str):
+        return v.strip().lower() in _NULLS
+    return any(v == n and type(v) is type(n) for n in _NULLS)
+
+
+def _letter(axis: AxisInfo, v) -> int:
+    letter = v.strip().rstrip(").").strip().lower() if isinstance(v, str) else None
+    if not letter or len(letter) != 1 or not "a" <= letter <= "z":
+        raise ExtractionError(f"not_letter: {axis.letter}={v!r}")
+    idx = ord(letter) - 96
+    if idx > len(axis.values):
+        raise ExtractionError(f"out_of_range: {axis.letter}={v!r}")
+    return idx
+
+
+def evidence_ok(cita: object, text: str, axis: AxisInfo) -> bool:
+    """La cita está en la descripción (todas sus palabras, sin mayúsculas ni
+    acentos) y aporta alguna palabra que no sea la etiqueta del parámetro."""
+    if not isinstance(cita, str):
+        return False
+    words = _words(cita)
+    if not words or not set(words) <= set(_words(text)):
+        return False
+    return bool(set(words) - set(_words(axis.label)) - _STOP)
+
+
+def parse_extraction(raw: str, concept: ConceptInfo, text: str) -> dict[str, int]:
+    """Prompt v3. Primer objeto JSON de la respuesta; por eje,
+    ``{"opcion": <letra>, "cita": <fragmento de la descripción>}`` o ``null``.
+
+    * ``null``, ``"null"`` o un eje omitido → :data:`NO_DET`;
+    * una opción sin cita válida (:func:`evidence_ok`) → :data:`NO_DET`: elegir
+      sin poder señalar el texto que lo dice es elegir por descarte;
+    * una letra fuera de rango, un número o el valor en vez de la letra →
+      :class:`ExtractionError` (el extractor no ha entendido el formato).
+    """
+    obj = _first_json_object(raw)
     out: dict[str, int] = {}
     for axis in concept.axes:
-        if axis.letter not in obj:
-            raise ExtractionError(f"missing_axis: {axis.letter}")
-        v = obj[axis.letter]
-        if isinstance(v, bool):
-            raise ExtractionError(f"not_letter: {axis.letter}")
-        if any(v == n and type(v) is type(n) for n in _NULLS):
+        v = obj.get(axis.letter)
+        if _is_null(v):
             out[axis.letter] = NO_DET
             continue
-        letter = v.strip().rstrip(").").strip().lower() if isinstance(v, str) else None
-        if not letter or len(letter) != 1 or not "a" <= letter <= "z":
-            raise ExtractionError(f"not_letter: {axis.letter}={v!r}")
-        idx = ord(letter) - 96
-        if idx > len(axis.values):
-            raise ExtractionError(f"out_of_range: {axis.letter}={v!r}")
-        out[axis.letter] = idx
+        if isinstance(v, dict):
+            if _is_null(v.get("opcion")):
+                out[axis.letter] = NO_DET
+                continue
+            idx = _letter(axis, v.get("opcion"))
+            out[axis.letter] = idx if evidence_ok(v.get("cita"), text, axis) else NO_DET
+            continue
+        _letter(axis, v)  # valida el formato; sin cita no cuenta
+        out[axis.letter] = NO_DET
     return out
 
 
@@ -333,7 +370,7 @@ class LLMExtractor:
         return build_extraction_prompt(text, concept, self._template)
 
     def extract(self, text: str, concept: ConceptInfo) -> dict[str, int]:
-        return parse_extraction(self._client.complete(self.prompt(text, concept)), concept)
+        return parse_extraction(self._client.complete(self.prompt(text, concept)), concept, text)
 
 
 # ---------------------------------------------------------------------------

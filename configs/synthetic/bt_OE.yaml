@@ -10,8 +10,8 @@ menus_dir: data/synthetic/menus_OE
 extractors: [phi4:latest, qwen2.5:14b]
 llm_base_url: http://localhost:11434/v1
 llm_timeout: 300
-# JSON estricto (response_format json_object) y sin explicaciones
-llm_max_tokens: 128
+# JSON estricto (response_format json_object); v3 lleva citas, de ahí 384
+llm_max_tokens: 384
 cache_root: data/synthetic/llm_cache
 
 calibration:
