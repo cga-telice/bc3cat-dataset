@@ -499,3 +499,16 @@ def test_json_mode_client_body():
     assert body["max_tokens"] == 96
     assert body["temperature"] == 0.0
     assert body["messages"] == [{"role": "user", "content": "hola"}]
+
+
+# --- modo estructural (rediseño tras CP2: valores enmascarados, sin LLM) ---
+
+def test_structural_mode_skips_extraction(ctx):
+    r = ctx.check(_QUERY, GOLD, extractors=())
+    assert r.ok and r.extractions == {} and r.axes == {}
+
+
+def test_structural_mode_keeps_g1_g3_g6(ctx):
+    assert ctx.check(_QUERY.replace("HE-20", "HM-30"), GOLD, extractors=()).gate == "G1"
+    assert ctx.check(_render(0, 1, 1), GOLD, extractors=()).gate == "G3"
+    assert ctx.check(GOLD_TEXT, GOLD, extractors=()).gate == "G6"

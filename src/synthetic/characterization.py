@@ -636,7 +636,9 @@ class CharacterizationContext:
         res.decoder = lexical_decode(query_text, concept, self.extra_surfaces)
         gold_idx = {a: ord(leaf.options[a]) - 96 for a in concept.rendered}
         first_fail = None
-        for a in concept.rendered:
+        # Sin extractores (modo estructural, rediseño tras CP2): los valores de
+        # eje van enmascarados en la BT y salen literalmente iguales; G2 no aplica.
+        for a in (concept.rendered if extractors else ()):
             allowed = self.allowed(gold_item_key, a)
             answers = [e[a] for e in extractions.values()]
             if all(v in allowed for v in answers):
