@@ -1,0 +1,30 @@
+# BT sobre STACKED (opción A). Decisiones de César en CP1 (2026-10-04):
+# valores por defecto del handoff §3, siglas enmascaradas.
+seed: 42
+handoff_dir: data/synthetic/handoff_OE
+stage_json: data/synthetic/intermediate/OE_2026_stage.json
+stacked_sidecar: data/synthetic/processed_OE_ablation_stacked/BC3CAT_Syn_modifications.jsonl
+menus_dir: data/synthetic/menus_OE
+
+# Extractores G2: en secuencia, nunca a la vez en GPU.
+extractors: [phi4:latest, qwen2.5:14b]
+llm_base_url: http://localhost:11434/v1
+llm_timeout: 300
+cache_root: data/synthetic/llm_cache
+
+calibration:
+  per_concept: 8
+  thresholds: {positives: 0.995, discrimination: 0.99, ablation: 0.99, drift: 1.0, stability: 1.0}
+  report: docs/synthetic/bt/OE_characterization_calibration.md
+  output_json: data/synthetic/bt_OE/OE_characterization_calibration.json
+
+bt:
+  pivot: en
+  engine: marian
+  model_es_en: Helsinki-NLP/opus-mt-es-en
+  revision_es_en: c96e2c5399ebfae4fc43d9669556b9afa74bb69d
+  model_en_es: Helsinki-NLP/opus-mt-en-es
+  revision_en_es: 5bc4493d463cf000c1f0b50f8d56886a392ed4ab
+  license: apache-2.0
+  decoding: {num_beams: 4, do_sample: false, max_new_tokens: 512}
+  batch_size: 16
