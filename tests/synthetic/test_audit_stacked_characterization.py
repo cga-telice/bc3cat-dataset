@@ -56,3 +56,18 @@ def test_exclusion_payload_shape():
     assert payload["item_keys"] == ["q0", "q2"]
     assert payload["details"]["q2"] == {"gate": "G2", "axis": "B", "reason": "wrong_value",
                                         "cause": ["paraphrase"]}
+
+
+def test_drift_list_groups_identical_rewrites():
+    recs = {
+        "q1": [{"type": "paraphrase", "layer": "text_variable", "var": "I",
+                "original": "adosada o superficial", "new": "empotrada o a ras"}],
+        "q2": [{"type": "paraphrase", "layer": "text_variable", "var": "I",
+                "original": "adosada o superficial", "new": "empotrada o a ras"},
+               {"type": "synonym_label", "layer": "param_value", "param": "C",
+                "original": "Diurno", "new": "De día"}],
+    }
+    out = audit.drift_list(recs)
+    assert out == [{"type": "paraphrase", "layer": "text_variable",
+                    "original": "adosada o superficial", "new": "empotrada o a ras",
+                    "queries": ["q1", "q2"]}]
