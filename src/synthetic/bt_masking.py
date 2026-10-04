@@ -11,7 +11,8 @@ restaura literalmente después:
 * ``S`` — sigla en mayúsculas (``PVC``, ``ADIF``, ``E.T.``). Decisión de
   César en CP1: las siglas se protegen, no solo se avisan.
 
-Estrategias: ``sentinel`` (``[[Q1]]``), ``xml`` (``<x1/>``) y ``none``.
+Estrategias: ``sentinel`` (``[[Q1]]``), ``xml`` (``<x1/>``), ``bracket`` (``[1]``;
+Marian los copia tal cual, ver ``OE_bt_mask_experiment.md``) y ``none``.
 El ``mapping`` va de marcador literal a texto original, así que
 :func:`unmask_surface` y :func:`check_masks` no necesitan saber la
 estrategia.
@@ -30,7 +31,7 @@ from typing import Sequence
 
 from .slot_extractor import _UNIT_TOKENS
 
-STRATEGIES = ("sentinel", "xml", "none")
+STRATEGIES = ("sentinel", "xml", "bracket", "none")
 
 _NUM = r"\d+(?:[.,]\d+)?"
 _OP = r"(?:<=|>=|<|>|≤|≥)"
@@ -48,7 +49,7 @@ _ACRONYM = rf"(?<![\w$.])(?:[{_CAPS}]\.){{2,}}|(?<![\w$])[{_CAPS}]{{2,}}(?!\w)"
 _SCAN_RE = re.compile(rf"(?P<B>{_BAND})|(?P<Q>{_QTY})|(?P<S>{_ACRONYM})")
 _UNIT_PEEK_RE = re.compile(r"\s+([^\s\d\[\]$<>()«»\",;:]+)")
 
-MARKER_RE = re.compile(r"\[\[[BQSV]\d+\]\]|<x\d+/>")
+MARKER_RE = re.compile(r"\[\[[BQSV]\d+\]\]|<x\d+/>|\[\d+\]")
 
 
 class MaskError(ValueError):
@@ -109,6 +110,8 @@ def _mask(text: str, strategy: str, spans) -> tuple[str, dict[str, str], list[st
         counters[kind] += 1
         if strategy == "sentinel":
             marker = f"[[{kind}{counters[kind]}]]"
+        elif strategy == "bracket":
+            marker = f"[{len(mapping) + 1}]"
         else:
             marker = f"<x{len(mapping) + 1}/>"
         mapping[marker] = literal

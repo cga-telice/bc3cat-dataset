@@ -6,8 +6,9 @@
 |---|---:|---:|---:|---:|---|
 | `sentinel` | 82 | 0 | 0 | 16 | {'BT': 82, 'G1': 2} |
 | `xml` | 7 | 0 | 0 | 93 | {'BT': 7} |
+| `bracket` | 1 | 0 | 0 | 98 | {'BT': 1, 'G1': 1} |
 
-**Elegida: `xml`.**
+**Elegida: `bracket`.**
 
 ## Ejemplos de rechazo (texto enmascarado tras la BT)
 
@@ -23,3 +24,6 @@
   - BT `OEB030hacac_syn_a428956d6620` mask_lost: Instalación de conducción integrada de <x1/> conductos de polietileno sin halógenos de <x2/> con diámetro nominal <x3/>, incluyendo zanja y relleno, y compactación, suministro y colocación de conductos no vibratorios y hormigón, ensayos de conductos, transporte y eliminación de productos al lugar de
   - BT `OEB040ifcbc_syn_73b70454d46a` mask_lost: Configuración de la conducción subterránea con conductos de polietileno <x1/> que no contengan halógenos de <x2/> y diámetro <x3/>, incluido el llenado y compactación del corte, suministro y montaje de tubos y hormigón tipo <x5/> que no vibran, verificación de conductos, transferencia y eliminación 
   - BT `OEB040jcbab_syn_52690ff9f67c` mask_lost: Instalación de conducción enterrada con conductos de polietileno <x1/> sin halógenos de diámetro <x2/> mm <x3/>, incluido el llenado y compactación <x4/> de la zanja. Los conductos y el tipo de hormigón < x5/> se suministrarán y montarán sin vibración, los conductos se someterán a ensayo, transporta
+- `bracket`:
+  - BT `OEC030ceab_syn_96c0191a0058` mask_lost: Se presenta el arqueo de registro compuesto de tipo [2]-[3] [4] [5]. Trabajo incluido: [6]. Se especifica la banda de mantenimiento: [7]. Se dan detalles de las condiciones de ejecución: [8].
+  - G1 `OEC120ecca_syn_d3e543783f1f` missing: missing=['PRFV'] extra=[]: Suministro y colocación de un archivo de registro de modelo compuesto[1] [2] en vigor Ejecución: [3] Área de intervención: [4] Circunstancias de funcionamiento: [5]

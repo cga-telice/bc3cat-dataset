@@ -23,7 +23,7 @@ from synthetic.bt_masking import (
 _REPO = Path(__file__).resolve().parents[2]
 _HANDOFF = _REPO / "data" / "synthetic" / "handoff_OE"
 
-_STRATEGIES = ("sentinel", "xml", "none")
+_STRATEGIES = ("sentinel", "xml", "bracket", "none")
 
 
 def _literals(text: str, strategy: str = "sentinel") -> list[str]:
@@ -256,3 +256,15 @@ def test_value_order_check():
     check_value_order("[[S1]] [[V1]] [[Q1]] [[V2]]", values)  # otros marcadores pueden moverse
     with pytest.raises(MaskError, match="value_order_changed"):
         check_value_order("[[V2]] y [[V1]]", values)
+
+
+def test_bracket_markers_are_numbered_in_text_order():
+    spans = [_span(_VTEXT, "Turno de día 2")]
+    masked, mapping, values = mask_with_values(_VTEXT, "bracket", spans)
+    assert masked == "Canaleta [1] de [2]. Trabajo: [3]. Banda: [4]."
+    assert values == ["[3]"]
+    assert unmask_surface("[3] y [1] [2] [4]", mapping) == "Turno de día 2 y PVC 30x15 mm i < 3 horas"
+
+
+def test_marker_re_matches_bracket_but_not_sentinel_inner():
+    assert MARKER_RE.findall("[12] y [[Q1]]") == ["[12]", "[[Q1]]"]
