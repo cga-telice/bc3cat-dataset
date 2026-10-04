@@ -30,3 +30,12 @@ bt:
   license: apache-2.0
   decoding: {num_beams: 4, do_sample: false, max_new_tokens: 512}
   batch_size: 16
+  # Estrategia de máscara: la decide el miniexperimento de T4 (bt_mask_experiment.py).
+  mask_strategy: xml
+  mask_strategies: [sentinel, xml, none]
+  mask_experiment_size: 100
+  pilot_size: 300
+  audit_bt_orig: 50
+  stacked_p_keys: data/synthetic/bt_OE/OE_stacked_P_keys.json
+  cache_dir: data/synthetic/bt_OE/cache
+  out_dir: data/synthetic/bt_OE
