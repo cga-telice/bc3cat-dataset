@@ -100,3 +100,23 @@ def test_drift_cases_from_visible_records(ctx):
 )
 def test_is_drift(original, new, drift):
     assert cal.is_drift({"layer": "text_variable", "original": original, "new": new}) is drift
+
+
+def test_summarize_counts_extractor_errors_as_not_accepted(ctx):
+    rows = [{"case": {"kind": "ablation", "gold": "OEX010abaa", "axis": "C"},
+             "answers": {"x1": {"error": "no_json"}, "x2": {"A": 1, "B": 2, "C": 1, "D": 0}}}]
+    s = cal.summarize(ctx, rows)
+    assert s["ablation"]["not_accepted"] == 1 and s["ablation"].get("ok", 0) == 0
+
+
+def test_ablation_must_be_blind_to_siblings():
+    # la hermana Nocturno dice además «turno de noche»: quitar el valor del
+    # eje C no lo oculta, así que esa ablación no vale
+    corpus = _corpus()
+    for r in corpus:
+        if r["item_key"][8] == "b":  # C = Nocturno
+            r["text"] += " en turno de noche"
+    ctx = CharacterizationContext.load(_stage(), corpus, d031_groups=_groups(corpus))
+    cases = cal.build_cases(ctx, seed=42, per_concept=24, stacked=[], sidecar={})
+    assert not [c for c in cases if c.kind == "ablation" and c.axis == "C"]
+    assert [c for c in cases if c.kind == "ablation" and c.axis == "A"]

@@ -321,8 +321,16 @@ def test_g3_equality_is_case_and_space_insensitive(ctx):
 
 # --- G4 -------------------------------------------------------------------
 
-def test_g4_value_on_unrendered_axis_rejects(ctx):
-    r = ctx.check(_QUERY, GOLD, extractors=_pair(_gold_answer(D=1)))
+def test_g4_unrendered_axis_accepts_group_value(ctx):
+    # D no se renderiza: las hojas que solo difieren en D comparten TEXTO
+    # (grupo D-031), así que cualquier valor del grupo no añade información
+    assert ctx.check(_QUERY, GOLD, extractors=_pair(_gold_answer(D=2))).ok
+
+
+def test_g4_value_outside_gold_group_rejects():
+    ctx = CharacterizationContext.load(_stage(), _corpus())  # sin grupos D-031
+    assert ctx.check(_QUERY, GOLD, extractors=_pair(_gold_answer(D=1))).ok  # = gold
+    r = ctx.check(_QUERY, GOLD, extractors=_pair(_gold_answer(D=2)))
     assert (r.gate, r.axis, r.reason) == ("G4", "D", "added_axis_value")
 
 
@@ -386,33 +394,35 @@ def test_g6_duplicate_of_delivered_rejects(ctx):
 
 # --- extractor LLM, prompt y parseo ---------------------------------------
 
-def test_prompt_lists_every_axis_with_numbered_options(ctx):
+def test_prompt_lists_every_axis_with_lettered_options(ctx):
     prompt = build_extraction_prompt(_QUERY, ctx.concepts["OEX010$"])
     assert _QUERY in prompt
-    assert "`B` TIPO DE TERRENO: 1) Normal · 2) Rocoso · 3) Cualquiera" in prompt
-    assert "`D` VOLUMEN: 1) Volumen escaso · 2) Volumen relevante" in prompt
+    assert "B — TIPO DE TERRENO\n  a) Normal\n  b) Rocoso\n  c) Cualquiera" in prompt
+    assert "D — VOLUMEN\n  a) Volumen escaso\n  b) Volumen relevante" in prompt
 
 
 @pytest.mark.parametrize(
     "raw",
     [
-        '{"A": 1, "B": 2, "C": 1, "D": 0}',
-        'Respuesta:\n```json\n{"A": 1, "B": 2, "C": 1, "D": 0}\n```',
-        '{"A": "1", "B": 2, "C": 1, "D": 0}',
+        '{"A": "a", "B": "b", "C": "a", "D": null}',
+        'Respuesta:\n```json\n{"A": "A", "B": "b", "C": "a", "D": null}\n```',
+        '{"A": "a", "B": "b", "C": "a", "D": "0"}',
+        '{"A": "a)", "B": "b", "C": "a", "D": ""}',
     ],
 )
 def test_parse_extraction_ok(ctx, raw):
     got = parse_extraction(raw, ctx.concepts["OEX010$"])
-    assert got == {"A": 1, "B": 2, "C": 1, "D": 0}
+    assert got == {"A": 1, "B": 2, "C": 1, "D": NO_DET}
 
 
 @pytest.mark.parametrize(
     "raw",
     [
         "no sé",
-        '{"A": 1, "B": 2, "C": 1}',             # falta un eje
-        '{"A": 1, "B": 9, "C": 1, "D": 0}',     # fuera de rango
-        '{"A": 1, "B": "dos", "C": 1, "D": 0}',  # no numérico
+        '{"A": "a", "B": "b", "C": "a"}',              # falta un eje
+        '{"A": "a", "B": "z", "C": "a", "D": null}',   # fuera de rango
+        '{"A": "a", "B": 2, "C": "a", "D": null}',     # número en vez de letra
+        '{"A": "a", "B": "Rocoso", "C": "a", "D": null}',  # valor en vez de letra
     ],
 )
 def test_parse_extraction_rejects(ctx, raw):
@@ -431,7 +441,7 @@ class _Client:
 
 
 def test_llm_extractor_roundtrip(ctx):
-    client = _Client(json.dumps({"A": 1, "B": 2, "C": 1, "D": 0}))
+    client = _Client(json.dumps({"A": "a", "B": "b", "C": "a", "D": None}))
     ex = LLMExtractor("phi4:latest", client)
     got = ex.extract(_QUERY, ctx.concepts["OEX010$"])
     assert got == {"A": 1, "B": 2, "C": 1, "D": 0}

@@ -1,4 +1,11 @@
-Eres un técnico de presupuestos de obra ferroviaria. Lee la descripción y, para cada parámetro, elige el número de la opción que la descripción indica. Si la descripción no permite determinarlo, responde 0. No elijas por descarte: elige solo lo que el texto dice o implica sin ambigüedad. Responde solo con JSON {"<eje>": <número>, ...}, con una clave por parámetro.
+Eres un técnico de presupuestos de obra ferroviaria. Lee la descripción y, para cada parámetro, indica la letra de la opción que la descripción dice o implica sin ambigüedad.
+
+Reglas:
+- Si la descripción no menciona el parámetro, o lo deja vacío, responde null.
+- Las opciones genéricas («Cualquier…», «No necesita…», «Sin…») solo se eligen si la descripción lo dice expresamente. Un parámetro ausente o vacío es null, no una opción genérica.
+- No elijas por descarte ni por lo más habitual.
+- Responde con la letra de la opción, no con su valor.
+- Responde solo con un objeto JSON con exactamente una clave por parámetro, por ejemplo {"A": "b", "B": null}.
 
 Descripción: «{description}»
 

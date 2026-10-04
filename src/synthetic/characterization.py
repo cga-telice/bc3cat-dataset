@@ -25,7 +25,10 @@ Puertas, en orden; la primera que falla rechaza con ``gate``/``axis``/
 * **G3** no confundibilidad — la consulta no es el TEXTO de ninguna hoja
   fuera del grupo del gold (sin mayúsculas ni espacios), y Guard #1
   (:func:`cross_concept_guard.classify`) no da colisión introducida;
-* **G4** sin añadidos — 0 en los ejes fuera de R(C). La señal
+* **G4** sin añadidos — en los ejes fuera de R(C), ``no_determinable`` o un
+  valor del grupo D-031 del gold (iteración 2: un valor que el gold comparte
+  con sus hermanas de TEXTO idéntico no es información nueva; en OEG010 el
+  eje F repite lo que ya dice el eje C). La señal
   ``meaning_drift_flag.analyze`` se guarda para ordenar la auditoría;
 * **G5** supervivencia — solo informa: tipos cuyos registros visibles
   sobreviven o se revierten;
@@ -55,7 +58,7 @@ from .bt_masking import mask_surface
 from .dose_ladder import TextoSurface
 
 NO_DET = 0
-PROTOCOL_VERSION = "1"
+PROTOCOL_VERSION = "2"  # v2: opciones con letras, null, regla de genéricas; G4 por grupo
 
 _PROMPT_PATH = Path(__file__).parent / "prompts_bt" / "characterization_extract.txt"
 _CALL_RE = re.compile(r"\$([A-Za-z]\w*)(?:\(([^)]*)\))?")
@@ -242,23 +245,28 @@ def _load_prompt_template() -> str:
 
 def build_extraction_prompt(text: str, concept: ConceptInfo,
                             template: Optional[str] = None) -> str:
-    """Prompt del extractor: la descripción y, por eje, la lista numerada de
-    valores originales. No recibe el gold ni la clave de la hoja."""
+    """Prompt del extractor (v2): la descripción y, por eje, los valores
+    originales con letras, uno por línea (con números, «d4» o «Nº tubos: 2»
+    se confundían con el número de opción). No recibe el gold ni la clave."""
     template = template if template is not None else _load_prompt_template()
     lines = []
     for axis in concept.axes:
-        opts = " · ".join(f"{i}) {v}" for i, v in enumerate(axis.values, 1))
-        lines.append(f"`{axis.letter}` {axis.label}: {opts}")
+        lines.append(f"{axis.letter} — {axis.label}")
+        lines.extend(f"  {chr(96 + i)}) {v}" for i, v in enumerate(axis.values, 1))
     return (template.replace("{description}", text)
                     .replace("{parameters}", "\n".join(lines)))
 
 
 _JSON_RE = re.compile(r"\{[^{}]*\}", re.S)
+_NULLS = (None, "", "0", 0)
 
 
 def parse_extraction(raw: str, concept: ConceptInfo) -> dict[str, int]:
-    """Primer objeto JSON de la respuesta; una clave por eje, entero en
-    ``0..len(valores)``. Cualquier otra cosa lanza :class:`ExtractionError`."""
+    """Primer objeto JSON de la respuesta; una clave por eje con la letra de
+    la opción (``"b"``, ``"B"``, ``"b)"``) o ``null`` (``no_determinable``,
+    devuelto como :data:`NO_DET`). Cualquier otra cosa —un número, el valor
+    en vez de la letra, una letra fuera de rango, un eje que falta— lanza
+    :class:`ExtractionError`."""
     m = _JSON_RE.search(raw or "")
     if m is None:
         raise ExtractionError("no_json")
@@ -272,14 +280,17 @@ def parse_extraction(raw: str, concept: ConceptInfo) -> dict[str, int]:
             raise ExtractionError(f"missing_axis: {axis.letter}")
         v = obj[axis.letter]
         if isinstance(v, bool):
-            raise ExtractionError(f"not_int: {axis.letter}")
-        if isinstance(v, str) and v.strip().isdigit():
-            v = int(v.strip())
-        if not isinstance(v, int):
-            raise ExtractionError(f"not_int: {axis.letter}")
-        if not 0 <= v <= len(axis.values):
-            raise ExtractionError(f"out_of_range: {axis.letter}={v}")
-        out[axis.letter] = v
+            raise ExtractionError(f"not_letter: {axis.letter}")
+        if any(v == n and type(v) is type(n) for n in _NULLS):
+            out[axis.letter] = NO_DET
+            continue
+        letter = v.strip().rstrip(").").strip().lower() if isinstance(v, str) else None
+        if not letter or len(letter) != 1 or not "a" <= letter <= "z":
+            raise ExtractionError(f"not_letter: {axis.letter}={v!r}")
+        idx = ord(letter) - 96
+        if idx > len(axis.values):
+            raise ExtractionError(f"out_of_range: {axis.letter}={v!r}")
+        out[axis.letter] = idx
     return out
 
 
@@ -617,7 +628,8 @@ class CharacterizationContext:
         # G4
         res.drift = _drift(source_text if source_text is not None else leaf.text, query_text)
         for a in concept.not_rendered:
-            if any(e[a] != NO_DET for e in extractions.values()):
+            allowed = self.allowed(gold_item_key, a) | {NO_DET}
+            if any(e[a] not in allowed for e in extractions.values()):
                 return self._fail(res, "G4", a, "added_axis_value")
 
         # G5 (solo informa)

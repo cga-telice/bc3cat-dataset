@@ -99,6 +99,15 @@ def ablate(text: str, value: str, expected: int) -> Optional[str]:
     return out.strip()
 
 
+def _ablate_leaf(concept, leaf, axis: str, expected: int) -> Optional[str]:
+    value = concept.axis(axis).values[ord(leaf.options[axis]) - 97]
+    return ablate(leaf.text, value, expected)
+
+
+def _only_differs_in(a, b, axis: str) -> bool:
+    return all((a.options[x] == b.options[x]) != (x == axis) for x in a.options)
+
+
 @dataclass(frozen=True)
 class Case:
     kind: str                    # positive | discrimination | ablation | drift
@@ -149,13 +158,20 @@ def build_cases(ctx: CharacterizationContext, *, seed: int, per_concept: int,
                 cases.append(Case("discrimination", ctx.leaves[other].text, other,
                                   axis=axis, base=key, distance=d))
 
-            # ablación: un eje con placeholder directo, en orden rotado
+            # ablación: un eje con placeholder directo, en orden rotado. Solo
+            # vale si queda ciega: las hermanas que difieren únicamente en ese
+            # eje dan el mismo texto ablacionado (si no, el valor sigue
+            # deducible por otra parte del TEXTO y el caso no mide nada).
             if direct:
                 start = _rng(seed, key).randrange(len(direct))
                 for axis in direct[start:] + direct[:start]:
-                    value = concept.axis(axis).values[ord(leaf.options[axis]) - 97]
-                    text = ablate(leaf.text, value, tokens[axis])
-                    if text is not None:
+                    text = _ablate_leaf(concept, leaf, axis, tokens[axis])
+                    if text is None:
+                        continue
+                    siblings = [ctx.leaves[o] for o in keys
+                                if o != key and _only_differs_in(leaf, ctx.leaves[o], axis)]
+                    if siblings and all(_ablate_leaf(concept, s, axis, tokens[axis]) == text
+                                        for s in siblings):
                         cases.append(Case("ablation", text, key, axis=axis))
                         break
 
@@ -234,7 +250,8 @@ def summarize(ctx, rows) -> dict:
                     failures[kind].append([c["gold"], a, answers])
             for a in concept.not_rendered:
                 nonr["n"] += 1
-                nonr["ok"] += not bad and all(ans[a] == NO_DET for ans in answers.values())
+                ok_nr = ctx.allowed(c["gold"], a) | {NO_DET}
+                nonr["ok"] += not bad and all(ans[a] in ok_nr for ans in answers.values())
         elif kind == "discrimination":
             a = c["axis"]
             allowed = ctx.allowed(c["gold"], a)
@@ -249,7 +266,7 @@ def summarize(ctx, rows) -> dict:
             gold = _gold_idx(ctx, c["gold"], a)
             s[kind]["n"] += 1
             both_zero = not bad and all(ans[a] == NO_DET for ans in answers.values())
-            not_accepted = bad or not all(ans[a] == gold for ans in answers.values())
+            not_accepted = bool(bad) or not all(ans[a] == gold for ans in answers.values())
             s[kind]["ok"] += both_zero
             s[kind]["not_accepted"] += not_accepted
             for name, ans in answers.items():
@@ -348,7 +365,7 @@ def write_report(cfg, summary, cases, path: Path, stability: bool, digest: str) 
         "",
         "Señales secundarias:",
         "",
-        f"- Ejes fuera de R(C) a 0 en los positivos (los dos extractores): "
+        f"- Ejes fuera de R(C) sin valor ajeno al grupo D-031 del gold, en los positivos (los dos extractores): "
         f"{s['non_rendered_zero'].get('ok', 0)}/{s['non_rendered_zero'].get('n', 0)} "
         f"({_pct(s['non_rendered_zero'].get('ok', 0), s['non_rendered_zero'].get('n', 0))}).",
         f"- Ablación: el par no acepta el valor gold en "
