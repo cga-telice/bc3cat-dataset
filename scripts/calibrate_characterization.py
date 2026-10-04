@@ -297,7 +297,8 @@ def cache_dir(cfg: dict, model: str) -> Path:
 
 
 def make_extractor(cfg: dict, model: str, replay: bool):
-    from synthetic.llm_client import HttpLLMClient, LLMConfig, ReplayClient
+    from synthetic.characterization import JsonModeClient
+    from synthetic.llm_client import LLMConfig, ReplayClient
     from synthetic.menu_runner import ResumingRecordingClient
 
     store = cache_dir(cfg, model)
@@ -310,7 +311,8 @@ def make_extractor(cfg: dict, model: str, replay: bool):
                          max_retries=base.max_retries, backoff_base=base.backoff_base,
                          temperature=0.0)
         store.mkdir(parents=True, exist_ok=True)
-        client = ResumingRecordingClient(HttpLLMClient(conf), store_dir=store)
+        client = ResumingRecordingClient(
+            JsonModeClient(conf, max_tokens=int(cfg.get("llm_max_tokens", 128))), store_dir=store)
     return LLMExtractor(model, client)
 
 

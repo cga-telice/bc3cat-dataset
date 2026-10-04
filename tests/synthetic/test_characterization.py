@@ -447,3 +447,15 @@ def test_lexical_decode_uses_extra_surfaces(ctx):
     assert got["C"] == (1,)
     assert got["A"] == (2,)
     assert got["D"] == ()
+
+
+def test_json_mode_client_body():
+    from synthetic.characterization import JsonModeClient
+    from synthetic.llm_client import LLMConfig
+
+    conf = LLMConfig(base_url="http://x/v1", model="phi4:latest", api_key_env="NOPE")
+    body = json.loads(JsonModeClient(conf, max_tokens=96)._build_body("hola"))
+    assert body["response_format"] == {"type": "json_object"}
+    assert body["max_tokens"] == 96
+    assert body["temperature"] == 0.0
+    assert body["messages"] == [{"role": "user", "content": "hola"}]

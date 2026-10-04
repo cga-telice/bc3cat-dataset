@@ -283,6 +283,32 @@ def parse_extraction(raw: str, concept: ConceptInfo) -> dict[str, int]:
     return out
 
 
+def _json_mode_client_cls():
+    from .llm_client import HttpLLMClient
+
+    class _JsonModeClient(HttpLLMClient):
+        """``HttpLLMClient`` que pide JSON estricto (``response_format``
+        json_object, soportado por Ollama) y corta en ``max_tokens``: el
+        extractor no escribe explicaciones. Subclase por encima de la
+        costura; ``llm_client`` no se modifica."""
+
+        def __init__(self, config_, *, max_tokens: int = 128, sender=None):
+            super().__init__(config_, sender=sender)
+            self.max_tokens = max_tokens
+
+        def _build_body(self, prompt: str) -> bytes:
+            payload = json.loads(super()._build_body(prompt))
+            payload["response_format"] = {"type": "json_object"}
+            payload["max_tokens"] = self.max_tokens
+            return json.dumps(payload).encode("utf-8")
+
+    return _JsonModeClient
+
+
+def JsonModeClient(config_, *, max_tokens: int = 128, sender=None):  # noqa: N802
+    return _json_mode_client_cls()(config_, max_tokens=max_tokens, sender=sender)
+
+
 class LLMExtractor:
     """Extractor sobre cualquier cliente con ``complete(prompt) -> str``
     (``RecordingClient``/``ReplayClient`` de :mod:`llm_client`)."""
