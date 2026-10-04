@@ -1,0 +1,17 @@
+# Back-translation sobre STACKED (syn/back-translation). Entorno aparte: .venv-bt
+# python -m venv .venv-bt
+# .venv-bt/Scripts/python -m pip install torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+# .venv-bt/Scripts/python -m pip install -r requirements-bt.txt
+torch==2.6.0
+transformers==4.48.2
+tokenizers==0.21.4
+huggingface_hub==0.36.2
+safetensors==0.8.0
+sentencepiece==0.2.2
+sacremoses==0.2.0
+rank-bm25==0.2.2
+PyYAML==6.0.3
+numpy==2.5.3
+pandas
+pyarrow
+pytest
