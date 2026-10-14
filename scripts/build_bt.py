@@ -646,6 +646,9 @@ def main(argv=None) -> int:
     else:
         audit.write_atomic(docs / "OE_bt_qa.md",
                            report_markdown("QA de la BT sobre STACKED-P (OE)", cfg, m, rows, provenance))
+        audit.write_atomic(docs / "OE_bt_qa_values.md",
+                           report_markdown("QA de la BT de prosa + valores sobre STACKED-P (OE)",
+                                           cfg, m, rows, provenance, pair=("stacked_btv", "bt_origv")))
     if audit.sha256_file(handoff / "OE_stacked_texto.json") != audit.STACKED_SHA256:
         raise SystemExit("OE_stacked_texto.json cambió durante la corrida")
     print(json.dumps(provenance["counts"]))
