@@ -202,18 +202,29 @@ class CachedEngine:
 # OPUS-MT (MarianMT)
 # ---------------------------------------------------------------------------
 
+def max_new_tokens(input_lens: Sequence[int], cap: int, ratio: Optional[float]) -> int:
+    """Tope de generación de un lote. Con ``ratio``, proporcional a la entrada
+    más larga (+16): una salida degenerada que se repite hasta el tope del
+    modelo (512) tarda minutos por lote; los valores son cortos."""
+    if ratio is None:
+        return cap
+    return min(cap, int(ratio * max(input_lens, default=0)) + 16)
+
+
 class MarianEngine:
     """OPUS-MT con modelo y revisión fijados, beam fijo, sin muestreo y lotes
     de tamaño fijo en el orden de entrada."""
 
     def __init__(self, models: Mapping[tuple, tuple[str, str]], *, num_beams: int = 4,
                  max_new_tokens: int = 512, batch_size: int = 16,
-                 device: Optional[str] = None, license: str = "apache-2.0"):
+                 device: Optional[str] = None, license: str = "apache-2.0",
+                 length_ratio: Optional[float] = None):
         self.models = dict(models)  # (src, tgt) -> (model_id, revision)
         self.num_beams = num_beams
         self.max_new_tokens = max_new_tokens
         self.batch_size = batch_size
         self.device = device
+        self.length_ratio = length_ratio
         self._loaded: dict[tuple, tuple] = {}
         self.signature = {
             "engine": "marian",
@@ -221,6 +232,8 @@ class MarianEngine:
             "num_beams": num_beams, "do_sample": False, "max_new_tokens": max_new_tokens,
             "license": license,
         }
+        if length_ratio is not None:  # solo entra en la firma si se usa (caché de la prosa intacta)
+            self.signature["length_ratio"] = length_ratio
 
     def _get(self, src: str, tgt: str):
         if (src, tgt) not in self._loaded:
@@ -244,7 +257,9 @@ class MarianEngine:
             batch = list(segments[i:i + self.batch_size])
             enc = tok(batch, return_tensors="pt", padding=True, truncation=True).to(device)
             with torch.no_grad():
+                limit = max_new_tokens([int(x) for x in enc["attention_mask"].sum(dim=1)],
+                                       self.max_new_tokens, self.length_ratio)
                 gen = model.generate(**enc, num_beams=self.num_beams, do_sample=False,
-                                     max_new_tokens=self.max_new_tokens)
+                                     max_new_tokens=limit)
             out.extend(tok.batch_decode(gen, skip_special_tokens=True))
         return out

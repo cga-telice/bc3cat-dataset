@@ -174,3 +174,17 @@ def test_spans_are_optional_per_text():
                               spans=[_spans(_VT, "Volumen escaso"), None])
     assert [r.ok for r in out] == [True, True]
     assert len(out[0].values) == 1 and out[1].values == []
+
+
+# --- tope de longitud proporcional (valores cortos) ------------------------
+
+from synthetic.back_translation import max_new_tokens  # noqa: E402
+
+
+def test_max_new_tokens_fixed_without_ratio():
+    assert max_new_tokens([5, 40], cap=512, ratio=None) == 512
+
+
+def test_max_new_tokens_proportional_and_capped():
+    assert max_new_tokens([5, 40], cap=512, ratio=2.0) == 2 * 40 + 16
+    assert max_new_tokens([400], cap=512, ratio=2.0) == 512

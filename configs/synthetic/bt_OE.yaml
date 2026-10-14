@@ -39,3 +39,22 @@ bt:
   stacked_p_keys: data/synthetic/bt_OE/OE_stacked_P_keys.json
   cache_dir: data/synthetic/bt_OE/cache
   out_dir: data/synthetic/bt_OE
+
+# BT de valores (vuelta tras CP4): ES→EN→X→ES por valor, tabla cerrada revisada por César.
+bt_values:
+  pivots: [fr, it, de]
+  models:
+    es-en: [Helsinki-NLP/opus-mt-es-en, c96e2c5399ebfae4fc43d9669556b9afa74bb69d]
+    en-fr: [Helsinki-NLP/opus-mt-en-fr, dd7f6540a7a48a7f4db59e5c0b9c42c8eea67f18]
+    fr-es: [Helsinki-NLP/opus-mt-fr-es, f4263aff464dbfb2650a4b1793baf6f82b91ae91]
+    en-it: [Helsinki-NLP/opus-mt-en-it, be5a254d936f1a8c8da080406ca582a6615e6658]
+    it-es: [Helsinki-NLP/opus-mt-it-es, bf60834fa2d3999a6bedf4f3ea27bd9e4daa6407]
+    en-de: [Helsinki-NLP/opus-mt-en-de, 6183067f769a302e3861815543b9f312c71b0ca4]
+    de-es: [Helsinki-NLP/opus-mt-de-es, 0c0187af74abb222c9d53a672e41dec7dc867b3f]
+  licenses: {en-de: cc-by-4.0, default: apache-2.0}
+  cache_dir: data/synthetic/bt_OE/cache_values
+  table: data/synthetic/bt_OE/OE_bt_value_candidates.jsonl
+  menu: docs/synthetic/bt/OE_bt_value_menu.md
+  label_probability: 0.5
+  # tope de generación = 2 × tokens de entrada + 16 (las salidas degeneradas llegaban a 512)
+  length_ratio: 2.0

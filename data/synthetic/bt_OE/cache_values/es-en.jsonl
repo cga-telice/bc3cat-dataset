@@ -1,0 +1,795 @@
+{"key": "73ab2809e6957d2d725d4d1d2015335bc8418d97dac514ba8097340fb18dfa78", "src": "Dimensiones: [1] milímetros", "out": "Dimensions: [1] millimetres"}
+{"key": "2449130b14d5218e9821ce174b329758455ac7266b7f8bbd6c194e36b7cc50b0", "src": "Trabajo: Cualquier franja horaria", "out": "Work: Any slot"}
+{"key": "20a1e1bd79362a817c25ea9b318de33cb22de4afc884365561bf631b151044e3", "src": "Trabajo: Diurno", "out": "Work: Daytime"}
+{"key": "7dfea23a6306d6981b50fa5ed603b2bbd3e9a5d5021651adef6ac6a3aa8f623c", "src": "Trabajo: Nocturno", "out": "Work: Night"}
+{"key": "50a3386858e19014b77d3f80d2fcf558da9ada5b567054320eba472370413317", "src": "Banda de mantenimiento: Intervalo entre tres y cinco horas", "out": "Maintenance band: Range between three and five hours"}
+{"key": "6af8cc30bdf955143f2885354fba1b4bbeeea155d95937941bccf74413a47035", "src": "Banda de mantenimiento: Intervalo igual o mayor a cinco horas", "out": "Maintenance band: Five-hour or longer interval"}
+{"key": "f257a0e5b6017a9431f84e8adb467cece5b5e853df9678ddb25827d6456307ee", "src": "Banda de mantenimiento: Intervalo menor a tres horas", "out": "Maintenance band: Interval less than three hours"}
+{"key": "5ea0dce81f74b113a31db18ae51485d26dc7c1e5229a8877d8376c8a01190272", "src": "Banda de mantenimiento: Mantenimiento Continuo", "out": "Maintenance Band: Continuous Maintenance"}
+{"key": "233f4b4ec7537d97bea99125f9bf687d34b71a11c2aea001ac4bbd197e2fd521", "src": "Banda de mantenimiento: Mantenimiento de tres a menos de cinco horas", "out": "Maintenance band: Maintenance of three to less than five hours"}
+{"key": "3b1fd4b71ae5e137cd3a76bd723e36cd221c6de391f774d72fa19ec592c6c01c", "src": "Banda de mantenimiento: No necesita intervalo", "out": "Maintenance band: No interval required"}
+{"key": "af15baa3c30da3560c9544c6f9e0410b2c02555dbf2cf6c33f2400b1700582cb", "src": "Condiciones de ejecución: Alto Volumen", "out": "Conditions of execution: High Volume"}
+{"key": "00df0a7bf5320e38ef11b2e6e35367612de8a8581397bfb1fac379ae1de3b118", "src": "Condiciones de ejecución: Bajo Volumen", "out": "Conditions of execution: Low Volume"}
+{"key": "8b7ad8015289c14e3d5056ae9ba6bb6b95b9495916e2eae651b8b4724c8157e5", "src": "Condiciones de ejecución: Condiciones Generales", "out": "Conditions of execution: General Conditions"}
+{"key": "46b2ddba40e0d4cfce3f09bbf755d73d2554c10f05de859fe4483801fb95803a", "src": "Condiciones de ejecución: Cualquier condición de ejecución", "out": "Conditions of execution: Any conditions of execution"}
+{"key": "eff1af19d6d9f6ebf6a62592ca8233d16e6afece48c97978ae768c2494bb2fdd", "src": "Condiciones de ejecución: Volumen Reducido", "out": "Conditions of execution: Reduced volume"}
+{"key": "e5f15cad4c71064579cec27161ad3fe4578cd3f55142724bf94cbec53b64258f", "src": "Condiciones de ejecución: Volumen escaso", "out": "Conditions of execution: Low volume"}
+{"key": "23e328ddb1dfb200de68fbdfa08dc10acf6c534bcc708e7c29be5e8cd9b291c5", "src": "Condiciones de ejecución: Volumen relevante", "out": "Conditions of execution: Relevant volume"}
+{"key": "bc88b476ea2ffa20291bd7de1277726c8c6afc8b52706d8802127dd556125a56", "src": "Trabajo: Cualquier franja horaria excepcional", "out": "Work: Any exceptional time slot"}
+{"key": "a0354e056502909f15fc2e865ff09484c6ba1598c0a1c60f2e4c78cc26caa71b", "src": "Trabajo: Diurno Excepcional", "out": "Work: Exceptional Day"}
+{"key": "9eb4c5bbbf9c70136b7b98afd3b44445c47ca3142c8b4f26cbcf87653b8b9d2a", "src": "Trabajo: Nocturno Excepcional", "out": "Work: Exceptional Night"}
+{"key": "19b20db8201c09a998409d2a2dcce7d4fd003bc8c4f37b2e995471451c7193aa", "src": "Banda de mantenimiento: Intervalo de tres a cinco horas", "out": "Maintenance band: Three to five hours interval"}
+{"key": "1acde80aecb60aef32f2257c82575d942c33992486bbd3d450e1678665618e64", "src": "Banda de mantenimiento: Mantenimiento Ininterrumpido", "out": "Maintenance Band: Uninterrupted Maintenance"}
+{"key": "c29a893a1465331978ba84224026b668028fa5d01fcecc2219bb0c635d4c10c2", "src": "Banda de mantenimiento: Mantenimiento Permanente", "out": "Maintenance Band: Permanent Maintenance"}
+{"key": "1159a85e403086caad5f049ad9abd6e4ffc9f299214edfeefa433c076cfad9c8", "src": "Banda de mantenimiento: Mantenimiento cada cinco horas o más", "out": "Maintenance band: Maintenance every five hours or more"}
+{"key": "1a2ebb2a3bf1915dcbacb6580abc179aae031e9be8c8928511014e7ddfd14eac", "src": "Banda de mantenimiento: Mantenimiento cada menos de tres horas", "out": "Maintenance band: Maintenance every less than three hours"}
+{"key": "2d063bb702f339164ce61f6e41bf09f052e627ac2eab4f3192a4062eb973999f", "src": "Condiciones de ejecución: Condiciones Variables", "out": "Conditions of execution: Variable Conditions"}
+{"key": "507cced3bb238f4619de3c0cee4cfd2a1c18940fea756491392a34999c10f09c", "src": "Condiciones de ejecución: Volumen Mínimo", "out": "Conditions of execution: Minimum volume"}
+{"key": "9825370196c5495e7f9e5e4f83c4c571052bb6f61f78ab4281a211e65e673889", "src": "Condiciones de ejecución: Volumen Sustancial", "out": "Conditions of execution: Substantial volume"}
+{"key": "b0bf8dcc3f4e1ce406215d68f83f8c7ed4ba3d58d3fafc3843eab5571cf8b070", "src": "Banda de mantenimiento: Mantenimiento Automático", "out": "Maintenance Band: Automatic Maintenance"}
+{"key": "08a748003b97f202faf08be1cf897dfe586596a2f3d8aa4cacdf83886b06d19f", "src": "Condiciones de ejecución: Condiciones Estándar", "out": "Terms of execution: Standard Terms"}
+{"key": "787896a7effa66be0f4eafd94c4d212e5ba561f920c4fd6d1bad64253b9bc826", "src": "Condiciones de ejecución: Volumen Elevado", "out": "Conditions of execution: High volume"}
+{"key": "38d141c7a7f9fcf58f5308e5ff9e63e6d8b6d97c0bebb9eec4eb99e5064638d9", "src": "Condiciones de ejecución: Volumen Importante", "out": "Conditions of execution: Important volume"}
+{"key": "6dce6cc9ae2370aaa4d0995daede0af1a3377f3d6fa6a8a3c2a366c137f36e4f", "src": "Condiciones de ejecución: Volumen Limitado", "out": "Conditions of execution: Limited volume"}
+{"key": "0b39628a5762c06adee8c28ce33d1fff082e6be77e1db7f8fe30597652b19a76", "src": "Tipo: Alta", "out": "Type: High"}
+{"key": "3bb64fcbacf51b62d801d359c610316cb3418b24f000814bb98060b59e7fdf50", "src": "Tipo: Aérea", "out": "Type: Air"}
+{"key": "1daa00f469d0e011c65d70622aa363faad7a21ef910960fadc629fddfa98edb5", "src": "Tipo: Baja", "out": "Type: Low"}
+{"key": "810b7873c68fa09acbf1bc5962ecd82ffefb5347202128fc36a9d683818a9d62", "src": "Tipo: Bajo tierra", "out": "Type: Underground"}
+{"key": "79a5bc8322d84ea8a34bf60f8b9022a86e255ed6684e191fea16ae2461e493ac", "src": "Tipo: Elevada", "out": "Type: High"}
+{"key": "3bc69a6c2915f2cb6acc3186d8f5108f475883a19670582be5c65a818536beab", "src": "Tipo: Incrustada", "out": "Type: Incrusted"}
+{"key": "126348b28f5bacf5a324606dbd95098a0f8275ccf29aa4ba01738d09fc087874", "src": "Tipo: Sobre el suelo", "out": "Type: On the ground"}
+{"key": "9e759b9ade73a10cba9a773f8fd244f63af24d547c2dc08c3071502b08299dbb", "src": "Tipo: Sobre nivel", "out": "Type: Over Level"}
+{"key": "9f538f463cf0dc42c160178085844506b8de7e1ca5e92040ed41e7fdb6e8ab3a", "src": "Tipo: Soterrada", "out": "Type: Grounded"}
+{"key": "261c6cd0d307d6e06ef8e7e3c294db6a206a2af9496a9b647288b3c190fd7f68", "src": "Tipo: Subterránea", "out": "Type: Underground"}
+{"key": "430209019316fe3d995aba2f142beb0256bae010df8163950974e50bca586245", "src": "Tipo: Subterráneo", "out": "Type: Underground"}
+{"key": "0c83d8487882388c20fd5befe55e5405d0ecb65362c902280208a3b22ea975ea", "src": "Tipo: Superficial", "out": "Type: Superficial"}
+{"key": "a03b638dbc25c2fb66c3bc1b6673a0f7d763ad43f103233e5608ff5d1ccaaebf", "src": "Tipo: elevada", "out": "Type: high"}
+{"key": "fa111d0f9c7e72259eb036f302f4260cd577a1ef850f2e78c44b97a412fc7d4c", "src": "Tipo: enterrada", "out": "Type: buried"}
+{"key": "4d1dc7b748b1aa31ab7b816e22e68097896056c5392ec77d413dbeb5071c6fd1", "src": "Alveolos: dos alveolos", "out": "Alveolos: two alveolos"}
+{"key": "737132dcf56fd44eb183e721f4e0938b61fe7b9a880a9f8fc6c69dd83ad88a09", "src": "Alveolos: un alveolo", "out": "Alveolos: an alveolo"}
+{"key": "cb812e58f9104c4643dee4ff3ae56abe3e0adda462360e582621e54d9b72fb57", "src": "Alveolos: un solo alveolo", "out": "Alveolos: a single alveolo"}
+{"key": "efcf1121a5acefb971e8c25634309ee0821920cbf195d1ed6c4b2f9b04278414", "src": "Alveolos: uno alveolo", "out": "Alveolos: one alveolo"}
+{"key": "d485e05466d60220b054c73ad41b8abf75edfcd351dead2b77322664a5b99f36", "src": "Trabajo: Horario de Día", "out": "Work: Day Schedule"}
+{"key": "67bc313dc7fbbee057338006cbc44e2d2a3f0174d2adc9992f417fbe150b27bc", "src": "Trabajo: Horario de Noche", "out": "Work: Nighttime"}
+{"key": "502d0d2293292cfa90188ef9545fe16231af0e2611da665dcabc039934646a58", "src": "Banda de mantenimiento: Intervalo de cinco horas o más", "out": "Maintenance band: Five-hour or longer interval"}
+{"key": "fa3b9ccf48f8f84522cd351da42e29ed3fb03c1181dc23cb0eeb6a015a4c0fec", "src": "Banda de mantenimiento: Intervalo inferior a tres horas", "out": "Maintenance band: Interval less than three hours"}
+{"key": "6ecf8801bfec6452f06041384eecf8f07791278acf2180a67a9c6ffdadc84858", "src": "Banda de mantenimiento: Mantenimiento Sin Paradas", "out": "Maintenance belt: Maintenance without stops"}
+{"key": "276365e0974f7121fcccbdfa86898fe845371b72a50949a823dcae3add4ff4e1", "src": "Condiciones de ejecución: Condiciones Diversas", "out": "Conditions of execution: Various conditions"}
+{"key": "a7578546782642ddef018df8a6176ed692266c836b5957df11274c6925fa83df", "src": "Condiciones de ejecución: Condiciones Flexibles", "out": "Conditions of execution: Flexible Conditions"}
+{"key": "eea11376a8bd01b0d66d98f60fca17a9ab06dba72596b0eb0bab79a2ae1b375d", "src": "Condiciones de ejecución: Condiciones Normales", "out": "Conditions of execution: Standard Conditions"}
+{"key": "36bf488fa0ec11fa543374fdd14c4da4a5ead4e51857491cf830d72fb3910400", "src": "Condiciones de ejecución: Volumen Adecuado", "out": "Conditions of execution: Adequate volume"}
+{"key": "4771b9ce81ffb72d1d20ae05684e818d51921cd42958192c20e5d237de28ead8", "src": "Condiciones de ejecución: Volumen Considerable", "out": "Conditions of execution: Considerable volume"}
+{"key": "91190f718ad2abfb67bbdb3ffaf3018fc34b350cbedf6dfb73b10f21138285c6", "src": "Condiciones de ejecución: Volumen Pequeño", "out": "Conditions of execution: Small Volume"}
+{"key": "bfd0b15aee8e759ef9a220ed8cfdcbb6873bc7721c7ef14a5ace3af15b0e5a7c", "src": "incluyendo la nivelación de la solera, la cama de arena de río de [1] y el relleno del sellado de los laterales de la canaleta de hormigón pobre", "out": "including the leveling of the solera, the river sand bed [1] and the filling of the sealing of the sides of the poor concrete gutter"}
+{"key": "4c7808dbc6b855cc1badcf54557ba87b8a8df4f357dcd3a6d87609a20de43cd9", "src": "se incluye soporte de elevación", "out": "Lift bracket included"}
+{"key": "663a46c788d83ae855abce058ad375ceaabb97a39457cdfa3896ba0aec182441", "src": "Tipo: [1] ([2]) de [3] alveolo", "out": "Type: [1] ([2]) of [3] alveolo"}
+{"key": "55ca83fe2b7500c8eda69748d35a45681dfc58e9dc098b686d315045231ca3b2", "src": "Tipo: [1] ([2]) de [3] alveolos", "out": "Type: [1] ([2]) of [3] alveoli"}
+{"key": "4f612edb73807a3b1ecf6aa310b6899c22545848d186c5e7717bb2f6f82b0a7d", "src": "Tipo: [1] ([2]) de [3] alveolos)", "out": "Type: [1] ([2]) of [3] alveolos)"}
+{"key": "44d591ccb5d9a74b132214b67bbf75aa1c05f9962c12e5bba1f2183be0dbf915", "src": "Tipo: Especial ([1]) de [2] alveolos", "out": "Type: Special ([1]) of [2] alveoli"}
+{"key": "86f7e9a46aaea25e3ff65be702859a3063a6ee848ecea152331b2429cfb656df", "src": "Tipo: Grande ([1]) de [2] alveolos", "out": "Type: Large ([1]) of [2] alveoli"}
+{"key": "06b11913ddeefe46624d1f1fa890f088c1666d47761ea0e812f96472564d7564", "src": "Tipo: Normal ([1]) de [2] alveolos", "out": "Type: Normal ([1]) of [2] alveoli"}
+{"key": "34347bf2d3cf639bf39cee54122d11696cad5cdb02a3049f2e31e68b9c1ed4bf", "src": "Trabajo: Día Con Corte", "out": "Work: Day With Cut"}
+{"key": "72f8c61eb4d7d8adafb9cff39e6dd50f698a668bc9eacbcf8785cebf3a416594", "src": "Trabajo: Día Corte", "out": "Work: Cut Day"}
+{"key": "e59000b91740e216f6f9c0d79a13deea879e17b89e4159c4d53424bd217698ee", "src": "Trabajo: Día Estándar", "out": "Work: Standard Day"}
+{"key": "29b69800badb6006bb590b43d37ddf71d09419eab2de2010770a5216bf1412e2", "src": "Trabajo: Día Libre", "out": "Work: Free Day"}
+{"key": "a3c8f74f3af1f94da706c90630789b059a0241c16af85ae19960bacd69f6bddf", "src": "Trabajo: Día Normal", "out": "Work: Normal Day"}
+{"key": "3e7c9050d42c42a0d8db65baf01bc86165c643753ad90ab95039837020e0b175", "src": "Trabajo: Día Regular", "out": "Work: Regular Day"}
+{"key": "537112b76de8251ad981d92fc0a6c0f6888eddef77fbef5f08dc0f27263ccbfd", "src": "Trabajo: Día Sin Corte", "out": "Work: Day Without Cut"}
+{"key": "dd134f1ce96a06a6dcfdeee6d7b69eaf0961f046a02856834f401a8bf21aeffc", "src": "Trabajo: Día Tensado", "out": "Work: Tensy Day"}
+{"key": "242503052234e2d3d3b24ac37af34aa3692a9cd9462311f3e842654caeb9d911", "src": "Trabajo: Día Tensión", "out": "Work: Tension Day"}
+{"key": "dd501855693287e17f320cd763f349685d23c032f737d4675492716f1f169a1c", "src": "Trabajo: Noche Con Corte", "out": "Work: Night With Cut"}
+{"key": "747f040445492404db02791228e8310848c02b43d28f3a5f9ff63fe39d82b319", "src": "Trabajo: Noche Corte", "out": "Work: Night Court"}
+{"key": "5046e2d0b11b26f5e2f6320dca9390466fcebe6808e9ebdab33dbcfebe304417", "src": "Trabajo: Noche Estándar", "out": "Work: Standard Night"}
+{"key": "9dad63f6f1774dbbd1db33d682429b2f21335c3bf928948000e19812641ac157", "src": "Trabajo: Noche Libre", "out": "Work: Night off"}
+{"key": "e99ec3bc7505f926b0788a95e9101661dd9bd2098546839dd5d4ca40a001b360", "src": "Trabajo: Noche Normal", "out": "Work: Normal Night"}
+{"key": "846e73d9b224f18899564d3913446ae20f27633beef0df15049990eabe90b306", "src": "Trabajo: Noche Regular", "out": "Work: Regular Night"}
+{"key": "d3a7901393ae5410ef8a48fe11c8f99f5698c73a836cf98baf52ee1c3057b1d6", "src": "Trabajo: Noche Sin Corte", "out": "Work: Night Without Cut"}
+{"key": "58d17f5a2275cbd5df7a5274f5caea17b9706090d40ea5b4a504e6f03ffca25e", "src": "Trabajo: Noche Tensado", "out": "Work: Tensy Night"}
+{"key": "30469e9b03629fc0dfc8af8ae5d6df2bde402de2bdaec346b19408c7e68cfcf0", "src": "Trabajo: Noche Tensión", "out": "Work: Night Voltage"}
+{"key": "114debefc99a74ed64412842a81aa79c33e6bfe80e1b511c9a6914261ccc7717", "src": "Trabajo: diurno con corte de tensión", "out": "Work: Daytime with voltage cutout"}
+{"key": "dba7fac830f503da5c6daa970fb823a47c274111734af021d49a7359c3732649", "src": "Trabajo: diurno sin corte de tensión", "out": "Work: daytime without tension cut"}
+{"key": "4496d4789c01eb885253a76d598f5417cb661c03cf23eaff60a30a1127d3d1b1", "src": "Trabajo: nocturno con corte de tensión", "out": "Work: nighttime with strain cut"}
+{"key": "e5f4da4518ac8a8089a63907680e5529b2d4728c44305964745ec58108efc9a0", "src": "Trabajo: nocturno sin corte de tensión", "out": "Work: nocturnal without tension cut"}
+{"key": "0903affa8720f5e83f4365abc0a5221e1157b08e76c1a5c6f74734d3ab3c732d", "src": "Situación: Exterior Técnico", "out": "Situation: Technical exterior"}
+{"key": "9384b61527577e304f2a7bf3665d179f4941a0b47575d9e18c5a2b1a987868aa", "src": "Situación: Interior Técnico", "out": "Situation: Technical interior"}
+{"key": "3626b5d890f640593c65228af5c1c53b5a3fd4d1807cc84fe903194cc74b970b", "src": "Situación: Zona Interior", "out": "Situation: Interior Area"}
+{"key": "69c7aec4feb6562c05e8e65006c3b7da4fb3c95142aeda02a80119a41dbb37b1", "src": "Situación: exterior del edificio técnico", "out": "Situation: exterior of the technical building"}
+{"key": "036390cb7ba3b659fc588c6cca5f8b81e3e016586076f80485a75c6ea6762453", "src": "Situación: interior del edificio técnico", "out": "Situation: interior of the technical building"}
+{"key": "5621bcad6aa157d8a14e0221e9b11b779222719e9ee2638485bcba843e45609f", "src": "Anchura: [1] milímetros", "out": "Width: [1] millimetres"}
+{"key": "77753bc21c140077c3e2c861dcfd9bf0a58092128b6b332908067dec7772c68b", "src": "Anchura: Trescientos milímetros", "out": "Width: 300 millimetres"}
+{"key": "88933278951988c8dddd6f62256e63f02954dfc2e81b8bb857eaf169dc124608", "src": "Profundidiad: cuatrocientos milímetros", "out": "Deep: 400 millimetres"}
+{"key": "23b191ad7ef3fb52b2c1f02ab3a615f43b081ba4a035f73d97a725d03f20f2a0", "src": "de hormigón armado", "out": "reinforced concrete"}
+{"key": "000a9425429c7c20c53b42464e595b7fbea257d9bd2a3c918107fdf5679eb13c", "src": "de núcleo aglomerado de madera con marco galvanizado", "out": "agglomerated wood core with galvanized frame"}
+{"key": "2031bd2190c448650ded534daf377117bdf07e3b5835b7b966a90b18af54bc0b", "src": "Equipo: Cambio de Cota", "out": "Equipment: Cota exchange"}
+{"key": "b9f35e1e82299ba7e088ed8e21617ba37cefe67f8391f01f1aa0dc581dbd7e70", "src": "Equipo: Conector Modular", "out": "Equipment: Modular connector"}
+{"key": "bd3329f3272dbfe3efcf1f7d2468de87116379bcab1b3220e2a92926f69ac5bd", "src": "Equipo: Conexión Modular", "out": "Equipment: Modular connection"}
+{"key": "e75c01ec7ece8109af376752d1d81d3e552a4cfbca271a471548b24834d65935", "src": "Equipo: Curva Direccional", "out": "Equipment: Directional curve"}
+{"key": "97ccbd40f93774477cedc242085690df85f6654a03322b426739c39dd0db9da0", "src": "Equipo: Curva de Dirección", "out": "Team: Direction Curve"}
+{"key": "07702e31471432e69ec41dc992b79782e4a449de7e084d73569801f01708a39c", "src": "Equipo: Curvatura Direccional", "out": "Equipment: Directional Curvature"}
+{"key": "c2438a83e7a5295bc65b0935d22a730eadeb6a1015e537b544ce61b30c9e3d82", "src": "Equipo: Curvatura de Dirección", "out": "Equipment: Direction Curvature"}
+{"key": "a0e5123fe3ba6574d2d28e64d45d75427e90a388689e7e69dfb151e1ec9ca76b", "src": "Equipo: Empalme Modular", "out": "Equipment: Modular splice"}
+{"key": "92db12db0f4d7526c1789358c3c1991219ffb1274082d1be597eff68cc55ab94", "src": "Equipo: Empalme de Módulo", "out": "Equipment: Module Joint"}
+{"key": "b2923e942a0bdc8179c5640c7e4c44d8428f21c390ef692423914ebd91e61eb9", "src": "Equipo: Transición de Altura", "out": "Team: Height Transition"}
+{"key": "4e177e72b9e69636a2af697ade7f8cc6ceb18d58fd83d725396d43b1d6586bd9", "src": "Equipo: Transición de Cota", "out": "Team: Cota transition"}
+{"key": "9c0f20d1846b3da62b624549d20d6d2f0838d16af54e40517ae76fa9aeddbc27", "src": "Equipo: Unión Modular", "out": "Equipment: Modular Union"}
+{"key": "e9e1970a47dd15e4492e7e133bd1beed3ad0df95ad8dc8b50c80f013fdf1b11e", "src": "Equipo: Unión de Módulo", "out": "Equipment: Module Union"}
+{"key": "2facea031781389517a95cd8fac827a3f9bfd01c701a7cc76ea6641a5455844c", "src": "Equipo: Variación de Nivel", "out": "Team: Level change"}
+{"key": "42c4f44e6d93fb1c36a4586ab0e9fc0fc1688c9120cd286b230f9bc85cbd2e9c", "src": "Equipo: módulo de empalme", "out": "Equipment: splice module"}
+{"key": "63ab9abe30e31559a87c3568ed52bb01fe789e8cb798e76c8fc1e1e796e13e16", "src": "Equipo: pieza cambio de cota o nivel", "out": "Equipment: piece change of height or level"}
+{"key": "f45fcf0e4da9c1a241a494f6cb18651fbb751a514c55a4d204157488f84cee39", "src": "Equipo: pieza cambio de dirección", "out": "Equipment: change of direction piece"}
+{"key": "d9aeb2c82ce65a6102aaeee48f49e1f9630343f5bf14d4703b5002e086bbfc9b", "src": "Trabajo: Horario Completo", "out": "Work: Full Schedule"}
+{"key": "c10b503fc5d9442f0717eb5cc8e052f8e40a0c1289e1b8ade0b42de47f8eb2ad", "src": "Tipo: A [1] milímetros", "out": "Type: A [1] millimetres"}
+{"key": "21e97f4622d3c5f4685575214c58699c5ef4e921b33538967fccb4883b97a77d", "src": "Tipo: [1] ([2]; [3] alveolo)", "out": "Type: [1] ([2]; [3] alveolo)"}
+{"key": "aa533ccf27e9f6e134956d93e74ffe58a10d1d1cf50d0c1863ef9479ee2e2190", "src": "Tipo: [1] ([2]; [3] alveolos)", "out": "Type: [1] ([2]; [3] alveolos)"}
+{"key": "a62abe60c293fd301a91c602e2b3131c8bee2c0ef4a019b19be7f6af9a548102", "src": "Tipo: especial ([1])", "out": "Type: special ([1])"}
+{"key": "b96e244bcba7bc6dfdfd7b5f1f9833070238aff87724328bbb89a78e31550e84", "src": "Tipo: grande ([1])", "out": "Type: large ([1])"}
+{"key": "6af6bcdb1699d451cc6de0cc7f8038fced3720175fb0aab459344c8d46da5f2e", "src": "Tipo: normal ([1])", "out": "Type: normal ([1])"}
+{"key": "298de88352980e8030e8b2539425d50ac636f799e063414125154284f7f87c1f", "src": "Trabajo: Día", "out": "Work: Day"}
+{"key": "c50ddc22b34a95c31c85dcf2542a3a94443c9affe0fcdac1a296d8965e21e010", "src": "Trabajo: Día Especial", "out": "Work: Special Day"}
+{"key": "bb5bd80580219c5d358cb983fd5e61e4eb83c4bfb81cbb3f9f505429a1e74d89", "src": "Trabajo: Día Laboral", "out": "Work: Labor Day"}
+{"key": "34cc79781a35add0817171361d4c1bda44726a790791b007b095c5fc1de1841f", "src": "Trabajo: Horario Abierto Extra", "out": "Work: Opening hours Extra"}
+{"key": "9569352d466add5f759cf0501073352d9c55497359337aadceda52d58c457680", "src": "Trabajo: Horario Diurno", "out": "Work: Daytime"}
+{"key": "c557ac8379a978266ab50499c78b4ae3242a309357dbb7e42b05097da7a0392e", "src": "Trabajo: Horario Diurno Especial", "out": "Work: Special Day Schedule"}
+{"key": "6272b67e52534d645605c3fab087aaecfe0367ab10422198ced8838d26332610", "src": "Trabajo: Horario Flexible Especial", "out": "Work: Special Flexible Hours"}
+{"key": "ccf26f5b2c783eec7414107d4d092763176d9ef49f13affed98dc7c1bd570e46", "src": "Trabajo: Horario Integral", "out": "Work: Comprehensive hours"}
+{"key": "7ed89e78e8b7cf31cfa9bc8deba00793be404faef6855d5c779f63445cb46d7e", "src": "Trabajo: Horario Libre Especial", "out": "Work: Special Free Timetable"}
+{"key": "e2f821968042eafd5fc56cfa5f2b6878fe50ac815997bccd683b27d660433c70", "src": "Trabajo: Horario Nocturno", "out": "Work: Nighttime"}
+{"key": "80bb517751452f77caf67816bdf54af80c17c616e959f36982b4f565b17503e7", "src": "Trabajo: Horario Nocturno Especial", "out": "Work: Special Night Schedule"}
+{"key": "c24605fbd6c0c2291df9d5f0ade7bf41e8b8f9a3491eaae55a93c1422703b67f", "src": "Trabajo: Horario Total", "out": "Work: Total hours"}
+{"key": "e9c4ba9ca8749d19f52749d1574788752e297a85f9d444a586291729719d8505", "src": "Trabajo: Horario a Elección Extraordinario", "out": "Work: Schedule for Extraordinary Election"}
+{"key": "f655598183ad9e6b1dbcb46660a54341d6b9980b3e64345b4e1007d7fb7c2dc9", "src": "Trabajo: Horario de Día Extra", "out": "Work: Extra Day Schedule"}
+{"key": "39cb3077968ebb7ab15805bf796fd1bd4cf2168356890a9fd2ba146fad41c5f0", "src": "Trabajo: Horario de Luz", "out": "Work: Hours of Light"}
+{"key": "6dd7960f3c922ecc9a04f84cf281c819f998bc8bb1d7bd531ed0c57b16c720b1", "src": "Trabajo: Horario de Noche Extra", "out": "Work: Extra Night Schedule"}
+{"key": "828dbcf85aef9bf6e3b2966c2ef1d00ed80debc8be3b318500bbbf07b551c332", "src": "Trabajo: Horario de Noche Extraordinario", "out": "Work: Special Night Schedule"}
+{"key": "38649fd4502047a6db277c57e35cfa5f4111453045069b5d44e454da166de7bf", "src": "Trabajo: Horario de Oscuridad", "out": "Work: Dark Hours"}
+{"key": "18827a8e9a5c38ea5a77db23eda0882c1a395ca51d71f600f84728e69a4cb7fe", "src": "Trabajo: Noche", "out": "Work: Night"}
+{"key": "b44fe218c07fad95d4ef27e58303aa21e0e3daadd2d23670d54795c4a746e267", "src": "Trabajo: Noche Especial", "out": "Work: Special night"}
+{"key": "999bb4b1f6c47ce322cdcb804ca7c251e5cd462304fce11106f935047e477ac5", "src": "Trabajo: Noche Laboral", "out": "Work: Night at work"}
+{"key": "8698411b75cadfc23e69907055e81ba34a22929856d39155b6764e01a531de90", "src": "Trabajo: Todo el Día", "out": "Work: All Day"}
+{"key": "f1d42706c2e8929ee4abd76783592a941ab051cc2398b4b15a8230e6601474db", "src": "Trabajo: Turno Flexible Especial", "out": "Work: Special Flexible Turn"}
+{"key": "cad23af5499ab93f32d714ac2c034f33b4128d8640cee2b22e7e00bff8385a6e", "src": "Trabajo: Turno Nocturno Extra", "out": "Work: Extra Night Turn"}
+{"key": "c423a48fd3e9d3bb193c96cdd8cf98d640d667baf7d4fdc06ec89438995edad7", "src": "Trabajo: Turno a Discreción Extra", "out": "Work: Extra Discretion Turn"}
+{"key": "aacda43f55c21668ac6c503848a49486c61dde895ecce49bf24b0b0ee7c0e239", "src": "Trabajo: Turno de Día Especial", "out": "Work: Special Day Time"}
+{"key": "49e54615d6f42b76dffa5ba3ff5ec7bd5cc0e207d109d6688f9ffb4243a25aee", "src": "Trabajo: Turno de Noche Especial", "out": "Work: Special Night Time"}
+{"key": "01f173ac3073c906e137a685a482b1a964bf9d04963680e69e8069d8b83bdf69", "src": "Banda de mantenimiento: [1] menos de [2]", "out": "Maintenance band: [1] less than [2]"}
+{"key": "39a1d67a0c22e20a719cee2cd11687d943d60426fb8ef70bf33c5739441decdb", "src": "Banda de mantenimiento: [1] o más", "out": "Maintenance band: [1] or more"}
+{"key": "5c7d06e00573011616e37cc84eefa2690aecd2caad5aa018388d6e32d3fc1898", "src": "Banda de mantenimiento: menos de [1]", "out": "Maintenance band: less than [1]"}
+{"key": "76eb67b0148de50338802f33f6c4b7ef75805f7d40598418efbaf654c5d11927", "src": "a mano", "out": "by hand"}
+{"key": "3eca3ac944c33f9503cfe0b6e4338721619774d44688f198cbfd64166d58e69d", "src": "a máquina", "out": "machined"}
+{"key": "a11316bf6967f47ad65a82bf0b4af1a61bee73b42ce4486c7e716d1905a5a4d5", "src": "Tipo: Concreto", "out": "Type: Concrete"}
+{"key": "f07817e99773da4ef396685a25ecf2b644c558da7f5966ea12925cc1946cef7b", "src": "Tipo: hormigón", "out": "Type: concrete"}
+{"key": "54a45b44dee84eb73d90536eff3104926f784c551ade6e96a7d789bf422ee74f", "src": "Tipo: plástico", "out": "Type: plastic"}
+{"key": "62d6da70d8050157d8a1614635419198e6592d578ec58dd623554d50df33e1ea", "src": "Trabajo: Turno Diurno Extra", "out": "Work: Day shift Extra"}
+{"key": "64675d3daf09165cf0fc612f2efd94b87ec48992c6395f24b692311dafa23583", "src": "Trabajo: Horario de Día Extraordinario", "out": "Work: Extraordinary Day Schedule"}
+{"key": "9c75807cd204db28cb93c67a88c396dc0574245e56b1d4be3463ba05171982ec", "src": "Apertura: Automatizado", "out": "Opening: Automated"}
+{"key": "dc0cb78d21b65db57d2eaae64b0ff299e5a6f66e1aa01946b29e3508e7b2101a", "src": "Apertura: Manual", "out": "Opening: Manual"}
+{"key": "a4abe6a5e633014bf2d78616f5ed0a5097a24938793a443377f78b599ee5cf3d", "src": "Apertura: Mecanizado", "out": "Opening: Machining"}
+{"key": "eb442c9b54a555aa6dda39955c2018d8052762b59eeed4322877ca11d6f5fbc7", "src": "Apertura: Máquina", "out": "Opening: Machine"}
+{"key": "a2f5e35d266361df35deaea35280c264ea6ddcf4590e03fafab229f1cd3e34ac", "src": "Apertura: Proceso Mecánico", "out": "Opening: Mechanical Process"}
+{"key": "c2b414077a19f846961c4b4137cf500e9a70815a728cef14c7eca936a1c60ef3", "src": "Apertura: Trabajo Manual", "out": "Opening: Work Manual"}
+{"key": "d43faf9eadc74306fe9c5cb5c8f20b5dc11d97df4f2561f70b1bbf58293c06f6", "src": "Apertura: a mano", "out": "Opening: by hand"}
+{"key": "e5d19df57c33823c9a7c4449ec92bb8551c4492a1fa32b807f6d1b317bdec97c", "src": "Apertura: a máquina", "out": "Opening: machined"}
+{"key": "2ad71d843458f842ecd386a137e24a0dea2741b76d0d9c88706ecb3e5ec19ff0", "src": "Apertura: apertura automatizada", "out": "Opening: automated opening"}
+{"key": "b7fca6b6d5940da1e2d0db8b46eccdc6fdf3ae0c8fd762f5415fed3e0531a4c4", "src": "Apertura: apertura manual", "out": "Opening: manual opening"}
+{"key": "50e1e662a79d8c01e1aad54b4d9f6c27882e45bea06182ab2fa07286ffc09ec4", "src": "Apertura: apertura manualmente", "out": "Opening: opening manually"}
+{"key": "0da7397233f1416402b359ecc2b4e52ffde1ce6b976de4ffd911cc421c2b5228", "src": "Apertura: apertura mecánica", "out": "Opening: mechanical opening"}
+{"key": "45ef946fbf6ea9b941274deedcfad207ac3926d9efaec20c22b1cbd805495a79", "src": "Apertura: apertura por maquinaria", "out": "Opening: opening by machinery"}
+{"key": "4da52192cdcca66248546094511721c85379189fbf249b5c5f7541fcd24de699", "src": "Apertura: apertura por operario", "out": "Opening: opening by operator"}
+{"key": "6bc699624d481db98bee892227270c8ec508aaff77fa3cbc511d16810ef5b973", "src": "Material: betón", "out": "Material: beton"}
+{"key": "3f0136625aa88a782d5f46aad84ad8292bde5a0b15f26e0b2f6cc0c0268525a7", "src": "Material: compuesto sintético", "out": "Material: synthetic compound"}
+{"key": "c7a54009f43aef0ad3961f5cc094597a406c4a5d964fafb11bce2604ca051051", "src": "Material: concreto", "out": "Material: concrete"}
+{"key": "308121cf6d01921d2facc9ccba0753432d2cb5ebf9590be19b2066e779054c04", "src": "Material: hormigón", "out": "Material: concrete"}
+{"key": "c75257084fea4895bfc86281757891cc868bd68bc5820ed8c64a41d129ea8f3a", "src": "Material: macadán", "out": "Material: macadan"}
+{"key": "e0c7307f244b51e845c2bdbaac0a639b13fbde4e8f5a8c0afef0f32cfa13dd36", "src": "Material: masa cementicia", "out": "Material: cement mass"}
+{"key": "0433e2b15d85dc53830a700dadf440c0313fb2333183f3ad1f08ae326d2831f4", "src": "Material: material termoformable", "out": "Material: thermoformable material"}
+{"key": "d39a61414c7126cbf32422d8d3bad4c262e3ec6b45108729ee42a7d7c393e134", "src": "Material: mezcla cementicia", "out": "Material: cement mixture"}
+{"key": "38894ba27fe938d0133b4beb545cc7b90b8a4b1d18c79bacade352ad43bada00", "src": "Material: mezcla de cemento", "out": "Material: cement mixture"}
+{"key": "999471f184366722ed0bef73861f059347ce57566170fd1bf9daca74e6f2bb82", "src": "Material: plástico", "out": "Material: plastic"}
+{"key": "06a2f6be2ce1ba5b765677d11e975b943cce2f3c374b43116f3051bc404a5bed", "src": "Material: polímero", "out": "Material: polymer"}
+{"key": "257e3c760c442493e6a8ad8b010a271c3fd47eeccfda62158d60f5d45083a36a", "src": "Material: resina", "out": "Material: resin"}
+{"key": "c927e55c868d54708624e4cf434901928d5d2dc0582b83d9f7dbcc6772de1bbf", "src": "Material: sustancia plástica", "out": "Material: plastic substance"}
+{"key": "d9fd9c4cbcfdf6fb436dd8a2504e2fdbc9bf48f2f4f0d274c8c21d0a8fa74047", "src": "Material: termoplástico", "out": "Material: thermoplastic"}
+{"key": "ac84c55cafeedfe75880f061e119ef0bb2167ebfa836a9da48f72b90bb9361c6", "src": "Terreno: blando", "out": "Land: soft"}
+{"key": "4bed19e54eecdf84ac361aebdf23a4076caf6058b01769f7a0c4091792e1c3e5", "src": "Terreno: duro", "out": "Land: hard"}
+{"key": "ce7b03e355239c4988a341aff7792179014b225e85fb39c6018e5dd812bd95e6", "src": "Terreno: medio", "out": "Land: medium"}
+{"key": "d5d0fa559f61d1568755455fc66b26937d89c687d640ad402192c532a74affe0", "src": "Pavimento: con reemplazo", "out": "Flooring: with replacement"}
+{"key": "7f3f63400b9b510a90813e31d6764feb5d891ade0ffda40560d7bf12b6420aec", "src": "Pavimento: con reposición", "out": "Flooring: with replacement"}
+{"key": "1bfe292d0e506515ac397886da72cc7e969162a330378afe1f40f369dc0ce863", "src": "Pavimento: sin reposición", "out": "Flooring: no replacement"}
+{"key": "55e3d5829371f57bc36738f90ca24996e5c9e7bed516d0ed52a6afecabdec034", "src": "Nº tubos: Cuatro tubos", "out": "No tubes: Four tubes"}
+{"key": "84521c2504c66d8628d8538e24bb5023ee5373f1abf831286354ad12de60f89e", "src": "Nº tubos: Cuatro unidades", "out": "No tubes: Four units"}
+{"key": "b69dfc605b96057f93aefba287327c7e6425162060fc9ad5147795ceffdb0da8", "src": "Nº tubos: Dieciocho tubos", "out": "No tubes: Eighteen tubes"}
+{"key": "eff04eae27c23ad8cb7ba0146be9322d81b84fe4e5d2f59d45111c322672723a", "src": "Nº tubos: Dieciocho unidades", "out": "No tubes: Eighteen units"}
+{"key": "ee3351b27bb39fb8d6170709d241b5d11434df8dba5cd60761dd91f06da65699", "src": "Nº tubos: Dieciséis tubos", "out": "No tubes: 16 tubes"}
+{"key": "82140304818650c8bd429af909d7a294f3e1d076e235376b6a882ea2f1d5f8aa", "src": "Nº tubos: Dieciséis unidades", "out": "No tubes: 16 units"}
+{"key": "de436ed7b7af6c3774e4e3bc6a07abb51bd6ff8341b1b628bab381512c238396", "src": "Nº tubos: Doce tubos", "out": "No tubes: 12 tubes"}
+{"key": "98ac921198191c9a4871656b0af98fa630d9597c69a0e28cfd4277465e519f43", "src": "Nº tubos: Doce unidades", "out": "No tubes: 12 units"}
+{"key": "00811c918af96ecf069c65bd73349aaa69806bd866e643825572e2fd4858822f", "src": "Nº tubos: Dos tubos", "out": "No tubes: Two tubes"}
+{"key": "b6a4c8647544e27c5dbd6f5c93dcd9c58cc872a84a50726b68f84004bbcc352a", "src": "Nº tubos: Dos unidades", "out": "No tubes: Two units"}
+{"key": "ad5f2fe1ca894c5b11be495f9f5408174c582994c544881f9b2c0ac4f0d506f0", "src": "Nº tubos: Número cuatro", "out": "No tubes: Number four"}
+{"key": "25a83897b43a0c0163c8dbc98500623463ac77e8e90e1689340364c1053f8639", "src": "Nº tubos: Número dieciocho", "out": "No tubes: Number eighteen"}
+{"key": "bd60944970ff2f6ec314aa86f302cb68123c1ffb53e927788f3f5b0ae9dc0468", "src": "Nº tubos: Número dieciséis", "out": "No tubes: Number sixteen"}
+{"key": "2e7a668bbe34918a49109e167ba6ad266f5979df86c249f4e19c2f1a6fc80b1e", "src": "Nº tubos: Número doce", "out": "No tubes: Number twelve"}
+{"key": "921b92a409eaa37e7ff733c5c7d0cae7f801c6eeef9011aaff2f5be3fe737c94", "src": "Nº tubos: Número dos", "out": "No tubes: Number two"}
+{"key": "7105256974ef61e3eab5a11f126063ee57c44e793b4c07f93a5abf2e3a74420c", "src": "Nº tubos: Número ocho", "out": "No tubes: Number eight"}
+{"key": "c2e123f42e8bf5ba2ec3b287a50583b6b4a4860cd3086f92687a7fe07b83a957", "src": "Nº tubos: Número seis", "out": "No tubes: Number six"}
+{"key": "f8184572d22c28bc8b424f636d5a6a7793c51be5d542679c30e6a379376f95af", "src": "Nº tubos: Número veinticuatro", "out": "No tubes: Number 24"}
+{"key": "5e23ecc00a5f089d202c775eae791e0036b62707286eecff8b1f7d59d144ded9", "src": "Nº tubos: Ocho tubos", "out": "No tubes: Eight tubes"}
+{"key": "9664e4c0d288250fec75b5bd5f380e05d715e5eaa8b22f373b8ee11bce2a611c", "src": "Nº tubos: Ocho unidades", "out": "No tubes: Eight units"}
+{"key": "540d29aa580d766311b98f2b2a74965808f1e73c9aef8a107290a4b6f761fee3", "src": "Nº tubos: Seis tubos", "out": "No tubes: Six tubes"}
+{"key": "1b8ccf0bcedf1af0a4505a27d343292080e8c1bca430723955ac6b2498e9d762", "src": "Nº tubos: Seis unidades", "out": "No tubes: Six units"}
+{"key": "c390d38a6ee4be135ea34ad8945c33ab04ffbfbc287de23d387b4fa57f2558ce", "src": "Nº tubos: Veinticuatro tubos", "out": "No tubes: 24 tubes"}
+{"key": "67f8f7c6afcdc3b075b0dbe0d5a2430c204c5dabaca423b238e333ba8fa94129", "src": "Nº tubos: Veinticuatro unidades", "out": "No tubes: 24 units"}
+{"key": "bc3256f4c266ca0056585e5f85ba81ab2da77c4e9bf228d793506ff5981f9135", "src": "adosada o superficial", "out": "terraced or surface"}
+{"key": "c6140dd21fd1fabefa08e5cb96cbbad16700acfba983efc219a9ce27734fc86f", "src": "bajo pasos a nivel", "out": "low level steps"}
+{"key": "ef4c86d2aa17de74a92f27dd3e188be0e83cb52e974658978668257f5b05848a", "src": "bajo vías", "out": "low track"}
+{"key": "ce703ae1c83dccb2965701d7feac07dca58025bd5d82f6ee8ed28498d4ac8997", "src": "bajo vías cruzadas", "out": "under cross-tracks"}
+{"key": "983f43230d30942d497d6b1742494ed075b3aa9d450fa75c6074b04c5ed4c415", "src": "colocada adosada o en la superficie, facilitando la accesibilidad y mantenimiento", "out": "placed terraced or on the surface, facilitating accessibility and maintenance"}
+{"key": "5ccc385d814f8f54cbcdc0745227a5deff7483506b1208142ba3ffae8e37b243", "src": "colocada adosada o en superficie, minimizando el impacto visual en el entorno", "out": "positioned terraced or on surface, minimizing the visual impact on the environment"}
+{"key": "9bbf9f1c12abde3645d527c56300184e64f0dc280c00d650a20b330f10093cc8", "src": "cruc. bajo vías con topo", "out": "Cruc. under tracks with mole"}
+{"key": "25bd0ecd1187088aadc2ee5a3a5b284c55e7d45d5a8b6d65b2a8d80bcda43cbe", "src": "cruc. vías topo", "out": "Cruc. mole tracks"}
+{"key": "9746dab687f1a35982055528a2bc3ff0a7bc11a965f7f9165c06cefd47bc5d83", "src": "cruc. vías topo ejec.", "out": "Cruc. mole axis tracks."}
+{"key": "4cad0fc2067afa5da9d2a7b70ad6a5fa79562612274848a4e1072027555041c5", "src": "crucero subvial", "out": "Sub-vial cruise"}
+{"key": "305e4a74086ba5d0dc46dc940a54177f7ff62a4086b81e1a1177a46b4a877d4e", "src": "en andén", "out": "on platform"}
+{"key": "7ee5efcdfa021698df6f0957a14edce60a4413fd4addf21cb76536de680426c0", "src": "en andén, en la estructura construida junto a las vías del tren, destinada para el embarque y desembarque de pasajeros", "out": "in platform, in the structure built next to the railway tracks, destined for the boarding and disembarkation of passengers"}
+{"key": "9ac902ef1b97bc7dd7587e73047e520b8a9040fdfdb0cfceb29d0615bfcd8f81", "src": "en andén, en la plataforma adyacente a las vías, donde se espera el paso de los trenes para el acceso de pasajeros", "out": "on platform, on the platform adjacent to the tracks, where trains are expected to pass for passenger access"}
+{"key": "8a16b98f078fde29cc48002c4269d98982acfcbd36abb3fee8680805fc4c0981", "src": "en andén, en la plataforma elevada o nivelada junto a las vías, diseñada para el uso de pasajeros y carga", "out": "on platform, on the raised or leveled platform next to the tracks, designed for the use of passengers and cargo"}
+{"key": "a9d07bda64fb482c9ad3940861d8d5dc4477c0e8098a959935cb08b19a10c9ab", "src": "en andén, en la superficie plana y nivelada junto a las vías, donde se espera el paso de los trenes", "out": "on platform, on the flat and leveled surface next to the tracks, where trains are expected to pass"}
+{"key": "60ce6ef7bd7260ccf8c6d004cec7b77244e8225644fe0ebb6b296cd4c5dff3af", "src": "en andén, en la zona destinada para el embarque y desembarque de pasajeros, facilitando el acceso a los trenes", "out": "on platform, in the area intended for the boarding and disembarkation of passengers, facilitating access to trains"}
+{"key": "3bf01b50814010b35a2b6093cc2466a762f03315460a409aca383061a7de3989", "src": "en andén, específicamente en la plataforma destinada para el tránsito de pasajeros y carga, asegurando accesibilidad y seguridad", "out": "on platform, specifically on the platform intended for passenger and cargo transit, ensuring accessibility and safety"}
+{"key": "3da8cdf9a33c6bd806d158c7fcde7065285238cdfb17dead82abdfc1eb184657", "src": "en balasto", "out": "in ballast"}
+{"key": "744dc28e64429299497420848bcba6f8e23ed06a208d38bd34cc8384f6946ea0", "src": "en cruce bajo vías", "out": "Crossing under tracks"}
+{"key": "e8e535006578d2222f5a0b9d56264257081b3cf115a776586439c1dd79abec6d", "src": "en cruce bajo vías ejecutado con topo", "out": "Crossing under tracks executed with mole"}
+{"key": "a3d4f5a87d9a1772c84d2b1db69f47d2a2579eb20eb669d680a554750ff95b22", "src": "en cruce bajo vías, asegurando que la canalización no afecte la operación de los trenes", "out": "crossing under tracks, ensuring that the channeling does not affect the operation of trains"}
+{"key": "9f3e7b825fd500e40d25216467dfe8c33e7e650df25b78cad158956937a482cc", "src": "en cruce bajo vías, donde la canalización se coloca estratégicamente para minimizar el impacto en el tráfico ferroviario", "out": "crossing under tracks, where the channeling is strategically placed to minimize the impact on rail traffic"}
+{"key": "ffe63105dff1a15de809896eae2bb99a37e915327b954e45a0e7b63b37b9e39b", "src": "en cruce bajo vías, donde la canalización se instala debajo de las vías férreas, asegurando protección y accesibilidad limitada", "out": "crossing under tracks, where the channeling is installed under the railways, ensuring protection and limited accessibility"}
+{"key": "b2ef27fe456df8b80fd69a9b8e7773230e0a162b9fdd3d15b0d7b653563e82f7", "src": "en cruce bajo vías, garantizando que la instalación cumpla con las normativas de seguridad ferroviaria", "out": "at crossing under tracks, ensuring that the installation complies with rail safety regulations"}
+{"key": "a020c30e08ccea146ab730245796a1ee0055e19244de93e2b9888173477ae29c", "src": "en cruce bajo vías, implicando la instalación subterránea de la canalización debajo de las vías del tren", "out": "crossing under tracks, involving the underground installation of the channeling under the train tracks"}
+{"key": "1a5133b763ed8d2058ddd339955af3ebb98e4ae32d937387e1b7a4f9eaf32501", "src": "en cruce bajo vías, lo que requiere técnicas de excavación específicas para evitar interferencias con la infraestructura ferroviaria", "out": "crossing under tracks, which requires specific excavation techniques to avoid interference with railway infrastructure"}
+{"key": "7a03bae7122142ff05487a874065bc177fc339ee87bb154c7c6d85920573fc63", "src": "en cruce de carretera", "out": "at road crossing"}
+{"key": "ebf749aba4ac55d06086aae201a549b90efa7b4caf30f75dae1f1349dc8728b3", "src": "en cruce de carretera, adaptándose a las condiciones específicas del entorno vial", "out": "at road crossing, adapting to the specific conditions of the road environment"}
+{"key": "49b017c117650a157ef8cf271aa89eeff0b32258f2f53a21882ad73d8290ba0d", "src": "en cruce de carretera, asegurando compatibilidad con las estructuras de soporte de la vía", "out": "at road crossing, ensuring compatibility with road support structures"}
+{"key": "a9f90c6f8b86eef86fbb5fcaf272e3b24bb6b378a5c4ce099785ba8c5e50263c", "src": "en cruce de carretera, considerando las interacciones con las infraestructuras de transporte terrestre", "out": "at road crossing, considering interactions with inland transport infrastructure"}
+{"key": "dd73c2337006cd6e42cc89acdf3aa94fde941f585d5c7d0d4a54963f860a9727", "src": "en cruce de carretera, donde la canalización se integra con las infraestructuras viales existentes", "out": "at road crossing, where channelling is integrated with existing road infrastructure"}
+{"key": "20f3aaf72327c7db3085967ab8ceed8bc6e6bdbed6f7cb12e03d3b4947ba0940", "src": "en cruce de carretera, garantizando la continuidad estructural y funcional con la red viaria", "out": "at road crossing, ensuring structural and functional continuity with the road network"}
+{"key": "15aaa0ca3453dc0252206a1e99d78fa295c2e4c15832a7f6f80a40e0f8c73900", "src": "en cruce de carretera, manteniendo la integridad de la canalización en intersecciones viales", "out": "at road crossing, maintaining the integrity of the canalisation at road intersections"}
+{"key": "05f08b435a8c7df818868f289f21bebe51b354942cb2b22a4e527d0155bf1c8c", "src": "en cualquier clase de terreno, excepto en terreno rocoso, donde la canalización podría no instalarse correctamente", "out": "on any kind of terrain, except on rocky terrain, where channeling may not be installed properly"}
+{"key": "1d6a8787cefa0950d7f0bc647d409419ef13beb94f7f3dc314656b648d152e16", "src": "en cualquier clase de terreno, excepto en terreno rocoso, donde la instalación podría enfrentar dificultades técnicas", "out": "on any kind of terrain, except on rocky terrain, where the installation could face technical difficulties"}
+{"key": "2917844914ea19256ec0cbd4fd26355ba3906f4e0b55c31e0ae7da66ba9f87f5", "src": "en cualquier clase de terreno, excepto en terreno rocoso, que no es adecuado para la instalación de canalización hormigonada", "out": "on any kind of terrain, except rocky terrain, which is not suitable for concrete channeling installation"}
+{"key": "61a26ddf2589506030c0f9a393e2fcdb38278653b80805e2ad06e24376f9cb49", "src": "en cualquier clase de terreno, excepto en terreno rocoso, que no es recomendado para este tipo de canalización", "out": "on any kind of terrain, except rocky terrain, which is not recommended for this type of channeling"}
+{"key": "dd528f293845646e9087cb7dfdcb3ba9627d823d8155d9a3c39102585f535f94", "src": "en cualquier clase de terreno, excepto en terreno rocoso, que podría comprometer la estabilidad de la canalización", "out": "on any kind of terrain, except in rocky terrain, which could compromise the stability of channeling"}
+{"key": "e89e731b50e51ff11c5075342edca73da45dd1f23680d2ba7b243e41f4ded583", "src": "en cualquier clase de terreno, excepto en terreno rocoso, que podría requerir métodos de instalación alternativos", "out": "on any kind of terrain, except rocky terrain, which may require alternative installation methods"}
+{"key": "bfeb9a972f0b0a0b1aabaa9f2bd4fd414c6685e7df8e3375726f95c55e1548fb", "src": "en cualquier clase de terreno, excepto roca", "out": "on any kind of terrain except rock"}
+{"key": "ca4b7f014462c68ff1ca5b56438b6cf6d438a6dd4581530975571240dc6ec93e", "src": "en cualquier terreno, no roca", "out": "on any terrain, not rock"}
+{"key": "bc133eb5e4da7db255c047757ec77f3b0cd888f23b2996f7287b722e6d05e3da", "src": "en cualquier terreno, no rocoso", "out": "on any terrain, not rocky"}
+{"key": "ddf49697a5bca7e07bebddfb2b1eb3559be138d812fd13368ea7ab35b578d7ea", "src": "en cualquier tipo de suelo, con la excepción de terreno rocoso", "out": "on any soil, with the exception of rocky soil"}
+{"key": "29aff7cf2e14c23f5347f3a83c7593a5c3d2bfbf1c2b799f5387c6e733978716", "src": "en cualquier tipo de suelo, excepto en terreno rocoso", "out": "on any soil, except in rocky terrain"}
+{"key": "cee2f98a588f8d098d587947d5cee875b0c25d86d7aebfb2b89331a64867c74c", "src": "en cualquier tipo de suelo, salvo en terreno rocoso", "out": "on any soil, except in rocky terrain"}
+{"key": "297d8a255953ecaa5161c8daa3f9e0b568c00aace55448b090d0eaf0cd3a2e1a", "src": "en cualquier tipo de terreno, a excepción de roca", "out": "on any type of land, except rock"}
+{"key": "ae5104de691881d75ef9fa98943358280f2c73cd293bb8faf49a59fd141726e7", "src": "en cualquier tipo de terreno, excepto en áreas rocosas", "out": "on any type of terrain except in rocky areas"}
+{"key": "37c5acb790ae7f3f5273e33d3d5457b4ced019e5802d0a42e5a55b15b6016337", "src": "en cualquier tipo de terreno, salvo en zonas rocosas", "out": "on any type of land except in rocky areas"}
+{"key": "a93550bc30f160be0303b5b2c866a59764d1a61ed5f28042ee4e346a7b946247", "src": "en intersección con camino vehicular", "out": "at intersection with vehicular road"}
+{"key": "176e20d0e8aec1eb09a09dcd7eb87c200b1782f2b32e660229b6e6eb71b4d7d7", "src": "en intersección con carretera", "out": "at intersection with road"}
+{"key": "f032638ceabff68e7fc170a5088ed8986211885541d93b38abf2142c03115b36", "src": "en intersección con vía de carretera", "out": "at intersection with roadway"}
+{"key": "db03cbd21ae647c2efaaed7252dcf60ced62ecc5bc12eef1089d44779126f710", "src": "en intersección con vía pública", "out": "at intersection with public road"}
+{"key": "6b1a4bf3e04d71324e995d3b8579d6db76e09e753106c520af2f9809e6ce5239", "src": "en intersección inferior a las líneas férreas", "out": "at intersection below railway lines"}
+{"key": "4fddb1da2ad6fb44e3bbe78a872293afee2345e924d768f2f8f3f62ae9764281", "src": "en intersección inferior a las vías", "out": "at intersection below the tracks"}
+{"key": "6d83bc196ccda247d0d8dd184cb0b93da61e3357870fd86d1e18c9b181fbe413", "src": "en intersección subterránea de vías", "out": "at underground intersection of tracks"}
+{"key": "0fe09a63cb405a1069a572e987a1cc42001329ee9c50c5b213257a35c7130991", "src": "en intersección subvial", "out": "at subvial intersection"}
+{"key": "a67e2fca0454b6b528f45bc1f81670ae9453870b44bd2182addf6e5df19c3ff9", "src": "en plataforma de andén", "out": "platform platform"}
+{"key": "62e477498a7a1a6489c6194bdcc89c8b75e31134fdfa926493d896b84e6c2b28", "src": "en plataforma de estación", "out": "on station platform"}
+{"key": "3c7fea3ed5b3ef5e2a60c90fa17c6c9dfa3f58c0e76f2e7b4a88da4c5c63dcd4", "src": "en punto de cruce con carretera", "out": "at road crossing point"}
+{"key": "bf8f680626abe168b0d5768ffef6707627f5ff942ef5a4f3a4d4c71fa05c196b", "src": "en punto de intersección con carretera", "out": "at intersection point with road"}
+{"key": "1b31d71ccd31b207aacda0beb2c6fc3f0945f29451f0c7dbf5435355c78f5a0a", "src": "en región de balasto", "out": "in the ballast region"}
+{"key": "d8af9116c96b50b2c6276a0f5b994d2dd510fd7780a922061897f16cc7b373bc", "src": "en sección de balasto", "out": "in ballast section"}
+{"key": "a22ea5045542199271bd00136476ea33634b3a67ec7fa230ee8250d42e88e10b", "src": "en sector de andén", "out": "in the platform sector"}
+{"key": "367f2ddd4e22b20498bdbc20a10b189bb74b31a7433ae831d5ccf7c910caa164", "src": "en sector de balasto", "out": "in the ballast sector"}
+{"key": "1fe1e21aa6591b1e8f9f909a224e3ff4b32cc107082ac83db99989ba76761ade", "src": "en suelo compuesto de roca", "out": "in soil composed of rock"}
+{"key": "fd6847a44a849bb8e79872a0cef435c1ac7125bab33882e40e5cc7f52fec8d44", "src": "en suelo de roca", "out": "on rock floor"}
+{"key": "c35593fbe7a6f9ebd4b794009b35a6b582fb35f7577172204e30bceee3665cb9", "src": "en suelo rocoso", "out": "in rocky soil"}
+{"key": "93fe6c18764af29cfa5d447e3d3ce441efc072c8b820eac5897c436bd3c7908d", "src": "en superficie de andén", "out": "on platform surface"}
+{"key": "57ba065450faa345f017381eeabaa43905b35b442e284ebfa090454fc8e03d2c", "src": "en terreno con roca", "out": "on land with rock"}
+{"key": "6edce684eca84048490acb46f5e83b7360fd72cef04ff730949f0d49461dfb4f", "src": "en terreno de naturaleza rocosa", "out": "in the field of rocky nature"}
+{"key": "097e8d2688559b408d059c8c04ef1582de6650f2bf8c95bf6a3911102ffe4db3", "src": "en terreno de roca", "out": "in rock terrain"}
+{"key": "701e75c7a631c1656e11331a1e6a83f2dfa443831c93cc568b0d6f0009e98896", "src": "en terreno rocoso", "out": "in rocky terrain"}
+{"key": "54e24a46d186778dbb1b5f586797815cf7b4bd84d3f27dc5204422d9f50352d9", "src": "en terreno rocoso, caracterizado por su resistencia y compactación, que demanda herramientas específicas para la canalización", "out": "in rocky terrain, characterized by its strength and compaction, which demands specific tools for channeling"}
+{"key": "9fa74ac026c12a5229cd732291170798539d014e624db1c403142c7c530f4e3e", "src": "en terreno rocoso, donde la canalización debe adaptarse a la topografía irregular y la presencia de rocas", "out": "in rocky terrain, where channeling must be adapted to irregular topography and the presence of rocks"}
+{"key": "7d933d0f2d66afa279b237fd4dd125c171bdd01775b8d8db46800bd0a8f31074", "src": "en terreno rocoso, donde la dureza del sustrato requiere técnicas de excavación especializadas para la instalación", "out": "in rocky terrain, where the hardness of the substrate requires specialized excavation techniques for installation"}
+{"key": "f0aca8a2e2c0e4d113562aaf1e74e78ab1e58164bd1bdff62ac7826d1cf9f815", "src": "en terreno rocoso, que implica un proceso de instalación más complejo debido a la naturaleza del suelo", "out": "in rocky terrain, which involves a more complex installation process due to the nature of the soil"}
+{"key": "05801b7528e7e255b088f91c5d5affa3a0a3120bb4b9f41a33c6aa1a9da3289a", "src": "en terreno rocoso, que presenta desafíos adicionales debido a la presencia de rocas duras y compactas", "out": "in rocky terrain, which presents additional challenges due to the presence of hard and compact rocks"}
+{"key": "c76d666c0befe75bb9c771b1556a9abe6681d06d94eb9a2aa954e88472f5f5db", "src": "en terreno rocoso, que requiere consideraciones especiales para asegurar la estabilidad y funcionalidad de la canalización", "out": "in rocky terrain, which requires special considerations to ensure the stability and functionality of channeling"}
+{"key": "eec3d2fa9d6d48d0a5d925307a984c704acc2264e8d07f36082713442b5024b9", "src": "en todo terreno, salvo roca", "out": "on all terrain except rock"}
+{"key": "bc0448c45eb22f581b7183bbf1e11cc67ce4a35dcdd906fec4f9c19fdc6bd001", "src": "en tramo de balasto", "out": "in section of ballast"}
+{"key": "0fc0931db4c8aa0e941f53108aa856247c5f8eb56267e9fe01da54ee32634c88", "src": "en zona de andén", "out": "in platform area"}
+{"key": "6a9c4829e9a863cfe7f7a8f36ba02bc5d2dcb2b30cccd0e15c280af83f6121f4", "src": "en zona de balasto", "out": "in ballast area"}
+{"key": "a6f82a349c0234ba674f3d2eddaa30ca45aa2a4c9b6493ecca9de91e3ea6ad7b", "src": "en zona de balasto, compuesta por piedras que proporcionan soporte y drenaje a las vías férreas", "out": "in ballast area, consisting of stones that provide support and drainage to railways"}
+{"key": "73a40e5e5d55dd004893d19189e05337ea8f42966c1ad4b3b51ad3694b712368", "src": "en zona de balasto, donde se encuentra la capa de piedras que amortigua y estabiliza las vías", "out": "in ballast area, where the layer of stones that cushions and stabilizes the tracks is located"}
+{"key": "dd931e1b7fe80fad394455f479782d8e6e9ede99e88c1036f2f066129bc98a65", "src": "en zona de balasto, específicamente en la capa de piedras que soporta y protege las vías férreas", "out": "in ballast area, specifically in the stone layer that supports and protects railways"}
+{"key": "6d7ba7566765d1f7e88f32911669acd946d4c3dc031e38c3e01ae1fb4751cb7d", "src": "en zona de balasto, formada por piedras que estabilizan y protegen las vías férreas", "out": "in ballast zone, formed by stones that stabilize and protect railways"}
+{"key": "a490bd88455cbdff9bcc45971e8fee9b8731cb27b3786d7ccbf99407b90abeb2", "src": "en zona de balasto, que consiste en una capa de piedras que soporta las vías y facilita el drenaje", "out": "in ballast area, consisting of a layer of stones that supports the tracks and facilitates drainage"}
+{"key": "56c9694ea52f9f8f606bede141d824ffece8b96a74d89e798b5659f85a1d21df", "src": "en zona de balasto, que es la capa de piedras colocada bajo las vías para su soporte y drenaje", "out": "in ballast area, which is the layer of stones placed under the tracks for support and drainage"}
+{"key": "bf372c5089c3e15f2f018b2adc8790d6f697ea006dbc98413db3d8d1d920494d", "src": "en área balastada", "out": "in ballasted area"}
+{"key": "392afbe06ffea3b1a80150c401ef0471925d30c9e404f73817f0c6427978ceeb", "src": "en área de andén", "out": "in platform area"}
+{"key": "8f9b739b39a4d12d467f840457f9040db2775129813ce15508e5550d5e57ad9a", "src": "en área de balasto", "out": "in the ballast area"}
+{"key": "db5a0188fbc6aa72419bded02835183771e6d77bb670653f7e326914425500db", "src": "instalada adosada o en superficie, asegurando una rápida ejecución de obra", "out": "installed terraced or on surface, ensuring a rapid execution of work"}
+{"key": "5d03dd143c78fa2e2678bc3071e1d521cf5a2229ca1648d97215b5da36866e38", "src": "instalada adosada o en superficie, permitiendo una integración sencilla con el entorno existente", "out": "installed terraced or surface, allowing easy integration with the existing environment"}
+{"key": "35e8a410f8431a9b90beb26be75ac58b6d4fcecd715650e3a9cf03524431b54e", "src": "subvial", "out": "subvial"}
+{"key": "f0081cc8dfc6e5f3175b1ebf0b27b08f1d3491d2d6f0def62b50fbbc63353178", "src": "subvial cruce", "out": "subvial crossing"}
+{"key": "656017791c99a24049586b06feda494982dbdff4ebfcdbcf5c315c726949e773", "src": "ubicada adosada o en la superficie, optimizando el uso del espacio disponible", "out": "located terraced or on the surface, optimizing the use of available space"}
+{"key": "8147b8cd728d0e87105a1d6e636ff92e87a8646a579cd83593bc684058f80a74", "src": "ubicada adosada o en la superficie, permitiendo una fácil inspección y reparación", "out": "located terraced or on the surface, allowing easy inspection and repair"}
+{"key": "85676b77fc1e605a3cc41195f7ce813b7ff1b4f8b79c7230cd3a8d438cabac84", "src": "Construcción del pozo, entibación, tubo guía de [1], hilos guía y sellado.", "out": "Construction of well, intibation, guide tube of [1], guide threads and sealing."}
+{"key": "05aead6c2531394c85801634c1a634a642f608ae3378ab4cd99397b76fdffc56", "src": "Incluso la construcción del pozo de ataque, entibación de los costados para estabilización, instalación de un tubo guía de acero de [1] de diámetro para facilitar el alineamiento. El suministro y montaje de los hilos guía para guiar el tubo, y el sellado de las embocaduras con poliuretano expandido para asegurar la estanqueidad.", "out": "Even the construction of the attack well, stowage of the sides for stabilization, installation of a steel guide tube [1] of diameter to facilitate alignment. Supply and assembly of the guide threads to guide the tube, and sealing of the openings with expanded polyurethane to ensure sealing."}
+{"key": "485f3450a21ac0a87f3c6a5897487ed3e8dbe48782d671037a52878630eb38de", "src": "Incluso la construcción del pozo de ataque, entibación de los costados para evitar desplomes, instalación de un tubo guía de acero de [1] de diámetro para facilitar el desplazamiento. El suministro y montaje de los hilos guía para asegurar el correcto posicionamiento, y el sellado de las embocaduras con poliuretano expandido para prevenir filtraciones.", "out": "Even the construction of the well of attack, tethering of the sides to avoid collapses, installation of a steel guide tube [1] of diameter to facilitate the displacement. Supply and assembly of the guide threads to ensure the correct positioning, and sealing of the openings with expanded polyurethane to prevent leaks."}
+{"key": "fe9ce3d406584b24a3992c46b9d6b471810ac7738da743a1e7fffe93ba14710e", "src": "Incluso la construcción del pozo de ataque, entibación de los costados para soporte estructural, instalación de un tubo guía de acero de [1] de diámetro para facilitar el avance. El suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para garantizar la hermeticidad.", "out": "Even the construction of the well of attack, tethering of the sides for structural support, installation of a steel guide tube [1] of diameter to facilitate the advance. The supply and assembly of the guide threads to maintain the trajectory, and sealing of the openings with expanded polyurethane to guarantee the waterproofness."}
+{"key": "21ea279233ebeb069db79cc78fe25ed9635b42c52f33e3fa65c1e881c85a5a30", "src": "Incluso la construcción del pozo de ataque, entibación de los costados, instalación de un tubo guía de acero de [1] de diámetro. El suministro y montaje de los hilos guía y el sellado de las embocaduras con poliuretano expandido.", "out": "Even the construction of the well of attack, tethering of the sides, installation of a steel guide tube [1] of diameter. The supply and assembly of the guide threads and sealing of the openings with expanded polyurethane."}
+{"key": "b02372e4450010d2652e8265b2f7a84343a42e9eaa35655d7251ae387c15328a", "src": "Incluye la edificación del pozo de ataque, la entibación lateral, y la colocación de un tubo guía de acero de [1] de diámetro. Además, se suministran y montan los hilos guía, y se sellan las embocaduras con poliuretano expandido.", "out": "It includes the construction of the attack well, lateral slurrying, and the placement of a steel guide tube [1] of diameter. In addition, guide threads are supplied and mounted, and the openings are sealed with expanded polyurethane."}
+{"key": "f05b775b1049ac4699339120c439a7981ab2e3698f49ddc0a45870a77be0a958", "src": "Se contempla la construcción del pozo de ataque, la entibación de los laterales, y la instalación de un tubo guía de acero de [1] de diámetro. También se incluye el suministro y montaje de los hilos guía, así como el sellado de las embocaduras con poliuretano expandido.", "out": "Provision is made for the construction of the attack well, the slurrying of the sides, and the installation of a steel guide tube [1] of diameter. Also included is the supply and assembly of the guide threads, as well as the sealing of the sluices with expanded polyurethane."}
+{"key": "465a533a9bd2a3c46ea15a1f50eabee9339315741f213ed114b16b91f67428ae", "src": "demolición de roca", "out": "demolition of rock"}
+{"key": "b122fe2febb448ddf4a5db95368bf4082dca812adc80a46d3357347dc4aba897", "src": "demolición de roca dura", "out": "hard rock demolition"}
+{"key": "4591829fd7bf284b7c61a52808846ee21e598840fa4e411de0ae314aaa83a127", "src": "demolición de roca,", "out": "demolition of rock,"}
+{"key": "e9a3a9145be658cf800c63364915b112136738f83c775f0f06a1e6403bdf8020", "src": "demolición y reposición del firme y pavimento", "out": "demolition and replacement of the firm and pavement"}
+{"key": "aba3866907c43b2e9c296062046c434ac412995a72f8f69ef46329dbf2c6544b", "src": "demolición y reposición del firme y pavimento,", "out": "demolition and replacement of the firm and pavement,"}
+{"key": "f13412c8d7f0ff8048430f2dcbc5854e0f9cff510c192079e22f1459fd3acd7e", "src": "demolición y reposición del pavimento y solera", "out": "demolition and replacement of pavement and solera"}
+{"key": "006b265c197c704ba0e046d75c1ee54745a201a0de83bc41916045ac097e7b8e", "src": "demolición y reposición del pavimento y solera,", "out": "demolition and replacement of pavement and solera,"}
+{"key": "8f6ac224151fa72f13220da8f24bb032a9ec3375223753959c50499fee6c488b", "src": "demolición y reposición del pavimento-solera", "out": "demolition and replacement of pavement-solar"}
+{"key": "e4ee851077665bd4173b5febc7c6731bc9f0e83907c734396e7978781efa1c27", "src": "demolición y reposición del pavimento-solera,", "out": "demolition and replacement of the pavement-sole,"}
+{"key": "4e3c9a36d1afe7983a7fefd5a184797a18776f5b88cf6efc2893add975ed0ebb", "src": "demolición y reposición pavimento-solera", "out": "demolition and replacement flooring-solar"}
+{"key": "6f91db27eb17a53a140c0de6dff249bde8718e541c34c665a380a66513d81448", "src": "demolición y reposición pavimento-solera,", "out": "demolition and replacement pavement-solar,"}
+{"key": "5b0f4d94d787b3a0cc7979b08e93c6af296bd31bcec9ced981a0951d9519dda2", "src": "descerne, entibación y reposición del balasto retirado,", "out": "decerne, storage and replacement of the removed ballast,"}
+{"key": "2f9a6c51be22aa161face5fc62ef3378228fe24cb0955abe66ea0c0eb5271540", "src": "descerne, entibación y reposición del balasto,", "out": "decerne, storage and replacement of ballast,"}
+{"key": "c9119624fca5c3322426f815498cc19cb375ce7c8eff83083d9186ea3d869af0", "src": "el descerne y la entibación de los costados para asegurar la estabilidad durante la operación, seguido de la reposición cuidadosa del balasto retirado para restaurar la superficie de la vía,", "out": "decerne and slurrying of the sides to ensure stability during the operation, followed by careful replacement of the ballast removed to restore the surface of the track,"}
+{"key": "a94d4d86c0680d4f8c0c03add8c80b453e1c8c17e9c172e87cc09deb8f779a52", "src": "el descerne y la entibación de los costados para asegurar la estabilidad estructural, seguido de la reposición del balasto retirado para completar el proceso de mantenimiento,", "out": "decerne and slurrying of the sides to ensure structural stability, followed by replacement of the ballast removed to complete the maintenance process,"}
+{"key": "253a0c1d5c752cbe83b8c87eaf20974555d1d78bcf3cde9f243bdbdc523b1f02", "src": "el descerne y la entibación de los costados para facilitar el acceso seguro, y la reposición del balasto retirado para mantener la calidad de la vía,", "out": "decerne and slurrying of the sides to facilitate safe access, and replacement of the removed ballast to maintain the quality of the track,"}
+{"key": "18f171c548d3166e312ac92ce516933f68b2942a6164c0304e68d3a636990112", "src": "el descerne y la entibación de los costados para facilitar el acceso y la seguridad, seguido de la reposición del balasto retirado para garantizar la continuidad del firme,", "out": "decerne and slurrying of the sides to facilitate access and safety, followed by replacement of the removed ballast to ensure continuity of the firm,"}
+{"key": "6fbdd25eccdc23320a1805d86f397321ce55dba5d9048bd282f0fca2a8372d4e", "src": "el descerne y la entibación de los costados para prevenir deslizamientos, y la posterior reposición del balasto retirado para mantener la integridad de la vía,", "out": "decerne and slurrying of the sides to prevent slips, and the subsequent replacement of the ballast removed to maintain the integrity of the track,"}
+{"key": "b669224725d165a2e3facaecb4de0bdc7af3125e88f8ec59f1f8ced7a54329b5", "src": "el descerne y la entibación de los costados para proteger la estructura durante la operación, y la reposición del balasto retirado para restaurar la funcionalidad de la vía,", "out": "the decerne and slurrying of the sides to protect the structure during operation, and the replacement of the ballast removed to restore the functionality of the track,"}
+{"key": "24cc0034f1782cc3627f8e6ed88147df475e9a7daff59a3a2a7910bf4f936244", "src": "el descerne y la entibación de los costados y la posterior reposición del balasto retirado,", "out": "the decerne and slurrying of the sides and the subsequent replacement of the removed ballast,"}
+{"key": "26827e7c975d2136f72645eb3fb97696c88c6e8b64fdd0467e738b2d4e1b872b", "src": "la demolición de roca dura,", "out": "the demolition of hard rock,"}
+{"key": "9106b9fb240bef8548b15587d7f4468b54a3c4a26d79ab93b9e6f39cff51407f", "src": "la demolición de roca dura, asegurando la eliminación completa de la estructura geológica,", "out": "the demolition of hard rock, ensuring the complete elimination of the geological structure,"}
+{"key": "e58bcc7df606fbb25bf4c77f736ff564b0669f3d0393a467dc2701ca4958a5e8", "src": "la demolición de roca dura, con el objetivo de preparar el terreno para nuevas construcciones,", "out": "the demolition of hard rock, with the aim of preparing the ground for new constructions,"}
+{"key": "5c46a0c3b905fd7a137c9b556275a4bb41bccfa852e8850a223e9e19295925d8", "src": "la demolición de roca dura, garantizando la estabilidad del entorno circundante,", "out": "the demolition of hard rock, ensuring the stability of the surrounding environment,"}
+{"key": "b12cea0882a1e51e7eb0abbc7125d0efa18769f0697b488695878d7190e000b9", "src": "la demolición de roca dura, incluyendo la fragmentación y el desmantelamiento de la estructura sólida,", "out": "the demolition of hard rock, including fragmentation and dismantling of the solid structure,"}
+{"key": "0b020e624c3f48303ddc1ef232a7aa39e69c0a12110ccf26351edac2c3e67478", "src": "la demolición de roca dura, mediante técnicas de perforación y voladura controlada,", "out": "the demolition of hard rock by means of drilling and controlled blasting techniques,"}
+{"key": "acc093d9fcd38a344d25d810f42add0362d5a34aeacb24f3b7a44fd2f274b38b", "src": "la demolición de roca dura, utilizando maquinaria especializada para su desintegración,", "out": "the demolition of hard rock, using specialized machinery for its disintegration,"}
+{"key": "a67f61a01973764a895d74d17a23ca8bfe7d0cea5af5c6b5d2064dcfefea4910", "src": "la demolición y la reposición del firme y del pavimento,", "out": "the demolition and replacement of the firm and the pavement,"}
+{"key": "090b948e1dc9cfcfd7cb7c7559f200b02402835426e5079fb8e44bd946ab61c9", "src": "la demolición y la reposición del firme y del pavimento, asegurando la alineación y nivelación correctas para el tránsito ferroviario,", "out": "the demolition and replacement of the firm and pavement, ensuring the correct alignment and leveling for rail traffic,"}
+{"key": "eafb3620abfb5ccbfc3601ab416ce7750652c5c605a07cf45f8f0be6732d86b6", "src": "la demolición y la reposición del firme y del pavimento, asegurando la compatibilidad con las especificaciones técnicas del proyecto,", "out": "the demolition and replacement of the firm and the pavement, ensuring compatibility with the technical specifications of the project,"}
+{"key": "261d37c4617fd13408ce5e55bb5a3bc719903d4c3b51b48d12b98c959afabad7", "src": "la demolición y la reposición del firme y del pavimento, con verificación de la integridad estructural tras la instalación,", "out": "the demolition and replacement of the firm and pavement, with verification of the structural integrity after installation,"}
+{"key": "620c536b1b6843a1a542fbfb862d07379bb3aafafc0fdf3f5987696b19676d9f", "src": "la demolición y la reposición del firme y del pavimento, garantizando la adherencia y durabilidad del material utilizado,", "out": "the demolition and replacement of the firm and pavement, ensuring the adhesion and durability of the material used,"}
+{"key": "18914b4648e2874aae345c62ef21ef95ddc056e0220dcbb9adb7e4f019a18023", "src": "la demolición y la reposición del firme y del pavimento, incluyendo la aplicación de capas protectoras para resistir el desgaste,", "out": "the demolition and replacement of the firm and pavement, including the application of protective layers to resist wear,"}
+{"key": "d3a2bc030877200f41fc55997d14ce684253f0b359e16c733f2a19636a1e34ad", "src": "la demolición y la reposición del firme y del pavimento, incluyendo la preparación del terreno y la compactación adecuada para asegurar la estabilidad estructural,", "out": "the demolition and replacement of the firm and pavement, including the preparation of the ground and the proper compaction to ensure structural stability,"}
+{"key": "ea6f1b3f152958a317a72588c883b4708f4ecbcb4d15df3af4d2ec3a0d614052", "src": "la demolición y la reposición del pavimento y la solera,", "out": "the demolition and replacement of the pavement and solera,"}
+{"key": "e6519c7a9bc08bd85ad703c19931394071bec5623c4d8a75019f7baf31b842da", "src": "la demolición y la reposición del pavimento y la solera, asegurando la alineación correcta y la integración con las estructuras adyacentes,", "out": "demolition and replacement of pavement and solera, ensuring correct alignment and integration with adjacent structures,"}
+{"key": "21e325e9e560df3e76bb4f9a114238b0fcc11a818d6fef14c81ce9d835b064b3", "src": "la demolición y la reposición del pavimento y la solera, asegurando la compatibilidad de los materiales con las condiciones ambientales previstas,", "out": "the demolition and replacement of the pavement and solera, ensuring the compatibility of the materials with the expected environmental conditions,"}
+{"key": "88ff222453c8f35c94ce187118985224bedeb8ecb93ac489e530dbff02b0fa88", "src": "la demolición y la reposición del pavimento y la solera, con verificación de la planitud y uniformidad del acabado final,", "out": "the demolition and replacement of the pavement and solera, with verification of the flatness and uniformity of the final finish,"}
+{"key": "2955e6d8575990c46cbf79d74ee0349842d139b798e2c988ff048d237f3ad98a", "src": "la demolición y la reposición del pavimento y la solera, garantizando la adherencia y compactación adecuada de los materiales utilizados,", "out": "the demolition and replacement of the pavement and solera, ensuring proper adhesion and compaction of the materials used,"}
+{"key": "ec87d24296c1c93673b4428771aae78bdecc0f9534619ef1bfb988f59f7a05b1", "src": "la demolición y la reposición del pavimento y la solera, incluyendo la inspección y corrección de cualquier defecto estructural detectado,", "out": "the demolition and replacement of the pavement and solera, including the inspection and correction of any detected structural defects,"}
+{"key": "08d14fc24ac0f1daaa57942eaa54782f4a52fb0cf683e779cb5b9d142e68dfdc", "src": "la demolición y la reposición del pavimento y la solera, incluyendo la preparación del terreno y la nivelación adecuada para asegurar una base firme y estable,", "out": "the demolition and replacement of the pavement and solera, including the preparation of the terrain and the appropriate leveling to ensure a firm and stable base,"}
+{"key": "3605e9f92449496b2292712f76ba1911f9bd8bfe1460cdae30f3e678ed3eeee3", "src": "la desintegración de roca compacta,", "out": "compact rock decay,"}
+{"key": "51960ff5c46a0ed48a7785b4686b9b9dd253bd73497bbcb0019a1769a1507fae", "src": "la desmantelación y la reconstrucción del firme y del pavimento,", "out": "dismantling and rebuilding of the firm and pavement,"}
+{"key": "fffbcadaca907b51113e07ddc57e1c43347ff01f1de13906f5d8124cffbd5e90", "src": "la desmantelación y la reinstalación del pavimento y la solera,", "out": "the dismantling and reinstallation of the pavement and solera,"}
+{"key": "bc9b65bc9c79c4b0a4dc83634fdc6429f91c068a70aa91b1c830bc72b6e75851", "src": "la destrucción de roca sólida,", "out": "the destruction of solid rock,"}
+{"key": "77632f887c4074077d47f0a1c12a52e8d5b91b0d140252a221504ffa01f10378", "src": "la destrucción y el reemplazo del pavimento y la solera,", "out": "the destruction and replacement of the pavement and solera,"}
+{"key": "ac21cf8d446818992b136405c77bb4087ef7eb1398184be8b2dbed79e8dd1234", "src": "la destrucción y la reinstalación del firme y del pavimento,", "out": "the destruction and reinstallation of the firm and the pavement,"}
+{"key": "d313798de8e465747564822f94ea27d87a97120327804e5f9c81c36cf703b00a", "src": "la eliminación de roca resistente,", "out": "the removal of resistant rock,"}
+{"key": "fcc0b6a7d777ccdf13b9d25ff34f088584ff1b95e9d2fbeb7e1d85f1135f15c3", "src": "la eliminación y el reemplazo del pavimento y la solera,", "out": "removal and replacement of pavement and solera,"}
+{"key": "2b84eb3beb8a3e9618bf940067897d08bd45e948c821754865ca42414dda3b28", "src": "la eliminación y la reconstrucción del firme y del pavimento,", "out": "the removal and reconstruction of the firm and the pavement,"}
+{"key": "9b9ff33e50ca6eea39cc44e8402b27a1856e749d874badcf401a88a5bf129c89", "src": "la eliminación y la restauración del firme y del pavimento,", "out": "the removal and restoration of the firm and the pavement,"}
+{"key": "bfa1d887e88da11e4676b68fde4b3a1bdd9e607290a05eb107b478e057e2201f", "src": "la excavación de los costados y el refuerzo temporal, seguido de la reposición del balasto extraído,", "out": "the excavation of the sides and the temporary reinforcement, followed by the replacement of the extracted ballast,"}
+{"key": "d88e3d6b2c7b2f08435f8f1e3c7b55fd75609cb13ceafbd5c58577c7b24b860d", "src": "la excavación de los laterales y el apuntalamiento temporal, seguido de la reposición del balasto extraído,", "out": "the excavation of the sides and the temporary support, followed by the replacement of the extracted ballast,"}
+{"key": "d9483da08aaf0f224da1f3fb87cbe04bdddf287a90cc741b74a8bb64c1c108b6", "src": "la excavación lateral y el soporte temporal de los bordes, seguido de la reinstalación del balasto extraído,", "out": "the lateral excavation and the temporary support of the edges, followed by the reinstallation of the extracted ballast,"}
+{"key": "ed731469d8acbd3c8fa0117e5385696ef4acdf3ca11a1c8cb4b4732d85bad01b", "src": "la extracción lateral y el apuntalamiento temporal de los bordes, con la reubicación del balasto removido después,", "out": "the lateral extraction and the temporary support of the edges, with the relocation of the ballast removed afterwards,"}
+{"key": "58959bbb0d7d4b3ab77296aaff1db5d9312075971e0e336a51d9614d0a04a292", "src": "la extracción lateral y el refuerzo temporal de los lados, con la reubicación del balasto removido después,", "out": "lateral extraction and temporary reinforcement of the sides, with the relocation of the ballast removed afterwards,"}
+{"key": "03dec02ec68413dd7f642374628bfaf7698e0080b0f1fb581011dc5409035d33", "src": "la fragmentación de roca compacta y resistente,", "out": "compact and resistant rock fragmentation,"}
+{"key": "870805f6532898eca22673f018444137dfa4790254b2d41cfe577d08703287cc", "src": "la fragmentación de roca compacta,", "out": "compact rock fragmentation,"}
+{"key": "28d4f4f66aa6c17677693a32ff8771cde9385ab1528df10cfc8dd189cc77f0c6", "src": "la remoción lateral y el soporte provisional de los bordes, con la reinstalación del balasto retirado posteriormente,", "out": "lateral removal and provisional support of the edges, with the reinstallation of the ballast subsequently removed,"}
+{"key": "817dc7008c02b5256a51001770ea945b0d8eda7802e34d86d624312a4e8fe9b8", "src": "la remoción y el restablecimiento del pavimento y la solera,", "out": "the removal and restoration of the pavement and solera,"}
+{"key": "68624a0f8a60a4948d366c29ac5745d702fbc4545407de942e71f361e43b3694", "src": "la retirada y el reemplazo del pavimento y la solera,", "out": "the removal and replacement of the pavement and solera,"}
+{"key": "c13d6c7cd9c72a63583138164bbb779c5f8c80c63547098a552eef57661fce68", "src": "la retirada y el restablecimiento del pavimento y la solera,", "out": "the removal and restoration of the pavement and solera,"}
+{"key": "80ecac8daccc38a478252835630c913dc472528bfcfcd334a486a62cccf97657", "src": "la retirada y la reinstalación del firme y del pavimento,", "out": "the removal and reinstallation of the firm and the pavement,"}
+{"key": "676c17d3b1891b52016b578cb797e163f18db7ee231836e348e61ee2b1aef0c2", "src": "la retirada y la restauración del firme y del pavimento,", "out": "the removal and restoration of the firm and the pavement,"}
+{"key": "1cfe14940089ab3cd986909abae6df2fac67b3a4aef8f71b08d5b3b2f4ead106", "src": "la ruptura de roca endurecida,", "out": "hardened rock break,"}
+{"key": "617486d3436ebf0ef7b7a480ab9d005394ad3147c99e746466e62002a6391a72", "src": "la preparación y nivelación adecuada de la solera, suministro y montaje del encofrado, elementos de fijación requeridos, y el desencofrado subsiguiente,", "out": "the preparation and appropriate levelling of the formwork, supply and assembly of the formwork, the required attachment elements, and the subsequent formwork,"}
+{"key": "5a406b22f01cbc9743d67fc222aa3709b2458d3db4a7c73230513061532e48a4", "src": "la preparación y nivelación de la solera, suministro y montaje del encofrado, elementos de fijación, desencofrado,", "out": "the preparation and leveling of the floor, supply and assembly of the formwork, fixing elements, decoiling,"}
+{"key": "ce431f0a567f8f4832f19bbaf39df150bce6c9f56b82a1ddf83d45d1a6256c9a", "src": "la preparación y nivelación meticulosa de la solera, suministro y montaje cuidadoso del encofrado, elementos de fijación adecuados, y el desencofrado posterior,", "out": "the meticulous preparation and leveling of the flooring, supply and careful assembly of the formwork, suitable fixing elements, and subsequent formwork,"}
+{"key": "56a31e9a08dfb05cadb68759bcec71dda2144d6eb5a32b7206de999eb8426377", "src": "la preparación y nivelación precisa de la solera, suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado final,", "out": "the precise preparation and leveling of the flooring, the supply and assembly of the formwork, the necessary fixing elements, and the final formwork,"}
+{"key": "f9f6de0201d729a61c55866a557eae7ae56b9e7745f83ee3c8f12bee8ed7032d", "src": "nivelación de la solera, montaje del encofrado y desencofrado,", "out": "leveling of the floor, assembly of the formwork and decoiling,"}
+{"key": "f51b616ed38719ad84ba4d97408dc4ef34f827df575dac4914132e3327f6e8fc", "src": "nivelación de la solera, montaje del encofrado, desencofrado,", "out": "leveling of the floor, formwork assembly, decoiling,"}
+{"key": "d57a1a4121e7cf518d05621879b9cb0716a26dc8f6fe7ab53de932510332ca5e", "src": "nivelación de la solera, montaje y desencofrado del encofrado,", "out": "leveling of the floor, assembly and decoiling of the formwork,"}
+{"key": "5577c5d2905b5f63ed39669c90436ba06baece2c281d29debfed904c293ab829", "src": "nivelación y preparación de la base, suministro y ensamblaje del encofrado, elementos de anclaje, desmontaje del encofrado,", "out": "leveling and preparation of the base, supply and assembly of the formwork, anchoring elements, dismantling of the formwork,"}
+{"key": "07601356f28b705ba10cc0c013229e5b07264a7d7ce7b2d00b5b01b8c1110368", "src": "nivelación y preparación de la solera, entrega y montaje del encofrado, elementos de fijación, retirada del encofrado,", "out": "leveling and preparation of the formwork, delivery and assembly of the formwork, fixing elements, removal of the formwork,"}
+{"key": "983869773f5d4035cdf4743dd66f120859e1f10b31bb5f84d8d1e72c906b6d5c", "src": "nivelación y preparación de la solera, provisión y colocación del encofrado, elementos de sujeción, retirada del encofrado,", "out": "leveling and preparation of the formwork, provision and placement of the formwork, attachment elements, removal of the formwork,"}
+{"key": "68e7e982a2413d14a226df18ede2879718b022f7e7e24dee0a21c516ce8914a5", "src": "nivelación y preparación de la solera, provisión y montaje del encofrado, elementos de sujeción, desmontaje del encofrado,", "out": "leveling and preparation of the flooring, provision and assembly of the formwork, attachment elements, dismantling of the formwork,"}
+{"key": "a8d3b47dcf17428706ed906f7f7a23bff5111326c7cd15292a7014d0825b49e8", "src": "Nº tubos: Cinco componentes", "out": "No tubes: Five components"}
+{"key": "0416f591e0b3acffe3f53507d64c1790e144abfc1f3a5e2e798866c6a3a501d1", "src": "Nº tubos: Cinco tubos", "out": "No tubes: Five tubes"}
+{"key": "8197a472505602b4b526b8c8ff8612951b23141b578d6a9f1b980cd95872ada3", "src": "Nº tubos: Quíntuple", "out": "No tubes: Fivefold"}
+{"key": "878e6f960d63e664a249b993c0a98b0136741e4ee1eb6507a03cd89af329920b", "src": "Nº tubos: Tres elementos", "out": "No tubes: Three elements"}
+{"key": "fabf36e3cb152777db44832bf3c75249b7f4b4462d496551f28e66a55a70356a", "src": "Nº tubos: Tres tubos", "out": "No tubes: Three tubes"}
+{"key": "7f4e97949bf4b25fc8aaa6b84aa2be4c9fc31271780aab354f6d05e8ed0a4481", "src": "Nº tubos: Triple", "out": "No tubes: Triple"}
+{"key": "3baad6e72d5c01f0abce3aa73723593ac008c4ea7eec713ae81a582a744e92cd", "src": "Nº tubos: Un solo tubo", "out": "No tubes: One tube"}
+{"key": "e2cdd857ed316f5a898c9404ec7286ff512b05c9841181aca808380b50ff0c40", "src": "Nº tubos: Un tubo", "out": "No tubes: A tube"}
+{"key": "e0e92d767443ba936409b032ccb4a595bd4c5590797a0cf46f4ce93ed1954725", "src": "Nº tubos: Unidad", "out": "No tubes: Unit"}
+{"key": "b2358cae92ecdb8c9a95f9d3bb00f62dece0724d7706d403567eae73323cbb1b", "src": "en cruce carretera", "out": "at road crossing"}
+{"key": "eaa76634b9078e06dcd2f0176486d15daa0f48b5478fd3e712d93dbbdefa3393", "src": "en cruce carreteras", "out": "at crossing roads"}
+{"key": "12e42b9e8ef53e4eae0c3371d59752f17b542fff6a42a61d170a79cfef39734c", "src": "en cruce vial", "out": "at the intersection of the vial"}
+{"key": "1e3b97b382f7b823f3cf7a6f5ed6d9d8425d1aeca09ec38615a042299d4768ef", "src": "en cualquier terreno, salvo roca", "out": "on any terrain except rock"}
+{"key": "b9e1d56ae69242e8b1e18c856c0c5887ac95e6fecf92fa34566df6c9b0fac290", "src": "en intersección carretera", "out": "at intersection road"}
+{"key": "286915c14e1e4475b9ea9ead89a30684c098695952543bd568baf1ac7638746b", "src": "en intersección carreteras", "out": "at intersection roads"}
+{"key": "4729aee04c945562ba68ee2871a0f527cc20d51763ac4fdf7e8402c9f59a3e59", "src": "en intersección subterránea de ferrocarril", "out": "at underground railway intersection"}
+{"key": "af124e7d5c963aa1748aeeccd0b2eb88bb3efc68f36de18405bd9371e38d65da", "src": "en intersección vial", "out": "at vial intersection"}
+{"key": "1b414e8d58997e7ce7b936d496d81da7dafad2f39ced2af6f8f68e70edfe8b91", "src": "en todo terreno, excepto roca", "out": "on all terrain except rock"}
+{"key": "161ec2ff420124aa8ead1da1ffbfb5293735273d8e1a9f4bb0733a2ef9a60dc4", "src": "en todo terreno, no roca", "out": "on all terrain, not rock"}
+{"key": "5dc7ecf3a0c0035847bed29c5566465bc971b440e680a91854f6a5dfa7f874da", "src": "comprende la construcción del pozo de ataque, la entibación de los laterales, la instalación de un tubo guía de acero de [1] de diámetro, el suministro y montaje de los hilos guía, y el sellado de las aberturas con poliuretano expandido.", "out": "includes the construction of the attack well, the slurrying of the sides, the installation of a steel guide tube [1] of diameter, the supply and assembly of the guide threads, and the sealing of the openings with expanded polyurethane."}
+{"key": "55f8004b97805acdda1c87b288883a38ad2a4bae65f1f028032a94222dbaf084", "src": "construcción del pozo, entibación, tubo guía de [1], hilos guía y sellado con poliuretano.", "out": "construction of well, intibation, guide tube of [1], guide threads and sealed with polyurethane."}
+{"key": "505f87435334b427a7201a795c2214c4d964038b3e716830496ee90d4e206d0c", "src": "incluso la construcción del pozo de ataque, entibación de los costados para estabilizar la excavación, instalación de un tubo guía de acero de [1] de diámetro para facilitar el avance, el suministro y montaje de los hilos guía para asegurar la alineación, y el sellado de las embocaduras con poliuretano expandido para garantizar la estanqueidad.", "out": "including the construction of the well of attack, securing of the sides to stabilize the excavation, installation of a steel guide tube [1] of diameter to facilitate the advance, supply and assembly of the guide threads to ensure alignment, and sealing of the openings with expanded polyurethane to ensure sealing."}
+{"key": "55cdf27a9d2843d42317c272c6b6f557d9799b7034704de3126ab752d6540b01", "src": "incluso la construcción del pozo de ataque, entibación de los costados para prevenir deslizamientos, instalación de un tubo guía de acero de [1] de diámetro para facilitar el desplazamiento, el suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para evitar filtraciones.", "out": "including the construction of the well of attack, slurrying of the sides to prevent slips, installation of a steel guide tube [1] of diameter to facilitate the displacement, supply and assembly of the guide threads to maintain the trajectory, and sealing of the openings with expanded polyurethane to avoid leaks."}
+{"key": "01815a2fcd1aaf207f3b84f64b86f820400984d558f777eac6b8a1dbc340344b", "src": "incluso la construcción del pozo de ataque, entibación de los costados para soportar la estructura, instalación de un tubo guía de acero de [1] de diámetro para guiar el proceso, el suministro y montaje de los hilos guía para asegurar la precisión, y el sellado de las embocaduras con poliuretano expandido para proteger contra el agua.", "out": "including the construction of the attack well, the docking of the sides to support the structure, the installation of a [1] diameter steel guide tube to guide the process, the supply and assembly of the guide threads to ensure accuracy, and the sealing of the openings with expanded polyurethane to protect against water."}
+{"key": "b2a51c144d72b5d85de80581df0d94f6a191984737ccaa80bcc8fd818ca5aaff", "src": "incluso la construcción del pozo de ataque, entibación de los costados, instalación de un tubo guía de acero de [1] de diámetro, el suministro y montaje de los hilos guía y el sellado de las embocaduras con poliuretano expandido.", "out": "including the construction of the well of attack, slurrying of the sides, installation of a steel guide tube [1] of diameter, supply and assembly of the guide threads and sealing of the openings with expanded polyurethane."}
+{"key": "e8b6e68ad23b8ad3a3e6418a45a373e76d97219076283dad4ec99e0a9e1030d4", "src": "incluye la edificación del pozo de ataque, la entibación lateral, la colocación de un tubo guía de acero de [1] de diámetro, el aporte y ensamblaje de los hilos guía, y el sellado de las entradas con poliuretano expandido.", "out": "includes the construction of the attack well, lateral slurrying, the placement of a steel guide tube [1] of diameter, the provision and assembly of the guide threads, and the sealing of the entrances with expanded polyurethane."}
+{"key": "229626d175b1c4531719387d8f1be1d1e27085339dbf60790951f4f837f51043", "src": "pozo de ataque, entibación, tubo guía de [1], hilos guía y sellado con poliuretano.", "out": "well of attack, intibation, guide tube of [1], guide threads and sealed with polyurethane."}
+{"key": "7984bea81b3ff8a9b51db8994fcfeaa6640c7df26baf38f66ea0ec02d198c652", "src": "pozo de ataque, entibación, tubo guía de [1], hilos guía y sellado de embocaduras.", "out": "well of attack, intibation, pipe guide of [1], guide threads and seal of ambushes."}
+{"key": "52699a1046c363d7e07de5bd675868415f2f860dd1260aef1f78fbe55bac4b3c", "src": "pozo de ataque, entibación, tubo guía de [1], hilos guía y sellado.", "out": "well of attack, intibation, guide tube of [1], guide threads and sealing."}
+{"key": "dc13a31a7e1258705d7b388df4d0e9fabadbc51acd0aa7b9c385f08eee5e1571", "src": "la demolición y reposición del firme y del pavimento,", "out": "the demolition and replacement of the firm and the pavement,"}
+{"key": "4f4909ae7c4de3645dd3d776c37f4c38e57dd0f3fadcedfc578eea143dd9afd0", "src": "la demolición y reposición del firme y del pavimento, asegurando la compatibilidad del nuevo material con las condiciones ambientales,", "out": "the demolition and replacement of the firm and the pavement, ensuring the compatibility of the new material with the environmental conditions,"}
+{"key": "091f1d1fd90022dc7ec7d358929513c20b160d7db247b75a48bc0734e237db8d", "src": "la demolición y reposición del firme y del pavimento, asegurando la nivelación y alineación correcta del nuevo material,", "out": "the demolition and replacement of the firm and pavement, ensuring the proper leveling and alignment of the new material,"}
+{"key": "c1dfa20252bac4b119e38f422ea0aa509f921994c95419e86bbfba8aad235b9f", "src": "la demolición y reposición del firme y del pavimento, con el uso de técnicas de compactación avanzadas para el nuevo material,", "out": "the demolition and replacement of the firm and the pavement, with the use of advanced compaction techniques for the new material,"}
+{"key": "c15b172704101b4c64ae9aaa3157040c38696e614b2dcb44c693718bf8c763c7", "src": "la demolición y reposición del firme y del pavimento, garantizando la adherencia y estabilidad del nuevo material aplicado,", "out": "the demolition and replacement of the firm and pavement, ensuring the adhesion and stability of the new material applied,"}
+{"key": "ffe19e2743fdbab03cf99fec73e3b6af52f746838d19e05258081fbf0b0e7ebe", "src": "la demolición y reposición del firme y del pavimento, incluyendo la preparación del subrasante y la compactación adecuada del nuevo material,", "out": "the demolition and replacement of the firm and pavement, including the preparation of the subrasing and the proper compaction of the new material,"}
+{"key": "23f0a0fe9f2ab9fcec38f41133d6f9ff5e8bfa154375b534d5bb8eb3492ab051", "src": "la demolición y reposición del firme y del pavimento, incluyendo la verificación de la integridad estructural del nuevo pavimento,", "out": "the demolition and replacement of the firm and pavement, including the verification of the structural integrity of the new pavement,"}
+{"key": "250371dd106a2fa4bd845550a9b7c7746216fa6e34e60527849506ee8d02408e", "src": "la demolición y reposición del pavimento y la solera,", "out": "the demolition and replacement of the pavement and solera,"}
+{"key": "2e315f297e3a3e2860c26968c7aab4a55bba51508442a043dceaf455ebd8e97c", "src": "la demolición y reposición del pavimento y la solera, asegurando la compatibilidad del nuevo material con las condiciones ambientales,", "out": "the demolition and replacement of the pavement and solera, ensuring the compatibility of the new material with the environmental conditions,"}
+{"key": "47b9f5c1205ea9899695249d989534ee6482fcfd5f8843d6a44f3dfb92994e85", "src": "la demolición y reposición del pavimento y la solera, asegurando la nivelación y alineación correcta del nuevo pavimento,", "out": "the demolition and replacement of the pavement and solera, ensuring the proper leveling and alignment of the new pavement,"}
+{"key": "02f32346c267a685325684fb73980fdeffc38343de46833697b1065b5745f157", "src": "la demolición y reposición del pavimento y la solera, con la aplicación de capas intermedias de refuerzo si es necesario,", "out": "the demolition and replacement of the pavement and solera, with the application of intermediate reinforcement layers if necessary,"}
+{"key": "cc43da23708503d152bb124d33f83f518912dde40172c1c80363431c3c0d9f36", "src": "la demolición y reposición del pavimento y la solera, garantizando la adherencia y estabilidad del nuevo material aplicado,", "out": "the demolition and replacement of the pavement and solera, ensuring the adhesion and stability of the new material applied,"}
+{"key": "0e64be550e8605a2e9625b83cfbc6320499ce94eabf955a82d15287e9dc42dce", "src": "la demolición y reposición del pavimento y la solera, incluyendo la preparación del subrasante y la compactación adecuada del nuevo material,", "out": "the demolition and replacement of the pavement and solera, including the preparation of the subrasing and the proper compaction of the new material,"}
+{"key": "0c08bedd8bcf64c7832e5ff7c6ef37b3ffc8017bc3c51c7fed94ca62e7def3f5", "src": "la demolición y reposición del pavimento y la solera, incluyendo la verificación de la integridad estructural del subrasante,", "out": "the demolition and replacement of the pavement and solera, including the verification of the structural integrity of the subrasant,"}
+{"key": "a9efdb6df24c6583f8d21309511c0515d7135f1194d68a1de13b1e2e8c1ce5f9", "src": "la desmantelación y reemplazo del pavimento y la losa,", "out": "the dismantling and replacement of the pavement and slab,"}
+{"key": "94636b38b4f153f97a6d2609af36d1d7b5e72c5fbb4661baf56e0e1fbae0d225", "src": "la desmantelación y reinstalación del firme y del pavimento,", "out": "dismantling and reinstallation of the firm and pavement,"}
+{"key": "379eec3a63ea8ca58e0033274e6309a4a790ea710c3da91f1570027f0e101785", "src": "la desmantelación y reinstalación del pavimento y la base,", "out": "dismantling and reinstallation of the pavement and base,"}
+{"key": "d157a30851c7a46273e0130532a1a4c5bdcd38886da02cfe421e4e2fe1f676eb", "src": "la destrucción y reubicación del firme y del pavimento,", "out": "the destruction and relocation of the firm and the pavement,"}
+{"key": "2f1d171d78ad95530f8f18db34ce4f575dcb5c0b4bbb030e3f1008043b9e6d3e", "src": "la eliminación y reinstalación del firme y del pavimento,", "out": "the removal and reinstallation of the firm and the pavement,"}
+{"key": "962c45e6b43a7233be9f2b76b412dad1678309dfe1c09559ab5984dd1a65d1f4", "src": "la eliminación y reinstalación del pavimento y la base,", "out": "the removal and reinstallation of the pavement and base,"}
+{"key": "7e4b9dd058978ca76feadf9bd5657c502fb8fa5ef2d2413ad0a6ee9527c7180e", "src": "la eliminación y reinstalación del pavimento y la losa de base,", "out": "the removal and reinstallation of the flooring and base slab,"}
+{"key": "c3701b0b096db879742959fbbbc6cb2ddef577f9f045583fba6754ffdfed11f8", "src": "la remoción y reinstalación del firme y del pavimento,", "out": "the removal and reinstallation of the firm and the pavement,"}
+{"key": "37c0fd0e479dfcd430f565d4b0023fb02b3b34d1e21c6885effd4adc54253f74", "src": "la retirada y colocación nuevamente del firme y del pavimento,", "out": "the removal and repositioning of the firm and the pavement,"}
+{"key": "8cf09f03e136dbf0ea09260d0fa46a2875edcb896fa9b183a185d66eb585be57", "src": "la retirada y reemplazo del firme y del pavimento,", "out": "the removal and replacement of the firm and the pavement,"}
+{"key": "d4d40e2c222a3524fce6d681ae26881a957a1f2f8023723d8ee1c27807f82dac", "src": "la retirada y reemplazo del pavimento y la base,", "out": "removal and replacement of pavement and base,"}
+{"key": "7a0191bd87597831b76e10786303cdde355a71d064b99cc016f406eefec489d3", "src": "la retirada y reinstalación del pavimento y la losa,", "out": "the removal and reinstallation of the pavement and slab,"}
+{"key": "b21f89478ffd7a94874f89d2714da416df0e8bc62cdfb53d28e569f4b75cb1a9", "src": "la preparación y la nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación, desencofrado,", "out": "the preparation and leveling of the floor, the supply and assembly of the formwork, attachment elements, decoiling,"}
+{"key": "9f6cf2eac22d81872d2d47b28a39b7993a260b348135eb70645f848a20c6b336", "src": "la preparación y nivelación adecuada de la solera, el suministro y montaje del encofrado, elementos de fijación requeridos, y el desencofrado subsiguiente,", "out": "the preparation and appropriate levelling of the floor, the supply and assembly of the formwork, the necessary attachment elements, and the subsequent formwork,"}
+{"key": "c333cd5be298c12650db2ffa6fe524ec18c76f69281af8814fa19c4e97159597", "src": "la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación apropiados, y el desencofrado posterior,", "out": "the preparation and leveling of the solera, the supply and assembly of the formwork, appropriate fixing elements, and the subsequent formwork,"}
+{"key": "c8681ee47de7254689ef98a10a61d57e4596d4fc9303473b9d3f41630fb5f24f", "src": "la preparación y nivelación meticulosa de la solera, el suministro y montaje cuidadoso del encofrado, elementos de fijación adecuados, y el desencofrado posterior,", "out": "the meticulous preparation and levelling of the solera, the supply and careful assembly of the formwork, appropriate attachment elements, and subsequent formwork,"}
+{"key": "b5a71157efc88ef15c1ff35f9805efe13a2dbee34e8c941bc3e9820624a05a8b", "src": "la preparación y nivelación precisa de la solera, el suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado final,", "out": "the precise preparation and levelling of the solera, the supply and assembly of the formwork, the necessary fixing elements, and the final formwork,"}
+{"key": "b4110033ec809c6cbc51861693ddb4a2e827fd9bc7b75791c621793ad86a8522", "src": "nivelación de la solera, suministro y montaje del encofrado, fijación, desencofrado,", "out": "leveling, supply and assembly of formwork, fixing, decoiling,"}
+{"key": "e5c3cc5623e0fcf009aef1a4f856fcebcff9eca378471a007047970b72cd0d71", "src": "nivelación y preparación de la solera, provisión y colocación del encofrado, elementos de fijación, retirada del encofrado,", "out": "leveling and preparation of the formwork, provision and placement of the formwork, fixing elements, removal of the formwork,"}
+{"key": "6011f1e77fd369c861c7e5ede5cbc2c61ed91bc6d3983daa6c09293da2b60af1", "src": "nivelación y preparación de la solera, provisión y montaje del encofrado, elementos de sujeción, retirada del encofrado,", "out": "leveling and preparation of the flooring, provision and assembly of the formwork, attachment elements, removal of the formwork,"}
+{"key": "61cec1cd455e2b98e97f05c9c8490af27980bc0fe6d734bb847e33d71b217d42", "src": "nivelación y preparación de la solera, suministro y montaje del encofrado, elementos de sujeción, desmontaje del encofrado,", "out": "leveling and preparation of the formwork, supply and assembly of the formwork, attachment elements, dismantling of the formwork,"}
+{"key": "9ae0d237d353527c5db223839444f2c97a79a7eee173191acf1f3d36854608a2", "src": "Pavimento: con restauración", "out": "Flooring: with restoration"}
+{"key": "ab345540c3c60e674133bf098342d3bcb522d867cc97c97390a0fa0d072f4caa", "src": "Diámetro: [1] milímetros", "out": "Diameter: [1] millimetres"}
+{"key": "bd3cdfdf5eb51e6c8207a3c8f35048ce901827de1117c2e1c6e5ab4dbdffa95a", "src": "Profundidad: [1] [2] metros", "out": "Depth: [1] [2] meters"}
+{"key": "c9794955c15c66e2dd21942bfd9065b658c4dc89f9e96e6a3eeef613fda070e0", "src": "Profundidad: [1] metros", "out": "Depth: [1] meters"}
+{"key": "60160118b8e0cbf3e7631830f5ba5248fa143e6d39f88b0976a335de3d4e21d3", "src": "Profundidad: exactamente [1] metros", "out": "Depth: exactly [1] meters"}
+{"key": "ebd3ff7e450a0e14b42eeeb6a67b0bd46de66255918b8e8aa2367375627f998d", "src": "Profundidad: hasta [1]", "out": "Depth: up to [1]"}
+{"key": "b40cba2fcc9d84f473b38b48ff09d19537fc2ae226bbb2de9fd2d1ddfe64cb8d", "src": "Profundidad: hasta [1] metros", "out": "Depth: up to [1] meters"}
+{"key": "7aa739dcd23746d89120bb0764938e9ec4f26b3c22cb85760bd1f14ab0ca8f10", "src": "Profundidad: máximo [1] metros", "out": "Depth: maximum [1] meters"}
+{"key": "f9640fb8f4b9d3df12c41f26df24b96dfcc57127712d3c85f14e3496dcf44668", "src": "Profundidad: profundidad de [1] [2] metros", "out": "Depth: depth [1] [2] meters"}
+{"key": "341fdac0f98e541d1cb0c3b8a711be353d6b3222d5d3cc8329abe5fcdab436bb", "src": "Profundidad: profundidad de [1] metros", "out": "Depth: depth [1] meters"}
+{"key": "7d2dfdccf33a4689c2962dcc75566ecbf7b7ed8c3fa66110c0e4beb98cfbd676", "src": "Profundidad: profundidad máxima [1] metros", "out": "Depth: maximum depth [1] meters"}
+{"key": "3dc0539373f3b985229e64f40afe1fde8b85f0fa6a280be8de407d1ed3e4e03f", "src": "Profundidad: rango [1] [2] metros", "out": "Depth: range [1] [2] meters"}
+{"key": "d50635f2ab8abec674c9291a824b302eb5ca925718eeeda4431f4e8f3f244dd4", "src": "Trabajo: Diurno excepcional", "out": "Work: Exceptional daytime"}
+{"key": "1d7dfbe75e584119c35f66cf7f71b1249c8dd500ba1aa12d4a49494ca3085e0b", "src": "Trabajo: Nocturno excepcional", "out": "Work: Exceptional night"}
+{"key": "60d6249adb31ac292464536b0c531533b481c3f56349aba33f4c3530f659d1f3", "src": "ejecutada por excavación manual en cualquier tipo de terreno excepto roca", "out": "executed by manual excavation on any type of terrain except rock"}
+{"key": "ad7a98500cf0e245e9ed37c619a46fdcb5e40ebca76d18b8455dd77dd8ae87a8", "src": "ejecutada por excavación manual en terreno rocoso, incluso excavación con explosivos", "out": "executed by manual excavation on rocky terrain, including excavating with explosives"}
+{"key": "9d2299199b5f254e382e7cf0b65c4009f205b1039b4a732e7ff00e805ae706c0", "src": "zona de balasto, ejecutada a mano incluso descerne y entibación de costados y posterior reposición del balasto retirado", "out": "Ballast area, executed by hand, whether or not decerne, side warming and subsequent replacement of the ballast removed"}
+{"key": "2ac28cbcf3cb6b0cfda69062a16643514861a478526adb5b70913ab9fb1afe67", "src": "Trabajo: Día Extra", "out": "Work: Extra Day"}
+{"key": "a331acba80a59b03b1e401a6729b84dcf33f393c5d925ccb6748367831edf93f", "src": "Trabajo: Noche Extra", "out": "Work: Extra Night"}
+{"key": "6b28ef64c0bcccd558b7d6b082d3a12763c66537ddb4c2f16d21070bb1ab29ce", "src": "ejecutada por medios mecánicos en cualquier tipo de terreno excepto roca", "out": "executed by mechanical means on any land other than rock"}
+{"key": "9fd77344f00e8a50c511d67cf6034aba7034478e8286d733489fce8861ad64dc", "src": "ejecutada por medios mecánicos en terreno rocoso, incluso excavación con explosivos", "out": "executed by mechanical means on rocky terrain, including excavating with explosives"}
+{"key": "605b24ddb611e0722fc5dc498550fbd2836d4d597f75314ab31a8aa03e7439a0", "src": "material de cantera", "out": "quarrying material"}
+{"key": "fd493389b0ca4a6f459593e3e3a5da34cc1ab687c338b5d9cc521c4dcb7c6e05", "src": "material de la traza", "out": "trace material"}
+{"key": "b990a7e69b5f4902fc8a3d81ff80c61e08d71bff12fc6e76ba14712ae5a9632f", "src": "Tipo de acción: Abastecimiento", "out": "Type of action: Supply"}
+{"key": "8181040ef51cb691cd71aa09c54e8149bc2a489924b4dfc5b9e050d8a265d1fe", "src": "Tipo de acción: Entrega", "out": "Type of action: Delivery"}
+{"key": "4c71be68e21065ccacbd101f47ee19ef53dd4086c3563eee48d90544f06d0962", "src": "Tipo de acción: Fornecimiento", "out": "Type of action: Fornication"}
+{"key": "96a71c6be6135063edbe24ea854c72db62ab1d65395df222648592693cd74071", "src": "Tipo de acción: Provisión", "out": "Type of action: Provision"}
+{"key": "ad7fd05de26d0fe944db6de3c096bde8117aba592751bc9c305ab821b5682258", "src": "Tipo de acción: Provisión de Recursos", "out": "Type of action: Provision of resources"}
+{"key": "ace3e4de6b1f2f315e84169b33b56bba770913f504b0100b8cdcebe34de84739", "src": "Tipo de acción: Suministro", "out": "Type of action: Supply"}
+{"key": "db368ec0810a8c6eb0268e625455c636828aa47fbe49891df987c6e475b807b4", "src": "Tipo de acción: Suministro de Materiales", "out": "Type of action: Supply of materials"}
+{"key": "eb7c21887a34e9061530d3e3c86604175d97fc0feb7058a790c8b4ff6c70e164", "src": "Tipo de acción: Suministro y montaje", "out": "Type of action: Supply and assembly"}
+{"key": "8bcd9375a733d8b122f61aab1d6edd6f6205adff578f4b21ff3777e60825a24c", "src": "Trabajo: No Aplicable", "out": "Work: Not Applicable"}
+{"key": "81a4fcaa923f9fc6e4e050ff3052f5a7d28ee9c7d77ffd90b093215b41a0bcac", "src": "Trabajo: No Relevante", "out": "Work: Not Relevant"}
+{"key": "ee41ce7489d6d8065a84e6e25c3486aa042139f3be7c3b21d4cfc2739caea1cc", "src": "Trabajo: No Válido", "out": "Work: Not Valid"}
+{"key": "dbe682f25ef5849cc2a5bc6fc95872f881c66020908404fc2b63467b49986e4e", "src": "Trabajo: No aplica", "out": "Work: Not applicable"}
+{"key": "3d8d42038c338dd2a01373e5380a09bbf514da53d078b252e898f1e861d383ab", "src": "Trabajo: Sin Aplicación", "out": "Work: No Application"}
+{"key": "de56fc296c4adaa8a44d9c6488b3ac3d77232008e0b7bbf978dd9b3183ba23ab", "src": "Banda de mantenimiento: No aplica", "out": "Maintenance band: Not applicable"}
+{"key": "887ff955373af3bd2ddc6099695b69a18d16f0b57b54240130ec8918ae068334", "src": "Incluido el sumistro y montaje de los tubos, la prueba de los conductos, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación, el transporte y la retirada de los productos al lugar de empleo.", "out": "Including the supply and assembly of the tubes, the testing of the ducts, the connections and openings with the channels of the different platforms, the lifting machinery, the transport and the removal of the products to the place of employment."}
+{"key": "dc8e4bc4562d876bee81ffa7279ce5ebd929e1873557a6308a9294fe90ea813b", "src": "Material: Baldosa", "out": "Material: Tiles"}
+{"key": "1c3811d0247c28a83e5c7868fac89bf5bf4c16ef975f655f228ea9b2b7846085", "src": "Material: Elemento Cerámico", "out": "Material: Ceramic Element"}
+{"key": "a8ae2929176a9e2e7b9732ae0f421dfad6021248a19bbf61e0a7327171ddc69f", "src": "Material: Ladrillo Común", "out": "Material: Common Brick"}
+{"key": "27ca7dfa52d05edb59c4638a2ba8c11b1d32f21c54f83dc9fd7500689688517a", "src": "Material: Mampostería", "out": "Material: Masonry"}
+{"key": "e0d90c067d97dd65fe18f0a43cff84b6aac34b57aafc183c12db2c538c986a91", "src": "Material: Teja", "out": "Material: Teja"}
+{"key": "6515cd949eb1a49c348f81763ffb25ad0e05c2c66c65bd674bec86c21da23fc4", "src": "Material: Unidad Cerámica", "out": "Material: Ceramic Unit"}
+{"key": "3e400c786249ae5c4ee712c841d12f093429d43b757551fa2b736e3c243f4a3e", "src": "Material: ladrillo", "out": "Material: brick"}
+{"key": "16a6feb2b415539cadbcd44d875a98227503e897894e4d7492dae784a10a459e", "src": "y la tapa de hormigón", "out": "and the concrete cover"}
+{"key": "088540714f83d25ce2a43acf14631400ae129ee558a287d7545242994e2e5c26", "src": "y la tapa, o tapas de hormigón", "out": "and the lid, or concrete lids"}
+{"key": "af5b89dbfcc76b1b2715bd0d2247c86e5b7224b9a0ff3f1c6bf2e57aae14afed", "src": "y tapa de hormigón", "out": "and concrete cover"}
+{"key": "3b39b48f014028e99aa2dc35160837e18a6a06dabaa56c6bacdde8754d8df1dd", "src": "tapa de hormigón", "out": "concrete lid"}
+{"key": "dec0a6b0e5f75d0c43358bcdb78f0b11ed5b3645c90bce1ad65c99705c3ddb29", "src": "tapa o tapas de hormigón", "out": "concrete lids or lids"}
+{"key": "29845ff5c14cebddb396b3617b2d4000ec7b75621f84bd3111d83d380ef2784e", "src": "Tipo: [1] centímetros en túnel", "out": "Type: [1] centimetres in tunnel"}
+{"key": "d5f481e1f148a80be803629f70a777f989a87e78a39c9f323d9dd9a48fa4076d", "src": "Tipo: [1] en túnel", "out": "Type: [1] in tunnel"}
+{"key": "5318883132c268f45fa534526bbbb46ae75eab3745854f5bdac9f9bde014b9c3", "src": "Tipo: [1] centímetros", "out": "Type: [1] centimetres"}
+{"key": "f8d41c2d93ce1c024a75b3a5be40e8fd0bd7a903a430615851594c404cc39d27", "src": ". Incluido el marco angular galvanizado y dos tapas de fundición dúctil ([1]).", "out": ". Including the galvanized angular frame and two ductile casting lids ([1])."}
+{"key": "40bbd84a0187a457f5feafa15f30495d5c9ede3269ab3098c9bfe6f336ffc942", "src": ". Incluido el marco y la tapa de fundición dúctil ([1]).", "out": ". Including the ductile casting frame and lid ([1])."}
+{"key": "18094d92ae263c455d3d0d4dd92c4b8fa12fca1414628a0558ea999d99f9f930", "src": ".Incluido el marco angular galvanizado y tres tapas de fundición dúctil ([1]).", "out": ".Including the galvanized angular frame and three ductile casting lids ([1])."}
+{"key": "0d9d2813dd3d7e8d81b2a9e0a4acdf7fe511077ad1ad74cb4ea55f18c6f886e1", "src": "de medidas interiores, con fondo y cama de arena, así como los taladros necesarios para la acometida de los tubos. Incluidas dos tapas de seguridad de chapa galvanizada adaptada para el cierre de seguridad (candado normalizado).", "out": "internal dimensions, with bottom and sand bed, as well as the drills necessary for the coming of the tubes. Including two safety lids of galvanized sheet adapted for the safety closure (standard padlock)."}
+{"key": "b26df5e7ddb718216886017c7fa4b8d9a2b4601b6ea4e4f6a4fc2e4e3592c0e2", "src": "de medidas interiores, sin fondo y cama de arena, para tomas de tierra, así como los taladros necesarios para la acometida de los tubos. Incluida la tapa de composite - [1] con cierres.", "out": "of interior dimensions, without bottom and sand bed, for earthing, as well as the drills necessary for the coming of the tubes. Including the composite cap - [1] with closures."}
+{"key": "05fa7919c2f7ceeac7b3ea7530b3d3437001e4466438c48cecf714ff2277cf77", "src": "de medidas interiores, sin fondo y cama de arena, para tomas de tierra, así como los taladros necesarios para la acometida de los tubos. Incluida la tapa de seguridad de chapa galvanizada adaptada para el cierre de seguridad (candado normalizado).", "out": "internal dimensions, without bottom and sand bed, for earth sockets, as well as the drills necessary for the coming of the tubes. Including the safety cover of galvanized sheet adapted for the safety closure (standard padlock)."}
+{"key": "f91e254da1eb14f6758326e5e3b28ca80fce58aba15d68dbdc252f5de5d2a946", "src": "de medidas interiores,sin fondo y cama de arena, para tomas de tierra, así como los taladros necesarios para la acometida de los tubos. Incluida la tapa de seguridad de chapa galvanizada adaptada para el cierre de seguridad (candado normalizado).", "out": "internal dimensions, without bottom and sand bed, for earth sockets, as well as the drills necessary for the coming of the tubes. Including the safety cover of galvanized sheet adapted for the safety closure (standard padlock)."}
+{"key": "fb817e08db7f326be3aa25f8d9a4a4d934101928c976bac5f02d2043df04e492", "src": "Pared: adobe", "out": "Wall: adobe"}
+{"key": "3ac627bacbda10cdec1672249b87301d7895e8d2603fb3c99c39b785ff1a2453", "src": "Pared: betón", "out": "Wall: beton"}
+{"key": "04b8a63708f1ec0419fb5715999585058b4af40784375791c0b5a7207742f539", "src": "Pared: bloque", "out": "Wall: block"}
+{"key": "41f182027392399936f1cc9273c80b493a39f9643c5534aed9d8a925fe12fa2b", "src": "Pared: concreto", "out": "Wall: concrete"}
+{"key": "9d20434471e993140bcf626b7b9e08f4c676030c07f45efcef5ca3d211ff021e", "src": "Pared: hormigón", "out": "Wall: concrete"}
+{"key": "376d3743f138379a9b6220873572710dc32669fd79c845a395fd52a290184a95", "src": "Pared: ladrillo", "out": "Wall: brick"}
+{"key": "d508691bcc1ce674d0bc8d99df46d2a9cf705f5e02c119f97699e34abf3511f2", "src": "Pared: ladrillo hueco", "out": "Wall: hollow brick"}
+{"key": "85a3d5b8a5b374f7162349181aecfaabab3669bb51f7a139f1ab024c6896e116", "src": "Pared: ladrillo refractario", "out": "Wall: refractory brick"}
+{"key": "5e9337fff18505b25f548fe95a6dcab52ae9f3ead6715f9342b391d3a66c0cac", "src": "Pared: macizo", "out": "Wall: solid"}
+{"key": "fd8ab78d6574d7a7f2ccc1099c693da513934c3a90c41f43c7aa5e0ec96456d9", "src": "Pared: masa", "out": "Wall: mass"}
+{"key": "d964f541da62a2410789a89f386e09eac8f16523d6e34ddf4442d609a491fe02", "src": "Pared: mezcla endurecida", "out": "Wall: hardened mixture"}
+{"key": "dfa7ce50318a3e682f02a8a0dbd133067c1a245ad75fc1efc25784385a7e0119", "src": "Pared: piedra artificial", "out": "Wall: artificial stone"}
+{"key": "d056b7f473cd63e17f383bf9086174d21161e83671dc4c712e714440cfd6800a", "src": "Pared: teja", "out": "Wall: tile"}
+{"key": "9fea9f2a9c9d661640c8f516108af0a5364c927202dfbd00f33bd813d432345d", "src": "Pared: teja cerámica", "out": "Wall: ceramic tile"}
+{"key": "5fa4198511b1aa412215f7739052896c4e543d0d3dab2e5ee43667ef4bb0c62f", "src": "compacto ([1])", "out": "compact ([1])"}
+{"key": "7cd418fea919f26c840bdafa59b2cdad71a19d0ed69af4689a29d36f677fc158", "src": "con dimensiones de [1]", "out": "with dimensions of [1]"}
+{"key": "c8de4f10e4d8e4f660751119c5cb8cec1215c5158e1a1dcfb93e994f090957fe", "src": "con medidas de [1]", "out": "with measures of [1]"}
+{"key": "afb280e25ba95f2bce2dde22a5e00171d6647399ee253cbb4a1811e911299b73", "src": "con un tamaño de [1]", "out": "with a size of [1]"}
+{"key": "731bca7a4ed2b29fb4912de160b8c61d890059ff1c0e481d9440b20a88dd9651", "src": "con un volumen de [1]", "out": "with a volume of [1]"}
+{"key": "2087e26a14b28349b33aceb125ba679d850b9a1fac9ce1cd7ad8514753457b2a", "src": "de dimensiones [1]", "out": "of dimensions [1]"}
+{"key": "815a586d31e841dad88a3722abd39fc36aadc1708d0bf09a0957cf6dcdd55019", "src": "de dimensiones [1], proporcionando un volumen adecuado para la instalación de equipos de medición y control en aplicaciones ferroviarias", "out": "of dimensions [1], providing a suitable volume for the installation of measuring and control equipment in railway applications"}
+{"key": "e4f973e114ed20fc3f6b0158827cd8758283221166111712140c4a6b4afc0e50", "src": "de dimensiones [1], adecuadas para una cámara de gran capacidad", "out": "of dimensions [1], suitable for a large-capacity chamber"}
+{"key": "d74ec8fb94f8c0f133be6d65d2453466dd4bb5c7c9d333768278e376111db5ee", "src": "de dimensiones [1], diseñadas para una cámara de amplio espacio", "out": "dimensions [1], designed for a wide-space camera"}
+{"key": "6b5f9383e88ff600915733af010f0897424bb24780360249acadb9483c4ec2da", "src": "de dimensiones [1], ideales para una cámara de gran volumen", "out": "dimensions [1], ideal for a large volume chamber"}
+{"key": "5e67f30cc41e25c010b69d05c40f990b5be43dc65826db083c737818845c8c86", "src": "de medidas [1]", "out": "of measures [1]"}
+{"key": "711d3905c425f9044824fd61782834592c10e6f59e7008fc6658972f9c4421dc", "src": "dimensiones [1]", "out": "dimensions [1]"}
+{"key": "cbe9c13abcfebda940dffc62fecb3c8d14ce4b0663ba030d261c171491f910f2", "src": "dimensiones amplias ([1])", "out": "large dimensions ([1])"}
+{"key": "f6ee70d616e8b08ac2e20b12ffcc4b5de96da8242f58af8a787b6a9b6f38c048", "src": "dimensión básica ([1])", "out": "basic dimension ([1])"}
+{"key": "9a50155ca2c23ea6e75e3a65193fe13d311e68ac55166195628585016424be26", "src": "dimensión reducida ([1])", "out": "reduced size ([1])"}
+{"key": "420fcf916919c7604775c24da569fb0c1104f77692bea02970fc7c8b7f63d9fd", "src": "formato superior ([1])", "out": "higher format ([1])"}
+{"key": "922749f7666d2a7f2d33d1e61813b0ac73c7c1128447b586bb0e58a7206ddc82", "src": "gran escala ([1])", "out": "large scale ([1])"}
+{"key": "01873a53af11d0abfa8e862dc5ef4575ffadbc65e62d6f92ce18ec8b3aec9a00", "src": "gran formato ([1])", "out": "large format ([1])"}
+{"key": "4876b87480a732465f59b4de6a9926cce96c50b76ae445dff4febf875d7c5724", "src": "mediano ([1])", "out": "medium ([1])"}
+{"key": "1566fbf6b10fbe517f7f77ce87d1d395430e9debe3e741085620948d56abb295", "src": "mediano, con dimensiones de [1]", "out": "medium, with dimensions of [1]"}
+{"key": "683fdc5d064f138cd9eb08bcf039f8e37263827e71ba830ee0a24382d7baa2b2", "src": "medidas [1]", "out": "measures [1]"}
+{"key": "72ca43fb78e180b25512f8c58d371b32af88c6c8abafef2571a4b940cd0146ff", "src": "medidas intermedias ([1])", "out": "intermediate measures ([1])"}
+{"key": "80625c6fbb2c9e803abcd0f78510dc8303f8ceb18ba9b4d74ed9420a3a741baa", "src": "miniatura ([1])", "out": "thumbnail ([1])"}
+{"key": "beec17b0aad444e6ad1b2eead282b1c93ff5a700b7f178df77081282fb69b0f6", "src": "pequeño ([1])", "out": "small ([1])"}
+{"key": "537a4f52b2e05036c96a019fbbdee2a34b5880694427d301716846d417f92342", "src": "pequeño formato ([1])", "out": "small format ([1])"}
+{"key": "d3f075b0f33a5f00061dad1b3042535795a8ee8f5e3fa6ee868547946b48dcb6", "src": "tamaño extendido ([1])", "out": "extended size ([1])"}
+{"key": "cc8629b838df732ca9bf23c5bf369b46acc1a8fac0503bb55cacf8c2258e7377", "src": "tamaño mayor ([1])", "out": "larger size ([1])"}
+{"key": "bd2edb00e519fdaa5649bb0ef34b27800d70eced5b64585476fdcc3a472a4c65", "src": "tamaño mediano de [1]", "out": "medium size [1]"}
+{"key": "75856c47fc19a3c60fd3c13a5af35561e23e98f1660e86f01f32426083362140", "src": "tipo grande ([1])", "out": "large type ([1])"}
+{"key": "ed250a9b1e5c1a7a9c8b4ef4e7eeecbfea38053bdafd72565d341b0075c00680", "src": "tipo mediano ([1])", "out": "medium rate ([1])"}
+{"key": "4008489ad9f1036292e9ee3681311818f8c0e00a5f35fe907d9d1db112ad54eb", "src": "tipo mediano, con dimensiones de [1] de largo, [2] de ancho y [3] de alto", "out": "medium type, with dimensions of [1] long, [2] wide and [3] high"}
+{"key": "7bb5b6346fea7c28683da0ef46786cd1b50def6d6fbffd491e2c73d9b718d12e", "src": "tipo mediano, con medidas de [1] de largo, [2] de ancho y [3] de profundidad", "out": "medium type, with measurements of [1] length, [2] width and [3] depth"}
+{"key": "64fd0b3a442418047ae21f8fa81fa950f7520c0d5497d2ceea1e0ab75123bc13", "src": "tipo mediano, con medidas de [1] de longitud, [2] de anchura y [3] de altura", "out": "medium type, with measurements of [1] length, [2] width and [3] height"}
+{"key": "f2f694186d2d6309920fcd78317748324a2703585944ecc936172f9625b2f7f4", "src": "tipo pequeño ([1])", "out": "small type ([1])"}
+{"key": "d2de876549b19287fd430b769c1d4b96a185bf120ce0d85111c925661c729c20", "src": "tipo pequeño, con dimensiones compactas de [1], ideal para espacios reducidos", "out": "small type, with compact dimensions of [1], ideal for reduced spaces"}
+{"key": "d3f979261324fbee190ab0fa7a994f5a6c4a00fddff164f00dc322bffe6e2473", "src": "tipo pequeño, con dimensiones de [1], diseñado para entornos compactos", "out": "small type, with dimensions of [1], designed for compact environments"}
+{"key": "f51996440f1171f313d42fd32504b62b61ae842948c05084bce9163e8d32aa11", "src": "tipo pequeño, con medidas de [1], adecuado para aplicaciones limitadas", "out": "small type, with measures of [1], suitable for limited applications"}
+{"key": "477002f08d31c78d3877fd38b3e9d7b3d75e9c9e3ac12d1c070e9ad116cc5500", "src": "tipo pequeño, de [1], adecuado para configuraciones de espacio limitado", "out": "small type, of [1], suitable for limited space configurations"}
+{"key": "04025d8dc12b28ddb171317715c3f41063a34433db0a9c20523f20c065800b30", "src": "tipo pequeño, dimensionado a [1], para instalaciones de menor escala", "out": "small type, dimensioned to [1], for smaller scale installations"}
+{"key": "e2fc8a65e0f59e95dfdedbb4e7db6b3d5d8369e2c66e2bc2e2699707551e36d7", "src": "Tipos: Cubierta arqueta concreto", "out": "Types: Concrete archet cover"}
+{"key": "c975113685ff4a84f23ff47e5dff814bbbf2c632964ddd7f0815ccc918fd2910", "src": "Tipos: Cubierta arqueta de concreto", "out": "Types: Concrete archet cover"}
+{"key": "48b2968124c70f81f6992bba99a4fb36b568b275385280a27aa873d8ff3abffe", "src": "Tipos: Cubierta arqueta de hormigón", "out": "Types: Concrete archet cover"}
+{"key": "e0ee8030e88e438c1a569ed1fcc7a53a61dcb2f2a5a448e65cf1a713577ce78e", "src": "Tipos: Cubierta de hormigón en arqueta", "out": "Types: Concrete deck in archet"}
+{"key": "d07d0ff20f7fdae074a78b8226f2bc053bb9a9a23f2747ad0c45e78abaddec45", "src": "Tipos: Cubierta hormigón arqueta", "out": "Types: Concrete archet cover"}
+{"key": "b448087c4df95c9677cfb6e9c952a330dcb3cb4bf49482f239a795ea73a29890", "src": "Tipos: Cubierta metálica cámara", "out": "Types: Metal Cover Camera"}
+{"key": "f796aa1dc1685b3ea32733491ee453f0a13797a090366e21ece6223768493534", "src": "Tipos: Cubierta metálica de cámara", "out": "Types: Metal camera cover"}
+{"key": "ee105103a3c299f703dacbfd33e48155b235a2ec1aa9009a74fbd150dffec845", "src": "Tipos: tapa de hormigón en arqueta", "out": "Types: concrete lid in archet"}
+{"key": "e692d217eb28923a883553a5dddb0766660281d550c54bee49d1b48deffc0586", "src": "Tipos: tapa metálica de cámara", "out": "Types: metal camera cap"}
+{"key": "5b710eb2bb985a21e44b0c89e478081e40f822f116434901c13c7b4502df17a8", "src": "Nº cables: doce", "out": "No cables: twelve"}
+{"key": "e1410d2bbc90830b63c9400176580aec8dc6f4b1d73c06a2d4a6fc823a89da7c", "src": "Nº cables: seis", "out": "No cables: six"}
+{"key": "53df50a9b785ff271a1a26c471c54b5c659ad41fa233998f4003ea5a3d89d61f", "src": "Nº cables: seis elementos", "out": "No cables: six elements"}
+{"key": "81db0ef7531dae1cc0f1f59a6b1fb1888100c72467d8428762148b4e2ff84ec7", "src": "Nº cables: seis unidades", "out": "No cables: six units"}
+{"key": "93975a575c7165ea77c53e95a9153380d3597b7727801f11780cd81932134803", "src": "Medida/ubicación: [1] milímetros bajo falso suelo", "out": "Measurement/location: [1] millimeters under false soil"}
+{"key": "11d3ed11734a3528d40ecb0e710cd899e01fc5865f7ee081ca6a0e443b9c970d", "src": "Medida/ubicación: [1] milímetros debajo falso suelo", "out": "Measure/location: [1] millimeters under false ground"}
+{"key": "4065bfead833d69582a3bb479ca00347f68a87f2750dee1601eee9acfa52c8cd", "src": "Medida/ubicación: [1] milímetros en paredes o techo", "out": "Measurement/location: [1] millimetres on walls or ceiling"}
+{"key": "8973d6e07b93214cabe7a74ab0ea97dc7fa82830404e194cd284bba6d699cffa", "src": "Medida/ubicación: [1] bajo falso suelo", "out": "Measure/location: [1] under false soil"}
+{"key": "a8943b3956347a144031d9c9a2232c8f908e7fc0ea2ec40d1e3eebb31d226d53", "src": "Medida/ubicación: [1] en paredes o techo", "out": "Measurement/location: [1] on walls or ceiling"}
+{"key": "591373330fa0835ab65d95cd61a46572615506ce165425f87d40bd3dd2303204", "src": "Medida/ubicación: [1] milímetros en galerías", "out": "Measurement/location: [1] mm in galleries"}
+{"key": "c428bf155c03bda62093b05495abd6c56433e3917c5f957c25e0f50e2fb2455b", "src": "Medida/ubicación: [1] en galerias", "out": "Measure/location: [1] in galleries"}
+{"key": "10e88b8d45c2b82d45484be44fc587149bb4bf64e9e69865b40f08b3f5fc01e3", "src": "Tipo: [1] de [2] centímetros", "out": "Type: [1] of [2] centimetres"}
+{"key": "ee9a15a6540344a66b4e067d039ff18f6b38214d2b8c3708f6688bf4a79286fb", "src": "Tipo: [1] de [2]", "out": "Type: [1] of [2]"}
+{"key": "892122ef15eae105c981ef41e2f28635171158ef2d25ab4686221c0992b8ac49", "src": "Tipo de terreno: Semi-Compacto", "out": "Type of land: Semi-Compact"}
+{"key": "d8d36a2242f5e9ba83dd6649a659ea45661ca5db33c56ddc127b10e5e4d0b9be", "src": "Tipo de terreno: Semi-Duro", "out": "Type of land: Semi-Duro"}
+{"key": "2f225e2bd25f002431d4b649c4b07995d5b97a8745b7d03269c0ef8044b1d53a", "src": "Tipo de terreno: Semi-Firme", "out": "Type of land: Semi-Sign"}
+{"key": "b50ce895dae06ed67145ed60eb8985b87c4977f94177948abe5df782d67d89cb", "src": "Tipo de terreno: Semi-Roca", "out": "Type of land: Semi-Rock"}
+{"key": "e0e61b93494c6a0be535cf7865e7a589fa38377e86ab0067210a9a8bbb879e23", "src": "Tipo de terreno: Semi-Rocoso", "out": "Type of land: Semi-Rock"}
+{"key": "8044039c96305bb5ff1fdf024e2fee7939f133de92f03a06537d1d32304bf8a2", "src": "Tipo de terreno: Semi-Sólido", "out": "Type of land: Semi-Solid"}
+{"key": "8e81e74879c31eb0c3ca77c938842977ac067daea70f1218e684ecf35b8661ec", "src": "Tipo de terreno: Suelo Estándar", "out": "Type of land: Standard soil"}
+{"key": "b4a315bb6c74945512b9e7605ef82e15e5398f0a810186e4dbaa89112feb5aed", "src": "Tipo de terreno: Suelo Normal", "out": "Type of land: Normal Floor"}
+{"key": "7baba6d60de0959111f54532adf5d7c3510793562185224d9d9e061eca7f175e", "src": "Tipo de terreno: Suelo Pedregoso", "out": "Type of land: Pedregous soil"}
+{"key": "99dcb28d9b765e343b6e66b44309996cf4e41ec70b407ba2145872f4c7f2ff93", "src": "Tipo de terreno: Suelo de Piedra", "out": "Type of land: Stone Floor"}
+{"key": "1fb02499f8a29e39a55a1c68c0da0d56621609e105f31a20331313402a197a33", "src": "Tipo de terreno: Terreno Común", "out": "Type of land: Common land"}
+{"key": "292c8ed898667e4b5fe8bd1c28fa1e5191167e7e3a7ef7e3ddad5becb9e5b7f2", "src": "Tipo de terreno: Terreno Convencional", "out": "Type of land: Conventional Land"}
+{"key": "84d50398ade35fc8c0150a84756491f3071892daf59dfc8c4f0d3d3e799cc4d8", "src": "Tipo de terreno: Terreno Pedregoso", "out": "Type of land: Pedregous land"}
+{"key": "df93c611947b6e41e9cd3a702e33b3ed758ca86b1dac37d8a2d00e030938472f", "src": "Tipo de terreno: Terreno Regular", "out": "Type of land: Regular land"}
+{"key": "608c6fa1ecde1f775b43c21698e6f794f4f67cd7e5b8a193d6c9aa93af63e783", "src": "Tipo de terreno: Terreno Rocoso", "out": "Type of land: Terrain Rocoso"}
+{"key": "b1d351b94103fefe1c6ee6a662fa49518050fd64fa6bf564eada446af0395196", "src": "Tipo de terreno: Terreno de Rocas", "out": "Type of land: Terrain of Rocks"}
+{"key": "53761c58fe712bcebc7ad079a5b22623cf5e9bf261f1c9fbbd9c39c00bbebe34", "src": "Tipo de terreno: Terreno Áspero", "out": "Type of land: rough terrain"}
+{"key": "4832a969ef986d49734513ee3a0e29c582aad75e89a9fb93f82c5f6e8fd593e3", "src": "Tipo de terreno: normal", "out": "Type of land: normal"}
+{"key": "c3d0d5ebeb4c59609e90ddfac5df7b4684b7d0591917c6acf8c1570a72724194", "src": "Tipo de terreno: rocoso", "out": "Type of land: rocky"}
+{"key": "c845ec4cf64d81811895b7e321df0be40eb577e53d44528a7fdcfbefa492f2e5", "src": "Tipo de terreno: semi-rocoso", "out": "Type of land: semi-rock"}
+{"key": "a338b81bd6c13608dd9d485de59083ec1ed3fafc9459816200e64ec00ed68140", "src": "Tipo: [1] kgf a [2] N", "out": "Type: [1] kgf to [2] N"}
+{"key": "a10065c12bb0e5f160f7370386ff88cb41d40d5d32b9f60afa7e22d8af3629b5", "src": "Tipo: [1] a [2] ms", "out": "Type: [1] to [2] ms"}
+{"key": "7e71a48cdc7019519324210443ce28e30109de5161bf50f2dd8e76f8623988c5", "src": "Tipo: [1] mbar a [2] hPa", "out": "Type: [1] mbar to [2] hPa"}
+{"key": "18e79feb484b8b9bb9fcd688e180e44a6a9d80e32dbbed3d3e1a12a7e7cf72b5", "src": "Tipo: [1] mol/L a [2] mmol/L", "out": "Type: [1] mol/L to [2] mmol/L"}
+{"key": "5ad78650497b1d5579c2ada7ffce7c17d10893296acbe781615cf12502f35e8e", "src": "Tipo: [1] L/min a [2] mL/s", "out": "Type: [1] L/min to [2] mL/s"}
+{"key": "60c2238cfc8936af427c937203faa010182272782ed5ec73120305a949711449", "src": "Tipo: [1] a [2] mT", "out": "Type: [1] to [2] mT"}
+{"key": "ec1be2b653d4b82a5bcba108dcea8c891233d915230883ed0dff2c342d03b4db", "src": "Tipo: [1] a [2] mA", "out": "Type: [1] to [2] mA"}
+{"key": "847bf50224dcebcc0849a7db1474ddc47ede1b5207abd5a0db9bf382175dd98f", "src": "Tipo: [1] hPa", "out": "Type: [1] hPa"}
+{"key": "f8ff88e3ca04c4e5f601022f4c3b3efc921141f77742f481f42fcc15506b80ad", "src": "Tipo: [1] mA", "out": "Type: [1] mA"}
+{"key": "56951078e6f3d5d508fe0f4245fccbf2308185462f58395d0b2f959ac5a9b024", "src": "Tipo: [1] kJ", "out": "Type: [1] kJ"}
+{"key": "f94eb714acc90f9ccdfef1e1d1371bc9074970fb669690e4dfc756ad1a1c4d2c", "src": "Tipo: [1] ms", "out": "Type: [1] ms"}
+{"key": "71c42af7e81452bfbd9b0744501e588af975dda0d0b04b35a31910247c0cdb9a", "src": "Tipo: [1] mmol/L", "out": "Type: [1] mmol/L"}
+{"key": "124676b60d0458960562fd5f22acce86cc59b057109e5e2f5eb5d29cf7bf82ca", "src": "Tipo: [1] J a [2] kJ", "out": "Type: [1] J to [2] kJ"}
+{"key": "5ffb309116d41d74116267ff1be19e3fac987044329ac8da431235cc3bb811bc", "src": "Tipo: [1] a [2] mV", "out": "Type: [1] to [2] mV"}
+{"key": "57e760d163ae20c5b1d30e71fbfba8194bb943a387105ed0121068d71b1c90f3", "src": "Tipo: [1] mL/s", "out": "Type: [1] mL/s"}
+{"key": "7b72b1d743ee33ecfefd2bb5693da59efc0a007be96c97115e09ff62605e34c3", "src": "Tipo: [1] mV", "out": "Type: [1] mV"}
+{"key": "1717cb736690229a99e420e5a37b9b033e72666832413693d68c143798342df4", "src": "Tipo: [1] N a [2] mN", "out": "Type: [1] N to [2] mN"}
+{"key": "0682dff2ba2da564c2ce0499158a300717a899654087c0bc10214e5508f220c9", "src": "Tipo: [1] mT", "out": "Type: [1] mT"}
+{"key": "e36f3bfd2e9b7d396657940bf056dc8fd5e180a6255352b42ef8cb87a58b5080", "src": "Tipo: [1] mN", "out": "Type: [1] mN"}
+{"key": "9dfca2114df4413dd7445e971139d00c37dac4602c5292588d7427b262590849", "src": "Tipo: M cimentación en terraplén", "out": "Type: M embankment foundation"}
+{"key": "e21420173630f78b5c29ef8fbb92fec093d0b50ed47d31c26a3ade7308097e7d", "src": "Tipo: M cimentación rectangular", "out": "Type: M rectangular foundation"}
+{"key": "b5e46fa645d72ebb744714d0c2bd555edb6b9cd02c5770b746bd8aca27a3c7d3", "src": "Tipo: M cimentación tipo B", "out": "Type: M type B foundation"}
+{"key": "8dba03d789e013ce4fc315de6ed76fff46cf8657525b2390456f188adc49d24c", "src": "Tipo: S cimentación en terraplén", "out": "Type: S embankment foundation"}
+{"key": "7e6b6c00bcd82bbf83498e3d9e28abdfb6d5fcae0d82779725412af28a8016e9", "src": "Tipo: S cimentación rectangular", "out": "Type: S rectangular foundation"}
+{"key": "5503c035a5e29596087fc5b591bd8637b7a26ffb224e9b875109a06c03d7f974", "src": "Tipo: S cimentación tipo B", "out": "Type: S type B foundation"}
+{"key": "62d1d8af6e23dcc64d91738d712e7c5a87fbb0c5fe05c746059195b634bdc0cc", "src": "Tipo: cero coma nueve ochenta y uno newtons", "out": "Type: zero comma nine eighty-one newtons"}
+{"key": "7cca0f727964daa4b87cde095984bb6ac8aa9fb4b85b0ae072358b59fee77b2a", "src": "Tipo: cien centímetros cuadrados", "out": "Type: 100 square centimeters"}
+{"key": "7a568df89523aab771c78889df00039fdeb9917084698c9980c430478234edf0", "src": "Tipo: cien milímetros por segundo cuadrado", "out": "Type: 100 millimeters per square second"}
+{"key": "9ea280273031844646d7d211b100c41592dd18ce7bc1dd48d70bc72b12b437cb", "src": "Tipo: cinco mil milinewtons", "out": "Type: five thousand millinewtons"}
+{"key": "8e884bee063fb5cdefd02267973cfd71264dcf6215207fb8251af9b58ec1e828", "src": "Tipo: diez hectopascales", "out": "Type: ten hectopascals"}
+{"key": "aaa72d0d091eb07cba7ef5af2d4939008c6b16aaf8021b973a9b00ba440fd936", "src": "Tipo: dos kilojulios", "out": "Type: two kilojoules"}
+{"key": "54f771f0340e690b45d343b8751195347693aabfa5a7179c2e2e73099bd5939c", "src": "Tipo: dos mil quinientos pascales", "out": "Type: two thousand five hundred pascals"}
+{"key": "16e7dc50f0837e5f221ba9346d13bf8d0c9df7a693a778dfedf1066d7e73230a", "src": "Tipo: doscientos milimoles por litro", "out": "Type: 200 millimols per litre"}
+{"key": "68b30f178335db6d252965166724ab478c2bc93bcd5090bb880f7f34473cf4d2", "src": "Tipo: medio tesla", "out": "Type: medium tesla"}
+{"key": "2609448ef746cc0f904e69eb67953bed4c0d33d7e6ef036bb57da4872d16de88", "src": "Tipo: mil quinientos miliamperios", "out": "Type: 1,500 milliampers"}
+{"key": "334b1aa7360cb8d56f12b38f884a093cd5476de619782fb5601b4a3df70aa42e", "src": "Tipo: quinientos gramos por metro cúbico", "out": "Type: 500 grams per cubic meter"}
+{"key": "cb0db76bbaa61d9146d82082d13e6731c0c6938e013ad2874c800480508d5ce6", "src": "Tipo: treinta mililitros por segundo", "out": "Type: 30 milliliters per second"}
+{"key": "a5bd0598a51cf4d0033c21f9160b7bf85e2ecb3ff1b191a024318c11c910430d", "src": "Tipo: tres mil seiscientos milivoltios", "out": "Type: three thousand six hundred millivolts"}
+{"key": "334ee4f62d30685207b9d027e73cb75a2cb4c166cb564bf486d516f938f267e4", "src": "Tipo: un kilowatt", "out": "Type: one kilowatt"}
+{"key": "35cddead4218a1c6fe588d460e4640421f77b9a0503e33f5309cdb6816b35039", "src": "Tipo: veinte milisegundos", "out": "Type: 20 milliseconds"}
+{"key": "ddd895298ec6d3d065aecf59c31eef478f5eb426fbde98c04c00593a3658d8ce", "src": "Tipo: [1] µs", "out": "Type: [1] μs"}
+{"key": "99ac9d32b688c96b4f771b3dd5e36917e0a8b17640537e61f4cf23243e89296b", "src": "Tipo: Longitud Rectangular - [1]", "out": "Type: Rectangular length - [1]"}
+{"key": "b2221d5b2441f92ef7cddde1dee1b0fde3431c50c5050245f291727ef5036839", "src": "Tipo: [1] Tipo Cilindro", "out": "Type: [1] Type Cylinder"}
+{"key": "51fc9c606e76e71105a5a34f071cd1a2bf6ae30b434966935b309a113889362e", "src": "Tipo: Cilindro [1] Tipo", "out": "Type: Cylinder [1] Type"}
+{"key": "ee8b756b2ab56808b6216f6b1acca52c6e466c8334eb471d8cd59213d7058977", "src": "Tipo: Cilindro Tipo Cinco", "out": "Type: Type Five Cylinder"}
+{"key": "d3e0ed598083b224f96e24c345498beeadf1a6dc5eb90bf308552e42fdd58547", "src": "Tipo: Cilindro Tipo Cuatro", "out": "Type: Type Four Cylinder"}
+{"key": "d796d409f43f1c383f5be2baef2d20c15ca9f15b093e90abf23f752f9ad35354", "src": "Tipo: Cilindro Tipo Dos", "out": "Type: Type Two Cylinder"}
+{"key": "ce0059a9ab27a10ed51485e91b2fd473cc65401626a6d59d9ad4ff48ace16ceb", "src": "Tipo: Cilindro Tipo Ocho", "out": "Type: Type Eight Cylinder"}
+{"key": "73dba0b889768691e0374dad2bfafc73fc0e57cf0dd98e45e4dc960b848cf25e", "src": "Tipo: Cilindro Tipo Seis", "out": "Type: Type Six Cylinder"}
+{"key": "f0a78c4ebdb7d52dc95bba57bdb01ed4d9b1f66e9658a88ca595d9d6d6ba39a9", "src": "Tipo: Cilindro Tipo Siete", "out": "Type: Type Seven Cylinder"}
+{"key": "507bbc865b848c319d456f2ddbc059dfc64e53289e31785627920d45ec118cd0", "src": "Tipo: Cilindro Tipo Tres", "out": "Type: Type Three Cylinder"}
+{"key": "9ac6f814f023347f31b622fb7b26fd6cd8d1a6d531b464c27a7388ac67366323", "src": "Tipo: Cilindro Tipo Uno", "out": "Type: Type One Cylinder"}
+{"key": "c5bf3ecf4badc87fdf27131fa9e575cbb3256554f3d6ee68178b8cc62579567e", "src": "Barra corrugada roscada: [1] milímetros", "out": "corrugated threaded bar: [1] millimetres"}
+{"key": "49431f4ca22f54e1b8564aa1e11ddb90bbd43aac30c20ae0631d3986c5ebdc29", "src": "Barra corrugada roscada: [1] de longitud", "out": "corrugated threaded bar: [1] of length"}
+{"key": "2563e924214813dede59baaceb5f9d27fb357e5927c890f8c49dbea9607b28ac", "src": "Barra corrugada roscada: Treinta y dos milímetros", "out": "Threaded corrugated bar: Thirty-two millimetres"}
+{"key": "06ddf0cd9d323ca7dcc1f05c47afe16fffe0fce6990f8831ae6f2e146d6aeee5", "src": "Barra corrugada roscada: Veinte milímetros", "out": "corrugated threaded bar: 20 millimetres"}
+{"key": "e1fcfd22244a3a611027906c4b28478e533d81b67068031618752234506b61f2", "src": "Barra corrugada roscada: Veinticinco milímetros", "out": "Threaded corrugated bar: 25 millimetres"}
+{"key": "e4137846932979c307a3a26a1bf24446b7905f16a2ef02c900aee29c8e5bdf46", "src": "Tipo: AnC", "out": "Type: AnC"}
+{"key": "ee430802bbd23e24ea1375e5d2dfee9e3f44df4af1366c662d96a7d22416ed8d", "src": "Tipo: AnS", "out": "Type: AnS"}
+{"key": "8fb6cb8e597621d0337ea5577306190c35ccdbef7328120e68cbcd9de155d3e3", "src": "Tipo: Cimentación AnC", "out": "Type: AnC Foundation"}
+{"key": "c53772778b8d67b6cd83565b61e97194d97a405c5f4583d9b0f0888d05fc0223", "src": "Tipo: Cimentación AnS", "out": "Type: AnS Foundation"}
+{"key": "a6a7b897a0994174c3551d218839dfb3735d033ee6b4eb57aa7eccd579b66273", "src": "Tipo: Cimentación Anclaje S", "out": "Type: Foundation Anchor S"}
+{"key": "ecee614346d6d3997e052094b94bc8fe46052d00285fda6d4e875418679f41f2", "src": "Tipo: Cimentación Tipo AnS", "out": "Type: AnS-type Foundation"}
+{"key": "71c6ad795cb62479e692074053cdd1dff782a67f396d37ddd4815d299a53adba", "src": "Tipo: AnH-[1]", "out": "Type: AnH-[1]"}
+{"key": "8a513453d5c30d507ae257b1ad8daf27b3a9a2c8589fe3e986ab8eaeba2967d3", "src": "Tipo: AnS-[1]", "out": "Type: AnS-[1]"}
+{"key": "7fdfe9f850ee30ad39bc63975228b9d3cf951875815879601577075a8a8f77e7", "src": "Tipo: Anclaje H-[1]", "out": "Type: Anchor H-[1]"}
+{"key": "479f513c08b234e38a08ef89aa27752fbc22ea09f0db6c858b177f1824ed5f22", "src": "Tipo: Anclaje S-[1]", "out": "Type: Anchor S-[1]"}
+{"key": "4caa02bfcd479e32dc523682fc1c98e755c71e2b5560b4ed7a4b9ebfd2cf0258", "src": "Tipo: Cilíndrica H-[1]", "out": "Type: Cylindrical H-[1]"}
+{"key": "ea5e2452a87c955a6005f0040c2ddbed2d88e6e2239fb6a76992181eb3ea8405", "src": "Tipo: Cilíndrica S-[1]", "out": "Type: Cylindrical S-[1]"}
+{"key": "80a48f87c879c17dbe52984eb3315053b2ad9328f5fbd0668f3d42506e51531d", "src": "Tipo: Cimentación H-[1]", "out": "Type: H-[1] Foundation"}
+{"key": "f40a78ec062eab5eaee491524b2e165c553758d58611d612b94eb19f38d329cf", "src": "Tipo: Cimentación S-[1]", "out": "Type: S-[1] Foundation"}
+{"key": "ab530e9a4cae7d82d5573466e3fafe669ed8db3fe55ba8a64785f8910ffd446e", "src": "Tipo: Tipo H-[1]", "out": "Type: Type H-[1]"}
+{"key": "873b5ab0c097e68591c5a5f7b755954b20240cc00ca1964b0cffcbc1ab185535", "src": "Tipo: Tipo S-[1]", "out": "Type: Type S-[1]"}
+{"key": "16dcd69061ee3bc35e34badf22f6e117081b32ea19c3d1c44bd7283c186d7394", "src": "Tipo terreno: Blando", "out": "Ground type: Soft"}
+{"key": "da1b5fc65ba5fa92e5196c8fe44cf4e62863bbbfd78081474919aa547ddfeaaa", "src": "Tipo terreno: Compacto", "out": "Type of land: Compact"}
+{"key": "8412b7fd2db6dbf2df7a08077797fac8f0553e5f30bff8f11779df5b4230fd54", "src": "Tipo terreno: Duro", "out": "Type of land: Hard"}
+{"key": "f1ab8c96990507c31aa9f94ff5c462263218aac0fc96d855302e3baff6978d57", "src": "Tipo terreno: Intrincado", "out": "Ground type: Intrinsic"}
+{"key": "1841dd97195f9db232c1343ad0053624291294b31b2832b18e27b3d76073653a", "src": "Tipo terreno: Macizo", "out": "Type of land: Massif"}
+{"key": "c5be7239c557759a33bef0a6fec93dcd7b4e474534126b5586c6bc7545ce6cdd", "src": "Tipo terreno: Piedra", "out": "Type of land: Stone"}
+{"key": "84018388e77430fb606dc7d3097b10f0f1e1b53f41e34a21258282ea8853b850", "src": "Tipo terreno: Regular", "out": "Ground type: Regular"}
+{"key": "2767836faa30c3188af9e7d50613ee8e38348f42c3bca8566458efc2236afc6e", "src": "Tipo terreno: Rocoso", "out": "Type of land: Rocoso"}
+{"key": "4ee3d5a6b3f09843137822a3cddeb9d614a6438bca088a99b526882e29b06a0f", "src": "Tipo terreno: Semi-Macizo", "out": "Type of land: Semi-Macizo"}
+{"key": "28662b7b47602c26e6a57fb49de5aecadb23020f7e6af60528408f4a2156cea1", "src": "Tipo terreno: Semi-Rocoso", "out": "Ground type: Semi-Rocoso"}
+{"key": "cf0f63630777c32d036e9aa686a3eec87f8f52a76d49e807e27e78e9328a9ee3", "src": "Tipo terreno: Simple", "out": "Ground type: Simple"}
+{"key": "c29dc56c1bba14683e8240ae65ba21c319feb7630b1711dcca6d80fc15f697ff", "src": "Tipo terreno: Suelo", "out": "Ground type: Soil"}
+{"key": "2014ab0f617354a3b4890d05c38db33410ddb0842697de2efbbe156dffeea003", "src": "Tipo terreno: Terreno", "out": "Type of land: Land"}
+{"key": "5b01e18fcf09069c234dda3824ba1c79aebd0fe048e68cb7010c57c96a2183eb", "src": "Tipo terreno: Tierra", "out": "Ground type: Earth"}
+{"key": "337a7c50980ceb67ca4ce2dd4a7cf7ca7e9b3d9f39662b557140ad87959f6129", "src": "Tipo terreno: normal", "out": "Ground type: normal"}
+{"key": "014fae5ac63fe4808ec93cd77031ddd236f087e05a4827467f12dc5d0ca00eca", "src": "Tipo terreno: rocoso", "out": "Ground type: rocky"}
+{"key": "f45582cab626bd7a021f56fe5665f574b4dc09ceb3527a1c378360e07b358139", "src": "Tipo terreno: semi-rocoso", "out": "Ground type: semi-rock"}
+{"key": "1872d6289cba10d2aedba83113cbb30c16345ad07a1d9763472d018e00db9175", "src": "Profundidad: hasta [1].", "out": "Depth: up to [1]."}
+{"key": "2b74132753bd986c5f789f96bda836047c2eaaa1d140b7aa689f647fa72659bd", "src": "Profundidad: hasta un metro", "out": "Depth: up to one metre"}
+{"key": "8fe6aa89e0e4ed0c32cc11baf256d0130c54cf43b88ba1130edd40edc5d81e72", "src": "Profundidad: hasta un metro con medio de profundidad", "out": "Depth: up to one meter with a half depth"}
+{"key": "76fb840806a95ef4971f8adfe591533f4fc67ce4d7c30f47435b567a740cfceb", "src": "Profundidad: hasta un metro de profundidad", "out": "Depth: up to one meter deep"}
+{"key": "8ef487f0a2b779a44aea3b1315ca5fd1e3ec5099a588f6a7aa4cfdebf10aa4bb", "src": "Profundidad: hasta un metro y medio", "out": "Depth: up to one and a half meters"}
+{"key": "81baaa9a8632dfe0ceb9affd028e60fd64d0951f6cdf24d82df2c52b62f75778", "src": "Profundidad: más de [1]", "out": "Depth: more than [1]"}
+{"key": "3cb7330927a5c7812071c93e1d83b1cc2206e0eb28c9b035402a4a0b0d55efc2", "src": "Profundidad: más de un metro y medio", "out": "Depth: more than one and a half meters"}
+{"key": "62fd6ffdefe70a7e274c1cfaf378cee1e4b69dc6798824d5888ad536a283ec3a", "src": "Profundidad: profundidad máxima de un metro", "out": "Depth: maximum depth of one meter"}
+{"key": "2169b4be0167385fb42ac17ce8d458aa878a8b2df3c8ab0edb72e2ba8d3075ca", "src": "Profundidad: profundidad máxima de un metro y medio", "out": "Depth: maximum depth of one and a half meters"}
+{"key": "36085d165b953042e2da22738af51ed7f1dfbdeec112210bf8dab0c8993586c2", "src": "Profundidad: profundidad superior a un metro y medio", "out": "Depth: depth greater than one and a half meters"}
+{"key": "c2fbd5171ed82a6c91e2ad87f3b8d4268a2e2a71fcd611c7e58529ad18c38722", "src": "Profundidad: superior a un metro con medio de profundidad", "out": "Depth: greater than one metre with medium depth"}
+{"key": "3c43228043090be9c83853d65b85a6d2cd035ad0c5d09e85baafc7dcabcb27bc", "src": "Barra corrugada roscada (mm): cuarenta elementos", "out": "corrugated threaded bar (mm): 40 elements"}
+{"key": "81e66bce8f28c0e064c68e5a2596a7d952b142987cf851905852826b0895e084", "src": "Barra corrugada roscada (mm): cuarenta metros", "out": "corrugated bar threaded (mm): 40 meters"}
+{"key": "b21882f8d9a692bd2f53918a7f32ac151d87dfcfa729f618f3ea794a96b24ea6", "src": "Barra corrugada roscada (mm): cuarenta milímetros", "out": "corrugated bar threaded (mm): 40 millimetres"}
+{"key": "2d6ed40834eb22ac8b9ee4d547265dbfee4cf46dca0756831a7178a0667da2b0", "src": "Barra corrugada roscada (mm): treinta y dos metros", "out": "Threaded corrugated bar (mm): thirty-two metres"}
+{"key": "a9214305ab07d435e9059b5f4c188727eccabdf79572c1a8ff83d778754da55d", "src": "Barra corrugada roscada (mm): treinta y dos milímetros", "out": "Threaded corrugated bar (mm): thirty-two millimetres"}
+{"key": "2d4998fdf341505333bf8ea0a9d5cc6eeaeab4c8206e2ce3f14a0ba06ebb572c", "src": "Barra corrugada roscada (mm): treinta y dos unidades", "out": "Threaded corrugated bar (mm): thirty-two units"}
+{"key": "b7ab279588a234edaa56745c83b511a7e7b8f230634d5cc170cf6656d4273168", "src": "Barra corrugada roscada (mm): veinte elementos", "out": "corrugated threaded bar (mm): 20 elements"}
+{"key": "cab2c9ef396f7ca995f4a6981dace920eb9cf209945288d96636cb86fa0c5e5c", "src": "Barra corrugada roscada (mm): veinte milímetros", "out": "corrugated bar threaded (mm): 20 millimetres"}
+{"key": "d400cf75da8384aea393aab95534e8ce193bf87a3560bafdc29444ddac8d96d2", "src": "Barra corrugada roscada (mm): veinte unidades", "out": "corrugated threaded bar (mm): 20 units"}
+{"key": "a00a575d57c0a2228c1ba4f45efcf563e14904c621f15cbda53637f19791529e", "src": "Barra corrugada roscada (mm): veinticinco metros", "out": "Threaded corrugated bar (mm): 25 metres"}
+{"key": "dbb6942a2eed7eb0f7dcc6f400f9c8b53b55269343cbce8cca9a9754a70c0070", "src": "Barra corrugada roscada (mm): veinticinco milímetros", "out": "corrugated bar threaded (mm): 25 millimetres"}
+{"key": "c0915f610c250b8cd304a23eb53f53e6924ad45344962afecaad8f43e326c0ff", "src": "Barra corrugada roscada (mm): veinticinco unidades", "out": "corrugated threaded bar (mm): 25 units"}
+{"key": "db9f30923b07da59f56f1e20dd3298b454618f96edec6cb4fd81229d890c9621", "src": "Diametro (m): cero coma setenta y cinco", "out": "Diameter (m): zero comma seventy-five"}
+{"key": "87b8b8ec9c62f7ae73a0c125f910601c788208df8d9de3f086a6c709578ee556", "src": "Diametro (m): un coma dos", "out": "Diameter (m): one comma two"}
+{"key": "76619ec89285c643e87823eec312f234867138c4a2964eb1a7e5f334ed87f87a", "src": "Diametro (m): unidad", "out": "Diameter (m): unit"}
+{"key": "64d10d71ee8ee8c0ae6eb177cdac5b89acff9f58fab5837e76565f560a192f34", "src": "Diametro (m): uno", "out": "Diameter (m): one"}
+{"key": "ca2bd28e25ebfc29dbb5bfe5a07187b326da179b078ea9cdf68a3a49f43c6140", "src": "Diametro (m): uno coma dos", "out": "Diameter (m): one comma two"}
+{"key": "7e6db0b46e7042512fa8387b3bcab040e4a609fc13d461139c48c63aba7d2967", "src": "Diametro (m): uno punto dos", "out": "Diameter (m): one point two"}
+{"key": "f4dea2aebd1ee5ae7388c197f71e0030dc5732193c12107cab66857bed76719b", "src": "Acceso: andén", "out": "Access: platform"}
+{"key": "51b82e6d90c634529b97211c574b49a1065bafbbdb81e1fe02b4be9de93b231d", "src": "Acceso: camino", "out": "Access: path"}
+{"key": "667db3e6b249c367bcd8a6d3cc964751e9a2868a11d0434c2371ba322fdefb2a", "src": "Acceso: carril", "out": "Access: lane"}
+{"key": "cb28543d50dc04999e57c114f27c1d0fe93f32214c550c6a11c918a387e3300c", "src": "Acceso: estación", "out": "Access: station"}
+{"key": "3c036510ff288c0f43a4915d8f82e4e80730d89d53cb1144e617223ea7cd8bcc", "src": "Acceso: línea", "out": "Access: line"}
+{"key": "c7afc3e2ebd02074d8ce6864be81b72583756a3b010126c1bebe2a398a869717", "src": "Acceso: muelle", "out": "Access: dock"}
+{"key": "6ce8e3db65523fa6807997918ef6fd7c747f1ce87c82ba4372cb35c1c98b5412", "src": "Acceso: parada", "out": "Access: stop"}
+{"key": "4ffa88c9fd76468aa643d693d0c594dfe76a3a52aaf9451e82e98fc68fbf5938", "src": "Acceso: plataforma", "out": "Access: platform"}
+{"key": "e672efab013f0bb326961368e53ea330f485a51998e59f701c858de97efdabc5", "src": "Acceso: puesto", "out": "Access: position"}
+{"key": "8231385d75fba7d3c4eb41a1b90dcbd0e46450204c1f33951717bf2c8207e497", "src": "Acceso: rastro", "out": "Access: trail"}
+{"key": "0d0e3be3609b7fec1026c3a89d8ce1bf3ffc8e2e830cd66bc003fedfd6390872", "src": "Acceso: sendero", "out": "Access: trail"}
+{"key": "9669c05ad5a02703f74fd6fcab7a3702b9a0adf300f0bd9e509424eb38c96207", "src": "Acceso: terminal", "out": "Access: terminal"}
+{"key": "620e2b50027e3a2113a9b44026964d063c48f4d97b29ccf14d5dbcaf943b8f8f", "src": "Acceso: trazado", "out": "Access: layout"}
+{"key": "293983ab8379cb84f5ee86c8870b90b99346b386fb3685c63f89d48cdbcdfdad", "src": "Acceso: via", "out": "Access: via"}
+{"key": "ea25f07360aa451e917fc4f6e230d226402a409772bfd290fa828f17b8bdccd6", "src": "Con corte de corriente.", "out": "With power outage."}
+{"key": "126f09f9a74e73b344a0174262e0ff7cc44a846569b3a24447fb9e0b2990c440", "src": "Sin corte de corriente.", "out": "No power outage."}
+{"key": "316fc55c1408a627d3abf4c09df29882ef87f4d53518c3e0a2180b3e70e958ee", "src": "Diurno", "out": "Day"}
+{"key": "461133a1b9e4c290ac340612b0967a292be785b209674322a099c4d89212f582", "src": "Nocturno", "out": "Night"}
+{"key": "8b9e7566a0fe05119e385163b885ad5e719d6de36c32d61fabe380faa6f1e110", "src": "Profundidad (m): dos coma cinco", "out": "Depth (m): two comma five"}
+{"key": "be42e51b80e828af6d0ddd28a062628303c47bf60b06032ccff56937f3f58582", "src": "Profundidad (m): dos con cinco", "out": "Depth (m): two with five"}
+{"key": "1ed2f306200a6c8c9304f0e9218e9fecd07c82996a367a53886713d225205d3a", "src": "Profundidad (m): dos punto cinco", "out": "Depth (m): two point five"}
+{"key": "df8f9abe8f14d5de62d88357b9bebe6a9760e4468572585f9fef1d64276e7fac", "src": "Profundidad (m): tres coma cinco", "out": "Depth (m): three comma five"}
+{"key": "9109e9f51febfe25eb2c7590d01813df07bc1d315f0d57c559fbe91688c8258d", "src": "Profundidad (m): tres coma uno", "out": "Depth (m): three comma one"}
+{"key": "fe3403d938961db3e4e19313598d90183c57ceec35d9e8c405a3951d05c8b6b5", "src": "Profundidad (m): tres m", "out": "Depth (m): three m"}
+{"key": "85745b00fa8a368ee0e80fd02cf92754fa1780197306cdea2a5fa931e09fe707", "src": "Profundidad (m): tres m de profundidad", "out": "Depth (m): 3 m depth"}
+{"key": "54a1b92c5968216948ad37c82e92567ba2441ff2fa0f6e7d47f7ae32e5e314a5", "src": "Profundidad (m): tres metros", "out": "Depth (m): three metres"}
+{"key": "76b6702133826e097a51690d7fbbba511e0730e57ebb64e1f8c1ba6a37138d1a", "src": "Diámetro (m): cero coma setenta y cinco", "out": "Diameter (m): zero comma seventy-five"}
+{"key": "ffd3d38b80650b50ebe1660451b0e2a1c37e315fc6c6085986069cd90f5abd13", "src": "Diámetro (m): cero punto setenta y cinco", "out": "Diameter (m): zero point seventy-five"}
+{"key": "0dcbba77c0226b0e73d54f875258e0ba8c9d911bca0e056cecac4d0ceaafbc88", "src": "Diámetro (m): setenta y cinco centímetros", "out": "Diameter (m): seventy-five centimeters"}
+{"key": "322095ced60f89e737ceb76afbae820faaa6eb8a6f6ba3c30da56de32d1f0e5b", "src": "Diámetro (m): un metro", "out": "Diameter (m): one meter"}
+{"key": "e6229e62221c7d33b2b0f091b24bffd6261fc3e98a659fd7a73827b18f49ac64", "src": "Diámetro (m): uno", "out": "Diameter (m): one"}
+{"key": "70ed076fee1371e83d0524b7aeb0893ff7a5368979d991680e6294dc9e6fe174", "src": "Acceso: Camino", "out": "Access: Road"}
+{"key": "1b118fcdcc87defcc846e7946232eee270d6e67f49ab51cfb776d479b4911689", "src": "Acceso: Carril", "out": "Access: Rail"}
+{"key": "a08320d86fda83b577acbc5988f459156858da51e71dc341cf03d7f1357d37de", "src": "Acceso: Rieles", "out": "Access: Rieles"}
+{"key": "9acdeb1cf6522be5e7450b75f48edc846b1925ca10ac34d0092f88211a84e7f3", "src": "Acceso: Ruta", "out": "Access: Path"}
+{"key": "06e5d679246b0f5abee6394d4d2f035bf0c633cc2efdedad0709026bdd1ea4fd", "src": "Acceso: Sendero", "out": "Access: Path"}
+{"key": "0e58c7601c9b63c4993c55ff31c418e851dd127815cbe54bba67a64b5d74f7eb", "src": "Acceso: Trayecto", "out": "Access: Path"}
+{"key": "518b1011effc5f217d139f3def91f845461a781a3b27a36c1a6720c3eb8a4d27", "src": "Acceso: vía", "out": "Access: via"}
+{"key": "a4af4b2c742c11a7cc5080f44892805c5e0ef4db3c6137eb429debc7838e27bc", "src": "de cable [1]", "out": "cable [1]"}
+{"key": "b99fd482d538998f984056d4112d8e064a0df325a40362a8bab8f3430024449a", "src": "de cable [1] con micropilotes", "out": "Cable [1] with micro-pillars"}
+{"key": "f1b96542981a5733c9f40326b32f334421574329e91aff4f544bcf8da1699e4f", "src": "de cable sustentador", "out": "support cable"}
+{"key": "6e88244807e5237680a97bfb9714abccbf97f8ed69f81462c2dc0cb875a3073e", "src": "de cable sustentador con micropilotes", "out": "support cable with micro-pillars"}
+{"key": "068bd583dd45aa121087c9e7d3e5cd793f37149d4fa4f3e4889527a4e307ac7b", "src": "Barra corrugada roscada (mm): dieciséis milímetros", "out": "corrugated threaded bar (mm): sixteen millimetres"}
+{"key": "9d4c0b37dd51eb92a5d294032b94ef640a5876eace720c4f8076b67d7c85501a", "src": "Barra corrugada roscada (mm): dieciséis mm", "out": "corrugated threaded bar (mm): sixteen mm"}
+{"key": "23b2d349ebd184b9070356d4954c8b33a93e202c35f747cdf721b519ae704790", "src": "Profundidad (m): dos coma nueve cero", "out": "Depth (m): two comma nine zero"}
+{"key": "9376e424d740fd0ae83cc589e18b9139f3456273a28c4e79c83c3a9156a76ea6", "src": "Profundidad (m): dos coma ocho cero", "out": "Depth (m): two comma eight zero"}
+{"key": "65706491c5926bbae4b7fa0eb405dc5c298b07015b7fd729916aa451d579e564", "src": "Profundidad (m): dos coma seis cero", "out": "Depth (m): two comma six zero"}
+{"key": "83e12b60724480574b129f40d04d96d76c58421a6f622b82c99d119baa496a68", "src": "Profundidad (m): dos con noventa", "out": "Depth (m): two with ninety"}
+{"key": "cb1b36268983d72518953408f266a626a6b0ebc6b64f885d70932a07e2adcf0f", "src": "Profundidad (m): dos punto nueve cero", "out": "Depth (m): two point nine zero"}
+{"key": "09e071e3dc36481903709efb2031bd0c32776ddb403df5a156554cbbf5e36fb9", "src": "Profundidad (m): dos punto ocho cero", "out": "Depth (m): two point eight zero"}
+{"key": "8ea6fd635dfd91345de06b9ee10abba47ec6afb0c16dc5731ca1dc5eb15a479a", "src": "Profundidad (m): dos punto seis cero", "out": "Depth (m): two point six zero"}
+{"key": "eab77eb004911cc2c676944092515fecd68a438ea0add0cc40ef28f5e3741d1c", "src": "Profundidad (m): tres coma dos cero", "out": "Depth (m): three comma two zero"}
+{"key": "b5705d4792fef371f84524b113e0d64636aa00f5653c1dc796d3b8944890709c", "src": "Profundidad (m): tres coma uno cero", "out": "Depth (m): three comma one zero"}
+{"key": "34516a2459a29daae4334cc4ad8bf73e2ae64a69cfef0476194ec4215dc14c50", "src": "Profundidad (m): tres con veinte", "out": "Depth (m): three with twenty"}
+{"key": "94c8b93b2f193039a9b77b9d0a80a1f60217c3e1f2ee5fe5bb0ae18dd2e72e65", "src": "Profundidad (m): tres punto dos cero", "out": "Depth (m): three point two zero"}
+{"key": "ea241dfafb799cc7ab2d5356f88f58d178cd71900eb68bc775dbf4d18e95a627", "src": "Profundidad (m): tres punto uno cero", "out": "Depth (m): three point one zero"}
