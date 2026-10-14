@@ -1,6 +1,6 @@
 # Piloto de BT sobre STACKED-P (OE)
 
-Pivote EN, MarianMT (`Helsinki-NLP/opus-mt-es-en@c96e2c5`, `Helsinki-NLP/opus-mt-en-es@5bc4493`), beam 4 sin muestreo, máscara `bracket`. Valores de eje y fragmentos L2 enmascarados; verificación estructural sin LLM. Commit `babbe63`.
+Pivote EN, MarianMT (`Helsinki-NLP/opus-mt-es-en@c96e2c5`, `Helsinki-NLP/opus-mt-en-es@5bc4493`), beam 4 sin muestreo, máscara `bracket`. Valores de eje y fragmentos L2 enmascarados; verificación estructural sin LLM. Commit `8bedcd6`.
 
 | Métrica | Valor | Umbral |
 |---|---:|---|

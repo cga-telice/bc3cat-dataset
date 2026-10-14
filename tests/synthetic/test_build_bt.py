@@ -154,3 +154,27 @@ def test_mask_experiment_tie_breaks_on_fewer_lost_masks():
     summary = {"sentinel": {"accepted": 70, "mask_lost": 5},
                "xml": {"accepted": 70, "mask_lost": 9}}
     assert _mx().choose(summary) == "sentinel"
+
+
+# --- condiciones con BT de valores ----------------------------------------
+
+def test_stacked_btv_record_suffix_and_types():
+    rec = bt.output_record("stacked_btv_en", _SRC, "texto", _Res(), _BT_META, 6, value_bt=True)
+    assert rec["item_key"] == "OEB030jcaaa_syn_7460ba334a18_btv_en"
+    assert rec["modification_types"][-2:] == ["back_translation", "value_back_translation"]
+    assert rec["texto_modification_types_post_bt"][-2:] == ["back_translation", "value_back_translation"]
+
+
+def test_bt_origv_record_suffix():
+    gold = {"item_key": "OEB030jcaaa", "parent_key": "OEB030$", "text": "t", "parameters": {}}
+
+    class R(_Res):
+        surviving_types, reverted_types = [], []
+
+    rec = bt.output_record("bt_origv_en", gold, "x", R(), _BT_META, 3, value_bt=False)
+    assert rec["item_key"] == "OEB030jcaaa_btorigv_en"
+    assert rec["modification_types"] == ["back_translation"]  # sin sustituciones de valor
+
+
+def test_condition_names():
+    assert bt.CONDITIONS == ("stacked_bt", "bt_orig", "stacked_btv", "bt_origv")

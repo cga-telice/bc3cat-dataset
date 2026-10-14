@@ -224,3 +224,63 @@ from synthetic.bt_values import reverts  # noqa: E402
 )
 def test_reverts(surface, variant, gold, reason):
     assert reverts(surface, variant, gold) == reason
+
+
+# --- montaje de una partida (BT de prosa + valores) ------------------------
+
+from synthetic.bt_values import assemble_values  # noqa: E402
+
+_BACK = "Trabajo [1], terreno [2] con [3] tubos de [4] mm."
+_MAP = {"[1]": "Nocturno", "[2]": "rocoso", "[3]": "4", "[4]": "110"}
+_VALUES = ["[1]", "[2]", "[3]"]
+_SLOTS = {"[1]": ("$C", "Nocturno"), "[2]": ("$B", "rocoso"), "[3]": ("$A", "4")}
+_LABELS = {"$C": "TRABAJO", "$B": "TIPO DE TERRENO", "$A": "Nº TUBOS"}
+_APPROVED = {"$C": {"Nocturno": ["De noche", "Turno de noche"]}, "$B": {"rocoso": ["de roca"]},
+             "$A": {"4": ["cuatro"]}}
+
+
+def _assemble(key="q1", label_p=0.0):
+    return assemble_values(_BACK, _MAP, _VALUES, _SLOTS,
+                           lambda ph, s: _APPROVED.get(ph, {}).get(s, []),
+                           _LABELS, seed=42, key=key, label_p=label_p)
+
+
+def test_assemble_always_substitutes_approved_variants():
+    text, subs = _assemble()
+    assert "Nocturno" not in text and "rocoso" not in text
+    assert text.endswith("tubos de 110 mm.")  # el resto de marcadores, literales
+    assert {s["placeholder"] for s in subs} == {"$C", "$B", "$A"}
+
+
+def test_assemble_is_deterministic_per_key():
+    assert _assemble("q1") == _assemble("q1")
+
+
+def test_assemble_keeps_original_without_variants():
+    text, subs = assemble_values("Trabajo [1].", {"[1]": "Diurno"}, ["[1]"], {"[1]": ("$C", "Diurno")},
+                                 lambda ph, s: [], _LABELS, seed=42, key="q", label_p=1.0)
+    assert text == "Trabajo Diurno." and subs == []
+
+
+def test_label_added_only_without_digits_and_when_absent():
+    back = "Se ejecuta en [2] con [3] tubos."
+    text, subs = assemble_values(back, _MAP, ["[2]", "[3]"], _SLOTS,
+                                 lambda ph, s: _APPROVED.get(ph, {}).get(s, []),
+                                 _LABELS, seed=42, key="q", label_p=1.0)
+    assert "Tipo de terreno: de roca" in text       # sin dígitos y la prosa no la dice
+    assert "Nº tubos" not in text                   # valor numérico: sin etiqueta
+    # «Trabajo [1]»: la prosa ya nombra el parámetro, no se repite
+    text2, _ = _assemble(label_p=1.0)
+    assert "Trabajo: " not in text2 and text2.startswith("Trabajo ")
+
+
+def test_variant_takes_the_initial_case_of_the_original():
+    back = "de diámetro [1], que comprende"
+    text, _ = assemble_values(back, {"[1]": "en todo terreno, salvo roca"}, ["[1]"],
+                              {"[1]": ("$I", "en todo terreno, salvo roca")},
+                              lambda ph, s: ["En todos los terrenos excepto rocas"], {},
+                              seed=42, key="q", label_p=0.0)
+    assert text == "de diámetro en todos los terrenos excepto rocas, que comprende"
+    text2, _ = assemble_values("Trabajo: [1].", {"[1]": "Nocturno"}, ["[1]"], {"[1]": ("$C", "Nocturno")},
+                               lambda ph, s: ["de noche"], {}, seed=42, key="q", label_p=0.0)
+    assert text2 == "Trabajo: De noche."

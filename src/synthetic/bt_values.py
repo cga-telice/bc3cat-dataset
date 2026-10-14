@@ -296,3 +296,49 @@ def reverts(surface: str, variant: str, gold: str) -> Optional[str]:
     if _norm(variant) == _norm(gold) and _norm(surface) != _norm(gold):
         return "back_to_gold"
     return None
+
+
+# ---------------------------------------------------------------------------
+# Montaje de una partida: BT de prosa (texto con marcadores) + BT de valores
+# ---------------------------------------------------------------------------
+
+def assemble_values(back_masked: str, mapping: Mapping[str, str], values: Sequence[str],
+                    slots: Mapping[str, tuple], approved, labels: Mapping[str, Optional[str]],
+                    *, seed: int, key: str, label_p: float) -> tuple[str, list[dict]]:
+    """Rellena los marcadores de valor de ``back_masked`` (decisiones de César):
+
+    * siempre que la superficie tenga variantes aprobadas (``approved(placeholder,
+      superficie) -> lista``), se usa una, elegida con semilla por ``key`` y hueco;
+      sin variantes, se deja el original;
+    * con probabilidad ``label_p`` se antepone la etiqueta como «Etiqueta: valor»,
+      solo si el valor (original o variante) no tiene dígitos y la prosa previa no
+      nombra ya el parámetro;
+    * los demás marcadores (cantidades, bandas, siglas) vuelven a su literal.
+
+    Devuelve el texto y la lista de sustituciones (para el sidecar)."""
+    import random as _random
+    import zlib as _zlib
+
+    choices: dict[str, str] = {}
+    subs: list[dict] = []
+    for marker in values:
+        placeholder, surface = slots[marker]
+        rng = _random.Random(seed ^ _zlib.crc32(f"{key}|{placeholder}|{marker}".encode("utf-8")))
+        variants = sorted(approved(placeholder, surface))
+        new = rng.choice(variants) if variants else surface
+        if variants and new[:1].isalpha() and surface[:1].isalpha():
+            # la variante copia la inicial del original («En todos…» a mitad de frase)
+            first = new[0].upper() if surface[0].isupper() else new[0].lower()
+            new = first + new[1:]
+        label = labels.get(placeholder)
+        prefix = back_masked[:back_masked.find(marker)]
+        numeric = re.search(r"\d", new) or re.search(r"\d", surface)
+        add_label = bool(label) and rng.random() < label_p and not numeric \
+            and not label_present(MARKER_RE.sub(" ", prefix), label)
+        if add_label:
+            new = source_text(new, label)
+        if new != surface:
+            choices[marker] = new
+            subs.append({"placeholder": placeholder, "original": surface, "new": new,
+                         "variant": bool(variants), "label_added": add_label})
+    return fill_values(back_masked, mapping, values, choices), subs

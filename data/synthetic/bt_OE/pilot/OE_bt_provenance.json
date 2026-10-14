@@ -1,6 +1,6 @@
 {
- "commit": "babbe635cb5c8226918a3b64bd4a74c3e02cab96",
- "run_id": "bt-pilot-20261004T214032Z",
+ "commit": "8bedcd68a359821ad55111a56aed8db87776a304",
+ "run_id": "bt-pilot-20261014T233835Z",
  "mode": "pilot",
  "seed": 42,
  "bt": {
@@ -30,7 +30,11 @@
   "OE_stacked_bt_en_modifications.jsonl": "6527fe89c95bcdbd7d31883c51cbf931e8d982a7e265840f5106817bfe738e55",
   "OE_bt_orig_en_texto.json": "8d0a999dff551a93b7365894c68637a5515a6855fbaf9df365bc294768594d99",
   "OE_bt_orig_en_modifications.jsonl": "88bae08c18e438d0022bc732acd0511ef12d5d7779d3ab73f93d1f903872b40a",
-  "OE_bt_rejected.jsonl": "445119a641b52419eb35f5f22fa5a1c016395cec3c2d84785162bc690e1d4e33"
+  "OE_stacked_btv_en_texto.json": "1f10d5be4be6f5ff9d64dfd52794a206ba78ba1aef40d9069efebb2139c870fd",
+  "OE_stacked_btv_en_modifications.jsonl": "f614bf829072e328060abdd681f2d06ed360e9f82c9b037eaedace97f2cdcbaf",
+  "OE_bt_origv_en_texto.json": "15084554583be0bc62192a46679940735ea919e86f069699ed6b29073a2f56ff",
+  "OE_bt_origv_en_modifications.jsonl": "8bc348e210f21202e3b0e87dd1d7be32f6fcaf0a93d03cfbbb93705e99725420",
+  "OE_bt_rejected.jsonl": "44b52c37433de5e707fbf450d7eddce88089a055960ce3f61ef74be17d340705"
  },
  "counts": {
   "stacked_bt": {
@@ -38,6 +42,14 @@
    "accepted": 294
   },
   "bt_orig": {
+   "n": 300,
+   "accepted": 296
+  },
+  "stacked_btv": {
+   "n": 300,
+   "accepted": 294
+  },
+  "bt_origv": {
    "n": 300,
    "accepted": 296
   }

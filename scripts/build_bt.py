@@ -55,7 +55,7 @@ from synthetic.characterization import norm_text  # noqa: E402
 
 # mismo namespace que scripts/package_for_retrieval.py
 _NS = uuid.UUID("6f9619ff-8b86-d011-b42d-00cf4fc964ff")
-CONDITIONS = ("stacked_bt", "bt_orig")
+CONDITIONS = ("stacked_bt", "bt_orig", "stacked_btv", "bt_origv")
 PROTOCOL_VERSION = "bt-masked-1"  # rediseño CP2: valores enmascarados, verificación estructural
 
 
@@ -118,19 +118,25 @@ def _flat_params(params: Mapping) -> dict:
     return out
 
 
+_SUFFIX = {"stacked_bt": "bt", "stacked_btv": "btv", "bt_orig": "btorig", "bt_origv": "btorigv"}
+
+
 def output_record(condition: str, src: Mapping, text: str, res, bt_meta: Mapping,
-                  masked_values: int) -> dict:
+                  masked_values: int, value_bt: bool = False) -> dict:
+    """``condition`` = ``<condición>_<pivote>``; ``value_bt`` = la partida lleva
+    algún valor o fragmento sustituido por su variante aprobada."""
     pivot = bt_meta["pivot"]
-    if condition.startswith("stacked_bt"):
-        item_key = f"{src['item_key']}_bt_{pivot}"
+    base = condition[: -len(pivot) - 1]
+    item_key = f"{src['item_key']}_{_SUFFIX[base]}_{pivot}"
+    if base.startswith("stacked"):
         gold = src["gold_item_key"]
         mtypes = list(src.get("modification_types") or [])
         ttypes = list(src.get("texto_modification_types") or [])
     else:
-        item_key = f"{src['item_key']}_btorig_{pivot}"
         gold = src["item_key"]
         mtypes, ttypes = [], []
-    post = list(res.surviving_types) + ["back_translation"]
+    bt_types = ["back_translation"] + (["value_back_translation"] if value_bt else [])
+    post = list(res.surviving_types) + bt_types
     return {
         "id": stable_id(item_key),
         "item_key": item_key,
@@ -143,10 +149,10 @@ def output_record(condition: str, src: Mapping, text: str, res, bt_meta: Mapping
         "condition": condition,
         "source_item_key": src["item_key"],
         "source_text_sha256": sha256_text(src["text"]),
-        "modification_types": mtypes + ["back_translation"],
-        "modification_count": len(mtypes) + 1,
-        "texto_modification_types": ttypes + ["back_translation"],
-        "texto_modification_count": len(ttypes) + 1,
+        "modification_types": mtypes + bt_types,
+        "modification_count": len(mtypes) + len(bt_types),
+        "texto_modification_types": ttypes + bt_types,
+        "texto_modification_count": len(ttypes) + len(bt_types),
         "texto_modification_types_post_bt": post,
         "texto_modification_count_post_bt": len(post),
         "reverted_types": list(res.reverted_types),
@@ -266,9 +272,14 @@ def make_engine(cfg, mode: str) -> CachedEngine:
 
 
 def value_spans(jobs, stage, corpus, sidecar) -> list[list[tuple[int, int]]]:
-    """Tramos de valores de eje y fragmentos L2 de cada texto de origen. STACKED-P
-    solo contiene consultas que alinean (T3) y el gold alinea siempre: un fallo
-    aquí es un error; nunca se traduce sin proteger los valores."""
+    return [[(s.start, s.end) for s in slots] for slots in value_slots(jobs, stage, corpus, sidecar)]
+
+
+def value_slots(jobs, stage, corpus, sidecar):
+    """Huecos no vacíos (valores de eje y fragmentos L2) de cada texto de origen,
+    en orden de texto. STACKED-P solo contiene consultas que alinean (T3) y el
+    gold alinea siempre: un fallo aquí es un error; nunca se traduce sin
+    proteger los valores."""
     out = []
     for cond, src in jobs:
         concept = stage[src["parent_key"]]
@@ -281,8 +292,66 @@ def value_spans(jobs, stage, corpus, sidecar) -> list[list[tuple[int, int]]]:
                 slots = gold_slots(concept, src["item_key"], src["text"])
         except AlignmentError as err:
             raise SystemExit(f"alineación imposible en {src['item_key']}: {err}") from err
-        out.append([(s.start, s.end) for s in slots if s.end > s.start])
+        out.append(sorted((s for s in slots if s.end > s.start), key=lambda s: s.start))
     return out
+
+
+def approved_variants(cfg):
+    """(concepto, placeholder, superficie) -> variantes aprobadas (tabla filtrada
+    ∩ lista aprobada tras la auditoría)."""
+    v = cfg["bt_values"]
+    approved = set(json.loads((REPO / v["approved"]).read_text(encoding="utf-8"))["uids"])
+    out: dict[tuple, list[str]] = {}
+    for line in (REPO / v["table"]).read_text(encoding="utf-8").splitlines():
+        r = json.loads(line)
+        if r["status"] == "ok" and r["uid"] in approved:
+            out.setdefault((r["concept"], r["placeholder"], r["surface"]), []).append(r["variant"])
+    return {k: sorted(set(vs)) for k, vs in out.items()}
+
+
+def assemble_rows(cfg, ctx, jobs, results, slots, stage, sidecar, forbidden):
+    """Condiciones ``stacked_btv`` y ``bt_origv``: la misma BT de prosa de cada
+    trabajo con los marcadores de valor rellenos con variantes aprobadas
+    (:func:`bt_values.assemble_values`) y la verificación estructural."""
+    from synthetic.bt_values import assemble_values
+
+    variants = approved_variants(cfg)
+    label_p = cfg["bt_values"]["label_probability"]
+    rows, seen = [], {}
+    for (cond, src), bt_res, job_slots in zip(jobs, results, slots):
+        vcond = cond + "v"
+        gold = src.get("gold_item_key", src["item_key"])
+        row = {"condition": vcond, "source_item_key": src["item_key"], "gold_item_key": gold,
+               "parent_key": src["parent_key"], "source_text": src["text"],
+               "bt_text": None, "pivot_text": bt_res.pivot_text, "n_masks": len(bt_res.mapping),
+               "subs": []}
+        if not bt_res.ok:
+            row.update(ok=False, gate="BT", axis=None, reason=bt_res.reason)
+            rows.append((row, None, bt_res))
+            continue
+        concept = src["parent_key"]
+        params = stage[concept].get("parameters") or {}
+        labels = {f"${ax}": " ".join(b["label"].split()) for ax, b in params.items()}
+        marker_slot = {m: (s.placeholder, s.text) for m, s in zip(bt_res.values, job_slots)}
+        text, subs = assemble_values(
+            bt_res.back_masked, bt_res.mapping, bt_res.values, marker_slot,
+            lambda ph, surface: variants.get((concept, ph, surface), []), labels,
+            seed=cfg["seed"], key=f"{vcond}|{src['item_key']}", label_p=label_p)
+        records = sidecar.get(src["item_key"], []) if cond == "stacked_bt" else None
+        r = ctx.check(text, gold, extractors=(), source_text=src["text"],
+                      records=records, query_key=src["item_key"], forbidden=forbidden,
+                      substitutions=subs)
+        if r.ok:
+            nt = norm_text(text)
+            if nt in seen.setdefault(vcond, {}):
+                r.ok, r.gate, r.reason = False, "G6", f"duplicate_within_set:{seen[vcond][nt]}"
+            else:
+                seen[vcond][nt] = src["item_key"]
+        row.update(bt_text=text, subs=subs, ok=r.ok, gate=r.gate, axis=r.axis, reason=r.reason,
+                   surviving_types=r.surviving_types, reverted_types=r.reverted_types,
+                   drift=r.drift.get("score"))
+        rows.append((row, r, bt_res))
+    return rows
 
 
 def translate(cfg, jobs, engine, strategy, spans):
@@ -365,9 +434,11 @@ def metrics(cfg, ctx, rows, corpus, groups, stacked_p_keys, stacked, bm25=True) 
             "stacked_p_all": bm25_acc1(index, q(sorted(stacked_p_keys)), groups),
             "stacked_selected": bm25_acc1(index, q(sel), groups),
             "stacked_accepted": bm25_acc1(index, q(sorted(acc_keys)), groups),
-            "bt_accepted": bm25_acc1(index, [(r["bt_text"], r["gold_item_key"]) for r, _, _ in rows
-                                             if r["condition"] == "stacked_bt" and r["ok"]], groups),
         }
+        for cs in ("stacked_bt", "stacked_btv"):
+            m["bm25"][cs + "_accepted_bt"] = bm25_acc1(
+                index, [(r["bt_text"], r["gold_item_key"]) for r, _, _ in rows
+                        if r["condition"] == cs and r["ok"]], groups)
     return m
 
 
@@ -379,8 +450,9 @@ def _median(xs):
     return xs[mid] if len(xs) % 2 else (xs[mid - 1] + xs[mid]) / 2
 
 
-def report_markdown(title, cfg, m, rows, provenance, thresholds=True) -> str:
-    s, o = m["stacked_bt"], m["bt_orig"]
+def report_markdown(title, cfg, m, rows, provenance, pair=("stacked_bt", "bt_orig")) -> str:
+    cs, co = pair
+    s, o = m[cs], m[co]
     acc_s = s["accepted"] / s["n"] if s["n"] else 0
     noop = s["no_op"] / s["n"] if s["n"] else 0
     lines = [f"# {title}", "",
@@ -390,39 +462,39 @@ def report_markdown(title, cfg, m, rows, provenance, thresholds=True) -> str:
              "Valores de eje y fragmentos L2 enmascarados; verificación estructural sin LLM. "
              f"Commit `{provenance['commit'][:7]}`.", "",
              "| Métrica | Valor | Umbral |", "|---|---:|---|",
-             f"| Aceptación `stacked_bt_en` | {s['accepted']}/{s['n']} ({_pct(s['accepted'], s['n'])}) | ≥ 80 % → {'cumple' if acc_s >= 0.8 else '**no cumple**'} |",
-             f"| Aceptación `bt_orig_en` | {o['accepted']}/{o['n']} ({_pct(o['accepted'], o['n'])}) | se reporta |",
-             f"| No-ops `stacked_bt_en` | {s['no_op']} ({_pct(s['no_op'], s['n'])}) | ≤ 10 % → {'cumple' if noop <= 0.10 else '**no cumple**'} |",
-             f"| Máscara perdida `stacked_bt_en` / `bt_orig_en` | {s['mask_lost']} / {o['mask_lost']} | se reporta |",
-             f"| Valores cambiados de orden `stacked_bt_en` / `bt_orig_en` | {s['value_order_changed']} / {o['value_order_changed']} | se reporta |",
-             f"| Mediana de distancia en tokens al gold, antes → después (`stacked_bt`) | {_median(s['dist_before'])} → {_median(s['dist_after'])} | se reporta |",
-             f"| Mediana de distancia en tokens al gold, antes → después (`bt_orig`) | 0 → {_median(o['dist_after'])} | se reporta |"]
+             f"| Aceptación `{cs}_en` | {s['accepted']}/{s['n']} ({_pct(s['accepted'], s['n'])}) | ≥ 80 % → {'cumple' if acc_s >= 0.8 else '**no cumple**'} |",
+             f"| Aceptación `{co}_en` | {o['accepted']}/{o['n']} ({_pct(o['accepted'], o['n'])}) | se reporta |",
+             f"| No-ops `{cs}_en` | {s['no_op']} ({_pct(s['no_op'], s['n'])}) | ≤ 10 % → {'cumple' if noop <= 0.10 else '**no cumple**'} |",
+             f"| Máscara perdida `{cs}_en` / `{co}_en` | {s['mask_lost']} / {o['mask_lost']} | se reporta |",
+             f"| Valores cambiados de orden `{cs}_en` / `{co}_en` | {s['value_order_changed']} / {o['value_order_changed']} | se reporta |",
+             f"| Mediana de distancia en tokens al gold, antes → después (`{cs}`) | {_median(s['dist_before'])} → {_median(s['dist_after'])} | se reporta |",
+             f"| Mediana de distancia en tokens al gold, antes → después (`{co}`) | 0 → {_median(o['dist_after'])} | se reporta |"]
     if "bm25" in m:
         b = m["bm25"]
         diff = 100 * (b["stacked_accepted"] - b["stacked_selected"])
         lines += [f"| BM25 Acc@1 de STACKED: aceptadas / muestra / todo STACKED-P | "
                   f"{100 * b['stacked_accepted']:.1f} / {100 * b['stacked_selected']:.1f} / {100 * b['stacked_p_all']:.1f} % | "
                   f"diferencia ≤ 2 pp → {diff:+.1f} pp, {'cumple' if abs(diff) <= 2 else '**no cumple**'} |",
-                  f"| BM25 Acc@1 de las consultas BT aceptadas | {100 * b['bt_accepted']:.1f} % | se reporta |"]
-    lines += ["", "## Rechazos por puerta", "", "| Puerta | `stacked_bt_en` | `bt_orig_en` |", "|---|---:|---:|"]
+                  f"| BM25 Acc@1 de las consultas BT aceptadas | {100 * b[cs + '_accepted_bt']:.1f} % | se reporta |"]
+    lines += ["", "## Rechazos por puerta", "", f"| Puerta | `{cs}_en` | `{co}_en` |", "|---|---:|---:|"]
     for g in sorted(set(s["by_gate"]) | set(o["by_gate"])):
         lines.append(f"| {g} | {s['by_gate'].get(g, 0)} | {o['by_gate'].get(g, 0)} |")
-    lines += ["", "## Rechazos por puerta, concepto, eje y motivo (`stacked_bt_en`, 25 primeros)", "",
+    lines += ["", f"## Rechazos por puerta, concepto, eje y motivo (`{cs}_en`, 25 primeros)", "",
               "| Clave | Consultas |", "|---|---:|"]
     lines += [f"| {k} | {v} |" for k, v in s["by_gate_axis"].most_common(25)]
-    lines += ["", "## Supervivencia de las modificaciones (G5, aceptadas `stacked_bt_en`)", "",
+    lines += ["", f"## Supervivencia de las modificaciones (G5, aceptadas `{cs}_en`)", "",
               "| Tipo | Sobrevive | Revertido |", "|---|---:|---:|"]
     for t in sorted(set(s["surviving"]) | set(s["reverted"])):
         lines.append(f"| {t} | {s['surviving'].get(t, 0)} | {s['reverted'].get(t, 0)} |")
-    lines += ["", "## Aceptación por concepto (`stacked_bt_en`)", "", "| Concepto | Aceptadas | Total |", "|---|---:|---:|"]
+    lines += ["", f"## Aceptación por concepto (`{cs}_en`)", "", "| Concepto | Aceptadas | Total |", "|---|---:|---:|"]
     concepts = sorted({c for c, _ in s["by_concept"]})
     for c in concepts:
         a, r = s["by_concept"].get((c, True), 0), s["by_concept"].get((c, False), 0)
         lines.append(f"| {c} | {a} | {a + r} |")
-    lines += ["", "## Ejemplos de rechazo (`stacked_bt_en`)", ""]
+    lines += ["", f"## Ejemplos de rechazo (`{cs}_en`)", ""]
     shown = Counter()
     for r, _, _ in rows:
-        if r["condition"] != "stacked_bt" or r["ok"] or shown[r["gate"]] >= 3:
+        if r["condition"] != cs or r["ok"] or shown[r["gate"]] >= 3:
             continue
         shown[r["gate"]] += 1
         lines += [f"- **{r['gate']}** `{r['source_item_key']}` eje {r['axis']} · {r['reason']}",
@@ -478,6 +550,8 @@ def main(argv=None) -> int:
     ctx = cal.load_context(cfg)
     forbidden = audit.forbidden_texts(handoff) | {norm_text(q["text"]) for q in stacked.values()}
     rows = verify(cfg, ctx, jobs, results, sidecar, forbidden)
+    rows += assemble_rows(cfg, ctx, jobs, results, value_slots(jobs, stage, corpus, sidecar),
+                          stage, sidecar, forbidden)
     groups = ctx.groups
     m = metrics(cfg, ctx, rows, corpus, groups, p_keys, stacked)
     out_dir = REPO / cfg["bt"]["out_dir"] / ("pilot" if mode == "pilot" else "")
@@ -496,19 +570,24 @@ def main(argv=None) -> int:
         for row, r, bt_res in rows:
             if row["condition"] != cond:
                 continue
-            src = stacked[row["source_item_key"]] if cond == "stacked_bt" else corpus[row["source_item_key"]]
+            is_stacked = cond.startswith("stacked")
+            src = stacked[row["source_item_key"]] if is_stacked else corpus[row["source_item_key"]]
             if not row["ok"]:
                 rejected.append({k: row.get(k) for k in ("condition", "source_item_key", "gold_item_key",
                                                          "gate", "axis", "reason", "bt_text")})
                 continue
-            rec = output_record(f"{cond}_{pivot}", src, row["bt_text"], r, bt_meta, len(bt_res.values))
+            rec = output_record(f"{cond}_{pivot}", src, row["bt_text"], r, bt_meta, len(bt_res.values),
+                                value_bt=bool(row.get("subs")))
             recs.append(rec)
-            mods = list(sidecar.get(src["item_key"], [])) if cond == "stacked_bt" else []
+            mods = list(sidecar.get(src["item_key"], [])) if is_stacked else []
             mods.append({"type": "back_translation", "layer": "surface", "pivot": pivot,
                          "engine": "marian", "original_sha256": sha256_text(src["text"]),
                          "new_sha256": sha256_text(row["bt_text"]),
                          "masked": {"strategy": strategy, "n": len(bt_res.mapping),
                                     "literals": list(bt_res.mapping.values())}})
+            for sub in row.get("subs") or []:
+                mods.append({"type": "value_back_translation", "layer": "surface",
+                             "pivot": f"es-{pivot}-x-es", **sub})
             side.append({"item_key": rec["item_key"], "source_item_key": src["item_key"],
                          "modifications": mods})
         recs.sort(key=lambda r: r["item_key"])
@@ -542,21 +621,28 @@ def main(argv=None) -> int:
     if mode == "pilot":
         audit.write_atomic(docs / "OE_bt_pilot_report.md",
                            report_markdown("Piloto de BT sobre STACKED-P (OE)", cfg, m, rows, provenance))
-        accepted_s = [{"item_key": r["source_item_key"], "text": r["bt_text"],
-                       "gold_text": corpus[r["gold_item_key"]]["text"], "drift": r.get("drift")}
-                      for r, _, _ in rows if r["condition"] == "stacked_bt" and r["ok"]]
-        orig = [{"item_key": r["source_item_key"], "text": r["bt_text"],
-                 "gold_text": corpus[r["gold_item_key"]]["text"], "drift": r.get("drift")}
-                for r, _, _ in rows if r["condition"] == "bt_orig" and r["ok"]]
-        rng = random.Random(cfg["seed"] ^ zlib.crc32(b"bt_orig_audit"))
-        orig = rng.sample(orig, min(cfg["bt"]["audit_bt_orig"], len(orig)))
-        anon = [dict(r, item_key=f"A{i:03d}") for i, r in enumerate(accepted_s + orig, 1)]
-        key_map = {a["item_key"]: (r["item_key"], "stacked_bt" if i <= len(accepted_s) else "bt_orig")
-                   for i, (a, r) in enumerate(zip(anon, accepted_s + orig), 1)}
-        audit.write_atomic(docs / "OE_bt_pilot_audit.md",
-                           audit_markdown("Auditoría humana del piloto de BT (OE)", anon))
-        audit.write_atomic(out_dir / "OE_bt_pilot_audit_key.json",
-                           json.dumps(key_map, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
+        audit.write_atomic(docs / "OE_bt_pilot_report_values.md",
+                           report_markdown("Piloto de BT de prosa + valores sobre STACKED-P (OE)",
+                                           cfg, m, rows, provenance, pair=("stacked_btv", "bt_origv")))
+        for (cs, co), name, title in (
+                (("stacked_bt", "bt_orig"), "OE_bt_pilot_audit", "Auditoría humana del piloto de BT (OE)"),
+                (("stacked_btv", "bt_origv"), "OE_bt_pilot_audit_values",
+                 "Auditoría humana del piloto de BT de prosa + valores (OE)")):
+            accepted_s = [{"item_key": r["source_item_key"], "text": r["bt_text"],
+                           "gold_text": corpus[r["gold_item_key"]]["text"], "drift": r.get("drift")}
+                          for r, _, _ in rows if r["condition"] == cs and r["ok"]]
+            orig = [{"item_key": r["source_item_key"], "text": r["bt_text"],
+                     "gold_text": corpus[r["gold_item_key"]]["text"], "drift": r.get("drift")}
+                    for r, _, _ in rows if r["condition"] == co and r["ok"]]
+            # «bt_orig_audit» es la semilla del piloto ya entregado; no cambia
+            rng = random.Random(cfg["seed"] ^ zlib.crc32(f"{co}_audit".encode()))
+            orig = rng.sample(orig, min(cfg["bt"]["audit_bt_orig"], len(orig)))
+            anon = [dict(r, item_key=f"A{i:03d}") for i, r in enumerate(accepted_s + orig, 1)]
+            key_map = {a["item_key"]: (r["item_key"], cs if i <= len(accepted_s) else co)
+                       for i, (a, r) in enumerate(zip(anon, accepted_s + orig), 1)}
+            audit.write_atomic(docs / f"{name}.md", audit_markdown(title, anon))
+            audit.write_atomic(out_dir / f"{name}_key.json",
+                               json.dumps(key_map, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
     else:
         audit.write_atomic(docs / "OE_bt_qa.md",
                            report_markdown("QA de la BT sobre STACKED-P (OE)", cfg, m, rows, provenance))

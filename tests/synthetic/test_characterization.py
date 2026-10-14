@@ -512,3 +512,17 @@ def test_structural_mode_keeps_g1_g3_g6(ctx):
     assert ctx.check(_QUERY.replace("HE-20", "HM-30"), GOLD, extractors=()).gate == "G1"
     assert ctx.check(_render(0, 1, 1), GOLD, extractors=()).gate == "G3"
     assert ctx.check(GOLD_TEXT, GOLD, extractors=()).gate == "G6"
+
+
+# --- G1 con sustituciones de valor aprobadas (BT de valores) ---------------
+
+def test_g1_undoes_approved_value_substitutions(ctx):
+    records = [{"type": "unit_expansion", "layer": "param_value", "param": "A", "value": "a",
+                "original": "1", "new": "un"}]
+    src = "Canalización de un tubos en terreno rocoso, con hormigón HE-20 de 1,60 m. Trabajo: Diurno"
+    # la BT de valores cambia «un» (reescritura STACKED) por su variante aprobada «uno solo»
+    q = "Canalización de uno solo tubos en terreno rocoso, con hormigón HE-20 de 1,60 m, trabajo Diurno"
+    assert ctx.check(q, GOLD, extractors=(), source_text=src, records=records).gate == "G1"
+    subs = [{"original": "un", "new": "uno solo"}]
+    assert ctx.check(q, GOLD, extractors=(), source_text=src, records=records,
+                     substitutions=subs).ok

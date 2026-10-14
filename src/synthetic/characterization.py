@@ -602,7 +602,11 @@ class CharacterizationContext:
               source_text: Optional[str] = None,
               records: Optional[Sequence[Mapping]] = None,
               query_key: Optional[str] = None,
-              forbidden: frozenset = frozenset()) -> CheckResult:
+              forbidden: frozenset = frozenset(),
+              substitutions: Sequence[Mapping] = ()) -> CheckResult:
+        """``substitutions`` (BT de valores): sustituciones aprobadas
+        ``{"original", "new"}`` hechas sobre la consulta; G1 las deshace antes
+        que los registros del sidecar, igual que estos."""
         res = CheckResult(ok=False)
 
         # G0
@@ -616,7 +620,9 @@ class CharacterizationContext:
         visible = self._visible(records, leaf)
 
         # G1 — en el espacio de valores originales
-        got = invariants(undo_records(query_text, visible))
+        subs = [{"layer": "value_substitution", "original": s["original"], "new": s["new"]}
+                for s in substitutions]
+        got = invariants(undo_records(undo_records(query_text, subs), visible))
         if source_text is None:
             expected = self._expected_from_gold(leaf, concept, visible)
         else:
