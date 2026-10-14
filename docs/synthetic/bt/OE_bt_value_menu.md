@@ -5,94 +5,21 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 
 ## Fragmentos de texto (L2)
 
-**. Incluido el marco angular galvanizado y dos tapas de fundición dúctil (D400).**
-- [ ] `fe6779680917` . Incluye el marco angular galvanizado y dos tapas de fundición dúctil (D400).  _(vía de; 1 concepto)_
-- [ ] `99a603bd9c6a` . Incluyendo el marco angular galvanizado y dos tapas de colada dúctil (D400).  _(vía it; 1 concepto)_
-**. Incluido el marco y la tapa de fundición dúctil (D400).**
-- [ ] `5f682ed5281a` . Incluye el marco dúctil y las tapas (D400).  _(vía de; 1 concepto)_
-- [ ] `587a4510fd92` . Incluyendo el marco y la tapa de colada esferoidal (D400).  _(vía it; 1 concepto)_
-**.Incluido el marco angular galvanizado y tres tapas de fundición dúctil (D400).**
-- [ ] `9ede9d4cd7f7` .Incluye el marco angular galvanizado y tres tapas de fundición dúctil (D400).  _(vía de; 1 concepto)_
-- [ ] `6253842a0455` . Incluyendo el marco angular galvanizado y tres tapas de colada dúctil (D400).  _(vía it; 1 concepto)_
-**Con corte de corriente.**
-- [ ] `b4a9ff7ad0c7` Con corte de energía.  _(vía it; 5 conceptos)_
-- [ ] `3260fa455176` Con un apagón.  _(vía fr; 5 conceptos)_
-**Construcción del pozo, entibación, tubo guía de 500 mm, hilos guía y sellado.**
-- [ ] `5d5c7d2e3ad7` Construcción de pozo, intibación, tubo guía de 500 mm, alambre guía y sellado.  _(vía it; 1 concepto)_
-- [ ] `4ab0c9868bf9` Construcción de pozos, intibación, tubo guía de 500 mm, guías y sello.  _(vía de; 1 concepto)_
-- [ ] `a9476cfae92e` Construcción de pozos, intimidación, tubo de guía de 500 mm, hilo de guía y cableado.  _(vía fr; 1 concepto)_
 **Diurno**
 - [ ] `186d839045c9` Día  _(vía fr; 5 conceptos)_
-**Incluido el sumistro y montaje de los tubos, la prueba de los conductos, las conexiones y embocaduras con las canalizaciones de las diferentes plataformas, la maquinaria de elevación, el transporte y la retirada de los productos al lugar de empleo.**
-- [ ] `2786a870af8d` Incluye el suministro y el montaje de los tubos, el control de los canales, las conexiones y las aberturas con los canales de las diferentes plataformas, las máquinas elevadoras, el transporte y la eliminación de los productos al lugar de aplicación.  _(vía de; 1 concepto)_
-- [ ] `afff2ab569c4` Incluye la alimentación y el montaje de los tubos, el ensayo de los conductos, las conexiones y las aberturas con los canales de las distintas plataformas, las máquinas de elevación, el transporte y la retirada de los productos al lugar de trabajo.  _(vía fr; 1 concepto)_
-- [ ] `1fc2efa9e8a3` Incluyendo el suministro y el montaje de los tubos, la prueba de los conductos, las conexiones y las aberturas con los canales de las diferentes plataformas, las máquinas de elevación, el transporte y la eliminación de los productos en el lugar de trabajo.  _(vía it; 1 concepto)_
-**Incluso la construcción del pozo de ataque, entibación de los costados para estabilización, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el alineamiento. El suministro y montaje de los hilos guía para guiar el tubo, y el sellado de las embocaduras con poliuretano expandido para asegurar la estanqueidad.**
-- [ ] `8134a82ab3cf` Incluso la construcción de la fuente de ataque, la colocación de los lados para la estabilización, la instalación de un tubo de acero 500 mm con diámetro para facilitar la alineación. Entrega y montaje de los hilos guía para la conducción del tubo y el sellado de las aberturas con poliuretano ampliado para garantizar el sellado.  _(vía de; 1 concepto)_
-- [ ] `ecd786d4dc90` Incluso la construcción del pozo de ataque, el alambramiento de los lados para la estabilización, la instalación de un tubo de guía de acero 500 mm de diámetro para facilitar la alineación. La alimentación y el montaje de los hilos de guía para guiar el tubo, y la estanqueidad de las aberturas con poliuretano expandido para garantizar la estanqueidad.  _(vía fr; 1 concepto)_
-- [ ] `3fb75194a231` También la construcción del pozo de acoplamiento, estiba de los lados para la estabilización, instalación de un tubo guía de acero 500 mm de diámetro para facilitar la alineación. Suministro y montaje de los alambres guía para conducir el tubo, y sellado de las aberturas con poliuretano expandido para garantizar la estanqueidad.  _(vía it; 1 concepto)_
-**Incluso la construcción del pozo de ataque, entibación de los costados para evitar desplomes, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el desplazamiento. El suministro y montaje de los hilos guía para asegurar el correcto posicionamiento, y el sellado de las embocaduras con poliuretano expandido para prevenir filtraciones.**
-- [ ] `f210d68e68cd` Incluso la construcción de la fuente de ataque, la fijación de los lados para evitar la rotura, la instalación de un tubo de acero 500 mm diámetro para facilitar el desplazamiento. Entrega y montaje de los hilos de guía para asegurar el posicionamiento correcto, y el sellado de las aberturas con poliuretano avanzado para evitar fugas.  _(vía de; 1 concepto)_
-- [ ] `e46e0144d8ca` Incluso la construcción del pozo de ataque, la fijación de los lados para evitar los colapsos, la instalación de un tubo de guía de acero 500 mm de diámetro para facilitar el desplazamiento. La alimentación y el montaje de los hilos de guía para garantizar el posicionamiento correcto, y la estanqueidad de las aberturas con poliuretano expandido para evitar fugas.  _(vía fr; 1 concepto)_
-- [ ] `8f55763c3916` También la construcción del pozo de acoplamiento, atar los lados para evitar derrumbe, la instalación de un tubo guía de acero 500 mm de diámetro para facilitar el desplazamiento. Suministro y montaje de los alambres guía para garantizar la correcta colocación, y sellado de las aberturas con poliuretano expandido para prevenir fugas.  _(vía it; 1 concepto)_
-**Incluso la construcción del pozo de ataque, entibación de los costados para soporte estructural, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el avance. El suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para garantizar la hermeticidad.**
-- [ ] `d37458fb3e68` Incluso la construcción del pozo de ataque, la fijación de los lados para el soporte estructural, la instalación de un tubo de guía de acero 500 mm de diámetro para facilitar el avance. El suministro y el montaje de los hilos de guía para mantener la trayectoria, y la estanqueidad de las aberturas con poliuretano expandido para garantizar la estanqueidad.  _(vía fr; 1 concepto)_
-- [ ] `d22312cd6f4d` Incluso la construcción del pozo del ataque, la fijación de los lados para el apoyo estructural, la instalación de un tubo de acero 500 mm diámetro para facilitar el progreso. El suministro y el montaje de los hilos de guía para mantener la vía, y el sellado de las aberturas con poliuretano extendido para garantizar la estanqueidad del agua.  _(vía de; 1 concepto)_
-- [ ] `48531b4d3f36` También la construcción del pozo de acoplamiento, atar los lados para el soporte estructural, la instalación de un tubo guía de acero 500 mm de diámetro para facilitar el avance. La alimentación y el montaje de los alambres guía para mantener la trayectoria, y el sellado de las aberturas con poliuretano expandido para garantizar la hermeticidad.  _(vía it; 1 concepto)_
-**Incluso la construcción del pozo de ataque, entibación de los costados, instalación de un tubo guía de acero de 500 mm de diámetro. El suministro y montaje de los hilos guía y el sellado de las embocaduras con poliuretano expandido.**
-- [ ] `dc10d4176239` Incluso la construcción de la fuente de ataque, la unión de los lados, la instalación de un tubo de acero 500 mm del diámetro. La entrega y el montaje de los hilos guía y el sellado de las aberturas con poliuretano expandido.  _(vía de; 1 concepto)_
-- [ ] `e7db416edbe1` Incluso la construcción del pozo de ataque, la fijación de los lados, la instalación de un tubo de guía de acero 500 mm de diámetro. La alimentación y el montaje de los hilos de guía y la estanqueidad de las aberturas con poliuretano expandido.  _(vía fr; 1 concepto)_
-- [ ] `74a0379aba13` También la construcción del pozo de acoplamiento, atar los lados, instalación de un tubo guía de acero 500 mm de diámetro. La alimentación y el montaje de los hilos guía y sellado de las aberturas con poliuretano expandido.  _(vía it; 1 concepto)_
-**Incluye la edificación del pozo de ataque, la entibación lateral, y la colocación de un tubo guía de acero de 500 mm de diámetro. Además, se suministran y montan los hilos guía, y se sellan las embocaduras con poliuretano expandido.**
-- [ ] `2df0a7e08112` Esto incluye la construcción de la fuente de ataque, el lodo lateral y la colocación de un tubo guía de acero 500 mm con diámetro. Además, los hilos guía se suministran y montan, y las aberturas están selladas con poliuretano expandido.  _(vía de; 1 concepto)_
-- [ ] `4a853aafe565` Incluye la construcción del pozo de acoplamiento, el acuífero lateral, y la colocación de un tubo guía de acero 500 mm de diámetro. Además, los cables guía se proporcionan y montan, y las aberturas están sellados con poliuretano expandido.  _(vía it; 1 concepto)_
-- [ ] `d32cc77fcba3` Incluye la construcción del pozo de ataque, el estiércol lateral, y la colocación de un tubo de guía de acero 500 mm de diámetro. Además, se proporcionan hilos de guía y se montan, y las aberturas están selladas con poliuretano expandido.  _(vía fr; 1 concepto)_
 **Nocturno**
 - [ ] `b1c01c41e0ed` Buenas noches.  _(vía it; 5 conceptos)_
 - [ ] `67ecb001fc3c` Noche  _(vía fr; 5 conceptos)_
-**Se contempla la construcción del pozo de ataque, la entibación de los laterales, y la instalación de un tubo guía de acero de 500 mm de diámetro. También se incluye el suministro y montaje de los hilos guía, así como el sellado de las embocaduras con poliuretano expandido.**
-- [ ] `5debbf1d846d` Está prevista la construcción del pozo de acoplamiento, el embotellado de los lados y la instalación de un tubo guía de acero 500 mm de diámetro. Incluye también el suministro y montaje de los cables guía, así como el sellado de las esclusas con poliuretano expandido.  _(vía it; 1 concepto)_
-- [ ] `b1caca080bf7` Está previsto para la construcción de la fuente de ataque, el encubrimiento de los lados y la instalación de un tubo guía de acero 500 mm de diámetro. También incluye el suministro y montaje de los hilos guía, así como el sellado de las esclusas con poliuretano ampliado.  _(vía de; 1 concepto)_
-- [ ] `f7a33080677c` Se prevén disposiciones para la construcción del pozo de ataque, el estiércol de los lados y la instalación de un tubo de guía de acero 500 mm de diámetro. También se incluyen el suministro y el montaje de los hilos de guía, así como la estanqueidad de las esclusas con poliuretano expandido.  _(vía fr; 1 concepto)_
-**Sin corte de corriente.**
-- [ ] `73ddf009099a` No hay apagón.  _(vía fr; 5 conceptos)_
-- [ ] `86339235caa9` No hay cortes de energía.  _(vía it; 5 conceptos)_
 **a mano**
 - [ ] `6cfd6cc329d2` De mano  _(vía fr; 1 concepto)_
-**a máquina**
-- [ ] `ef7def94948f` Editados  _(vía de; 1 concepto)_
-- [ ] `b76ab3afae6c` Fabricación a partir de materias de cualquier partida, excepto a partir de materias de cualquier partida, excepto a partir de materias de cualquier partida, excepto a partir de las materias de la  _(vía it; 1 concepto)_
-- [ ] `aff65ac81c07` Fabricación a partir de materias de cualquier partida, excepto a partir de materias de cualquier partida, excepto a partir de materias de cualquier partida, excepto a partir de materias de cualquier partida, excepto  _(vía fr; 1 concepto)_
-**adosada o superficial**
-- [ ] `1bf19603dc18` En forma de terrazas o en forma de superficie  _(vía de; 7 conceptos)_
-- [ ] `195596d4b908` En terraza o en superficie  _(vía fr; 7 conceptos)_
-- [ ] `955f6fb43ab7` Terraza o superficie  _(vía it; 7 conceptos)_
 **bajo pasos a nivel**
 - [ ] `d718ca370ea6` Escalones de bajo nivel  _(vía it; 5 conceptos)_
 - [ ] `b08d9067b3f6` etapas de bajo nivel  _(vía fr; 5 conceptos)_
 - [ ] `85b0c5e207b5` Pasos de bajo nivel  _(vía de; 5 conceptos)_
-**bajo vías**
-- [ ] `1863100a2d6a` Ancho de vía bajo  _(vía de; 7 conceptos)_
-- [ ] `d51dc58d7b6c` pista baja  _(vía it; 7 conceptos)_
-- [ ] `46ce7825caec` Vía baja  _(vía fr; 7 conceptos)_
 **bajo vías cruzadas**
 - [ ] `75e5c23b6c6d` Bajo vías transversales  _(vía fr; 7 conceptos)_
-- [ ] `73c8ef1d0911` De hierro o acero sin alear  _(vía de; 7 conceptos)_
-- [ ] `fdf2b557ea90` En carriles cruzados  _(vía it; 7 conceptos)_
-**colocada adosada o en la superficie, facilitando la accesibilidad y mantenimiento**
-- [ ] `b8d78b411b6e` colocado en terraza o en superficie, facilitando la accesibilidad y el mantenimiento  _(vía fr; 7 conceptos)_
-- [ ] `1a0b58c8cad4` En forma de terrazas o colocados en la superficie, facilitando la accesibilidad y el mantenimiento  _(vía de; 7 conceptos)_
-- [ ] `c58062fc4a7d` situado en terrazas o en la superficie, facilitando la accesibilidad y el mantenimiento  _(vía it; 7 conceptos)_
-**colocada adosada o en superficie, minimizando el impacto visual en el entorno**
-- [ ] `0bb9094d5660` colocado en terraza o en superficie, minimizando el impacto visual en el medio ambiente  _(vía fr; 7 conceptos)_
-- [ ] `e3405fb3081c` En forma de terrazas o posicionado en la superficie, minimizando así los efectos visuales sobre el medio ambiente  _(vía de; 7 conceptos)_
-- [ ] `08603a567ac4` situado en terrazas o en la superficie, minimizando el impacto visual sobre el medio ambiente  _(vía it; 7 conceptos)_
 **compacto (90x90x100 cm)**
 - [ ] `9f166a8fa022` compacta (90x90x100 cm)  _(vía de; 1 concepto)_
-**comprende la construcción del pozo de ataque, la entibación de los laterales, la instalación de un tubo guía de acero de 500 mm de diámetro, el suministro y montaje de los hilos guía, y el sellado de las aberturas con poliuretano expandido.**
-- [ ] `b1b252afb5e2` comprende la construcción del pozo de ataque, el estiércol de los lados, la instalación de un tubo de guía de acero 500 mm de diámetro, la alimentación y el montaje de los hilos de guía, y la estanqueidad de las aberturas con poliuretano expandido.  _(vía fr; 5 conceptos)_
-- [ ] `45f530112122` Incluye la construcción del pozo de acoplamiento, el acuífero de los lados, la instalación de un tubo de guía de acero 500 mm de diámetro, la alimentación y el montaje de los alambres de guía, y el sellado de las aberturas con poliuretano expandido.  _(vía it; 5 conceptos)_
-- [ ] `053e8e1b02f6` Incluyendo la construcción de la fuente de ataque, el lodo de los lados, la instalación de un tubo de acero 500 mm con diámetro, la entrega y el montaje de los hilos guía y el sellado de las aberturas con poliuretano expandido.  _(vía de; 5 conceptos)_
 **con dimensiones de 110x110x200 cm**
 - [ ] `013cc7ffc885` De dimensiones 110x110x200 cm  _(vía de; 1 concepto)_
 **con dimensiones de 250x150x200 cm**
@@ -111,309 +38,73 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `64434f8792da` de un volumen de 110x110x200 cm  _(vía fr; 1 concepto)_
 **con un volumen de 250x150x200 cm**
 - [ ] `bb1bcda443c2` de un volumen de 250x150x200 cm  _(vía fr; 1 concepto)_
-**construcción del pozo, entibación, tubo guía de 500 mm, hilos guía y sellado con poliuretano.**
-- [ ] `79c05b4d6e41` construcción de pozo, intibación, tubo guía de 500 mm, cables guía y sellados con poliuretano.  _(vía it; 6 conceptos)_
-- [ ] `ed0be70938e0` Construcción de pozos, intibación, tubo guía de 500 mm, hilos guía y sellados con poliuretano.  _(vía de; 6 conceptos)_
-- [ ] `3a4f307e7025` construcción de pozos, intimidación, tubo de guía de 500 mm, hilo de guía y sellado con poliuretano.  _(vía fr; 6 conceptos)_
-**cruc. bajo vías con topo**
-- [ ] `4ddcef9aac59` Cruc. bajo las huellas con topo  _(vía fr; 7 conceptos)_
-- [ ] `b19e1b18643d` Cruc. bajo rastros de topo  _(vía de; 7 conceptos)_
-- [ ] `f74b013a6885` Cruc. debajo del rastro con topo  _(vía it; 7 conceptos)_
-**cruc. vías topo**
-- [ ] `86bc60164719` Cruc. topo rastros  _(vía it; 7 conceptos)_
-- [ ] `53f9688e5d65` Rastros de murciélagos  _(vía de; 7 conceptos)_
-- [ ] `0c337f64ec06` Trazos de topo crucigrama.  _(vía fr; 7 conceptos)_
-**cruc. vías topo ejec.**
-- [ ] `4b45c20cff42` Cruc, huellas del eje moles.  _(vía de; 7 conceptos)_
-- [ ] `139db80fe925` Cruc. topo rastros de eje.  _(vía it; 7 conceptos)_
-- [ ] `a5054a49a174` Las huellas del eje de los topos.  _(vía fr; 7 conceptos)_
 **crucero subvial**
 - [ ] `2c69a839975c` Crucero submarino  _(vía fr; 7 conceptos)_
 **de cable HC**
 - [ ] `b716039fb6e0` cable HC  _(vía fr; 1 concepto)_
 - [ ] `08d49372818c` Cables HC  _(vía de; 1 concepto)_
-**de cable HC con micropilotes**
-- [ ] `3f6c98541a6e` Cable HC con micropilares  _(vía fr; 1 concepto)_
-- [ ] `c5ae985fde36` Cables HC con microcolumnas  _(vía de; 1 concepto)_
-**de cable sustentador**
-- [ ] `956871c9cd53` cable de apoyo  _(vía fr; 1 concepto)_
-- [ ] `de6e55c52e0a` cable de soporte  _(vía it; 1 concepto)_
-**de cable sustentador con micropilotes**
-- [ ] `858f7722127d` cable de soporte con micropilares  _(vía fr; 1 concepto)_
 **de dimensiones 110x110x200 cm**
 - [ ] `4fe5d3a9e7bf` de las dimensiones 110x110x200 cm  _(vía de; 1 concepto)_
-- [ ] `e59422bf6408` De tamaño 110x110x200 cm  _(vía it; 1 concepto)_
 - [ ] `fde8788d5116` dimensiones 110x110x200 cm  _(vía fr; 1 concepto)_
 **de dimensiones 110x110x200 cm, proporcionando un volumen adecuado para la instalación de equipos de medición y control en aplicaciones ferroviarias**
 - [ ] `086ee0242715` de dimensiones 110x110x200 cm, que proporcionan un volumen adecuado para la instalación de equipos de medición y control en las aplicaciones ferroviarias  _(vía fr; 1 concepto)_
-- [ ] `2a28035dae41` de tamaño 110x110x200 cm, proporcionando un volumen adecuado para la instalación de equipos de medición y control en las aplicaciones ferroviarias  _(vía it; 1 concepto)_
 - [ ] `e336328829b3` Dimensiones 110x110x200 cm que proporcionan un volumen adecuado para la instalación de dispositivos de medición y control en aplicaciones ferroviarias  _(vía de; 1 concepto)_
 **de dimensiones 250x150x200 cm**
 - [ ] `efe5b487284f` de las dimensiones 250x150x200 cm  _(vía de; 1 concepto)_
-- [ ] `a4e6eb1562f4` De tamaño 250x150x200 cm  _(vía it; 1 concepto)_
 - [ ] `5e2c11f3b3d7` dimensiones 250x150x200 cm  _(vía fr; 1 concepto)_
 **de dimensiones 250x150x200 cm, adecuadas para una cámara de gran capacidad**
 - [ ] `5996b6428706` de dimensiones 250x150x200 cm, adecuado para una cámara de gran capacidad  _(vía fr; 1 concepto)_
 - [ ] `57a9100b84b3` de las dimensiones 250x150x200 cm adecuadas para una cámara de gran tamaño  _(vía de; 1 concepto)_
-- [ ] `3f4a1d8644b3` de tamaño 250x150x200 cm, apto para una habitación de gran capacidad  _(vía it; 1 concepto)_
 **de dimensiones 250x150x200 cm, diseñadas para una cámara de amplio espacio**
 - [ ] `5c6d7db4c5bc` Dimensiones 250x150x200 cm diseñadas para una cámara de espacio amplio  _(vía de; 1 concepto)_
 - [ ] `3693b24e3e11` Dimensiones 250x150x200 cm, diseñado para una cámara de gran espacio  _(vía fr; 1 concepto)_
-- [ ] `9645a155f6eb` tamaño 250x150x200 cm, diseñado para una cámara de amplio espacio  _(vía it; 1 concepto)_
 **de dimensiones 250x150x200 cm, ideales para una cámara de gran volumen**
 - [ ] `0df1d4c34e1b` Dimensiones 250x150x200 cm ideal para una cámara de volumen grande  _(vía de; 1 concepto)_
 - [ ] `df56feb63e04` dimensiones 250x150x200 cm, ideal para una gran cámara de volumen  _(vía fr; 1 concepto)_
-- [ ] `a57aa00ba5a7` tamaño 250x150x200 cm, ideal para una habitación de gran volumen  _(vía it; 1 concepto)_
 **de hormigón armado**
-- [ ] `b489386aebf2` Betunes de acero  _(vía de; 1 concepto)_
-- [ ] `435fd53998bb` cemento armado  _(vía it; 1 concepto)_
 - [ ] `50a7746a7a31` hormigón armado  _(vía fr; 1 concepto)_
 **de medidas 110x110x200 cm**
 - [ ] `43e925fe687f` medidas 110x110x200 cm  _(vía fr; 1 concepto)_
 **de medidas 250x150x200 cm**
 - [ ] `ca3c8ffd7498` medidas 250x150x200 cm  _(vía fr; 1 concepto)_
-**de medidas interiores, con fondo y cama de arena, así como los taladros necesarios para la acometida de los tubos. Incluidas dos tapas de seguridad de chapa galvanizada adaptada para el cierre de seguridad (candado normalizado).**
-- [ ] `dff115bad39a` dimensiones interiores, con fondo y cama de arena, así como los taladro necesarios para la llegada de los tubos. Incluye dos tapas de seguridad de chapa galvanizada adaptadas para el cierre de seguridad (Luchillo estándar).  _(vía it; 1 concepto)_
-- [ ] `16ae83dfbc99` Dimensiones interiores, con fondo y cama de arena, así como los taladros necesarios para la llegada de los tubos. Incluye dos tapas de seguridad de chapa galvanizada adecuada para el cierre de seguridad (cadenador estándar).  _(vía fr; 1 concepto)_
-- [ ] `26a374c08304` Dimensiones interiores, con suelo y cama de arena, así como los taladros necesarios para la venida de los tubos. Incluye dos tapas de seguridad de chapa galvanizada, adaptadas al cierre de seguridad (Cerradura estándar).  _(vía de; 1 concepto)_
-**de medidas interiores, sin fondo y cama de arena, para tomas de tierra, así como los taladros necesarios para la acometida de los tubos. Incluida la tapa de composite - PRFV con cierres.**
-- [ ] `99b3aa585a59` de dimensiones interiores, sin fondo y cama de arena, para la puesta a tierra, así como los taladros necesarios para la llegada de los tubos. Incluido el capuchón compuesto - PRFV con cierres.  _(vía fr; 1 concepto)_
-- [ ] `d2248a9f46cc` de dimensiones interiores, sin fondo y cama de arena, para la puesta en tierra, así como los taladros necesarios para la llegada de los tubos. Incluyendo el tapón compuesto PRFV con cierres.  _(vía it; 1 concepto)_
-- [ ] `9a6eb0285a1e` Dimensiones interiores, sin suelo ni cama de arena, para la tierra, así como los taladros necesarios para la venida de los tubos. Incluyendo el capuchón laminado - PRFV con cierres.  _(vía de; 1 concepto)_
-**de núcleo aglomerado de madera con marco galvanizado**
-- [ ] `28c9d6f8fe8e` Alma de madera aglomerado con estructura galvanizada  _(vía it; 1 concepto)_
-- [ ] `5c9724d475b4` Cobre de madera aglomerado con marco galvanizado  _(vía de; 1 concepto)_
-- [ ] `b6707dad6447` núcleo de madera con marco galvanizado  _(vía fr; 1 concepto)_
 **demolición de roca**
 - [ ] `3c57baf3479b` demolición de la roca  _(vía it; 7 conceptos)_
 - [ ] `8c52aa6af1a7` Demolición de rocas  _(vía fr; 7 conceptos)_
 **demolición de roca dura**
 - [ ] `d89bd69d67da` Demolición de rocas duras  _(vía fr; 7 conceptos)_
-- [ ] `78f03824c8f5` Rotura de roca dura  _(vía de; 7 conceptos)_
 **demolición de roca,**
-- [ ] `0ab2ddad95f4` demolición de piedras,  _(vía fr; 7 conceptos)_
 - [ ] `d802c1ab6cca` la demolición de la roca,  _(vía de; 7 conceptos)_
-**demolición y reposición del firme y pavimento**
-- [ ] `f441a8f490de` demolición y sustitución de la empresa y de la carretera  _(vía fr; 6 conceptos)_
-- [ ] `103106c66e14` Demolición y sustitución de la empresa y parche  _(vía de; 6 conceptos)_
-- [ ] `7ce24ab8db19` demolición y sustitución de la explotación y pavimentos  _(vía it; 6 conceptos)_
-**demolición y reposición del firme y pavimento,**
-- [ ] `24acc8c7c87a` demolición y sustitución de la empresa y del parche,  _(vía de; 6 conceptos)_
-- [ ] `226074fb2cdb` demolición y sustitución de la explotación y del suelo,  _(vía it; 6 conceptos)_
-**demolición y reposición del pavimento y solera**
-- [ ] `73a826d73055` demolición y sustitución de la carretera y del solera  _(vía fr; 5 conceptos)_
-- [ ] `e0e183123ef3` demolición y sustitución de suelo y solera  _(vía it; 5 conceptos)_
-- [ ] `ae7a734622d9` Desgarro y sustitución de parches y solera  _(vía de; 5 conceptos)_
-**demolición y reposición del pavimento y solera,**
-- [ ] `2a96f5cedff4` la demolición y sustitución de carreteras y soleras,  _(vía fr; 5 conceptos)_
-- [ ] `422cda94db91` rotura y sustitución de parches y solera,  _(vía de; 5 conceptos)_
-**demolición y reposición del pavimento-solera**
-- [ ] `71df3f0c6afc` Abortar y sustituir el sol de parche  _(vía de; 6 conceptos)_
-- [ ] `59b0a55d5763` demolición y sustitución de la carretera-solar  _(vía fr; 6 conceptos)_
-- [ ] `c9015ad9a0c6` demolición y sustitución del suelo solar  _(vía it; 6 conceptos)_
-**demolición y reposición del pavimento-solera,**
-- [ ] `1d942c00abbe` demolición y sustitución de la suela de camino,  _(vía fr; 5 conceptos)_
-- [ ] `b75ce4673fc9` demolición y sustitución de la suela del suelo,  _(vía de; 5 conceptos)_
-- [ ] `5c703ceddb57` demolición y sustitución del suelo-suelo,  _(vía it; 5 conceptos)_
-**demolición y reposición pavimento-solera**
-- [ ] `91262d71fa0a` Demolición y sustitución de la placa de suelo-solar  _(vía de; 1 concepto)_
-- [ ] `7e0f591870e3` demolición y sustitución de suelo-solar  _(vía it; 1 concepto)_
-- [ ] `2e1e2eb092d5` demolición y sustitución de suelos solares  _(vía fr; 1 concepto)_
-**demolición y reposición pavimento-solera,**
-- [ ] `368ee0164af3` Abortar y sustituir el solar de placement;  _(vía de; 1 concepto)_
-- [ ] `02898ab504b3` demolición y sustitución de la vía solar,  _(vía fr; 1 concepto)_
-- [ ] `5084c494323a` demolición y sustitución del suelo solar,  _(vía it; 1 concepto)_
-**descerne, entibación y reposición del balasto retirado,**
-- [ ] `cb48bab3dfd0` decerne, almacenamiento y sustitución del lastre eliminado,  _(vía it; 7 conceptos)_
-- [ ] `666fe9978c48` decreta, almacena y reemplaza el lastre retirado,  _(vía fr; 7 conceptos)_
-- [ ] `f980025c8116` el desconectar, almacenar e intercambiar el interruptor remoto;  _(vía de; 7 conceptos)_
-**descerne, entibación y reposición del balasto,**
-- [ ] `2ff5bb3ab8c2` decerne, almacenamiento y sustitución de lastre,  _(vía de; 7 conceptos)_
-- [ ] `ac856be1e0d1` Decerne, almacenamiento y sustitución del lastre,  _(vía it; 7 conceptos)_
-- [ ] `a7788b1f29fb` la concesión, el almacenamiento y la sustitución del lastre,  _(vía fr; 7 conceptos)_
-**dimensiones 150x110x180 cm**
-- [ ] `a8de0610e7d5` tamaño 150x110x180 cm  _(vía it; 1 concepto)_
 **dimensiones amplias (200x120x180 cm)**
 - [ ] `bb57c78facea` dimensiones grandes (200x120x180 cm)  _(vía de; 1 concepto)_
 - [ ] `f775050f32b2` grandes dimensiones (200x120x180 cm)  _(vía fr; 1 concepto)_
-**dimensión básica (90x90x100 cm)**
-- [ ] `97935d2134a7` Tamaño básico (90x90x100 cm)  _(vía fr; 1 concepto)_
-- [ ] `15c658cb99a8` tamaño de base (90x90x100 cm)  _(vía it; 1 concepto)_
-**dimensión reducida (90x90x100 cm)**
-- [ ] `01e0417584fe` tamaño reducido (90x90x100 cm)  _(vía fr; 1 concepto)_
-**ejecutada por excavación manual en cualquier tipo de terreno excepto roca**
-- [ ] `b4e114932a10` excavación manual en cualquier tipo de suelo, excepto la roca  _(vía it; 1 concepto)_
-- [ ] `743e4708807f` Realizado mediante excavación manual en cualquier tipo de terreno, excepto roca  _(vía de; 1 concepto)_
-- [ ] `d1820f16598b` realizado por excavación manual en cualquier tipo de terreno, con excepción de la roca  _(vía fr; 1 concepto)_
-**ejecutada por excavación manual en terreno rocoso, incluso excavación con explosivos**
-- [ ] `1c5b8171eec5` excavación manual en terrenos rocosos, incluida la excavación con explosivos  _(vía it; 1 concepto)_
-- [ ] `b2810d810264` Realizadas mediante excavaciones manuales en terrenos rocosos, incluidos los excavados con explosivos  _(vía de; 1 concepto)_
-- [ ] `3afd933f05a4` Realizado por excavaciones manuales en terrenos rocosos, incluida la excavación de explosivos  _(vía fr; 1 concepto)_
-**ejecutada por medios mecánicos en cualquier tipo de terreno excepto roca**
-- [ ] `16312c49cd58` Ejecutado por medios mecánicos en terrenos distintos de la roca  _(vía it; 1 concepto)_
-- [ ] `624cd9b2ed50` Fabricación a partir de materias de cualquier partida, excepto a partir de materias de cualquier partida, excepto a partir de materias de cualquier partida  _(vía de; 1 concepto)_
-- [ ] `39a6eb220abd` Realizado por medios mecánicos en cualquier terreno que no sea la roca  _(vía fr; 1 concepto)_
 **ejecutada por medios mecánicos en terreno rocoso, incluso excavación con explosivos**
 - [ ] `9f25735b0f07` Ejecutado por medios mecánicos en terrenos rocosos, incluidas las excavaciones con explosivos  _(vía it; 1 concepto)_
-- [ ] `9a66f68a2a9c` Fabricación a partir de materias de cualquier partida, excepto a partir de materias de cualquier partida, excepto a partir de materias de cualquier partida, excepto a partir de materias de cualquier partida, excepto a partir de materias de cualquier partida, excepto a partir de las materias de cualquier partida, excepto a partir de las materias de cualquier partida, excepto a partir de las materias de la  _(vía de; 1 concepto)_
-- [ ] `034822a4c45a` Realizado por medios mecánicos en terrenos rocosos, incluida la excavación de explosivos  _(vía fr; 1 concepto)_
-**el descerne y la entibación de los costados para asegurar la estabilidad durante la operación, seguido de la reposición cuidadosa del balasto retirado para restaurar la superficie de la vía,**
-- [ ] `cdc2d7104f54` decernas y aguas residuales de los lados para garantizar la estabilidad durante el funcionamiento, seguida de una cuidadosa sustitución del lastre removido para restaurar la superficie de la vía,  _(vía it; 7 conceptos)_
-- [ ] `cc2b92a3d0be` Decernillos y lodos de los lados para garantizar la estabilidad durante el funcionamiento, seguido de un cuidadoso cambio de lastre para restaurar la superficie de la pista,  _(vía de; 7 conceptos)_
-- [ ] `d7705b2dbcae` la demarcación y el estiércol de los lados para garantizar la estabilidad durante la operación, seguido de una sustitución cuidadosa del lastre retirado para restaurar la superficie de la vía,  _(vía fr; 7 conceptos)_
-**el descerne y la entibación de los costados para asegurar la estabilidad estructural, seguido de la reposición del balasto retirado para completar el proceso de mantenimiento,**
-- [ ] `93fc3f398c30` decernas y aguas residuales de los lados para garantizar la estabilidad estructural, seguida de la sustitución del lastre eliminado para completar el proceso de mantenimiento,  _(vía it; 7 conceptos)_
-- [ ] `fab20ee6ea83` el desconectar y desconectar las páginas para garantizar la estabilidad estructural, seguido de la sustitución de los balastos remotos para completar el proceso de mantenimiento;  _(vía de; 7 conceptos)_
-- [ ] `392296d4d7dc` la demarcación y el estiércol de los lados para garantizar la estabilidad estructural, seguido de la sustitución del lastre retirado para completar el proceso de mantenimiento,  _(vía fr; 7 conceptos)_
-**el descerne y la entibación de los costados para facilitar el acceso seguro, y la reposición del balasto retirado para mantener la calidad de la vía,**
-- [ ] `4ce3a002bd72` Decidir y tirar de los lados para facilitar el acceso seguro, y sustituir el interruptor remoto para obtener la calidad de la pista.  _(vía de; 7 conceptos)_
-- [ ] `27f33bd3b5bc` la decerne y el acuífero de los lados para facilitar el acceso seguro y la sustitución del lastre eliminado con el fin de mantener la calidad de la pista,  _(vía it; 7 conceptos)_
-- [ ] `c9b85d5b56a0` la demarcación y el estiércol de los lados para facilitar el acceso seguro, y la sustitución del lastre retirado para mantener la calidad de la vía,  _(vía fr; 7 conceptos)_
-**el descerne y la entibación de los costados para facilitar el acceso y la seguridad, seguido de la reposición del balasto retirado para garantizar la continuidad del firme,**
-- [ ] `14839090c965` el desbloqueo y el lodo de las páginas para facilitar el acceso y la seguridad, seguido de la sustitución del interruptor remoto para garantizar la continuidad de la empresa;  _(vía de; 7 conceptos)_
-- [ ] `e802c16719a6` la concesión y el estiércol de los lados para facilitar el acceso y la seguridad, seguido de la sustitución del lastre retirado para garantizar la continuidad de la empresa,  _(vía fr; 7 conceptos)_
-- [ ] `8b0dafa08436` la decerne y el acuífero de los lados para facilitar el acceso y la seguridad, seguida de la sustitución del lastre removido para garantizar la continuidad de la empresa,  _(vía it; 7 conceptos)_
-**el descerne y la entibación de los costados para prevenir deslizamientos, y la posterior reposición del balasto retirado para mantener la integridad de la vía,**
-- [ ] `7760936be7c9` decernas y aguas residuales de los lados para evitar deslizamientos, y la sustitución posterior del lastre eliminado para mantener la integridad de la pista,  _(vía it; 7 conceptos)_
-- [ ] `789e25e6c4e7` el destornillamiento y deslizamiento de los lados para evitar deslizamientos y, a continuación, la sustitución del interruptor que se retira para mantener la integridad de la vía;  _(vía de; 7 conceptos)_
-- [ ] `6c0fe4e3e17b` la demarcación y el estiércol de los lados para evitar los deslizamientos, y la posterior sustitución del lastre retirado para mantener la integridad de la vía,  _(vía fr; 7 conceptos)_
-**el descerne y la entibación de los costados para proteger la estructura durante la operación, y la reposición del balasto retirado para restaurar la funcionalidad de la vía,**
-- [ ] `b7830988bbe1` Decernido y lodo de los lados para proteger la estructura durante el funcionamiento, y el reemplazo del lastre quitado para restaurar la funcionalidad del rastro,  _(vía de; 7 conceptos)_
-- [ ] `dc9c9419299f` la decerne y el acuífero de los lados para proteger la estructura durante el funcionamiento y la sustitución del lastre eliminado para restablecer la funcionalidad de la pista,  _(vía it; 7 conceptos)_
-- [ ] `c917aa608456` la demarcación y el estiércol de los lados para proteger la estructura durante la operación, y la sustitución del lastre retirado para restaurar la funcionalidad de la vía,  _(vía fr; 7 conceptos)_
-**el descerne y la entibación de los costados y la posterior reposición del balasto retirado,**
-- [ ] `c0b5c8b04a18` el destornillamiento y la contaminación de los lados y, a continuación, la sustitución del interruptor remoto;  _(vía de; 7 conceptos)_
-- [ ] `1e29a18ed6b7` la demarcación y el estiércol de los lados y la posterior sustitución del lastre retirado,  _(vía fr; 7 conceptos)_
-- [ ] `97e60fed5ace` la deserción y el estiércol de los lados y la posterior sustitución del lastre retirado,  _(vía it; 7 conceptos)_
-**en andén**
-- [ ] `ee4fc7b23ecd` en la plataforma  _(vía fr; 7 conceptos)_
-- [ ] `8b062bf2bbd7` sobre la plataforma  _(vía it; 7 conceptos)_
-**en andén, en la estructura construida junto a las vías del tren, destinada para el embarque y desembarque de pasajeros**
-- [ ] `541c29030175` en la plataforma, en la estructura construida al lado de las vías férreas, destinada al embarque y al desembarque de los pasajeros  _(vía fr; 7 conceptos)_
-- [ ] `885165b48b08` en la plataforma, en la estructura construida al lado de las vías ferroviarias, destinada para el embarque y el aterrizaje de los pasajeros  _(vía de; 7 conceptos)_
-- [ ] `800c4c31e58b` en plataforma, en la estructura construida junto a las vías ferroviarias, destinada al embarque y al desembarque de los pasajeros  _(vía it; 7 conceptos)_
-**en andén, en la plataforma adyacente a las vías, donde se espera el paso de los trenes para el acceso de pasajeros**
-- [ ] `fd58c6c2329d` en el andén, en el andén al lado de las vías, donde es probable que los trenes pasen por el acceso a los pasajeros  _(vía de; 7 conceptos)_
-- [ ] `6f4776a7215e` en la plataforma, en la plataforma adyacente a las vías, donde los trenes deben pasar para acceder a los viajeros  _(vía fr; 7 conceptos)_
-- [ ] `d3e2ac76a056` en la plataforma, en la plataforma adyacente a las vías, donde los trenes deben pasar para el acceso de los pasajeros  _(vía it; 7 conceptos)_
-**en andén, en la plataforma elevada o nivelada junto a las vías, diseñada para el uso de pasajeros y carga**
-- [ ] `de032268c279` en la plataforma, en la plataforma elevada o plana al lado de las vías, diseñada para el uso de pasajeros y carga  _(vía de; 7 conceptos)_
-- [ ] `19ad81ccd2b0` en la plataforma, en la plataforma elevadora o nivelada al lado de las vías, diseñada para el uso de pasajeros y carga  _(vía fr; 7 conceptos)_
-- [ ] `d2549d1d11b4` sobre la plataforma, sobre la plataforma elevada o nivelada junto a las vías, diseñada para el uso de pasajeros y mercancías  _(vía it; 7 conceptos)_
-**en andén, en la superficie plana y nivelada junto a las vías, donde se espera el paso de los trenes**
-- [ ] `bbd97ca2d100` en el andén, en la superficie plana y plana al lado de las vías, donde es probable que pasen trenes  _(vía de; 7 conceptos)_
-- [ ] `a50f6b66608b` en la plataforma, en la superficie plana y nivelada al lado de las vías, donde los trenes deberían pasar  _(vía fr; 7 conceptos)_
-- [ ] `78675d406896` en la plataforma, en la superficie plana y plana junto a las vías, donde los trenes deberían pasar  _(vía it; 7 conceptos)_
 **en andén, en la zona destinada para el embarque y desembarque de pasajeros, facilitando el acceso a los trenes**
 - [ ] `061e1f9c27d8` en el andén, en la zona destinada a la entrada y salida de pasajeros, facilitar el acceso a los trenes;  _(vía de; 7 conceptos)_
-- [ ] `f10114e84f56` en la plataforma, en la zona de embarque y desembarque de los pasajeros, facilitando el acceso a los trenes  _(vía it; 7 conceptos)_
-- [ ] `11bcd1d25c66` en la plataforma, en la zona destinada al embarque y al desembarque de los pasajeros, que facilite el acceso a los trenes  _(vía fr; 7 conceptos)_
-**en andén, específicamente en la plataforma destinada para el tránsito de pasajeros y carga, asegurando accesibilidad y seguridad**
-- [ ] `775a19e3d497` en la plataforma, en particular en la plataforma destinada al transporte de pasajeros y mercancías, que garantice la accesibilidad y la seguridad  _(vía fr; 7 conceptos)_
-- [ ] `89c666f131e3` en la plataforma, en particular en la plataforma para el tránsito de personas y mercancías, para la accesibilidad y la seguridad  _(vía de; 7 conceptos)_
-- [ ] `2bc814fc80a5` sobre la plataforma, en particular sobre la plataforma de tránsito de pasajeros y mercancías, garantizando la accesibilidad y la seguridad  _(vía it; 7 conceptos)_
-**en balasto**
-- [ ] `e804fd05e4e9` en el interconector  _(vía de; 7 conceptos)_
-- [ ] `c150a1058f23` en el lastre  _(vía fr; 7 conceptos)_
-- [ ] `705fc42ca8c1` En lastre  _(vía it; 7 conceptos)_
 **en cruce bajo vías**
 - [ ] `162a93bce14c` Cruce bajo vías  _(vía de; 7 conceptos)_
-- [ ] `e5eb3357c854` Cruce por las vías férreas  _(vía fr; 7 conceptos)_
-- [ ] `f3d2e0b50ef4` Cruzar debajo de las vías  _(vía it; 7 conceptos)_
-**en cruce bajo vías ejecutado con topo**
-- [ ] `da43484ac976` Cruce bajo rastros ejecutados con topo  _(vía fr; 7 conceptos)_
-- [ ] `546158808119` Cruce bajo trazas llevadas a cabo con mole  _(vía de; 7 conceptos)_
-- [ ] `e789fb3f0f49` Cruce de vía con topo  _(vía it; 7 conceptos)_
 **en cruce bajo vías, asegurando que la canalización no afecte la operación de los trenes**
 - [ ] `85b90e29ddc1` Cruce bajo vías, asegurando que la canalización no afecte al funcionamiento de los trenes  _(vía it; 7 conceptos)_
-- [ ] `85e48e1f587d` Cruce de vías para garantizar que la canalización no afecte al funcionamiento de los trenes  _(vía de; 7 conceptos)_
-- [ ] `c0449b9d8df1` paso por las vías férreas, velando por que la canalización no afecte a la explotación de los trenes  _(vía fr; 7 conceptos)_
 **en cruce bajo vías, donde la canalización se coloca estratégicamente para minimizar el impacto en el tráfico ferroviario**
 - [ ] `665012f02c8e` Cruce bajo vías, donde la canalización está estratégicamente posicionada para minimizar el impacto en el transporte ferroviario  _(vía de; 7 conceptos)_
 - [ ] `5045ee77eb33` cruce bajo vías, donde la canalización está estratégicamente posicionada para reducir al mínimo el impacto en el tráfico ferroviario  _(vía it; 7 conceptos)_
-- [ ] `049c0c9a5100` paso por las vías férreas, donde la canalización está estratégicamente situada para minimizar el impacto sobre el tráfico ferroviario  _(vía fr; 7 conceptos)_
 **en cruce bajo vías, donde la canalización se instala debajo de las vías férreas, asegurando protección y accesibilidad limitada**
 - [ ] `0a13d334fd92` Cruce bajo vías, donde la canalización se instala bajo los ferrocarriles, garantizando la protección y accesibilidad limitadas  _(vía it; 7 conceptos)_
-- [ ] `4f2e65454fcc` Cruce bajo vías en las que se instala el sistema de alcantarillado bajo el carril, garantizando la protección y la accesibilidad limitada  _(vía de; 7 conceptos)_
-- [ ] `71c17393a501` paso por las vías férreas, donde la canalización se instala bajo los ferrocarriles, garantizando la protección y la accesibilidad limitada  _(vía fr; 7 conceptos)_
-**en cruce bajo vías, garantizando que la instalación cumpla con las normativas de seguridad ferroviaria**
-- [ ] `ca2e5e5475fd` a través de vías para garantizar que la instalación cumple los requisitos de seguridad ferroviaria  _(vía de; 5 conceptos)_
-- [ ] `b039750be5cb` al cruzar el carril, garantizando que la instalación se ajusta a las normas de seguridad ferroviaria  _(vía it; 5 conceptos)_
-- [ ] `270c05dd57c6` el cruce por ferrocarril, velando por que la instalación se ajuste a las normas de seguridad ferroviaria  _(vía fr; 5 conceptos)_
 **en cruce bajo vías, implicando la instalación subterránea de la canalización debajo de las vías del tren**
-- [ ] `9ca4abb9022b` Cruce bajo vías, con la instalación subterráneo de las alcantarillas debajo de las vías ferroviarias  _(vía de; 7 conceptos)_
 - [ ] `9f053acb5c96` cruce bajo vías, que implica la instalación subterránea de la canalización bajo vías ferroviarias  _(vía it; 7 conceptos)_
-- [ ] `5f48f1403401` paso por las vías férreas, que implica la instalación subterránea de la canalización por debajo de las vías férreas  _(vía fr; 7 conceptos)_
 **en cruce bajo vías, lo que requiere técnicas de excavación específicas para evitar interferencias con la infraestructura ferroviaria**
 - [ ] `c749c0b026d1` Cruce bajo vías que requieren técnicas específicas de excavación para evitar interferencias en la infraestructura ferroviaria  _(vía de; 6 conceptos)_
-- [ ] `c40a7aa73f28` Cruce de vías, que requiere técnicas de excavación específicas para evitar interferencias con la infraestructura ferroviaria  _(vía it; 6 conceptos)_
-- [ ] `879f22252b92` paso por vías férreas, lo que requiere técnicas de excavación específicas para evitar interferencias con la infraestructura ferroviaria  _(vía fr; 6 conceptos)_
 **en cruce carretera**
-- [ ] `dd93684bc71e` a través de la carretera  _(vía it; 5 conceptos)_
 - [ ] `8a2bf19585d7` al cruce de la carretera  _(vía fr; 5 conceptos)_
-- [ ] `ff74dcb4c73b` en el cruce  _(vía de; 5 conceptos)_
 **en cruce carreteras**
-- [ ] `de773c4fb736` al cruzar las calles  _(vía it; 5 conceptos)_
 - [ ] `d0a8e8d1ead3` en las carreteras de cruce  _(vía de; 5 conceptos)_
-- [ ] `b0f0c37057b8` en las carreteras de paso a nivel  _(vía fr; 5 conceptos)_
 **en cruce de carretera**
-- [ ] `1d687b788e70` a través de la carretera  _(vía it; 7 conceptos)_
 - [ ] `8763944b824b` al cruce de la carretera  _(vía fr; 7 conceptos)_
-- [ ] `e31ed1573f39` en el cruce  _(vía de; 7 conceptos)_
-**en cruce de carretera, adaptándose a las condiciones específicas del entorno vial**
-- [ ] `a7bcde605478` al cruce de la carretera, adaptándose a las condiciones específicas del medio ambiente de carretera  _(vía it; 7 conceptos)_
-- [ ] `c074e237421d` al paso a nivel, adaptándose a las condiciones específicas del entorno de carretera  _(vía fr; 7 conceptos)_
-- [ ] `7ef7d1839048` en el paso de la carretera, adaptación a las condiciones específicas del entorno de la carretera  _(vía de; 7 conceptos)_
-**en cruce de carretera, asegurando compatibilidad con las estructuras de soporte de la vía**
-- [ ] `1ede2830af34` al cruce de carretera, garantizando la compatibilidad con las estructuras de apoyo en carretera  _(vía it; 7 conceptos)_
-- [ ] `c776c0ecc3ba` al paso a nivel, garantizando la compatibilidad con las estructuras de apoyo a las carreteras  _(vía fr; 7 conceptos)_
-- [ ] `8a0db172726e` en el paso por carretera para garantizar la compatibilidad con los trenes  _(vía de; 7 conceptos)_
-**en cruce de carretera, considerando las interacciones con las infraestructuras de transporte terrestre**
-- [ ] `70b9d9e2d2ec` al paso a nivel, teniendo en cuenta las interacciones con las infraestructuras de transporte interior  _(vía fr; 7 conceptos)_
-- [ ] `62cefd3fe017` al paso por carretera, teniendo en cuenta las interacciones con las infraestructuras de transporte interior  _(vía it; 7 conceptos)_
-- [ ] `dadfe8c806e3` el paso por carretera, teniendo en cuenta las interacciones con la infraestructura de transporte interior;  _(vía de; 7 conceptos)_
 **en cruce de carretera, donde la canalización se integra con las infraestructuras viales existentes**
 - [ ] `73d813b3573e` al cruce por carretera, en el que la canalización está integrada con la infraestructura existente de carreteras  _(vía it; 7 conceptos)_
-- [ ] `caba50a0f062` al paso a nivel, donde la canalización está integrada en la infraestructura vial existente  _(vía fr; 7 conceptos)_
-- [ ] `b64a64b3e7c3` en el paso por carretera, donde la canalización está integrada con la infraestructura viaria existente  _(vía de; 7 conceptos)_
-**en cruce de carretera, garantizando la continuidad estructural y funcional con la red viaria**
-- [ ] `e3e4a2926806` al paso a nivel, garantizando una continuidad estructural y funcional con la red de carreteras  _(vía fr; 7 conceptos)_
-- [ ] `a76b78cdca37` al paso por carretera, garantizando la continuidad estructural y funcional con la red de carreteras  _(vía it; 7 conceptos)_
-- [ ] `8bb945348d2c` en el paso por carretera, garantizar la continuidad estructural y funcional con la red de carreteras  _(vía de; 7 conceptos)_
 **en cruce de carretera, manteniendo la integridad de la canalización en intersecciones viales**
 - [ ] `19a4510b799b` al cruce de la carretera, manteniendo la integridad de la canalización en las intersecciones de la carretera  _(vía fr; 7 conceptos)_
 - [ ] `e5c5b164ffe3` en el cruce de carretera, manteniendo la integridad de la canalización a los cruces de carretera  _(vía it; 7 conceptos)_
-- [ ] `d671512932f1` en el paso por carretera, la integridad de los sistemas de alcantarillado en los cruces de carreteras  _(vía de; 7 conceptos)_
-**en cruce vial**
-- [ ] `9f871a72cd1a` en la intersección del vial  _(vía fr; 6 conceptos)_
-**en cualquier clase de terreno, excepto en terreno rocoso, donde la canalización podría no instalarse correctamente**
-- [ ] `c7909c14eb90` en cualquier tipo de suelo, excepto en terrenos rocosos, donde la canalización no pueda instalarse correctamente  _(vía it; 7 conceptos)_
-- [ ] `baf8e276eca8` en cualquier tipo de terreno, excepto en terreno rocoso, en el que no se puede instalar correctamente el canaling  _(vía de; 7 conceptos)_
-- [ ] `4906cda6b076` en cualquier tipo de terreno, excepto en un terreno rocoso, donde la canalización no se puede instalar correctamente  _(vía fr; 7 conceptos)_
-**en cualquier clase de terreno, excepto en terreno rocoso, donde la instalación podría enfrentar dificultades técnicas**
-- [ ] `41ce24cae75c` en cualquier tipo de terreno, excepto en terreno rocoso, donde la instalación podría hacer frente a dificultades técnicas  _(vía fr; 7 conceptos)_
-- [ ] `361e5b8efac0` en cualquier tipo de terreno, excepto en terreno rocoso, en el que la instalación pueda encontrarse con dificultades técnicas  _(vía de; 7 conceptos)_
-- [ ] `9775ff8cadf3` en cualquier tipo de terreno, excepto en terrenos rocosos, donde la instalación podría hacer frente a dificultades técnicas  _(vía it; 7 conceptos)_
-**en cualquier clase de terreno, excepto en terreno rocoso, que no es adecuado para la instalación de canalización hormigonada**
-- [ ] `cccc42a40e25` en cualquier tipo de suelo, excepto el suelo rocoso, que no es adecuado para la instalación de canalizaciones de hormigón  _(vía it; 7 conceptos)_
-- [ ] `bb890bd8f9cb` en cualquier tipo de terreno, excepto el terreno rocoso, que no sea adecuado para la instalación de tuberías de hormigón  _(vía fr; 7 conceptos)_
-- [ ] `06ce39b9f9c9` en cualquier tipo de terreno, excepto en terreno rocoso, que no sea adecuado para la canalización de hormigón  _(vía de; 7 conceptos)_
-**en cualquier clase de terreno, excepto en terreno rocoso, que no es recomendado para este tipo de canalización**
-- [ ] `f497778daab3` en cualquier tipo de suelo, excepto el suelo rocoso, que no se recomienda para este tipo de canalización  _(vía it; 7 conceptos)_
-- [ ] `a06303fac0d6` en cualquier tipo de terreno, excepto el terreno rocoso no recomendado para este tipo de canalización  _(vía de; 7 conceptos)_
-- [ ] `773d0ff0f98e` en cualquier tipo de terreno, excepto el terreno rocoso, que no se recomienda para este tipo de canalización  _(vía fr; 7 conceptos)_
-**en cualquier clase de terreno, excepto en terreno rocoso, que podría comprometer la estabilidad de la canalización**
-- [ ] `2cfb6f1a700a` en cualquier tipo de terreno, con excepción del terreno rocoso, que podría poner en peligro la estabilidad de la canalización  _(vía fr; 7 conceptos)_
-- [ ] `59bbe1e712bf` en cualquier tipo de terreno, excepto en terreno rocoso que pueda afectar a la estabilidad del canal  _(vía de; 7 conceptos)_
-- [ ] `02de76eeb6c6` en cualquier tipo de terreno, excepto en terrenos rocosos, que puedan comprometer la estabilidad de la canalización  _(vía it; 7 conceptos)_
-**en cualquier clase de terreno, excepto en terreno rocoso, que podría requerir métodos de instalación alternativos**
-- [ ] `9ec50d630d5f` en cualquier tipo de suelo, excepto el rocoso, que puede requerir métodos de instalación alternativos  _(vía it; 7 conceptos)_
-- [ ] `5b33f8b89058` en cualquier tipo de terreno, excepto el terreno rocoso, que puede requerir otros métodos de instalación  _(vía fr; 7 conceptos)_
-- [ ] `e95a77ce6ad4` en cualquier tipo de terreno, excepto en terreno rocoso, que pueda requerir métodos alternativos de instalación  _(vía de; 7 conceptos)_
-**en cualquier clase de terreno, excepto roca**
-- [ ] `2ceb960f3246` en cualquier tipo de suelo, excepto la roca  _(vía it; 7 conceptos)_
-- [ ] `9b377f8be69c` en cualquier tipo de terreno, excepto la roca  _(vía fr; 7 conceptos)_
-- [ ] `28eff74a7a07` en cualquier tipo de terreno, excepto las rocas  _(vía de; 7 conceptos)_
 **en cualquier terreno, no roca**
 - [ ] `13ac23effd92` en cualquier terreno, no sobre rocas  _(vía de; 7 conceptos)_
 - [ ] `3fc3a849cf09` en cualquier terreno, sin roca  _(vía fr; 7 conceptos)_
@@ -422,27 +113,18 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `347c0738bb5b` en cualquier terreno, con excepción de la roca  _(vía fr; 6 conceptos)_
 - [ ] `549b7af4d6c8` en cualquier terreno, excepto la roca  _(vía it; 6 conceptos)_
 - [ ] `28bbacb47042` en cualquier terreno excepto las rocas  _(vía de; 6 conceptos)_
-**en cualquier tipo de suelo, con la excepción de terreno rocoso**
-- [ ] `8f64cf47e874` en cualquier suelo, con excepción del suelo rocoso  _(vía fr; 7 conceptos)_
-- [ ] `5ebac5118211` en cualquier suelo, excepto el suelo rocoso  _(vía it; 7 conceptos)_
 **en cualquier tipo de suelo, excepto en terreno rocoso**
 - [ ] `6b9ea96ddf04` en cualquier suelo, con excepción de los terrenos rocosos  _(vía fr; 7 conceptos)_
 - [ ] `a8ca92d0e5a8` en cualquier suelo, excepto en terreno rocoso  _(vía de; 7 conceptos)_
-- [ ] `ed9cca8534a1` en cualquier terreno, excepto en terrenos rocosos  _(vía it; 7 conceptos)_
 **en cualquier tipo de suelo, salvo en terreno rocoso**
 - [ ] `08f8f91dfe70` en cualquier suelo, con excepción de los terrenos rocosos  _(vía fr; 7 conceptos)_
 - [ ] `73bb69e2fe6c` en cualquier suelo, excepto en terreno rocoso  _(vía de; 7 conceptos)_
-- [ ] `946be4405281` en cualquier terreno, excepto en terrenos rocosos  _(vía it; 7 conceptos)_
 **en cualquier tipo de terreno, a excepción de roca**
-- [ ] `0d5664f3d541` en cualquier tipo de suelo, excepto la roca  _(vía it; 7 conceptos)_
 - [ ] `99174ddb79fc` en cualquier tipo de terreno, excepto la roca  _(vía fr; 7 conceptos)_
-- [ ] `1a69750afd73` en cualquier tipo de tierra, con excepción de las rocas  _(vía de; 7 conceptos)_
 **en cualquier tipo de terreno, excepto en áreas rocosas**
 - [ ] `ff349d543791` en cualquier tipo de terreno, excepto en las zonas rocosas  _(vía fr; 7 conceptos)_
 - [ ] `5eb80b3e0caf` en cualquier tipo de terreno excepto en zonas rocosas  _(vía it; 7 conceptos)_
 **en cualquier tipo de terreno, salvo en zonas rocosas**
-- [ ] `d9ad0cba526c` en cualquier tipo de país, excepto en las zonas rocosas  _(vía de; 7 conceptos)_
-- [ ] `023a229d19e1` en cualquier tipo de suelo, excepto en zonas rocosas  _(vía it; 7 conceptos)_
 - [ ] `1169b3ce93ab` en cualquier tipo de terreno, excepto en las zonas rocosas  _(vía fr; 7 conceptos)_
 **en intersección carretera**
 - [ ] `0a9a04a793fb` en la carretera de cruce  _(vía de; 6 conceptos)_
@@ -462,16 +144,7 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 **en intersección con vía pública**
 - [ ] `2e157e77dd17` en el cruce con la carretera pública  _(vía de; 7 conceptos)_
 - [ ] `9e0f4747a1ae` en la intersección con la carretera pública  _(vía fr; 7 conceptos)_
-**en intersección inferior a las líneas férreas**
-- [ ] `d9dc14a4a590` en el cruce bajo las líneas ferroviarias  _(vía it; 6 conceptos)_
-- [ ] `1a69c09ee7ae` en el punto de intersección situado por debajo de la línea ferroviaria  _(vía de; 6 conceptos)_
-- [ ] `34f551df976e` en la intersección por debajo de las líneas de ferrocarril  _(vía fr; 6 conceptos)_
-**en intersección inferior a las vías**
-- [ ] `058be49daf8e` en el punto de intersección por debajo de las vías  _(vía de; 6 conceptos)_
-- [ ] `d3c8520d8416` en la intersección bajo las vías  _(vía fr; 6 conceptos)_
-- [ ] `37bd142a8426` en la intersección por debajo de las vías  _(vía it; 6 conceptos)_
 **en intersección subterránea de ferrocarril**
-- [ ] `5a099779e9d3` en el cruce del metro  _(vía de; 4 conceptos)_
 - [ ] `3b7c8c349030` En el cruce ferroviario subterráneo  _(vía it; 4 conceptos)_
 - [ ] `0a33c803c85e` en la intersección de los ferrocarriles subterráneos  _(vía fr; 4 conceptos)_
 **en intersección subterránea de vías**
@@ -484,60 +157,20 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 **en intersección vial**
 - [ ] `12747a09ea59` en la intersección del vial  _(vía fr; 6 conceptos)_
 - [ ] `78cd6e7d62af` en la zona de inyección del vial  _(vía de; 6 conceptos)_
-**en plataforma de andén**
-- [ ] `4194c0fc80ec` plataforma  _(vía fr; 7 conceptos)_
-- [ ] `894139bdf4d0` Plataforma de la plataforma  _(vía it; 7 conceptos)_
-- [ ] `8f1c522ee6c7` Plataforma de plataformas  _(vía de; 7 conceptos)_
 **en plataforma de estación**
-- [ ] `51879ad1d033` en el muelle de la estación  _(vía fr; 7 conceptos)_
 - [ ] `a32bbd5a5c65` en la plataforma de estaciones  _(vía de; 7 conceptos)_
 - [ ] `3dcb60351f7b` en la plataforma de la estación  _(vía it; 7 conceptos)_
 **en punto de cruce con carretera**
-- [ ] `eb2d21677c17` en el cruce de la carretera  _(vía fr; 7 conceptos)_
-- [ ] `88e825b99209` en el punto de cruce  _(vía de; 7 conceptos)_
 - [ ] `c80450f766dc` en el punto de cruce de carretera  _(vía it; 7 conceptos)_
 **en punto de intersección con carretera**
 - [ ] `03711f3fb641` en el punto de intersección con la carretera  _(vía fr; 7 conceptos)_
-- [ ] `dc37f9f2b0c9` en la intersección con la carretera  _(vía de; 7 conceptos)_
-**en región de balasto**
-- [ ] `3fb981129823` en la región de lastre  _(vía fr; 7 conceptos)_
-- [ ] `f4f9b61635c9` en la región del lastre  _(vía de; 7 conceptos)_
-**en sección de balasto**
-- [ ] `062074efc423` en la sección de lastre  _(vía fr; 7 conceptos)_
-- [ ] `a5600fc4f74d` En la zona de lastre  _(vía de; 7 conceptos)_
-**en sector de andén**
-- [ ] `8d6a334a1cde` en el sector de las plataformas  _(vía fr; 7 conceptos)_
-**en sector de balasto**
-- [ ] `e44ceaf0d821` en el sector de lastre  _(vía de; 7 conceptos)_
-- [ ] `558719969c0c` en el sector del lastre  _(vía fr; 7 conceptos)_
 **en suelo compuesto de roca**
 - [ ] `477ef28add78` en el suelo compuesto de rocas  _(vía fr; 7 conceptos)_
-- [ ] `497d9d50f024` En el suelo rocoso  _(vía de; 7 conceptos)_
-**en suelo de roca**
-- [ ] `9e754514f204` en el suelo rocoso  _(vía fr; 7 conceptos)_
-- [ ] `8d5634d81ed3` sobre suelo rocoso  _(vía it; 7 conceptos)_
 **en suelo rocoso**
 - [ ] `f565b891c088` en el suelo rocoso  _(vía fr; 7 conceptos)_
-- [ ] `0f932eca77f4` en tierra rocosa  _(vía it; 7 conceptos)_
-**en superficie de andén**
-- [ ] `08242690f034` en la superficie de la plataforma  _(vía fr; 7 conceptos)_
-**en terreno con roca**
-- [ ] `308b887be078` en tierra con roca  _(vía fr; 7 conceptos)_
-- [ ] `c893763ee8ef` en tierra con rocas  _(vía de; 7 conceptos)_
-- [ ] `115df1981f9a` sobre la tierra con la roca  _(vía it; 7 conceptos)_
-**en terreno de naturaleza rocosa**
-- [ ] `7fadb23ea75f` en el ámbito de la naturaleza rocosa  _(vía fr; 7 conceptos)_
-- [ ] `24dac3dcc653` en el campo de la naturaleza rocosa  _(vía it; 7 conceptos)_
-**en terreno de roca**
-- [ ] `6c46911e3c55` en el terreno rocoso  _(vía fr; 7 conceptos)_
-- [ ] `1cf1c0333e20` en las zonas rocosas  _(vía de; 7 conceptos)_
 **en terreno rocoso**
 - [ ] `959eb64ecf1d` De terreno rocoso  _(vía fr; 7 conceptos)_
 - [ ] `69eda046d0ff` En terrenos rocosos  _(vía de; 7 conceptos)_
-**en terreno rocoso, caracterizado por su resistencia y compactación, que demanda herramientas específicas para la canalización**
-- [ ] `b579d1bd4c32` en terreno rocoso, caracterizado por su fuerza y compactación, que requiere herramientas específicas para canalizar  _(vía fr; 7 conceptos)_
-- [ ] `18a4ad4c395a` en terreno rocoso, caracterizado por su fuerza y compactación que requiere herramientas específicas para el canaling  _(vía de; 7 conceptos)_
-- [ ] `9d804763ebe9` en terreno rocoso, caracterizado por su resistencia y compactación, que requiere instrumentos específicos para canalizar  _(vía it; 7 conceptos)_
 **en terreno rocoso, donde la canalización debe adaptarse a la topografía irregular y la presencia de rocas**
 - [ ] `d8da8dd3a39a` en terreno rocoso, donde la canalización debe adaptarse a la topografía irregular y a la presencia de rocas  _(vía fr; 7 conceptos)_
 - [ ] `fb84e0afff9f` en terrenos rocosos, donde la canalización debe adaptarse a la topografía irregular y a la presencia de rocas  _(vía it; 7 conceptos)_
@@ -551,9 +184,7 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `a3683252574b` en el terreno rocoso, que presenta nuevos desafíos debido a la presencia de rocas duras y compactas  _(vía it; 7 conceptos)_
 - [ ] `0d7c7fbc7cf5` en terrenos rocosos que presentan desafíos adicionales debido a la presencia de rocas duras y compactas  _(vía de; 7 conceptos)_
 **en terreno rocoso, que requiere consideraciones especiales para asegurar la estabilidad y funcionalidad de la canalización**
-- [ ] `63cde8a7daca` en terreno rocoso, lo que requiere consideraciones particulares para garantizar la estabilidad y la funcionalidad de la canalización  _(vía fr; 7 conceptos)_
 - [ ] `8bf4cdf83210` en terreno rocoso, que requiere consideraciones especiales para garantizar la estabilidad y la funcionalidad de la canalización  _(vía it; 7 conceptos)_
-- [ ] `625a38b4e1a5` en terrenos rocosos, lo que requiere una reflexión especial para garantizar la estabilidad y la funcionalidad del canaling  _(vía de; 7 conceptos)_
 **en todo terreno, excepto roca**
 - [ ] `1f2cd755ad27` en todos los terrenos, excepto la roca  _(vía fr; 5 conceptos)_
 - [ ] `080ce06ad1a5` En todos los terrenos excepto rocas  _(vía de; 5 conceptos)_
@@ -564,510 +195,98 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 **en todo terreno, salvo roca**
 - [ ] `f7f6673e6f76` en todos los terrenos, excepto la roca  _(vía fr; 7 conceptos)_
 - [ ] `5cdffc6199d8` En todos los terrenos excepto rocas  _(vía de; 7 conceptos)_
-**en tramo de balasto**
-- [ ] `ee7262085164` en la sección de lastre  _(vía it; 7 conceptos)_
-- [ ] `be96f5d10b48` en la sección del lastre  _(vía fr; 7 conceptos)_
-- [ ] `1cfac3283ac8` en la sección Lastre  _(vía de; 7 conceptos)_
 **en zona de andén**
-- [ ] `6805c3e4b9eb` en el área de la plataforma  _(vía it; 7 conceptos)_
-- [ ] `4935ad2882f8` en el área de plataforma  _(vía fr; 7 conceptos)_
 - [ ] `3dc1aae71f9e` en la zona del andén  _(vía de; 7 conceptos)_
-**en zona de balasto**
-- [ ] `28913476e56c` en la zona de lastre  _(vía fr; 7 conceptos)_
-**en zona de balasto, compuesta por piedras que proporcionan soporte y drenaje a las vías férreas**
-- [ ] `17d39b99b130` en la zona de lastre, constituida por piedras que aseguran el apoyo y drenaje de los ferrocarriles  _(vía fr; 7 conceptos)_
-- [ ] `aacf8e9998cf` en la zona de lastre, constituida por piedras que proporcionan apoyo y drenaje a los ferrocarriles  _(vía it; 7 conceptos)_
-- [ ] `78414618c307` en la zona de lastre, que consiste en piedras que apoyan y deshidratan el carril;  _(vía de; 7 conceptos)_
-**en zona de balasto, donde se encuentra la capa de piedras que amortigua y estabiliza las vías**
-- [ ] `08f723c42860` en la zona de lastre, donde se encuentra la capa de piedra que amortigua y estabiliza las vías  _(vía fr; 7 conceptos)_
-- [ ] `94f4af054224` en la zona de lastre, donde se encuentra la capa de piedras que acolcha y estabiliza las vías  _(vía de; 7 conceptos)_
-- [ ] `6677308506d0` en la zona de lastre, donde se encuentra la capa de piedras que almohada y estabiliza las vías  _(vía it; 7 conceptos)_
-**en zona de balasto, específicamente en la capa de piedras que soporta y protege las vías férreas**
-- [ ] `b7253ae7a835` en el área de lastre, especialmente en la capa de piedra, que apoya y protege el ferrocarril  _(vía de; 7 conceptos)_
-- [ ] `f65442967011` en la zona de lastre, especialmente en la capa de piedra que sostiene y protege los ferrocarriles  _(vía fr; 7 conceptos)_
-- [ ] `bc25c1d087fb` en la zona de lastre, específicamente en la capa de piedra que sostiene y protege los ferrocarriles  _(vía it; 7 conceptos)_
-**en zona de balasto, formada por piedras que estabilizan y protegen las vías férreas**
-- [ ] `02d05d69861f` en la zona de lastre, formada por piedras que estabilizan y protegen los ferrocarriles  _(vía fr; 7 conceptos)_
-- [ ] `29a250596108` en zona de lastre, formada por piedras que estabilizan y protegen el ferrocarril  _(vía de; 7 conceptos)_
-**en zona de balasto, que consiste en una capa de piedras que soporta las vías y facilita el drenaje**
-- [ ] `ae0e714044e9` en la zona de lastre, compuesta por una capa de piedra que soporta las vías y facilita el drenaje  _(vía de; 7 conceptos)_
-- [ ] `8e4993be7e63` en la zona de lastre, consistente en una capa de piedra que sostiene las vías y facilita el drenaje  _(vía fr; 7 conceptos)_
-- [ ] `e8994c1af7ea` en la zona de lastre, constituida por una capa de piedras que sostiene las vías y facilita el drenaje  _(vía it; 7 conceptos)_
-**en zona de balasto, que es la capa de piedras colocada bajo las vías para su soporte y drenaje**
-- [ ] `8a078fbf2397` en el área de lastre, que es la capa de piedra colocada debajo de las vías para el soporte y el drenaje  _(vía de; 7 conceptos)_
-- [ ] `bf412d0e7199` en la zona de lastre, que es la capa de piedras colocada debajo de las vías para el soporte y drenaje  _(vía fr; 7 conceptos)_
-- [ ] `a9d81cbb7d5e` en la zona de lastre, que es la capa de piedras situada debajo de las vías de apoyo y drenaje  _(vía it; 7 conceptos)_
 **en área balastada**
 - [ ] `dc5c7855bf28` en la zona de lastre  _(vía it; 7 conceptos)_
 - [ ] `27a4f0c09d1d` en la zona de lastreado  _(vía fr; 7 conceptos)_
 **en área de andén**
-- [ ] `1dacd30a701d` en el área de la plataforma  _(vía it; 7 conceptos)_
-- [ ] `6e49e017720b` en el área de plataforma  _(vía fr; 7 conceptos)_
 - [ ] `94e31de4a85a` en la zona del andén  _(vía de; 7 conceptos)_
-**en área de balasto**
-- [ ] `b385153bc925` en la zona de lastre  _(vía fr; 7 conceptos)_
 **gran escala (200x120x180 cm)**
 - [ ] `81b8e194166d` a gran escala (200x120x180 cm)  _(vía fr; 1 concepto)_
 - [ ] `c353b81070b7` escala grande (200x120x180 cm)  _(vía it; 1 concepto)_
 **gran formato (200x120x180 cm)**
 - [ ] `186282957b1d` formato grande (200x120x180 cm)  _(vía fr; 1 concepto)_
-**incluso la construcción del pozo de ataque, entibación de los costados para estabilizar la excavación, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el avance, el suministro y montaje de los hilos guía para asegurar la alineación, y el sellado de las embocaduras con poliuretano expandido para garantizar la estanqueidad.**
-- [ ] `4c01f79668cb` Incluye la construcción del pozo de acoplamiento, la fijación de los lados para estabilizar la excavación, la instalación de un tubo guía de acero 500 mm de diámetro para facilitar el avance, el suministro y el montaje de los alambres guía para garantizar la alineación, y el sellado de las aberturas con poliuretano expandido para garantizar el sellado.  _(vía it; 6 conceptos)_
-- [ ] `b690c9415271` Incluyendo la construcción de la fuente de ataque, la seguridad de los lados para estabilizar la excavación, la instalación de un tubo de acero 500 mm con diámetro para facilitar el avance, la entrega y el montaje de los hilos de guía para garantizar la alineación, y el sellado de las aberturas con poliuretano ampliado, con el fin de garantizar la impermeabilización.  _(vía de; 6 conceptos)_
-- [ ] `92ee76ca2b9f` incluyendo la construcción del pozo de ataque, la fijación de los lados para estabilizar la excavación, la instalación de un tubo de guía de acero 500 mm de diámetro para facilitar el avance, el suministro y el montaje de los hilos de guía para garantizar la alineación, y la estanqueidad de las aberturas con poliuretano expandido para garantizar la estanqueidad.  _(vía fr; 6 conceptos)_
-**incluso la construcción del pozo de ataque, entibación de los costados para prevenir deslizamientos, instalación de un tubo guía de acero de 500 mm de diámetro para facilitar el desplazamiento, el suministro y montaje de los hilos guía para mantener la trayectoria, y el sellado de las embocaduras con poliuretano expandido para evitar filtraciones.**
-- [ ] `071161affb4c` Incluye la construcción del pozo de acoplamiento, el embotellado de los lados para evitar deslizamientos, la instalación de un tubo de guía de acero 500 mm de diámetro para facilitar el desplazamiento, la alimentación y el montaje de los alambres de guía para mantener la trayectoria, y el sellado de las aberturas con poliuretano expandido para evitar fugas.  _(vía it; 6 conceptos)_
-- [ ] `f9e1a977358f` Incluyendo la construcción de la fuente de ataque, la apertura de los lados para evitar la fuga, la instalación de un tubo de acero 500 mm con diámetro para facilitar el desplazamiento, la entrega y el montaje de los hilos guía para mantener la trayectoria de vuelo, y el sellado de las aberturas con poliuretano extendido para evitar fugas.  _(vía de; 6 conceptos)_
-- [ ] `6f6ef5d9ffc5` incluyendo la construcción del pozo de ataque, el estiércol de los lados para evitar deslizamientos, la instalación de un tubo de guía de acero 500 mm de diámetro para facilitar el desplazamiento, la alimentación y el montaje de los hilos de guía para mantener la trayectoria, y la estanqueidad de las aberturas con poliuretano expandido para evitar fugas.  _(vía fr; 6 conceptos)_
-**incluso la construcción del pozo de ataque, entibación de los costados para soportar la estructura, instalación de un tubo guía de acero de 500 mm de diámetro para guiar el proceso, el suministro y montaje de los hilos guía para asegurar la precisión, y el sellado de las embocaduras con poliuretano expandido para proteger contra el agua.**
-- [ ] `f031d5957377` incluida la construcción de la fuente de ataque, la fijación de los lados para apoyar la estructura, la instalación de un tubo de acero con 500 mm diámetro para controlar el proceso, el suministro y el montaje de los hilos de guía para garantizar la precisión y el sellado de las aberturas con poliuretano ampliado para proteger contra el agua.  _(vía de; 6 conceptos)_
-- [ ] `de3df924307b` Incluye la construcción del pozo de acoplamiento, el acoplamiento de los lados para apoyar la estructura, la instalación de un tubo guía de acero del diámetro 500 mm para guiar el proceso, la alimentación y el montaje de los alambres guía para garantizar la precisión, y el sellado de las aberturas con poliuretano expandido para proteger contra el agua.  _(vía it; 6 conceptos)_
-- [ ] `1f55af9497a8` incluyendo la construcción del pozo de ataque, el amarre de los lados para apoyar la estructura, la instalación de un tubo de guía de acero 500 mm diámetro para guiar el proceso, la alimentación y el montaje de los hilos de guía para garantizar la precisión, y la estanqueidad de las aberturas con poliuretano expandido para proteger contra el agua.  _(vía fr; 6 conceptos)_
-**incluso la construcción del pozo de ataque, entibación de los costados, instalación de un tubo guía de acero de 500 mm de diámetro, el suministro y montaje de los hilos guía y el sellado de las embocaduras con poliuretano expandido.**
-- [ ] `e3402e1e1d8e` Incluye la construcción del pozo de acoplamiento, el embotellado de los lados, la instalación de un tubo de guía de acero 500 mm de diámetro, alimentación y montaje de los cables de guía y sellado de las aberturas con poliuretano expandido.  _(vía it; 6 conceptos)_
-- [ ] `cac403176149` Incluyendo la construcción de la fuente de ataque, el lodo de los lados, la instalación de un tubo de acero 500 mm con diámetro, la entrega y el montaje de los hilos guía y el sellado de las aberturas con poliuretano expandido.  _(vía de; 6 conceptos)_
-- [ ] `52ea51291782` incluyendo la construcción del pozo de ataque, el estiércol de los lados, la instalación de un tubo de guía de acero 500 mm de diámetro, la alimentación y el montaje de los hilos de guía y la estanqueidad de las aberturas con poliuretano expandido.  _(vía fr; 6 conceptos)_
-**incluye la edificación del pozo de ataque, la entibación lateral, la colocación de un tubo guía de acero de 500 mm de diámetro, el aporte y ensamblaje de los hilos guía, y el sellado de las entradas con poliuretano expandido.**
-- [ ] `83824090ad69` comprende la construcción del pozo de ataque, el estiércol lateral, la ubicación de un tubo de guía de acero 500 mm de diámetro, el suministro y montaje de los hilos de guía, y la estanqueidad de las entradas con poliuretano expandido.  _(vía fr; 6 conceptos)_
-- [ ] `c03380d18dfa` incluye la construcción de la fuente de ataque, la cubierta lateral, la colocación de un tubo de acero 500 mm con diámetro, el suministro y el montaje de los hilos de guía y el sellado de las entradas con poliuretano avanzado.  _(vía de; 6 conceptos)_
-- [ ] `64a2aebeee37` Incluye la construcción del pozo de acoplamiento, el acuífero lateral, la colocación de un tubo de guía de acero 500 mm de diámetro, el suministro y montaje de los cables de guía y el sellado de las entradas con poliuretano expandido.  _(vía it; 6 conceptos)_
-**incluyendo la nivelación de la solera, la cama de arena de río de 5 cm y el relleno del sellado de los laterales de la canaleta de hormigón pobre**
-- [ ] `0e8a5bd5cf59` incluida la nivelación de la solera, del lecho de arena del río 5 cm y el relleno de la impermeabilización de los lados del canal de hormigón malo  _(vía de; 1 concepto)_
-- [ ] `515fccd79299` incluido el corte del solera, del lecho de arena del río 5 cm y el relleno de la estanqueidad de los lados del canal equivocado de hormigón  _(vía fr; 1 concepto)_
-- [ ] `ef16f923344e` incluyendo la nivelación del solero, el lecho de arena del río 5 cm y el llenado del sellado de los lados del canalero de hormigón pobre  _(vía it; 1 concepto)_
-**instalada adosada o en superficie, asegurando una rápida ejecución de obra**
-- [ ] `a3e3b3ddeb45` instalado en forma de terraza o en la superficie para garantizar una ejecución rápida de los trabajos  _(vía de; 7 conceptos)_
-- [ ] `145e9b797218` instalado en terraza o en superficie, garantizando una rápida ejecución de los trabajos  _(vía fr; 7 conceptos)_
-- [ ] `22fb6cbb627f` instalado terraza o sobre superficie, garantizando una rápida ejecución de los trabajos  _(vía it; 7 conceptos)_
-**instalada adosada o en superficie, permitiendo una integración sencilla con el entorno existente**
-- [ ] `558e24d1f8cb` instalado en terraza o en superficie, permitiendo una fácil integración con el entorno existente  _(vía fr; 7 conceptos)_
-- [ ] `616a704c4595` instalado terraza o superficie, permitiendo una fácil integración con el entorno existente  _(vía it; 7 conceptos)_
-- [ ] `ca3414e37bed` terrazas o superficies instaladas que permiten una fácil integración en el entorno existente  _(vía de; 7 conceptos)_
 **la demolición de roca dura,**
 - [ ] `83ed5ac818f4` demolición de rocas duras,  _(vía de; 7 conceptos)_
 - [ ] `8988c7f396bd` la demolición de la roca dura,  _(vía it; 7 conceptos)_
-- [ ] `0da09641c388` la demolición de piedras duras,  _(vía fr; 7 conceptos)_
 **la demolición de roca dura, asegurando la eliminación completa de la estructura geológica,**
 - [ ] `b109ad125b2b` demolición de roca dura para asegurar la eliminación completa de la estructura geológica,  _(vía de; 7 conceptos)_
 - [ ] `3ac77ad8e7fe` la demolición de la roca dura, garantizando la eliminación completa de la estructura geológica,  _(vía fr; 7 conceptos)_
 **la demolición de roca dura, con el objetivo de preparar el terreno para nuevas construcciones,**
 - [ ] `be0007ceb046` la demolición de la roca dura, con el fin de preparar el terreno para nuevas construcciones,  _(vía fr; 7 conceptos)_
 - [ ] `cc65fe7ec585` la demolición de la roca dura, con el objetivo de preparar el terreno para nuevas construcciones,  _(vía it; 7 conceptos)_
-- [ ] `975165108536` la demolición de rocas duras con el objetivo de preparar el suelo para edificios nuevos,  _(vía de; 7 conceptos)_
 **la demolición de roca dura, garantizando la estabilidad del entorno circundante,**
 - [ ] `69641d679bff` la demolición de la roca dura, garantizando la estabilidad del entorno circundante,  _(vía it; 7 conceptos)_
 - [ ] `6daad7bc4937` la demolición de rocas duras, garantizando la estabilidad del entorno circundante,  _(vía fr; 7 conceptos)_
-- [ ] `8e873b359f14` Rotura de roca dura para garantizar la estabilidad del entorno,  _(vía de; 7 conceptos)_
-**la demolición de roca dura, incluyendo la fragmentación y el desmantelamiento de la estructura sólida,**
-- [ ] `a00453f5375e` demolición de rocas duras, incluida la fragmentación y el desmantelamiento de la estructura sólida;  _(vía de; 7 conceptos)_
-- [ ] `deea06a9f996` la demolición de la roca dura, incluida la fragmentación y el desmantelamiento de la estructura sólida,  _(vía it; 7 conceptos)_
-- [ ] `39bf5ed7bc83` la demolición de rocas duras, incluida la fragmentación y el desmantelamiento de la estructura sólida,  _(vía fr; 7 conceptos)_
 **la demolición de roca dura, mediante técnicas de perforación y voladura controlada,**
 - [ ] `457228bad997` demolición de rocas duras mediante perforación y técnicas de detonación controladas;  _(vía de; 7 conceptos)_
 - [ ] `4d0bd13ff593` la demolición de la roca dura mediante perforación y técnicas de blase controlado,  _(vía it; 7 conceptos)_
 - [ ] `fb7a677e2816` la demolición de rocas duras mediante perforaciones y técnicas de dinamitación controladas,  _(vía fr; 7 conceptos)_
 **la demolición de roca dura, utilizando maquinaria especializada para su desintegración,**
 - [ ] `14cdbd2950de` la demolición de la roca dura, utilizando maquinaria especializada para su desintegración,  _(vía it; 7 conceptos)_
-- [ ] `ec2798172b71` la demolición de rocas duras, con la ayuda de máquinas especializadas para su desintegración,  _(vía fr; 7 conceptos)_
-- [ ] `cb0a049b28b7` la demolición de rocas duras por medio de máquinas especiales para la descomposición,  _(vía de; 7 conceptos)_
-**la demolición y la reposición del firme y del pavimento,**
-- [ ] `688afb916def` demolición y sustitución de la empresa y del parche,  _(vía de; 1 concepto)_
-- [ ] `e5cbcaa182aa` la demolición y sustitución de la empresa y de la carretera,  _(vía fr; 1 concepto)_
-- [ ] `3749a7f34b62` la demolición y sustitución de la explotación y del suelo,  _(vía it; 1 concepto)_
-**la demolición y la reposición del firme y del pavimento, asegurando la alineación y nivelación correctas para el tránsito ferroviario,**
-- [ ] `18ae86d9bd21` demolición y sustitución de la explotación y el parche para garantizar una orientación y nivelación correctas del ferrocarril;  _(vía de; 1 concepto)_
-- [ ] `103023556cf0` el desguace y la sustitución de la empresa y del suelo, garantizando la correcta alineación y nivelación del tráfico ferroviario,  _(vía it; 1 concepto)_
-- [ ] `c2361b40e3d9` la demolición y sustitución de la empresa y de la carretera, velando por que el tráfico ferroviario se alinee y se apague correctamente,  _(vía fr; 1 concepto)_
-**la demolición y la reposición del firme y del pavimento, asegurando la compatibilidad con las especificaciones técnicas del proyecto,**
-- [ ] `b813de93b320` la demolición y sustitución de la empresa y de la carretera, velando por su compatibilidad con las especificaciones técnicas del proyecto,  _(vía fr; 1 concepto)_
-- [ ] `6d0003d927ea` la demolición y sustitución de la empresa y del parche para garantizar la compatibilidad con las especificaciones técnicas del proyecto;  _(vía de; 1 concepto)_
-- [ ] `021e764ff035` la demolición y sustitución de la empresa y del suelo, garantizando la compatibilidad con las especificaciones técnicas del proyecto,  _(vía it; 1 concepto)_
-**la demolición y la reposición del firme y del pavimento, con verificación de la integridad estructural tras la instalación,**
-- [ ] `6be28fa25bbc` demolición y sustitución de la planta y el parche mediante verificación de la integridad estructural tras la instalación;  _(vía de; 1 concepto)_
-- [ ] `2642ae31f631` la demolición y sustitución de la empresa y de la carretera, con comprobación de la integridad estructural después de la instalación,  _(vía fr; 1 concepto)_
-- [ ] `4806f5de8f4f` la demolición y sustitución de la explotación y del suelo, con verificación de la integridad estructural después de la instalación,  _(vía it; 1 concepto)_
-**la demolición y la reposición del firme y del pavimento, garantizando la adherencia y durabilidad del material utilizado,**
-- [ ] `0e61a6d2fb25` demolición y sustitución de la planta y el parche para garantizar la adherencia y durabilidad del material utilizado;  _(vía de; 1 concepto)_
-- [ ] `abcd0d2cd31a` la demolición y sustitución de la empresa y de la carretera, garantizando la adherencia y la durabilidad del material utilizado,  _(vía fr; 1 concepto)_
-- [ ] `1fc9851744c2` la demolición y sustitución de la explotación y del suelo, garantizando la adhesión y la duración del material utilizado,  _(vía it; 1 concepto)_
-**la demolición y la reposición del firme y del pavimento, incluyendo la aplicación de capas protectoras para resistir el desgaste,**
-- [ ] `cec252464713` demolición y sustitución de la planta y el parche, incluida la aplicación de capas protectoras contra el desgaste;  _(vía de; 1 concepto)_
-- [ ] `a36e8bade74a` la demolición y sustitución de la explotación y del suelo, incluida la aplicación de capas protectoras para resistir el desgaste,  _(vía it; 1 concepto)_
-- [ ] `901caad114d1` la demolición y sustitución de la granja y de la carretera, incluida la aplicación de capas de protección para resistir el desgaste,  _(vía fr; 1 concepto)_
-**la demolición y la reposición del firme y del pavimento, incluyendo la preparación del terreno y la compactación adecuada para asegurar la estabilidad estructural,**
-- [ ] `5891d4822e0e` demolición y sustitución de la planta y el parche, incluida la preparación del suelo y la compactación adecuada para garantizar la estabilidad estructural;  _(vía de; 1 concepto)_
-- [ ] `a212cb0f82f7` la demolición y sustitución de la empresa y de la carretera, incluida la preparación del suelo y la compactación adecuada para garantizar la estabilidad estructural,  _(vía fr; 1 concepto)_
-- [ ] `8e855d95c8aa` la demolición y sustitución de la explotación y el suelo, incluida la preparación del suelo y la compactación adecuada para garantizar la estabilidad estructural,  _(vía it; 1 concepto)_
-**la demolición y la reposición del pavimento y la solera,**
-- [ ] `93d44a241e72` la demolición y sustitución de la carretera y del suelo,  _(vía fr; 1 concepto)_
-- [ ] `a7b85819467b` la demolición y sustitución del suelo y de la solera,  _(vía it; 1 concepto)_
-- [ ] `7ac655e371a6` rotura y sustitución del parche y de la solara,  _(vía de; 1 concepto)_
-**la demolición y la reposición del pavimento y la solera, asegurando la alineación correcta y la integración con las estructuras adyacentes,**
-- [ ] `da25cc332b0d` demolición y sustitución de suelo y soledad, garantizando una correcta alineación e integración con estructuras adyacentes,  _(vía it; 1 concepto)_
-- [ ] `cfb1af661a37` demolición y sustitución del camino y Solera, garantizando una orientación e integración correctas con las estructuras vecinas,  _(vía de; 1 concepto)_
-- [ ] `77479fc9517c` la demolición y sustitución de carreteras y soleras, garantizando una alineación e integración adecuadas con las estructuras adyacentes,  _(vía fr; 1 concepto)_
-**la demolición y la reposición del pavimento y la solera, asegurando la compatibilidad de los materiales con las condiciones ambientales previstas,**
-- [ ] `36c7d53697e5` la demolición y sustitución de la carretera y del suelo, garantizando la compatibilidad de los materiales con las condiciones medioambientales previstas,  _(vía fr; 1 concepto)_
-- [ ] `5ab0295dd94a` la demolición y sustitución del suelo y de la solera, garantizando la compatibilidad de los materiales con las condiciones ambientales previstas,  _(vía it; 1 concepto)_
-- [ ] `b6b98f1ec147` rotura y sustitución del parche y de la Solera para garantizar la compatibilidad de los materiales con las condiciones ambientales previstas;  _(vía de; 1 concepto)_
-**la demolición y la reposición del pavimento y la solera, con verificación de la planitud y uniformidad del acabado final,**
-- [ ] `f2d0bc3340b5` la demolición y sustitución de la carretera y del suelo, con comprobación de la planeidad y uniformidad del acabado final,  _(vía fr; 1 concepto)_
-- [ ] `b146afbd9666` la demolición y sustitución del suelo y de la solera, con verificación de la planitud y uniformidad del acabado final,  _(vía it; 1 concepto)_
-- [ ] `230ccb0d4d9a` rotura y sustitución del parche y de la solara, con comprobación de la igualdad y la uniformidad del acabado,  _(vía de; 1 concepto)_
-**la demolición y la reposición del pavimento y la solera, garantizando la adherencia y compactación adecuada de los materiales utilizados,**
-- [ ] `d63f30e86e95` la demolición y sustitución de la carretera y del suelo, garantizando una adherencia y compactación adecuadas de los materiales utilizados,  _(vía fr; 1 concepto)_
-- [ ] `51c679d716de` la demolición y sustitución del suelo y de la solera, garantizando la correcta adhesión y compactación de los materiales utilizados,  _(vía it; 1 concepto)_
-- [ ] `5447048bba81` rotura y sustitución del parche y de la solera para garantizar la adherencia y la compactación adecuadas de los materiales utilizados;  _(vía de; 1 concepto)_
-**la demolición y la reposición del pavimento y la solera, incluyendo la inspección y corrección de cualquier defecto estructural detectado,**
-- [ ] `19279ea2a72a` demolición y sustitución del parche y de la solara, incluida la inspección y corrección de las deficiencias estructurales detectadas;  _(vía de; 1 concepto)_
-- [ ] `5c68f96e417a` la demolición y sustitución de la carretera y del suelo, incluida la inspección y corrección de cualquier defecto estructural detectado,  _(vía fr; 1 concepto)_
-- [ ] `267025f551ed` la demolición y sustitución del suelo y del solero, incluida la inspección y corrección de los posibles defectos estructurales detectados,  _(vía it; 1 concepto)_
-**la demolición y la reposición del pavimento y la solera, incluyendo la preparación del terreno y la nivelación adecuada para asegurar una base firme y estable,**
-- [ ] `38ab3d17bd1e` la demolición y sustitución de la carretera y del suelo, incluida la preparación del terreno y el trazado adecuado para garantizar una base firme y estable,  _(vía fr; 1 concepto)_
-- [ ] `41c06333a1cc` la demolición y sustitución del parche y de la solera, incluida la preparación del terreno y la nivelación adecuada para garantizar una base sólida y estable;  _(vía de; 1 concepto)_
-- [ ] `1b2e09e93a4f` la demolición y sustitución del suelo y del solero, incluida la preparación del suelo y la nivelación adecuada para garantizar una base sólida y estable,  _(vía it; 1 concepto)_
-**la demolición y reposición del firme y del pavimento,**
-- [ ] `40198ac199a8` demolición y sustitución de la empresa y del parche,  _(vía de; 6 conceptos)_
-- [ ] `8c6104dc19a6` la demolición y sustitución de la empresa y de la carretera,  _(vía fr; 6 conceptos)_
-- [ ] `1ab82ec71341` la demolición y sustitución de la explotación y del suelo,  _(vía it; 6 conceptos)_
-**la demolición y reposición del firme y del pavimento, asegurando la compatibilidad del nuevo material con las condiciones ambientales,**
-- [ ] `70e63505bf1f` demolición y sustitución de la planta y el parche para garantizar la compatibilidad del nuevo material con las condiciones medioambientales;  _(vía de; 6 conceptos)_
-- [ ] `7e4fd76f2638` la demolición y sustitución de la empresa y de la carretera, garantizando la compatibilidad del nuevo material con las condiciones medioambientales,  _(vía fr; 6 conceptos)_
-- [ ] `260551008a28` la demolición y sustitución de la explotación y del suelo, garantizando la compatibilidad del nuevo material con las condiciones ambientales,  _(vía it; 6 conceptos)_
-**la demolición y reposición del firme y del pavimento, asegurando la nivelación y alineación correcta del nuevo material,**
-- [ ] `82e393337a1e` demolición y sustitución de la planta y el parche para garantizar la adecuada nivelación y alineación del nuevo material;  _(vía de; 6 conceptos)_
-- [ ] `51918b480804` la demolición y sustitución de la empresa y de la carretera, garantizando la fijación y alineación adecuadas del nuevo material,  _(vía fr; 6 conceptos)_
-- [ ] `366712e5ccc0` la demolición y sustitución de la explotación y del suelo, garantizando la correcta nivelación y alineación del nuevo material,  _(vía it; 6 conceptos)_
-**la demolición y reposición del firme y del pavimento, con el uso de técnicas de compactación avanzadas para el nuevo material,**
-- [ ] `b81b631bd358` demolición y sustitución de la planta y el parche mediante técnicas avanzadas de compresión para el nuevo material;  _(vía de; 6 conceptos)_
-- [ ] `2e29eb5cf150` la demolición y sustitución de la empresa y de la carretera, con el uso de técnicas avanzadas de compactación para el nuevo material,  _(vía fr; 6 conceptos)_
-- [ ] `69e3c7f73b05` la demolición y sustitución de la explotación y del suelo, utilizando técnicas avanzadas de compactación para el nuevo material,  _(vía it; 6 conceptos)_
-**la demolición y reposición del firme y del pavimento, garantizando la adherencia y estabilidad del nuevo material aplicado,**
-- [ ] `8e8ec7864466` demolición y sustitución de la planta y el parche para garantizar la adherencia y estabilidad del nuevo material;  _(vía de; 6 conceptos)_
-- [ ] `2c00ee6bd84a` la demolición y sustitución de la empresa y de la carretera, garantizando la adherencia y la estabilidad del nuevo material aplicado,  _(vía fr; 6 conceptos)_
-- [ ] `60c4fc6cffa1` la demolición y sustitución de la explotación y del suelo, garantizando la adhesión y la estabilidad del nuevo material aplicado,  _(vía it; 6 conceptos)_
-**la demolición y reposición del firme y del pavimento, incluyendo la preparación del subrasante y la compactación adecuada del nuevo material,**
-- [ ] `e53d75286a2f` demolición y sustitución de la empresa y del parche, incluida la preparación de la subposición y de la compactación adecuada del nuevo material;  _(vía de; 6 conceptos)_
-- [ ] `5e7cc3c74a17` la demolición y sustitución de la empresa y de la carretera, incluida la preparación de la subreasaje y la compactación adecuada del nuevo material,  _(vía fr; 6 conceptos)_
-- [ ] `f1d0c9351a39` la demolición y sustitución de la explotación y del suelo, incluida la preparación del sustrato y la compactación adecuada del nuevo material,  _(vía it; 6 conceptos)_
-**la demolición y reposición del firme y del pavimento, incluyendo la verificación de la integridad estructural del nuevo pavimento,**
-- [ ] `54abf3c0601e` demolición y sustitución de la planta y el parche, incluida la comprobación de la integridad estructural del nuevo parche;  _(vía de; 6 conceptos)_
-- [ ] `b101c59a2b73` la demolición y sustitución de la empresa y de la carretera, incluida la verificación de la integridad estructural de la nueva vía,  _(vía fr; 6 conceptos)_
-- [ ] `6428706e827c` la demolición y sustitución de la empresa y el suelo, incluida la verificación de la integridad estructural del nuevo suelo,  _(vía it; 6 conceptos)_
-**la demolición y reposición del pavimento y la solera,**
-- [ ] `7f8eb58ea2bd` la demolición y sustitución de la carretera y del suelo,  _(vía fr; 6 conceptos)_
-- [ ] `270b52b12853` la demolición y sustitución del suelo y de la solera,  _(vía it; 6 conceptos)_
-- [ ] `f25ad021c201` rotura y sustitución del parche y de la solara,  _(vía de; 6 conceptos)_
-**la demolición y reposición del pavimento y la solera, asegurando la compatibilidad del nuevo material con las condiciones ambientales,**
-- [ ] `b59bb50de284` la demolición y sustitución de la carretera y del suelo, garantizando la compatibilidad del nuevo material con las condiciones medioambientales,  _(vía fr; 6 conceptos)_
-- [ ] `63245ee8ee72` la demolición y sustitución del suelo y de la solera, garantizando la compatibilidad del nuevo material con las condiciones ambientales,  _(vía it; 6 conceptos)_
-- [ ] `1d21c63363c0` rotura y sustitución del parche y de la Solera para garantizar la compatibilidad del nuevo material con las condiciones ambientales;  _(vía de; 6 conceptos)_
-**la demolición y reposición del pavimento y la solera, asegurando la nivelación y alineación correcta del nuevo pavimento,**
-- [ ] `a73eb72bd763` la demolición y sustitución de la carretera y del suelo, garantizando la senda y la alineación adecuadas de la nueva vía,  _(vía fr; 6 conceptos)_
-- [ ] `eda0cc217ef5` la demolición y sustitución del parche y de la solera para garantizar la adecuada nivelación y alineación del nuevo parche,  _(vía de; 6 conceptos)_
-- [ ] `508b2fc429a0` la demolición y sustitución del suelo y de la solera, garantizando la correcta nivelación y alineación del nuevo suelo,  _(vía it; 6 conceptos)_
-**la demolición y reposición del pavimento y la solera, con la aplicación de capas intermedias de refuerzo si es necesario,**
-- [ ] `eac290e78196` la demolición y sustitución de la carretera y del solera, con la aplicación de capas intermedias de refuerzo en caso necesario,  _(vía fr; 6 conceptos)_
-- [ ] `1761711049b8` la demolición y sustitución del suelo y de la solera, con la aplicación, en caso necesario, de capas intermedias de refuerzo,  _(vía it; 6 conceptos)_
-- [ ] `c7b578aa6ea5` rotura y sustitución del parche y de la solara, si es necesario mediante la aplicación de capas de refuerzo intermedio,  _(vía de; 6 conceptos)_
-**la demolición y reposición del pavimento y la solera, garantizando la adherencia y estabilidad del nuevo material aplicado,**
-- [ ] `bed0f9d6d24d` la demolición y sustitución de la carretera y del suelo, garantizando la adherencia y la estabilidad del nuevo material aplicado,  _(vía fr; 6 conceptos)_
-- [ ] `a0a089b98b14` la demolición y sustitución del suelo y de la solera, garantizando la adhesión y la estabilidad del nuevo material aplicado,  _(vía it; 6 conceptos)_
-- [ ] `7039a7340c4a` rotura y sustitución del parche y de la Solera para garantizar la adherencia y estabilidad del nuevo material,  _(vía de; 6 conceptos)_
-**la demolición y reposición del pavimento y la solera, incluyendo la preparación del subrasante y la compactación adecuada del nuevo material,**
-- [ ] `e43f6a494071` la demolición y sustitución de la carretera y del suelo, incluida la preparación de la subrasaje y la compactación adecuada del nuevo material,  _(vía fr; 6 conceptos)_
-- [ ] `04d1a44e8a1e` la demolición y sustitución del suelo y la solera, incluida la preparación del sustrato y la compactación adecuada del nuevo material,  _(vía it; 6 conceptos)_
-- [ ] `1a8bba17658d` rotura y sustitución del parche y de la solera, incluida la preparación de la subrasión y la compactación adecuada del nuevo material;  _(vía de; 6 conceptos)_
-**la demolición y reposición del pavimento y la solera, incluyendo la verificación de la integridad estructural del subrasante,**
-- [ ] `8674d24c2ede` la demolición y sustitución de la carretera y del suelo, incluida la verificación de la integridad estructural del subrasante,  _(vía fr; 6 conceptos)_
-- [ ] `80944aba066a` la demolición y sustitución del suelo y del solero, incluida la verificación de la integridad estructural del sustrato,  _(vía it; 6 conceptos)_
-- [ ] `6da2d7dd6fa9` rotura y sustitución del parche y de la solera, incluida la comprobación de la integridad estructural del suprasante,  _(vía de; 6 conceptos)_
 **la desintegración de roca compacta,**
 - [ ] `c63b3f3d5cf5` desintegración compacta de la roca,  _(vía it; 7 conceptos)_
 - [ ] `19c374dd3f2c` podredumbre compacta de la roca,  _(vía fr; 7 conceptos)_
 - [ ] `6fbe4b2964b9` Rocas compactas;  _(vía de; 7 conceptos)_
-**la desmantelación y la reconstrucción del firme y del pavimento,**
-- [ ] `9b81cdb34061` desmantelamiento y reconstrucción de la explotación y la acera,  _(vía it; 1 concepto)_
-- [ ] `4f2a64620690` el desmantelamiento y la reconstrucción de la empresa y de la carretera,  _(vía fr; 1 concepto)_
-- [ ] `b54b81936292` extracción y reconstrucción de la planta y del parche,  _(vía de; 1 concepto)_
 **la desmantelación y la reinstalación del pavimento y la solera,**
-- [ ] `06599065976a` el desmantelamiento y la reinstalación del parche y de la solera,  _(vía de; 1 concepto)_
-- [ ] `eb7ae3e497a2` el desmantelamiento y la reinstalación del suelo y de la solera,  _(vía it; 1 concepto)_
 - [ ] `3c6413416679` el desmontaje y el reasentamiento del pavimentación y del solera,  _(vía fr; 1 concepto)_
-**la desmantelación y reemplazo del pavimento y la losa,**
-- [ ] `f485bdeb9998` el desmantelamiento y la sustitución del parche y del bramido,  _(vía de; 6 conceptos)_
-- [ ] `c629825a4225` el desmantelamiento y la sustitución del suelo y de la placa,  _(vía it; 6 conceptos)_
-- [ ] `b4e271e855d4` el desmontaje y la sustitución de la carretera y de la baldosa,  _(vía fr; 6 conceptos)_
-**la desmantelación y reinstalación del firme y del pavimento,**
-- [ ] `6984ebaab0b9` desmantelamiento y reinstalación de la explotación y del suelo,  _(vía it; 6 conceptos)_
-- [ ] `8a6d9ea36c88` desmantelamiento y reinstalación de la planta y del parche,  _(vía de; 6 conceptos)_
-- [ ] `0d016012c2b8` desmontaje y reinstalación de la empresa y de la carretera,  _(vía fr; 6 conceptos)_
-**la desmantelación y reinstalación del pavimento y la base,**
-- [ ] `8878abeeb20d` desmantelamiento y reinstalación del suelo y de la base,  _(vía it; 6 conceptos)_
-- [ ] `76a469c97276` Desmontar y reinstalar el camino y la base,  _(vía de; 6 conceptos)_
-- [ ] `245842452576` el desmantelamiento y el reasentamiento de la carretera y de la base,  _(vía fr; 6 conceptos)_
 **la destrucción de roca sólida,**
 - [ ] `d929e8a76110` la destrucción de la roca sólida,  _(vía it; 7 conceptos)_
 - [ ] `e47847a903bc` la destrucción de rocas sólidas,  _(vía fr; 7 conceptos)_
-**la destrucción y el reemplazo del pavimento y la solera,**
-- [ ] `9233ce9689b8` la destrucción y sustitución de la carretera y del suelo,  _(vía fr; 1 concepto)_
-- [ ] `2fc87fe4df74` la destrucción y sustitución del parche y de la solara,  _(vía de; 1 concepto)_
-- [ ] `1bec0df7da4a` la destrucción y sustitución del suelo y de la solera,  _(vía it; 1 concepto)_
-**la destrucción y la reinstalación del firme y del pavimento,**
-- [ ] `301e06fdcc13` la destrucción y el reasentamiento de la empresa y de la carretera,  _(vía fr; 1 concepto)_
-- [ ] `ecec036f4857` la destrucción y la reinstalación de la explotación y la acera,  _(vía it; 1 concepto)_
-- [ ] `c0ea0edf1f96` la destrucción y reinstalación de la empresa y del parche,  _(vía de; 1 concepto)_
-**la destrucción y reubicación del firme y del pavimento,**
-- [ ] `e8f3acbc48fb` destrucción y reubicación de la empresa y de la acera,  _(vía de; 6 conceptos)_
-- [ ] `567935f2d90b` la destrucción y el desplazamiento de la empresa y de la carretera,  _(vía fr; 6 conceptos)_
-- [ ] `3f4729609e64` la destrucción y transferencia de la explotación y el suelo,  _(vía it; 6 conceptos)_
 **la eliminación de roca resistente,**
 - [ ] `1e69db1a0d24` la eliminación de la roca resistente,  _(vía it; 7 conceptos)_
 - [ ] `78ae6734dd6a` la eliminación de rocas resistentes;  _(vía de; 7 conceptos)_
 - [ ] `7da7efc94563` la extracción de rocas resistentes,  _(vía fr; 7 conceptos)_
-**la eliminación y el reemplazo del pavimento y la solera,**
-- [ ] `dd11b4821372` eliminación y sustitución de parches y Solera,  _(vía de; 1 concepto)_
-- [ ] `5fe182faa761` eliminación y sustitución de suelo y solera,  _(vía it; 1 concepto)_
-- [ ] `b02cec159f95` la retirada y sustitución de las carreteras y las soleras,  _(vía fr; 1 concepto)_
-**la eliminación y la reconstrucción del firme y del pavimento,**
-- [ ] `96fc9bb70529` la distancia y la reconstrucción de la planta y del parche,  _(vía de; 1 concepto)_
-- [ ] `d8bc63b2a4e7` la retirada y reconstrucción de la empresa y de la carretera,  _(vía fr; 1 concepto)_
-- [ ] `b36e82e14b07` la retirada y reconstrucción de la explotación y del suelo,  _(vía it; 1 concepto)_
-**la eliminación y la restauración del firme y del pavimento,**
-- [ ] `388e7245dd35` la eliminación y restauración de la planta y del parche;  _(vía de; 1 concepto)_
-- [ ] `d6fc356442ac` la retirada y restauración de la empresa y de la carretera,  _(vía fr; 1 concepto)_
-- [ ] `98486f23e392` la retirada y restauración de la explotación y del suelo,  _(vía it; 1 concepto)_
-**la eliminación y reinstalación del firme y del pavimento,**
-- [ ] `ab3306a29d1b` la eliminación y la reinstalación de la planta y del parche;  _(vía de; 6 conceptos)_
-- [ ] `b33391f0251f` la retirada y el reasentamiento de la empresa y de la carretera,  _(vía fr; 6 conceptos)_
-- [ ] `de586e5e6886` la retirada y la reinstalación de la explotación y del suelo,  _(vía it; 6 conceptos)_
-**la eliminación y reinstalación del pavimento y la base,**
-- [ ] `a54d286bd8a5` la eliminación y reinstalación del parche y de la base del suelo;  _(vía de; 6 conceptos)_
-- [ ] `5f8bd79fd840` la retirada y el reasentamiento de la carretera y de la base,  _(vía fr; 6 conceptos)_
-- [ ] `ca9106c5c3b6` la retirada y la reinstalación del suelo y de la base,  _(vía it; 6 conceptos)_
 **la eliminación y reinstalación del pavimento y la losa de base,**
-- [ ] `da3be3ce81dc` la eliminación y reinstalación de los revestimientos de suelos y los paneles de suelo;  _(vía de; 6 conceptos)_
-- [ ] `5a0cb7ad392a` la retirada y el reasentamiento del suelo y de la plancha de base,  _(vía fr; 6 conceptos)_
 - [ ] `4b6e50db56ba` la retirada y la reinstalación del pavimento y de la placa base,  _(vía it; 6 conceptos)_
-**la excavación de los costados y el refuerzo temporal, seguido de la reposición del balasto extraído,**
-- [ ] `de042881f869` la excavación de los lados y el refuerzo temporal, seguido de la sustitución del lastre extraído,  _(vía fr; 7 conceptos)_
-- [ ] `4ac861e3cefa` los trabajos de excavación de los lados y el refuerzo temporal, seguido de la sustitución del lastre extraído,  _(vía de; 7 conceptos)_
-**la excavación de los laterales y el apuntalamiento temporal, seguido de la reposición del balasto extraído,**
-- [ ] `c840ec1d4bbf` la excavación de los lados y el soporte temporal, seguido de la sustitución del lastre extraído,  _(vía fr; 7 conceptos)_
-- [ ] `c003b65c3e4e` la extracción de los lados y el soporte temporal, seguido de la sustitución del lastre extraído,  _(vía de; 7 conceptos)_
 **la excavación lateral y el soporte temporal de los bordes, seguido de la reinstalación del balasto extraído,**
-- [ ] `13963b7ab69a` la excavación lateral y el soporte temporal de los bordes, seguido de la reinstalación del lastre extraído,  _(vía fr; 7 conceptos)_
 - [ ] `2ba1a89b2959` los trabajos de excavación lateral y el soporte temporal de los bordes, seguido de la reinstalación del balasto extraído,  _(vía de; 7 conceptos)_
 **la extracción lateral y el apuntalamiento temporal de los bordes, con la reubicación del balasto removido después,**
 - [ ] `28f2734a6470` la aspiración lateral y el soporte temporal de los bordes, después de lo cual se retira el balasto;  _(vía de; 7 conceptos)_
-- [ ] `a7feb4f798f6` la extracción lateral y el soporte temporal de los bordes, con la transferencia del lastre eliminado posteriormente,  _(vía it; 7 conceptos)_
-- [ ] `f2d78f437f9d` la extracción lateral y el soporte temporal de los bordes, quitando posteriormente el movimiento del lastre,  _(vía fr; 7 conceptos)_
 **la extracción lateral y el refuerzo temporal de los lados, con la reubicación del balasto removido después,**
-- [ ] `b4fb86d369fe` extracción lateral y refuerzo temporal de los lados, con posterior retirada del lastre,  _(vía it; 7 conceptos)_
 - [ ] `b2261aa261e9` la aspiración lateral y el refuerzo temporal de los lados, seguido del desplazamiento del balasto;  _(vía de; 7 conceptos)_
-- [ ] `de2da5fc029d` la extracción lateral y el refuerzo temporal de los lados, retirando posteriormente el desplazamiento del lastre,  _(vía fr; 7 conceptos)_
 **la fragmentación de roca compacta y resistente,**
 - [ ] `329fbdf07456` fragmentación compacta y resistente de rocas;  _(vía de; 7 conceptos)_
 - [ ] `3ca33b40f762` fragmentación de la roca compacta y resistente,  _(vía it; 7 conceptos)_
-- [ ] `28c8753d9eed` fragmentación rocosa compacta y resistente,  _(vía fr; 7 conceptos)_
 **la fragmentación de roca compacta,**
 - [ ] `2bab754f2bb6` fragmentación compacta de rocas,  _(vía de; 7 conceptos)_
 - [ ] `0ebc20bf4055` fragmentación de la roca compacta,  _(vía it; 7 conceptos)_
 - [ ] `c7a359b68c87` fragmentación de rocas compactas,  _(vía fr; 7 conceptos)_
-**la preparación y la nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación, desencofrado,**
-- [ ] `fc0d9905956c` la preparación y el corte del suelo, el suministro y el montaje del encofrado, los elementos de fijación, el adiestramiento,  _(vía fr; 6 conceptos)_
-- [ ] `60570c5aadd9` la preparación y nivelación del suelo, el suministro y el montaje del encofrado, elementos de fijación, decoiling,  _(vía de; 6 conceptos)_
-- [ ] `fb5eb887115a` la preparación y nivelación del suelo, el suministro y montaje de encofrados, elementos de fijación, amortización,  _(vía it; 6 conceptos)_
-**la preparación y nivelación adecuada de la solera, el suministro y montaje del encofrado, elementos de fijación requeridos, y el desencofrado subsiguiente,**
-- [ ] `7af174d8ac61` la preparación y el corte adecuado del suelo, el suministro y montaje del encofrado, los elementos de fijación necesarios y el encofrado posterior,  _(vía fr; 6 conceptos)_
-- [ ] `436991fa8395` la preparación y la nivelación adecuada del suelo, el suministro y el montaje de las encofradas, los elementos de fijación necesarios y las encofradas posteriores,  _(vía it; 6 conceptos)_
-- [ ] `0c37b3865946` preparación y nivelación adecuada del suelo, suministro e instalación del encofrado, los elementos de fijación necesarios y el encofrado posterior;  _(vía de; 6 conceptos)_
-**la preparación y nivelación adecuada de la solera, suministro y montaje del encofrado, elementos de fijación requeridos, y el desencofrado subsiguiente,**
-- [ ] `e7407c41c60f` la preparación y el corte adecuado del encofrado, el suministro y el montaje del encofrado, los elementos de fijación requeridos y el encofrado posterior,  _(vía fr; 1 concepto)_
-- [ ] `3783844c3fab` la preparación y la nivelación adecuada de las encofradas, el suministro y el montaje de las encofradas, los elementos de fijación requeridos y las encofradas sucesivas,  _(vía it; 1 concepto)_
-- [ ] `82a1997b2169` preparar y nivelar adecuadamente el encofrado, el suministro y el montaje del encofrado, los elementos de fijación necesarios y el encofrado posterior;  _(vía de; 1 concepto)_
-**la preparación y nivelación de la solera, el suministro y montaje del encofrado, elementos de fijación apropiados, y el desencofrado posterior,**
-- [ ] `601dd53939d7` la preparación y el corte del solera, el suministro y el montaje del encofrado, los elementos de fijación adecuados y el encofrado posterior,  _(vía fr; 5 conceptos)_
-- [ ] `1df1b686895b` la preparación y nivelación de la Solera, el suministro y el montaje del encofrado, los elementos de fijación adecuados y el encofrado posterior;  _(vía de; 5 conceptos)_
-- [ ] `e469ff3c0782` la preparación y nivelación del solero, el suministro y montaje de la caja de acero, los elementos de fijación adecuados y las encofradas posteriores,  _(vía it; 5 conceptos)_
-**la preparación y nivelación de la solera, suministro y montaje del encofrado, elementos de fijación, desencofrado,**
-- [ ] `b586dc24deb1` la preparación y el corte del suelo, el suministro y el montaje del encofrado, de los elementos de fijación, del adiestramiento,  _(vía fr; 1 concepto)_
-- [ ] `d27b6f31e6dc` preparación y nivelación del suelo, entrega e instalación del encofrado, elementos de fijación, descapado,  _(vía de; 1 concepto)_
-- [ ] `0f8af36940e9` preparación y nivelación del suelo, suministro y montaje de encofrados, elementos de fijación, decoloración,  _(vía it; 1 concepto)_
-**la preparación y nivelación meticulosa de la solera, el suministro y montaje cuidadoso del encofrado, elementos de fijación adecuados, y el desencofrado posterior,**
-- [ ] `5fe8c3e005ad` la preparación meticulosa y la nivelación de la solera, el suministro y el cuidado de montaje de la caja, los elementos de fijación adecuados y las sucesivas encofradas,  _(vía it; 6 conceptos)_
-- [ ] `4d86c01b5699` la preparación y el corte meticuloso del solera, el suministro y el montaje minucioso del encofrado, los elementos de fijación adecuados y el encofrado posterior,  _(vía fr; 6 conceptos)_
-- [ ] `35efbd9e52ea` la preparación y nivelación cuidadosas de la Solera, la entrega y el montaje cuidadoso del encofrado, los elementos de fijación adecuados y el encofrado posterior;  _(vía de; 6 conceptos)_
-**la preparación y nivelación meticulosa de la solera, suministro y montaje cuidadoso del encofrado, elementos de fijación adecuados, y el desencofrado posterior,**
-- [ ] `4019b7057304` la meticulosa preparación y nivelación del suelo, el suministro y el cuidado del montaje de las encofradas, los elementos de fijación adecuados y las encofradas sucesivas,  _(vía it; 1 concepto)_
-- [ ] `0755c826f7e9` la preparación y el corte meticuloso del suelo, el suministro y el montaje minucioso del encofrado, de los elementos de fijación adecuados y de los encofrados posteriores,  _(vía fr; 1 concepto)_
-- [ ] `e5bb0abaae34` preparación cuidadosa y nivelación del suelo, entrega y montaje cuidadoso del encofrado, elementos de fijación adecuados y posterior encofrado;  _(vía de; 1 concepto)_
-**la preparación y nivelación precisa de la solera, el suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado final,**
-- [ ] `c77760d224bc` la preparación y el corte preciso del solera, el suministro y el montaje del encofrado, los elementos de fijación necesarios y el encofrado final,  _(vía fr; 6 conceptos)_
-- [ ] `0a18a205af92` la preparación y nivelación exactas de la Solera, el suministro y el montaje del encofrado, los elementos de fijación necesarios y el encofrado definitivo;  _(vía de; 6 conceptos)_
-- [ ] `4f25874970fe` la preparación y nivelación precisas del solero, el suministro y montaje de la caja de acero, los elementos de fijación necesarios y la caja de acero final,  _(vía it; 6 conceptos)_
-**la preparación y nivelación precisa de la solera, suministro y montaje del encofrado, elementos de fijación necesarios, y el desencofrado final,**
-- [ ] `498d0d27d3f2` la preparación y el corte preciso del suelo, el suministro y el montaje del encofrado, los elementos de fijación necesarios y el encofrado final,  _(vía fr; 1 concepto)_
-- [ ] `f6a65b3c6c1e` la preparación y nivelación exacta del suelo, el suministro y montaje de la caja de acero, los elementos de fijación necesarios y la caja de acero final,  _(vía it; 1 concepto)_
-- [ ] `bfd5fd93c5f5` la preparación y nivelación exactas del suelo, el suministro y el montaje del encofrado, los elementos de fijación necesarios y el encofrado definitivo;  _(vía de; 1 concepto)_
-**la remoción lateral y el soporte provisional de los bordes, con la reinstalación del balasto retirado posteriormente,**
-- [ ] `f0864ed3cf3b` la distancia lateral y el soporte provisional de los bordes, seguido de la reinstalación del balasto;  _(vía de; 7 conceptos)_
-- [ ] `7e96ace693ae` la retirada lateral y el soporte provisional de los bordes, con la reinstalación del lastre posteriormente eliminado,  _(vía it; 7 conceptos)_
-- [ ] `0899ca37303d` la retirada lateral y el soporte temporal de los bordes, después de lo cual se retira la instalación del lastre,  _(vía fr; 7 conceptos)_
-**la remoción y el restablecimiento del pavimento y la solera,**
-- [ ] `c8f6a61a5ad3` la eliminación y restauración del parche y de la solera,  _(vía de; 1 concepto)_
-- [ ] `dcc65f33669c` la retirada y restauración de la carretera y del suelo,  _(vía fr; 1 concepto)_
-- [ ] `de779e6153a9` la retirada y restauración del suelo y de la solera,  _(vía it; 1 concepto)_
-**la remoción y reinstalación del firme y del pavimento,**
-- [ ] `b4dacd1b44b4` la eliminación y la reinstalación de la planta y del parche;  _(vía de; 6 conceptos)_
-- [ ] `82a3457d6868` la retirada y el reasentamiento de la empresa y de la carretera,  _(vía fr; 6 conceptos)_
-- [ ] `046829eaeaea` la retirada y la reinstalación de la explotación y del suelo,  _(vía it; 6 conceptos)_
-**la retirada y colocación nuevamente del firme y del pavimento,**
-- [ ] `93b1ccece5b6` la eliminación y el reposicionamiento de la planta y del parche;  _(vía de; 6 conceptos)_
-- [ ] `d85b55ffb443` la retirada y reposicionamiento de la empresa y de la carretera,  _(vía fr; 6 conceptos)_
-- [ ] `155c5b2a12fa` la retirada y reposicionamiento de la explotación y del suelo,  _(vía it; 6 conceptos)_
-**la retirada y el reemplazo del pavimento y la solera,**
-- [ ] `b26fce0c54cc` la eliminación y sustitución del parche y de la solara,  _(vía de; 1 concepto)_
-- [ ] `af4f5b136eae` la eliminación y sustitución del suelo y del solero,  _(vía it; 1 concepto)_
-- [ ] `fdda1d7b737c` la retirada y sustitución de la carretera y del suelo,  _(vía fr; 1 concepto)_
-**la retirada y el restablecimiento del pavimento y la solera,**
-- [ ] `400392fe85c3` la eliminación y restauración del parche y de la solera,  _(vía de; 1 concepto)_
-- [ ] `a2af0e281729` la retirada y restauración de la carretera y del suelo,  _(vía fr; 1 concepto)_
-- [ ] `0b6453dfa3a2` la retirada y restauración del suelo y de la solera,  _(vía it; 1 concepto)_
-**la retirada y la reinstalación del firme y del pavimento,**
-- [ ] `ccf89725f5c8` la eliminación y la reinstalación de la planta y del parche;  _(vía de; 1 concepto)_
-- [ ] `4072d1d51c1d` la retirada y el reasentamiento de la empresa y de la carretera,  _(vía fr; 1 concepto)_
-- [ ] `4954544e1049` la retirada y la reinstalación de la explotación y del suelo,  _(vía it; 1 concepto)_
-**la retirada y la restauración del firme y del pavimento,**
-- [ ] `87cee62b1cb0` la eliminación y restauración de la planta y del parche;  _(vía de; 1 concepto)_
-- [ ] `8fb6ee0c21da` la retirada y restauración de la empresa y de la carretera,  _(vía fr; 1 concepto)_
-- [ ] `6db7a1e0f07e` la retirada y restauración de la explotación y del suelo,  _(vía it; 1 concepto)_
-**la retirada y reemplazo del firme y del pavimento,**
-- [ ] `a8671ad65526` la distancia y la sustitución de la planta y del parche;  _(vía de; 6 conceptos)_
-- [ ] `53324ac622fb` la retirada y sustitución de la empresa y de la carretera,  _(vía fr; 6 conceptos)_
-- [ ] `30eddbe71e51` la retirada y sustitución de la explotación y del suelo,  _(vía it; 6 conceptos)_
-**la retirada y reemplazo del pavimento y la base,**
-- [ ] `da4bda7b1e64` distancia y sustitución de la acera y el suelo,  _(vía de; 6 conceptos)_
-- [ ] `63ba766f4f68` eliminación y sustitución del suelo y de la base,  _(vía it; 6 conceptos)_
-- [ ] `bdec542f5401` la retirada y sustitución de la carretera y de la base,  _(vía fr; 6 conceptos)_
-**la retirada y reinstalación del pavimento y la losa,**
-- [ ] `b44e21e573d7` la eliminación y reinstalación del parche y de los parpadeos,  _(vía de; 6 conceptos)_
-- [ ] `705d060d2025` la retirada y el reasentamiento de la carretera y de la plancha,  _(vía fr; 6 conceptos)_
-- [ ] `ef2561985c60` la retirada y la reinstalación del suelo y de la placa,  _(vía it; 6 conceptos)_
 **la ruptura de roca endurecida,**
 - [ ] `1a7e43a4a108` Roca endurecida;  _(vía de; 7 conceptos)_
 - [ ] `61d81a45e975` rotura de roca endurecida,  _(vía it; 7 conceptos)_
 - [ ] `150995bc684a` una rotura de roca endurecida,  _(vía fr; 7 conceptos)_
-**material de cantera**
-- [ ] `ca5cf0fc778a` equipo de carrera  _(vía fr; 1 concepto)_
-- [ ] `c20b7ae14c2d` Extracción de piedras y tierras  _(vía de; 1 concepto)_
 **material de la traza**
-- [ ] `ceea30a6b85c` material de pista  _(vía it; 1 concepto)_
-- [ ] `b6484cb33763` Material de referencia  _(vía de; 1 concepto)_
 - [ ] `ba4d4497b71e` traza de material  _(vía fr; 1 concepto)_
 **mediano (150x110x180 cm)**
 - [ ] `2424c4204c24` media (150x110x180 cm)  _(vía fr; 1 concepto)_
-- [ ] `a3150c013b4a` médium (150x110x180 cm)  _(vía it; 1 concepto)_
 **mediano, con dimensiones de 150x110x180 cm**
 - [ ] `921d8e607587` media, con dimensiones de 150x110x180 cm  _(vía fr; 1 concepto)_
 - [ ] `b60ec7a785bd` Media, de dimensiones 150x110x180 cm  _(vía de; 1 concepto)_
-- [ ] `6f5e158d90a5` médium, con dimensiones de 150x110x180 cm  _(vía it; 1 concepto)_
 **miniatura (90x90x100 cm)**
 - [ ] `8b499a3c9861` thumbnail (90x90x100 cm)  _(vía de; 1 concepto)_
-**nivelación de la solera, montaje del encofrado y desencofrado,**
-- [ ] `e0b446d472a6` el corte del suelo, el montaje del encofrado y del adiestramiento,  _(vía fr; 1 concepto)_
-- [ ] `cae5336b3aa3` nivelación del suelo, montaje de encofrados y decoloración,  _(vía it; 1 concepto)_
-- [ ] `b1fd9f8d0f66` nivelación del suelo, montaje del encofrado y decoiling,  _(vía de; 1 concepto)_
-**nivelación de la solera, montaje del encofrado, desencofrado,**
-- [ ] `8bb54dd894ce` Ensamblaje del suelo, ensamblaje de encofrado, desacoplamiento,  _(vía fr; 7 conceptos)_
-- [ ] `c98c9d9a9b30` nivelación del suelo, encofrado, desacoplamiento,  _(vía de; 7 conceptos)_
-- [ ] `fd44f4ada0f1` nivelación del suelo, montaje encofrado, decoloración,  _(vía it; 7 conceptos)_
-**nivelación de la solera, montaje y desencofrado del encofrado,**
-- [ ] `32a9f4682ba1` el corte del suelo, el montaje y el decofrado del encofrado,  _(vía fr; 1 concepto)_
-- [ ] `948139b61050` nivelación del suelo, montaje y decoilación del encofrado,  _(vía de; 1 concepto)_
-- [ ] `3c6c324b487d` nivelación del suelo, montaje y decoloración de las encofradas,  _(vía it; 1 concepto)_
-**nivelación de la solera, suministro y montaje del encofrado, fijación, desencofrado,**
-- [ ] `7c62ad8c15c9` Encofrado, suministro y montaje de encofrado, fijación, adiestramiento,  _(vía fr; 6 conceptos)_
-- [ ] `bdc19a1ecee5` nivelación, entrega y montaje de encofrados, fijación, decoiling,  _(vía de; 6 conceptos)_
-- [ ] `5b43e6d157d8` nivelación, suministro y montaje de encofrados, fijación, decoloración,  _(vía it; 6 conceptos)_
 **nivelación y preparación de la base, suministro y ensamblaje del encofrado, elementos de anclaje, desmontaje del encofrado,**
-- [ ] `87bcaacb2d52` Encofrado y preparación de la base, suministro y montaje del encofrado, elementos de anclaje, desmontaje del encofrado,  _(vía fr; 1 concepto)_
 - [ ] `72d57c1ecc94` nivelación y preparación de la base, entrega e instalación del encofrado, elementos de anclaje, desmantelamiento del encofrado,  _(vía de; 1 concepto)_
-- [ ] `b17ccc5b203e` nivelación y preparación de la base, suministro y montaje de la caja de acero, elementos de anclaje, desmantelamiento de la caja de acero,  _(vía it; 1 concepto)_
-**nivelación y preparación de la solera, entrega y montaje del encofrado, elementos de fijación, retirada del encofrado,**
-- [ ] `b827b6cfff6c` Encofrado y preparación del encofrado, entrega y montaje del encofrado, elementos de fijación, eliminación del encofrado,  _(vía fr; 1 concepto)_
-- [ ] `79b1f0d007c2` nivelación y preparación de encofrados, entrega y montaje de encofrados, elementos de fijación, eliminación de encofrados,  _(vía it; 1 concepto)_
-- [ ] `d91405f6fb4c` nivelación y preparación del encofrado, entrega e instalación del encofrado, elementos de fijación, eliminación del encofrado,  _(vía de; 1 concepto)_
-**nivelación y preparación de la solera, provisión y colocación del encofrado, elementos de fijación, retirada del encofrado,**
-- [ ] `61e613e4c42d` Encofrado y preparación del encofrado, suministro e instalación del encofrado, elementos de fijación, eliminación del encofrado,  _(vía fr; 6 conceptos)_
-- [ ] `b42b7b7e7662` nivelación y preparación de encofrados, puesta a disposición y colocación de encofrados, fijación de elementos, eliminación de encofrados,  _(vía it; 6 conceptos)_
-- [ ] `f7b6185b556d` nivelación y preparación del encofrado, puesta a disposición y colocación del encofrado, elementos de fijación, eliminación del encofrado,  _(vía de; 6 conceptos)_
-**nivelación y preparación de la solera, provisión y colocación del encofrado, elementos de sujeción, retirada del encofrado,**
-- [ ] `a1f484936230` el corte y la preparación del encofrado, el suministro y la colocación del encofrado, los elementos de fijación, la supresión del encofrado,  _(vía fr; 1 concepto)_
-- [ ] `69a4c4a13260` nivelación y preparación de las encofradas, puesta a disposición y colocación de las encofradas, elementos de fijación, eliminación de encofrados,  _(vía it; 1 concepto)_
-- [ ] `22c212283122` nivelación y preparación del encofrado, puesta a disposición y colocación del encofrado, elementos de fijación, eliminación del encofrado,  _(vía de; 1 concepto)_
-**nivelación y preparación de la solera, provisión y montaje del encofrado, elementos de sujeción, desmontaje del encofrado,**
-- [ ] `b19d1b2e45f3` el corte y la preparación del suelo, el suministro y montaje del encofrado, los elementos de fijación, el desmontaje del encofrado,  _(vía fr; 1 concepto)_
-- [ ] `cb4f9a317de9` nivelación y preparación del revestimiento del suelo, suministro e instalación del encofrado, elementos de fijación, desmantelamiento del encofrado,  _(vía de; 1 concepto)_
-- [ ] `66a3f2ebdf57` nivelación y preparación del suelo, puesta a disposición y montaje de las encofradas, elementos de fijación, desmontamiento de las encofradas,  _(vía it; 1 concepto)_
-**nivelación y preparación de la solera, provisión y montaje del encofrado, elementos de sujeción, retirada del encofrado,**
-- [ ] `9259c4d992f3` el corte y la preparación del suelo, el suministro y montaje del encofrado, los elementos de fijación, la eliminación del encofrado,  _(vía fr; 6 conceptos)_
-- [ ] `da1ab4f8b648` nivelación y preparación del revestimiento del suelo, suministro e instalación del encofrado, elementos de fijación, eliminación del encofrado,  _(vía de; 6 conceptos)_
-- [ ] `6dbec5e4b86e` nivelación y preparación del suelo, suministro y montaje de encofrados, elementos de fijación, eliminación de encofrados,  _(vía it; 6 conceptos)_
-**nivelación y preparación de la solera, suministro y montaje del encofrado, elementos de sujeción, desmontaje del encofrado,**
-- [ ] `b660dbf7242c` Encofrado y preparación del encofrado, suministro y montaje del encofrado, elementos de fijación, desmontaje del encofrado,  _(vía fr; 6 conceptos)_
-- [ ] `dd969fc1a677` nivelación y preparación de encofrados, suministro y montaje de encofrados, elementos de fijación, desmantelamiento de encofrados,  _(vía it; 6 conceptos)_
-- [ ] `44f8c0263ab9` nivelación y preparación del encofrado, entrega e instalación del encofrado, elementos de fijación, desmantelamiento del encofrado,  _(vía de; 6 conceptos)_
 **pequeño (90x90x100 cm)**
 - [ ] `e858b6c53073` pequeña (90x90x100 cm)  _(vía fr; 1 concepto)_
 **pequeño formato (90x90x100 cm)**
 - [ ] `0c871f86b33f` formato pequeño (90x90x100 cm)  _(vía fr; 1 concepto)_
-**pozo de ataque, entibación, tubo guía de 500 mm, hilos guía y sellado con poliuretano.**
-- [ ] `ae8adf8d839d` pozo de acoplamiento, intibación, tubo guía de 500 mm, cables guía y sellados con poliuretano.  _(vía it; 5 conceptos)_
-- [ ] `71f44dc34c74` pozo de ataque, de intimidación, tubo de guía de 500 mm, hilo de guía y sellado con poliuretano.  _(vía fr; 5 conceptos)_
-- [ ] `6c6ec73c65d0` Pozo de ataque, intibación, tubo guía de 500 mm, hilos guía y sellado con poliuretano.  _(vía de; 5 conceptos)_
-**pozo de ataque, entibación, tubo guía de 500 mm, hilos guía y sellado de embocaduras.**
-- [ ] `41cdc135accd` pozo de acoplamiento, intibación, guía del tubo de 500 mm, hilo guía y sello de emboscadas.  _(vía it; 4 conceptos)_
-- [ ] `c8e31841357c` pozo de ataque, de intimidación, guía de pipa de 500 mm, hilo de guía y junta de embuses.  _(vía fr; 4 conceptos)_
-- [ ] `8290c072ce2f` Pozo de ataque, intibación, guía de tuberías de 500 mm, guías y sellos de Ambushes.  _(vía de; 4 conceptos)_
-**pozo de ataque, entibación, tubo guía de 500 mm, hilos guía y sellado.**
-- [ ] `4ac257b63e6d` pozo de acoplamiento, intibación, tubo guía de 500 mm, cables guía y sellado.  _(vía it; 5 conceptos)_
-- [ ] `bf9bd8708cb1` pozo de ataque, de intimidación, tubo de guía de 500 mm, hilo de guía y estanqueidad.  _(vía fr; 5 conceptos)_
-- [ ] `e1905f21ce5d` Pozo de ataque, intibación, tubo guía de 500 mm, guías y sello.  _(vía de; 5 conceptos)_
 **se incluye soporte de elevación**
-- [ ] `050442af76ca` Percha elevadora incluida  _(vía de; 1 concepto)_
 - [ ] `9224628cccc4` Soporte de elevación incluido  _(vía fr; 1 concepto)_
 **subvial**
 - [ ] `3d9e83351d28` Mandíbula inferior  _(vía de; 7 conceptos)_
 **subvial cruce**
 - [ ] `9a4070e2b0d7` Cruce subvial  _(vía it; 7 conceptos)_
-- [ ] `644171a8167c` transición a nivel subvial  _(vía fr; 7 conceptos)_
-**tamaño extendido (200x120x180 cm)**
-- [ ] `a0e861934128` tamaño ampliado (200x120x180 cm)  _(vía fr; 1 concepto)_
 **tamaño mayor (200x120x180 cm)**
 - [ ] `8122ebe3aa67` mayor (200x120x180 cm)  _(vía de; 1 concepto)_
 - [ ] `113f8ccf9a3e` tamaño más grande (200x120x180 cm)  _(vía fr; 1 concepto)_
-**tamaño mediano de 150x110x180 cm**
-- [ ] `af274469ffb5` tamaño medio 150x110x180 cm  _(vía fr; 1 concepto)_
-**tapa de hormigón**
-- [ ] `2cb7d902fcbf` Tapa de cemento  _(vía it; 1 concepto)_
 **tapa o tapas de hormigón**
 - [ ] `845e12033e85` Mantas o tapas de hormigón  _(vía it; 1 concepto)_
 - [ ] `97df2a3b61a8` tapas o tapas de hormigón  _(vía fr; 1 concepto)_
 - [ ] `df4455ea0d13` Tapones o tapas de hormigón  _(vía de; 1 concepto)_
 **tipo mediano (150x110x180 cm)**
 - [ ] `a5f8f2b53222` Tasa media (150x110x180 cm)  _(vía it; 1 concepto)_
-- [ ] `ab86e90896bf` tipo medio (150x110x180 cm)  _(vía fr; 1 concepto)_
-**tipo mediano, con dimensiones de 150 cm de largo, 110 cm de ancho y 180 cm de alto**
-- [ ] `9057bbae5b29` de tipo medio, con dimensiones 150 cm largas, 110 cm anchas y 180 cm elevadas  _(vía fr; 1 concepto)_
-- [ ] `99cc976f2161` tipo medio, con dimensiones de 150 cm largas, 110 cm anchas y 180 cm altas  _(vía it; 1 concepto)_
-**tipo mediano, con medidas de 150 cm de largo, 110 cm de ancho y 180 cm de profundidad**
-- [ ] `eb10238fb8cd` tipo medio, con mediciones de 150 cm longitud, 110 cm anchura y 180 cm profundidad  _(vía fr; 1 concepto)_
-- [ ] `6ca5576c01db` tipo medio, con medidas de 150 cm longitud, 110 cm anchura y 180 cm profundidad  _(vía it; 1 concepto)_
-**tipo mediano, con medidas de 150 cm de longitud, 110 cm de anchura y 180 cm de altura**
-- [ ] `649ac1f15c43` Tipo medio, con dimensiones de 150 cm longitud, 110 cm anchura y 180 cm altura  _(vía de; 1 concepto)_
-- [ ] `58f750e1e2e6` tipo medio, con mediciones de 150 cm longitud, 110 cm anchura y 180 cm altura  _(vía fr; 1 concepto)_
-- [ ] `7958179065f5` tipo medio, con medidas de 150 cm longitud, 110 cm anchura y 180 cm altura  _(vía it; 1 concepto)_
 **tipo pequeño (90x90x100 cm)**
 - [ ] `addfff2a251e` pequeño tipo (90x90x100 cm)  _(vía fr; 1 concepto)_
 **tipo pequeño, con dimensiones compactas de 90x90x100 cm, ideal para espacios reducidos**
@@ -1087,26 +306,9 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `952902ae94e1` pequeño tipo, dimensionado a 90x90x100 cm, para instalaciones de pequeña escala  _(vía fr; 1 concepto)_
 - [ ] `8af6941403cd` tipo pequeño, dimensionado a 90x90x100 cm, para instalaciones a pequeña escala  _(vía it; 1 concepto)_
 - [ ] `01ac1de7f0d5` Un tipo pequeño, dimensionado en 90x90x100 cm para instalaciones más pequeñas  _(vía de; 1 concepto)_
-**ubicada adosada o en la superficie, optimizando el uso del espacio disponible**
-- [ ] `ab7b4b323fa9` situado en terraza o en superficie, optimizando el uso del espacio disponible  _(vía fr; 7 conceptos)_
-- [ ] `4baeb70aaa54` situado terraza o en la superficie, optimizando el uso del espacio disponible  _(vía it; 7 conceptos)_
-- [ ] `53e524df6677` Ubicación terrasada o en la superficie, optimización del uso del espacio disponible  _(vía de; 7 conceptos)_
-**ubicada adosada o en la superficie, permitiendo una fácil inspección y reparación**
-- [ ] `31f4c5838c28` En forma de terraza o situado en la superficie, permite una inspección y reparación sencillas  _(vía de; 7 conceptos)_
-- [ ] `694495e00610` situado en terraza o en la superficie, que permite una inspección y una reparación fáciles  _(vía fr; 7 conceptos)_
-- [ ] `5b1a448b2cd3` situado terraza o en la superficie, permitiendo una fácil inspección y reparación  _(vía it; 7 conceptos)_
-**y la tapa de hormigón**
-- [ ] `f6897b3bdba3` y la cubierta de hormigón  _(vía fr; 1 concepto)_
 **y la tapa, o tapas de hormigón**
 - [ ] `57651ba84b76` y la tapa, o las tapas de hormigón  _(vía fr; 1 concepto)_
-- [ ] `1e2092b73742` y la tapa, o tapas de cemento  _(vía it; 1 concepto)_
 - [ ] `9d7b2e6f4315` y tapas o tapas de hormigón  _(vía de; 1 concepto)_
-**y tapa de hormigón**
-- [ ] `28b359a6347a` y cubierta de hormigón  _(vía fr; 1 concepto)_
-**zona de balasto, ejecutada a mano incluso descerne y entibación de costados y posterior reposición del balasto retirado**
-- [ ] `6fea212c0408` Área de ballast, realizada a mano, incluso con decerne, calefacción lateral y posterior sustitución del lastre quitado  _(vía it; 1 concepto)_
-- [ ] `dd03c3bbbea9` Espacio de lastre, realizado a mano, incluso decorado, calentamiento lateral y sustitución posterior del lastre retirado  _(vía fr; 1 concepto)_
-- [ ] `b600d360d781` Rango de lastre realizado a mano, incluso con trituración, calentamiento lateral y posterior sustitución del lastre alejado  _(vía de; 1 concepto)_
 
 ## Parámetro «ALVEOLOS»
 

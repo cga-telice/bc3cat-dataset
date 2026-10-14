@@ -58,3 +58,6 @@ bt_values:
   label_probability: 0.5
   # tope de generación = 2 × tokens de entrada + 16 (las salidas degeneradas llegaban a 512)
   length_ratio: 2.0
+  # L2: se descartan las variantes que pierden un término de dominio (palabra en <= 35 % de los conceptos)
+  domain_max_df: 0.35
+  domain_terms: data/synthetic/bt_OE/OE_bt_domain_terms.json

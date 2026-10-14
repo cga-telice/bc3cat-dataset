@@ -232,3 +232,55 @@ def value_groups(stage: Mapping, corpus: Sequence[Mapping], stacked: Sequence[Ma
             if s.text and option is not None:
                 groups[(q["parent_key"], s.placeholder)].setdefault(s.text, option)
     return groups, labels
+
+
+# ---------------------------------------------------------------------------
+# Términos de dominio (descarte automático de variantes L2, decisión de César)
+# ---------------------------------------------------------------------------
+
+def _content_words(text: str) -> list[str]:
+    return [w for w in re.findall(r"[^\W\d_]+", _fold(text)) if len(w) >= 4 and w not in _STOP]
+
+
+def domain_terms(docs: Mapping[str, str], max_df: float) -> frozenset:
+    """Palabras con contenido que aparecen en una fracción de conceptos
+    ``<= max_df``: el léxico técnico (entibación, balasto, topo…). Las que
+    salen en muchos conceptos (suministro, montaje…) se consideran genéricas."""
+    df: dict[str, int] = {}
+    for text in docs.values():
+        for w in set(_content_words(text)):
+            df[w] = df.get(w, 0) + 1
+    n = max(len(docs), 1)
+    return frozenset(w for w, c in df.items() if c / n <= max_df)
+
+
+def _stem(word: str) -> str:
+    return word[:max(4, len(word) - 2)]
+
+
+def lost_domain_terms(surface: str, variant: str, terms: frozenset) -> list[str]:
+    """Términos de dominio del original cuya raíz no aparece en la variante
+    (sin acentos; «pozo» → «pozos» o «topo» → «topos» no cuentan como pérdida)."""
+    have = _content_words(variant)
+    out = []
+    for t in dict.fromkeys(_content_words(surface)):
+        if t in terms and not any(w.startswith(_stem(t)) for w in have):
+            out.append(t)
+    return out
+
+
+def concept_docs(stage: Mapping) -> dict[str, str]:
+    """Texto de cada concepto para :func:`domain_terms`: plantillas TEXTO y
+    RESUMEN, variables de texto y valores de los parámetros."""
+    def flat(v):
+        return v if isinstance(v, str) else " ".join(map(str, v or ()))
+
+    out = {}
+    for key, c in stage.items():
+        if not key.endswith("$"):
+            continue
+        parts = [flat(c.get("texto")), flat(c.get("resumen"))]
+        parts += [flat(v) for v in (c.get("text_variables") or {}).values()]
+        parts += [v["value"] for b in (c.get("parameters") or {}).values() for v in b["values"]]
+        out[key] = " ".join(parts)
+    return out

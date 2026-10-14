@@ -163,3 +163,44 @@ def test_menu_dedupes_across_concepts():
     assert a.uid == b.uid  # misma etiqueta, superficie y variante: se aprueba una vez
     md = menu_markdown([a, b])
     assert md.count("- [ ] ") == 1 and "2 conceptos" in md
+
+
+# --- términos de dominio (descarte automático de L2) ----------------------
+
+from synthetic.bt_values import domain_terms, lost_domain_terms  # noqa: E402
+
+_DOCS = {
+    "C1": "Suministro y montaje de canalización con entibación de los costados",
+    "C2": "Suministro y montaje de canaleta en zona de balasto",
+    "C3": "Suministro y montaje de cimentación con micropilotes",
+    "C4": "Suministro y montaje de tubo con topo bajo vías",
+}
+
+
+def test_domain_terms_are_the_rare_content_words():
+    terms = domain_terms(_DOCS, max_df=0.5)
+    assert {"entibacion", "balasto", "micropilotes", "topo"} <= terms
+    assert not {"suministro", "montaje", "de", "con"} & terms
+
+
+@pytest.mark.parametrize(
+    "surface, variant, lost",
+    [
+        ("entibación de los costados", "intimidación de los lados", ["entibacion", "costados"]),
+        ("en zona de balasto", "en zona de lastre", ["balasto"]),
+        ("ejecutado con topo", "realizado con topos", []),           # misma raíz
+        ("suministro y montaje", "alimentación y montaje", []),      # genérico
+    ],
+)
+def test_lost_domain_terms(surface, variant, lost):
+    terms = domain_terms(_DOCS, max_df=0.5)
+    assert lost_domain_terms(surface, variant, terms) == lost
+
+
+def test_concept_docs_join_templates_variables_and_values():
+    from synthetic.bt_values import concept_docs
+
+    docs = concept_docs(_stage())
+    assert set(docs) == {"OEX010$"}
+    text = docs["OEX010$"]
+    assert "Canalización" in text and "rocoso" in text and "Volumen escaso" in text

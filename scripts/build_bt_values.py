@@ -31,8 +31,13 @@ import build_bt  # noqa: E402
 import calibrate_characterization as cal  # noqa: E402
 from synthetic.back_translation import CachedEngine, MarianEngine  # noqa: E402
 from synthetic.bt_masking import MARKER_RE, MaskError, check_masks, mask_surface, unmask_surface  # noqa: E402
+from dataclasses import replace  # noqa: E402
+
 from synthetic.bt_values import (  # noqa: E402
     Candidate,
+    concept_docs,
+    domain_terms,
+    lost_domain_terms,
     filter_candidates,
     menu_markdown,
     source_text,
@@ -117,17 +122,28 @@ def main(argv=None) -> int:
         print(Counter(c.reason for c in candidates if c.status == "rejected"))
         return 0
 
+    # Léxico de dominio: palabras con contenido en <= domain_max_df de los conceptos.
+    # Las variantes L2 que pierden alguno se descartan antes del menú (decisión de César).
+    max_df = cfg["bt_values"]["domain_max_df"]
+    terms = domain_terms(concept_docs(stage), max_df)
+    audit.write_atomic(REPO / cfg["bt_values"]["domain_terms"],
+                       json.dumps({"max_df": max_df, "n": len(terms), "terms": sorted(terms)},
+                                  ensure_ascii=False, indent=1) + "\n")
+
     final = []
     for key in sorted(groups):
         pending = [c for c in candidates if (c.concept, c.placeholder) == key and c.status == "pending"]
-        final += filter_candidates(groups[key], pending)
+        for c in filter_candidates(groups[key], pending):
+            lost = lost_domain_terms(c.surface, c.variant, terms) if c.status == "ok" and not c.label else []
+            final.append(replace(c, status="rejected", reason="domain_term_lost:" + ",".join(lost))
+                         if lost else c)
         final += [c for c in candidates if (c.concept, c.placeholder) == key and c.status == "rejected"]
     rows = [dict(c.__dict__, uid=c.uid, label=labels[(c.concept, c.placeholder)]) for c in final]
     audit.write_atomic(REPO / cfg["bt_values"]["table"],
                        "".join(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in rows))
     audit.write_atomic(REPO / cfg["bt_values"]["menu"],
                        menu_markdown(final, "Variantes de valores y fragmentos para la BT (OE)"))
-    stats = Counter((c.status, c.reason) for c in final)
+    stats = Counter((c.status, (c.reason or "").split(":")[0]) for c in final)
     print(stats)
     print("superficies con alguna variante aceptable:",
           len({(c.concept, c.placeholder, c.surface) for c in final if c.status == "ok"}), "/", len(units))
