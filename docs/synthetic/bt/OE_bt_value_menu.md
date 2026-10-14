@@ -20,10 +20,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `75e5c23b6c6d` Bajo vías transversales  _(vía fr; 7 conceptos)_
 **compacto (90x90x100 cm)**
 - [ ] `9f166a8fa022` compacta (90x90x100 cm)  _(vía de; 1 concepto)_
-**con dimensiones de 110x110x200 cm**
-- [ ] `013cc7ffc885` De dimensiones 110x110x200 cm  _(vía de; 1 concepto)_
-**con dimensiones de 250x150x200 cm**
-- [ ] `685bb1020aaa` De dimensiones 250x150x200 cm  _(vía de; 1 concepto)_
 **con medidas de 110x110x200 cm**
 - [ ] `e92cf892bdf1` por el que se establecen medidas 110x110x200 cm  _(vía de; 1 concepto)_
 **con medidas de 250x150x200 cm**
@@ -315,14 +311,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 **uno alveolo**
 - [ ] `5434f41c61ec` un alveolo  _(vía fr · etiqueta «Alveolos»; 1 concepto)_
 
-## Parámetro «ANCHURA»
-
-**300 milímetros**
-- [ ] `de294d126461` 300 mm  _(vía fr · etiqueta «Ancho»; 1 concepto)_
-**Trescientos milímetros**
-- [ ] `0a390ad48e08` 300 milímetros  _(vía fr · etiqueta «Ancho»; 1 concepto)_
-- [ ] `1a26d28ee7ca` 300 mm  _(vía it · etiqueta «Anchura»; 1 concepto)_
-
 ## Parámetro «APERTURA»
 
 **Automatizado**
@@ -369,11 +357,8 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 **Trayecto**
 - [ ] `c1f5883672ec` Camino  _(vía fr · etiqueta «Acceso»; 1 concepto)_
 - [ ] `77877846e918` Ruta  _(vía it · etiqueta «Acceso»; 1 concepto)_
-**andén**
-- [ ] `26eecf2350d6` plataforma  _(vía fr · etiqueta «Acceso»; 2 conceptos)_
 **carril**
 - [ ] `59cf13ea81a5` pista  _(vía de · etiqueta «Acceso»; 1 concepto)_
-- [ ] `71ad96e80c3f` vía  _(vía fr · etiqueta «Acceso»; 1 concepto)_
 **estación**
 - [ ] `bab4cba7ff02` estación de tren  _(vía de · etiqueta «Acceso»; 2 conceptos)_
 **línea**
@@ -399,8 +384,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 
 **3 a menos de 5 horas**
 - [ ] `d398ff632785` 3 a inferior a 5 horas  _(vía fr · etiqueta «Banda de mantenimiento»; 3 conceptos)_
-**Intervalo de cinco horas o más**
-- [ ] `d20a4177a837` intervalo de 5 horas o más  _(vía de · etiqueta «Banda de mantenimiento»; 8 conceptos)_
 **Intervalo de tres a cinco horas**
 - [ ] `94330dd4632f` Anomalía de tres a cinco horas  _(vía fr · etiqueta «Pande de mantenimiento»; 9 conceptos)_
 **Intervalo entre tres y cinco horas**
@@ -408,7 +391,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `363d1bbc8f6d` Range entre tres y cinco horas  _(vía it · etiqueta «Banda de mantenimiento»; 10 conceptos)_
 - [ ] `a97e44f212eb` rango entre tres y cinco horas  _(vía de · etiqueta «Banda de mantenimiento»; 10 conceptos)_
 **Intervalo igual o mayor a cinco horas**
-- [ ] `b830fe7da984` intervalo de 5 horas o más  _(vía de · etiqueta «Banda de mantenimiento»; 9 conceptos)_
 - [ ] `c5d2ed8cf2cc` intervalo de cinco horas o más  _(vía fr · etiqueta «Banda de mantenimiento»; 9 conceptos)_
 **Intervalo inferior a tres horas**
 - [ ] `28ced7b616b9` Anomalía de menos de tres horas  _(vía fr · etiqueta «Pande de mantenimiento»; 9 conceptos)_
@@ -428,59 +410,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `3f358385292b` No se requiere ningún intervalo  _(vía fr · etiqueta «Banda de mantenimiento»; 66 conceptos)_
 **menos de 3 horas**
 - [ ] `e185e9a091b8` inferior a 3 horas  _(vía fr · etiqueta «Banda de mantenimiento»; 5 conceptos)_
-
-## Parámetro «Barra corrugada roscada (mm)»
-
-**cuarenta elementos**
-- [ ] `f2f5d6fa9328` 40 elementos  _(vía fr · etiqueta «Barra roscada ondulada (mm)»; 2 conceptos)_
-**cuarenta metros**
-- [ ] `5cd4341a5adf` 40 metros  _(vía fr · etiqueta «Barra ondulada roscada (mm)»; 2 conceptos)_
-**cuarenta milímetros**
-- [ ] `db380961515e` 40 milímetros  _(vía fr · etiqueta «Barra ondulada roscada (mm)»; 2 conceptos)_
-- [ ] `3186dc53538a` 40 mm  _(vía it · etiqueta «Roscado con barra ondulada (mm)»; 2 conceptos)_
-**dieciséis milímetros**
-- [ ] `c6c9b7fc2055` 16 milímetros  _(vía fr · etiqueta «Barra roscada ondulada (mm)»; 1 concepto)_
-- [ ] `a67cce964a22` 16 mm  _(vía it · etiqueta «Barra roscada ondulada (mm)»; 1 concepto)_
-**dieciséis mm**
-- [ ] `1f2cb9814d30` 16 mm  _(vía fr · etiqueta «Barra roscada ondulada (mm)»; 1 concepto)_
-**treinta y dos metros**
-- [ ] `f4094749612c` 32 metros  _(vía fr · etiqueta «Barra ondulada roscada (mm)»; 2 conceptos)_
-**treinta y dos milímetros**
-- [ ] `a052bb4c6be8` 32 milímetros  _(vía it · etiqueta «Barra ondulada roscada (mm)»; 2 conceptos)_
-**treinta y dos unidades**
-- [ ] `ea1208bd1af9` 32 unidades  _(vía it · etiqueta «Barra ondulada roscada (mm)»; 2 conceptos)_
-**veinte elementos**
-- [ ] `100cd97960b3` 20 elementos  _(vía fr · etiqueta «Barra roscada ondulada (mm)»; 1 concepto)_
-**veinte milímetros**
-- [ ] `49681bd71767` 20 milímetros  _(vía fr · etiqueta «Barra ondulada roscada (mm)»; 1 concepto)_
-- [ ] `bd2c79405355` 20 mm  _(vía it · etiqueta «Roscado con barra ondulada (mm)»; 1 concepto)_
-**veinte unidades**
-- [ ] `03c0ea10843e` 20 unidades  _(vía fr · etiqueta «Barra roscada ondulada (mm)»; 1 concepto)_
-**veinticinco metros**
-- [ ] `d2cf941423ed` 25 metros  _(vía fr · etiqueta «Barra ondulada roscada (mm)»; 2 conceptos)_
-**veinticinco milímetros**
-- [ ] `9fe9f190c258` 25 milímetros  _(vía fr · etiqueta «Barra ondulada roscada (mm)»; 2 conceptos)_
-**veinticinco unidades**
-- [ ] `342ebdb5ca76` 25 piezas  _(vía de · etiqueta «Varilla ondulada (mm)»; 2 conceptos)_
-- [ ] `a3664625b5e4` 25 unidades  _(vía fr · etiqueta «Barra roscada ondulada (mm)»; 2 conceptos)_
-
-## Parámetro «Barra corrugada roscada»
-
-**20 milímetros**
-- [ ] `ab6739be0f98` 20 mm  _(vía it · etiqueta «Barra roscada ondulada»; 1 concepto)_
-**25 milímetros**
-- [ ] `6c3640d80e61` 25 mm  _(vía it · etiqueta «Barra roscada ondulada»; 1 concepto)_
-**32 milímetros**
-- [ ] `3ff3511b92d6` 32 mm  _(vía it · etiqueta «Barra roscada ondulada»; 1 concepto)_
-**40 milímetros**
-- [ ] `83b641ea7132` 40 mm  _(vía it · etiqueta «Barra roscada ondulada»; 1 concepto)_
-**Treinta y dos milímetros**
-- [ ] `c912a373aa15` 32 milímetros  _(vía fr · etiqueta «Barra ondulada roscada»; 1 concepto)_
-**Veinte milímetros**
-- [ ] `ed16393cf34f` 20 milímetros  _(vía fr · etiqueta «Barra roscada ondulada»; 1 concepto)_
-- [ ] `c6ad74c5df0f` 20 mm  _(vía it · etiqueta «Barra roscada ondulada»; 1 concepto)_
-**Veinticinco milímetros**
-- [ ] `cccb33a8f713` 25 milímetros  _(vía fr · etiqueta «Barra ondulada roscada»; 1 concepto)_
 
 ## Parámetro «CONDICIONES DE EJECUCIÓN»
 
@@ -517,11 +446,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `1e2758cef83c` volumen importante  _(vía it · etiqueta «Condiciones de ejecución»; 72 conceptos)_
 - [ ] `297b7ff4ba9d` Volumen pertinente  _(vía fr · etiqueta «Condiciones de ejecución»; 72 conceptos)_
 
-## Parámetro «DIMENSIONES»
-
-**30x15 milímetros**
-- [ ] `2750f882f269` 30x15 mm  _(vía it · etiqueta «Dimensiones»; 1 concepto)_
-
 ## Parámetro «DIÁMETRO»
 
 **36 milímetros**
@@ -531,24 +455,15 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 
 **un coma dos**
 - [ ] `3feee294b76d` una coma dos  _(vía fr · etiqueta «Diámetro (m)»; 1 concepto)_
-**uno**
-- [ ] `4f8ddb2e9ea1` 1  _(vía fr · etiqueta «Diámetro (m)»; 2 conceptos)_
 **uno coma dos**
 - [ ] `982c2614ced5` una coma dos  _(vía fr · etiqueta «Diámetro (m)»; 1 concepto)_
 **uno punto dos**
-- [ ] `24251ef8c261` 1 punto 2  _(vía it · etiqueta «Diámetro (m)»; 1 concepto)_
 - [ ] `6114ecdeadbd` un punto dos  _(vía fr · etiqueta «Diámetro (m)»; 1 concepto)_
 
 ## Parámetro «Diámetro (m)»
 
 **cero punto setenta y cinco**
-- [ ] `a9ac92a04b31` cero punto 75  _(vía fr · etiqueta «Diámetro (m)»; 1 concepto)_
 - [ ] `dd927a96e145` punto cero setenta y cinco  _(vía de · etiqueta «Diámetro (m)»; 1 concepto)_
-**setenta y cinco centímetros**
-- [ ] `887cf291e222` 75 centímetros  _(vía fr · etiqueta «Diámetro (m)»; 1 concepto)_
-- [ ] `8625fcde6bf8` 75 cm  _(vía it · etiqueta «Diámetro (m)»; 1 concepto)_
-**un metro**
-- [ ] `39e899cd5de4` 1 metro  _(vía fr · etiqueta «Diámetro (m)»; 1 concepto)_
 
 ## Parámetro «EQUIPO»
 
@@ -608,10 +523,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `a55ccf3db0a7` Masonería  _(vía it · etiqueta «Material»; 1 concepto)_
 **Unidad Cerámica**
 - [ ] `7a5f733a8ae7` Unidad de cerámica  _(vía de · etiqueta «Material»; 1 concepto)_
-**betón**
-- [ ] `840c296a18cf` hormigón  _(vía fr · etiqueta «Material»; 2 conceptos)_
-**concreto**
-- [ ] `f17ae1baf1be` hormigón  _(vía fr · etiqueta «Material»; 2 conceptos)_
 **masa cementicia**
 - [ ] `5a98e38cd423` masa de cemento  _(vía fr · etiqueta «Material»; 2 conceptos)_
 - [ ] `a00f140f904f` masa del cemento  _(vía it · etiqueta «Material»; 2 conceptos)_
@@ -619,8 +530,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `18d931e27ade` material blister  _(vía fr · etiqueta «Material»; 1 concepto)_
 **mezcla cementicia**
 - [ ] `1bc9301ae6a4` mezcla de cemento  _(vía fr · etiqueta «Material»; 2 conceptos)_
-**sustancia plástica**
-- [ ] `4984397547cb` plástico  _(vía fr · etiqueta «Material»; 1 concepto)_
 **termoplástico**
 - [ ] `908e9fe854f7` termoplástica  _(vía fr · etiqueta «Material»; 1 concepto)_
 
@@ -644,62 +553,27 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `8e271e78804f` 300x60 mm en las paredes o en el techo  _(vía fr · etiqueta «Medición/implantación»; 1 concepto)_
 - [ ] `d84381567cc1` 300x60 mm en paredes o techos  _(vía it · etiqueta «Medición/ubicación»; 1 concepto)_
 **500x60 milímetros en galerías**
-- [ ] `c67b0888aa37` 500x60 mm en galerías  _(vía de · etiqueta «Medición/lugar»; 1 concepto)_
 - [ ] `61bd0ef4ed30` 500x60 mm en las galerías  _(vía fr · etiqueta «Medición/implantación»; 1 concepto)_
 - [ ] `64fc0189ee9a` 500x60 mm en los túneles  _(vía it · etiqueta «Medición/ubicación»; 1 concepto)_
 **500x60 mm en galerias**
 - [ ] `91157fd43902` 500x60 mm en las galerías  _(vía fr · etiqueta «Medición/ubicación»; 1 concepto)_
 - [ ] `4abbfba33fb1` 500x60 mm en túneles  _(vía it · etiqueta «Medida/ubicación»; 1 concepto)_
 
-## Parámetro «Nº Cables»
-
-**doce**
-- [ ] `b8dbdb6c937c` 12  _(vía fr · etiqueta «Sin cables»; 1 concepto)_
-
 ## Parámetro «Nº TUBOS»
 
-**Cuatro unidades**
-- [ ] `60d42c6ac54e` 4 unidades  _(vía fr · etiqueta «No hay tubos»; 2 conceptos)_
-**Dieciocho tubos**
-- [ ] `97120b61acaf` 18 tubos  _(vía it · etiqueta «Sin tubos»; 2 conceptos)_
-**Dieciocho unidades**
-- [ ] `eec2d3726086` 18 unidades  _(vía fr · etiqueta «No hay tubos»; 2 conceptos)_
-**Dieciséis tubos**
-- [ ] `f3d6204dd384` 16 tubos  _(vía fr · etiqueta «No hay tubos»; 2 conceptos)_
-**Dieciséis unidades**
-- [ ] `7d3d2d24c678` 16 unidades  _(vía fr · etiqueta «No hay tubos»; 2 conceptos)_
-**Doce tubos**
-- [ ] `3690be278e71` 12 tubos  _(vía fr · etiqueta «No hay tubos»; 2 conceptos)_
-**Doce unidades**
-- [ ] `dde37c413138` 12 unidades  _(vía fr · etiqueta «No hay tubos»; 2 conceptos)_
-**Número dieciocho**
-- [ ] `82e0943fcf2a` número 18  _(vía fr · etiqueta «No hay tubos»; 2 conceptos)_
-**Número dieciséis**
-- [ ] `9621eee56f5a` Número 16  _(vía fr · etiqueta «No hay tubos»; 2 conceptos)_
-**Número veinticuatro**
-- [ ] `36b205de638c` Número 24  _(vía fr · etiqueta «No hay tubos»; 2 conceptos)_
-**Ocho unidades**
-- [ ] `80f8585ded92` 8 unidades  _(vía it · etiqueta «Sin tubos»; 2 conceptos)_
 **Quíntuple**
 - [ ] `58e557b7a13d` Cinco veces  _(vía fr · etiqueta «No hay tubos»; 2 conceptos)_
 **Un solo tubo**
 - [ ] `831cd39874f5` Un tubo  _(vía it · etiqueta «Sin tubos»; 2 conceptos)_
 **Unidad**
 - [ ] `217f733770b5` unidades  _(vía it · etiqueta «Sin tubos»; 2 conceptos)_
-**Veinticuatro tubos**
-- [ ] `c3340fe460a3` 24 tubos  _(vía fr · etiqueta «No hay tubos»; 2 conceptos)_
-**Veinticuatro unidades**
-- [ ] `1b8d4bacf380` 24 unidades  _(vía fr · etiqueta «No hay tubos»; 2 conceptos)_
 
 ## Parámetro «PARED»
 
-**betón**
-- [ ] `5c2ce446d4db` hormigón  _(vía fr · etiqueta «Muro»; 1 concepto)_
 **bloque**
 - [ ] `079cf4d4cca8` bloqueo  _(vía it · etiqueta «Muralla»; 1 concepto)_
 **concreto**
 - [ ] `0f70372489a9` cemento  _(vía it · etiqueta «Pared»; 1 concepto)_
-- [ ] `2b577b453dda` hormigón  _(vía fr · etiqueta «Muro»; 1 concepto)_
 **hormigón**
 - [ ] `c183de62ec32` cemento  _(vía it · etiqueta «Pared»; 1 concepto)_
 **ladrillo hueco**
@@ -755,11 +629,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `b308170bf87a` más de un metro de profundidad media  _(vía de · etiqueta «Profundidad»; 1 concepto)_
 - [ ] `99610e3f902d` superior a un metro con una profundidad media.  _(vía fr · etiqueta «Profundidad»; 1 concepto)_
 
-## Parámetro «PROFUNDIDIAD»
-
-**cuatrocientos milímetros**
-- [ ] `6ea419064d9e` 400 milímetros  _(vía fr · etiqueta «Profundidad»; 1 concepto)_
-
 ## Parámetro «Profundidad (m)»
 
 **dos coma cinco**
@@ -771,7 +640,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 **dos coma seis cero**
 - [ ] `8d785a186f43` dos comas seis cero  _(vía fr · etiqueta «Profundidad (m)»; 1 concepto)_
 **dos punto cinco**
-- [ ] `d8fbc3032b57` 2 punto 5  _(vía it · etiqueta «Profundidad (m)»; 1 concepto)_
 - [ ] `52faefbe17f1` dos puntos cinco  _(vía fr · etiqueta «Profundidad (m)»; 1 concepto)_
 **dos punto nueve cero**
 - [ ] `1cc2cce1c49c` dos puntos nueve cero  _(vía fr · etiqueta «Profundidad (m)»; 1 concepto)_
@@ -791,13 +659,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `88565f4fd9ba` tres comas un cero  _(vía fr · etiqueta «Profundidad (m)»; 1 concepto)_
 **tres con veinte**
 - [ ] `d1c232c9f5ba` tres con vientos  _(vía it · etiqueta «Profundidad (m)»; 1 concepto)_
-**tres m**
-- [ ] `402168d2b71a` 3 m  _(vía fr · etiqueta «Profundidad (m)»; 1 concepto)_
-**tres m de profundidad**
-- [ ] `6b017716614b` 3 m Profundidad  _(vía de · etiqueta «Profundidad (m)»; 1 concepto)_
-- [ ] `120c62aef788` profundidad de 3 m  _(vía fr · etiqueta «Profundidad (m)»; 1 concepto)_
-**tres metros**
-- [ ] `ac5dcd87d742` 3 metros  _(vía fr · etiqueta «Profundidad (m)»; 1 concepto)_
 **tres punto dos cero**
 - [ ] `2eaafe06ff68` tres puntos dos cero  _(vía fr · etiqueta «Profundidad (m)»; 1 concepto)_
 **tres punto uno cero**
@@ -826,7 +687,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 
 **Abastecimiento**
 - [ ] `5242754f47d3` oferta  _(vía de · etiqueta «Tipo de medida»; 1 concepto)_
-- [ ] `852aa38a15f1` Suministro  _(vía fr · etiqueta «Tipo de acción»; 1 concepto)_
 **Entrega**
 - [ ] `ec0fe0fc5062` Ejecución  _(vía fr · etiqueta «Tipo de acción»; 1 concepto)_
 **Fornecimiento**
@@ -971,14 +831,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 **120x60x75 cm en túnel**
 - [ ] `916cc0176719` 120x60x75 cm en el túnel  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 - [ ] `ff4e6c54b5c2` 120x60x75 cm en galería  _(vía it · etiqueta «Tipo»; 1 concepto)_
-**130x90x100 centímetros**
-- [ ] `575388657b5a` 130x90x100 cm  _(vía fr · etiqueta «Tipo»; 1 concepto)_
-**150x150x140 centímetros**
-- [ ] `b9ccb69eecbc` 150x150x140 cm  _(vía fr · etiqueta «Tipo»; 1 concepto)_
-**150x90x100 centímetros**
-- [ ] `6022221af9dc` 150x90x100 cm  _(vía fr · etiqueta «Tipo»; 1 concepto)_
-**170x81x100 centímetros**
-- [ ] `b4d2e9c9d164` 170x81x100 cm  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 **180x60x75 centímetros en túnel**
 - [ ] `12549ad5ebea` 180x60x75 centímetros en el túnel  _(vía de · etiqueta «Tipo»; 1 concepto)_
 - [ ] `daf47cdf44c8` 180x60x75 centímetros en la galería  _(vía it · etiqueta «Tipo»; 1 concepto)_
@@ -997,18 +849,12 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 **3er Tipo Cilindro**
 - [ ] `a341ffcda56f` 3er Cilindro de tipo  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 - [ ] `065e82189947` 3er Tipo de cilindro  _(vía de · etiqueta «Tipo»; 1 concepto)_
-**40x40x50 centímetros**
-- [ ] `d9cec20fb394` 40x40x50 cm  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 **4to Tipo Cilindro**
 - [ ] `c9fdfa57b558` 4to Cilindro de tipo  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 - [ ] `23f6bf29bfbf` 4to Tipo de cilindro  _(vía de · etiqueta «Tipo»; 1 concepto)_
-**50x50x100 centímetros**
-- [ ] `4cc0edc7a1f6` 50x50x100 cm  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 **5to Tipo Cilindro**
 - [ ] `9feb7cdae292` 5to Cilindro de tipo  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 - [ ] `e2fbd3974a76` 5to Tipo de cilindro  _(vía de · etiqueta «Tipo»; 1 concepto)_
-**60x60x100 centímetros**
-- [ ] `baf722e0d14f` 60x60x100 cm  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 **60x60x75 centímetros en túnel**
 - [ ] `ceaf52cf22eb` 60x60x75 centímetros en el túnel  _(vía de · etiqueta «Tipo»; 1 concepto)_
 - [ ] `a24465e89580` 60x60x75 centímetros en la galería  _(vía it · etiqueta «Tipo»; 1 concepto)_
@@ -1025,8 +871,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 **8vo Tipo Cilindro**
 - [ ] `fdb10d01ff74` 8vo Cilindro de tipo  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 - [ ] `1f4e383e86dc` 8vo Tipo de cilindro  _(vía de · etiqueta «Tipo»; 1 concepto)_
-**90x81x100 centímetros**
-- [ ] `7ef14e01f05a` 90x81x100 cm  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 **A 1000x550x450 milímetros**
 - [ ] `03a521c3d0bc` A 1000x550x450 mm  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 **ADIF (1000x180x160) de 1 alveolo**
@@ -1075,15 +919,12 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `43f5fa8d3cf5` Underground  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 **Cilindro Tipo Cinco**
 - [ ] `332269bb341f` Cilindro de tipo cinco  _(vía it · etiqueta «Tipo»; 1 concepto)_
-- [ ] `4b0dcb7f69cf` Cilindro tipo 5  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 - [ ] `19028d0ba9cc` Tipo cinco cilindros  _(vía de · etiqueta «Tipo»; 1 concepto)_
 **Cilindro Tipo Cuatro**
 - [ ] `38ad638e9513` Tipo cuatro cilindros  _(vía de · etiqueta «Tipo»; 1 concepto)_
 **Cilindro Tipo Dos**
-- [ ] `ef4602bc84c6` Cilindro tipo 2  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 - [ ] `c06f45f92167` Tipo Dos cilindros  _(vía de · etiqueta «Tipo»; 1 concepto)_
 **Cilindro Tipo Ocho**
-- [ ] `9132991af301` Cilindro tipo 8  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 - [ ] `22d6f235dfed` Tipo Cilindro ocho  _(vía it · etiqueta «Tipo»; 1 concepto)_
 - [ ] `142c5bd6b9d4` Tipo Ocho cilindros  _(vía de · etiqueta «Tipo»; 1 concepto)_
 **Cilindro Tipo Seis**
@@ -1124,7 +965,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 **Concreto**
 - [ ] `4854de9abf3c` Betón  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 - [ ] `4cba8e554c55` Cemento  _(vía it · etiqueta «Tipo»; 1 concepto)_
-- [ ] `ee8e2ce044e1` Hormigón  _(vía de · etiqueta «Tipo»; 1 concepto)_
 **Elevada**
 - [ ] `f4e2e57b582f` Alto  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 **Especial (1000x578x290) de 2 alveolos**
@@ -1161,22 +1001,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `e969c90f3729` S planta rectangular  _(vía it · etiqueta «Tipo»; 1 concepto)_
 **S cimentación tipo B**
 - [ ] `45e7c86f8c96` Fundación S tipo B  _(vía fr · etiqueta «Tipo»; 1 concepto)_
-**SFC-4 de 90x81x70 centímetros**
-- [ ] `52061e87d6a8` SFC-4 de 90x81x70 cm  _(vía it · etiqueta «Tipo»; 1 concepto)_
-**SFC-5 de 130x90x70 centímetros**
-- [ ] `b0be8e4d6f10` SFC-5 de 130x90x70 cm  _(vía it · etiqueta «Tipo»; 1 concepto)_
-**SFC-6 de 150x90x70 centímetros**
-- [ ] `801afe59927f` SFC-6 de 150x90x70 cm  _(vía it · etiqueta «Tipo»; 1 concepto)_
-**SFC-7 de 170x81x70 centímetros**
-- [ ] `c6d6462c1588` SFC-7 de 170x81x70 cm  _(vía it · etiqueta «Tipo»; 1 concepto)_
-**SFC-8 de 150x150x70 centímetros**
-- [ ] `2eee6baa479b` SFC-8 de 150x150x70 cm  _(vía it · etiqueta «Tipo»; 1 concepto)_
-**SFCT-1 de 60x60x75 centímetros**
-- [ ] `9fcbb17fbe71` SFCT-1 de 60x60x75 cm  _(vía it · etiqueta «Tipo»; 1 concepto)_
-**SFCT-2 de 120x60x75 centímetros**
-- [ ] `7d50f6209f6a` SFCT-2 de 120x60x75 cm  _(vía it · etiqueta «Tipo»; 1 concepto)_
-**SFCT-3 de 180x60x75 centímetros**
-- [ ] `2979a91a30ff` SFCT-3 de 180x60x75 cm  _(vía it · etiqueta «Tipo»; 1 concepto)_
 **Sobre el suelo**
 - [ ] `17f70c59ab08` Al suelo  _(vía it · etiqueta «Tipo»; 1 concepto)_
 - [ ] `3c144b6b628b` En el suelo  _(vía fr · etiqueta «Tipo»; 1 concepto)_
@@ -1195,41 +1019,18 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 **Superficial**
 - [ ] `ab578fa2c6d1` superficie  _(vía it · etiqueta «Tipo»; 1 concepto)_
 **cero coma nueve ochenta y uno newtons**
-- [ ] `f2ce8b46249c` Cero coma nueve 81 newtons  _(vía de · etiqueta «Tipo»; 1 concepto)_
 - [ ] `1e145f777ad5` cero coma nueve newton ochenta y uno  _(vía it · etiqueta «Tipo»; 1 concepto)_
 - [ ] `ab2ef4f855fe` cero coma nueve ochenta newtons  _(vía fr · etiqueta «Tipo»; 1 concepto)_
-**cien centímetros cuadrados**
-- [ ] `27daa5b54ebe` 100 centímetros cuadrados  _(vía fr · etiqueta «Tipo»; 1 concepto)_
-**cien milímetros por segundo cuadrado**
-- [ ] `b3cff563f7d8` 100 milímetros por segundo cuadrado  _(vía fr · etiqueta «Tipo»; 1 concepto)_
-- [ ] `a03d68648232` 100 mm por segundo cuadrado  _(vía it · etiqueta «Tipo»; 1 concepto)_
-**cinco mil milinewtons**
-- [ ] `669f436151ab` 5.000 milinewton  _(vía it · etiqueta «Tipo»; 1 concepto)_
-- [ ] `9d8be1df17d1` 5.000 milinewtons  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 **diez hectopascales**
 - [ ] `d6d1b1b405d0` diez hectopasicos  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 **dos mil quinientos pascales**
 - [ ] `441ba32e6d48` dos mil quinientos pascal  _(vía it · etiqueta «Tipo»; 1 concepto)_
-**doscientos milimoles por litro**
-- [ ] `df26b8151311` 200 milimol por litro  _(vía de · etiqueta «Tipo»; 1 concepto)_
-- [ ] `a7f4f31fdc8f` 200 milimoles por litro  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 **enterrada**
 - [ ] `b13f1ee91b26` enterrado  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 **medio tesla**
 - [ ] `43d649e865a1` Tesla media  _(vía it · etiqueta «Tipo»; 1 concepto)_
-**mil quinientos miliamperios**
-- [ ] `569fc2ab658b` 1.500 miliamperios  _(vía it · etiqueta «Tipo»; 1 concepto)_
-- [ ] `2ceb2006aece` 1500 miliampers  _(vía fr · etiqueta «Tipo»; 1 concepto)_
-**quinientos gramos por metro cúbico**
-- [ ] `ac252a70ff41` 500 gramos por metro cúbico  _(vía fr · etiqueta «Tipo»; 1 concepto)_
-**treinta mililitros por segundo**
-- [ ] `39cd7852aeb4` 30 litros por segundo  _(vía fr · etiqueta «Tipo»; 1 concepto)_
-- [ ] `948e3f7e3106` 30 mililitros por segundo  _(vía it · etiqueta «Tipo»; 1 concepto)_
 **un kilowatt**
-- [ ] `b162a15432a7` 1 kilowatt  _(vía it · etiqueta «Tipo»; 1 concepto)_
 - [ ] `5b9f3768fd04` un kilovatio  _(vía fr · etiqueta «Tipo»; 1 concepto)_
-**veinte milisegundos**
-- [ ] `30f1181af70f` 20 milisegundos  _(vía fr · etiqueta «Tipo»; 1 concepto)_
 
 ## Parámetro «TRABAJO»
 
@@ -1293,7 +1094,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `f4a5b95db9ea` Horarios especiales gratuitos  _(vía fr · etiqueta «Trabajo»; 16 conceptos)_
 **Horario Nocturno**
 - [ ] `00d9e5694fff` noche  _(vía fr · etiqueta «Trabajo»; 15 conceptos)_
-- [ ] `fd7142681ba0` nocturno  _(vía it · etiqueta «Trabajo»; 15 conceptos)_
 **Horario Nocturno Especial**
 - [ ] `6bee2f120824` planificación nocturna especial  _(vía de · etiqueta «Trabajo»; 17 conceptos)_
 - [ ] `1b9f07d83c6b` Programa nocturno especial  _(vía it · etiqueta «Trabajo»; 17 conceptos)_
@@ -1319,7 +1119,6 @@ Marca `[x]` en cada variante que describa **exactamente el mismo valor** que el 
 - [ ] `c073f1e7efc5` Horas de luz  _(vía fr · etiqueta «Trabajo»; 15 conceptos)_
 **Horario de Noche**
 - [ ] `20e091d075ab` noche  _(vía fr · etiqueta «Trabajo»; 16 conceptos)_
-- [ ] `315b14b67c74` nocturno  _(vía it · etiqueta «Trabajo»; 16 conceptos)_
 **Horario de Noche Extra**
 - [ ] `4f2087b0016b` Extra Noche Programa  _(vía it · etiqueta «Trabajo»; 17 conceptos)_
 - [ ] `8a9028c7658f` horas extraordinarias de noche  _(vía fr · etiqueta «Trabajo»; 17 conceptos)_

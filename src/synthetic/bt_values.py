@@ -284,3 +284,15 @@ def concept_docs(stage: Mapping) -> dict[str, str]:
         parts += [v["value"] for b in (c.get("parameters") or {}).values() for v in b["values"]]
         out[key] = " ".join(parts)
     return out
+
+
+def reverts(surface: str, variant: str, gold: str) -> Optional[str]:
+    """La variante deshace una modificación previa (decisión de César): mete
+    dígitos donde la superficie los tenía en letra, o vuelve exactamente al
+    valor gold cuando la superficie no lo era. Equivalente en significado,
+    pero anula la modificación de STACKED y acerca la consulta al gold."""
+    if re.search(r"\d", variant) and not re.search(r"\d", surface):
+        return "introduces_digits"
+    if _norm(variant) == _norm(gold) and _norm(surface) != _norm(gold):
+        return "back_to_gold"
+    return None

@@ -61,3 +61,8 @@ bt_values:
   # L2: se descartan las variantes que pierden un término de dominio (palabra en <= 35 % de los conceptos)
   domain_max_df: 0.35
   domain_terms: data/synthetic/bt_OE/OE_bt_domain_terms.json
+  # Auditoría por agentes con contexto limpio (un veredicto A/R por casilla), muestra para César
+  verdicts: [data/synthetic/bt_OE/OE_bt_value_verdicts_L1.jsonl, data/synthetic/bt_OE/OE_bt_value_verdicts_L2.jsonl]
+  menu_marked: docs/synthetic/bt/OE_bt_value_menu_marked.md
+  approved: data/synthetic/bt_OE/OE_bt_value_approved.json
+  sample: docs/synthetic/bt/OE_bt_value_audit_sample.md

@@ -204,3 +204,23 @@ def test_concept_docs_join_templates_variables_and_values():
     assert set(docs) == {"OEX010$"}
     text = docs["OEX010$"]
     assert "Canalización" in text and "rocoso" in text and "Volumen escaso" in text
+
+
+# --- reversiones (decisión de César) --------------------------------------
+
+from synthetic.bt_values import reverts  # noqa: E402
+
+
+@pytest.mark.parametrize(
+    "surface, variant, gold, reason",
+    [
+        ("Trescientos milímetros", "300 mm", "300 mm", "introduces_digits"),
+        ("cuarenta elementos", "40 elementos", "40", "introduces_digits"),
+        ("concreto", "hormigón", "Hormigón", "back_to_gold"),
+        ("Nocturno", "Noche", "Nocturno", None),          # superficie gold: no hay nada que revertir
+        ("Turno de noche", "Noche cerrada", "Nocturno", None),
+        ("300 mm", "300 milímetros", "300 mm", None),     # ya tenía dígitos
+    ],
+)
+def test_reverts(surface, variant, gold, reason):
+    assert reverts(surface, variant, gold) == reason

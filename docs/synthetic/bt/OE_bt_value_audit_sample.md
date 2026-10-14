@@ -1,0 +1,99 @@
+# Muestra de la auditoría de variantes (OE)
+
+218 aprobadas en total. Abajo, 60 aprobadas y 30 rechazadas al azar (semilla fija), con el motivo del auditor. Marca las que **no** estés de acuerdo.
+
+## Aprobadas
+
+- [ ] `9b6d7d90cc29` CONDICIONES DE EJECUCIÓN · **Volumen Sustancial** → Volumen importante  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `01ac1de7f0d5` **tipo pequeño, dimensionado a 90x90x100 cm, para instalaciones de menor escala** → Un tipo pequeño, dimensionado en 90x90x100 cm para instalaciones más pequeñas  _(mismo tamaño y medida; reformulación equivalente)_
+- [ ] `ba74655046b1` TIPO · **60x60x75 cm en túnel** → 60x60x75 cm en el túnel  _(Solo cambia orden, artículo o preposición; mismo valor)_
+- [ ] `35baf164db53` **tipo pequeño, con dimensiones de 90x90x100 cm, diseñado para entornos compactos** → Un tipo pequeño, con dimensiones de 90x90x100 cm, diseñado para entornos compactos  _(mismo contenido; sólo artículo)_
+- [ ] `83c0bcea9d63` APERTURA · **apertura automatizada** → apertura automática  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `dd442cfa75d9` TIPO DE TERRENO · **Semi-Sólido** → semisólido  _(Solo cambia orden, artículo o preposición; mismo valor)_
+- [ ] `c6d10dee39e8` TRABAJO · **Diurno excepcional** → excepcionalmente durante el día  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `25f68232302a` PAVIMENTO · **con reposición** → con sustitución  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `10432650d32a` CONDICIONES DE EJECUCIÓN · **Volumen Elevado** → Alto volumen  _(Solo cambia orden, artículo o preposición; mismo valor)_
+- [ ] `cc65fe7ec585` **la demolición de roca dura, con el objetivo de preparar el terreno para nuevas construcciones,** → la demolición de la roca dura, con el objetivo de preparar el terreno para nuevas construcciones,  _(idéntico salvo artículo)_
+- [ ] `4f2bb0c42c86` CONDICIONES DE EJECUCIÓN · **Volumen Considerable** → volumen significativo  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `5434f41c61ec` ALVEOLOS · **uno alveolo** → un alveolo  _(Corrige la forma gramatical sin alterar el valor)_
+- [ ] `065e82189947` TIPO · **3er Tipo Cilindro** → 3er Tipo de cilindro  _(Solo cambia orden, artículo o preposición; mismo valor)_
+- [ ] `81b8e194166d` **gran escala (200x120x180 cm)** → a gran escala (200x120x180 cm)  _(mismo tamaño y medida)_
+- [ ] `c97553badfc2` TRABAJO · **Cualquier franja horaria excepcional** → Cualquier intervalo de tiempo excepcional  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `69641d679bff` **la demolición de roca dura, garantizando la estabilidad del entorno circundante,** → la demolición de la roca dura, garantizando la estabilidad del entorno circundante,  _(idéntico salvo artículo)_
+- [ ] `3ac77ad8e7fe` **la demolición de roca dura, asegurando la eliminación completa de la estructura geológica,** → la demolición de la roca dura, garantizando la eliminación completa de la estructura geológica,  _(«garantizando» equivale a «asegurando»)_
+- [ ] `d929e8a76110` **la destrucción de roca sólida,** → la destrucción de la roca sólida,  _(idéntico salvo artículo)_
+- [ ] `8f7fda04d679` TRABAJO · **Noche Extra** → Noche suplementaria  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `c87fe397eb33` BANDA DE MANTENIMIENTO · **Intervalo menor a tres horas** → Intervalo inferior a tres horas  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `28bbacb47042` **en cualquier terreno, salvo roca** → en cualquier terreno excepto las rocas  _(«excepto» equivale a «salvo»; plural sin cambio)_
+- [ ] `ceaf52cf22eb` TIPO · **60x60x75 centímetros en túnel** → 60x60x75 centímetros en el túnel  _(Solo cambia orden, artículo o preposición; mismo valor)_
+- [ ] `1e2758cef83c` CONDICIONES DE EJECUCIÓN · **Volumen relevante** → volumen importante  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `85d90aeccff7` PAVIMENTO · **con reposición** → con reemplazo  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `83ed5ac818f4` **la demolición de roca dura,** → demolición de rocas duras,  _(misma operación; plural y artículo sin cambio técnico)_
+- [ ] `4a4143f5a686` PAVIMENTO · **con reemplazo** → con sustitución  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `63af6069e553` TRABAJO · **diurno con corte de tensión** → De día con corte de tensión  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `5342f30b8e4b` TIPO · **6to Tipo Cilindro** → 6to Tipo de cilindro  _(Solo cambia orden, artículo o preposición; mismo valor)_
+- [ ] `78ae6734dd6a` **la eliminación de roca resistente,** → la eliminación de rocas resistentes;  _(mismo contenido; plural y puntuación final)_
+- [ ] `c073f1e7efc5` TRABAJO · **Horario de Luz** → Horas de luz  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `3c57baf3479b` **demolición de roca** → demolición de la roca  _(misma operación; sólo artículo)_
+- [ ] `a58254756b6b` PAVIMENTO · **con reposición** → con sustituciones  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `b51297d8eb35` PROFUNDIDAD · **más de 1,5 m** → superior a 1,5 m  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `a60ba2989bf6` TRABAJO · **Noche Estándar** → Noche normal  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `2bfb7e629c14` TRABAJO · **Noche Extra** → Noche adicional  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `08f8f91dfe70` **en cualquier tipo de suelo, salvo en terreno rocoso** → en cualquier suelo, con excepción de los terrenos rocosos  _(mismo terreno excluido; reformulación equivalente)_
+- [ ] `2b6d3855d0b9` **en intersección subterránea de vías** → en el cruce subterráneo de vías  _(«cruce» equivale a «intersección»; misma ubicación)_
+- [ ] `fff4b877b632` **en todo terreno, no roca** → en todos los terrenos, no roca  _(mismo terreno excluido)_
+- [ ] `5eb80b3e0caf` **en cualquier tipo de terreno, excepto en áreas rocosas** → en cualquier tipo de terreno excepto en zonas rocosas  _(«zonas» equivale a «áreas»; mismo terreno excluido)_
+- [ ] `6bd4d591b38a` **en intersección con carretera** → en el cruce con la carretera  _(«cruce» equivale a «intersección»; misma ubicación)_
+- [ ] `cd914cd7c354` TRABAJO · **nocturno sin corte de tensión** → noche sin corte de tensión  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `61d81a45e975` **la ruptura de roca endurecida,** → rotura de roca endurecida,  _(«rotura» equivale a «ruptura»)_
+- [ ] `61bd0ef4ed30` MEDIDA/UBICACIÓN · **500x60 milímetros en galerías** → 500x60 mm en las galerías  _(Solo cambia orden, artículo o preposición; mismo valor)_
+- [ ] `5a98e38cd423` MATERIAL · **masa cementicia** → masa de cemento  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `7952bdf5c2fb` **en intersección subvial** → en la intersección subvial  _(misma ubicación; sólo artículo)_
+- [ ] `57651ba84b76` **y la tapa, o tapas de hormigón** → y la tapa, o las tapas de hormigón  _(mismo contenido; sólo artículo)_
+- [ ] `53f5866c83b9` EQUIPO · **Curvatura de Dirección** → Curva de dirección  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `0567b028d761` TIPO · **ADIF (1000x220x195) de 1 alveolo** → ADIF (1000x220x195) 1 alveolo  _(Solo cambia orden, artículo o preposición; mismo valor)_
+- [ ] `f565b891c088` **en suelo rocoso** → en el suelo rocoso  _(mismo terreno; sólo artículo)_
+- [ ] `b109ad125b2b` **la demolición de roca dura, asegurando la eliminación completa de la estructura geológica,** → demolición de roca dura para asegurar la eliminación completa de la estructura geológica,  _(misma operación y finalidad)_
+- [ ] `efe5b487284f` **de dimensiones 250x150x200 cm** → de las dimensiones 250x150x200 cm  _(misma medida; sólo añade artículo)_
+- [ ] `c80450f766dc` **en punto de cruce con carretera** → en el punto de cruce de carretera  _(misma ubicación; reformulación equivalente)_
+- [ ] `15dda5cef562` TRABAJO · **Día Extra** → Día suplementario  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `ed455daa4c0e` CONDICIONES DE EJECUCIÓN · **Condiciones Diversas** → Diferentes condiciones  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `01be1b3f0b75` TIPO DE ACCIÓN · **Suministro y montaje** → Entrega y montaje  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `dbb989f92d4b` EQUIPO · **Variación de Nivel** → Cambio de nivel  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `3f358385292b` BANDA DE MANTENIMIENTO · **No necesita intervalo** → No se requiere ningún intervalo  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `d8da8dd3a39a` **en terreno rocoso, donde la canalización debe adaptarse a la topografía irregular y la presencia de rocas** → en terreno rocoso, donde la canalización debe adaptarse a la topografía irregular y a la presencia de rocas  _(mismo contenido; sólo artículo)_
+- [ ] `85f5de6e3d18` TRABAJO · **No aplica** → No aplicable  _(Sinónimo técnico equivalente; conserva exactamente el valor)_
+- [ ] `c0df4a7a4d8f` **en terreno rocoso, donde la dureza del sustrato requiere técnicas de excavación especializadas para la instalación** → en terreno rocoso, donde la dureza del sustrato requiere técnicas especiales de excavación para la instalación  _(«especiales» equivale a «especializadas»)_
+
+## Rechazadas
+
+- [ ] `a365cd81b342` TIPO TERRENO · **Intrincado** → Intrinal  _(Artefacto de traducción: término sin relación con el valor original)_
+- [ ] `43d649e865a1` TIPO · **medio tesla** → Tesla media  _(Cambia el significado técnico del valor)_
+- [ ] `f4e2e57b582f` TIPO · **Elevada** → Alto  _(Español incorrecto o poco natural (género, número o gramática))_
+- [ ] `9feb7cdae292` TIPO · **5to Tipo Cilindro** → 5to Cilindro de tipo  _(Español incorrecto o poco natural (género, número o gramática))_
+- [ ] `01207453c1e4` TRABAJO · **Día Tensado** → Día de la tensión  _(Artefacto de traducción: término sin relación con el valor original)_
+- [ ] `3ad46e42eca3` TIPO · **Cilíndrica S-CPT** → S-CPT cilíndrico  _(Español incorrecto o poco natural (género, número o gramática))_
+- [ ] `250bf2591fb7` TIPO TERRENO · **Compacto** → Compact  _(Palabra extranjera o calco impropio en un presupuesto español)_
+- [ ] `99610e3f902d` PROFUNDIDAD · **superior a un metro con medio de profundidad** → superior a un metro con una profundidad media.  _(Cambia el significado técnico del valor)_
+- [ ] `2a8c81be91d6` TRABAJO · **Horario de Día Extraordinario** → Programa extraordinario del día  _(Cambia el significado técnico del valor)_
+- [ ] `ce4e558f76fe` TIPO · **Soterrada** → Aplastado  _(Artefacto de traducción: término sin relación con el valor original)_
+- [ ] `9af49ca79255` TRABAJO · **Día Corte** → Día de corte  _(Ambigua: admite una lectura distinta del valor original)_
+- [ ] `95ca9cddac99` PROFUNDIDAD · **superior a un metro con medio de profundidad** → más de un metro con profundidad media  _(Cambia el significado técnico del valor)_
+- [ ] `2672eae389d1` Profundidad (m) · **tres coma uno cero** → tres comas a cero  _(Altera o reinterpreta número, código o unidad)_
+- [ ] `2424c4204c24` **mediano (150x110x180 cm)** → media (150x110x180 cm)  _(«media» no equivale a «mediano»)_
+- [ ] `9d7b2e6f4315` **y la tapa, o tapas de hormigón** → y tapas o tapas de hormigón  _(«tapas o tapas» pierde la opción singular)_
+- [ ] `c288b00b36f6` TIPOS · **Cubierta arqueta de concreto** → Tapa con arco de hormigón  _(Cambia el significado técnico del valor)_
+- [ ] `c2527c20ae5c` TIPO DE TERRENO · **Terreno Común** → Tierra común  _(Cambia el significado técnico del valor)_
+- [ ] `8d8a7d7cbe59` APERTURA · **a máquina** → trabajada  _(Artefacto de traducción: término sin relación con el valor original)_
+- [ ] `ebdaeda4de00` TRABAJO · **Noche Corte** → Tribunal nocturno  _(Artefacto de traducción: término sin relación con el valor original)_
+- [ ] `dba1e89543ea` TIPO · **1er Tipo Cilindro** → 1er Cilindro de tipo  _(Español incorrecto o poco natural (género, número o gramática))_
+- [ ] `4d0bd13ff593` **la demolición de roca dura, mediante técnicas de perforación y voladura controlada,** → la demolición de la roca dura mediante perforación y técnicas de blase controlado,  _(«blase» es un artefacto; se pierde «voladura»)_
+- [ ] `61f2af94abb2` TRABAJO · **Horario Integral** → jornada completa de trabajo  _(Cambia el significado técnico del valor)_
+- [ ] `e0fcd2931d6d` TIPO · **Cimentación S-CPT** → Fundación S-CPT  _(Palabra extranjera o calco impropio en un presupuesto español)_
+- [ ] `fd06926c133e` Acceso · **rastro** → Ruta  _(Se confunde con otra opción hermana o pierde el rasgo que la distingue)_
+- [ ] `8fa5da8a8db7` Profundidad (m) · **dos coma cinco** → dos comas cinco  _(Español incorrecto o poco natural (género, número o gramática))_
+- [ ] `2e157e77dd17` **en intersección con vía pública** → en el cruce con la carretera pública  _(«carretera pública» no equivale a «vía pública»)_
+- [ ] `0a13d334fd92` **en cruce bajo vías, donde la canalización se instala debajo de las vías férreas, asegurando protección y accesibilidad limitada** → Cruce bajo vías, donde la canalización se instala bajo los ferrocarriles, garantizando la protección y accesibilidad limitadas  _(pierde «en»; «ferrocarriles» por «vías férreas» y concordancia errónea)_
+- [ ] `bf952868c7b0` TIPO · **Longitud Rectangular - t1** → Longitud del rectángulo - t1  _(Cambia el significado técnico del valor)_
+- [ ] `25aa5e1a19d8` TRABAJO · **Horario Abierto Extra** → Horas de apertura adicionales  _(Cambia el significado técnico del valor)_
+- [ ] `784a192d6f61` TRABAJO · **Diurno Excepcional** → Día extraordinario  _(Se confunde con otra opción hermana o pierde el rasgo que la distingue)_
