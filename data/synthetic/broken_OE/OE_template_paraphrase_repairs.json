@@ -1,0 +1,1306 @@
+{
+ "01c4d24fc999": {
+  "original": "Arqueta prefabricada de $A mm de dimensiones interiores, incluso recibido de los tubos de acometida y desague profundo, $T(%A) y relleno posterior, así como el acabado y limpieza de la misma. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "La instalación de la arqueta prefabricada de $A mm de dimensiones interiores incluirá la recepción de conductos de acometida y desagüe profundo, $T(%A), seguido de relleno posterior, acabado y limpieza. El trabajo consiste en: $B La banda de mantenimiento se asignará: $C Las condiciones de ejecución se establecen en: $D",
+  "categoria": "referencia",
+  "motivo": "«El trabajo consiste en: Diurno», «condiciones se establecen en: …»; los valores quedan como referencias.",
+  "corrected": "La instalación de la arqueta prefabricada de $A mm de dimensiones interiores incluirá la recepción de conductos de acometida y desagüe profundo, $T(%A), seguido de relleno posterior, acabado y limpieza. El trabajo será: $B La banda de mantenimiento será: $C Las condiciones de ejecución serán: $D",
+  "cambio": "Etiquetas «será/serán:» en vez de «consiste en», «establecen en»"
+ },
+ "027af8c83b78": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 160 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Puesta en marcha de una conducción enterrada con $A tuberías de polietileno exento de halógenos, de 160 mm y diámetro $I, cubriendo $N el acondicionamiento y compactación del foso, $P la provisión y emplazamiento de las tuberías y hormigón tipo HE-20 sin vibraciones, test de los conductos, transporte y extracción de los elementos al sitio de aplicación $M Trabajo: $C Área de mantenimiento: $D Requisitos de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«160 mm y diámetro $I»: ubicación como diámetro",
+  "corrected": "Puesta en marcha de una conducción enterrada con $A tuberías de polietileno exento de halógenos, de 160 mm de diámetro $I, cubriendo $N el acondicionamiento y compactación del foso, $P la provisión y emplazamiento de las tuberías y hormigón tipo HE-20 sin vibraciones, test de los conductos, transporte y extracción de los elementos al sitio de aplicación $M Trabajo: $C Área de mantenimiento: $D Requisitos de ejecución: $F",
+  "cambio": "«160 mm y diámetro $I» → «160 mm de diámetro $I»"
+ },
+ "029f905ca5d2": {
+  "original": "Suministro y montaje de $A para canaleta composite-PTR, incluyendo piezas para el cosido entre las mismas, según ET 03.365.064.9. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Se suministrará y montará $A para la canaleta composite-PTR, incorporando piezas para el cosido entre las mismas, según la ET 03.365.064.9.. El trabajo de $B incluye una banda de mantenimiento de $C, y las condiciones de ejecución serán $D.",
+  "categoria": "referencia",
+  "motivo": "«El trabajo de Nocturno incluye una banda de mantenimiento»: valores en papeles incoherentes",
+  "corrected": "Se suministrará y montará $A para la canaleta composite-PTR, incorporando piezas para el cosido entre las mismas, según la ET 03.365.064.9.. Trabajo: $B, banda de mantenimiento: $C, y las condiciones de ejecución serán $D.",
+  "cambio": "$B y $C con etiquetas propias"
+ },
+ "02ad5e01fa3e": {
+  "original": "Suministro y montaje de cimentación rectangular en desmonte $B para terreno $A con esperas roscadas para postes de electrificación, desde plataforma o vía. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Construcción y montaje de cimentación rectangular tipo $B, diseñada para suelo $A, con esperas roscadas para postes de electrificación desde el andén o la vía. Producto listo para su uso. Alcance del trabajo: $C. Zona de protección para el mantenimiento: $D. Acondiciones para la ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "«Alcance del trabajo: Diurno», pierde desmonte, «Acondiciones»",
+  "corrected": "Construcción y montaje de cimentación rectangular en desmonte tipo $B, diseñada para suelo $A, con esperas roscadas para postes de electrificación desde el andén o la vía. Producto listo para su uso. Trabajo: $C. Zona de protección para el mantenimiento: $D. Condiciones para la ejecución: $F.",
+  "cambio": "Etiquetas de $C y $F corregidas; recuperado «en desmonte»"
+ },
+ "0329ba5b53bd": {
+  "original": "$A de canalización de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "En transiciones entre diferentes plataformas se emplean $A canalizaciones, que constan de $B conductos de acero galvanizado de 100mm de diámetro, para instalaciones CMS. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "$A usado como cantidad: 'se emplean Suministro y montaje canalizaciones'.",
+  "corrected": "En transiciones entre diferentes plataformas se realiza el $A de canalizaciones, que constan de $B conductos de acero galvanizado de 100mm de diámetro, para instalaciones CMS. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "$A deja de ser cantidad: «se realiza el $A de canalizaciones»"
+ },
+ "05ce24f7df97": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 110 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada que incluye $A conductos de polietileno sin halógenos de diámetro $I medida 110 mm, así como $N el relleno y compactado de la zanja, $P el abastecimiento y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de diámetro $I medida 110 mm»: ubicación como diámetro",
+  "corrected": "Conducción enterrada que incluye $A conductos de polietileno sin halógenos de diámetro 110 mm $I, así como $N el relleno y compactado de la zanja, $P el abastecimiento y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada de los productos al lugar de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«de diámetro 110 mm $I»: $I deja de ser diámetro"
+ },
+ "06973cc0e034": {
+  "original": "Zanja para tendido de cables de $A de profundidad y 0,60 m de anchura máxima, $R(%B), y relleno compactado con material seleccionado procedente de la excavación, cama de arena de $X(%A) de espesor, rejilla de plastico identificadora, carga, descarga y transporte al lugar asignado en el interior de la obra. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se realiza una zanja con una profundidad de $A y una anchura máxima de 0,60 m. El relleno se compacta utilizando material reciclado de la excavación, $R(%B). Se instala una capa de arena de $X(%A) de espesor, junto con una malla de plástico para identificación, y se lleva a cabo la carga, descarga y transporte al sitio designado dentro de la obra. El proceso: $C Banda de mantenimiento: $D Bajo las siguientes condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "$R (forma de ejecución) queda pegado al relleno; «material reciclado»",
+  "corrected": "Se realiza una zanja con una profundidad de $A y una anchura máxima de 0,60 m, $R(%B). El relleno se compacta utilizando material reciclado de la excavación. Se instala una capa de arena de $X(%A) de espesor, junto con una malla de plástico para identificación, y se lleva a cabo la carga, descarga y transporte al sitio designado dentro de la obra. El proceso: $C Banda de mantenimiento: $D Bajo las siguientes condiciones de ejecución: $F",
+  "cambio": "$R(%B) movido tras la anchura, separado del relleno"
+ },
+ "072cb0c88b8d": {
+  "original": "Suministro y montaje de cimentación cilíndrica para postes de electrificación, de $C de diámetro y $B  de profundidad, compuesta por 4 barras corrugadas roscadas de $A. ejecutada desde $D. totalmente terminada. $L(b,%C). Trabajo: $L(c,%C).",
+  "broken": "Montaje y suministro de una fundación cilíndrica para postes eléctricos, con un diámetro de $C y una profundidad de $B, utilizando 4 barras corrugadas roscadas de $A. Realizada desde $D, y completamente finalizada. $L(b,%C). Proporcionado en: $L(c,%C).",
+  "categoria": "referencia",
+  "motivo": "«Proporcionado en: Nocturno»: el turno queda como lugar o referencia.",
+  "corrected": "Montaje y suministro de una fundación cilíndrica para postes eléctricos, con un diámetro de $C y una profundidad de $B, utilizando 4 barras corrugadas roscadas de $A. Realizada desde $D, y completamente finalizada. $L(b,%C). Trabajo: $L(c,%C).",
+  "cambio": "«Proporcionado en:» → «Trabajo:»"
+ },
+ "0aca5ee1fc1a": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 90 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se ejecutará la canalización mediante $A conductos de polietileno 90 mm sin halógenos, de diámetro $I. Se incluirá la preparación y compactación de la zanja $N, el suministro y montaje de los tubos y hormigón tipo HE-20 no vibrado $P, así como la prueba de los conductos, el transporte y la retirada de los materiales al lugar de trabajo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de diámetro $I» da «diámetro adosada o superficial»; $P queda mal colocado",
+  "corrected": "Se ejecutará la canalización mediante $A conductos de polietileno 90 mm sin halógenos, $I. Se incluirá $N la preparación y compactación de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 no vibrado, así como la prueba de los conductos, el transporte y la retirada de los materiales al lugar de trabajo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "Quitado «de diámetro» ante $I; $N y $P antepuestos a sus tareas"
+ },
+ "0dc3073b6fce": {
+  "original": "$A de canalización de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Instalación $A de conducción con $B tubos de acero galvanizado de diámetro 100mm destinados a las transiciones entre plataformas en instalaciones CMS. $Q(%A) Tareas: $C Límite de mantenimiento: $D Requisitos de implementación: $F",
+  "categoria": "reasignacion",
+  "motivo": "$A (tipo de operación) pegado a 'Instalación': 'Instalación Suministro de...'.",
+  "corrected": "$A de conducción con $B tubos de acero galvanizado de diámetro 100mm destinados a las transiciones entre plataformas en instalaciones CMS. $Q(%A) Tareas: $C Banda de mantenimiento: $D Requisitos de implementación: $F",
+  "cambio": "Quitado «Instalación» ante $A; «Límite» → «Banda de mantenimiento»"
+ },
+ "0e58663e5bbc": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 200 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada de $A conductos de polietileno libre de halógenos de 200 mm, con diámetro nominal $I. Esto incluye $N la preparación de la zanja, $P la instalación de los conductos y hormigón tipo HE-20 sin vibración, así como las pruebas de los conductos, el transporte y la limpieza de la zona de trabajo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«con diámetro nominal $I»: ubicación como diámetro; pierde el relleno",
+  "corrected": "Conducción enterrada de $A conductos de polietileno libre de halógenos de 200 mm de diámetro nominal $I. Esto incluye $N la preparación de la zanja, $P la instalación de los conductos y hormigón tipo HE-20 sin vibración, así como las pruebas de los conductos, el transporte y la limpieza de la zona de trabajo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«200 mm, con diámetro nominal $I» → «200 mm de diámetro nominal $I»"
+ },
+ "14a43a71ab4c": {
+  "original": "Cimentaciones prismáticas, con barra corrugada roscada de $A mm, acceso por $B. $L(b,%D) Trabajo: $L(c,%D).",
+  "broken": "Las cimentaciones prismáticas se ejecutan con una barra corrugada roscada de $A mm, permitiendo el acceso por $B. De tipo $L(b,%D), se realiza con $L(c,%D).",
+  "categoria": "reasignacion",
+  "motivo": "«De tipo Con corte de corriente, se realiza con Nocturno»: valores en papel erróneo.",
+  "corrected": "Las cimentaciones prismáticas se ejecutan con una barra corrugada roscada de $A mm, permitiendo el acceso por $B. $L(b,%D) Trabajo: $L(c,%D).",
+  "cambio": "Corte suelto y turno con etiqueta «Trabajo:»"
+ },
+ "153f559e5497": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 160 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se instalará una canalización de hormigón que incluye $A conductos de polietileno sin halógenos de 160 mm, con un diámetro de $I. Se incluye $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón HE-20 sin vibración, la comprobación de los conductos, el transporte y la eliminación de los productos al lugar de uso $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«con un diámetro de $I»: ubicación como diámetro",
+  "corrected": "Se instalará una canalización de hormigón que incluye $A conductos de polietileno sin halógenos de 160 mm de diámetro $I. Se incluye $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y hormigón HE-20 sin vibración, la comprobación de los conductos, el transporte y la eliminación de los productos al lugar de uso $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«160 mm, con un diámetro de $I» → «160 mm de diámetro $I»"
+ },
+ "158623ec46d7": {
+  "original": "Colocación y suministro de canaleta metálica de 3 canales en puente. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C",
+  "broken": "Proveedor y colocación de canalización metálica de 3 canales en obra del puente. Ejecutor: $A Zona de seguridad: $B Condiciones de ejecución: $C",
+  "categoria": "reasignacion",
+  "motivo": "«Ejecutor: Cualquier franja horaria»: el turno pasa a persona; «Proveedor» en vez de suministro.",
+  "corrected": "Proveedor y colocación de canalización metálica de 3 canales en obra del puente. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C",
+  "cambio": "«Ejecutor»/«Zona de seguridad» → «Trabajo»/«Banda de mantenimiento»"
+ },
+ "172d997e54e4": {
+  "original": "$A de canalización de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se ofrece un conjunto de $A conductos de acero galvanizado $B, con diámetro de 100mm, para aplicaciones en instalaciones CMS en las transiciones interplataforma. $Q(%A) Actividad: $C Turno de mantenimiento: $D Escenarios de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "$A como cantidad y nº de tubos como adjetivo: 'galvanizado 4'.",
+  "corrected": "Se ofrece el $A de un conjunto de $B conductos de acero galvanizado, con diámetro de 100mm, para aplicaciones en instalaciones CMS en las transiciones interplataforma. $Q(%A) Actividad: $C Turno de mantenimiento: $D Escenarios de ejecución: $F",
+  "cambio": "$A como operación y $B como número de conductos"
+ },
+ "1be0d42850a0": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 90 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Instalación de canalización de hormigón con $A conductos de polietileno libre de halógenos de 90 mm y diámetro $I, incluido $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y del hormigón tipo HE-20 sin vibrar, $M Prueba de los conductos, transporte y colocación de los productos en su lugar de uso. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de 90 mm y diámetro $I»: la ubicación pasa a ser el diámetro",
+  "corrected": "Instalación de canalización de hormigón con $A conductos de polietileno libre de halógenos de 90 mm de diámetro $I, incluido $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y del hormigón tipo HE-20 sin vibrar, $M Prueba de los conductos, transporte y colocación de los productos en su lugar de uso. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«90 mm y diámetro $I» pasa a «90 mm de diámetro $I»"
+ },
+ "1c1db8887ef7": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 50 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conjunto de conductos de polietileno libre de halógenos, con $A unidades de diámetro $I y 50 mm, incluyendo $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«unidades de diámetro $I y 50 mm»: ubicación como diámetro",
+  "corrected": "Conjunto de conductos de polietileno libre de halógenos, con $A unidades de 50 mm de diámetro $I, incluyendo $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«de diámetro $I y 50 mm» → «de 50 mm de diámetro $I»"
+ },
+ "1e4cb5344813": {
+  "original": "Cimentaciones prismáticas, con barra corrugada roscada de $A mm, acceso por $B. $L(b,%D) Trabajo: $L(c,%D).",
+  "broken": "Se conforman cimentaciones prismáticas empleando una barra corrugada roscada de $A mm, habilitando el acceso por $B. El trabajo de tipo $L(b,%D) se lleva a cabo con $L(c,%D).",
+  "categoria": "reasignacion",
+  "motivo": "«trabajo de tipo Con corte ... se lleva a cabo con Nocturno» reasigna los papeles.",
+  "corrected": "Se conforman cimentaciones prismáticas empleando una barra corrugada roscada de $A mm, habilitando el acceso por $B. $L(b,%D) Trabajo: $L(c,%D).",
+  "cambio": "Corte suelto y turno con etiqueta «Trabajo:»"
+ },
+ "1ec8c3ccbdd9": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 90 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada compuesta por $A conductos de polietileno libre de halógenos de diámetro $I y 90 mm, incluido $N el relleno y compactado de la zanja, $P la entrega y colocación de los conductos y hormigón del tipo HE-20 sin vibrar, pruebas en los conductos finalizados, y el transporte junto con la retirada de los productos al lugar de destino $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de diámetro $I y 90 mm» da «diámetro adosada o superficial»",
+  "corrected": "Conducción enterrada compuesta por $A conductos de polietileno libre de halógenos de 90 mm de diámetro $I, incluido $N el relleno y compactado de la zanja, $P la entrega y colocación de los conductos y hormigón del tipo HE-20 sin vibrar, pruebas en los conductos finalizados, y el transporte junto con la retirada de los productos al lugar de destino $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "Reordenado: «de 90 mm de diámetro $I»"
+ },
+ "20475a6a76a3": {
+  "original": "Suministro y montaje de placa de anclajes de catenaria, en viaductos con taladros in-situ, de $A mm de dimensión. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "broken": "Placa de anclajes para catenaria suministrada y montada en viaductos con taladros in-situ, con una dimensión de $A mm. Trabajo a realizar: $B. Se establecerá una banda de mantenimiento de $C. Condiciones de ejecución: se respetarán las especificadas en $D.",
+  "categoria": "referencia",
+  "motivo": "«se respetarán las especificadas en $D» trata el valor como una referencia.",
+  "corrected": "Placa de anclajes para catenaria suministrada y montada en viaductos con taladros in-situ, con una dimensión de $A mm. Trabajo a realizar: $B. Se establecerá una banda de mantenimiento de $C. Condiciones de ejecución: $D.",
+  "cambio": "Quitado «se respetarán las especificadas en»"
+ },
+ "20e59b4b8be0": {
+  "original": "Canaleta PVC de $A con tapa. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "broken": "Canaleta PVC de $A, con tapa. Incluido: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "categoria": "reasignacion",
+  "motivo": "La etiqueta Trabajo pasa a «Incluido: Cualquier franja horaria»; el turno queda en papel erróneo.",
+  "corrected": "Canaleta PVC de $A, con tapa. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "cambio": "«Incluido:» → «Trabajo:»"
+ },
+ "21f68e5be913": {
+  "original": "Ejecución de los trabajos de rotura y reposición de cuneta de hasta 250 cm de ancho con paredes de hasta 15 cm de espesor incluyendo limpieza, acopio y transporte de materiales de derribo Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C",
+  "broken": "Se llevan a cabo los trabajos de desmantelamiento y reposición de cuneta con una anchura máxima de 250 cm y paredes de hasta 15 cm de espesor. Se incluye la limpieza, recogida y traslado de los materiales retirados. Trabajo: $A Zona de seguridad: $B Disposiciones para la realización de los trabajos: $C",
+  "categoria": "reasignacion",
+  "motivo": "La banda de mantenimiento queda como 'Zona de seguridad'.",
+  "corrected": "Se llevan a cabo los trabajos de desmantelamiento y reposición de cuneta con una anchura máxima de 250 cm y paredes de hasta 15 cm de espesor. Se incluye la limpieza, recogida y traslado de los materiales retirados. Trabajo: $A Banda de mantenimiento: $B Disposiciones para la realización de los trabajos: $C",
+  "cambio": "Etiqueta de $B: «Banda de mantenimiento:»"
+ },
+ "22ce7b5c1ae6": {
+  "original": "Ejecución de los trabajos de rotura y reposición de cuneta de hasta 250 cm de ancho con paredes de hasta 15 cm de espesor incluyendo limpieza, acopio y transporte de materiales de derribo Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C",
+  "broken": "Conducción de procedimientos de desmantelamiento y reinstalación de cuneta de hasta 250 cm de ancho y con paredes de espesor máximo de 15 cm, contemplando la limpieza, recolección y desplazamiento de restos de demolición. Operación: $A Faja de mantenimiento: $B Normativas de cumplimiento: $C",
+  "categoria": "reasignacion",
+  "motivo": "Las condiciones de ejecución pasan a 'Normativas de cumplimiento: Volumen escaso'.",
+  "corrected": "Conducción de procedimientos de desmantelamiento y reinstalación de cuneta de hasta 250 cm de ancho y con paredes de espesor máximo de 15 cm, contemplando la limpieza, recolección y desplazamiento de restos de demolición. Operación: $A Faja de mantenimiento: $B Condiciones de ejecución: $C",
+  "cambio": "Etiqueta de $C: «Condiciones de ejecución:»"
+ },
+ "233f683c4a06": {
+  "original": "Suministro y montaje de tapa para canaleta de hormigón tipo $A, incluyendo montaje y la retirada de las tierras sobrantes. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Se realizará la entrega y colocación de la tapa para la conducción enterrada de hormigón tipo $A, incluyendo la eliminación de tierras excedentes tras el montaje. Se determinará el trabajo según los parámetros especificados en $B. Se definirá el área de mantenimiento como $C. Se establecerán las condiciones de ejecución conforme a $D.",
+  "categoria": "referencia",
+  "motivo": "'parámetros especificados en $B' y 'área de mantenimiento como $C'",
+  "corrected": "Se realizará la entrega y colocación de la tapa para la conducción enterrada de hormigón tipo $A, incluyendo la eliminación de tierras excedentes tras el montaje. Se determinará el trabajo: $B. Se definirá la banda de mantenimiento: $C. Se establecerán las condiciones de ejecución: $D.",
+  "cambio": "Quitadas referencias; «área» pasa a «banda de mantenimiento»"
+ },
+ "249e146004d8": {
+  "original": "Canalización hormigonada de $A tubos de PVC de 110 mm de diámetro $I, incluso $N el relleno y el compactado de la zanja, $P el suministro y el montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Instalación de conducción enterrada con $A conductos de PVC de 110 mm, con diámetro nominal $I. Incluye $N el relleno de la zanja y el compactado del terreno, así como $P la entrega y colocación de los conductos y el hormigón de tipo HE-20 sin vibrar. Se realizan también las pruebas de la conducción, el transporte y la retirada de los materiales al sitio de trabajo. $M Tarea: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«110 mm, con diámetro nominal $I»: ubicación como diámetro",
+  "corrected": "Instalación de conducción enterrada con $A conductos de PVC de 110 mm de diámetro nominal $I. Incluye $N el relleno de la zanja y el compactado del terreno, así como $P la entrega y colocación de los conductos y el hormigón de tipo HE-20 sin vibrar. Se realizan también las pruebas de la conducción, el transporte y la retirada de los materiales al sitio de trabajo. $M Tarea: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«110 mm, con diámetro nominal $I» → «110 mm de diámetro nominal $I»"
+ },
+ "270ae55812b5": {
+  "original": "Suministro y Montaje de cimentación cilíndrica en desmonte tipo $B para terreno $A con postes de electrificación ca, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecucción: $F.",
+  "broken": "Se llevarán a cabo las actividades de suministro y montaje para la cimentación cilíndrica de tipo $B en desmonte para postes de catenaria CA en terreno $A. Se proveerán los componentes de fijación del poste. Se considerará la obra completa de acuerdo a los descriptores en $C. Se indicará la banda de mantenimiento en $D. Se detallarán las condiciones de ejecución en $F.",
+  "categoria": "referencia",
+  "motivo": "'descriptores en Nocturno', 'banda... en No necesita intervalo': valores tratados como documentos",
+  "corrected": "Se llevarán a cabo las actividades de suministro y montaje para la cimentación cilíndrica de tipo $B en desmonte para postes de catenaria CA en terreno $A. Se proveerán los componentes de fijación del poste. Se considerará la obra completa. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "cambio": "Valores como etiquetas, no como documentos"
+ },
+ "2729a2a89ad3": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 160 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada en hormigón con $A tubos de polietileno libre de halógenos de diámetro $I y 160 mm mm, $N incluido el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, pruebas de los conductos, transporte y retirada de los productos al lugar de empleo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de diámetro $I y 160 mm mm»: ubicación como diámetro y unidad duplicada",
+  "corrected": "Conducción enterrada en hormigón con $A tubos de polietileno libre de halógenos de 160 mm de diámetro $I, $N incluido el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, pruebas de los conductos, transporte y retirada de los productos al lugar de empleo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«de diámetro $I y 160 mm mm» → «de 160 mm de diámetro $I»"
+ },
+ "2b7805f50801": {
+  "original": "Suministro y montaje de $A para canaleta composite-PTR, incluyendo piezas para el cosido entre las mismas, según ET 03.365.064.9. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "$A se suministrará y montará para la canaleta composite-PTR, con piezas para el cosido entre las mismas, conforme a la ET 03.365.064.9.. El trabajo consistirá en $B, con una banda de mantenimiento de $C, y se realizará bajo las condiciones de ejecución $D.",
+  "categoria": "referencia",
+  "motivo": "«El trabajo consistirá en Cualquier franja horaria»: el turno se trata como contenido del trabajo",
+  "corrected": "$A se suministrará y montará para la canaleta composite-PTR, con piezas para el cosido entre las mismas, conforme a la ET 03.365.064.9.. Trabajo: $B, con una banda de mantenimiento de $C, y se realizará bajo las condiciones de ejecución: $D.",
+  "cambio": "«El trabajo consistirá en $B» → «Trabajo: $B»; dos puntos ante $D"
+ },
+ "2b81090b2dbd": {
+  "original": "Suministro y montaje de cimentación rectangular en desmonte $B para terreno $A con esperas roscadas para postes de electrificación, desde plataforma o vía. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Suministro y colocación de estructura portante rectangular tipo $B, adaptada para suelo $A, con esperas roscadas para postes de electrificación desde la plataforma o vía. Producto listo para su uso. Alcance de la obra: $C. Zona de conservación: $D. Circunstancias para la ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "«Alcance de la obra: Diurno»; pierde desmonte, «estructura portante»",
+  "corrected": "Suministro y colocación de estructura portante rectangular en desmonte tipo $B, adaptada para suelo $A, con esperas roscadas para postes de electrificación desde la plataforma o vía. Producto listo para su uso. Trabajo: $C. Zona de conservación: $D. Circunstancias para la ejecución: $F.",
+  "cambio": "Etiqueta «Trabajo:» para $C; recuperado «en desmonte» ante $B"
+ },
+ "2bad78d33d7a": {
+  "original": "Cimentaciones especiales tipo puente, con barra corrugada roscada de $A, desde plataforma o vía. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "broken": "Las cimentaciones especiales tipo puente, que cuentan con barra corrugada roscada de $A, se instalan desde plataforma o vía. El trabajo involucrado se encuentra en $B. La banda de mantenimiento es $C. Las condiciones de ejecución se describen en $D.",
+  "categoria": "referencia",
+  "motivo": "«se encuentra en Nocturno» y «se describen en $D» tratan los valores como referencias.",
+  "corrected": "Las cimentaciones especiales tipo puente, que cuentan con barra corrugada roscada de $A, se instalan desde plataforma o vía. El trabajo involucrado es: $B. La banda de mantenimiento es $C. Las condiciones de ejecución son: $D.",
+  "cambio": "Quitados «se encuentra en» y «se describen en»"
+ },
+ "2d6331edec3d": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 200 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Instalación de $A tuberías de polietileno libre de halógenos de 200 mm, con diámetro $I. Esto abarca $N la excavación y compactación de la zanja, $P la colocación y sellado de los conductos y hormigón tipo HE-20 sin vibración, la verificación de los conductos, el transporte y la retirada de los materiales $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«con diámetro $I»: ubicación como diámetro; añade sellado y excavación",
+  "corrected": "Instalación de $A tuberías de polietileno libre de halógenos de 200 mm de diámetro $I. Esto abarca $N la excavación y compactación de la zanja, $P la colocación y sellado de los conductos y hormigón tipo HE-20 sin vibración, la verificación de los conductos, el transporte y la retirada de los materiales $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«200 mm, con diámetro $I» → «200 mm de diámetro $I»"
+ },
+ "318d10ced828": {
+  "original": "$A de canalización de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Para instalaciones CMS en transiciones entre diferentes plataformas, se utilizan $A de canalización, compuestos por $B conductos de acero galvanizado de 100mm de diámetro. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "$A como objeto de 'se utilizan': 'se utilizan Suministro y montaje'.",
+  "corrected": "Para instalaciones CMS en transiciones entre diferentes plataformas, se realiza el $A de canalización, compuesta por $B conductos de acero galvanizado de 100mm de diámetro. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«se utilizan $A» → «se realiza el $A»"
+ },
+ "320a738d0422": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 50 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada de $A conductos de polietileno libre de halógenos de 50 mm mm, $I de diámetro, con $N relleno y compactado de la zanja. $P Procedencia y colocación de tubos y hormigón tipo HE-20 sin vibrar, verificación de conductos, transporte y eliminación de productos al sitio de uso $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "«50 mm mm, $I de diámetro»: unidad duplicada y ubicación como diámetro",
+  "corrected": "Conducción enterrada de $A conductos de polietileno libre de halógenos de 50 mm de diámetro $I, con $N relleno y compactado de la zanja. $P Procedencia y colocación de tubos y hormigón tipo HE-20 sin vibrar, verificación de conductos, transporte y eliminación de productos al sitio de uso $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "cambio": "«50 mm mm, $I de diámetro» → «50 mm de diámetro $I»"
+ },
+ "321aa69bd695": {
+  "original": "Suministro y montaje de cimentación cilíndrica para anclaje tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Suministro e instalación de cimentación cilíndrica tipo $B para anclaje en terreno $A, que incluye la colocación de postes de electrificación desde la plataforma o vía y la provisión de elementos para su fijación. El conjunto se entrega completamente terminado. Duración: $C. Período de revisión: $D. Condiciones para la ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "'Duración: Diurno' y 'Período de revisión' cambian el papel del turno y de la banda",
+  "corrected": "Suministro e instalación de cimentación cilíndrica tipo $B para anclaje en terreno $A, que incluye la colocación de postes de electrificación desde la plataforma o vía y la provisión de elementos para su fijación. El conjunto se entrega completamente terminado. Trabajo: $C. Banda de mantenimiento: $D. Condiciones para la ejecución: $F.",
+  "cambio": "Etiquetas «Duración»/«Período de revisión» → «Trabajo»/«Banda de mantenimiento»"
+ },
+ "3351406e5c19": {
+  "original": "Zanja para tendido de cables de $A de profundidad y 0,60 m de anchura máxima, $R(%B), y relleno compactado con material seleccionado procedente de la excavación, cama de arena de $X(%A) de espesor, rejilla de plastico identificadora, carga, descarga y transporte al lugar asignado en el interior de la obra. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Excavación para cableado de $A de profundidad y 0,60 m de ancho máximo, $R(%B), y compactación del relleno con material escogido de la zanja, capa de arena de $X(%A) de grosor, placa identificadora de plástico, procedimientos de carga, descarga y traslado al área designada en las instalaciones. Tarea: $C Zona de mantenimiento: $D Circunstancias de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "'Zona de mantenimiento: i >= 5 horas' convierte la franja horaria en espacio",
+  "corrected": "Excavación para cableado de $A de profundidad y 0,60 m de ancho máximo, $R(%B), y compactación del relleno con material escogido de la zanja, capa de arena de $X(%A) de grosor, placa identificadora de plástico, procedimientos de carga, descarga y traslado al área designada en las instalaciones. Tarea: $C Banda de mantenimiento: $D Circunstancias de ejecución: $F",
+  "cambio": "«Zona de mantenimiento» → «Banda de mantenimiento»"
+ },
+ "34192c599377": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 200 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "La canalización hormigonada se efectúa con $A conductos de polietileno sin halógenos de 200 mm de diámetro $I. Se cubrirá el relleno y compactación de la zanja en base a $N. Se llevará a cabo el suministro y montaje de los conductos y hormigón tipo HE-20 según $P. Se realizará la prueba de conductos, transporte y retirada de materiales al lugar de empleo conforme a $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "referencia",
+  "motivo": "«en base a $N», «según $P», «conforme a $M» tratan los valores como norma",
+  "corrected": "La canalización hormigonada se efectúa con $A conductos de polietileno sin halógenos de 200 mm de diámetro $I. Se cubrirá $N el relleno y compactación de la zanja. Se llevará a cabo $P el suministro y montaje de los conductos y hormigón tipo HE-20. Se realizará la prueba de conductos, transporte y retirada de materiales al lugar de empleo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "Quitados «en base a», «según», «conforme a»; $N y $P antepuestos"
+ },
+ "354bb95d8667": {
+  "original": "Suministro y montaje de cimentación rectangular de poste L o R en terraplén, tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Instalación completa de cimentación rectángular para poste L o R en un terraplén de tipo $B, diseñado para terreno $A con estructuras de postes de electrificación, desde plataforma o vía. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "El tipo de cimentación se asigna al terraplén: 'terraplén de tipo $B'.",
+  "corrected": "Instalación completa de cimentación rectángular para poste L o R en un terraplén, tipo $B, diseñado para terreno $A con estructuras de postes de electrificación, desde plataforma o vía. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "cambio": "«terraplén de tipo $B» → «terraplén, tipo $B»: tipo de cimentación"
+ },
+ "368f0ecfb4fa": {
+  "original": "Suministro y Montaje de cimentación cilíndrica en terraplén tipo $B para terreno $A con postes de electrificación ca, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecucción: $F.",
+  "broken": "Aporte y colocación de base cilíndrica en terraplén clase $B para tipo de terreno $A con columnas de catenaria CA, desde base o riel, incorporando las partes de anclaje del pilar. Conclusión total del acabado. Empleo: $C. Línea de cuidado: $D. Prescripciones de ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "'Línea de cuidado: i >= 5 horas', 'Empleo: Diurno'; postes pasan a 'columnas'",
+  "corrected": "Aporte y colocación de base cilíndrica en terraplén clase $B para tipo de terreno $A con columnas de catenaria CA, desde base o riel, incorporando las partes de anclaje del pilar. Conclusión total del acabado. Trabajo: $C. Banda de mantenimiento: $D. Prescripciones de ejecución: $F.",
+  "cambio": "Etiquetas «Empleo»/«Línea de cuidado» → «Trabajo»/«Banda de mantenimiento»"
+ },
+ "36a22c7c5c9e": {
+  "original": "$A de canalización de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se presenta un sistema de $A conductos $B de acero galvanizado, con un diámetro de 100mm, diseñados para instalaciones CMS en transiciones entre distintas plataformas. $Q(%A) Elaboración: $C Línea de atención: $D Circunstancias de implementación: $F",
+  "categoria": "reasignacion",
+  "motivo": "$A (operación) queda como número de conductos y $B como adjetivo: «sistema de Suministro y montaje conductos 1 o 2»",
+  "corrected": "$A de un sistema de $B conductos de acero galvanizado, con un diámetro de 100mm, diseñados para instalaciones CMS en transiciones entre distintas plataformas. $Q(%A) Elaboración: $C Línea de atención: $D Circunstancias de implementación: $F",
+  "cambio": "$A como operación inicial y $B como número de conductos"
+ },
+ "3709386758bd": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 160 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Instalación de $A conductos de polietileno libre de halógenos de 160 mm con diámetro nominal $I, incluyendo $N el relleno y compactado de la zanja y $P el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, así como la prueba de los conductos y el transporte y retiro de los materiales al lugar de empleo $M. Trabajo: $C, banda de mantenimiento: $D, condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«160 mm con diámetro nominal $I»: ubicación como diámetro",
+  "corrected": "Instalación de $A conductos de polietileno libre de halógenos de 160 mm de diámetro nominal $I, incluyendo $N el relleno y compactado de la zanja y $P el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, así como la prueba de los conductos y el transporte y retiro de los materiales al lugar de empleo $M. Trabajo: $C, banda de mantenimiento: $D, condiciones de ejecución: $F",
+  "cambio": "«160 mm con diámetro nominal $I» → «160 mm de diámetro nominal $I»"
+ },
+ "39b46046e7bb": {
+  "original": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Se registra la arqueta de registro de composite-PRFV tipo AFC-$K(%A), localizada en $A $I(%A). Se detalla el trabajo: $B. Se establece la banda de mantenimiento: $C. Se especifican las condiciones de ejecución: $D.",
+  "categoria": "reasignacion",
+  "motivo": "'localizada en 170x81x100 cm': las medidas pasan a ser una ubicación",
+  "corrected": "Se registra la arqueta de registro de composite-PRFV tipo AFC-$K(%A), de $A $I(%A). Se detalla el trabajo: $B. Se establece la banda de mantenimiento: $C. Se especifican las condiciones de ejecución: $D.",
+  "cambio": "«localizada en $A» → «de $A»: medidas, no ubicación"
+ },
+ "3a69101dbb84": {
+  "original": "Suministro y montaje de cimentación cilíndrica para anclaje tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Entrega e instalación de cimentación cilíndrica de anclaje tipo $B, para terreno $A, con la colocación de postes de electrificación desde plataforma o vía, incluyendo componentes de sujeción del poste. Lista para operación. Duración del proyecto: $C. Periodo de mantenimiento: $D. Condiciones de puesta en marcha: $F.",
+  "categoria": "reasignacion",
+  "motivo": "'Duración del proyecto: Diurno'",
+  "corrected": "Entrega e instalación de cimentación cilíndrica de anclaje tipo $B, para terreno $A, con la colocación de postes de electrificación desde plataforma o vía, incluyendo componentes de sujeción del poste. Lista para operación. Trabajo: $C. Periodo de mantenimiento: $D. Condiciones de puesta en marcha: $F.",
+  "cambio": "«Duración del proyecto» → «Trabajo»"
+ },
+ "40dc18e507c0": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 200 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Instalación de conducciones enterradas de $A tubos de polietileno libre de halógenos de 200 mm, con diámetro nominal $I. La tarea incluye $N la excavación y preparación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibración, además de la prueba, transporte y limpieza de la zona de trabajo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«con diámetro nominal $I»: ubicación como diámetro; cambia relleno por excavación",
+  "corrected": "Instalación de conducciones enterradas de $A tubos de polietileno libre de halógenos de 200 mm de diámetro nominal $I. La tarea incluye $N la excavación y preparación de la zanja, $P el suministro y colocación de los conductos y hormigón tipo HE-20 sin vibración, además de la prueba, transporte y limpieza de la zona de trabajo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«200 mm, con diámetro nominal $I» → «200 mm de diámetro nominal $I»"
+ },
+ "436bfdb90947": {
+  "original": "Suministro y Montaje de cimentación cilíndrica en terraplén tipo $B para terreno $A con postes de electrificación ca, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecucción: $F.",
+  "broken": "Entrega y colocación de fundación cilíndrica en terraplén clase $B diseñada para superficie $A con pilares de catenaria CA, desde infraestructura o riel, comprendiendo los accesorios de sujeción del pilar. Completamente finalizada. Obras: $C. Área de cuidado: $D. Normas de realización: $F.",
+  "categoria": "reasignacion",
+  "motivo": "'Área de cuidado: i >= 5 horas', 'Normas de realización'; postes pasan a 'pilares'",
+  "corrected": "Entrega y colocación de fundación cilíndrica en terraplén clase $B diseñada para superficie $A con pilares de catenaria CA, desde infraestructura o riel, comprendiendo los accesorios de sujeción del pilar. Completamente finalizada. Obras: $C. Banda de mantenimiento: $D. Condiciones de realización: $F.",
+  "cambio": "Etiquetas de $D y $F corregidas"
+ },
+ "46b7bac27a20": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 110 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada realizada con $A conductos de polietileno sin halógenos de 110 mm y diámetro $I, abarcando $N el enrejado y compactación de la zanja, $P la entrega y colocación de los conductos y concreto tipo HE-20 sin vibrar, la prueba de los conductos, el traslado y retirada de los productos al sitio de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«110 mm y diámetro $I»: ubicación como diámetro; «enrejado» erróneo",
+  "corrected": "Conducción enterrada realizada con $A conductos de polietileno sin halógenos de 110 mm de diámetro $I, abarcando $N el enrejado y compactación de la zanja, $P la entrega y colocación de los conductos y concreto tipo HE-20 sin vibrar, la prueba de los conductos, el traslado y retirada de los productos al sitio de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«110 mm y diámetro $I» → «110 mm de diámetro $I»"
+ },
+ "490bba4104ca": {
+  "original": "Suministro y montaje de cimentación cilíndrica para postes de electrificación, de $C de diámetro y $B  de profundidad, compuesta por 4 barras corrugadas roscadas de $A. ejecutada desde $D. totalmente terminada. $L(b,%C). Trabajo: $L(c,%C).",
+  "broken": "Se ha realizado el suministro y la instalación de una cimentación cilíndrica para postes de electrificación, con un diámetro de $C y una profundidad de $B, conformada por 4 barras corrugadas roscadas de $A. Hecho desde $D, y completamente concluido. $L(b,%C). Incluido en: $L(c,%C).",
+  "categoria": "referencia",
+  "motivo": "«Incluido en: Diurno»: el turno queda como referencia.",
+  "corrected": "Se ha realizado el suministro y la instalación de una cimentación cilíndrica para postes de electrificación, con un diámetro de $C y una profundidad de $B, conformada por 4 barras corrugadas roscadas de $A. Hecho desde $D, y completamente concluido. $L(b,%C). Trabajo: $L(c,%C).",
+  "cambio": "«Incluido en:» → «Trabajo:»"
+ },
+ "4bc2a575350e": {
+  "original": "Arqueta prefabricada de $A mm de dimensiones interiores, incluso recibido de los tubos de acometida y desague profundo, $T(%A) y relleno posterior, así como el acabado y limpieza de la misma. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Arqueta prefabricada con dimensiones interiores de $A mm, que incluye la instalación de conducciones de acometida y desagüe de $T(%A), además de la puesta en condiciones y limpieza. Tareas: $B, área de servicio: $C, condiciones de finalización: $D",
+  "categoria": "reasignacion",
+  "motivo": "«desagüe de $T» → «desagüe de tapa de hormigón»; la tapa pasa a complemento del desagüe y se pierde el relleno.",
+  "corrected": "Arqueta prefabricada con dimensiones interiores de $A mm, que incluye la instalación de conducciones de acometida y desagüe, $T(%A), además de la puesta en condiciones y limpieza. Tareas: $B, banda de mantenimiento: $C, condiciones de finalización: $D",
+  "cambio": "«desagüe de $T» → «desagüe, $T»; «área de servicio» → «banda de mantenimiento»"
+ },
+ "4c14e67b3ce6": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 50 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Colocación de zanjeado con conducción enterrada de $A tubos de polietileno de 50 mm y de $I, que incluye $N la excavación, relleno y compactación de la zanja, $P el suministro y colocación de los tubos de polietileno, hormigón tipo HE-20, la prueba de los conductos, y la manipulación de materiales al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de 50 mm y de $I» incoherente; pierde «libre de halógenos»",
+  "corrected": "Colocación de zanjeado con conducción enterrada de $A tubos de polietileno de 50 mm de diámetro $I, que incluye $N la excavación, relleno y compactación de la zanja, $P el suministro y colocación de los tubos de polietileno, hormigón tipo HE-20, la prueba de los conductos, y la manipulación de materiales al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«de 50 mm y de $I» → «de 50 mm de diámetro $I»"
+ },
+ "4d1c4b5cbc6e": {
+  "original": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Se define la arqueta de registro de composite-PRFV tipo AFC-$K(%A), ubicada en $A $I(%A). Se menciona el trabajo a realizar: $B. Se indica la banda de mantenimiento: $C. Se expone las condiciones de ejecución: $D.",
+  "categoria": "reasignacion",
+  "motivo": "'ubicada en 150x90x100 cm': las medidas pasan a ser una ubicación",
+  "corrected": "Se define la arqueta de registro de composite-PRFV tipo AFC-$K(%A), de $A $I(%A). Se menciona el trabajo a realizar: $B. Se indica la banda de mantenimiento: $C. Se expone las condiciones de ejecución: $D.",
+  "cambio": "«ubicada en $A» pasa a «de $A»"
+ },
+ "4dec1ea1249c": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 110 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Instalación de conducción enterrada de $A conductos de polietileno libre de halógenos de 110 mm con diámetro nominal $I, incluida la zanja y relleno, $N y compactación, $P suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, prueba de los conductos, transporte y retiro de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«con diámetro nominal $I»: ubicación como diámetro; $N mal colocado",
+  "corrected": "Instalación de conducción enterrada de $A conductos de polietileno libre de halógenos de 110 mm de diámetro nominal $I, incluida $N la zanja y relleno y compactación, $P suministro y colocación de los conductos y hormigón tipo HE-20 sin vibrar, prueba de los conductos, transporte y retiro de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F",
+  "cambio": "«110 mm de diámetro nominal $I»; $N antepuesto a la zanja"
+ },
+ "4faac973b839": {
+  "original": "Arqueta prefabricada de $A mm de dimensiones interiores, incluso recibido de los tubos de acometida y desague profundo, $T(%A) y relleno posterior, así como el acabado y limpieza de la misma. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Arqueta prefabricada con $A mm de dimensiones interiores, que abarca la instalación de conductos para acometida y desagüe de $T(%A), así como la finalización y limpieza. Actividad: $B, área de mantenimiento: $C, condiciones de ejecución: $D",
+  "categoria": "reasignacion",
+  "motivo": "«desagüe de $T» → «desagüe de tapa o tapas»; la tapa pasa a complemento del desagüe.",
+  "corrected": "Arqueta prefabricada con $A mm de dimensiones interiores, que abarca la instalación de conductos para acometida y desagüe, $T(%A), así como la finalización y limpieza. Actividad: $B, banda de mantenimiento: $C, condiciones de ejecución: $D",
+  "cambio": "«desagüe de $T» → «desagüe, $T»; «área» → «banda de mantenimiento»"
+ },
+ "5102a45c5f63": {
+  "original": "Destapado de canaleta existente $P(%D) para localizar cables o tirar cables nuevos. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C",
+  "broken": "Procedimiento para destapar la $P(%D) existente con el fin de identificar o instalar nuevos cables. Este trabajo se realizará conforme a las especificaciones de $A. Para este procedimiento se ocupará la banda de mantenimiento que se indica en $B. Además, se deben tener en cuenta las condiciones de ejecución especificadas en $C.",
+  "categoria": "referencia",
+  "motivo": "«la a máquina existente»; los valores se tratan como especificaciones o referencias («indica en»).",
+  "corrected": "Procedimiento para destapar $P(%D) la canaleta existente con el fin de identificar o instalar nuevos cables. Trabajo: $A. Para este procedimiento se ocupará la banda de mantenimiento: $B. Además, se deben tener en cuenta las condiciones de ejecución: $C.",
+  "cambio": "$P como método sobre la canaleta; valores sin referencias"
+ },
+ "51725b957559": {
+  "original": "Destapado de canaleta existente $P(%D) para localizar cables o tirar cables nuevos. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C",
+  "broken": "Se realiza el destape de la canaleta existente de tipo $P(%D), con el objetivo de localizar o instalar nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones para la ejecución: $C",
+  "categoria": "reasignacion",
+  "motivo": "El método «a mano» pasa a ser un tipo de canaleta: «de tipo a mano».",
+  "corrected": "Se realiza el destape de la canaleta existente $P(%D), con el objetivo de localizar o instalar nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones para la ejecución: $C",
+  "cambio": "Quitado «de tipo»: $P es el método"
+ },
+ "53eaaad46922": {
+  "original": "Suministro y Montaje de cimentación cilíndrica en desmonte tipo $B para terreno $A con postes de electrificación ca, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecucción: $F.",
+  "broken": "Se proporcionará y se instalará la cimentación cilíndrica de tipo $B en terreno de desmonte para la colocación de postes de catenaria CA en terreno $A. Se incluirán los componentes de sujección del poste. Se considerará la obra finalizada según las especificaciones detalladas en $C. Se indicará la banda de mantenimiento correspondiente en $D. Se detallarán las condiciones de ejecución en $F.",
+  "categoria": "referencia",
+  "motivo": "«especificaciones detalladas en Nocturno», «condiciones en Volumen relevante»",
+  "corrected": "Se proporcionará y se instalará la cimentación cilíndrica de tipo $B en terreno de desmonte para la colocación de postes de catenaria CA en terreno $A. Se incluirán los componentes de sujección del poste. Se considerará la obra finalizada. Se indicará el trabajo: $C. Se indicará la banda de mantenimiento correspondiente: $D. Se detallarán las condiciones de ejecución: $F.",
+  "cambio": "«detalladas en $C/en $D/en $F» → etiquetas con dos puntos"
+ },
+ "55c52438b6bd": {
+  "original": "Suministro y montaje de cimentación rectangular en desmonte $B para terreno $A con esperas roscadas para postes de electrificación, desde plataforma o vía. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Colocación y ensamblaje de cimentación rectangular en taludes tipo $B, sobre terreno $A, con soportes roscados para torres de energía, tanto desde la plataforma como desde la vía. Proyecto completo. Margen de conservación: $D. Ambientes: $F. Desarrollo operativo: $C.",
+  "categoria": "reasignacion",
+  "motivo": "«Ambientes: Cualquier condición», «torres de energía», «Desarrollo operativo: Nocturno»",
+  "corrected": "Colocación y ensamblaje de cimentación rectangular en taludes tipo $B, sobre terreno $A, con soportes roscados para torres de energía, tanto desde la plataforma como desde la vía. Proyecto completo. Margen de conservación: $D. Condiciones de ejecución: $F. Trabajo: $C.",
+  "cambio": "Etiquetas de $F y $C: «Condiciones de ejecución», «Trabajo»"
+ },
+ "57c195059253": {
+  "original": "Canalización hormigonada de $A tubos de PVC de 110 mm de diámetro $I, incluso $N el relleno y el compactado de la zanja, $P el suministro y el montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se realiza la conducción enterrada con $A tuberías de PVC de 110 mm con diámetro nominal $I. Se incluye $N el rellenado y compactación de la zanja. $P se suministran y montan los tubos y hormigón tipo HE-20 sin vibrar. Se efectúan pruebas en los conductos, así como el transporte y retiro de materiales en el lugar de trabajo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«con diámetro nominal $I»: ubicación como diámetro",
+  "corrected": "Se realiza la conducción enterrada con $A tuberías de PVC de 110 mm de diámetro nominal $I. Se incluye $N el rellenado y compactación de la zanja. $P se suministran y montan los tubos y hormigón tipo HE-20 sin vibrar. Se efectúan pruebas en los conductos, así como el transporte y retiro de materiales en el lugar de trabajo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«110 mm con diámetro nominal $I» → «110 mm de diámetro nominal $I»"
+ },
+ "5a4b4d1766ca": {
+  "original": "Suministro y montaje de tapa para canaleta de hormigón tipo $A, incluyendo montaje y la retirada de las tierras sobrantes. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Instalación y configuración de la tapa para la canalización de hormigón tipo $A, que incluye la colocación y la eliminación de tierras adicionales. Operaciones: $B Zona de trabajo: $C Circunstancias de implementación: $D",
+  "categoria": "reasignacion",
+  "motivo": "Banda de mantenimiento pasa a «Zona de trabajo»: horas como zona",
+  "corrected": "Instalación y configuración de la tapa para la canalización de hormigón tipo $A, que incluye la colocación y la eliminación de tierras adicionales. Operaciones: $B Banda de mantenimiento: $C Circunstancias de implementación: $D",
+  "cambio": "«Zona de trabajo» → «Banda de mantenimiento»"
+ },
+ "5cc1396502c7": {
+  "original": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Unidad de registro de composite-PRFV serie AFC-$K(%A), de la clase $A, subclase $I(%A). Operaciones: $B. Sección de mantenimiento: $C. Consideraciones para la implementación: $D.",
+  "categoria": "reasignacion",
+  "motivo": "Las medidas pasan a ser «clase» y la descripción «subclase»",
+  "corrected": "Unidad de registro de composite-PRFV serie AFC-$K(%A), de $A $I(%A). Operaciones: $B. Sección de mantenimiento: $C. Consideraciones para la implementación: $D.",
+  "cambio": "Quitados «clase» y «subclase»: «de $A $I(%A)»"
+ },
+ "60a535266334": {
+  "original": "Cimentación en roca con micropilote con barra corrugada roscada de $A mm, diámetro de $C m y profundidad de $B m, con acesso por $D . $L(b,%F) Trabajo: $L(c,%F).",
+  "broken": "Trabajo de cimentación en roca con micropilote, utilizando barra corrugada roscada de $A mm, con diámetro de $C m y profundidad de $B m, con acceso por $D. $L(b,%F). Incluido $L(c,%F).",
+  "categoria": "reasignacion",
+  "motivo": "«Incluido $L(c)» convierte el turno en un elemento incluido.",
+  "corrected": "Trabajo de cimentación en roca con micropilote, utilizando barra corrugada roscada de $A mm, con diámetro de $C m y profundidad de $B m, con acceso por $D. $L(b,%F). Trabajo: $L(c,%F).",
+  "cambio": "«Incluido» pasa a etiqueta «Trabajo:»"
+ },
+ "6342db938291": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 90 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Sistema de canalización en hormigón compuesto por $A tubos de polietileno libre de halógenos de corte 90 mm y diámetro $I, con $N el relleno y compactación de la zanja, $P suministro e instalación de los conductos y hormigón tipo HE-20 sin vibrar, $M verificación de los conductos, transporte y disposición de los productos en su lugar de utilización. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de corte 90 mm y diámetro $I»: ubicación como diámetro",
+  "corrected": "Sistema de canalización en hormigón compuesto por $A tubos de polietileno libre de halógenos de 90 mm de diámetro $I, con $N el relleno y compactación de la zanja, $P suministro e instalación de los conductos y hormigón tipo HE-20 sin vibrar, $M verificación de los conductos, transporte y disposición de los productos en su lugar de utilización. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«de corte 90 mm y diámetro $I» → «de 90 mm de diámetro $I»"
+ },
+ "63a46c5ab45e": {
+  "original": "Suministro y montaje de placa de anclajes de catenaria, en viaductos con taladros in-situ, de $A mm de dimensión. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "broken": "Se suministrarán y montarán placas de anclajes para la catenaria, en viaductos dotados de taladros in-situ, con una dimensión de $A mm. Se realizará el trabajo $B. Se establecerá una banda de mantenimiento $C. Se cumplirán las condiciones de ejecución definidas en $D.",
+  "categoria": "referencia",
+  "motivo": "«condiciones definidas en $D» trata el valor como una referencia.",
+  "corrected": "Se suministrarán y montarán placas de anclajes para la catenaria, en viaductos dotados de taladros in-situ, con una dimensión de $A mm. Se realizará el trabajo: $B. Se establecerá una banda de mantenimiento: $C. Se cumplirán las condiciones de ejecución: $D.",
+  "cambio": "«definidas en $D» → «: $D»; dos puntos ante $B y $C"
+ },
+ "64c8ce57ed52": {
+  "original": "Suministro y ejecución de sellado de arqueta o cámara de registro, incluyendo ladrillo sencillo de  24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R para el sellado. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C",
+  "broken": "Provisión y aplicación del sellado en arquetas o cámaras de registro, utilizando ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R para el sellado. Actividad a ejecutar: $A Ancho de intervención: $B Requisitos de ejecución: $C",
+  "categoria": "reasignacion",
+  "motivo": "La banda horaria pasa a 'Ancho de intervención', una dimensión.",
+  "corrected": "Provisión y aplicación del sellado en arquetas o cámaras de registro, utilizando ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R para el sellado. Actividad a ejecutar: $A Banda de mantenimiento: $B Requisitos de ejecución: $C",
+  "cambio": "«Ancho de intervención» → «Banda de mantenimiento»"
+ },
+ "6744787f60c1": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 160 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se efectuará la instalación de una conducción de hormigón con $A conductos de polietileno exento de halógenos de 160 mm, con un diámetro de $I. Comprende $N el relleno y compactación de la zanja, $P el abastecimiento y ensamblaje de los conductos y hormigón de tipo HE-20 sin vibrar, la inspección de los conductos, el traslado y la evacuación de los productos al lugar de uso $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«con un diámetro de $I»: ubicación como diámetro",
+  "corrected": "Se efectuará la instalación de una conducción de hormigón con $A conductos de polietileno exento de halógenos con un diámetro de 160 mm, $I. Comprende $N el relleno y compactación de la zanja, $P el abastecimiento y ensamblaje de los conductos y hormigón de tipo HE-20 sin vibrar, la inspección de los conductos, el traslado y la evacuación de los productos al lugar de uso $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«con un diámetro de 160 mm, $I»"
+ },
+ "69c85ac1ec99": {
+  "original": "Suministro y montaje de cimentación rectangular para anclaje tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía. Totalmente terminada. Trabajo: $C. Banda de mantenimiento:$D. Condiciones de ejecución: $F.",
+  "broken": "Fabricación y colocación de estructura rectangular para sujeción de categoría $B, ajustada a $A con elementos para electrificación, desde plataforma o riel. Concluido en su totalidad. Obras: $C. Aproximación de mantenimiento:$D. Parámetros de operación: $F.",
+  "categoria": "reasignacion",
+  "motivo": "Se pierde «terreno»: «ajustada a normal»; además «Fabricación» de una estructura sin cimentación ni postes",
+  "corrected": "Fabricación y colocación de estructura rectangular para sujeción de categoría $B, ajustada a terreno $A con elementos para electrificación, desde plataforma o riel. Concluido en su totalidad. Obras: $C. Banda de mantenimiento:$D. Parámetros de operación: $F.",
+  "cambio": "«ajustada a $A» → «a terreno $A»; «Aproximación» → «Banda»"
+ },
+ "6b340372425e": {
+  "original": "Suministro y colocación de tubería de PVC de 110 mm de diámetro para drenaje de arqueta desde centro de arqueta a pie de talud incluyendo relleno y compactación de tierras. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C",
+  "broken": "Se proporcionará y se instalará una conducción enterrada de PVC de 110 mm de diámetro nominal para drenaje de arqueta, desde el centro de arqueta hasta el pie de talud, incluyendo el relleno y la compactación de tierras. $A. Zona de mantenimiento: $B. Se cumplirán las $C.",
+  "categoria": "referencia",
+  "motivo": "$A queda sin etiqueta y «Se cumplirán las Cualquier condición de ejecución»",
+  "corrected": "Se proporcionará y se instalará una conducción enterrada de PVC de 110 mm de diámetro nominal para drenaje de arqueta, desde el centro de arqueta hasta el pie de talud, incluyendo el relleno y la compactación de tierras. Trabajo: $A. Banda de mantenimiento: $B. Se cumplirán las condiciones de ejecución: $C.",
+  "cambio": "Etiqueta «Trabajo» para $A, «Banda» para $B, «condiciones de ejecución:» ante $C"
+ },
+ "6fd1ea6d5de5": {
+  "original": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Arqueta de registro tipo AFC-$K(%A) de composite-PRFV, perteneciente a $A $I(%A). Trabajo: $B; banda de mantenimiento: $C y condiciones de ejecución: $D.",
+  "categoria": "reasignacion",
+  "motivo": "'perteneciente a 40x40x50 cm': las medidas pasan a ser pertenencia",
+  "corrected": "Arqueta de registro tipo AFC-$K(%A) de composite-PRFV, de $A $I(%A). Trabajo: $B; banda de mantenimiento: $C y condiciones de ejecución: $D.",
+  "cambio": "«perteneciente a $A» pasa a «de $A»"
+ },
+ "6fff42748b26": {
+  "original": "Canaleta PVC de $A con tapa. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "broken": "Confeccionada en canaleta PVC de $A con tapa integrada, el trabajo realizado es $B. La banda de mantenimiento es descrita como $C. Las condiciones de ejecución se especifican en $D.",
+  "categoria": "referencia",
+  "motivo": "«condiciones se especifican en Cualquier condición»; «Confeccionada en canaleta» es incoherente",
+  "corrected": "Confeccionada en canaleta PVC de $A con tapa integrada, trabajo: $B. La banda de mantenimiento es descrita como $C. Las condiciones de ejecución son: $D.",
+  "cambio": "«trabajo realizado es $B» → «trabajo: $B»; «se especifican en» → «son:»"
+ },
+ "71cdf638ad31": {
+  "original": "Cimentaciones especiales tipo puente, con barra corrugada roscada de $A, desde plataforma o vía. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "broken": "Cimentación especial tipo puente, incluyendo barra corrugada roscada de $A. Desarrollada desde la plataforma o la vía, con las siguientes operaciones: $B. Consideraciones de mantenimiento: $C. Aspectos relacionados con la implementación: $D.",
+  "categoria": "reasignacion",
+  "motivo": "El turno $B queda como «las siguientes operaciones: Nocturno».",
+  "corrected": "Cimentación especial tipo puente, incluyendo barra corrugada roscada de $A. Desarrollada desde la plataforma o la vía. Trabajo: $B. Consideraciones de mantenimiento: $C. Aspectos relacionados con la implementación: $D.",
+  "cambio": "Turno $B con etiqueta «Trabajo:»"
+ },
+ "72865111f1dd": {
+  "original": "Apertura  $A de canaleta de $B existente para el tendido de los cables, incluyendo las labores de cavado de terreno. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Procedimiento para la apertura $A en la canalización de hormigón $B para la instalación de cables, incluyendo la excavación del terreno. Tareas: $C Zona de reparación: $D Aspectos de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«canalización de hormigón $B» da «hormigón plástico»; además, «Zona de reparación».",
+  "corrected": "Procedimiento para la apertura $A en la canalización de $B para la instalación de cables, incluyendo la excavación del terreno. Tareas: $C Banda de mantenimiento: $D Aspectos de ejecución: $F",
+  "cambio": "«de hormigón $B» → «de $B»; «Zona de reparación» → «Banda»"
+ },
+ "746f7c57791c": {
+  "original": "Canalización hormigonada de $A tubos de PVC de 110 mm de diámetro $I, incluso $N el relleno y el compactado de la zanja, $P el suministro y el montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se procederá a la canalización enterrada de $A conductos de PVC de 110 mm con diámetro nominal $I. Incluye $N el relleno y compactado del recinto, $P la provisión y colocación de tubos y hormigón de tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada al lugar de uso. $M Ejecución: $C Límite de mantenimiento: $D Circunstancias de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«110 mm con diámetro nominal $I»: ubicación como diámetro",
+  "corrected": "Se procederá a la canalización enterrada de $A conductos de PVC con diámetro nominal de 110 mm $I. Incluye $N el relleno y compactado del recinto, $P la provisión y colocación de tubos y hormigón de tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y la retirada al lugar de uso. $M Ejecución: $C Límite de mantenimiento: $D Circunstancias de ejecución: $F",
+  "cambio": "«con diámetro nominal de 110 mm $I»"
+ },
+ "768293f3861e": {
+  "original": "Cimentaciones prismáticas, con barra corrugada roscada de $A mm, acceso por $B. $L(b,%D) Trabajo: $L(c,%D).",
+  "broken": "Se implementan cimentaciones prismáticas, equipadas con una barra corrugada roscada de $A mm, con acceso proporcionado por $B. El tipo de $L(b,%D) se efectúa con $L(c,%D).",
+  "categoria": "reasignacion",
+  "motivo": "«El tipo de Con corte de corriente se efectúa con Diurno»: incoherente.",
+  "corrected": "Se implementan cimentaciones prismáticas, equipadas con una barra corrugada roscada de $A mm, con acceso proporcionado por $B. $L(b,%D) Trabajo: $L(c,%D).",
+  "cambio": "Corte suelto y turno con etiqueta «Trabajo:»"
+ },
+ "76ff429d4cf8": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 160 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se procederá a la instalación de una conducción enterrada compuesta por $A conductos de polietileno sin halógenos de 160 mm, con un diámetro nominal $I. Incluye $N el relleno y compactación de la zanja, $P el abastecimiento y colocación de los conductos y hormigón HE-20 sin vibración, la verificación de los conductos, el traslado y la remoción de los materiales al sitio de uso $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«con un diámetro nominal $I»: ubicación como diámetro",
+  "corrected": "Se procederá a la instalación de una conducción enterrada compuesta por $A conductos de polietileno sin halógenos con un diámetro nominal de 160 mm, $I. Incluye $N el relleno y compactación de la zanja, $P el abastecimiento y colocación de los conductos y hormigón HE-20 sin vibración, la verificación de los conductos, el traslado y la remoción de los materiales al sitio de uso $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«con un diámetro nominal de 160 mm, $I»"
+ },
+ "7a19a2216041": {
+  "original": "Cimentaciones prismáticas, con barra corrugada roscada de $A mm, acceso por $B. $L(b,%D) Trabajo: $L(c,%D).",
+  "broken": "Fundaciones prismáticas, con barras corrugadas roscadas de $A mm y acceso por $B. Diseño: $L(b,%D) Proceso: $L(c,%D).",
+  "categoria": "reasignacion",
+  "motivo": "Etiqueta el corte de corriente como «Diseño:».",
+  "corrected": "Fundaciones prismáticas, con barras corrugadas roscadas de $A mm y acceso por $B. $L(b,%D) Proceso: $L(c,%D).",
+  "cambio": "Quitada etiqueta «Diseño:» del corte de corriente"
+ },
+ "7a2ad6bc257e": {
+  "original": "Cimentación en roca con micropilote con barra corrugada roscada de $A mm, diámetro de $C m y profundidad de $B m, con acesso por $D . $L(b,%F) Trabajo: $L(c,%F).",
+  "broken": "La cimentación en roca con micropilote incorpora una barra corrugada roscada de $A mm de diámetro $C m y profundidad $B m, permitiendo el acesso por $D. $L(c,%F), además de $L(b,%F).",
+  "categoria": "reasignacion",
+  "motivo": "El diámetro y la profundidad pasan a la barra; los turnos quedan sin etiqueta.",
+  "corrected": "La cimentación en roca con micropilote incorpora una barra corrugada roscada de $A mm, con diámetro de $C m y profundidad de $B m, permitiendo el acesso por $D. $L(b,%F) Trabajo: $L(c,%F).",
+  "cambio": "Diámetro/profundidad separados de la barra; «Trabajo:» ante $L(c,%F)"
+ },
+ "7c2abedb961a": {
+  "original": "Cimentaciones especiales tipo puente, con barra corrugada roscada de $A, desde plataforma o vía. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "broken": "Para cimentaciones especiales tipo puente se utiliza barra corrugada roscada de $A, instalada desde plataforma o vía. Las labores se describen en $B. La banda de mantenimiento es $C. Las condiciones de ejecución son $D.",
+  "categoria": "referencia",
+  "motivo": "«Las labores se describen en Nocturno»: el turno pasa a referencia.",
+  "corrected": "Para cimentaciones especiales tipo puente se utiliza barra corrugada roscada de $A, instalada desde plataforma o vía. Trabajo: $B. La banda de mantenimiento es $C. Las condiciones de ejecución son $D.",
+  "cambio": "«Las labores se describen en $B» → «Trabajo: $B»"
+ },
+ "8006339e8fc8": {
+  "original": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Arqueta de registro de composite-PRFV, tipo AFC-$K(%A), de la línea $A $I(%A), trabajo: $B, banda de mantenimiento: $C e incluye condiciones de ejecución: $D.",
+  "categoria": "reasignacion",
+  "motivo": "Las dimensiones ($A) se presentan como «línea»: «de la línea 40x40x50 centímetros»",
+  "corrected": "Arqueta de registro de composite-PRFV, tipo AFC-$K(%A), de $A $I(%A), trabajo: $B, banda de mantenimiento: $C e incluye condiciones de ejecución: $D.",
+  "cambio": "«de la línea $A» → «de $A»"
+ },
+ "813480e055d5": {
+  "original": "Canalización hormigonada de $A tubos de PVC de 110 mm de diámetro $I, incluso $N el relleno y el compactado de la zanja, $P el suministro y el montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Instalación de canalización subterránea con $A tuberías de PVC de 110 mm, de diámetro nominal $I. Se incluye $N el relleno de la zanja y el compactado del terreno, $P la entrega de los tubos y el hormigón tipo HE-20 sin vibrar, y la prueba de la conducción, el transporte y la retirada de los materiales al lugar del trabajo. $M Tarea: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«110 mm, de diámetro nominal $I»: ubicación como diámetro",
+  "corrected": "Instalación de canalización subterránea con $A tuberías de PVC de 110 mm de diámetro nominal $I. Se incluye $N el relleno de la zanja y el compactado del terreno, $P la entrega de los tubos y el hormigón tipo HE-20 sin vibrar, y la prueba de la conducción, el transporte y la retirada de los materiales al lugar del trabajo. $M Tarea: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«110 mm, de diámetro nominal $I» → «110 mm de diámetro nominal $I»"
+ },
+ "81c303babe98": {
+  "original": "Suministro y montaje de cimentación cilíndrica para anclaje tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Ofrecemos el suministro e instalación de cimentaciones cilíndricas tipo $B para anclaje, diseñadas para terreno $A, que incluyen la instalación de postes de electrificación desde la plataforma o vía y los materiales necesarios para su fijación. El proyecto se entrega en estado final. Duración del proyecto: $C. Intervalo de mantenimiento: $D. Circunstancias de implementación: $F.",
+  "categoria": "reasignacion",
+  "motivo": "'Duración del proyecto: Nocturno'; el turno pasa a ser una duración",
+  "corrected": "Ofrecemos el suministro e instalación de cimentaciones cilíndricas tipo $B para anclaje, diseñadas para terreno $A, que incluyen la instalación de postes de electrificación desde la plataforma o vía y los materiales necesarios para su fijación. El proyecto se entrega en estado final. Trabajo: $C. Intervalo de mantenimiento: $D. Circunstancias de implementación: $F.",
+  "cambio": "Etiqueta de $C: «Trabajo:»"
+ },
+ "8250183b3a06": {
+  "original": "Suministro y montaje de cimentación rectangular en desmonte $B para terreno $A con postes de electrificación, desde plataforma o vía. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Colocación y montaje de fundación de cimentación rectangular en terreno de tipo $B, para zona $A. Postes eléctricos incluidos. Realización desde plataforma o vía ferroviaria. Producto finalizado. Trabajo necesario: $C. Área de mantenimiento: $D. Criterios de implementación: $F.",
+  "categoria": "reasignacion",
+  "motivo": "Tipo de desmonte $B pasa a «terreno de tipo», terreno a «zona»",
+  "corrected": "Colocación y montaje de fundación de cimentación rectangular en desmonte $B, para terreno $A. Postes eléctricos incluidos. Realización desde plataforma o vía ferroviaria. Producto finalizado. Trabajo: $C. Banda de mantenimiento: $D. Criterios de implementación: $F.",
+  "cambio": "«terreno de tipo $B, zona $A» → «desmonte $B, terreno $A»; etiquetas $C/$D"
+ },
+ "843b55184dbc": {
+  "original": "Suministro y montaje de cimentación rectangular en desmonte $B para terreno $A con esperas roscadas para postes de electrificación, desde plataforma o vía. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Entrega y montaje de fundación rectangular en desmonte $B, creada para suelo $A, con esperas roscadas para postes de electrificación desde la vía o plataforma. Producto en condiciones para su uso inmediato. Alcance: $C. Banda de conservación: $D. Condiciones para la ejecución del trabajo: $F.",
+  "categoria": "reasignacion",
+  "motivo": "«Alcance: Nocturno»: turno en papel de alcance",
+  "corrected": "Entrega y montaje de fundación rectangular en desmonte $B, creada para suelo $A, con esperas roscadas para postes de electrificación desde la vía o plataforma. Producto en condiciones para su uso inmediato. Trabajo: $C. Banda de conservación: $D. Condiciones para la ejecución del trabajo: $F.",
+  "cambio": "Etiqueta «Alcance» → «Trabajo» para $C"
+ },
+ "84f718a75449": {
+  "original": "Arqueta realizada \"in situ\" de $B, y $A mm de dimensiones interiores, colocada sobre solera de hormigón en masa, limpiada y terminada, y con parte proporcional de medios auxiliares, incluso relleno y la compactación perimetral posterior, el drenaje y el recibido de los tubos, $T(%A). Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Arqueta \"in situ\" elaborada con $B y dimensiones internas de $A mm, montada sobre una losa de hormigón acabada, con todos los accesorios necesarios como relleno y compactación, drenaje y conexión de canales $T(%A). Detalles constructivos: $C Mantenimiento: $D Normativa de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "'Detalles constructivos: Diurno', 'Normativa de ejecución'; omite 'en masa'",
+  "corrected": "Arqueta \"in situ\" elaborada con $B y dimensiones internas de $A mm, montada sobre una losa de hormigón acabada, con todos los accesorios necesarios como relleno y compactación, drenaje y conexión de canales $T(%A). Trabajo: $C Mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«Detalles constructivos»/«Normativa» → «Trabajo»/«Condiciones de ejecución»"
+ },
+ "85064573a8ca": {
+  "original": "Suministro y montaje de placa de anclajes de catenaria, en viaductos con taladros in-situ, de $A mm de dimensión. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "broken": "Placa de anclajes para la catenaria, suministrada y montada en viaductos dotados de taladros in-situ, con dimensiones de $A mm. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: se aplicarán las indicadas en $D.",
+  "categoria": "referencia",
+  "motivo": "«se aplicarán las indicadas en $D» trata la condición como un documento.",
+  "corrected": "Placa de anclajes para la catenaria, suministrada y montada en viaductos dotados de taladros in-situ, con dimensiones de $A mm. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "cambio": "Quitado «se aplicarán las indicadas en»"
+ },
+ "879c2a29c42d": {
+  "original": "Construcción de canaleta rectangular para cables en el $A de $B de anchura y una profundidad de $C, incluida la apertura de la zanja con los medios adecuados, construcción de la canaleta de fábrica de ladrillos sobre solera de hormigón en masa, enlucido por dentro, angular galvanizado, y tapa $M(%A). Incluye el propio montaje, los desplazamientos, pequeño material, herramientas, maquinaria, medios auxiliares. Estará de acuerdo con las E.T. de ADIF, planos normalizados y especificaciones de proyecto. Condiciones de ejecución: $D.",
+  "broken": "Se llevará a cabo la fabricación de una canaleta rectangular para cables en el $A de $B de anchura y una profundidad de $C dentro del $A. Conlleva la excavación de la zanja mediante métodos apropiados, montaje de la canaleta prefabricada de ladrillo sobre base de hormigón en masa, revestimiento interior, barandas galvanizadas y cerramiento con tapa $M(%A). Se incluye el montaje, los ajustes, materiales menores, herramientas, maquinaria, y medios auxiliares. Se ajustará a las E.T. de ADIF, planos normalizados y condiciones del proyecto. Condiciones de realización: $D.",
+  "categoria": "reasignacion",
+  "motivo": "$A duplicado («dentro del interior del edificio técnico»); «prefabricada de ladrillo» y «barandas» alteran el contenido",
+  "corrected": "Se llevará a cabo la fabricación de una canaleta rectangular para cables en el $A de $B de anchura y una profundidad de $C. Conlleva la excavación de la zanja mediante métodos apropiados, montaje de la canaleta prefabricada de ladrillo sobre base de hormigón en masa, revestimiento interior, barandas galvanizadas y cerramiento con tapa $M(%A). Se incluye el montaje, los ajustes, materiales menores, herramientas, maquinaria, y medios auxiliares. Se ajustará a las E.T. de ADIF, planos normalizados y condiciones del proyecto. Condiciones de realización: $D.",
+  "cambio": "Eliminado «dentro del $A» duplicado"
+ },
+ "87bfbff4ebdd": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 200 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se proporcionará una conducción enterrada de $A conductos de polietileno libre de halógenos de 200 mm con diámetro $I, incluyendo $N el relleno y compactado de la zanja, así como $P el suministro y montaje de los tubos y hormigón tipo HE-20, sin vibrar. Incluye la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "«200 mm con diámetro $I»: ubicación como diámetro",
+  "corrected": "Se proporcionará una conducción enterrada de $A conductos de polietileno libre de halógenos de 200 mm de diámetro $I, incluyendo $N el relleno y compactado de la zanja, así como $P el suministro y montaje de los tubos y hormigón tipo HE-20, sin vibrar. Incluye la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "cambio": "«200 mm con diámetro $I» → «200 mm de diámetro $I»"
+ },
+ "8930388ce483": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 160 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Instalación de un sistema de conducción enterrada con $A tuberías de polietileno sin halógenos y de 160 mm con diámetro $I, abarcando $N el llenado y compactación de la excavación, $P el abastecimiento y ajuste de las tuberías y hormigón tipo HE-20 sin vibrar, pruebas de los conductos, desplazamiento y extracción de los componentes al emplazamiento de uso $M Actividades: $C Sector de mantenimiento: $D Normas de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«160 mm con diámetro $I»: ubicación como diámetro",
+  "corrected": "Instalación de un sistema de conducción enterrada con $A tuberías de polietileno sin halógenos y de 160 mm de diámetro $I, abarcando $N el llenado y compactación de la excavación, $P el abastecimiento y ajuste de las tuberías y hormigón tipo HE-20 sin vibrar, pruebas de los conductos, desplazamiento y extracción de los componentes al emplazamiento de uso $M Actividades: $C Sector de mantenimiento: $D Normas de ejecución: $F",
+  "cambio": "«160 mm de diámetro $I»"
+ },
+ "89aa2cdf0d57": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 50 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada realizada con $A tubos de polietileno libre de halógenos de 50 mm con diámetro nominal $I. $N incluye el relleno y compactado de la zanja y $P se efectúa el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, así como la prueba de los conductos. Además, se incluye el transporte y la retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "«de 50 mm con diámetro nominal $I»: ubicación como diámetro",
+  "corrected": "Conducción enterrada realizada con $A tubos de polietileno libre de halógenos de 50 mm de diámetro nominal $I. Incluye $N el relleno y compactado de la zanja y se efectúa $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, así como la prueba de los conductos. Además, se incluye el transporte y la retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "cambio": "«de 50 mm de diámetro nominal $I»; $N y $P antepuestos a sus tareas"
+ },
+ "8b5edd67fa7b": {
+  "original": "Suministro y ejecución de sellado de arqueta o cámara de registro, incluyendo ladrillo sencillo de  24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R para el sellado. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C",
+  "broken": "El sellado de la arqueta o cámara de registro se llevará a cabo con ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R. Se especificará el trabajo de $A, la banda de mantenimiento de $B, y se detallarán las condiciones de ejecución de $C.",
+  "categoria": "referencia",
+  "motivo": "Valores tratados como pendientes: 'se especificará el trabajo de Nocturno', 'se detallarán...'.",
+  "corrected": "El sellado de la arqueta o cámara de registro se llevará a cabo con ladrillo sencillo de 24X11,5X4 cm y mortero de cemento CEM II/A-P/32.5 R. Trabajo: $A, banda de mantenimiento: $B, y condiciones de ejecución: $C.",
+  "cambio": "Valores con etiquetas, no como pendientes"
+ },
+ "8bee3ccb7884": {
+  "original": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Cuadro de registro de composite-PRFV modelo AFC-$K(%A), perteneciente a la familia $A, subfamilia $I(%A). Actividad programada: $B. Límite de intervención: $C. Directrices para la ejecución: $D.",
+  "categoria": "reasignacion",
+  "motivo": "Las medidas pasan a ser «familia» y la descripción «subfamilia»; la arqueta pasa a «cuadro»",
+  "corrected": "Cuadro de registro de composite-PRFV modelo AFC-$K(%A), de $A $I(%A). Actividad programada: $B. Límite de intervención: $C. Directrices para la ejecución: $D.",
+  "cambio": "Quitados «familia» y «subfamilia»: «de $A $I(%A)»"
+ },
+ "8e3753fb5ebe": {
+  "original": "Canalización hormigonada de $A tubos de PVC de 110 mm de diámetro $I, incluso $N el relleno y el compactado de la zanja, $P el suministro y el montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Instalación de tuberías subterráneas de PVC de 110 mm con $A conductos de diámetro nominal $I. Se incluyen $N el relleno de la zanja y el compactado del terreno, $P la entrega y colocación de los tubos y hormigón de tipo HE-20 sin vibrar. Se realiza la prueba de la conducción, el transporte y la retirada de los materiales al lugar de trabajo. $M Tarea: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«conductos de diámetro nominal $I»: ubicación como diámetro",
+  "corrected": "Instalación de tuberías subterráneas de PVC de 110 mm con $A conductos $I. Se incluyen $N el relleno de la zanja y el compactado del terreno, $P la entrega y colocación de los tubos y hormigón de tipo HE-20 sin vibrar. Se realiza la prueba de la conducción, el transporte y la retirada de los materiales al lugar de trabajo. $M Tarea: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "Quitado «de diámetro nominal» ante $I"
+ },
+ "913b141857f4": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 90 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se suministra una canalización en hormigón con $A tubos de polietileno sin halógenos de 90 mm y diámetro $I, $N relleno y compactación de la zanja, y $P montaje de tuberías y hormigón del tipo HE-20 sin vibrar. Incluye la prueba de los conductos, transporte y retirada de los productos al punto de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de 90 mm y diámetro $I» da «diámetro en andén»",
+  "corrected": "Se suministra una canalización en hormigón con $A tubos de polietileno sin halógenos de 90 mm de diámetro $I, $N relleno y compactación de la zanja, y $P montaje de tuberías y hormigón del tipo HE-20 sin vibrar. Incluye la prueba de los conductos, transporte y retirada de los productos al punto de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«y diámetro $I» → «de diámetro $I»: $I vuelve a ubicación"
+ },
+ "920963e0655d": {
+  "original": "$A de canalización de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Disposición $A de tubería de acero galvanizado con $B conductos de diámetro 100mm, diseñados para las interrupciones entre diferentes estructuras en instalaciones CMS. $Q(%A) Actividad: $C Zona de mantenimiento: $D Aspectos de operación: $F",
+  "categoria": "reasignacion",
+  "motivo": "'Disposición Suministro y montaje'; además 'transiciones' pasa a 'interrupciones'.",
+  "corrected": "$A de tubería de acero galvanizado con $B conductos de diámetro 100mm, diseñados para las interrupciones entre diferentes estructuras en instalaciones CMS. $Q(%A) Actividad: $C Zona de mantenimiento: $D Aspectos de operación: $F",
+  "cambio": "Quitado «Disposición» ante $A"
+ },
+ "9724751b4530": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 200 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada constituida por $A conductos de polietileno libre de halógenos de diámetro nominal $I y 200 mm, incluyendo $N el relleno y compactación de la zanja, $P el abastecimiento y montaje de los conductos con el hormigón de clase HE-20 sin vibrar, la verificación de los conductos, así como el transporte y la evacuación de los materiales al emplazamiento $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de diámetro nominal $I y 200 mm»: ubicación como diámetro",
+  "corrected": "Conducción enterrada constituida por $A conductos de polietileno libre de halógenos de diámetro nominal 200 mm $I, incluyendo $N el relleno y compactación de la zanja, $P el abastecimiento y montaje de los conductos con el hormigón de clase HE-20 sin vibrar, la verificación de los conductos, así como el transporte y la evacuación de los materiales al emplazamiento $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«de diámetro nominal 200 mm $I»"
+ },
+ "99e068969a63": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 50 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada compuesta por $A conductos de polietileno libre de halógenos de 50 mm, con un diámetro de $I, además de $N, el relleno y compactado de la zanja, $P, el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«con un diámetro de $I» da «diámetro de adosada o superficial»",
+  "corrected": "Conducción enterrada compuesta por $A conductos de polietileno libre de halógenos de 50 mm de diámetro $I, además de $N, el relleno y compactado de la zanja, $P, el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«50 mm, con un diámetro de $I» → «50 mm de diámetro $I»"
+ },
+ "9a3381caae77": {
+  "original": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Estructura de registro de tipo composite-PRFV modelo AFC-$K(%A), perteneciente a la serie $A, clase $I(%A). Actividad: $B. Zona de conservación: $C. Aspectos a considerar durante la realización del trabajo: $D.",
+  "categoria": "reasignacion",
+  "motivo": "Las medidas pasan a ser «serie» y la descripción «clase»",
+  "corrected": "Estructura de registro de tipo composite-PRFV modelo AFC-$K(%A), de $A $I(%A). Actividad: $B. Banda de mantenimiento: $C. Aspectos a considerar durante la realización del trabajo: $D.",
+  "cambio": "«serie $A, clase $I» → «de $A $I»; «Zona» → «Banda»"
+ },
+ "9cc434dc2b16": {
+  "original": "Suministro y montaje de cimentación rectangular para anclaje tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía. Totalmente terminada. Trabajo: $C. Banda de mantenimiento:$D. Condiciones de ejecución: $F.",
+  "broken": "Provisión y ensamblaje de fundación rectangular para sujeción de modelo $B, destinada a $A con estructuras eléctricas, desde plataforma o vía. Completado por completo. Tareas: $C. Zona de mantenimiento:$D. Criterios de puesta en funcionamiento: $F.",
+  "categoria": "reasignacion",
+  "motivo": "Se pierde «terreno»: «destinada a semi-rocoso»; la banda pasa a «Zona de mantenimiento»",
+  "corrected": "Provisión y ensamblaje de fundación rectangular para sujeción de modelo $B, destinada a terreno $A con estructuras eléctricas, desde plataforma o vía. Completado por completo. Tareas: $C. Banda de mantenimiento:$D. Criterios de puesta en funcionamiento: $F.",
+  "cambio": "«destinada a $A» → «a terreno $A»; «Zona» → «Banda de mantenimiento»"
+ },
+ "9d1defdb31d0": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 50 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Instalación de conductos de polietileno libre de halógenos de 50 mm y diámetro $I, compuesta por $A unidades, incluyendo $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de 50 mm y diámetro $I»: ubicación como diámetro",
+  "corrected": "Instalación de conductos de polietileno libre de halógenos de 50 mm de diámetro $I, compuesta por $A unidades, incluyendo $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«50 mm y diámetro $I» pasa a «50 mm de diámetro $I»"
+ },
+ "a1cc9bbcb1cb": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 40 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Instalación de una red subterránea formada por $A conductos de polietileno libre de halógenos de 40 mm mm de grosor y $I como diámetro, junto con $N la ocupación y compactación del hueco excavado, $P el abastecimiento y colocación de los tubos y hormigón de la variedad HE-20 no vibrado, comprobación de la red de conductos, el traslado y la eliminación de los materiales al lugar de uso $M Trabajos: $C Ancho de mantenimiento: $D Requisitos de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«40 mm mm de grosor y $I como diámetro»: ubicación como diámetro",
+  "corrected": "Instalación de una red subterránea formada por $A conductos de polietileno libre de halógenos de 40 mm de diámetro $I, junto con $N la ocupación y compactación del hueco excavado, $P el abastecimiento y colocación de los tubos y hormigón de la variedad HE-20 no vibrado, comprobación de la red de conductos, el traslado y la eliminación de los materiales al lugar de uso $M Trabajos: $C Ancho de mantenimiento: $D Requisitos de ejecución: $F",
+  "cambio": "«40 mm mm de grosor y $I como diámetro» → «40 mm de diámetro $I»"
+ },
+ "a2779c2e17bc": {
+  "original": "$A de canalización de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "La instalación de un sistema de $A conductos $B de acero galvanizado, cada uno con un diámetro de 100mm, está destinada para uso en CMS durante las transiciones de plataformas. $Q(%A) Proceso de trabajo: $C Grupo de mantenimiento: $D Contexto de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "$A y $B reasignados: «sistema de Suministro y montaje conductos 1 o 2»",
+  "corrected": "$A de un sistema de $B conductos de acero galvanizado, cada uno con un diámetro de 100mm, está destinado para uso en CMS durante las transiciones de plataformas. $Q(%A) Proceso de trabajo: $C Grupo de mantenimiento: $D Contexto de ejecución: $F",
+  "cambio": "$A como operación inicial y $B como número de conductos"
+ },
+ "a3cda3126abb": {
+  "original": "Suministro y Montaje de cimentación cilíndrica en desmonte tipo $B para terreno $A con postes de electrificación ca, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecucción: $F.",
+  "broken": "Entrega e instalación de cimentación cilíndrica en corte tipo $B, para terrenos con características $A. Este servicio incluye la instalación de postes de catenaria CA desde la plataforma o la vía de ferrocarril, con todos los componentes de fijación proporcionados. Proyecto completo: trabajo total, área de mantención establecida y condiciones de ejecución detalladas en $C, $D y $F respectivamente.",
+  "categoria": "referencia",
+  "motivo": "'detalladas en $C, $D y $F' y 'área de mantención'",
+  "corrected": "Entrega e instalación de cimentación cilíndrica en corte tipo $B, para terrenos con características $A. Este servicio incluye la instalación de postes de catenaria CA desde la plataforma o la vía de ferrocarril, con todos los componentes de fijación proporcionados. Proyecto completo: trabajo $C, banda de mantenimiento $D y condiciones de ejecución $F.",
+  "cambio": "Valores directos tras cada concepto; «banda de mantenimiento»"
+ },
+ "a4ab8d0f89b6": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 110 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se dispone de una conducción enterrada con $A conductos de polietileno sin halógenos de 110 mm con un diámetro de $I, incluyendo $N el acondicionamiento del hueco y su compactación, $P el abastecimiento y colocación de los conductos y concreto tipo HE-20 sin vibrar, la verificación de los conductos, el traslado y remoción de los productos al sitio de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«con un diámetro de $I»: ubicación como diámetro",
+  "corrected": "Se dispone de una conducción enterrada con $A conductos de polietileno sin halógenos con un diámetro de 110 mm $I, incluyendo $N el acondicionamiento del hueco y su compactación, $P el abastecimiento y colocación de los conductos y concreto tipo HE-20 sin vibrar, la verificación de los conductos, el traslado y remoción de los productos al sitio de uso $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«con un diámetro de 110 mm $I»"
+ },
+ "a5cc376eeaf9": {
+  "original": "Cimentaciones especiales tipo puente, con barra corrugada roscada de $A, desde plataforma o vía. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "broken": "Se utilizan cimentaciones especiales tipo puente que incluyen barra corrugada roscada de $A, instalada desde plataforma o vía. Las tareas a realizar se detallan en $B. La banda de mantenimiento se especifica en $C. Las condiciones de ejecución se definen en $D.",
+  "categoria": "referencia",
+  "motivo": "«se detallan en $B/$C/$D» trata turno y condiciones como documentos de referencia.",
+  "corrected": "Se utilizan cimentaciones especiales tipo puente que incluyen barra corrugada roscada de $A, instalada desde plataforma o vía. Trabajo: $B. La banda de mantenimiento es: $C. Las condiciones de ejecución son: $D.",
+  "cambio": "Valores directos, no como documentos de referencia"
+ },
+ "a82dd007229f": {
+  "original": "Arqueta prefabricada de $A mm de dimensiones interiores, incluso recibido de los tubos de acometida y desague profundo, $T(%A) y relleno posterior, así como el acabado y limpieza de la misma. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Arqueta prefabricada con dimensiones interiores de $A mm, que incluye la colocación de conducciones para acometida y desagüe profundo de $T(%A), así como la finalización y limpieza. Tareas: $B, zona de servicio: $C, requisitos para la ejecución: $D",
+  "categoria": "reasignacion",
+  "motivo": "«desagüe profundo de $T» → «desagüe profundo de tapa»; se pierde el relleno.",
+  "corrected": "Arqueta prefabricada con dimensiones interiores de $A mm, que incluye la colocación de conducciones para acometida y desagüe profundo, $T(%A) y relleno posterior, así como la finalización y limpieza. Tareas: $B, zona de servicio: $C, requisitos para la ejecución: $D",
+  "cambio": "$T como elemento propio y recuperado relleno posterior"
+ },
+ "a8df1f3b6238": {
+  "original": "Suministro y montaje de cimentación cilíndrica para postes de electrificación, de $C de diámetro y $B  de profundidad, compuesta por 4 barras corrugadas roscadas de $A. ejecutada desde $D. totalmente terminada. $L(b,%C). Trabajo: $L(c,%C).",
+  "broken": "Se proporcionará y montará la cimentación cilíndrica para postes de $C, con una profundidad de $B. La base se compondrá de 4 barras corrugadas roscadas de $A. La instalación se realizará desde $D. El trabajo se considerará completado una vez terminado. $L(b,%C). Tarea: $L(c,%C).",
+  "categoria": "reasignacion",
+  "motivo": "«postes de $C»: el diámetro pasa a calificar al poste y se pierde «diámetro».",
+  "corrected": "Se proporcionará y montará la cimentación cilíndrica para postes, con un diámetro de $C y una profundidad de $B. La base se compondrá de 4 barras corrugadas roscadas de $A. La instalación se realizará desde $D. El trabajo se considerará completado una vez terminado. $L(b,%C). Tarea: $L(c,%C).",
+  "cambio": "«postes de $C» → «postes, con un diámetro de $C»"
+ },
+ "aa5aa6349e2b": {
+  "original": "Suministro y Montaje de cimentación cilíndrica en terraplén tipo $B para terreno $A con postes de electrificación ca, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecucción: $F.",
+  "broken": "Se facilitará y se instalará la cimentación cilíndrica en terraplén tipo $B para el terreno $A que incluye postes de electrificación ca, desde la plataforma o vía, incorporando los accesorios de fijación del poste. Se completará hasta el acabado final. Trabajo: $C. Área de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "'Área de mantenimiento' convierte en espacial la franja horaria de mantenimiento",
+  "corrected": "Se facilitará y se instalará la cimentación cilíndrica en terraplén tipo $B para el terreno $A que incluye postes de electrificación ca, desde la plataforma o vía, incorporando los accesorios de fijación del poste. Se completará hasta el acabado final. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "cambio": "«Área de mantenimiento» → «Banda de mantenimiento»"
+ },
+ "aaf9df30add1": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 50 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada formada por $A conductos de polietileno libre de halógenos de 50 mm mm, $I de diámetro, incluido $N el relleno y compactado de la zanja. $P Suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, prueba de los conductos, transporte y retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "«50 mm mm, $I de diámetro» da «en andén de diámetro»",
+  "corrected": "Conducción enterrada formada por $A conductos de polietileno libre de halógenos de 50 mm de diámetro $I, incluido $N el relleno y compactado de la zanja. $P Suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, prueba de los conductos, transporte y retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "cambio": "«50 mm mm, $I de diámetro» pasa a «50 mm de diámetro $I»"
+ },
+ "ac860880d1cb": {
+  "original": "Canalización hormigonada de $A tubos de PVC de 110 mm de diámetro $I, incluso $N el relleno y el compactado de la zanja, $P el suministro y el montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se efectúa la canalización de $A tuberías de PVC de 110 mm, de diámetro nominal $I, incluyendo el relleno y compactación de la zanja $N. Se realizan suministro y montaje de tubos y hormigón tipo HE-20 sin vibrar, según $P. Se realizan pruebas en los conductos y finalmente el transporte y la retirada de materiales en el lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de diámetro nominal $I»: ubicación como diámetro; «según $P» incoherente",
+  "corrected": "Se efectúa la canalización de $A tuberías de PVC de 110 mm de diámetro nominal $I, incluyendo $N el relleno y compactación de la zanja. Se realizan $P suministro y montaje de tubos y hormigón tipo HE-20 sin vibrar. Se realizan pruebas en los conductos y finalmente el transporte y la retirada de materiales en el lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«110 mm de diámetro nominal $I»; $N y $P antepuestos; quitado «según»"
+ },
+ "b088386facfd": {
+  "original": "Suministro y Montaje de cimentación cilíndrica en desmonte tipo $B para terreno $A con postes de electrificación ca, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecucción: $F.",
+  "broken": "Se realizarán las tareas de suministro y montaje para la cimentación cilíndrica tipo $B en terreno de desmonte con postes de catenaria CA en el terreno $A. Abarcará la provisión de elementos de sujección del poste. Se considerará completa la obra una vez cumplidos los trabajos especificados en $C. Se indicará la banda de mantenimiento aplicable en $D. Se establecerán las condiciones de ejecución en $F.",
+  "categoria": "referencia",
+  "motivo": "Valores tratados como documentos: «trabajos especificados en Nocturno»",
+  "corrected": "Se realizarán las tareas de suministro y montaje para la cimentación cilíndrica tipo $B en terreno de desmonte con postes de catenaria CA en el terreno $A. Abarcará la provisión de elementos de sujección del poste. Se considerará completa la obra. Trabajo: $C. Banda de mantenimiento aplicable: $D. Condiciones de ejecución: $F.",
+  "cambio": "Valores como etiquetas, no como documentos"
+ },
+ "b28be531a0ca": {
+  "original": "Suministro y montaje de cimentación cilíndrica para anclaje tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Instalación y entrega de fundación cilíndrica de anclaje tipo $B, diseñada para terreno $A, integrando postes de electrificación desde plataforma o vía, con los componentes de sujeción incluidos. Preparada para uso inmediato. Duración del proyecto: $C. Periodo de mantenimiento: $D. Requisitos de implementación: $F.",
+  "categoria": "reasignacion",
+  "motivo": "'Duración del proyecto: Nocturno'; el turno pasa a ser una duración",
+  "corrected": "Instalación y entrega de fundación cilíndrica de anclaje tipo $B, diseñada para terreno $A, integrando postes de electrificación desde plataforma o vía, con los componentes de sujeción incluidos. Preparada para uso inmediato. Trabajo: $C. Periodo de mantenimiento: $D. Requisitos de implementación: $F.",
+  "cambio": "Etiqueta de $C: «Trabajo:»"
+ },
+ "b4e218dd17e1": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 160 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Incluye la instalación de una canalización enterrada formada por $A conductos de polietileno sin halógenos con 160 mm, un diámetro de $I. Se incluye $N el relleno y compactación de la zanja, $P el provisionamiento y montaje de los conductos y hormigón de tipo HE-20 sin vibrar, la inspección de los conductos, el traslado y la retirada de las mercancías al lugar de uso $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«un diámetro de $I» da «diámetro de en terreno rocoso»",
+  "corrected": "Incluye la instalación de una canalización enterrada formada por $A conductos de polietileno sin halógenos con un diámetro de 160 mm, $I. Se incluye $N el relleno y compactación de la zanja, $P el provisionamiento y montaje de los conductos y hormigón de tipo HE-20 sin vibrar, la inspección de los conductos, el traslado y la retirada de las mercancías al lugar de uso $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«con un diámetro de 160 mm, $I»"
+ },
+ "b552e9be726e": {
+  "original": "Destapado de canaleta existente $P(%D) para localizar cables o tirar cables nuevos. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C",
+  "broken": "Se procederá a destapar la $P(%D) existente para realizar la instalación o localización de nuevos cables. Las características del trabajo incluyen los siguientes puntos: $A. El área de trabajo permitido estará definida en $B, y la ejecución del trabajo deberá seguir las condiciones determinadas en $C.",
+  "categoria": "reasignacion",
+  "motivo": "«destapar la a mano existente»: el método ocupa el lugar del objeto; banda tratada como lugar («definida en»).",
+  "corrected": "Se procederá a destapar $P(%D) la canaleta existente para realizar la instalación o localización de nuevos cables. Trabajo: $A. La banda de mantenimiento será: $B, y la ejecución del trabajo deberá seguir las condiciones: $C.",
+  "cambio": "$P como método; banda y condiciones sin «definida en»"
+ },
+ "b7d2a1961289": {
+  "original": "Suministro y montaje de cimentación rectangular de poste L o R en terraplén, tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Entrega e instalación de cimentación rectangulada para poste L o R en elevación tipo $B, en terreno $A con postes de electrificación. Montaje desde plataforma o vía. Proceso completo. Ejecución: $C. Zona de precaución: $D. Condiciones de construcción: $F.",
+  "categoria": "reasignacion",
+  "motivo": "Terraplén pasa a 'elevación tipo $B'; banda como 'Zona de precaución'.",
+  "corrected": "Entrega e instalación de cimentación rectangulada para poste L o R en terraplén, tipo $B, en terreno $A con postes de electrificación. Montaje desde plataforma o vía. Proceso completo. Ejecución: $C. Banda de mantenimiento: $D. Condiciones de construcción: $F.",
+  "cambio": "«elevación tipo $B» → «terraplén, tipo $B»; «Zona» → «Banda»"
+ },
+ "b8610edda9ed": {
+  "original": "Relleno localizado en obras de instalaciones ferroviarias, emplazamientos y accesos, con $W(%A), i/ carga, descarga y transporte al lugar asignado en el interior de la obra, extendido, humectación, compactación, terminación, i/herramientas y medios auxiliares. Trabajo: $B. Banda de mantenimiento: $C.",
+  "broken": "$W(%A) se encuentra en las obras de instalaciones ferroviarias, accesos y emplazamientos, con $W(%A). Se efectúan la carga, descarga y transporte al lugar designado dentro de la obra. Se lleva a cabo la extensión, humectación, compactación y terminación de las obras, haciendo uso de herramientas y medios auxiliares. El Trabajo es $B. La Banda de mantenimiento es $C.",
+  "categoria": "reasignacion",
+  "motivo": "$W duplicado como sujeto; desaparece el relleno: «material de la traza se encuentra en las obras»",
+  "corrected": "Relleno localizado en las obras de instalaciones ferroviarias, accesos y emplazamientos, con $W(%A). Se efectúan la carga, descarga y transporte al lugar designado dentro de la obra. Se lleva a cabo la extensión, humectación, compactación y terminación de las obras, haciendo uso de herramientas y medios auxiliares. El Trabajo es $B. La Banda de mantenimiento es $C.",
+  "cambio": "Sujeto «Relleno localizado» en vez de $W duplicado"
+ },
+ "b96889d2a52d": {
+  "original": "Canaleta PVC de $A con tapa. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "broken": "Se ha implementado una canaleta PVC de $A con tapa, realizando el trabajo $B. La banda de mantenimiento correspondiente es $C. En cuanto a las condiciones de ejecución, se detallan en $D.",
+  "categoria": "referencia",
+  "motivo": "«Condiciones de ejecución se detallan en Alto Volumen»: el valor pasa a referencia.",
+  "corrected": "Se ha implementado una canaleta PVC de $A con tapa, realizando el trabajo $B. La banda de mantenimiento correspondiente es $C. En cuanto a las condiciones de ejecución, son: $D.",
+  "cambio": "«se detallan en» pasa a «son:»"
+ },
+ "ba3c90caa999": {
+  "original": "Suministro y montaje de tapa para canaleta de hormigón tipo $A, incluyendo montaje y la retirada de las tierras sobrantes. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Suministro e instalación de tapa para canalización de hormigón tipo $A, que comprende la ubicación de la tapa y la eliminación de tierras sobrantes. Tareas: $B Zona de intervención: $C Consideraciones de implementación: $D",
+  "categoria": "reasignacion",
+  "motivo": "'Zona de intervención: No necesita intervalo'; canaleta pasa a 'canalización'",
+  "corrected": "Suministro e instalación de tapa para canalización de hormigón tipo $A, que comprende la ubicación de la tapa y la eliminación de tierras sobrantes. Tareas: $B Banda de mantenimiento: $C Consideraciones de implementación: $D",
+  "cambio": "Etiqueta de $C: «Banda de mantenimiento:»"
+ },
+ "bc36757ceaff": {
+  "original": "Suministro y montaje de cimentación cilíndrica en roca con micropilotes tipo $A para postes de electrificación ca, desde plataforma o vía. Totalmente terminada. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "broken": "Instalación de cimentación cilíndrica en roca tipo $A, con micropilotes de tipo $A, para postes de catenaria CA. Se efectúa desde la plataforma o vía, culminada en su totalidad. Trabajo: $B. Zona de conservación: $C. Condiciones de ejecución: $D.",
+  "categoria": "reasignacion",
+  "motivo": "$A duplicado como tipo de cimentación y de micropilotes; se pierde el suministro",
+  "corrected": "Instalación de cimentación cilíndrica en roca con micropilotes tipo $A, para postes de catenaria CA. Se efectúa desde la plataforma o vía, culminada en su totalidad. Trabajo: $B. Zona de conservación: $C. Condiciones de ejecución: $D.",
+  "cambio": "Eliminado $A duplicado; tipo solo de los micropilotes"
+ },
+ "bd881d2d7add": {
+  "original": "Suministro y montaje de tapa para canaleta de hormigón tipo $A, incluyendo montaje y la retirada de las tierras sobrantes. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Se efectuará el suministro y montaje de la tapa para el canal de hormigón tipo $A, incluyendo la limpieza de tierras adicionales después del montaje. Se especificará la duración y el alcance del trabajo conforme a $B. Se establecerá la banda de mantenimiento en $C. Se detallarán las condiciones de ejecución según $D.",
+  "categoria": "referencia",
+  "motivo": "'alcance del trabajo conforme a $B', 'según $D': valores tratados como documentos",
+  "corrected": "Se efectuará el suministro y montaje de la tapa para el canal de hormigón tipo $A, incluyendo la limpieza de tierras adicionales después del montaje. Se especificará el trabajo: $B. Se establecerá la banda de mantenimiento: $C. Se detallarán las condiciones de ejecución: $D.",
+  "cambio": "«conforme a/en/según» → etiquetas con dos puntos"
+ },
+ "c0743fed5262": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 90 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada con $A conductos de polietileno libre de halógenos de 90 mm y diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P provisión y colocación de los tubos y hormigón tipo HE-20 sin vibrar, $M la verificación de los conductos, el traslado y ubicación de los productos en su lugar de uso. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«90 mm y diámetro $I» da «diámetro en zona de balasto»",
+  "corrected": "Conducción enterrada con $A conductos de polietileno libre de halógenos de 90 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P provisión y colocación de los tubos y hormigón tipo HE-20 sin vibrar, $M la verificación de los conductos, el traslado y ubicación de los productos en su lugar de uso. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«90 mm y diámetro $I» pasa a «90 mm de diámetro $I»"
+ },
+ "c1106c227a66": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 110 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada con $A conductos de polietileno sin halógenos, de diámetro $I medida 110 mm, abarcando $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón sin vibrar tipo HE-20, la prueba de los conductos, el transporte y la retirada de los productos al lugar de aplicación $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de diámetro $I medida 110 mm»: ubicación como diámetro",
+  "corrected": "Conducción enterrada con $A conductos de polietileno sin halógenos, de diámetro 110 mm $I, abarcando $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón sin vibrar tipo HE-20, la prueba de los conductos, el transporte y la retirada de los productos al lugar de aplicación $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«de diámetro 110 mm $I»: $I deja de ser diámetro"
+ },
+ "c1399ef61dae": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 200 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Configuración para conducción enterrada con $A conductos de polietileno exento de halógenos, de 200 mm y diámetro $I, e incluyendo $N el relleno y compactado de la zanja, $P el suministro y colocación de los conductos con hormigón HE-20 aplicado sin vibrar, el ensayo de los conductos, y el transporte y retirada de los productos hacia el lugar de destino $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de 200 mm y diámetro $I»: ubicación como diámetro",
+  "corrected": "Configuración para conducción enterrada con $A conductos de polietileno exento de halógenos, de 200 mm de diámetro $I, e incluyendo $N el relleno y compactado de la zanja, $P el suministro y colocación de los conductos con hormigón HE-20 aplicado sin vibrar, el ensayo de los conductos, y el transporte y retirada de los productos hacia el lugar de destino $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«200 mm y diámetro $I» pasa a «200 mm de diámetro $I»"
+ },
+ "c291d41d72e2": {
+  "original": "Suministro y montaje de tapa para canaleta de hormigón tipo $A, incluyendo montaje y la retirada de las tierras sobrantes. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Se realizará la entrega y montaje de la tapa para el canalón de hormigón tipo $A, incluyendo la extracción de tierras adicionales posteriores al montaje. La extensión del trabajo estará definida por $B. El área de mantenimiento requerida será de $C. Se especificarán las condiciones de ejecución según $D.",
+  "categoria": "referencia",
+  "motivo": "'trabajo definida por $B', 'área de mantenimiento será de No necesita intervalo'",
+  "corrected": "Se realizará la entrega y montaje de la tapa para el canalón de hormigón tipo $A, incluyendo la extracción de tierras adicionales posteriores al montaje. El trabajo será: $B. La banda de mantenimiento requerida será: $C. Las condiciones de ejecución serán: $D.",
+  "cambio": "Quitadas referencias; «área» pasa a «banda de mantenimiento»"
+ },
+ "c3252e1a0c99": {
+  "original": "Suministro y Montaje de cimentación cilíndrica en desmonte tipo $B para terreno $A con postes de electrificación ca, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecucción: $F.",
+  "broken": "Suministro e instalación de cimentación cilíndrica tipo $B en terreno de tipo $A. Este proyecto incluye la colocación de postes de catenaria CA desde la plataforma o la vía, así como los accesorios de fijación necesarios. Condiciones: trabajo total, banda de mantenimiento definida y condiciones de ejecución detalladas en $C, $D y $F respectivamente.",
+  "categoria": "referencia",
+  "motivo": "'detalladas en $C, $D y $F'; omite 'en desmonte'",
+  "corrected": "Suministro e instalación de cimentación cilíndrica en desmonte tipo $B en terreno de tipo $A. Este proyecto incluye la colocación de postes de catenaria CA desde la plataforma o la vía, así como los accesorios de fijación necesarios. Condiciones: trabajo $C, banda de mantenimiento $D y condiciones de ejecución $F.",
+  "cambio": "Valores directos tras cada concepto; recuperado «en desmonte»"
+ },
+ "c58f46efcf0e": {
+  "original": "Canalización hormigonada de $A tubos de PVC de 110 mm de diámetro $I, incluso $N el relleno y el compactado de la zanja, $P el suministro y el montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Por medio de $A tubos de PVC de 110 mm y diámetro $I, se efectuará una canalización enterrada, que comprende $N el relleno y compactación de la zanja, $P la entrega y montaje de tubos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la deposición de los productos en el sitio de uso. $M Realización: $C Zona de mantenimiento: $D Parámetros de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«110 mm y diámetro $I»: ubicación como diámetro",
+  "corrected": "Por medio de $A tubos de PVC de 110 mm de diámetro $I, se efectuará una canalización enterrada, que comprende $N el relleno y compactación de la zanja, $P la entrega y montaje de tubos y hormigón tipo HE-20 sin vibrar, la inspección de los conductos, el transporte y la deposición de los productos en el sitio de uso. $M Realización: $C Zona de mantenimiento: $D Parámetros de ejecución: $F",
+  "cambio": "«110 mm y diámetro $I» → «110 mm de diámetro $I»"
+ },
+ "c6b43a1aea0d": {
+  "original": "Suministro y montaje de cimentación cilíndrica para anclaje tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Se entrega el suministro e instalación de cimentaciones cilíndricas para anclaje de tipo $B, diseñadas para terreno $A, que incluye la instalación de postes de electrificación desde plataforma o vía y los elementos de fijación. Totalmente terminado. Duración: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "'Duración: Nocturno'; el turno de trabajo pasa a ser una duración",
+  "corrected": "Se entrega el suministro e instalación de cimentaciones cilíndricas para anclaje de tipo $B, diseñadas para terreno $A, que incluye la instalación de postes de electrificación desde plataforma o vía y los elementos de fijación. Totalmente terminado. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "cambio": "Etiqueta de $C: «Trabajo:»"
+ },
+ "c6c872139f23": {
+  "original": "Suministro y ejecución de canaleta $A con $B alveolos de composite-PTR 1000x264x266 mm, $T(%A), según ET 03.365.064.9. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Suministro e implementación de canalización $A equipada con $B huecos de composite-PTR 1000x264x266 mm, $T(%A), de acuerdo con la ET 03.365.064.9. Empleo: $C Sector de mantenimiento: $D Parámetros de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "'Empleo: Nocturno Excepcional', 'Sector de mantenimiento' con horas",
+  "corrected": "Suministro e implementación de canalización $A equipada con $B huecos de composite-PTR 1000x264x266 mm, $T(%A), de acuerdo con la ET 03.365.064.9. Trabajo: $C Banda de mantenimiento: $D Parámetros de ejecución: $F",
+  "cambio": "Etiquetas de $C y $D corregidas"
+ },
+ "c81b64a530a1": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 160 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Configuración de conducción subterránea con $A conductos de polietileno no conteniendo halógenos de 160 mm y diámetro $I, incluyendo $N el llenado y compactación del corte, $P el provisión y ensamblaje de los tubos y concreto tipo HE-20 sin vibrar, verificación de los conductos, traslado y remoción de los artículos al punto de utilización $M Labor: $C Rango de mantenimiento: $D Requisitos de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«160 mm y diámetro $I»: ubicación como diámetro",
+  "corrected": "Configuración de conducción subterránea con $A conductos de polietileno no conteniendo halógenos de 160 mm de diámetro $I, incluyendo $N el llenado y compactación del corte, $P el provisión y ensamblaje de los tubos y concreto tipo HE-20 sin vibrar, verificación de los conductos, traslado y remoción de los artículos al punto de utilización $M Labor: $C Rango de mantenimiento: $D Requisitos de ejecución: $F",
+  "cambio": "«160 mm y diámetro $I» → «160 mm de diámetro $I»"
+ },
+ "c988045f1c41": {
+  "original": "Cimentación cilíndrica para anclaje $T(%A), con acesso por $B . $L(b,%C). Trabajo: $L(c,%C).",
+  "broken": "Se dispone de una cimentación cilíndrica anclada en $T(%A), con entrada por $B . $L(b,%C). Ejecución: $L(c,%C).",
+  "categoria": "reasignacion",
+  "motivo": "«anclada en de cable sustentador»: hueco reasignado, frase incoherente.",
+  "corrected": "Se dispone de una cimentación cilíndrica para anclaje $T(%A), con entrada por $B . $L(b,%C). Ejecución: $L(c,%C).",
+  "cambio": "«anclada en $T» → «para anclaje $T»"
+ },
+ "cebae918f72c": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 200 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conjunto de conducción enterrada compuesto de $A conductos de polietileno sin halógenos de diámetro $I y 200 mm, con el incluido $N relleno y compactación de la zanja, $P provisión y ensamblaje de los conductos con hormigón tipo HE-20 aplicado sin vibrar, ensayo de los conductos, y transporte y extracción de los productos destino $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de diámetro $I y 200 mm»: ubicación como diámetro",
+  "corrected": "Conjunto de conducción enterrada compuesto de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I, incluido $N el relleno y compactación de la zanja, $P provisión y ensamblaje de los conductos con hormigón tipo HE-20 aplicado sin vibrar, ensayo de los conductos, y transporte y extracción de los productos destino $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«200 mm de diámetro $I»; «incluido $N el relleno»"
+ },
+ "cf04b17aa462": {
+  "original": "Suministro y montaje de cimentación cilíndrica para anclaje tipo $B, para terreno $A con postes de electrificación, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Suministro e instalación de fundación cilíndrica de anclaje tipo $B, en terreno $A, para postes de electrificación montados desde plataforma o vía, con el conjunto de fijación del poste incluido. Lista para uso. Duración del proyecto: $C. Periodo de mantenimiento: $D. Condiciones de implementación: $F.",
+  "categoria": "reasignacion",
+  "motivo": "'Duración del proyecto: Cualquier franja horaria'",
+  "corrected": "Suministro e instalación de fundación cilíndrica de anclaje tipo $B, en terreno $A, para postes de electrificación montados desde plataforma o vía, con el conjunto de fijación del poste incluido. Lista para uso. Trabajo: $C. Periodo de mantenimiento: $D. Condiciones de implementación: $F.",
+  "cambio": "«Duración del proyecto» → «Trabajo»"
+ },
+ "cf171ffbda33": {
+  "original": "$A de canalización de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Implementación $A de conducción con $B tubos de acero galvanizado de diámetro 100mm, especificados para las transiciones entre plataformas en entornos CMS. $Q(%A) Actividad: $C Zona de mantenimiento: $D Requisitos de operación: $F",
+  "categoria": "reasignacion",
+  "motivo": "'Implementación $A' produce 'Implementación Suministro y montaje', incoherente.",
+  "corrected": "$A de conducción con $B tubos de acero galvanizado de diámetro 100mm, especificados para las transiciones entre plataformas en entornos CMS. $Q(%A) Actividad: $C Banda de mantenimiento: $D Requisitos de operación: $F",
+  "cambio": "Quitado «Implementación» ante $A; «Zona» → «Banda de mantenimiento»"
+ },
+ "d13fa0720be6": {
+  "original": "Limpieza de tubo de canalización existente incluyendo la localización de obstrucciones y su limpieza, previo al tendido de nuevos cables. Trabajo: $A Banda de mantenimiento: $B Condiciones de ejecución: $C.",
+  "broken": "Se realizará la desobstrucción de los conductos existentes, identificando y eliminando los tapones antes de proceder con el tendido de nuevos conductores. Tarea: $A Área de intervención: $B Criterios de ejecución: $C.",
+  "categoria": "reasignacion",
+  "motivo": "La banda de mantenimiento queda etiquetada como 'Área de intervención'.",
+  "corrected": "Se realizará la desobstrucción de los conductos existentes, identificando y eliminando los tapones antes de proceder con el tendido de nuevos conductores. Tarea: $A Banda de mantenimiento: $B Criterios de ejecución: $C.",
+  "cambio": "Etiqueta de $B: «Banda de mantenimiento:»"
+ },
+ "d1c00485d4e1": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 110 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción subterránea compuesta por $A conductos de polietileno sin halógenos de 110 mm y diámetro $I, incluido $N el relleno y compactación de la zanja, $P el abastecimiento y instalación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y extracción de los productos al destino $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«110 mm y diámetro $I»: ubicación como diámetro",
+  "corrected": "Conducción subterránea compuesta por $A conductos de polietileno sin halógenos de 110 mm de diámetro $I, incluido $N el relleno y compactación de la zanja, $P el abastecimiento y instalación de los conductos y hormigón tipo HE-20 sin vibrar, la verificación de los conductos, el transporte y extracción de los productos al destino $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«110 mm y diámetro $I» → «110 mm de diámetro $I»"
+ },
+ "d26bf1fdadb9": {
+  "original": "$A de canalización de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conjunto de $A conducciones formadas por $B tubos de acero galvanizado de diámetro 100mm, diseñadas para integración en sistemas CMS durante las transiciones entre plataformas diversas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "$A (operación) usado como cantidad: «Conjunto de Provisión conducciones»",
+  "corrected": "$A de conjunto de conducciones formadas por $B tubos de acero galvanizado de diámetro 100mm, diseñadas para integración en sistemas CMS durante las transiciones entre plataformas diversas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "$A como operación inicial, no cantidad"
+ },
+ "d294a2052b09": {
+  "original": "Suministro y Montaje de cimentación cilíndrica en desmonte tipo $B para terreno $A con postes de electrificación ca, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecucción: $F.",
+  "broken": "Instalación y montaje de cimentación cilíndrica en desmonte tipo $B, diseñada para terrenos de tipo $A. Este proceso incluye la colocación de postes de catenaria CA desde la plataforma o la vía, junto con todos los elementos de fijación necesarios. Proyecto completado: trabajo total, banda de mantenimiento establecida, y condiciones de ejecución detalladas en $C, $D y $F respectivamente.",
+  "categoria": "referencia",
+  "motivo": "'detalladas en Cualquier franja horaria, ... respectivamente': valores tratados como documentos",
+  "corrected": "Instalación y montaje de cimentación cilíndrica en desmonte tipo $B, diseñada para terrenos de tipo $A. Este proceso incluye la colocación de postes de catenaria CA desde la plataforma o la vía, junto con todos los elementos de fijación necesarios. Proyecto completado. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "cambio": "«detalladas en $C, $D y $F respectivamente» → tres etiquetas con valor"
+ },
+ "d3f983519014": {
+  "original": "Suministro y Montaje de cimentación cilíndrica en desmonte tipo $B para terreno $A con postes de electrificación ca, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecucción: $F.",
+  "broken": "Instalación y configuración de fundación cilíndrica tipo $B en terreno $A para postes de catenaria CA, incluido en la oferta los dispositivos de aseguramiento de la estructura. Sistema finalizado. Servicio: $C. Periodo de garantía: $D. Circunstancias de implementación: $F.",
+  "categoria": "reasignacion",
+  "motivo": "'Periodo de garantía: i >= 5 horas'; además omite 'en desmonte'",
+  "corrected": "Instalación y configuración de fundación cilíndrica tipo $B en terreno $A para postes de catenaria CA, incluido en la oferta los dispositivos de aseguramiento de la estructura. Sistema finalizado. Servicio: $C. Banda de mantenimiento: $D. Circunstancias de implementación: $F.",
+  "cambio": "«Periodo de garantía» → «Banda de mantenimiento»"
+ },
+ "d4b27c681e0e": {
+  "original": "Canalización hormigonada de $A tubos de PVC de 110 mm de diámetro $I, incluso $N el relleno y el compactado de la zanja, $P el suministro y el montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se lleva a cabo la instalación de una conducción enterrada compuesta por $A tuberías de PVC de 110 mm, con diámetro de $I. Se incluyen tareas de relleno y compactación de la zanja según $N. Se procede a la instalación de tubos y hormigón tipo HE-20 sin vibración, según $P. Se efectúan pruebas en los conductos y se retira todo el material en el lugar de trabajo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«diámetro de $I», «según $N», «según $P»: huecos mal asignados",
+  "corrected": "Se lleva a cabo la instalación de una conducción enterrada compuesta por $A tuberías de PVC de 110 mm de diámetro, $I. Se incluyen $N tareas de relleno y compactación de la zanja. Se procede a $P la instalación de tubos y hormigón tipo HE-20 sin vibración. Se efectúan pruebas en los conductos y se retira todo el material en el lugar de trabajo. $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "$I tras el diámetro; quitados «según»; $N y $P antepuestos"
+ },
+ "d521c3825282": {
+  "original": "Arqueta prefabricada de $A mm de dimensiones interiores, incluso recibido de los tubos de acometida y desague profundo, $T(%A) y relleno posterior, así como el acabado y limpieza de la misma. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Arqueta prefabricada con $A mm de dimensiones interiores, que comprende la instalación de tuberías de acometida y desagüe de $T(%A), además de la finalización y limpieza. Actividad: $B, franja de mantenimiento: $C, condiciones de realización: $D",
+  "categoria": "reasignacion",
+  "motivo": "«desagüe de $T» → «desagüe de tapa de hormigón»; se pierde el relleno.",
+  "corrected": "Arqueta prefabricada con $A mm de dimensiones interiores, que comprende la instalación de tuberías de acometida y desagüe, $T(%A) y relleno posterior, además de la finalización y limpieza. Actividad: $B, franja de mantenimiento: $C, condiciones de realización: $D",
+  "cambio": "$T como elemento propio y recuperado relleno posterior"
+ },
+ "d5b9726ec448": {
+  "original": "Suministro y montaje de cimentación cilíndrica en desmonte $B para terreno $A con postes de electrificación, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Suministro técnico e instalación de cimentación cilíndrica de tipo $B, diseñada para suelo $A, que incluye todo lo necesario para la colocación de postes de electricidad. El montaje se realiza desde la plataforma o la vía ferroviaria y cubre la fijación y el aseguramiento del poste. La instalación completa se puede usar sin modificaciones adicionales. Se requiere la consideración de $C durante la instalación. El espacio definido para las actividades de mantenimiento es de $D. Las condiciones de trabajo detalladas se presentan en $F.",
+  "categoria": "referencia",
+  "motivo": "'consideración de Diurno', 'espacio ... es de i < 3 horas', 'se presentan en'; omite desmonte",
+  "corrected": "Suministro técnico e instalación de cimentación cilíndrica de tipo $B, diseñada para suelo $A, que incluye todo lo necesario para la colocación de postes de electricidad. El montaje se realiza desde la plataforma o la vía ferroviaria y cubre la fijación y el aseguramiento del poste. La instalación completa se puede usar sin modificaciones adicionales. Trabajo durante la instalación: $C. Banda de mantenimiento: $D. Condiciones de trabajo: $F.",
+  "cambio": "Frases de $C, $D, $F → etiquetas Trabajo/Banda/Condiciones"
+ },
+ "d76925ceddc0": {
+  "original": "Suministro y montaje de tapa para canaleta de hormigón tipo $A, incluyendo montaje y la retirada de las tierras sobrantes. Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Se proporcionará y se instalará la tapa para la conducción enterrada de hormigón tipo $A, incluyendo la remoción de tierras innecesarias después del montaje. Se determinará el trabajo según $B. La banda de mantenimiento será de $C. Se garantizarán las condiciones de ejecución conforme a $D.",
+  "categoria": "referencia",
+  "motivo": "'trabajo según Diurno', 'conforme a $D'; canaleta pasa a 'conducción enterrada'",
+  "corrected": "Se proporcionará y se instalará la tapa para la conducción enterrada de hormigón tipo $A, incluyendo la remoción de tierras innecesarias después del montaje. Se determinará el trabajo: $B. La banda de mantenimiento será: $C. Se garantizarán las condiciones de ejecución: $D.",
+  "cambio": "Quitados «según», «de», «conforme a» ante $B, $C, $D"
+ },
+ "d9ca1e1cf820": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 200 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se realiza la canalización hormigonada mediante la utilización de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I. Se incluye el relleno y compactado de la zanja según $N. El suministro y montaje de los conductos y hormigón tipo HE-20 se realizarán de acuerdo con $P. La prueba de conductos y el transporte y retirada de materiales al lugar de empleo se efectuarán conforme a $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "referencia",
+  "motivo": "«según $N», «de acuerdo con $P», «conforme a $M» incoherentes",
+  "corrected": "Se realiza la canalización hormigonada mediante la utilización de $A conductos de polietileno sin halógenos de 200 mm de diámetro $I. Se incluye $N el relleno y compactado de la zanja. Se realizarán $P el suministro y montaje de los conductos y hormigón tipo HE-20. La prueba de conductos y el transporte y retirada de materiales al lugar de empleo se efectuarán $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "Quitados «según», «de acuerdo con», «conforme a»; $N y $P antepuestos"
+ },
+ "dae7c0deacee": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 110 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada realizada con $A conductos de polietileno sin halógenos de diámetro $I medida 110 mm, incluido $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón no vibrado tipo HE-20, la prueba de los conductos, el transporte y la retirada de los productos al sitio de instalación $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de diámetro $I medida 110 mm»: ubicación como diámetro",
+  "corrected": "Conducción enterrada realizada con $A conductos de polietileno sin halógenos de 110 mm de diámetro $I, incluido $N el relleno y compactado de la zanja, $P el suministro y montaje de los conductos y hormigón no vibrado tipo HE-20, la prueba de los conductos, el transporte y la retirada de los productos al sitio de instalación $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«de diámetro $I medida 110 mm» → «de 110 mm de diámetro $I»"
+ },
+ "db02987d3909": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 50 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción subterránea compuesta por $A conductos de polietileno libre de halógenos de 50 mm mm, $I de diámetro, con $N relleno y compactación de la zanja. $P Provisión y ensamblaje de tubos y hormigón tipo HE-20 sin vibrar, inspección de conductos, transporte y deposición de productos en el lugar de uso $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "«50 mm mm, $I de diámetro»: unidad duplicada y ubicación como diámetro",
+  "corrected": "Conducción subterránea compuesta por $A conductos de polietileno libre de halógenos de 50 mm de diámetro $I, con $N relleno y compactación de la zanja. $P Provisión y ensamblaje de tubos y hormigón tipo HE-20 sin vibrar, inspección de conductos, transporte y deposición de productos en el lugar de uso $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "cambio": "«50 mm mm, $I de diámetro» pasa a «50 mm de diámetro $I»"
+ },
+ "e2a8f3940bd7": {
+  "original": "Suministro y montaje de placa de anclajes de catenaria, en viaductos con taladros in-situ, de $A mm de dimensión. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "broken": "Instalación y proveído de la placa para anclajes de catenaria, dotada de taladros directos en obra en viaductos, de $A mm de dimensión. Incluye: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "categoria": "reasignacion",
+  "motivo": "«Incluye: $B» convierte el turno de trabajo en un elemento incluido.",
+  "corrected": "Instalación y proveído de la placa para anclajes de catenaria, dotada de taladros directos en obra en viaductos, de $A mm de dimensión. Trabajo: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "cambio": "«Incluye:» → «Trabajo:»"
+ },
+ "e6646a5ff327": {
+  "original": "Suministro y ejecución de embocadura canalización de $A tubos en arqueta o cámara existente Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Provisión y realización de entrada para conductos de $A en estructuras de arqueta o cámaras ya configuradas. Labor a llevar a cabo: $B Rango de mantenimiento: $C Directrices de ejecución: $D",
+  "categoria": "reasignacion",
+  "motivo": "«conductos de 1 o 2» hace que el número de tubos parezca una medida.",
+  "corrected": "Provisión y realización de entrada para $A conductos en estructuras de arqueta o cámaras ya configuradas. Labor a llevar a cabo: $B Rango de mantenimiento: $C Directrices de ejecución: $D",
+  "cambio": "$A como número de conductos"
+ },
+ "e68d87e06f08": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 90 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Incluida la prueba de los conductos, el transporte y retirada de los productos al sitio de ejecución $M, se provee una conducción en hormigón compuesta por $A conductos de polietileno sin halógenos de diámetro $I y 90 mm, $N el relleno y compactación de la zanja, y $P la entrega y colocación de tubos y hormigón tipo HE-20 sin vibrar. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de diámetro $I y 90 mm» da «diámetro en cruce bajo vías»",
+  "corrected": "Incluida la prueba de los conductos, el transporte y retirada de los productos al sitio de ejecución $M, se provee una conducción en hormigón compuesta por $A conductos de polietileno sin halógenos de 90 mm de diámetro $I, $N el relleno y compactación de la zanja, y $P la entrega y colocación de tubos y hormigón tipo HE-20 sin vibrar. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«de diámetro $I y 90 mm» → «de 90 mm de diámetro $I»"
+ },
+ "e6aaa4a6e62d": {
+  "original": "$A de canalización de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Configuración $A de canalización con $B tubos de acero galvanizado de diámetro nominal 100mm para las transferencias entre plataformas en sistemas CMS. $Q(%A) Ejecución: $C Zona de conservación: $D Condiciones de implementación: $F",
+  "categoria": "reasignacion",
+  "motivo": "'Configuración $A' produce 'Configuración Suministro de canalización', incoherente.",
+  "corrected": "$A de canalización con $B tubos de acero galvanizado de diámetro nominal 100mm para las transferencias entre plataformas en sistemas CMS. $Q(%A) Ejecución: $C Banda de mantenimiento: $D Condiciones de implementación: $F",
+  "cambio": "Quitado «Configuración» ante $A; «Zona» → «Banda de mantenimiento»"
+ },
+ "e7e17e25c822": {
+  "original": "Suministro y montaje de cimentación rectangular en desmonte $B para terreno $A con esperas roscadas para postes de electrificación, desde plataforma o vía. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Proveedor y colocación de cimentación rectangular tipo $B, adecuada para suelo $A, con esperas roscadas para postes de electrificación desde la vía o plataforma. Producto listo para su uso. Alcance del proyecto: $C. Ancho de la franja: $D. Condiciones para la instalación: $F.",
+  "categoria": "reasignacion",
+  "motivo": "«Alcance del proyecto: Diurno», «Ancho de la franja: horas»; pierde desmonte",
+  "corrected": "Proveedor y colocación de cimentación rectangular tipo $B, adecuada para suelo $A, con esperas roscadas para postes de electrificación desde la vía o plataforma. Producto listo para su uso. Trabajo: $C. Banda de mantenimiento: $D. Condiciones para la instalación: $F.",
+  "cambio": "Etiquetas de $C y $D → «Trabajo» y «Banda de mantenimiento»"
+ },
+ "e8577cbc802c": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 200 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada de $A tuberías de polietileno libre de halógenos de 200 mm, de diámetro $I. Este proceso comprende $N la excavación y compactación de la zanja, $P la instalación de los tubos y hormigón tipo HE-20 sin vibración, así como la prueba, transporte y limpieza de la zona de trabajo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«200 mm, de diámetro $I»: ubicación como diámetro; cambia relleno por excavación",
+  "corrected": "Conducción enterrada de $A tuberías de polietileno libre de halógenos de 200 mm de diámetro $I. Este proceso comprende $N la excavación y compactación de la zanja, $P la instalación de los tubos y hormigón tipo HE-20 sin vibración, así como la prueba, transporte y limpieza de la zona de trabajo $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«200 mm, de diámetro $I» → «200 mm de diámetro $I»"
+ },
+ "e934629e364e": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 200 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Canalización integrada con $A conductos de polietileno exento de halógenos de diámetro $I y 200 mm, en la que se incluye $N el relleno y compactación de la zanja, así como $P el abastecimiento y ensamblaje de los conductos con hormigón HE-20 sin vibrar, la prueba de los conductos, y su transporte y retirada hacia el lugar de destino $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de diámetro $I y 200 mm»: ubicación como diámetro",
+  "corrected": "Canalización integrada con $A conductos de polietileno exento de halógenos de 200 mm de diámetro $I, en la que se incluye $N el relleno y compactación de la zanja, así como $P el abastecimiento y ensamblaje de los conductos con hormigón HE-20 sin vibrar, la prueba de los conductos, y su transporte y retirada hacia el lugar de destino $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«de diámetro $I y 200 mm» → «de 200 mm de diámetro $I»"
+ },
+ "e968647cadcb": {
+  "original": "Suministro y montaje de cimentación en terraplén $B para terreno $A con postes de electrificación, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Instalación y entrega de cimentaciones en terraplén de tipo $B, destinadas para terreno $A, que incluye postes de electrificación con sus respectivos elementos de fijación instalados desde la plataforma o vía. Proceso completo, sin tareas pendientes. Trabajo requerido: $C. Zona para mantenimiento: $D. Condiciones de realización: $F.",
+  "categoria": "reasignacion",
+  "motivo": "'Zona para mantenimiento: 3 <= i < 5 horas' da sentido espacial a una franja horaria",
+  "corrected": "Instalación y entrega de cimentaciones en terraplén de tipo $B, destinadas para terreno $A, que incluye postes de electrificación con sus respectivos elementos de fijación instalados desde la plataforma o vía. Proceso completo, sin tareas pendientes. Trabajo requerido: $C. Banda de mantenimiento: $D. Condiciones de realización: $F.",
+  "cambio": "Etiqueta de $D: «Banda de mantenimiento:»"
+ },
+ "ec1b420d0c87": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 50 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Colocación de conducción enterrada de $A tubos de polietileno de 50 mm con diámetro $I, incluye $N la compactación y relleno de la zanja, $P el suministro y montaje de los conductos y hormigón tipo HE-20, la prueba de los conductos, y la manipulación y transporte de materiales al lugar de trabajo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«50 mm con diámetro $I»: ubicación como diámetro; pierde «libre de halógenos»",
+  "corrected": "Colocación de conducción enterrada de $A tubos de polietileno de 50 mm de diámetro $I, incluye $N la compactación y relleno de la zanja, $P el suministro y montaje de los conductos y hormigón tipo HE-20, la prueba de los conductos, y la manipulación y transporte de materiales al lugar de trabajo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«50 mm con diámetro $I» → «50 mm de diámetro $I»"
+ },
+ "eeed2bba9f48": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 40 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se realiza una conducción enterrada con $A conductos de polietileno libre de halógenos de diámetro nominal $I 40 mm, incluidos $N el relleno y compactado de la zanja y $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar. Incluye también la prueba de los conductos, el transporte y la retirada de los productos al lugar previsto $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«diámetro nominal $I 40 mm»: la ubicación queda dentro del diámetro",
+  "corrected": "Se realiza una conducción enterrada con $A conductos de polietileno libre de halógenos de diámetro nominal 40 mm $I, incluidos $N el relleno y compactado de la zanja y $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar. Incluye también la prueba de los conductos, el transporte y la retirada de los productos al lugar previsto $M. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "Diámetro 40 mm antes de $I; $I deja de ser diámetro"
+ },
+ "ef4ea77f58f9": {
+  "original": "Suministro y montaje de placa para tirante de anclajes en viaductos con esperas previas. Trabajo $A. Banda de mantenimiento: $B. Condiciones de ejecución: $C.",
+  "broken": "Provisión y colocación de placa de tirante de anclajes en viaductos que incluyen esperas previas. Las labores $A serán realizadas. Zona de mantenimiento: $B. Las condiciones de implementación son $C.",
+  "categoria": "reasignacion",
+  "motivo": "«Las labores Cualquier franja horaria excepcional serán realizadas»: el turno queda como nombre de las labores.",
+  "corrected": "Provisión y colocación de placa de tirante de anclajes en viaductos que incluyen esperas previas. Las labores serán realizadas. Trabajo: $A. Zona de mantenimiento: $B. Las condiciones de implementación son $C.",
+  "cambio": "$A pasa a etiqueta «Trabajo:»"
+ },
+ "f077a776cfec": {
+  "original": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Se describe la arqueta de registro de composite-PRFV tipo AFC-$K(%A), situada en $A $I(%A). Se indica el trabajo: $B. Se señala la banda de mantenimiento: $C. Se determinan las condiciones de ejecución: $D.",
+  "categoria": "reasignacion",
+  "motivo": "'situada en 180x60x75 cm': las medidas pasan a ser una ubicación",
+  "corrected": "Se describe la arqueta de registro de composite-PRFV tipo AFC-$K(%A), de $A $I(%A). Se indica el trabajo: $B. Se señala la banda de mantenimiento: $C. Se determinan las condiciones de ejecución: $D.",
+  "cambio": "«situada en $A» pasa a «de $A»"
+ },
+ "f1edbe66dd71": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 200 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Proporciona conducción enterrada de $A, suministro de tubos de polietileno libre de halógenos de 200 mm con diámetro $I, hormigón tipo HE-20 sin vibrar, y los servicios conexos como el relleno y compactado de la zanja de $N, así como $P la instalación y prueba de los conductos, transporte y retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "categoria": "reasignacion",
+  "motivo": "«conducción enterrada de $A,», «diámetro $I», «zanja de $N»: huecos mal asignados",
+  "corrected": "Proporciona conducción enterrada de $A conductos, suministro de tubos de polietileno libre de halógenos de 200 mm de diámetro $I, hormigón tipo HE-20 sin vibrar, y los servicios conexos como $N el relleno y compactado de la zanja, así como $P la instalación y prueba de los conductos, transporte y retirada de los productos al lugar de empleo $M. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "cambio": "$A como número de conductos; «200 mm de diámetro $I»; $N antepuesto"
+ },
+ "f2cba2770b5d": {
+  "original": "$A de canalización de $B tubos de acero galvanizado de 100mm de diámetro para instalaciones CMS en transiciones entre diferentes plataformas. $Q(%A) Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se dispone de $A conducciones $B de acero galvanizado, cada una con un diámetro de 100mm, para instalaciones CMS durante las transiciones entre plataformas. $Q(%A) Actividad de trabajo: $C Equipo de soporte: $D Circunstancias de instalación: $F",
+  "categoria": "reasignacion",
+  "motivo": "$A como cantidad y $B como adjetivo; banda etiquetada 'Equipo de soporte'.",
+  "corrected": "Se realiza el $A de conducciones de $B tubos de acero galvanizado, cada una con un diámetro de 100mm, para instalaciones CMS durante las transiciones entre plataformas. $Q(%A) Actividad de trabajo: $C Banda de mantenimiento: $D Circunstancias de instalación: $F",
+  "cambio": "$A como operación, $B como nº de tubos; «Equipo» → «Banda»"
+ },
+ "f32519c79988": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 40 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Colocación de una red de tuberías encajonadas formada por $A tubos de polietileno sin halógenos de 40 mm mm de espesor y $I de diámetro, integrando $N el tapado y prensado del canal excavado, $P la entrega y fijación de los conductos y hormigón de la categoría HE-20 no vibrado, inspecciones de los conductos, el desplazamiento y evacuación de los insumos al emplazamiento $M Labor: $C Ancho de conservación: $D Directrices de aplicación: $F",
+  "categoria": "reasignacion",
+  "motivo": "«40 mm mm de espesor y $I de diámetro»: ubicación como diámetro",
+  "corrected": "Colocación de una red de tuberías encajonadas formada por $A tubos de polietileno sin halógenos de 40 mm de diámetro $I, integrando $N el tapado y prensado del canal excavado, $P la entrega y fijación de los conductos y hormigón de la categoría HE-20 no vibrado, inspecciones de los conductos, el desplazamiento y evacuación de los insumos al emplazamiento $M Labor: $C Ancho de conservación: $D Directrices de aplicación: $F",
+  "cambio": "«40 mm mm de espesor y $I de diámetro» → «40 mm de diámetro $I»"
+ },
+ "f34787e97489": {
+  "original": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A), de la línea $A $I(%A), con trabajo: $B, banda de mantenimiento: $C y condiciones de ejecución: $D.",
+  "categoria": "reasignacion",
+  "motivo": "Las medidas se presentan como «línea»",
+  "corrected": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A), de $A $I(%A), con trabajo: $B, banda de mantenimiento: $C y condiciones de ejecución: $D.",
+  "cambio": "«de la línea $A» → «de $A»"
+ },
+ "f3f3640d0918": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 110 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se provee una conducción enterrada con $A conductos de polietileno sin halógenos de 110 mm y diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y concreto tipo HE-20 sin vibrar, la verificación de los conductos, el traslado y retirada de los productos al destino $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«110 mm y diámetro $I»: ubicación como diámetro",
+  "corrected": "Se provee una conducción enterrada con $A conductos de polietileno sin halógenos de 110 mm de diámetro $I, incluyendo $N el relleno y compactación de la zanja, $P el suministro y colocación de los conductos y concreto tipo HE-20 sin vibrar, la verificación de los conductos, el traslado y retirada de los productos al destino $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«110 mm y diámetro $I» → «110 mm de diámetro $I»"
+ },
+ "f9329e31e9d1": {
+  "original": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Caja de registro del sistema composite-PRFV especificación AFC-$K(%A), de la serie $A, subserie $I(%A). Tarea: $B. Zona de revisión: $C. Procedimientos a seguir: $D.",
+  "categoria": "reasignacion",
+  "motivo": "Las medidas pasan a ser «serie» y la descripción «subserie»",
+  "corrected": "Caja de registro del sistema composite-PRFV especificación AFC-$K(%A), de $A $I(%A). Tarea: $B. Banda de mantenimiento: $C. Condiciones de ejecución: $D.",
+  "cambio": "«serie $A, subserie $I» → «de $A $I»; etiquetas $C/$D"
+ },
+ "fb37b09215c8": {
+  "original": "Arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A) Trabajo: $B Banda de mantenimiento: $C Condiciones de ejecución: $D",
+  "broken": "Se caracteriza la arqueta de registro de composite-PRFV tipo AFC-$K(%A) instalada en $A $I(%A). Se especifica el trabajo: $B. Se establece la banda de mantenimiento: $C. Se detallan las condiciones de ejecución: $D.",
+  "categoria": "reasignacion",
+  "motivo": "«instalada en $A» trata las dimensiones como ubicación: «instalada en 50x50x100 centímetros».",
+  "corrected": "Se caracteriza la arqueta de registro de composite-PRFV tipo AFC-$K(%A) de $A $I(%A). Se especifica el trabajo: $B. Se establece la banda de mantenimiento: $C. Se detallan las condiciones de ejecución: $D.",
+  "cambio": "«instalada en $A» → «de $A»: medidas, no ubicación"
+ },
+ "fc502f1fe518": {
+  "original": "Canalización hormigonada de $A tubos de polietileno libre de halógenos de 110 mm de diámetro $I, incluso $N el relleno y compactado de la zanja, $P el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Conducción enterrada formada por $A conductos de polietileno sin halógenos, de diámetro $I medida 110 mm, incluyendo $N el relleno y compactado de la zanja, $P el abastecimiento y montaje de los conductos y hormigón no vibrado tipo HE-20, la prueba de los conductos, el traslado y la retirada de los productos al sitio de aplicación $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«de diámetro $I medida 110 mm»: ubicación como diámetro",
+  "corrected": "Conducción enterrada formada por $A conductos de polietileno sin halógenos, de diámetro 110 mm $I, incluyendo $N el relleno y compactado de la zanja, $P el abastecimiento y montaje de los conductos y hormigón no vibrado tipo HE-20, la prueba de los conductos, el traslado y la retirada de los productos al sitio de aplicación $M Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "cambio": "«de diámetro 110 mm $I»: $I deja de ser diámetro"
+ },
+ "fd7b99cd9c61": {
+  "original": "Suministro y montaje de cimentación cilíndrica en desmonte $B para terreno $A con postes de electrificación, desde plataforma o vía, incluye los elementos de fijación del poste. Totalmente terminada. Trabajo: $C. Banda de mantenimiento: $D. Condiciones de ejecución: $F.",
+  "broken": "Instalación e implementación de la cimentación cilíndrica en desmonte tipo $B, adecuada para suelo $A, que incluye el soporte para postes de electricidad. La obra se realiza desde la plataforma o la vía ferroviaria y comprende los componentes para la aseguramiento del poste. Aceptable para uso inmediato. Durante la operación laboral se requiere $C. La zona de seguridad para trabajos posteriores es de $D. Las condiciones de construcción para este proyecto son $F.",
+  "categoria": "reasignacion",
+  "motivo": "'se requiere Diurno', 'zona de seguridad ... es de i < 3 horas'",
+  "corrected": "Instalación e implementación de la cimentación cilíndrica en desmonte tipo $B, adecuada para suelo $A, que incluye el soporte para postes de electricidad. La obra se realiza desde la plataforma o la vía ferroviaria y comprende los componentes para la aseguramiento del poste. Aceptable para uso inmediato. Trabajo: $C. Banda de mantenimiento: $D. Las condiciones de construcción para este proyecto son: $F.",
+  "cambio": "«se requiere $C», «zona de seguridad» → «Trabajo», «Banda de mantenimiento»"
+ },
+ "fe5e83c8a842": {
+  "original": "Apertura  $A de canaleta de $B existente para el tendido de los cables, incluyendo las labores de cavado de terreno. Trabajo: $C Banda de mantenimiento: $D Condiciones de ejecución: $F",
+  "broken": "Se lleva a cabo la apertura $A de la canalización hormigonada de $B para la colocación de cables, que implica el trabajo de excavación del terreno. El trabajo se detalla como: $C. Se establece la zona de mantenimiento: $D. Se indican las condiciones para la ejecución: $F",
+  "categoria": "reasignacion",
+  "motivo": "«hormigonada de $B» da «hormigonada de polímero»; «zona de mantenimiento».",
+  "corrected": "Se lleva a cabo la apertura $A de la canalización de $B para la colocación de cables, que implica el trabajo de excavación del terreno. El trabajo se detalla como: $C. Se establece la banda de mantenimiento: $D. Se indican las condiciones para la ejecución: $F",
+  "cambio": "«hormigonada de $B» → «de $B»; «zona» → «banda de mantenimiento»"
+ }
+}
