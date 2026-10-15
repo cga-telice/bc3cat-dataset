@@ -264,3 +264,53 @@ reempaquetado: texto `54c83faadd41bd86177006c5d7dc85e2145fa35f4bf98450870598bff7
 `provenance.json` conserva el sello del E3 y actualiza `repackaged_commit` /
 `repackaged_utc` (el commit que anota es el que estaba en HEAD al empaquetar, es
 decir, el anterior al que versiona esta entrega, como en §6).
+
+## 8. Consultas por back-translation sobre el TEXTO gold (BT, 2026-10-16)
+
+**Qué es.** Una consulta por hoja de STACKED-P: el TEXTO gold traducido de ida y vuelta
+frase a frase (ES→EN→ES y ES→EN→{FR, IT, DE}→ES, OPUS-MT con revisión fijada). 4 670
+consultas de 79 conceptos. Gold = la propia hoja (`gold_item_key`).
+
+### Ficheros (`data/synthetic/handoff_OE/`)
+
+| Fichero | Contenido |
+|---|---|
+| `OE_bt_texto.json` | 4 670 consultas, esquema de STACKED más `bt`, `bt_sentences`, `characterization_check` |
+| `OE_bt_modifications.jsonl` | Sidecar: frases traducidas, sustituciones de valor y sinónimos del glosario |
+| `OE_bt_provenance.json` | Modelos y revisiones, licencias, auditorías, sha256 de entradas y salidas |
+| `OE_stacked_P_exclusion.json` | 324 consultas STACKED fuera de STACKED-P, con motivo |
+| `OE_known_drift_rewrites.json` | Las 14 reescrituras de deriva conocidas («con topo» → «topografía»…) |
+
+### Cómo se construye
+
+1. **Prosa por frases.** 119 frases distintas; cada una con hasta 4 traducciones candidatas.
+   Los términos del oficio que el traductor pierde (arqueta, canaleta, desmonte, hastial…)
+   se restauran después de traducir. Por frase se usa la primera candidata aprobada en una
+   auditoría por frase (107 de 281 pares); si ninguna, la frase original.
+2. **Valores.** Valores de eje y fragmentos L2 enmascarados durante la traducción; después,
+   una variante auditada cuando existe (218 aprobadas), a veces con la etiqueta delante.
+3. **Sinónimos del glosario.** El 50 % de las apariciones de los 33 términos del oficio se
+   sustituye por una alternativa auditada (122, en tres rondas más decisiones de César).
+4. **Verificación estructural**, sin LLM: máscaras y orden de valores preservados, G0, G1
+   (sin cantidades, códigos ni siglas nuevas), G3 (no igual a otra hoja), G6.
+
+### Garantías
+
+- Todo lo que contiene una consulta está auditado: frases aprobadas u originales, variantes de
+  valor y sinónimos de listas aprobadas.
+- Doble ejecución en modo replay con sha256 idénticos; cachés de traducción en el repo.
+- Ningún fichero entregado antes ha cambiado (sha256 frente a la línea base del 2026-10-04).
+
+### Limitaciones que conviene citar
+
+- **Traducción parcial.** Media de 0,48 frases traducidas por consulta; contando que las frases
+  de etiqueta («Trabajo: X.») vuelven idénticas del traductor, se traducen unas dos de cada tres
+  frases traducibles. Las 3 consultas con el 100 % son la excepción.
+- **79 de 83 conceptos.** Dos conceptos no están en STACKED-P; OEB160 y OEE020 no tienen ninguna
+  frase con traducción aprobada.
+- **Auditoría por agentes.** Las auditorías las hicieron agentes con contexto limpio; César
+  revisó decisiones concretas, pero la muestra de las variantes de valor está pendiente.
+- **Deriva en STACKED.** Las paráfrasis de plantilla de STACKED quitan «hormigonada» en unas
+  2 650 consultas («Canalización hormigonada» → «Conducción subterránea»). Es un cambio de tipo
+  de partida que el verificador por ejes no ve. No afecta a esta BT (parte del gold), pero sí a
+  STACKED y a los conjuntos que comparten paráfrasis (F-BT-1).

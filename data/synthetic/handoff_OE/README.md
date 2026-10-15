@@ -39,3 +39,33 @@ Every synthetic query modifies the TEXTO, so no query equals its target verbatim
   (cross-concept twins dropped, intra-concept duplicates collapsed).
 - Deterministic; LLM used only to author the rewrite menus (frozen), corpora built
   by recombination. `id` = uuid5 of `item_key` (stable).
+
+## Back-translation (BT) queries — added 2026-10-16
+
+- `OE_bt_texto.json` — **BT** queries: the gold TEXTO of each STACKED-P leaf, round-trip
+  translated sentence by sentence (ES→EN→ES and ES→EN→{FR, IT, DE}→ES, OPUS-MT). 4 670 queries,
+  79 concepts. Gold = `gold_item_key` (the source leaf itself), as in the other sets.
+- `OE_bt_modifications.jsonl` — sidecar, one row per query: translated sentences, value
+  substitutions and glossary synonyms.
+- `OE_bt_provenance.json` — models and revisions, audits, input and output digests.
+- `OE_stacked_P_exclusion.json` + `OE_known_drift_rewrites.json` — 324 STACKED queries outside
+  STACKED-P (321 with a known drift rewrite such as «con topo» → «topografía» or «adosada» →
+  «empotrada / a ras», 2 duplicates of other sets, 1 degenerate). Consider excluding them when
+  scoring STACKED.
+
+How a BT query is built:
+- **Prose.** Each sentence uses the first translation that passed a sentence-level audit, or
+  stays in its original form. `bt_sentences.fraction` = translated / total sentences (mean 0.48;
+  label-only sentences such as «Trabajo: X.» come back unchanged from MT, so about two thirds of
+  the translatable prose is translated). Trade terms (arqueta, canaleta, desmonte, hastial…) are
+  restored after translation.
+- **Values.** Axis values and text-variable fragments are masked during translation and then
+  replaced by an audited variant when one exists («Volumen relevante» → «volumen importante»);
+  sometimes with the parameter label in front.
+- **Glossary synonyms.** 50 % of trade-term occurrences are replaced by an audited alternative
+  («zanja» → «rasa», «poste» → «apoyo»).
+
+`modification_types` lists `back_translation`, plus `value_back_translation` and
+`glossary_synonym` when present; use `texto_modification_types_post_bt` for analyses by type.
+Every query passed a structural check (no new quantities, codes or acronyms; not equal to any
+other leaf or to a delivered query). Item keys end in `_btorigv_en`.

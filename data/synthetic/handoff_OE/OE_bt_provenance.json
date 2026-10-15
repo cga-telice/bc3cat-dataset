@@ -1,0 +1,111 @@
+{
+ "request": "BT sobre STACKED, opción A (handoff 2026-10-04); rediseños tras CP2 y CP4 decididos por César",
+ "script": "scripts/build_bt_sentences.py --assemble (empaquetado: scripts/package_bt_handoff.py)",
+ "commit": "045fb8c12f455a5f3a39bdad80acc2f36c39d9e7",
+ "packaged_utc": "2026-10-15T22:26:50+00:00",
+ "seed": 42,
+ "source": "TEXTO gold de las hojas de STACKED-P (OE_stacked_P_keys.json)",
+ "unit": "frase; por frase, la primera traducción aprobada o la frase original",
+ "chains": [
+  "en",
+  "en-fr",
+  "en-it",
+  "en-de"
+ ],
+ "models": {
+  "es-en": "Helsinki-NLP/opus-mt-es-en@c96e2c5399ebfae4fc43d9669556b9afa74bb69d",
+  "en-es": "Helsinki-NLP/opus-mt-en-es@5bc4493d463cf000c1f0b50f8d56886a392ed4ab",
+  "en-fr": "Helsinki-NLP/opus-mt-en-fr@dd7f6540a7a48a7f4db59e5c0b9c42c8eea67f18",
+  "fr-es": "Helsinki-NLP/opus-mt-fr-es@f4263aff464dbfb2650a4b1793baf6f82b91ae91",
+  "en-it": "Helsinki-NLP/opus-mt-en-it@be5a254d936f1a8c8da080406ca582a6615e6658",
+  "it-es": "Helsinki-NLP/opus-mt-it-es@bf60834fa2d3999a6bedf4f3ea27bd9e4daa6407",
+  "en-de": "Helsinki-NLP/opus-mt-en-de@6183067f769a302e3861815543b9f312c71b0ca4",
+  "de-es": "Helsinki-NLP/opus-mt-de-es@0c0187af74abb222c9d53a672e41dec7dc867b3f"
+ },
+ "licenses": {
+  "en-de": "cc-by-4.0",
+  "default": "apache-2.0"
+ },
+ "decoding": {
+  "num_beams": 4,
+  "do_sample": false,
+  "max_new_tokens": 512
+ },
+ "masking": {
+  "strategy": "bracket",
+  "masked": "valores de eje, fragmentos L2, cantidades, bandas, siglas"
+ },
+ "glossary": {
+  "restoration": "posterior (restore_terms)",
+  "terms": [
+   "arqueta",
+   "canaleta",
+   "cimentación",
+   "desmonte",
+   "terraplén",
+   "cata",
+   "macizo",
+   "tapa",
+   "tapado",
+   "destapado",
+   "mandrilado",
+   "hastial",
+   "zanja",
+   "ménsula",
+   "micropilote",
+   "topo",
+   "acometida",
+   "embocadura",
+   "hito",
+   "ficha",
+   "firme",
+   "talud",
+   "hinca",
+   "trinchera",
+   "cuneta",
+   "balasto",
+   "repartidor",
+   "poste",
+   "corrugada",
+   "composite",
+   "solera",
+   "recibido",
+   "adecuación"
+  ],
+  "synonyms": "data/synthetic/bt_OE/OE_glossary_approved.json",
+  "synonym_probability": 0.5
+ },
+ "values": {
+  "approved": "data/synthetic/bt_OE/OE_bt_value_approved.json",
+  "label_probability": 0.5,
+  "rule": "siempre que haya variante aprobada"
+ },
+ "audits": {
+  "sentences": "agentes con contexto limpio, 281 pares frase/candidata, 107 aprobados",
+  "values": "agentes, 218 variantes aprobadas (muestra de César pendiente)",
+  "glossary": "agentes en tres rondas + decisiones de César, 122 alternativas"
+ },
+ "verification": "estructural sin LLM: máscaras y orden de valores, G0, G1, G3, G6",
+ "counts": {
+  "queries": 4670,
+  "concepts": 79,
+  "with_value_bt": 3787,
+  "with_glossary_synonym": 2898
+ },
+ "reproducibility": "doble ejecución en modo replay con sha256 idénticos; cachés en data/synthetic/bt_OE/cache*",
+ "inputs_sha256": {
+  "OE_texto.json": "54c83faadd41bd86177006c5d7dc85e2145fa35f4bf98450870598bff70f23e9",
+  "OE_stacked_texto.json": "c34a222ae2af05a0b5335b774cb7fb45f14064cc17234d9d885e809fb29b6f45",
+  "OE_stacked_P_keys.json": "e7b894bc93881a80b1eedd9ed70faa11676e6cff790d07e4e0906ff3481a1118",
+  "OE_2026_stage.json": "2882113b9fe4b23c401de8d1059ede52a762068eb96b99d7de309733fc2a078b",
+  "OE_glossary_approved.json": "5116931445113916adc67995a11afb71b59a3364e2fe966d4086205b71768d18",
+  "OE_bt_value_approved.json": "004c4d7b41c3518f01f03211a6e3b369583fd90c21de73415ae9a3c477c8bacd",
+  "OE_bt_origv_sentence_verdicts.jsonl": "4a335e634c8f849e33d989a3c24eefc7fc9bb99bea5254afc5f3d8e277fb645a"
+ },
+ "files": {
+  "OE_bt_texto.json": "421b3ca3a3d3f61f26d4653b3f84e4a614ff2dc6ade7acfb4a8f3da1da7d408c",
+  "OE_bt_modifications.jsonl": "c1ffe3bfafa2736dcc7ab2444bfdedc046fc0a42a3ac9e7ffa14f715b109738a",
+  "OE_stacked_P_exclusion.json": "bbe36522fdccb4fabb526a8ee029ccd5494c2f60c4b5dd87d036ab3e3f9c69c1",
+  "OE_known_drift_rewrites.json": "1431f19dfb4791f22ac4a1b8be6779ff6f6d0fe89c12362932474d6cae0dc759"
+ }
+}

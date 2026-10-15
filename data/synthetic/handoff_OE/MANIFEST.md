@@ -19,3 +19,8 @@
 | `OE_dose_texto.json` | 4154720 | `555fab84d134886f85ece40115ffd485e796fd4e96291e6a9af3129004a80819` |
 | `OE_isolated_texto.json` | 7115141 | `054041ff05349fae79fd5b91ff111f4fe574b37f7f8ee9647cea044503c5e3ce` |
 | `OE_leaf_applicability.jsonl` | 531881 | `eda12d17c323add48a7d8deac0f93e767188824950357303b497a7ca8d3fbaa3` |
+| `OE_bt_texto.json` | 9434707 | `421b3ca3a3d3f61f26d4653b3f84e4a614ff2dc6ade7acfb4a8f3da1da7d408c` |
+| `OE_bt_modifications.jsonl` | 2697154 | `c1ffe3bfafa2736dcc7ab2444bfdedc046fc0a42a3ac9e7ffa14f715b109738a` |
+| `OE_bt_provenance.json` | 4082 | `d17653030a0b0cc320babffad9e0322a3259bc9ee07db608b97751516da01f33` |
+| `OE_stacked_P_exclusion.json` | 60110 | `bbe36522fdccb4fabb526a8ee029ccd5494c2f60c4b5dd87d036ab3e3f9c69c1` |
+| `OE_known_drift_rewrites.json` | 14513 | `1431f19dfb4791f22ac4a1b8be6779ff6f6d0fe89c12362932474d6cae0dc759` |

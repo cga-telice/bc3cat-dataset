@@ -115,3 +115,14 @@ def restore_terms(source: str, output: str, terms: Sequence[str]) -> RestoreResu
     if missing:
         return RestoreResult(text, False, "term_lost", restored, sorted(set(missing)))
     return RestoreResult(text, True, None, restored)
+
+
+def renumber(rep_output: str, rep_source: str, target_source: str) -> str:
+    """Traslada la traducción de una frase representativa a otra hoja con la
+    misma frase y otra numeración de marcadores: el k-ésimo marcador del origen
+    representativo pasa a ser el k-ésimo del origen de destino."""
+    a, b = _MARKER_RE.findall(rep_source), _MARKER_RE.findall(target_source)
+    if len(a) != len(b):
+        raise ValueError("frases con distinto número de marcadores")
+    mapping = dict(zip(a, b))
+    return _MARKER_RE.sub(lambda m: mapping.get(m.group(0), m.group(0)), rep_output)

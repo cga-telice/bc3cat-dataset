@@ -29,6 +29,37 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### 2026-10-16 — BT sobre el TEXTO gold entregado (opción A, rediseñada)
+
+**Contexto.** Handoff del 2026-10-04: BT del TEXTO de STACKED con verificación de la
+caracterización paramétrica. Rama `syn/back-translation`.
+
+**Entrega.** `handoff_OE/OE_bt_texto.json` (4 670 consultas, 79 conceptos) con sidecar y
+procedencia, y la exclusión de STACKED-P. Ver `HANDOFF.md` §8.
+
+**Resultados.**
+- STACKED-P: 4 674 de 4 998 (321 derivas conocidas, 2 duplicadas, 1 degenerada).
+- Calibración del verificador con LLM (phi4 + qwen2.5:14b): no cumple en 3 iteraciones; mejor
+  phi4 solo con cita comprobada: positivos 99,2 %, discriminación 98,8 %, ablación 93,9 %.
+- Máscaras: `bracket` 98/100 frente a `xml` 93 y `sentinel` 16.
+- BT de prosa entera (piloto): 22 % de error de prosa en la auditoría de `bt_origv`; con
+  glosario enmascarado, 35/81 prosas aprobadas (3 704 hojas, 28 conceptos).
+- BT por frases: 107/281 candidatas aprobadas, 61/119 frases con traducción; 4 670 consultas,
+  79 conceptos; 2 898 con sinónimo del glosario; BM25 Acc@1 (prosa + valores, sobre STACKED)
+  20,4 % frente a 23,7 % sin BT.
+
+**Decisiones de César.** CP1: valores por defecto, siglas enmascaradas. CP2: parar la
+verificación con LLM; enmascarar valores; STACKED-P por lista de exclusión; G4 por grupo D-031;
+cachés en git. CP3: STACKED-P aprobado. CP4 en adelante: BT de valores con cadena de idioma
+adicional y etiqueta; partir del gold; auditoría por agentes; prosa por frases con restauración
+posterior del glosario y respaldo a la frase original; sinónimos del glosario (≥ 3 por término).
+
+**CLAUDE_SYNTHETIC.md updated:** yes (mapa de módulos).
+**Next step:** muestra de César de las variantes de valor; decidir F-BT-1 (deriva «hormigonada»
+en las paráfrasis de STACKED); fusión de `syn/back-translation` en `synthetic` con su OK.
+
+---
+
 ### 2026-09-27 — D-031 entregado: las hojas con el TEXTO idéntico van marcadas
 
 **Contexto.** `syn/stacked-audit` (conteo visible en el TEXTO para STACKED, y el

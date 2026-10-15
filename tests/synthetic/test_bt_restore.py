@@ -57,3 +57,18 @@ def test_restoration_only_where_the_source_had_the_term():
     # «arco» legítimo sin «arqueta» en el origen: no se toca
     r = restore_terms("Puente en arco [1].", "Puente de arco [1].", _TERMS)
     assert r.ok and r.text == "Puente de arco [1]."
+
+
+from synthetic.bt_restore import renumber  # noqa: E402
+
+
+def test_renumber_maps_markers_by_source_position():
+    rep_src = "Canaleta [3] de [4] con tapa."
+    rep_out = "Canaleta de [4] [3] con tapa."         # la traducción reordenó
+    target_src = "Canaleta [7] de [8] con tapa."
+    assert renumber(rep_out, rep_src, target_src) == "Canaleta de [8] [7] con tapa."
+
+
+def test_renumber_rejects_different_shapes():
+    with pytest.raises(ValueError):
+        renumber("Trabajo: [1].", "Trabajo: [1].", "Trabajo: [1] y [2].")
