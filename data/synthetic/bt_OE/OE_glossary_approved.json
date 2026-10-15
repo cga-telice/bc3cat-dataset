@@ -1,8 +1,11 @@
 {
- "fuentes": "ronda 1 (auditada) + decisiones de César + ronda 2 (auditada)",
+ "fuentes": "ronda 1 (auditada) + decisiones de César + ronda 2 (auditada) − limpieza decidida por César (2026-10-16) + ronda 3 (auditada)",
  "aprobadas": {
   "arqueta": [
-   "caja enterrada"
+   "caja enterrada",
+   "caja subterránea",
+   "caja soterrada",
+   "caja de cables enterrada"
   ],
   "canaleta": [
    "canal portacables",
@@ -12,7 +15,6 @@
   ],
   "cimentación": [
    "cimiento",
-   "bloque de hormigón",
    "base de hormigón",
    "bloque de cimiento"
   ],
@@ -38,13 +40,13 @@
   "macizo": [
    "bloque de hormigón",
    "bloque de cimentación",
-   "cimiento",
-   "bloque de cimiento",
-   "base de hormigón"
+   "monobloque de hormigón"
   ],
   "tapa": [
    "tapadera",
-   "placa de cubrición"
+   "placa de cubrición",
+   "elemento de cubrición",
+   "pieza de cubrición"
   ],
   "tapado": [
    "cierre",
@@ -69,7 +71,8 @@
    "muro lateral del túnel"
   ],
   "zanja": [
-   "rasa"
+   "rasa",
+   "zanjeo"
   ],
   "ménsula": [
    "palomilla",
@@ -93,7 +96,6 @@
   ],
   "embocadura": [
    "entronque",
-   "entrada",
    "entrada de tubos",
    "pasamuros",
    "penetración"
@@ -108,12 +110,12 @@
   "firme": [
    "pavimento",
    "afirmado",
-   "rasante",
    "superficie pavimentada",
    "capa de rodadura"
   ],
   "talud": [
-   "superficie inclinada del terreno"
+   "superficie inclinada del terreno",
+   "cara inclinada del terreno"
   ],
   "hinca": [
    "elemento clavado en el terreno",
@@ -122,12 +124,13 @@
   ],
   "trinchera": [
    "corte en tierra",
-   "tramo en corte",
-   "sección en corte"
+   "corte del terreno",
+   "corte abierto en tierra"
   ],
   "cuneta": [
    "desagüe a cielo abierto",
-   "drenaje longitudinal superficial"
+   "drenaje longitudinal superficial",
+   "drenaje longitudinal revestido"
   ],
   "balasto": [
    "piedra de vía",
@@ -148,7 +151,6 @@
   ],
   "corrugada": [
    "de alta adherencia",
-   "de acero B500S",
    "de armar",
    "de armadura"
   ],
@@ -175,5 +177,52 @@
    "arreglo",
    "puesta en condiciones"
   ]
- }
+ },
+ "retiradas_por_cesar": [
+  {
+   "termino": "corrugada",
+   "alternativa": "de acero B500S",
+   "motivo": "añade una especificación (tipo de acero) que el gold no tiene"
+  },
+  {
+   "termino": "firme",
+   "alternativa": "rasante",
+   "motivo": "la rasante es la cota de nivel, no el firme"
+  },
+  {
+   "termino": "macizo",
+   "alternativa": "cimiento",
+   "motivo": "compartida con cimentación"
+  },
+  {
+   "termino": "macizo",
+   "alternativa": "bloque de cimiento",
+   "motivo": "compartida con cimentación"
+  },
+  {
+   "termino": "macizo",
+   "alternativa": "base de hormigón",
+   "motivo": "compartida con cimentación"
+  },
+  {
+   "termino": "cimentación",
+   "alternativa": "bloque de hormigón",
+   "motivo": "compartida con macizo (se queda en macizo)"
+  },
+  {
+   "termino": "trinchera",
+   "alternativa": "tramo en corte",
+   "motivo": "compartida con desmonte: OEB180 sonaría a cimentación en desmonte"
+  },
+  {
+   "termino": "trinchera",
+   "alternativa": "sección en corte",
+   "motivo": "compartida con desmonte"
+  },
+  {
+   "termino": "embocadura",
+   "alternativa": "entrada",
+   "motivo": "compartida con acometida"
+  }
+ ]
 }

@@ -1,0 +1,568 @@
+{
+ "alternativas_ya_usadas_por_otros_terminos": [
+  "PRFV",
+  "abertura",
+  "acondicionamiento",
+  "adaptación",
+  "afirmado",
+  "apertura",
+  "apoyo",
+  "arreglo",
+  "baliza",
+  "base de apoyo",
+  "base de asiento",
+  "base de hormigón",
+  "bloque de cimentación",
+  "bloque de cimiento",
+  "bloque de hormigón",
+  "brazo de soporte",
+  "caja enterrada",
+  "calibración con mandril",
+  "calicata",
+  "canal de cableado",
+  "canal de cables",
+  "canal para cables",
+  "canal portacables",
+  "capa de asiento",
+  "capa de rodadura",
+  "cerrado",
+  "cierre",
+  "cimiento",
+  "colocación con mortero",
+  "comprobación con mandril",
+  "conexión",
+  "corte en tierra",
+  "de alta adherencia",
+  "de armadura",
+  "de armar",
+  "desagüe a cielo abierto",
+  "distribuidor de pares",
+  "drenaje longitudinal superficial",
+  "elemento clavado en el terreno",
+  "empotramiento",
+  "entrada",
+  "entrada de tubos",
+  "entronque",
+  "excavación de comprobación",
+  "excavación de prueba",
+  "excavación de reconocimiento",
+  "fijación con mortero",
+  "hoyo de reconocimiento",
+  "levantado de las placas de cubrición",
+  "llegada",
+  "machaca de vía",
+  "marcador de trazado",
+  "material compuesto",
+  "mojón",
+  "muro lateral del túnel",
+  "mástil",
+  "palomilla",
+  "paramento lateral",
+  "pared lateral",
+  "pasada de mandril",
+  "pasamuros",
+  "paso de mandril",
+  "pavimento",
+  "penetración",
+  "perforación horizontal",
+  "perforación horizontal dirigida",
+  "perforadora horizontal",
+  "piedra de vía",
+  "piedra machacada de vía",
+  "piedra partida de vía",
+  "pieza clavada",
+  "pilote de diámetro reducido",
+  "pilote de pequeño diámetro",
+  "pilote perforado de pequeño diámetro",
+  "placa de cubrición",
+  "plataforma en corte",
+  "plataforma en relleno",
+  "plástico reforzado con fibra de vidrio",
+  "preparación",
+  "puesta en condiciones",
+  "punto de interconexión",
+  "rasa",
+  "regletero",
+  "retirada de la cubrición",
+  "sección en corte",
+  "sección en relleno",
+  "señalizador",
+  "soporte clavado al terreno",
+  "soporte de catenaria",
+  "soporte en voladizo",
+  "sujeción con mortero",
+  "superficie inclinada del terreno",
+  "superficie pavimentada",
+  "tapadera",
+  "tramo en corte",
+  "tramo en relleno",
+  "tramo excavado",
+  "tramo sobre relleno",
+  "verificación con mandril",
+  "árido de vía"
+ ],
+ "terminos": {
+  "arqueta": {
+   "faltan": 2,
+   "aceptadas": [
+    "caja enterrada"
+   ],
+   "rechazadas": [
+    {
+     "alternativa": "registro",
+     "motivo": "Choca con «caja de registro» (OEB090, otro elemento) y con «arqueta de registro»/«pozo de registro»; «drenaje de registro desde centro de registro» deja de identificar la arqueta."
+    },
+    {
+     "alternativa": "pozo de registro",
+     "motivo": "Un pozo de registro es un elemento mayor y distinto; en «derivación a pozos de registro» o «pozo de registro prefabricado de 600x600x600» se lee otra partida."
+    },
+    {
+     "alternativa": "pocillo",
+     "motivo": "Coloquial solo para arquetas muy pequeñas; no encaja en arquetas de 600x600 mm ni en derivaciones a arquetas de telecomunicaciones."
+    },
+    {
+     "alternativa": "caja de paso enterrada",
+     "motivo": "«Caja de paso» es el elemento de superficie de instalaciones eléctricas y queda demasiado cerca de «caja de registro» (OEB090); «drenaje de caja de paso enterrada» no suena a obra real."
+    },
+    {
+     "alternativa": "caja de tiro",
+     "motivo": "En obra se dice «arqueta de tiro», no «caja de tiro»; además restringe a la función de tiro y no encaja en la arqueta de drenaje de OEB110."
+    },
+    {
+     "alternativa": "pozo de cables",
+     "motivo": "«Pozo» evoca un elemento mayor (como el pozo de registro ya rechazado) y la forma no es de uso real en partidas."
+    }
+   ],
+   "conceptos": [
+    {
+     "concepto": "OEA180$",
+     "nombre": "SALIDA DE CABLES DE CANALETA DE HORMIGÓN SIN ARQUETA",
+     "resumen_plantilla": "Salida de los cables de la canaleta de hormigón sin arqueta ($L(%A)/-/-)\\",
+     "texto_ejemplo": "Salida de los cables de la canaleta de hormigón, sin arqueta, incluyendo el taladro de la canaleta, la zanja hasta la caja de terminales, la fijación y el sellado. Totalmente terminada. Trabajo: Diurno"
+    },
+    {
+     "concepto": "OEB050$",
+     "nombre": "CANALIZACIÓN DE CUATRITUBO POLIETILENO DOBLE PARED",
+     "resumen_plantilla": "Ejecución de canalización de comunicaciones para línea subterranea doble circuito de 220 ó 400 kV en terreno $A, $B de pavimento. (-/-/$L(%C)) \\",
+     "texto_ejemplo": "Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M. Incluidos 2 tetratubos de polietileno de 4x40 mm de diámetro exterior para telecomunicaciones y los separadores correspondientes. Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente. Incluso "
+    },
+    {
+     "concepto": "OEB110$",
+     "nombre": "TUBERÍA DE PVC DE 110 mm DE DIAMETRO PARA DRENAJE ARQUETA",
+     "resumen_plantilla": "Tubería de PVC de 110 mm de diámetro para drenaje de arqueta ($L(%A)/$M(%B)/$N(%C))\\",
+     "texto_ejemplo": "Suministro y colocación de tubería de PVC de 110 mm de diámetro para drenaje de arqueta desde centro de arqueta a pie de talud incluyendo relleno y compactación de tierras. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    },
+    {
+     "concepto": "OEB120$",
+     "nombre": "EMBOCADURA CANALIZACIÓN EN ARQUETA O CÁMARA EXISTENTE",
+     "resumen_plantilla": "Suministro y ejecución de embocadura canalización de $A tubos en arqueta o cámara existente ($L(%B)/$M(%C)/$N(%D))\\",
+     "texto_ejemplo": "Suministro y ejecución de embocadura canalización de 1 o 2 tubos en arqueta o cámara existente Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    },
+    {
+     "concepto": "OEB130$",
+     "nombre": "ENTRONQUE DE TUBOS EN ARQUETA O CÁMARA EXISTENTE",
+     "resumen_plantilla": "Entronque de tubos de 110 mm en arqueta o cámara existente. ($L(%A)/$M(%B)/$N(%C))\\",
+     "texto_ejemplo": "Ejecución de los trabajos de entronque de canalización hormigonada de tubos de 110 mm con una cámara o una arqueta de registro existente incluyendo la demolición y reposición de los paramentos de hormigón o fábrica de ladrillo. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    },
+    {
+     "concepto": "OEC010$",
+     "nombre": "ARQUETA IN SITU PARA INSTALACIONES FERROVIARIAS",
+     "resumen_plantilla": "Arqueta in situ de $A mm de dimensiones interiores, para instalaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))\\",
+     "texto_ejemplo": "Arqueta realizada \"in situ\" de ladrillo, y 400x400x600 mm de dimensiones interiores, colocada sobre solera de hormigón en masa, limpiada y terminada, y con parte proporcional de medios auxiliares, incluso relleno y la compactación perimetral posterior, el drenaje y el recibido de los tubos, y la tapa de hormigón. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    }
+   ]
+  },
+  "macizo": {
+   "faltan": 1,
+   "aceptadas": [
+    "bloque de hormigón",
+    "bloque de cimentación"
+   ],
+   "rechazadas": [
+    {
+     "alternativa": "dado de hormigón",
+     "motivo": "«Dado» designa piezas pequeñas de hormigón, no el macizo de cimentación de un poste de catenaria."
+    },
+    {
+     "alternativa": "cimiento",
+     "motivo": "retirada: compartida con cimentación"
+    },
+    {
+     "alternativa": "bloque de cimiento",
+     "motivo": "retirada: compartida con cimentación"
+    },
+    {
+     "alternativa": "base de hormigón",
+     "motivo": "retirada: compartida con cimentación"
+    }
+   ],
+   "conceptos": [
+    {
+     "concepto": "OED180$",
+     "nombre": "CATA PREVIA DE EXCAVACIÓN DE MACIZO DE ELECTRIFICACIÓN",
+     "resumen_plantilla": "Cata previa de excavación de macizo de electrificación en terreno $A de profundidad $B ($L(%C)/$M(%D)/$N(%F)).\\",
+     "texto_ejemplo": "Cata previa de excavación de macizo de electrificación en terreno rocoso de profundidad hasta 1 m. , desde plataforma o vía, incluye el tapado de la misma si así lo determina la Dirección de Obra. Totalmente terminada. Tipo de terreno: hasta 1 m. . Profundidad: Diurno. Banda de mantenimiento: i >= 5 horas. Condiciones de ejecución: Volumen relevante."
+    }
+   ]
+  },
+  "tapa": {
+   "faltan": 1,
+   "aceptadas": [
+    "tapadera",
+    "placa de cubrición"
+   ],
+   "rechazadas": [
+    {
+     "alternativa": "pieza de cierre",
+     "motivo": "En canaletas y bandejas «pieza de cierre» puede leerse como tapa final o pieza de remate del extremo, no la tapa corrida; ambiguo en «canaleta PVC con pieza de cierre»."
+    },
+    {
+     "alternativa": "cubierta",
+     "motivo": "Se lee como cubierta de edificio o de protección; no es el término para la tapa de canaleta, arqueta o cámara."
+    },
+    {
+     "alternativa": "placa de cierre",
+     "motivo": "Igual que «pieza de cierre» (rechazada), se lee como placa de remate del extremo de la canaleta, no como la tapa corrida."
+    },
+    {
+     "alternativa": "cierre superior",
+     "motivo": "No es nombre de pieza en obra y choca con «cierre», aceptado para «tapado» (la operación); «suministro de cierre superior para canaleta» es ambiguo."
+    },
+    {
+     "alternativa": "plancha de cubrición",
+     "motivo": "«Plancha» designa chapa delgada; no vale para las tapas de hormigón de canaleta y arqueta."
+    }
+   ],
+   "conceptos": [
+    {
+     "concepto": "OEA010$",
+     "nombre": "CANALETA PVC",
+     "resumen_plantilla": "Canaleta PVC de $A con tapa. ($L(%B)/$M(%C)/$N(%D))\\",
+     "texto_ejemplo": "Canaleta PVC de 30x15 mm con tapa. Trabajo: Diurno. Banda de mantenimiento: i >= 5 horas. Condiciones de ejecución: Volumen relevante."
+    },
+    {
+     "concepto": "OEA050$",
+     "nombre": "CANALETA DE HORMIGÓN",
+     "resumen_plantilla": "Canaleta de hormigón tipo $A $M(c,%B) ($M(b,%B)/$M(a,%C)/$L(%D)) \\",
+     "texto_ejemplo": "Canaleta prefabricada de hormigón armado de 25 N/mm2 de resistencia a la compresión, normalizada tipo Normal (1000x328x170) de 2 alveolos y una tapa. Totalmente instalada, incluso la adecuación del terreno, la compactación, la nivelación de la solera, la cama de arena de río de 10 cm, el sellado de las tapas y las juntas con mortero y los rellenos compactados. Trabajo: diurno sin corte de tensión . Banda de mantenimiento: i >= 5 horas."
+    },
+    {
+     "concepto": "OEA060$",
+     "nombre": "CANALETA DE FÁBRICA DE LADRILLO RECTANGULAR",
+     "resumen_plantilla": "Construcción de canaleta rectangular para cables en el $A de $B de anchura y una profundidad de $C. (-/-/$L(%D)) \\",
+     "texto_ejemplo": "Construcción de canaleta rectangular para cables en el interior del edificio técnico de 300 mm de anchura y una profundidad de 400 mm , incluida la apertura de la zanja con los medios adecuados, construcción de la canaleta de fábrica de ladrillos sobre solera de hormigón en masa, enlucido por dentro, angular galvanizado, y tapa de núcleo aglomerado de madera con marco galvanizado. Incluye el propio montaje, los desplazamientos, pequeño material, herramientas, maquinaria, medios auxiliares. Estará de acuerdo con las E.T. de ADIF, planos normalizados y especificaciones de proyecto. Condiciones d"
+    },
+    {
+     "concepto": "OEA080$",
+     "nombre": "TAPA DE HORMIGÓN PARA CANALETA",
+     "resumen_plantilla": "Suministro y montaje de tapa para canaleta de hormigón tipo $A ($L(%B)/$M(%C)/$N(%D))\\",
+     "texto_ejemplo": "Suministro y montaje de tapa para canaleta de hormigón tipo normal (1000x328x170), incluyendo montaje y la retirada de las tierras sobrantes. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    },
+    {
+     "concepto": "OEC010$",
+     "nombre": "ARQUETA IN SITU PARA INSTALACIONES FERROVIARIAS",
+     "resumen_plantilla": "Arqueta in situ de $A mm de dimensiones interiores, para instalaciones ferroviarias. ($L(%C)/$M(%D)/$N(%F))\\",
+     "texto_ejemplo": "Arqueta realizada \"in situ\" de ladrillo, y 400x400x600 mm de dimensiones interiores, colocada sobre solera de hormigón en masa, limpiada y terminada, y con parte proporcional de medios auxiliares, incluso relleno y la compactación perimetral posterior, el drenaje y el recibido de los tubos, y la tapa de hormigón. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    },
+    {
+     "concepto": "OEC020$",
+     "nombre": "ARQUETA PREFABRICADA PARA INSTALACIONES FERROVIARIAS",
+     "resumen_plantilla": "Arqueta prefabricada de $A mm de dimensiones interiores. ($L(%B)/$M(%C)/$N(%D))\\",
+     "texto_ejemplo": "Arqueta prefabricada de 600x600x600 mm de dimensiones interiores, incluso recibido de los tubos de acometida y desague profundo, tapa de hormigón y relleno posterior, así como el acabado y limpieza de la misma. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    }
+   ]
+  },
+  "tapado": {
+   "faltan": 1,
+   "aceptadas": [
+    "cierre",
+    "cerrado"
+   ],
+   "rechazadas": [
+    {
+     "alternativa": "cubrición",
+     "motivo": "Puede valer para la canaleta, pero «apertura y cubrición de cata» no es natural (la cata se rellena); falla en algún contexto."
+    },
+    {
+     "alternativa": "cubrimiento",
+     "motivo": "Mismo problema que «cubrición»: no encaja en la cata ni en «el cubrimiento de la canalización»; poco usado en obra."
+    },
+    {
+     "alternativa": "nuevo cierre",
+     "motivo": "En «nuevo cierre de canaleta de hormigón» (OEA100) se lee como suministrar un elemento de cierre nuevo, no volver a tapar."
+    },
+    {
+     "alternativa": "recubrimiento",
+     "motivo": "«Recubrimiento» es revestimiento o recubrimiento de armaduras; «recubrimiento de canaleta» cambia la operación."
+    },
+    {
+     "alternativa": "reposición",
+     "motivo": "«Reposición de canaleta» se lee como sustituirla o reconstruirla (como en OEA170), otra partida."
+    }
+   ],
+   "conceptos": [
+    {
+     "concepto": "OEA100$",
+     "nombre": "TAPADO DE CANALETA",
+     "resumen_plantilla": "Tapado de canaleta de $A. ( - / -/ $N(%B))\\",
+     "texto_ejemplo": "Tapado de canaleta de hormigón . Condiciones de ejecución: Volumen relevante."
+    },
+    {
+     "concepto": "OEA160$",
+     "nombre": "LEVANTE DE TIERRAS Y BALASTO (20CM) PARA DESCUBRIR CANALETA EXISTENTE",
+     "resumen_plantilla": "Levante de tierras y balasto (20 cm) para descubrir canaleta existente ($L(%A)/$M(%B)/-)\\",
+     "texto_ejemplo": "Levante de tierras y balasto (20 cm) para descubrir canaleta existente, tapado de la misma e incluyendo nueva aportación de tierras. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas"
+    },
+    {
+     "concepto": "OEB140$",
+     "nombre": "CATA PARA LOCALIZACIÓN Y REPARACIÓN DE CANALIZACIÓN EXISTENTE",
+     "resumen_plantilla": "Apertura y tapado de cata con reparación de canalización existente ($L(%A)/$M(%B)/$N(%C))\\",
+     "texto_ejemplo": "Apertura y tapado de cata para localización de canalización existente, con reparación, en su caso, para la localización de canalización, obstrucciones, reparación, y el tapado de la canalización. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    },
+    {
+     "concepto": "OEB310$",
+     "nombre": "CATA Y REPARACIÓN DE SUBCONDUCTO EXISTENTE",
+     "resumen_plantilla": "Cata y reparación de subconducto existente en $P(%A).\\",
+     "texto_ejemplo": "Cata y reparación de subconducto existente en canalización hormigonada. Se incluye el suministro de manguitos y tubo necesarios, así como la realización del mandrilado para localizar el punto de obturación, la excavación, acceso a tubos PVC hormigonados de la canalización, reconstrucción de la canalización, hormigonado y tapado de la zanja."
+    },
+    {
+     "concepto": "OED180$",
+     "nombre": "CATA PREVIA DE EXCAVACIÓN DE MACIZO DE ELECTRIFICACIÓN",
+     "resumen_plantilla": "Cata previa de excavación de macizo de electrificación en terreno $A de profundidad $B ($L(%C)/$M(%D)/$N(%F)).\\",
+     "texto_ejemplo": "Cata previa de excavación de macizo de electrificación en terreno rocoso de profundidad hasta 1 m. , desde plataforma o vía, incluye el tapado de la misma si así lo determina la Dirección de Obra. Totalmente terminada. Tipo de terreno: hasta 1 m. . Profundidad: Diurno. Banda de mantenimiento: i >= 5 horas. Condiciones de ejecución: Volumen relevante."
+    }
+   ]
+  },
+  "zanja": {
+   "faltan": 2,
+   "aceptadas": [
+    "rasa"
+   ],
+   "rechazadas": [
+    {
+     "alternativa": "excavación lineal",
+     "motivo": "No es forma habitual y se confunde con las partidas de excavación (OED180) y con la apertura de la canaleta de fábrica (OEA060)."
+    },
+    {
+     "alternativa": "foso",
+     "motivo": "Un foso es otra cosa (foso de visita, foso de máquina); «relleno y compactado del foso» cambia la partida."
+    },
+    {
+     "alternativa": "excavación para el tendido",
+     "motivo": "Paráfrasis inventada; en OEA060 la zanja aloja una canaleta de fábrica, no un tendido, y el hiperónimo «excavación» se confunde con otras partidas."
+    },
+    {
+     "alternativa": "excavación para cables",
+     "motivo": "Mismo problema que «excavación para el tendido» (rechazada): paráfrasis con el hiperónimo «excavación» que se acerca a las partidas de excavación."
+    },
+    {
+     "alternativa": "excavación corrida",
+     "motivo": "En obra designa la excavación de cimientos corridos; «relleno y compactado de la excavación corrida» cambia el tipo de trabajo."
+    }
+   ],
+   "conceptos": [
+    {
+     "concepto": "OEA060$",
+     "nombre": "CANALETA DE FÁBRICA DE LADRILLO RECTANGULAR",
+     "resumen_plantilla": "Construcción de canaleta rectangular para cables en el $A de $B de anchura y una profundidad de $C. (-/-/$L(%D)) \\",
+     "texto_ejemplo": "Construcción de canaleta rectangular para cables en el interior del edificio técnico de 300 mm de anchura y una profundidad de 400 mm , incluida la apertura de la zanja con los medios adecuados, construcción de la canaleta de fábrica de ladrillos sobre solera de hormigón en masa, enlucido por dentro, angular galvanizado, y tapa de núcleo aglomerado de madera con marco galvanizado. Incluye el propio montaje, los desplazamientos, pequeño material, herramientas, maquinaria, medios auxiliares. Estará de acuerdo con las E.T. de ADIF, planos normalizados y especificaciones de proyecto. Condiciones d"
+    },
+    {
+     "concepto": "OEA180$",
+     "nombre": "SALIDA DE CABLES DE CANALETA DE HORMIGÓN SIN ARQUETA",
+     "resumen_plantilla": "Salida de los cables de la canaleta de hormigón sin arqueta ($L(%A)/-/-)\\",
+     "texto_ejemplo": "Salida de los cables de la canaleta de hormigón, sin arqueta, incluyendo el taladro de la canaleta, la zanja hasta la caja de terminales, la fijación y el sellado. Totalmente terminada. Trabajo: Diurno"
+    },
+    {
+     "concepto": "OEB020$",
+     "nombre": "CANALIZACIÓN HORMIGONADA DE TUBO DE PVC 110 mm",
+     "resumen_plantilla": "Canalización hormigonada de $A T, PVC 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))\\",
+     "texto_ejemplo": "Canalización hormigonada de 2 tubos de PVC de 110 mm de diámetro en cualquier clase de terreno, excepto roca, incluso el relleno y el compactado de la zanja, el suministro y el montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    },
+    {
+     "concepto": "OEB030$",
+     "nombre": "CANALIZACIÓN HORMIGONADA DE TUBO DE POLIETILENO 110mm",
+     "resumen_plantilla": "Canalización hormigonada $A T, polietileno libre de halógenos de 110 mm, $K. ($G(%C)/$H(%D)/$J(%F))\\",
+     "texto_ejemplo": "Canalización hormigonada de 1 tubos de polietileno libre de halógenos de 110 mm de diámetro en cualquier clase de terreno, excepto roca, incluso el relleno y compactado de la zanja, el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    },
+    {
+     "concepto": "OEB040$",
+     "nombre": "CANALIZACIÓN HORMIGONADA DE TUBO DE POLIETILENO 160mm",
+     "resumen_plantilla": "Canalización hormigonada $A T, polietileno libre de halógenos de 160 mm, $K. ($G(%C)/$H(%D)/$J(%F))\\",
+     "texto_ejemplo": "Canalización hormigonada de 1 tubos de polietileno libre de halógenos de 160 mm de diámetro en cualquier clase de terreno, excepto roca, incluso el relleno y compactado de la zanja, el suministro y montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    },
+    {
+     "concepto": "OEB190$",
+     "nombre": "ZANJA PARA CABLES DE 0,60 M DE ANCHURA A MANO",
+     "resumen_plantilla": "Zanja para cables de $A de profundidad a mano, $B, en material $B. ($L(%C)/$M(%D)/$N(%F))\\",
+     "texto_ejemplo": "Zanja para tendido de cables de hasta 0,80 m de profundidad y 0,60 m de anchura máxima, ejecutada por excavación manual en cualquier tipo de terreno excepto roca, y relleno compactado con material seleccionado procedente de la excavación, cama de arena de 20 cm de espesor, rejilla de plastico identificadora, carga, descarga y transporte al lugar asignado en el interior de la obra. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    }
+   ]
+  },
+  "ficha": {
+   "faltan": 3,
+   "aceptadas": [],
+   "rechazadas": [
+    {
+     "alternativa": "posiciones",
+     "motivo": "Con un solo ejemplo no se sabe qué es la ficha; «percha con 6 posiciones» puede cambiar el sentido."
+    },
+    {
+     "alternativa": "ganchos",
+     "motivo": "Sin certeza de que la ficha sea un gancho; sustitución especulativa."
+    },
+    {
+     "alternativa": "soportes",
+     "motivo": "Igual de especulativa; además «soportes» es genérico y podría leerse como los anclajes de la percha."
+    },
+    {
+     "alternativa": "brazos",
+     "motivo": "No consta qué es la ficha de la percha; igual que «ganchos» y «soportes» (rechazados), la sustitución es especulativa."
+    },
+    {
+     "alternativa": "brazos portacables",
+     "motivo": "Especulativa por la misma razón que «brazos»: presupone la forma de la ficha sin respaldo del catálogo."
+    },
+    {
+     "alternativa": "apoyos para cables",
+     "motivo": "Sigue siendo inferencia sobre qué es la ficha; equivalente a «soportes», ya rechazada."
+    },
+    {
+     "alternativa": "alojamientos",
+     "motivo": "Equivalente a «posiciones» (rechazada): puede cambiar el sentido de «percha con 6 fichas»."
+    },
+    {
+     "alternativa": "niveles",
+     "motivo": "La más especulativa: presupone brazos superpuestos y cambia lo que se cuenta en la percha."
+    }
+   ],
+   "conceptos": [
+    {
+     "concepto": "OEC090$",
+     "nombre": "PERCHA PARA CABLES",
+     "resumen_plantilla": "Percha para cables con $A fichas. ($L(%B)/$M(%C)/$N(%D))\\",
+     "texto_ejemplo": "Suministro y montaje de percha para cables con 6 fichas incluyendo materiales necesarios para su instalación como tacos de acero, tornillos y topes. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    }
+   ]
+  },
+  "talud": {
+   "faltan": 2,
+   "aceptadas": [
+    "superficie inclinada del terreno"
+   ],
+   "rechazadas": [
+    {
+     "alternativa": "ladera",
+     "motivo": "La ladera es natural y el talud es de obra; «a pie de ladera» puede cambiar la ubicación del drenaje."
+    },
+    {
+     "alternativa": "pendiente",
+     "motivo": "No funciona en «a pie de talud» («a pie de pendiente» no es natural); falla en uno de los dos contextos."
+    },
+    {
+     "alternativa": "desnivel",
+     "motivo": "Demasiado genérico; «desniveles de excesiva inclinación» y «a pie de desnivel» no identifican el talud."
+    },
+    {
+     "alternativa": "escarpe",
+     "motivo": "El escarpe es un relieve natural abrupto, como «ladera» (rechazada); «a pie de escarpe» cambia la ubicación del drenaje."
+    },
+    {
+     "alternativa": "ribazo",
+     "motivo": "Término rural de lindes de fincas, no usado en obra ferroviaria para el talud de la plataforma."
+    },
+    {
+     "alternativa": "paramento inclinado",
+     "motivo": "«Paramento» evoca muro o fábrica; «canalización en paramentos inclinados» se lee como sobre un muro, no un talud de tierra o roca."
+    }
+   ],
+   "conceptos": [
+    {
+     "concepto": "OEB110$",
+     "nombre": "TUBERÍA DE PVC DE 110 mm DE DIAMETRO PARA DRENAJE ARQUETA",
+     "resumen_plantilla": "Tubería de PVC de 110 mm de diámetro para drenaje de arqueta ($L(%A)/$M(%B)/$N(%C))\\",
+     "texto_ejemplo": "Suministro y colocación de tubería de PVC de 110 mm de diámetro para drenaje de arqueta desde centro de arqueta a pie de talud incluyendo relleno y compactación de tierras. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    },
+    {
+     "concepto": "OEB170$",
+     "nombre": "CANALIZACIÓN METÁLICA SUPERFICIAL",
+     "resumen_plantilla": "Canalización metálica superficial con $A tubos de acero galvanizado de %B de diámetro. ($L(%C)/$M(%D)/$N(%F))\\",
+     "texto_ejemplo": "Canalización metálica superficial con 1 tubos de acero galvanizado de 1'' de diámetro de medida interior en taludes de excesiva inclinación o rocosos, sobre hastial de túnel o puente, incluye sellado de sus extremos, herramientas y medios auxiliares necesarios para la correcta ejecución de la unidad.. Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    }
+   ]
+  },
+  "trinchera": {
+   "faltan": 2,
+   "aceptadas": [
+    "corte en tierra"
+   ],
+   "rechazadas": [
+    {
+     "alternativa": "excavación a cielo abierto",
+     "motivo": "«Trinchera de tierra» puede ser zanja o corte del terreno; la alternativa fuerza una lectura y se confunde con partidas de excavación."
+    },
+    {
+     "alternativa": "excavación longitudinal",
+     "motivo": "Paráfrasis no habitual que se acerca a «zanja» y no resuelve la ambigüedad de la trinchera."
+    },
+    {
+     "alternativa": "foso abierto",
+     "motivo": "«Foso» es otro elemento; cambia la partida."
+    },
+    {
+     "alternativa": "excavación en tierra",
+     "motivo": "Hiperónimo que se confunde con partidas de excavación, como las paráfrasis de excavación ya rechazadas."
+    },
+    {
+     "alternativa": "tramo en corte",
+     "motivo": "retirada: compartida con desmonte: OEB180 sonaría a cimentación en desmonte"
+    },
+    {
+     "alternativa": "sección en corte",
+     "motivo": "retirada: compartida con desmonte"
+    }
+   ],
+   "conceptos": [
+    {
+     "concepto": "OEB180$",
+     "nombre": "HINCA CON CABLE TENSOR DE ACERO",
+     "resumen_plantilla": "Hincas con cable tensor de acero para el tendido de cables sobre una trinchera de tierra. ($L(%A)/$M(%B)/$N(%C))\\",
+     "texto_ejemplo": "Hincas con cable tensor de acero para el tendido de cables sobre una trinchera de tierra. Trabajo:Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    }
+   ]
+  },
+  "cuneta": {
+   "faltan": 1,
+   "aceptadas": [
+    "desagüe a cielo abierto",
+    "drenaje longitudinal superficial"
+   ],
+   "rechazadas": [
+    {
+     "alternativa": "desagüe lateral",
+     "motivo": "Puede leerse como un tubo de desagüe y no como la cuneta revestida de hasta 250 cm con paredes de 15 cm."
+    },
+    {
+     "alternativa": "canal de drenaje del camino",
+     "motivo": "Restringe a camino cuando la cuneta puede ser de vía, y «canal» la acerca a canaleta/canalización."
+    },
+    {
+     "alternativa": "canal de desagüe",
+     "motivo": "«Canal» se confunde con canaleta y canalización; no hay garantía de que se lea como cuneta."
+    },
+    {
+     "alternativa": "rigola",
+     "motivo": "La rigola es una pieza estrecha de borde de calzada urbana; no corresponde a una cuneta de hasta 250 cm con paredes de 15 cm."
+    }
+   ],
+   "conceptos": [
+    {
+     "concepto": "OEC110$",
+     "nombre": "ROTURA Y REPOSICIÓN DE CUNETA",
+     "resumen_plantilla": "Trabajos de rotura y reposición de cuneta de hasta 250 cm de ancho. ($L(%A)/$M(%B)/$N(%C))\\",
+     "texto_ejemplo": "Ejecución de los trabajos de rotura y reposición de cuneta de hasta 250 cm de ancho con paredes de hasta 15 cm de espesor incluyendo limpieza, acopio y transporte de materiales de derribo Trabajo: Diurno Banda de mantenimiento: i >= 5 horas Condiciones de ejecución: Volumen relevante"
+    }
+   ]
+  }
+ }
+}

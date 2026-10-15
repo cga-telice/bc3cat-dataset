@@ -1,0 +1,89 @@
+{
+ "arqueta": {
+  "alternativas": [
+   {"texto": "caja subterránea", "tipo": "sinónimo", "nota": "Recinto registrable bajo el terreno para cables o drenaje; vale para in situ y prefabricada, de 400x400 a 600x600, y en «sin caja subterránea», «derivación a cajas subterráneas de telecomunicaciones», «embocadura en caja subterránea o cámara existente»."},
+   {"texto": "caja soterrada", "tipo": "sinónimo", "nota": "«Soterrado» es habitual en proyectos de instalaciones (líneas soterradas); misma lectura que la arqueta en todos los conceptos y no se confunde con la «caja de registro» de superficie."},
+   {"texto": "caja de canalización enterrada", "tipo": "descripción", "nota": "Describe la función de la arqueta como punto de la canalización enterrada; encaja en la derivación de OEB050, en el entronque/embocadura de tubos (OEB120/130) y en las arquetas de OEC010/020."},
+   {"texto": "registro enterrado", "tipo": "sinónimo", "nota": "Coloquialismo de obra («el registro») con el calificativo que lo separa de la «caja de registro» de superficie; frecuente en técnicos de instalaciones. Riesgo: comparte la palabra «registro» ya rechazada sola."},
+   {"texto": "caja de cables enterrada", "tipo": "descripción", "nota": "Recinto enterrado de paso/tiro de cables; correcto en OEA180, OEB050, OEB120/130 y OEC010/020. En OEB110 («drenaje de caja de cables enterrada») sigue identificando la arqueta a drenar."}
+  ],
+  "comentario": "Recinto registrable enterrado (in situ de ladrillo o prefabricado, con tapa) donde llegan, se derivan o se empalman las canalizaciones y que puede drenarse. Dificultad: las formas coloquiales («registro», «pozo») chocan con «caja de registro» (OEB090) o con «pozo de registro»; todas las opciones viables giran sobre «caja + enterrada/subterránea», próximas a la ya aceptada «caja enterrada»."
+ },
+ "macizo": {
+  "alternativas": [
+   {"texto": "zapata", "tipo": "sinónimo", "nota": "En obra de electrificación se oye «la zapata del poste» para el bloque de cimentación; «cata previa de excavación de zapata de electrificación» se entiende igual. Matiz: técnicamente la zapata es cimentación superficial ensanchada, por eso se marca como coloquial."},
+   {"texto": "monobloque de hormigón", "tipo": "sinónimo", "nota": "Las cimentaciones de postes de catenaria son monobloque de hormigón en masa; «excavación de monobloque de hormigón de electrificación» designa el mismo elemento."},
+   {"texto": "bloque monolítico", "tipo": "descripción", "nota": "Describe el macizo como bloque único de hormigón vertido in situ; no se confunde con dados ni con piezas prefabricadas."},
+   {"texto": "masa de hormigón", "tipo": "descripción", "nota": "Coloquial para el macizo de hormigón en masa del poste («la masa del poste»); en el contexto «de electrificación» identifica el bloque de cimentación."}
+  ],
+  "comentario": "Bloque de hormigón en masa que cimenta un poste de electrificación (catenaria); OED180 es la cata previa a su excavación. Dificultad: los sinónimos naturales (cimiento, base, bloque de cimiento) se retiraron por compartirse con «cimentación», y «dado» es demasiado pequeño."
+ },
+ "tapa": {
+  "alternativas": [
+   {"texto": "elemento de cubrición", "tipo": "descripción", "nota": "Pieza que cubre la canaleta o arqueta; vale en PVC («canaleta PVC con elemento de cubrición»), hormigón («2 alveolos y un elemento de cubrición», «sellado de los elementos de cubrición»), madera y arqueta. Distinto de «cubrición» como operación."},
+   {"texto": "pieza de cubrición", "tipo": "sinónimo", "nota": "Forma de catálogo/fabricante para la tapa corrida de canaletas y para la de arquetas; «suministro y montaje de pieza de cubrición para canaleta de hormigón tipo normal» designa la tapa."},
+   {"texto": "placa superior", "tipo": "descripción", "nota": "La tapa es la placa que cierra por arriba la canaleta o la arqueta; funciona con PVC, hormigón y núcleo aglomerado con marco, y evita la lectura de remate de extremo que tenían «pieza/placa de cierre»."},
+   {"texto": "cobertera", "tipo": "sinónimo", "nota": "Sinónimo castellano de tapa (pieza que cubre un recipiente o hueco), usado en algunos pliegos para tapas de canaletas y registros. Menos frecuente en obra actual."}
+  ],
+  "comentario": "Pieza que cierra superiormente la canaleta (PVC, hormigón, madera) o la arqueta. Dificultad: debe valer a la vez para tapas finas de PVC y para losas de hormigón, por lo que «losa» o «plancha» fallan, y «cierre/cubierta» ya chocan con otros términos."
+ },
+ "tapado": {
+  "alternativas": [
+   {"texto": "cerramiento", "tipo": "sinónimo", "nota": "Acción de cerrar: «cerramiento de canaleta de hormigón», «apertura y cerramiento de cata», «hormigonado y cerramiento de la zanja». Matiz: en edificación «cerramiento» también es la fachada, pero en estos contextos se lee como operación."},
+   {"texto": "clausura", "tipo": "sinónimo", "nota": "«Apertura y clausura de cata» es fórmula habitual; en OEA160/OEB310 se lee como volver a cerrar. Riesgo en OEA100: «clausura de canaleta» podría leerse como dejarla fuera de servicio."},
+   {"texto": "cegado", "tipo": "sinónimo", "nota": "En obra «cegar la cata/la zanja» es rellenarla y cerrarla; natural en catas y zanja. Riesgo en OEA100/OEA160: «cegado de canaleta» podría leerse como rellenarla por dentro."},
+   {"texto": "enterrado", "tipo": "sinónimo", "nota": "Coloquial para volver a cubrir con tierras; encaja especialmente en OEA160 («descubrir canaleta existente, enterrado de la misma con nueva aportación de tierras») y en catas. Más débil en OEA100 si el tapado es solo colocar tapas."}
+  ],
+  "comentario": "Operación de volver a cubrir/cerrar lo abierto: colocar tapas en la canaleta (OEA100), volver a cubrirla con tierras (OEA160) o rellenar y cerrar la cata/zanja (OEB140, OEB310, OED180). Dificultad: ninguna palabra cubre igual de bien «poner tapas» y «rellenar un hueco»; las opciones van ordenadas de más a menos general y las dos últimas tienen riesgo en algún concepto."
+ },
+ "zanja": {
+  "alternativas": [
+   {"texto": "zanjeo", "tipo": "sinónimo", "nota": "Muy frecuente en obra para la zanja ejecutada («apertura del zanjeo», «relleno y compactado del zanjeo», «zanjeo para tendido de cables»). No contiene la cadena «zanja», aunque es derivado."},
+   {"texto": "fosa", "tipo": "sinónimo", "nota": "Excavación alargada y estrecha; «fosa para cables», «relleno y compactado de la fosa». A diferencia de «foso» (rechazado) no evoca foso de visita ni de máquina."},
+   {"texto": "cajeado", "tipo": "sinónimo", "nota": "En obra lineal «cajeado/cajeo» es la excavación de sección rectangular para alojar un elemento; encaja en la apertura para la canaleta de fábrica (OEA060) y en la canalización hormigonada."},
+   {"texto": "surco", "tipo": "sinónimo", "nota": "Coloquial para zanja estrecha y poco profunda de cables (hasta 0,80 x 0,60 m en OEB190); «surco hasta la caja de terminales» en OEA180."},
+   {"texto": "excavación en surco", "tipo": "descripción", "nota": "Precisa el tipo de excavación (estrecha y lineal) evitando el hiperónimo suelto «excavación» que se rechazó; vale en los seis conceptos."}
+  ],
+  "comentario": "Excavación lineal estrecha a cielo abierto para alojar tubos, cables o una canaleta de fábrica, que después se rellena y compacta. Dificultad: el hiperónimo «excavación» y «foso» se rechazaron; «rasa» ya está aceptada, y «trinchera» y «cuneta» son otros términos del glosario."
+ },
+ "ficha": {
+  "alternativas": [
+   {"texto": "sujetacables", "tipo": "sinónimo", "nota": "Si la percha (soporte vertical anclado con tacos y tornillos) lleva N piezas que reciben cada una un cable o mazo, cada ficha es un sujetacables: «percha para cables con 6 sujetacables»."},
+   {"texto": "piezas sujetacables", "tipo": "descripción", "nota": "Variante descriptiva de la anterior, con «piezas» que conserva la idea de elemento insertable contable de la «ficha»."},
+   {"texto": "portacables", "tipo": "sinónimo", "nota": "Cada pieza que porta un cable en la percha; «percha con 6 portacables». Distinto de «canal portacables» (usado), que es una canaleta."},
+   {"texto": "abrazaderas", "tipo": "sinónimo", "nota": "Pieza que abraza y fija cada cable al soporte; uso muy común en montajes de cables en túnel, cámara y arqueta."},
+   {"texto": "grapas", "tipo": "sinónimo", "nota": "Grapa de sujeción de cable sobre soporte; coloquial de obra para la pieza unitaria que retiene el cable."},
+   {"texto": "pinzas", "tipo": "sinónimo", "nota": "Pieza de retención de cable que se monta en el soporte; coloquial en montaje de cables."}
+  ],
+  "comentario": "Deducción: la partida cuenta la percha por su número de fichas (con 6 fichas) y sus materiales de fijación son tacos de acero, tornillos y topes. Los tacos y tornillos anclan la percha al paramento; los «topes» limitan las piezas o los cables sobre ella. Por eso la ficha debe ser la pieza unitaria insertada en la percha que recibe y retiene un cable (por analogía con «ficha» como pieza insertable, la ficha de conexión o de dominó): la capacidad de la percha se expresa en número de cables que puede sujetar. Se descartan lecturas geométricas (brazos, niveles, posiciones), ya rechazadas, y se proponen nombres de la función de sujeción del cable. Sigue habiendo incertidumbre: sin plano ADIF de la percha no se puede confirmar si la ficha es un brazo enchufable o una abrazadera; las alternativas apuestan por la función de sujeción, común a ambas lecturas."
+ },
+ "talud": {
+  "alternativas": [
+   {"texto": "derrame", "tipo": "sinónimo", "nota": "En obra lineal, «derrame» es la superficie inclinada de tierras de un relleno o corte («pie del derrame»); «a pie de derrame» y «derrames de excesiva inclinación o rocosos» encajan."},
+   {"texto": "plano inclinado", "tipo": "descripción", "nota": "Geometría del talud: «a pie del plano inclinado», «en planos inclinados de excesiva inclinación o rocosos». Neutro entre talud de tierra y de roca."},
+   {"texto": "margen inclinado", "tipo": "descripción", "nota": "El lateral inclinado de la plataforma; «a pie de margen inclinado» sitúa el desagüe igual que «a pie de talud»."},
+   {"texto": "lateral inclinado", "tipo": "descripción", "nota": "Cara lateral inclinada del terreno de la explanación; coloquial y válido en ambos contextos."},
+   {"texto": "cara inclinada del terreno", "tipo": "descripción", "nota": "Descripción del talud como cara del terreno; distinta en la cadena de la aceptada «superficie inclinada del terreno», aunque semánticamente próxima."}
+  ],
+  "comentario": "Superficie inclinada de tierras o roca que limita una explanación (pie de talud como punto de vertido en OEB110; taludes muy inclinados o rocosos en OEB170). Dificultad: los sinónimos naturales (ladera, escarpe) son relieve natural, y «terraplén»/«desmonte» son otros términos; solo quedan descripciones geométricas y el tecnicismo «derrame»."
+ },
+ "trinchera": {
+  "alternativas": [
+   {"texto": "corte del terreno", "tipo": "sinónimo", "nota": "Mismo concepto que la aceptada «corte en tierra» con otra formulación; «tendido de cables sobre un corte del terreno de tierra» no alude a cimentación."},
+   {"texto": "corte abierto en tierra", "tipo": "descripción", "nota": "Excavación a cielo abierto vista como corte, sin el hiperónimo «excavación» rechazado; el cable tensor salva el corte."},
+   {"texto": "rebaje del terreno", "tipo": "descripción", "nota": "Coloquial de obra para una zona excavada por debajo de la rasa natural; «tendido de cables sobre un rebaje del terreno de tierra» conserva el sentido de salvar un hueco."},
+   {"texto": "tajo en tierra", "tipo": "sinónimo", "nota": "«Tajo» como corte profundo y estrecho en el terreno. Riesgo: en jerga de obra «tajo» también es el frente de trabajo."},
+   {"texto": "corte excavado", "tipo": "descripción", "nota": "Corte abierto mediante excavación; no sugiere desmonte de plataforma ni cimentación."}
+  ],
+  "comentario": "En OEB180, hueco o corte de tierra abierto sobre el que se tienden cables sujetos con cable tensor y hincas. Dificultad: la trinchera puede leerse como zanja o como desmonte; hay que evitar «zanja» (otro término), las paráfrasis de «excavación» (rechazadas) y lo que suene a «tramo/sección en corte» (desmonte)."
+ },
+ "cuneta": {
+  "alternativas": [
+   {"texto": "obra de drenaje longitudinal", "tipo": "sinónimo", "nota": "Término de proyecto (ODL frente a ODT) para cunetas y elementos longitudinales de drenaje; «rotura y reposición de obra de drenaje longitudinal de hasta 250 cm de ancho con paredes de 15 cm» encaja."},
+   {"texto": "drenaje lateral de plataforma", "tipo": "descripción", "nota": "Describe la cuneta por su posición al lado de la plataforma de vía o camino; ancho y espesor de paredes concuerdan."},
+   {"texto": "cauce de drenaje revestido", "tipo": "descripción", "nota": "Cuneta revestida de hormigón con paredes de hasta 15 cm; «cauce» evita la confusión con canaleta/canalización que tenía «canal»."},
+   {"texto": "drenaje longitudinal revestido", "tipo": "descripción", "nota": "Cuneta como drenaje longitudinal con revestimiento de hormigón; próximo a la aceptada «drenaje longitudinal superficial» pero subraya las paredes revestidas de la partida."}
+  ],
+  "comentario": "Elemento de drenaje superficial longitudinal, revestido, de hasta 250 cm de ancho y paredes de hasta 15 cm, que se rompe y repone (OEC110). Dificultad: «canal», «rigola» y «desagüe lateral» se rechazaron; las opciones reales vienen del vocabulario de proyecto de drenaje longitudinal."
+ }
+}
