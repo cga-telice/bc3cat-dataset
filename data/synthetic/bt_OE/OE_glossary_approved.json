@@ -1,5 +1,5 @@
 {
- "fuentes": "ronda 1 (auditada) + decisiones de César + ronda 2 (auditada) − limpieza decidida por César (2026-10-16) + ronda 3 (auditada)",
+ "fuentes": "ronda 1 (auditada) + decisiones de César + ronda 2 (auditada) − limpieza decidida por César (2026-10-16) + ronda 3 (auditada) + alternativas decididas por César (tapado, zanja, talud, ficha)",
  "aprobadas": {
   "arqueta": [
    "caja enterrada",
@@ -50,7 +50,8 @@
   ],
   "tapado": [
    "cierre",
-   "cerrado"
+   "cerrado",
+   "cubrimiento"
   ],
   "destapado": [
    "apertura",
@@ -72,7 +73,8 @@
   ],
   "zanja": [
    "rasa",
-   "zanjeo"
+   "zanjeo",
+   "excavación longitudinal"
   ],
   "ménsula": [
    "palomilla",
@@ -106,7 +108,11 @@
    "señalizador",
    "marcador de trazado"
   ],
-  "ficha": [],
+  "ficha": [
+   "placa",
+   "disco",
+   "célula"
+  ],
   "firme": [
    "pavimento",
    "afirmado",
@@ -115,7 +121,13 @@
   ],
   "talud": [
    "superficie inclinada del terreno",
-   "cara inclinada del terreno"
+   "cara inclinada del terreno",
+   "cuesta",
+   "pendiente",
+   "ladera",
+   "vertiente",
+   "rampa",
+   "cara inclinada"
   ],
   "hinca": [
    "elemento clavado en el terreno",
@@ -224,5 +236,30 @@
    "alternativa": "entrada",
    "motivo": "compartida con acometida"
   }
- ]
+ ],
+ "decididas_por_cesar_2026_10_16": {
+  "tapado": [
+   "cierre",
+   "cerrado",
+   "cubrimiento"
+  ],
+  "zanja": [
+   "excavación longitudinal",
+   "rasa",
+   "zanjeo"
+  ],
+  "talud": [
+   "cuesta",
+   "pendiente",
+   "ladera",
+   "vertiente",
+   "rampa",
+   "cara inclinada"
+  ],
+  "ficha": [
+   "placa",
+   "disco",
+   "célula"
+  ]
+ }
 }
