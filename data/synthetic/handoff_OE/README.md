@@ -69,3 +69,21 @@ How a BT query is built:
 `glossary_synonym` when present; use `texto_modification_types_post_bt` for analyses by type.
 Every query passed a structural check (no new quantities, codes or acronyms; not equal to any
 other leaf or to a delivered query). Item keys end in `_btorigv_en`.
+
+## v2 of STACKED, SINGLE, dose and isolated — added 2026-10-16
+
+- `OE_stacked_texto_v2.json`, `OE_single_texto_v2.json`, `OE_dose_texto_v2.json`,
+  `OE_isolated_texto_v2.json` — same queries, ids and gold as the v1 files, with 163 broken
+  template paraphrases repaired. **Use v2 instead of v1.**
+- `OE_v2_changes.jsonl` — one row per changed query: set, `item_key`, paraphrase id, old and new
+  text. Changed queries: STACKED 2 039, SINGLE 241, dose 547, isolated 348.
+- `OE_v2_provenance.json` — audit, repair method, verification and digests.
+
+What was repaired: an audit of the 828 TEXTO template paraphrases used in these sets found
+paraphrases that put a value in the wrong role («de 200 mm y diámetro **en cruce bajo vías**»,
+dimensions read as a location, an operation read as a quantity) or present a value as a reference
+document («las condiciones se detallan en **Nocturno**»). Those 163 paraphrases were minimally
+corrected and every affected query re-rendered with the same values; all other queries are
+byte-identical to v1. Duplicated units («40 mm mm»), awkward grammar and looser wording were left
+on purpose (they occur in real documents). Whitespace is normalized in the changed queries.
+`OE_stacked_P_exclusion.json` applies unchanged to v2 (same `item_key`).

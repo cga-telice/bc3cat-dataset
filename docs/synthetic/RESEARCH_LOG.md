@@ -29,6 +29,28 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### 2026-10-16 (cont.) — v2 de STACKED, SINGLE, dose e isolated: 163 paráfrasis corregidas
+
+**Contexto.** Al revisar F-BT-1 aparecieron consultas como «con un diámetro de en plataforma de
+estación mm». Rama `syn/broken-paraphrases`.
+
+**Auditoría.** 828 paráfrasis TEXTO usadas en los conjuntos entregados, 8 agentes con contexto
+limpio: 421 con defecto (134 reasignación de hueco, 17 unidad, 29 referencia, 19 gramática,
+222 significado). Afectan al 65 % de STACKED.
+
+**Decisiones de César.** Corregir reasignación y referencia; dejar unidad, gramática y
+significado («pasan en el mundo real»). Entregar la v2 como ficheros nuevos; no repetir la
+auditoría de deriva de STACKED-P.
+
+**Resultado.** 163 correcciones mínimas (mismos huecos), alineación con la paráfrasis rota y
+nuevo renderizado: 3 175 consultas cambiadas, el resto byte a byte igual. Verificación por
+agentes: 163/163 resueltas, 0 errores nuevos. `handoff_OE/OE_*_texto_v2.json`; ver `HANDOFF.md` §9.
+
+**CLAUDE_SYNTHETIC.md updated:** yes (mapa de módulos).
+**Next step:** el proyecto de recuperación debe volver a ejecutar sobre la v2.
+
+---
+
 ### 2026-10-16 — BT sobre el TEXTO gold entregado (opción A, rediseñada)
 
 **Contexto.** Handoff del 2026-10-04: BT del TEXTO de STACKED con verificación de la

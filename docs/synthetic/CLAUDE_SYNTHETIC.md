@@ -263,6 +263,7 @@ src/synthetic/                                    🚧 Phase A–G
   bt_restore.py                                   ✅ BT 2026-10 — restauración posterior de términos del glosario y renumeración de marcadores.
   bt_glossary.py                                  ✅ BT 2026-10 — sinónimos auditados de los términos del glosario.
   characterization.py                             ✅ BT 2026-10 — verificador G0–G6 (modo con extractores LLM y modo estructural).
+  paraphrase_repair.py                            ✅ 2026-10-16 — reparación de paráfrasis rotas: nuevo renderizado de la consulta con la plantilla corregida y los valores alineados (v2 de STACKED/SINGLE/dose/isolated).
 
 configs/synthetic/                                🚧 Phase A–B
   variant_budgets.yaml                            ✅ Sprint 39 — Task F3-prep-3 — the pilot corpus budgets as config (seed 39; per-condition targets 1000/650/350 + all_combined 1500; ≤20× reuse caps on num_to_text / unit_expansion / unit_conversion — César's 2026-08-31 significance-based sizing, superseding the 2026-07-08 flat-50 sketch). Validated by `corpus_sampler.load_budgets`; editable without touching code.

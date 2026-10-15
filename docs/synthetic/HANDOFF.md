@@ -318,3 +318,33 @@ consultas de 79 conceptos. Gold = la propia hoja (`gold_item_key`).
   no mencionan hormigón; están listadas en `data/synthetic/bt_OE/OE_hormigonada_no_concrete.json`.
 - **Variantes de valor.** La entrega usa 64 de las 218 variantes aprobadas (6 057 usos); la
   lista para revisión de César está en `docs/synthetic/bt/OE_bt_value_used_review.md`.
+
+## 9. v2 de STACKED, SINGLE, dose e isolated: paráfrasis rotas corregidas (2026-10-16)
+
+**Qué es.** Los mismos cuatro conjuntos, con los mismos ids, `item_key` y gold, en los que se han
+corregido 163 paráfrasis de plantilla. **Usar la v2 en lugar de la v1.** La v1 sigue en
+`handoff_OE` sin cambios.
+
+| Fichero | Contenido |
+|---|---|
+| `OE_{stacked,single,dose,isolated}_texto_v2.json` | Conjuntos v2 |
+| `OE_v2_changes.jsonl` | Una línea por consulta cambiada: conjunto, `item_key`, paráfrasis, texto antes y después |
+| `OE_v2_provenance.json` | Auditoría, método, verificación y sha256 |
+
+**Por qué.** Una auditoría por agentes de las 828 paráfrasis TEXTO usadas encontró 421 con algún
+defecto. César decidió corregir dos categorías: el hueco en un papel que no es el suyo (134, p. ej.
+«de 200 mm y diámetro en cruce bajo vías») y el valor tratado como referencia (29, «las condiciones
+se detallan en Nocturno»). Las unidades duplicadas, la gramática torpe y los cambios de
+significado se dejan, porque también aparecen en documentos reales.
+
+**Cómo.** Cada paráfrasis se corrigió con el mínimo cambio y los mismos huecos. Cada consulta
+afectada se alinea con la paráfrasis rota (mismos anclajes que la auditoría de STACKED) y se
+vuelve a renderizar con la corregida y sus mismos valores. Cambian 2 039 consultas de STACKED,
+241 de SINGLE, 547 de dose y 348 de isolated; el resto es byte a byte igual. En las cambiadas los
+espacios quedan normalizados.
+
+**Garantías.** Dos agentes nuevos verificaron las 163 correcciones: todas resuelven el fallo y
+ninguna introduce un error nuevo (11 conservan defectos de significado que se decidió dejar). Sin
+residuos de plantilla, sin textos duplicados, ninguno igual a un TEXTO gold. Doble ejecución con
+sha256 idénticos. `OE_stacked_P_exclusion.json` vale para la v2; la auditoría de deriva no se
+repitió (decisión de César).

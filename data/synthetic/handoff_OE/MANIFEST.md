@@ -24,3 +24,9 @@
 | `OE_bt_provenance.json` | 4082 | `d17653030a0b0cc320babffad9e0322a3259bc9ee07db608b97751516da01f33` |
 | `OE_stacked_P_exclusion.json` | 60110 | `bbe36522fdccb4fabb526a8ee029ccd5494c2f60c4b5dd87d036ab3e3f9c69c1` |
 | `OE_known_drift_rewrites.json` | 14513 | `1431f19dfb4791f22ac4a1b8be6779ff6f6d0fe89c12362932474d6cae0dc759` |
+| `OE_stacked_texto_v2.json` | 5670003 | `bc1ed968f60933d9c63270e6050de0f4cf3ed758614e7d8549256f1fd9fcb7f1` |
+| `OE_single_texto_v2.json` | 4018964 | `b3c58fcb38fd294f817b90a206f2b5ca73644af6987ac3c24d9edd65379af1ae` |
+| `OE_dose_texto_v2.json` | 4152455 | `8becd49ad0fd1f37a18f060c66af46438ea7f530ade15f53ac88c05ce40a1985` |
+| `OE_isolated_texto_v2.json` | 7113665 | `95c0c2edaef0c7dc54721533feae97c8dd9d3159a572bd7cb11315190514b271` |
+| `OE_v2_changes.jsonl` | 3952840 | `981896771092f6a957fa4c3dc507c7d715e88933814753df58ee2adbe75cfe0e` |
+| `OE_v2_provenance.json` | 2164 | `1c9e4d6db1a7569b20789c0a52fa98bd1706cfe3b7c8ca0cae6af8ece6d4e96e` |

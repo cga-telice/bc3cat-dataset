@@ -1,0 +1,40 @@
+{
+ "request": "César 2026-10-16: corregir paráfrasis de plantilla con hueco reasignado o valor tratado como referencia; dejar unidades duplicadas, gramática y significado",
+ "script": "scripts/repair_broken_paraphrases.py (empaquetado: scripts/package_repair_handoff.py)",
+ "commit": "d43a30e846c848082470e507de65a846511ff76d",
+ "packaged_utc": "2026-10-15T23:22:02+00:00",
+ "audit": "828 paráfrasis TEXTO usadas, 8 agentes con contexto limpio (data/synthetic/broken_OE/OE_template_paraphrase_audit.jsonl)",
+ "repaired": {
+  "paraphrases": 163,
+  "reasignacion": 134,
+  "referencia": 29,
+  "file": "data/synthetic/broken_OE/OE_template_paraphrase_repairs.json"
+ },
+ "method": "alineación con la paráfrasis rota y nuevo renderizado con la corregida; espacios normalizados en las consultas cambiadas; el resto byte a byte igual",
+ "verification": {
+  "repairs": 163,
+  "resolved_hueco_o_referencia": 163,
+  "new_errors": 0,
+  "note": "11 conservan defectos de significado que se decidió dejar"
+ },
+ "changed_queries": {
+  "stacked": 2039,
+  "single": 241,
+  "dose": 547,
+  "isolated": 348
+ },
+ "unchanged": "ids, item_key, gold_item_key y demás campos idénticos; STACKED-P sigue valiendo para la v2 (mismos item_key)",
+ "inputs_sha256": {
+  "OE_stacked_texto.json": "c34a222ae2af05a0b5335b774cb7fb45f14064cc17234d9d885e809fb29b6f45",
+  "OE_single_texto.json": "b6a43961295cc2ca374a326446512c4076442a21a970d3e256b01eed628d839a",
+  "OE_dose_texto.json": "555fab84d134886f85ece40115ffd485e796fd4e96291e6a9af3129004a80819",
+  "OE_isolated_texto.json": "054041ff05349fae79fd5b91ff111f4fe574b37f7f8ee9647cea044503c5e3ce"
+ },
+ "files": {
+  "OE_stacked_texto_v2.json": "bc1ed968f60933d9c63270e6050de0f4cf3ed758614e7d8549256f1fd9fcb7f1",
+  "OE_single_texto_v2.json": "b3c58fcb38fd294f817b90a206f2b5ca73644af6987ac3c24d9edd65379af1ae",
+  "OE_dose_texto_v2.json": "8becd49ad0fd1f37a18f060c66af46438ea7f530ade15f53ac88c05ce40a1985",
+  "OE_isolated_texto_v2.json": "95c0c2edaef0c7dc54721533feae97c8dd9d3159a572bd7cb11315190514b271",
+  "OE_v2_changes.jsonl": "981896771092f6a957fa4c3dc507c7d715e88933814753df58ee2adbe75cfe0e"
+ }
+}
