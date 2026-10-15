@@ -73,3 +73,13 @@ bt_values:
   menu_marked: docs/synthetic/bt/OE_bt_value_menu_marked.md
   approved: data/synthetic/bt_OE/OE_bt_value_approved.json
   sample: docs/synthetic/bt/OE_bt_value_audit_sample.md
+
+# BT de prosa por frases con candidatas y restauración posterior del glosario (sobre bt_origv)
+bt_sentences:
+  chains: [en, en-fr, en-it, en-de]
+  extra_glossary: [poste, corrugada, composite, solera, recibido, adecuación]
+  audit: docs/synthetic/bt/OE_bt_origv_sentence_audit.md
+  index: data/synthetic/bt_OE/OE_bt_origv_sentence_index.json
+  verdicts: data/synthetic/bt_OE/OE_bt_origv_sentence_verdicts.jsonl
+  output: data/synthetic/bt_OE/OE_bt_origv_sentences_en_texto.json
+  rejected: data/synthetic/bt_OE/OE_bt_origv_sentences_rejected.jsonl

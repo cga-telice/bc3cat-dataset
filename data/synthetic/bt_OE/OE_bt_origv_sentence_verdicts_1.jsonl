@@ -1,0 +1,140 @@
+{"id": "F001", "veredicto": "Sí", "motivo": "Misma apertura de canaleta existente para tendido de cables con excavación; el hueco del material sigue calificando a la canaleta y 'colocación' por 'tendido' es aceptable."}
+{"id": "F002", "veredicto": "Sí", "motivo": "Misma apertura de canaleta existente para tendido de cables, con trabajos de excavación en tierra."}
+{"id": "F003", "veredicto": "No", "motivo": "'Apertura y tapado de cata' pasa a 'Apertura y tapa de cata': la operación de tapado se convierte en el elemento tapa."}
+{"id": "F004", "veredicto": "No", "motivo": "'tapado de cata' pasa a 'tapa de cata' (operación convertida en elemento)."}
+{"id": "F005", "veredicto": "No", "motivo": "'tapado' pasa a 'tapa' y se pierde 'localización' en la segunda enumeración ('para canalización')."}
+{"id": "F006", "veredicto": "Sí", "motivo": "Conserva apertura y tapado de cata, localización de canalización existente, reparación, obstrucciones y tapado; 'ubicación existente' es torpe pero inequívoco."}
+{"id": "F007", "veredicto": "Sí", "motivo": "Misma arqueta de registro de composite y tipo; solo se pierde una preposición ante hueco."}
+{"id": "F008", "veredicto": "Sí", "motivo": "Misma arqueta de registro de composite y tipo; solo se pierde una preposición ante hueco."}
+{"id": "F009", "veredicto": "Sí", "motivo": "Canaleta prefabricada de hormigón armado, resistencia a compresión, tipo normalizado y tapa; concordancia errónea irrelevante."}
+{"id": "F010", "veredicto": "Sí", "motivo": "Canaleta prefabricada de hormigón armado, resistencia a compresión, tipo normalizado y tapa."}
+{"id": "F011", "veredicto": "Sí", "motivo": "Canaleta prefabricada de hormigón armado, resistencia a compresión, tipo normalizado y tapa."}
+{"id": "F012", "veredicto": "No", "motivo": "'resistencia a la compresión' pasa a 'resistencia a la presión'."}
+{"id": "F013", "veredicto": "Dudoso", "motivo": "'retirada de los productos' pasa a 'extracción de productos', concepto distinto; resto equivalente."}
+{"id": "F014", "veredicto": "Sí", "motivo": "Canalización hormigonada con relleno y compactado, suministro y montaje de tubos y hormigón sin vibrar, prueba de conductos, transporte y retirada."}
+{"id": "F015", "veredicto": "No", "motivo": "'Canalización hormigonada' pasa a 'Canal de hormigón'."}
+{"id": "F016", "veredicto": "No", "motivo": "'prueba de los conductos' pasa a 'ensayo de canales' y 'al lugar de empleo' a 'para su uso'."}
+{"id": "F017", "veredicto": "Sí", "motivo": "Mismas operaciones y elementos; 'hormigón no vibratorio' por 'sin vibrar' es torpe pero inequívoco."}
+{"id": "F018", "veredicto": "No", "motivo": "'Canalización hormigonada' pasa a 'Canal de hormigón'."}
+{"id": "F019", "veredicto": "No", "motivo": "'prueba de los conductos' pasa a 'ensayo de canales' y 'al lugar de empleo' a 'para su uso'."}
+{"id": "F020", "veredicto": "Sí", "motivo": "Mismas operaciones e inclusiones; sinónimos del oficio."}
+{"id": "F021", "veredicto": "No", "motivo": "'el suministro' pasa a 'la alimentación'."}
+{"id": "F022", "veredicto": "No", "motivo": "'Canalización hormigonada' pasa a 'Canal de hormigón'."}
+{"id": "F023", "veredicto": "No", "motivo": "'compactado' pasa a 'compresión', 'conductos' a 'canales' y 'al lugar de empleo' a 'para su uso'."}
+{"id": "F024", "veredicto": "Sí", "motivo": "Mismos tubos de polietileno libre de halógenos y mismas operaciones incluidas."}
+{"id": "F025", "veredicto": "Sí", "motivo": "Mismos tubos de polietileno libre de halógenos y mismas operaciones incluidas."}
+{"id": "F026", "veredicto": "No", "motivo": "'Canalización hormigonada' pasa a 'Canal de cemento'."}
+{"id": "F027", "veredicto": "No", "motivo": "El hueco del número de tubos pasa detrás de 'sin halógeno'; 'conductos' pasa a 'canales' y 'lugar de empleo' a 'lugar de aplicación'."}
+{"id": "F028", "veredicto": "Sí", "motivo": "Mismas operaciones; el hueco sigue entre el relleno y el suministro."}
+{"id": "F029", "veredicto": "Sí", "motivo": "Mismas operaciones e inclusiones."}
+{"id": "F030", "veredicto": "No", "motivo": "'Canalización hormigonada' pasa a 'Canal de cemento'."}
+{"id": "F031", "veredicto": "No", "motivo": "El hueco del número de tubos pasa detrás de 'polietileno'; 'conductos' pasa a 'canal' y 'lugar de empleo' a 'lugar de aplicación'."}
+{"id": "F032", "veredicto": "Sí", "motivo": "Mismas operaciones; la concordancia de 'no vibratorios' no cambia el sentido técnico."}
+{"id": "F033", "veredicto": "Sí", "motivo": "Mismas operaciones e inclusiones."}
+{"id": "F034", "veredicto": "No", "motivo": "'Canal de cemento', 'alimentación' por suministro y 'tubos no vibrantes' en vez de hormigón sin vibrar."}
+{"id": "F035", "veredicto": "No", "motivo": "El hueco del número de tubos pasa detrás de 'sin halógeno'; 'conductos' pasa a 'canal' y 'al lugar de empleo' a 'para su utilización'."}
+{"id": "F036", "veredicto": "Sí", "motivo": "Mismas operaciones e inclusiones."}
+{"id": "F037", "veredicto": "Sí", "motivo": "Mismas operaciones e inclusiones."}
+{"id": "F038", "veredicto": "No", "motivo": "'Canal de cemento', 'alimentación' por suministro y 'tubos no vibrantes'."}
+{"id": "F039", "veredicto": "No", "motivo": "El hueco del número de tubos pasa detrás de 'sin halógeno'; 'conductos' pasa a 'canal' y 'lugar de empleo' a 'lugar de aplicación'."}
+{"id": "F040", "veredicto": "No", "motivo": "Se pierde 'Canalización': queda solo 'Tubo corrugado'."}
+{"id": "F041", "veredicto": "Sí", "motivo": "Canalización de tubo corrugado con alma de acero."}
+{"id": "F042", "veredicto": "No", "motivo": "Se pierde 'Canalización': queda solo 'Tubo corrugado'."}
+{"id": "F043", "veredicto": "Sí", "motivo": "Mismas cimentaciones especiales tipo puente con barra corrugada roscada, desde plataforma o vía."}
+{"id": "F044", "veredicto": "Sí", "motivo": "Mismas cimentaciones especiales tipo puente con barra corrugada roscada, desde plataforma o vía."}
+{"id": "F045", "veredicto": "Sí", "motivo": "Mismas cimentaciones especiales tipo puente, barra corrugada roscada, acceso por."}
+{"id": "F046", "veredicto": "Sí", "motivo": "Mismas cimentaciones especiales tipo puente, barra corrugada roscada, acceso por."}
+{"id": "F047", "veredicto": "No", "motivo": "Se pierde 'tipo puente' y 'acceso por' pasa a 'acceso adentro'."}
+{"id": "F048", "veredicto": "No", "motivo": "Se pierde 'tipo puente' y 'barra' pasa a 'chapa'."}
+{"id": "F049", "veredicto": "Sí", "motivo": "Mismas cimentaciones prismáticas; concordancia errónea irrelevante."}
+{"id": "F050", "veredicto": "Sí", "motivo": "Mismas cimentaciones prismáticas; concordancia errónea irrelevante."}
+{"id": "F051", "veredicto": "No", "motivo": "'barra' pasa a 'chapa' y 'acceso por' a 'acceso alrededor'."}
+{"id": "F052", "veredicto": "Dudoso", "motivo": "'acesso por [·]' pasa a 'asceso para [·]': el hueco pasa de vía de acceso a finalidad."}
+{"id": "F053", "veredicto": "Dudoso", "motivo": "'acceso por [·]' pasa a 'acceso para [·]': el hueco pasa de vía de acceso a finalidad."}
+{"id": "F054", "veredicto": "No", "motivo": "'acesso por' pasa a 'ass para': se pierde el acceso."}
+{"id": "F055", "veredicto": "Sí", "motivo": "Cimentación en roca con micropilote, barra corrugada roscada, diámetro, profundidad y acceso; 'micropiloto' es errata."}
+{"id": "F056", "veredicto": "No", "motivo": "'canaleta metálica de [·] canales' pasa a 'canales metálicos [·]'."}
+{"id": "F057", "veredicto": "No", "motivo": "'canaleta metálica' pasa a 'canales metálicos' y 'en puente' a 'en una cubierta'."}
+{"id": "F058", "veredicto": "No", "motivo": "'canaleta metálica' pasa a 'canales metálicos' y 'en puente' a 'en una cubierta'."}
+{"id": "F059", "veredicto": "No", "motivo": "'canaleta metálica' pasa a 'canales metálicos'; 'suministro' a 'entrega' y 'en puente' a 'a un puente'."}
+{"id": "F060", "veredicto": "Sí", "motivo": "Mismas cintas de señalización de riesgo eléctrico, ancho y profundidad desde el firme."}
+{"id": "F061", "veredicto": "No", "motivo": "'Condiciones de ejecución' pasa a 'Condiciones de aplicación'."}
+{"id": "F062", "veredicto": "No", "motivo": "'Condiciones de ejecución' pasa a 'Condiciones de aplicación'."}
+{"id": "F063", "veredicto": "No", "motivo": "'Condiciones de ejecución' pasa a 'Condiciones de aplicación'."}
+{"id": "F064", "veredicto": "No", "motivo": "'Condiciones de ejecución' pasa a 'Condiciones de aplicación'."}
+{"id": "F065", "veredicto": "No", "motivo": "'Condiciones de ejecución' pasa a 'Condiciones de aplicación'."}
+{"id": "F066", "veredicto": "No", "motivo": "'Condiciones de ejecución' pasa a 'Condiciones de aplicación'."}
+{"id": "F067", "veredicto": "No", "motivo": "'Condiciones de ejecución' pasa a 'Condiciones de aplicación'."}
+{"id": "F068", "veredicto": "No", "motivo": "'Condiciones de ejecución' pasa a 'Condiciones de aplicación'."}
+{"id": "F069", "veredicto": "Dudoso", "motivo": "'solera ..., armada con mallazo' pasa a 'armados con malla': el mallazo parece armar los módulos y no la solera."}
+{"id": "F070", "veredicto": "Dudoso", "motivo": "'armada con mallazo' (la solera) pasa a 'armados con mallas' (los módulos)."}
+{"id": "F071", "veredicto": "Dudoso", "motivo": "'armada con mallazo electrosoldado' pasa a 'armados con una red electrosoldada': cambia el elemento armado y el término."}
+{"id": "F072", "veredicto": "No", "motivo": "'enlucido por dentro' pasa a 'yeso en el interior': la operación pasa a ser un material."}
+{"id": "F073", "veredicto": "No", "motivo": "'hormigón en masa' pasa a 'hormigón macizo' y 'enlucido' a 'estufado'."}
+{"id": "F074", "veredicto": "No", "motivo": "'canaleta' pasa a 'canalones'/'canalero' y 'hormigón en masa' a 'hormigón de masas'."}
+{"id": "F075", "veredicto": "Dudoso", "motivo": "'tapa de fundición' (hierro fundido) pasa a 'tapa fundida'; no queda claro el material."}
+{"id": "F076", "veredicto": "No", "motivo": "'Cámara de registro' pasa a 'Cámara de matrícula' y 'tapa de fundición' a 'tapa moldeada'."}
+{"id": "F077", "veredicto": "No", "motivo": "'tapa de fundición' pasa a 'tapa engastada'."}
+{"id": "F078", "veredicto": "No", "motivo": "'Cámara de registro de' pasa a 'Cámara registradora con'."}
+{"id": "F079", "veredicto": "No", "motivo": "'localizar cables' pasa a 'localizar cables nuevos': se añade un matiz que no está en la gold."}
+{"id": "F080", "veredicto": "No", "motivo": "'Desvío' pasa a 'Destornillador'."}
+{"id": "F081", "veredicto": "Sí", "motivo": "Desvío (redirección) y reposición de la canaleta de hormigón junto a la cimentación del poste de electrificación."}
+{"id": "F082", "veredicto": "No", "motivo": "'cables entubados y tubos embebidos' pasa a 'cables y tubos tubulados incrustados'; 'compactado al [·]' pasa a 'hasta [·]'."}
+{"id": "F083", "veredicto": "No", "motivo": "'canalización' pasa a 'tuberías', 'ternas' a 'esteras' y 'cables de potencia' a 'cables eléctricos'."}
+{"id": "F084", "veredicto": "No", "motivo": "'línea subterránea' pasa a 'línea enterrada', 'ternas' a 'ternos' y 'cables entubados' a 'tubos tubulares'; 'ancho por' pasa a 'anchura de'."}
+{"id": "F085", "veredicto": "No", "motivo": "'canalización hormigonada de tubos' pasa a 'canalización de tubos de hormigón'; 'arqueta de registro' a 'arqueta de tronco' y 'paramentos' a 'sitios'."}
+{"id": "F086", "veredicto": "No", "motivo": "Se pierde el entronque; 'arqueta de troncos', 'tubos de hormigón' y 'plantas' por paramentos."}
+{"id": "F087", "veredicto": "No", "motivo": "Se pierde el entronque; 'arqueta de madera', 'tubos de hormigón' y 'lugares' por paramentos."}
+{"id": "F088", "veredicto": "Dudoso", "motivo": "'acopio' pasa a 'recogida' y 'con paredes' a 'por paredes'."}
+{"id": "F089", "veredicto": "No", "motivo": "'cuneta' pasa a 'cuneta correa' y 'acopio' a 'recogida'."}
+{"id": "F090", "veredicto": "Dudoso", "motivo": "'En terreno [·]' pasa a 'En tierra [·]': la etiqueta del tipo de terreno se debilita."}
+{"id": "F091", "veredicto": "No", "motivo": "'pavimento' pasa a 'camino' y 'terreno' a 'tierra'."}
+{"id": "F092", "veredicto": "Dudoso", "motivo": "'En terreno [·]' pasa a 'En la tierra [·]'."}
+{"id": "F093", "veredicto": "No", "motivo": "'de pavimento' pasa a 'el parche'."}
+{"id": "F094", "veredicto": "Sí", "motivo": "Mismo cumplimiento de las normas, planos normalizados y especificaciones de proyecto."}
+{"id": "F095", "veredicto": "No", "motivo": "Se pierde 'normalizados' y 'planos' pasa a 'dibujos'."}
+{"id": "F096", "veredicto": "No", "motivo": "'planos normalizados' pasa a 'diseños estándar' y 'especificaciones de proyecto' a 'especificaciones de diseño'."}
+{"id": "F097", "veredicto": "Dudoso", "motivo": "Se añade 'los requisitos' delante del hueco, que pasa a calificar a 'requisitos'."}
+{"id": "F098", "veredicto": "Sí", "motivo": "Hincas con cable tensor de acero para el tendido de cables en trinchera de tierra."}
+{"id": "F099", "veredicto": "Dudoso", "motivo": "'cable tensor' pasa a 'cable de tensión', ambiguo con tensión eléctrica."}
+{"id": "F100", "veredicto": "Sí", "motivo": "Hincas con cable tensador de acero para el tendido de cables en trinchera de tierra."}
+{"id": "F101", "veredicto": "Sí", "motivo": "Hito indicador de cables con suministro y montaje."}
+{"id": "F102", "veredicto": "Sí", "motivo": "Hito indicador de cables con suministro y montaje."}
+{"id": "F103", "veredicto": "Dudoso", "motivo": "'suministro' pasa a 'entrega' y 'hito indicador' a 'hito de la indicación'."}
+{"id": "F104", "veredicto": "No", "motivo": "'Horario' pasa a 'Calendario'."}
+{"id": "F105", "veredicto": "No", "motivo": "'Horario' pasa a 'Calendario'."}
+{"id": "F106", "veredicto": "No", "motivo": "'Horario' pasa a 'Calendario'."}
+{"id": "F107", "veredicto": "Sí", "motivo": "Mismas operaciones: excavación, preparación de la superficie de asiento, compactación y nivelación."}
+{"id": "F108", "veredicto": "No", "motivo": "'nivelación' pasa a 'podadera'."}
+{"id": "F109", "veredicto": "Sí", "motivo": "Mismas operaciones incluidas."}
+{"id": "F110", "veredicto": "Sí", "motivo": "Mismas operaciones incluidas."}
+{"id": "F111", "veredicto": "Dudoso", "motivo": "'desplazamientos' pasa a 'movimiento': ya no se lee como traslado del personal."}
+{"id": "F112", "veredicto": "No", "motivo": "'medios auxiliares' pasa a 'soportes auxiliares'."}
+{"id": "F113", "veredicto": "Dudoso", "motivo": "'desplazamientos' pasa a 'movimiento'."}
+{"id": "F114", "veredicto": "Dudoso", "motivo": "'desplazamientos' pasa a 'movimiento' y 'el propio suministro' a 'suministro propio'."}
+{"id": "F115", "veredicto": "Dudoso", "motivo": "'desplazamientos' pasa a 'movimiento'."}
+{"id": "F116", "veredicto": "No", "motivo": "'medios auxiliares' pasa a 'soportes auxiliares'."}
+{"id": "F117", "veredicto": "No", "motivo": "'medios auxiliares' pasa a 'soportes auxiliares'."}
+{"id": "F118", "veredicto": "Dudoso", "motivo": "'desplazamientos' pasa a 'movimiento'."}
+{"id": "F119", "veredicto": "No", "motivo": "Se pierde 'testigo' en 'testigo soporte para tetratubo'."}
+{"id": "F120", "veredicto": "No", "motivo": "Se pierde 'testigo' en 'testigo soporte para tetratubo'."}
+{"id": "F121", "veredicto": "No", "motivo": "Se pierde 'testigo' y el primer hueco de número de tubos pasa detrás de 'tubos'."}
+{"id": "F122", "veredicto": "No", "motivo": "Se pierde 'testigo', 'tetratúbe' y el hueco del número de tubos cambia de posición."}
+{"id": "F123", "veredicto": "No", "motivo": "'Incluso' pasa a 'La misma' y 'nivelación' a 'sellado'."}
+{"id": "F124", "veredicto": "Sí", "motivo": "Mismas operaciones; 'También' equivale a 'Incluso'."}
+{"id": "F125", "veredicto": "Sí", "motivo": "Mismas operaciones incluidas."}
+{"id": "F126", "veredicto": "Sí", "motivo": "Mismas operaciones: excavación, preparación, compactación, nivelación, rellenos, reposición del pavimento, conexión de tubos con la cámara y sellado."}
+{"id": "F127", "veredicto": "No", "motivo": "'nivelación' pasa a 'corte' y 'pavimento' a 'vía'."}
+{"id": "F128", "veredicto": "No", "motivo": "'pavimento existente' pasa a 'suelo existente'."}
+{"id": "F129", "veredicto": "No", "motivo": "'rellenos' pasa a 'embotellamiento', 'pavimento' a 'parche' y 'canalización' a 'alcantarilla'."}
+{"id": "F130", "veredicto": "Sí", "motivo": "Mismo montaje, desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares."}
+{"id": "F131", "veredicto": "No", "motivo": "'medios auxiliares' pasa a 'soportes auxiliares'."}
+{"id": "F132", "veredicto": "No", "motivo": "'medios auxiliares' pasa a 'soportes auxiliares'."}
+{"id": "F133", "veredicto": "Sí", "motivo": "Mismo montaje, desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares."}
+{"id": "F134", "veredicto": "Dudoso", "motivo": "'limpieza de la misma' (la arqueta) pasa a 'limpieza de los mismos', que remite a otro elemento; 'desagüe' pasa a 'drenaje'."}
+{"id": "F135", "veredicto": "No", "motivo": "'desagüe del fondo' pasa a 'flujo del fondo'."}
+{"id": "F136", "veredicto": "No", "motivo": "'rellenos' pasa a 'obturaciones' y 'desagüe' a 'descarga'."}
+{"id": "F137", "veredicto": "No", "motivo": "'desagüe del fondo' pasa a 'funcionamiento del suelo'."}
+{"id": "F138", "veredicto": "No", "motivo": "'Levante de tierras' pasa a 'Aumento de tierras' y 'aportación' a 'contribución'."}
+{"id": "F139", "veredicto": "Sí", "motivo": "Limpieza de canaleta de hormigón."}
+{"id": "F140", "veredicto": "Sí", "motivo": "Limpieza de tubo de canalización existente con localización de obstrucciones previa al tendido de cables."}
