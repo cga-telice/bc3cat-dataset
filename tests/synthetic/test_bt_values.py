@@ -284,3 +284,9 @@ def test_variant_takes_the_initial_case_of_the_original():
     text2, _ = assemble_values("Trabajo: [1].", {"[1]": "Nocturno"}, ["[1]"], {"[1]": ("$C", "Nocturno")},
                                lambda ph, s: ["de noche"], {}, seed=42, key="q", label_p=0.0)
     assert text2 == "Trabajo: De noche."
+
+
+def test_label_present_tolerates_plural_and_inflection():
+    # la BT tradujo la etiqueta «Trabajo:» como «Trabajos:»; no hay que repetirla
+    assert label_present("Completamente terminado. Trabajos: ", "TRABAJO")
+    assert label_present("las condiciones de la ejecución ", "CONDICIONES DE EJECUCIÓN")

@@ -180,7 +180,9 @@ def label_present(prefix: str, label: str, window: int = 6) -> bool:
     añade la etiqueta (evita «Trabajo: trabajo nocturno»)."""
     words = re.findall(r"\w+", _fold(prefix))[-window:]
     label_words = [w for w in re.findall(r"\w+", _fold(label)) if w not in _STOP and len(w) > 2]
-    return bool(label_words) and any(w in words for w in label_words)
+    # por raíz: la BT puede devolver la etiqueta en plural o flexionada («Trabajos:»)
+    stems = [w[:max(4, len(w) - 2)] for w in label_words]
+    return bool(stems) and any(word.startswith(s) for s in stems for word in words)
 
 
 # ---------------------------------------------------------------------------
