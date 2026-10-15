@@ -1,0 +1,229 @@
+{
+  "arqueta": {
+    "alternativas": [
+      {"texto": "caja enterrada", "tipo": "descripción", "nota": "Describe la arqueta como lo que es (caja de obra o prefabricada bajo rasante) sin usar «registro»; encaja en «sin caja enterrada», «derivación a cajas enterradas de telecomunicaciones», «drenaje de caja enterrada desde centro de caja enterrada» y «caja enterrada realizada in situ de ladrillo / prefabricada de 600x600x600»."},
+      {"texto": "caja de paso enterrada", "tipo": "descripción", "nota": "En instalaciones eléctricas y de telecomunicaciones se habla de «arqueta de paso» y «caja de paso» para el punto de tiro/derivación de cables; el adjetivo «enterrada» la separa de la caja de paso de superficie."},
+      {"texto": "caja de tiro", "tipo": "sinónimo", "nota": "En telecomunicaciones la arqueta intermedia de una canalización se llama arqueta o caja de tiro (donde se tira del cable); vale en derivaciones, embocaduras y arquetas in situ o prefabricadas."},
+      {"texto": "pozo de cables", "tipo": "descripción", "nota": "Coloquial de obra para la arqueta a la que llegan los tubos con cables; a diferencia de «pozo de registro» no designa un elemento mayor ni con acceso de persona."}
+    ],
+    "comentario": "Designa la arqueta de instalaciones (in situ de ladrillo 400x400x600 o prefabricada 600x600x600, con tapa de hormigón) a la que llegan, se derivan o embocan las canalizaciones de tubos. El español técnico apenas tiene sinónimos: «registro» y «pozo de registro» ya se rechazaron, «cámara» es otra partida (OEC040/OEC050) y «caja de registro» es otro elemento (OEB090). Solo encuentro 4 formas defendibles en vez de 5; las que usan «caja» conviven con «caja de terminales» (OEA180), por eso llevan el calificativo «enterrada» o «de tiro»."
+  },
+  "canaleta": {
+    "alternativas": [
+      {"texto": "canal de cables", "tipo": "sinónimo", "nota": "Variante habitual de «canal para cables»; vale para canaletas de PVC, metálicas, de composite, de hormigón y de fábrica."},
+      {"texto": "canal registrable", "tipo": "descripción", "nota": "Todas las canaletas del catálogo llevan tapa y se abren para tirar o localizar cables (OEA090); «canal registrable» es como se describe ese canal abierto con tapa, distinto de un tubo cerrado."},
+      {"texto": "canal de cableado", "tipo": "sinónimo", "nota": "Forma usada en edificios técnicos e interior (OEA030, OEA060) y aplicable a la canaleta de vía; no evoca tubo ni canalización entubada."}
+    ],
+    "comentario": "Canal abierto con tapa (PVC, metálico, composite-PTR, hormigón prefabricado o fábrica de ladrillo) por el que discurren los cables. Se evita «conducto» y «bandeja» (la bandeja portacables es otro elemento, sin tapa)."
+  },
+  "cimentación": {
+    "alternativas": [
+      {"texto": "bloque de hormigón", "tipo": "descripción", "nota": "La cimentación prismática o cilíndrica de un poste de catenaria es un bloque de hormigón hormigonado en el terreno; ya se aceptó para «macizo», que es el mismo elemento. Vale también en «desvío de canaleta en el entorno de bloque de hormigón de poste»."},
+      {"texto": "base de hormigón", "tipo": "descripción", "nota": "Forma coloquial de obra para la cimentación de un poste («la base de hormigón del poste»); aquí no hay riesgo de doble «hormigón» porque las partidas no califican el material."},
+      {"texto": "bloque de cimiento", "tipo": "descripción", "nota": "Combina «bloque» y «cimiento» (ya aceptado); designa el macizo de cimentación de poste, rectangular o cilíndrico, y también la cimentación en roca con micropilote."},
+      {"texto": "zapata", "tipo": "sinónimo", "nota": "En obra se llama zapata a cualquier cimentación aislada bajo un apoyo; para postes es uso coloquial frecuente. Riesgo: en la cimentación cilíndrica profunda (CPT) o con micropilote un purista diría que no es zapata."}
+    ],
+    "comentario": "Designa la cimentación de los postes de electrificación (prismática/rectangular, cilíndrica, profunda, con micropilote, tipo puente) y, en OEA170, el entorno de esa cimentación. «Zapata» es la más arriesgada por la cimentación cilíndrica profunda."
+  },
+  "desmonte": {
+    "alternativas": [
+      {"texto": "sección en corte", "tipo": "sinónimo", "nota": "Mismo patrón que «tramo en corte» (aceptado): en proyectos de plataforma se distingue «sección en corte» y «sección en relleno»; «cimentación rectangular en sección en corte d2»."},
+      {"texto": "plataforma en corte", "tipo": "descripción", "nota": "La plataforma ferroviaria excavada en el terreno natural; encaja con «desde plataforma o vía» y no se confunde con corte de tensión al llevar «plataforma»."},
+      {"texto": "tramo excavado", "tipo": "descripción", "nota": "El desmonte es el tramo en que la plataforma se obtiene excavando; «cimentación cilíndrica en tramo excavado Cd1» identifica el caso opuesto al terraplén."},
+      {"texto": "zona excavada", "tipo": "descripción", "nota": "Variante de la anterior; riesgo menor de leerse como la excavación de la propia cimentación, por eso es la más débil."}
+    ],
+    "comentario": "Designa el tipo de explanación donde va el poste: terreno excavado por debajo de la rasante natural (opuesto a terraplén). Se evita «trinchera» (término del glosario) y «corte» suelto."
+  },
+  "terraplén": {
+    "alternativas": [
+      {"texto": "sección en relleno", "tipo": "sinónimo", "nota": "Par de «sección en corte»; uso habitual en proyectos de plataforma («secciones en relleno»); «cimentación rectangular en sección en relleno t1»."},
+      {"texto": "plataforma en relleno", "tipo": "descripción", "nota": "La plataforma ferroviaria construida sobre tierras aportadas y compactadas; el contexto «desde plataforma o vía» la hace natural y no se confunde con el relleno de zanja."},
+      {"texto": "tramo sobre relleno", "tipo": "descripción", "nota": "Variante de «tramo en relleno» (aceptado) que subraya que el poste se cimenta sobre tierras aportadas."},
+      {"texto": "obra de tierra en relleno", "tipo": "descripción", "nota": "Terminología de movimiento de tierras (obras de tierra: desmontes y rellenos); más larga pero inequívoca."}
+    ],
+    "comentario": "Designa la explanación construida por aporte y compactación de tierras sobre el terreno natural (opuesto a desmonte). Se evita «relleno» y «zona de relleno» sueltos, ya rechazados, y derivados como «terraplenado» por contener el término."
+  },
+  "cata": {
+    "alternativas": [
+      {"texto": "excavación de prueba", "tipo": "descripción", "nota": "La cata es una excavación pequeña y previa para comprobar qué hay (canalización, subconducto, roca); «apertura y tapado de excavación de prueba», «excavación de prueba previa de excavación de macizo»."},
+      {"texto": "excavación de comprobación", "tipo": "descripción", "nota": "Mantiene el carácter de reconocimiento (comprobar trazado de la canalización o tipo de terreno) sin confundirse con excavación ordinaria."},
+      {"texto": "hoyo de reconocimiento", "tipo": "descripción", "nota": "Forma de obra para la cata puntual; «hoyo» marca que es pequeña y localizada, y «de reconocimiento» su función."}
+    ],
+    "comentario": "Excavación pequeña y localizada para localizar/reparar una canalización o subconducto existente, o para reconocer el terreno antes de excavar un macizo."
+  },
+  "macizo": {
+    "alternativas": [
+      {"texto": "cimiento", "tipo": "sinónimo", "nota": "El macizo de electrificación es el cimiento del poste; «cata previa de excavación de cimiento de electrificación» se entiende igual."},
+      {"texto": "bloque de cimiento", "tipo": "descripción", "nota": "Variante de «bloque de cimentación» (aceptado) sin usar el término «cimentación»."},
+      {"texto": "base de hormigón", "tipo": "descripción", "nota": "Coloquial de obra para el macizo de un poste; «excavación de base de hormigón de electrificación»."}
+    ],
+    "comentario": "Bloque de hormigón que forma la cimentación de un poste de electrificación (catenaria)."
+  },
+  "tapa": {
+    "alternativas": [
+      {"texto": "placa de cubrición", "tipo": "descripción", "nota": "Pieza plana que cubre la canaleta o la arqueta; vale para PVC, hormigón, núcleo aglomerado de madera con marco galvanizado y tapa de arqueta («placa de cubrición de hormigón»)."},
+      {"texto": "placa de cierre", "tipo": "descripción", "nota": "Igual que la anterior; «placa» evita la lectura de pieza de remate de extremo que tenía «pieza de cierre»."},
+      {"texto": "cierre superior", "tipo": "descripción", "nota": "Describe la función (cerrar la canaleta o arqueta por arriba); «canaleta PVC con cierre superior», «cierre superior de hormigón». Convive con «cierre» aceptado para «tapado», pero aquí es sustantivo de elemento."},
+      {"texto": "plancha de cubrición", "tipo": "descripción", "nota": "Variante de «placa de cubrición» usada para piezas delgadas (PVC, metálicas, madera); la más débil para la tapa de hormigón de arqueta."}
+    ],
+    "comentario": "Elemento que cierra por arriba canaletas (PVC, hormigón, fábrica) y arquetas. Fuera de «tapadera» casi no hay sinónimos simples; se recurre a descripciones con «placa/plancha» y «cubrición/cierre»."
+  },
+  "tapado": {
+    "alternativas": [
+      {"texto": "cerrado", "tipo": "sinónimo", "nota": "Nominalización de obra paralela a «cierre» (aceptado): «cerrado de canaleta», «apertura y cerrado de cata», «cerrado de la zanja»."},
+      {"texto": "nuevo cierre", "tipo": "descripción", "nota": "Explicita que se vuelve a cerrar lo abierto; encaja en canaleta, cata, canalización y zanja («apertura y nuevo cierre de cata»)."},
+      {"texto": "recubrimiento", "tipo": "sinónimo", "nota": "Uso de obra para volver a cubrir la canalización o la zanja con tierras/hormigón; aplicado a la canaleta, volver a cubrirla tras descubrirla (OEA160)."},
+      {"texto": "reposición", "tipo": "sinónimo", "nota": "En obra «apertura y reposición» es el par habitual para catas y zanjas. Riesgo: en OEA170/OEB130 «reposición» es reconstruir un elemento, y «reposición de canaleta» puede leerse como sustituirla."}
+    ],
+    "comentario": "Acción de volver a cerrar lo abierto: colocar de nuevo las tapas de la canaleta o rellenar la cata/zanja. Debe valer a la vez para canaleta (tapas) y para cata o zanja (tierras), por eso se prefieren términos de cierre genérico. «Reposición» y «recubrimiento» son las más discutibles."
+  },
+  "destapado": {
+    "alternativas": [
+      {"texto": "abertura", "tipo": "sinónimo", "nota": "Variante de «apertura» (aceptada) usada en obra: «abertura de canaleta existente a mano para localizar cables»."},
+      {"texto": "retirada de la cubrición", "tipo": "descripción", "nota": "Quitar las piezas que cubren la canaleta; «cubrición» sustituye a «cubierta» (rechazada por leerse como cubierta de edificio)."},
+      {"texto": "levantado de las placas de cubrición", "tipo": "descripción", "nota": "Describe la operación real (levantar las tapas para acceder a los cables) sin usar «tapa»."},
+      {"texto": "desmontaje del cierre", "tipo": "descripción", "nota": "Par de «cierre» (aceptado para tapado): abrir la canaleta quitando su cierre. Más débil: podría sugerir desmontar un cierre metálico."}
+    ],
+    "comentario": "Abrir una canaleta existente quitando sus tapas, a mano, para localizar o tender cables. Se evita «descubrir» porque OEA160 (levante de tierras y balasto para descubrir canaleta) es otra partida, y cualquier forma con «tapa/tapas»."
+  },
+  "mandrilado": {
+    "alternativas": [
+      {"texto": "pasada de mandril", "tipo": "sinónimo", "nota": "Uso de obra para pasar el mandril por los tubos y comprobar que no hay obstrucciones; vale en canalizaciones nuevas, existentes, tubo de acero y subconducto."},
+      {"texto": "verificación con mandril", "tipo": "descripción", "nota": "Variante de «comprobación con mandril» (aceptada) que mantiene la referencia al mandril y no se confunde con «la prueba de los conductos»."},
+      {"texto": "calibración con mandril", "tipo": "descripción", "nota": "El mandrilado calibra el diámetro útil del tubo; a diferencia de «calibrado del conducto» (rechazada) no repite «conducto» y nombra el útil."}
+    ],
+    "comentario": "Paso de un mandril por el interior de los tubos para comprobar su continuidad y diámetro útil y localizar obstrucciones."
+  },
+  "zanja": {
+    "alternativas": [
+      {"texto": "rasa", "tipo": "sinónimo", "nota": "Catalanismo muy extendido en obra en Cataluña y Comunidad Valenciana para la zanja de instalaciones («apertura de la rasa», «relleno y compactado de la rasa», «rasa para tendido de cables»)."},
+      {"texto": "excavación para cables", "tipo": "descripción", "nota": "Todas las zanjas de estos conceptos alojan cables (en canaleta de fábrica, en tubos hormigonados o directamente); «excavación para cables de 0,60 m de anchura»."},
+      {"texto": "excavación corrida", "tipo": "descripción", "nota": "En obra se llama excavación corrida a la excavación lineal estrecha y continua; «relleno y compactado de la excavación corrida». Riesgo: se usa también para cimientos corridos."}
+    ],
+    "comentario": "Excavación lineal estrecha y poco profunda que aloja cables, tubos hormigonados o una canaleta de fábrica, y que luego se rellena y compacta. No llego a 5: «trinchera» y «cuneta» son términos del glosario, «foso» y «excavación lineal» ya se rechazaron y «regata» designa una ranura en muro o pavimento, no una excavación de 0,6x0,8 m. Solo encuentro 3 formas defendibles."
+  },
+  "embocadura": {
+    "alternativas": [
+      {"texto": "entrada", "tipo": "sinónimo", "nota": "Obra de entrada de los tubos en la arqueta o cámara existente: «suministro y ejecución de entrada canalización de 1 o 2 tubos en arqueta existente»."},
+      {"texto": "entrada de tubos", "tipo": "descripción", "nota": "Precisa que es la llegada de los tubos a través de la pared de la arqueta/cámara."},
+      {"texto": "pasamuros", "tipo": "sinónimo", "nota": "La embocadura en arqueta existente consiste en abrir la pared y pasar/sellar los tubos; en obra se llama pasamuros a ese paso a través del paramento."},
+      {"texto": "penetración", "tipo": "sinónimo", "nota": "Calco frecuente en instalaciones para el paso de tubos o cables a través de un paramento («penetración de canalización en cámara existente»)."}
+    ],
+    "comentario": "Ejecución del paso de los tubos de una canalización a través de la pared de una arqueta o cámara existente. Se evita «acometida» y «conexión» (términos/partidas distintas) y «boca»."
+  },
+  "hito": {
+    "alternativas": [
+      {"texto": "señalizador", "tipo": "sinónimo", "nota": "Elemento que señala en superficie el trazado de los cables enterrados: «señalizador indicador de cables»."},
+      {"texto": "señal de trazado", "tipo": "descripción", "nota": "Describe su función (marcar el trazado de la canalización o cable enterrado) sin evocar señales ferroviarias de circulación al llevar «de trazado»."},
+      {"texto": "marcador de trazado", "tipo": "descripción", "nota": "Distinto de «marcador de cables» (rechazado, etiquetas): el marcador de trazado es el poste/hito en superficie."}
+    ],
+    "comentario": "Hito o mojón en superficie que indica el paso de cables enterrados."
+  },
+  "ficha": {
+    "alternativas": [
+      {"texto": "brazos", "tipo": "sinónimo", "nota": "Las perchas para cables (tendido en percha, junto a canaleta, canalización y aéreo en el catálogo) son soportes fijados con tacos a paramento con brazos horizontales donde apoyan los cables; «percha para cables con 6 brazos» indica el número de apoyos."},
+      {"texto": "brazos portacables", "tipo": "descripción", "nota": "Precisa que cada brazo soporta cables; evita la lectura de brazos de anclaje."},
+      {"texto": "apoyos para cables", "tipo": "descripción", "nota": "Describe la función de cada ficha (punto donde descansa un cable o mazo) sin presuponer forma de gancho."},
+      {"texto": "alojamientos", "tipo": "descripción", "nota": "Lugares de la percha donde se aloja cada cable; neutro respecto a la forma de la pieza."},
+      {"texto": "niveles", "tipo": "descripción", "nota": "Si las fichas son brazos superpuestos, «percha de 6 niveles» es como se nombra en obra; más especulativa."}
+    ],
+    "comentario": "El catálogo solo da «percha para cables con N fichas» con tacos, tornillos y topes, y la percha aparece como sistema de tendido junto a canaleta y canalización. Ninguna fuente define la ficha; por la estructura de las perchas portacables, la interpretación más probable es la pieza o brazo donde apoya cada cable o grupo de cables. Todas las alternativas son inferencia; «apoyos para cables» y «alojamientos» son las más neutras. «Ménsula» (la palabra técnica más probable) es término del glosario."
+  },
+  "firme": {
+    "alternativas": [
+      {"texto": "rasante", "tipo": "sinónimo", "nota": "Cota de la superficie terminada: «a 150 mm de profundidad de la rasante existente» es exactamente cómo se fija la profundidad de la cinta de señalización."},
+      {"texto": "superficie pavimentada", "tipo": "descripción", "nota": "La capa superior existente sobre la canalización; «a 150 mm de profundidad de la superficie pavimentada existente»."},
+      {"texto": "capa de rodadura", "tipo": "sinónimo", "nota": "Capa superior del firme sobre la que se mide la profundidad; uso de viales. Riesgo: técnicamente es solo la capa superior, pero la profundidad se mide desde su superficie."}
+    ],
+    "comentario": "Superficie/paquete de pavimento existente desde el que se mide la profundidad de la cinta de señalización en canalizaciones."
+  },
+  "talud": {
+    "alternativas": [
+      {"texto": "escarpe", "tipo": "sinónimo", "nota": "Superficie de terreno muy inclinada; «canalización en escarpes de excesiva inclinación o rocosos» y «drenaje a pie de escarpe»."},
+      {"texto": "ribazo", "tipo": "sinónimo", "nota": "Coloquial en obra y en caminos para el talud de tierra al borde de una plataforma; «a pie de ribazo»."},
+      {"texto": "paramento inclinado", "tipo": "descripción", "nota": "Describe el talud como superficie inclinada de terreno o roca; «a pie de paramento inclinado», «paramentos inclinados de excesiva inclinación» (pequeña redundancia admisible)."},
+      {"texto": "superficie inclinada del terreno", "tipo": "descripción", "nota": "Descripción neutra que vale para taludes de desmonte o terraplén y rocosos."}
+    ],
+    "comentario": "Superficie inclinada del terreno (de desmonte o terraplén) al pie de la cual desagua la arqueta y sobre la que va la canalización metálica superficial. No llego a 5: «ladera», «pendiente» y «desnivel» ya se rechazaron, y «desmonte/terraplén» son términos del glosario. Solo encuentro 4 formas defendibles."
+  },
+  "hinca": {
+    "alternativas": [
+      {"texto": "elemento clavado en el terreno", "tipo": "descripción", "nota": "En el catálogo «hinca» y «hincado» siempre son introducir en el terreno por golpeo un elemento (picas, pilotes, tubos, carriles para hinca); describir así la hinca no presupone si es perfil, pica o estaca."},
+      {"texto": "soporte clavado al terreno", "tipo": "descripción", "nota": "La hinca sostiene el cable tensor del que cuelgan los cables sobre la trinchera; «soportes clavados al terreno con cable tensor de acero»."},
+      {"texto": "pieza clavada", "tipo": "descripción", "nota": "Forma corta y neutra; «piezas clavadas con cable tensor de acero para el tendido de cables»."},
+      {"texto": "punto de amarre clavado", "tipo": "descripción", "nota": "Función del elemento: amarrar el cable tensor; neutro respecto a su forma. Riesgo menor de sugerir un anclaje (rechazado por presuponer)."},
+      {"texto": "montante clavado", "tipo": "descripción", "nota": "Si la hinca sobresale del terreno para sujetar el tensor, «montante» es el nombre de obra; más especulativa."}
+    ],
+    "comentario": "Elementos introducidos por golpeo en el terreno a ambos lados de una trinchera que sujetan un cable tensor de acero sobre el que se tienden los cables. Se evitan «hincado» (contiene «hinca»), «estaca», «piqueta» y «anclaje» ya rechazadas; se opta por descripciones con «clavado», neutras respecto a la forma."
+  },
+  "trinchera": {
+    "alternativas": [
+      {"texto": "corte en tierra", "tipo": "descripción", "nota": "En ferrocarril trinchera equivale a corte del terreno; «tendido de cables sobre un corte en tierra» conserva el matiz «de tierra» y no fuerza la lectura de zanja."},
+      {"texto": "tramo en corte", "tipo": "sinónimo", "nota": "Ya aceptada para desmonte, que en ferrocarril es la misma realidad que trinchera: «sobre un tramo en corte de tierra»."},
+      {"texto": "sección en corte", "tipo": "sinónimo", "nota": "Igual que la anterior, con el vocabulario de secciones tipo de plataforma."},
+      {"texto": "excavación en tierra", "tipo": "descripción", "nota": "Hiperónimo que cubre tanto la lectura de zanja ancha como de corte del terreno; «sobre una excavación en tierra». Riesgo: puede acercarse a partidas de excavación."}
+    ],
+    "comentario": "En OEB180 los cables se tienden sobre una trinchera de tierra mediante un cable tensor, es decir, salvando un corte o excavación abierta en tierra. En ferrocarril «trinchera» es sinónimo de desmonte (el catálogo usa «talud/trinchera» y «coronación de trincheras»), por eso se proponen formas con «corte». No llego a 5: «desmonte», «zanja» y «talud» son términos del glosario y «foso» y las paráfrasis de excavación ya se rechazaron."
+  },
+  "cuneta": {
+    "alternativas": [
+      {"texto": "rigola", "tipo": "sinónimo", "nota": "Canal de desagüe superficial revestido de hormigón junto al borde de vía o camino; «rotura y reposición de rigola de hasta 250 cm de ancho». Riesgo: suele ser más estrecha que 250 cm."},
+      {"texto": "desagüe a cielo abierto", "tipo": "descripción", "nota": "«A cielo abierto» descarta la lectura de tubo que tenía «desagüe lateral»; con «paredes de hasta 15 cm» se entiende la cuneta revestida."},
+      {"texto": "drenaje longitudinal superficial", "tipo": "descripción", "nota": "Terminología de plataforma ferroviaria y viaria: el drenaje longitudinal superficial son las cunetas; no restringe a camino ni a vía."}
+    ],
+    "comentario": "Canal abierto de drenaje revestido (hasta 250 cm de ancho, paredes de 15 cm) al borde de la plataforma o camino que hay que romper y reponer. No llego a 5: los sinónimos con «canal» y «zanja» chocan con canaleta, canalización o zanja, y «acequia» o «caz» son de riego. Solo encuentro 3 formas defendibles."
+  },
+  "balasto": {
+    "alternativas": [
+      {"texto": "machaca de vía", "tipo": "sinónimo", "nota": "Coloquial de obra («machaca») para la piedra machacada del balasto; «levante de tierras y machaca de vía (20 cm)»."},
+      {"texto": "piedra partida de vía", "tipo": "sinónimo", "nota": "Variante de «piedra machacada de vía» (aceptada); describe correctamente el árido de machaqueo, no la grava rodada."},
+      {"texto": "árido de vía", "tipo": "descripción", "nota": "El balasto es el árido de la banqueta de vía; con «de vía» no se confunde con otros áridos."}
+    ],
+    "comentario": "Piedra machacada de la banqueta de vía que hay que levantar (20 cm) para descubrir la canaleta."
+  },
+  "repartidor": {
+    "alternativas": [
+      {"texto": "regletero", "tipo": "sinónimo", "nota": "En telecomunicaciones ferroviarias el repartidor es el bastidor o caja de regletas donde terminan y se reparten los pares (el catálogo habla de «repartidor de cables», «repartidor de 24 pares», «armario repartidor»); «regletero» es su nombre coloquial."},
+      {"texto": "caja de regletas", "tipo": "descripción", "nota": "Describe el repartidor de interfonía en túnel: caja donde llegan los cables y se conectan en regletas."},
+      {"texto": "distribuidor de pares", "tipo": "sinónimo", "nota": "A diferencia de «distribuidor» suelto (rechazado), «de pares» lo sitúa en telefonía/interfonía y no en distribución eléctrica; es la traducción habitual de MDF/distribution frame."},
+      {"texto": "panel de conexionado", "tipo": "descripción", "nota": "Punto donde se conexionan los cables de interfonía con la red; neutro respecto a si es caja, armario o bastidor."},
+      {"texto": "punto de interconexión", "tipo": "descripción", "nota": "Descripción funcional del repartidor (donde se interconectan los cables de los interfonos con el cable troncal); no presupone forma."}
+    ],
+    "comentario": "En OEB100 el tubo de acero lleva los cables de interfonía desde la canaleta hasta el repartidor. En el resto del catálogo el repartidor es el elemento de telecomunicación donde terminan y se reparten pares o fibras (repartidor de cables con cabeza, de 24 pares, armario repartidor de conectores), lo que permite usar formas de telefonía. Se evita «caja de terminales» (otro elemento en OEA180) y «armario de distribución» (eléctrico)."
+  },
+  "corrugada": {
+    "alternativas": [
+      {"texto": "de acero B500S", "tipo": "descripción", "nota": "En España las barras corrugadas de armar son de acero B500S/B500SD; «barra de acero B500S roscada de 20 mm» la identifica exactamente."},
+      {"texto": "con resaltos", "tipo": "descripción", "nota": "La EHE/Código Estructural define la barra corrugada por sus resaltos; «barra con resaltos roscada de 25 mm»."},
+      {"texto": "de armar", "tipo": "sinónimo", "nota": "Las barras de armar actuales son siempre corrugadas; «4 barras de armar roscadas de 20»."},
+      {"texto": "de armadura", "tipo": "sinónimo", "nota": "Variante de «de armar»; «barra de armadura roscada de 16 mm»."}
+    ],
+    "comentario": "Barra de acero corrugado (de armar), roscada en su extremo, para pernos de anclaje de cimentaciones de postes y micropilotes."
+  },
+  "solera": {
+    "alternativas": [
+      {"texto": "capa de asiento", "tipo": "descripción", "nota": "La solera es la capa sobre la que asienta la canaleta, la arqueta o la cámara; «nivelación de la capa de asiento», «sobre capa de asiento de hormigón en masa»."},
+      {"texto": "base de asiento", "tipo": "descripción", "nota": "Variante de «base de apoyo» (aceptada); vale para solera nivelada de canaleta y para solera de hormigón de arquetas y cámaras."},
+      {"texto": "capa de base", "tipo": "descripción", "nota": "Capa inferior sobre la que se construye el elemento; «sobre capa de base de hormigón HE-25 armada con mallazo»."},
+      {"texto": "fondo de asiento", "tipo": "descripción", "nota": "Fondo preparado sobre el que se apoya la canaleta o la arqueta; más débil en la cámara de empalme, donde la solera es armada."}
+    ],
+    "comentario": "Capa base (terreno nivelado o hormigón en masa/armado) sobre la que se apoyan canaletas, arquetas y cámaras. Se evita «cama» o «lecho» porque «cama de arena» aparece en la misma frase y «losa» por ser estructural."
+  },
+  "recibido": {
+    "alternativas": [
+      {"texto": "sujeción con mortero", "tipo": "descripción", "nota": "Variante de «fijación con mortero» (aceptada): «la sujeción con mortero de los tubos de acometida»."},
+      {"texto": "sellado con mortero", "tipo": "descripción", "nota": "Recibir los tubos en la pared de la arqueta o cámara incluye rellenar con mortero el hueco alrededor del tubo; «el sellado con mortero de los tubos»."},
+      {"texto": "empotramiento", "tipo": "sinónimo", "nota": "Los tubos quedan empotrados en el paramento de la arqueta o cámara; «el empotramiento de los tubos de acometida»."},
+      {"texto": "colocación con mortero", "tipo": "descripción", "nota": "Forma habitual en pliegos para piezas recibidas; mantiene la referencia al mortero."}
+    ],
+    "comentario": "Fijación con mortero de los tubos de acometida y desagüe en las paredes de arquetas y cámaras."
+  },
+  "adecuación": {
+    "alternativas": [
+      {"texto": "adaptación", "tipo": "sinónimo", "nota": "«Incluso la adaptación del terreno, la compactación, la nivelación»: dejar el terreno apto para la canaleta."},
+      {"texto": "arreglo", "tipo": "sinónimo", "nota": "Coloquial de obra («arreglo del terreno»)."},
+      {"texto": "puesta en condiciones", "tipo": "descripción", "nota": "Fórmula habitual en pliegos y en obra («puesta en condiciones del terreno»), sin el matiz de nivelación de «regularización»."}
+    ],
+    "comentario": "Preparación general del terreno antes de compactarlo y nivelar la solera de la canaleta."
+  }
+}

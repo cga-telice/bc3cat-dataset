@@ -1,0 +1,97 @@
+{"termino": "arqueta", "alternativa": "caja enterrada", "veredicto": "A", "motivo": "Descripción llana de la arqueta que un técnico entiende en todos los contextos («caja enterrada prefabricada de 600x600x600», «sin caja enterrada»); no se confunde con la caja de registro de superficie del tubo de acero."}
+{"termino": "arqueta", "alternativa": "caja de paso enterrada", "veredicto": "R", "motivo": "«Caja de paso» es el elemento de superficie de instalaciones eléctricas y queda demasiado cerca de «caja de registro» (OEB090); «drenaje de caja de paso enterrada» no suena a obra real."}
+{"termino": "arqueta", "alternativa": "caja de tiro", "veredicto": "R", "motivo": "En obra se dice «arqueta de tiro», no «caja de tiro»; además restringe a la función de tiro y no encaja en la arqueta de drenaje de OEB110."}
+{"termino": "arqueta", "alternativa": "pozo de cables", "veredicto": "R", "motivo": "«Pozo» evoca un elemento mayor (como el pozo de registro ya rechazado) y la forma no es de uso real en partidas."}
+{"termino": "canaleta", "alternativa": "canal de cables", "veredicto": "A", "motivo": "Variante natural de «canal para cables» (aceptada); vale para canaletas de PVC, metálicas, composite, hormigón y fábrica."}
+{"termino": "canaleta", "alternativa": "canal registrable", "veredicto": "R", "motivo": "Sin mención a cables, «canal registrable de hormigón» se lee como canal de drenaje registrable, otra partida."}
+{"termino": "canaleta", "alternativa": "canal de cableado", "veredicto": "A", "motivo": "Forma usada en edificios técnicos y aplicable a la canaleta de vía; mantiene el elemento sin evocar tubo ni canalización."}
+{"termino": "cimentación", "alternativa": "bloque de hormigón", "veredicto": "A", "motivo": "Con «para postes de electrificación» se entiende el macizo del poste, igual que ya se aceptó para «macizo»; vale en prismática y cilíndrica."}
+{"termino": "cimentación", "alternativa": "base de hormigón", "veredicto": "A", "motivo": "Coloquialismo de obra para la cimentación de un poste; «base de hormigón cilíndrica en desmonte para postes» identifica la misma partida."}
+{"termino": "cimentación", "alternativa": "bloque de cimiento", "veredicto": "A", "motivo": "Combina formas ya aceptadas (bloque de cimentación, cimiento) y designa el mismo macizo del poste en todos los conceptos."}
+{"termino": "cimentación", "alternativa": "zapata", "veredicto": "R", "motivo": "La zapata es una cimentación superficial; «zapata cilíndrica» para las cimentaciones cilíndricas de poste cambia el tipo de cimentación."}
+{"termino": "desmonte", "alternativa": "sección en corte", "veredicto": "A", "motivo": "Par habitual corte/relleno de las secciones tipo de plataforma, en la línea de «tramo en corte» aceptado; opuesto inequívoco a terraplén."}
+{"termino": "desmonte", "alternativa": "plataforma en corte", "veredicto": "A", "motivo": "Designa la plataforma excavada en el terreno; «plataforma» evita la lectura de corte de tensión y encaja con «desde plataforma o vía»."}
+{"termino": "desmonte", "alternativa": "tramo excavado", "veredicto": "A", "motivo": "Describe el desmonte como tramo obtenido excavando, opuesto al terraplén; un técnico lo entiende igual en todas las cimentaciones."}
+{"termino": "desmonte", "alternativa": "zona excavada", "veredicto": "R", "motivo": "«Cimentación en zona excavada» se lee como la excavación de la propia cimentación, no como el tipo de explanación."}
+{"termino": "terraplén", "alternativa": "sección en relleno", "veredicto": "A", "motivo": "Par de «sección en corte», uso real en proyectos de plataforma; identifica la cimentación en terraplén."}
+{"termino": "terraplén", "alternativa": "plataforma en relleno", "veredicto": "A", "motivo": "La plataforma construida con tierras aportadas; «plataforma» la separa del relleno de zanja."}
+{"termino": "terraplén", "alternativa": "tramo sobre relleno", "veredicto": "A", "motivo": "Variante menor de «tramo en relleno» (aceptada); el técnico entiende el mismo tipo de explanación."}
+{"termino": "terraplén", "alternativa": "obra de tierra en relleno", "veredicto": "R", "motivo": "Construcción artificial que nadie usa para un terraplén («cimentación rectangular en obra de tierra en relleno t1»)."}
+{"termino": "cata", "alternativa": "excavación de prueba", "veredicto": "A", "motivo": "Forma habitual para la cata de reconocimiento; encaja en localización de canalización, subconducto y cata previa de macizo."}
+{"termino": "cata", "alternativa": "excavación de comprobación", "veredicto": "A", "motivo": "Mantiene el carácter de reconocimiento previo, como «excavación de reconocimiento» ya aceptada."}
+{"termino": "cata", "alternativa": "hoyo de reconocimiento", "veredicto": "A", "motivo": "Coloquial de obra para una excavación pequeña y puntual; conserva la función de reconocer o localizar."}
+{"termino": "macizo", "alternativa": "cimiento", "veredicto": "A", "motivo": "«Cata previa de excavación de cimiento de electrificación» se entiende como el mismo macizo del poste."}
+{"termino": "macizo", "alternativa": "bloque de cimiento", "veredicto": "A", "motivo": "Variante de «bloque de cimentación» (aceptado); mismo elemento."}
+{"termino": "macizo", "alternativa": "base de hormigón", "veredicto": "A", "motivo": "Coloquial de obra para el macizo del poste; en este único contexto no hay ambigüedad."}
+{"termino": "tapa", "alternativa": "placa de cubrición", "veredicto": "A", "motivo": "Pieza que cubre canaleta o arqueta; encaja en PVC, hormigón, madera con marco y tapa de arqueta sin cambiar el elemento."}
+{"termino": "tapa", "alternativa": "placa de cierre", "veredicto": "R", "motivo": "Igual que «pieza de cierre» (rechazada), se lee como placa de remate del extremo de la canaleta, no como la tapa corrida."}
+{"termino": "tapa", "alternativa": "cierre superior", "veredicto": "R", "motivo": "No es nombre de pieza en obra y choca con «cierre», aceptado para «tapado» (la operación); «suministro de cierre superior para canaleta» es ambiguo."}
+{"termino": "tapa", "alternativa": "plancha de cubrición", "veredicto": "R", "motivo": "«Plancha» designa chapa delgada; no vale para las tapas de hormigón de canaleta y arqueta."}
+{"termino": "tapado", "alternativa": "cerrado", "veredicto": "A", "motivo": "Nominalización coloquial paralela a «cierre» (aceptado); vale para canaleta, cata, canalización y zanja."}
+{"termino": "tapado", "alternativa": "nuevo cierre", "veredicto": "R", "motivo": "En «nuevo cierre de canaleta de hormigón» (OEA100) se lee como suministrar un elemento de cierre nuevo, no volver a tapar."}
+{"termino": "tapado", "alternativa": "recubrimiento", "veredicto": "R", "motivo": "«Recubrimiento» es revestimiento o recubrimiento de armaduras; «recubrimiento de canaleta» cambia la operación."}
+{"termino": "tapado", "alternativa": "reposición", "veredicto": "R", "motivo": "«Reposición de canaleta» se lee como sustituirla o reconstruirla (como en OEA170), otra partida."}
+{"termino": "destapado", "alternativa": "abertura", "veredicto": "A", "motivo": "Variante coloquial de «apertura» (aceptada); «abertura de canaleta existente a mano» se entiende igual."}
+{"termino": "destapado", "alternativa": "retirada de la cubrición", "veredicto": "A", "motivo": "Describe quitar las piezas que cubren la canaleta para acceder a los cables; «cubrición» no tiene la lectura de cubierta de edificio."}
+{"termino": "destapado", "alternativa": "levantado de las placas de cubrición", "veredicto": "A", "motivo": "Describe la operación real de levantar las tapas a mano para localizar o tender cables."}
+{"termino": "destapado", "alternativa": "desmontaje del cierre", "veredicto": "R", "motivo": "Sugiere desmontar un cierre o mecanismo, no levantar tapas; forma que no se usa para abrir una canaleta."}
+{"termino": "mandrilado", "alternativa": "pasada de mandril", "veredicto": "A", "motivo": "Uso de obra para la misma operación; encaja en canalizaciones nuevas, existentes, tubo de acero y subconducto."}
+{"termino": "mandrilado", "alternativa": "verificación con mandril", "veredicto": "A", "motivo": "Variante de «comprobación con mandril» (aceptada); nombra el útil y la finalidad."}
+{"termino": "mandrilado", "alternativa": "calibración con mandril", "veredicto": "A", "motivo": "El mandrilado comprueba el diámetro útil; con «mandril» explícito no se confunde con la prueba de conductos."}
+{"termino": "zanja", "alternativa": "rasa", "veredicto": "A", "motivo": "Catalanismo real y frecuente en obra para la zanja de instalaciones; encaja en apertura, relleno y compactado y tendido de cables."}
+{"termino": "zanja", "alternativa": "excavación para cables", "veredicto": "R", "motivo": "Mismo problema que «excavación para el tendido» (rechazada): paráfrasis con el hiperónimo «excavación» que se acerca a las partidas de excavación."}
+{"termino": "zanja", "alternativa": "excavación corrida", "veredicto": "R", "motivo": "En obra designa la excavación de cimientos corridos; «relleno y compactado de la excavación corrida» cambia el tipo de trabajo."}
+{"termino": "embocadura", "alternativa": "entrada", "veredicto": "A", "motivo": "«Entrada de canalización de 1 o 2 tubos en arqueta existente» es como se diría en obra; misma operación."}
+{"termino": "embocadura", "alternativa": "entrada de tubos", "veredicto": "A", "motivo": "Precisa la llegada de los tubos a través de la pared de la arqueta o cámara; misma partida."}
+{"termino": "embocadura", "alternativa": "pasamuros", "veredicto": "A", "motivo": "Uso de obra para el paso de tubos a través del paramento de la arqueta o cámara existente; el técnico identifica la misma unidad."}
+{"termino": "embocadura", "alternativa": "penetración", "veredicto": "A", "motivo": "Calco frecuente en instalaciones para el paso de tubos a través de un paramento; se entiende igual."}
+{"termino": "hito", "alternativa": "señalizador", "veredicto": "A", "motivo": "«Señalizador indicador de cables» se entiende como el elemento de superficie que marca los cables enterrados."}
+{"termino": "hito", "alternativa": "señal de trazado", "veredicto": "R", "motivo": "En ferrocarril «señal» evoca señalización de circulación y «trazado» el trazado de vía; ambiguo respecto al hito de cables."}
+{"termino": "hito", "alternativa": "marcador de trazado", "veredicto": "A", "motivo": "Designa el elemento de superficie que marca el trazado del cable, sin la lectura de etiqueta de «marcador de cables»."}
+{"termino": "ficha", "alternativa": "brazos", "veredicto": "R", "motivo": "No consta qué es la ficha de la percha; igual que «ganchos» y «soportes» (rechazados), la sustitución es especulativa."}
+{"termino": "ficha", "alternativa": "brazos portacables", "veredicto": "R", "motivo": "Especulativa por la misma razón que «brazos»: presupone la forma de la ficha sin respaldo del catálogo."}
+{"termino": "ficha", "alternativa": "apoyos para cables", "veredicto": "R", "motivo": "Sigue siendo inferencia sobre qué es la ficha; equivalente a «soportes», ya rechazada."}
+{"termino": "ficha", "alternativa": "alojamientos", "veredicto": "R", "motivo": "Equivalente a «posiciones» (rechazada): puede cambiar el sentido de «percha con 6 fichas»."}
+{"termino": "ficha", "alternativa": "niveles", "veredicto": "R", "motivo": "La más especulativa: presupone brazos superpuestos y cambia lo que se cuenta en la percha."}
+{"termino": "firme", "alternativa": "rasante", "veredicto": "A", "motivo": "Fijar la cinta «a 150 mm de profundidad de la rasante existente» es uso real; mismo punto de referencia."}
+{"termino": "firme", "alternativa": "superficie pavimentada", "veredicto": "A", "motivo": "Describe la superficie desde la que se mide la profundidad de la cinta; misma partida."}
+{"termino": "firme", "alternativa": "capa de rodadura", "veredicto": "A", "motivo": "La profundidad se mide desde la superficie de la capa de rodadura; matiz técnico menor que no cambia la partida."}
+{"termino": "talud", "alternativa": "escarpe", "veredicto": "R", "motivo": "El escarpe es un relieve natural abrupto, como «ladera» (rechazada); «a pie de escarpe» cambia la ubicación del drenaje."}
+{"termino": "talud", "alternativa": "ribazo", "veredicto": "R", "motivo": "Término rural de lindes de fincas, no usado en obra ferroviaria para el talud de la plataforma."}
+{"termino": "talud", "alternativa": "paramento inclinado", "veredicto": "R", "motivo": "«Paramento» evoca muro o fábrica; «canalización en paramentos inclinados» se lee como sobre un muro, no un talud de tierra o roca."}
+{"termino": "talud", "alternativa": "superficie inclinada del terreno", "veredicto": "A", "motivo": "Descripción precisa del talud de terreno o roca que encaja en ambos contextos, a diferencia de «desnivel»."}
+{"termino": "hinca", "alternativa": "elemento clavado en el terreno", "veredicto": "A", "motivo": "Describe la hinca sin presuponer su forma; «elementos clavados en el terreno con cable tensor de acero» identifica la partida."}
+{"termino": "hinca", "alternativa": "soporte clavado al terreno", "veredicto": "A", "motivo": "Neutra respecto a la forma y fiel a la función de sostener el tensor del tendido."}
+{"termino": "hinca", "alternativa": "pieza clavada", "veredicto": "A", "motivo": "Forma corta y neutra; con «cable tensor para el tendido de cables» se entiende la misma unidad."}
+{"termino": "hinca", "alternativa": "punto de amarre clavado", "veredicto": "R", "motivo": "Expresión artificial que presupone un anclaje, como «anclaje clavado» (rechazada)."}
+{"termino": "hinca", "alternativa": "montante clavado", "veredicto": "R", "motivo": "Presupone que el elemento sobresale como montante; especulativa, como «estaca» y «piqueta»."}
+{"termino": "trinchera", "alternativa": "corte en tierra", "veredicto": "A", "motivo": "En ferrocarril trinchera equivale a corte del terreno; «sobre un corte en tierra» conserva el sentido y evita la ambigüedad de «corte» suelto."}
+{"termino": "trinchera", "alternativa": "tramo en corte", "veredicto": "A", "motivo": "Trinchera y desmonte son la misma realidad ferroviaria; la forma ya aceptada para desmonte describe el mismo terreno salvado por el tendido."}
+{"termino": "trinchera", "alternativa": "sección en corte", "veredicto": "A", "motivo": "Mismo razonamiento que «tramo en corte», con vocabulario de secciones tipo; un técnico lo entiende igual."}
+{"termino": "trinchera", "alternativa": "excavación en tierra", "veredicto": "R", "motivo": "Hiperónimo que se confunde con partidas de excavación, como las paráfrasis de excavación ya rechazadas."}
+{"termino": "cuneta", "alternativa": "rigola", "veredicto": "R", "motivo": "La rigola es una pieza estrecha de borde de calzada urbana; no corresponde a una cuneta de hasta 250 cm con paredes de 15 cm."}
+{"termino": "cuneta", "alternativa": "desagüe a cielo abierto", "veredicto": "A", "motivo": "«A cielo abierto» elimina la lectura de tubo; con anchura y paredes se entiende la cuneta revestida."}
+{"termino": "cuneta", "alternativa": "drenaje longitudinal superficial", "veredicto": "A", "motivo": "Término técnico de plataforma que designa precisamente las cunetas; no restringe a camino ni a vía."}
+{"termino": "balasto", "alternativa": "machaca de vía", "veredicto": "A", "motivo": "Coloquialismo real de obra para la piedra del balasto; con «de vía» es inequívoco."}
+{"termino": "balasto", "alternativa": "piedra partida de vía", "veredicto": "A", "motivo": "Variante de «piedra machacada de vía» (aceptada); mismo material."}
+{"termino": "balasto", "alternativa": "árido de vía", "veredicto": "A", "motivo": "El balasto es el árido de la banqueta de vía; con «de vía» no se confunde con otros áridos."}
+{"termino": "repartidor", "alternativa": "regletero", "veredicto": "A", "motivo": "Nombre coloquial en telecomunicaciones del repartidor de regletas donde terminan los pares; mismo elemento."}
+{"termino": "repartidor", "alternativa": "caja de regletas", "veredicto": "R", "motivo": "Presupone una caja y queda muy cerca de «caja de terminales» (OEA180), otro elemento del glosario."}
+{"termino": "repartidor", "alternativa": "distribuidor de pares", "veredicto": "A", "motivo": "«De pares» lo sitúa en telefonía/interfonía, resolviendo la ambigüedad de «distribuidor» suelto."}
+{"termino": "repartidor", "alternativa": "panel de conexionado", "veredicto": "R", "motivo": "«Panel de conexionado» es el patch panel de datos o fibra, un elemento distinto del repartidor de interfonía."}
+{"termino": "repartidor", "alternativa": "punto de interconexión", "veredicto": "A", "motivo": "Descripción funcional neutra; «tubo de acero hasta el punto de interconexión» se entiende como el mismo destino."}
+{"termino": "corrugada", "alternativa": "de acero B500S", "veredicto": "A", "motivo": "Las barras corrugadas de armar en España son B500S; un técnico identifica exactamente la barra."}
+{"termino": "corrugada", "alternativa": "con resaltos", "veredicto": "R", "motivo": "Definición normativa que nadie usa en partidas («barra con resaltos roscada»); suena a invento."}
+{"termino": "corrugada", "alternativa": "de armar", "veredicto": "A", "motivo": "Las barras de armar son corrugadas; «barras de armar roscadas de 20» es uso real."}
+{"termino": "corrugada", "alternativa": "de armadura", "veredicto": "A", "motivo": "Variante de «de armar», menos frecuente pero natural; misma barra."}
+{"termino": "solera", "alternativa": "capa de asiento", "veredicto": "A", "motivo": "Capa sobre la que asientan canaleta, arqueta y cámara; encaja en «nivelación de la capa de asiento» y «sobre capa de asiento de hormigón»."}
+{"termino": "solera", "alternativa": "base de asiento", "veredicto": "A", "motivo": "Variante de «base de apoyo» (aceptada); vale para solera nivelada y para solera de hormigón."}
+{"termino": "solera", "alternativa": "capa de base", "veredicto": "R", "motivo": "«Capa de base» es una capa del firme de carreteras; cambia el elemento."}
+{"termino": "solera", "alternativa": "fondo de asiento", "veredicto": "R", "motivo": "Forma no usada y débil para la solera armada de la cámara de empalme; se confunde con el fondo de la excavación."}
+{"termino": "recibido", "alternativa": "sujeción con mortero", "veredicto": "A", "motivo": "Variante de «fijación con mortero» (aceptada); mantiene el mortero y la operación."}
+{"termino": "recibido", "alternativa": "sellado con mortero", "veredicto": "R", "motivo": "El sellado es solo estanqueidad del hueco y coincide con «el sellado de las tapas», otra operación; cambia el matiz del recibido."}
+{"termino": "recibido", "alternativa": "empotramiento", "veredicto": "A", "motivo": "«El empotramiento de los tubos de acometida» en la pared de la arqueta o cámara se entiende como su recibido."}
+{"termino": "recibido", "alternativa": "colocación con mortero", "veredicto": "A", "motivo": "Fórmula habitual de pliegos para piezas recibidas; misma operación."}
+{"termino": "adecuación", "alternativa": "adaptación", "veredicto": "A", "motivo": "«Adaptación del terreno» se entiende como dejarlo apto para la canaleta; mismo sentido."}
+{"termino": "adecuación", "alternativa": "arreglo", "veredicto": "A", "motivo": "Coloquialismo de obra («arreglo del terreno») con el mismo sentido de preparación general."}
+{"termino": "adecuación", "alternativa": "puesta en condiciones", "veredicto": "A", "motivo": "Fórmula habitual de obra y pliegos para la preparación del terreno, sin el matiz de nivelación."}

@@ -1,0 +1,25 @@
+{
+ "decision": "César, 2026-10-15: estas alternativas rechazadas por el auditor son aceptables",
+ "aceptadas": [
+  {
+   "termino": "acometida",
+   "alternativa": "conexión"
+  },
+  {
+   "termino": "composite",
+   "alternativa": "PRFV"
+  },
+  {
+   "termino": "hastial",
+   "alternativa": "muro lateral del túnel"
+  },
+  {
+   "termino": "hito",
+   "alternativa": "baliza"
+  },
+  {
+   "termino": "topo",
+   "alternativa": "perforación horizontal dirigida"
+  }
+ ]
+}

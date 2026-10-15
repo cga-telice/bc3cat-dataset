@@ -1,0 +1,179 @@
+{
+ "fuentes": "ronda 1 (auditada) + decisiones de César + ronda 2 (auditada)",
+ "aprobadas": {
+  "arqueta": [
+   "caja enterrada"
+  ],
+  "canaleta": [
+   "canal portacables",
+   "canal para cables",
+   "canal de cables",
+   "canal de cableado"
+  ],
+  "cimentación": [
+   "cimiento",
+   "bloque de hormigón",
+   "base de hormigón",
+   "bloque de cimiento"
+  ],
+  "desmonte": [
+   "tramo en corte",
+   "sección en corte",
+   "plataforma en corte",
+   "tramo excavado"
+  ],
+  "terraplén": [
+   "tramo en relleno",
+   "sección en relleno",
+   "plataforma en relleno",
+   "tramo sobre relleno"
+  ],
+  "cata": [
+   "excavación de reconocimiento",
+   "calicata",
+   "excavación de prueba",
+   "excavación de comprobación",
+   "hoyo de reconocimiento"
+  ],
+  "macizo": [
+   "bloque de hormigón",
+   "bloque de cimentación",
+   "cimiento",
+   "bloque de cimiento",
+   "base de hormigón"
+  ],
+  "tapa": [
+   "tapadera",
+   "placa de cubrición"
+  ],
+  "tapado": [
+   "cierre",
+   "cerrado"
+  ],
+  "destapado": [
+   "apertura",
+   "abertura",
+   "retirada de la cubrición",
+   "levantado de las placas de cubrición"
+  ],
+  "mandrilado": [
+   "comprobación con mandril",
+   "paso de mandril",
+   "pasada de mandril",
+   "verificación con mandril",
+   "calibración con mandril"
+  ],
+  "hastial": [
+   "pared lateral",
+   "paramento lateral",
+   "muro lateral del túnel"
+  ],
+  "zanja": [
+   "rasa"
+  ],
+  "ménsula": [
+   "palomilla",
+   "soporte en voladizo",
+   "brazo de soporte"
+  ],
+  "micropilote": [
+   "pilote de pequeño diámetro",
+   "pilote de diámetro reducido",
+   "pilote perforado de pequeño diámetro"
+  ],
+  "topo": [
+   "perforación horizontal",
+   "perforadora horizontal",
+   "perforación horizontal dirigida"
+  ],
+  "acometida": [
+   "entrada",
+   "llegada",
+   "conexión"
+  ],
+  "embocadura": [
+   "entronque",
+   "entrada",
+   "entrada de tubos",
+   "pasamuros",
+   "penetración"
+  ],
+  "hito": [
+   "mojón",
+   "baliza",
+   "señalizador",
+   "marcador de trazado"
+  ],
+  "ficha": [],
+  "firme": [
+   "pavimento",
+   "afirmado",
+   "rasante",
+   "superficie pavimentada",
+   "capa de rodadura"
+  ],
+  "talud": [
+   "superficie inclinada del terreno"
+  ],
+  "hinca": [
+   "elemento clavado en el terreno",
+   "soporte clavado al terreno",
+   "pieza clavada"
+  ],
+  "trinchera": [
+   "corte en tierra",
+   "tramo en corte",
+   "sección en corte"
+  ],
+  "cuneta": [
+   "desagüe a cielo abierto",
+   "drenaje longitudinal superficial"
+  ],
+  "balasto": [
+   "piedra de vía",
+   "piedra machacada de vía",
+   "machaca de vía",
+   "piedra partida de vía",
+   "árido de vía"
+  ],
+  "repartidor": [
+   "regletero",
+   "distribuidor de pares",
+   "punto de interconexión"
+  ],
+  "poste": [
+   "soporte de catenaria",
+   "apoyo",
+   "mástil"
+  ],
+  "corrugada": [
+   "de alta adherencia",
+   "de acero B500S",
+   "de armar",
+   "de armadura"
+  ],
+  "composite": [
+   "material compuesto",
+   "plástico reforzado con fibra de vidrio",
+   "PRFV"
+  ],
+  "solera": [
+   "base de apoyo",
+   "capa de asiento",
+   "base de asiento"
+  ],
+  "recibido": [
+   "fijación con mortero",
+   "sujeción con mortero",
+   "empotramiento",
+   "colocación con mortero"
+  ],
+  "adecuación": [
+   "preparación",
+   "acondicionamiento",
+   "adaptación",
+   "arreglo",
+   "puesta en condiciones"
+  ]
+ }
+}
