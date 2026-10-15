@@ -147,7 +147,7 @@ Comentario: No hay sinónimo exacto: 'trinchera' es término del glosario y no s
 > OEC100$ (BANDEJA DE REJILLA GALVANIZADA PARA CABLES): Suministro y montaje de bandeja de rejilla galvanizada de 300x60 mm bajo falso suelo incluyendo pletinas con tornillos, ménsulas de acero galvanizado y fijaciones así como la puesta a tierra de las mismas.
 
 - [ ] **palomilla** _(sinónimo; agente)_ — Nombre habitual del soporte en voladizo que sostiene bandejas de cables; 'palomillas de acero galvanizado'.
-- [ ] **soporte** _(sinónimo; agente)_ — Término general correcto para el elemento que sostiene la bandeja; 'soportes de acero galvanizado'.
+- [ ] **soporte en voladizo** _(descripción; agente)_ — Desambiguado (César): pieza saliente que sostiene los tubos; distinto del poste.
 - [ ] **brazo de soporte** _(descripción; propuesta de revisión)_ — Pieza saliente que sostiene la tubería.
 - [ ] **repisa** _(sinónimo; propuesta de revisión)_ — Dudosa: más habitual en edificación.
 
@@ -291,10 +291,10 @@ Comentario: En telecomunicaciones/interfonía puede ser un bastidor, un armario 
 > OEA170$ (DESVÍO DE CANALETA): Desvío de canaleta de hormigón y reposición de la misma en el entorno de cimentación de poste de electrificación.
 > OED010$ (CIMENTACIÓN PRISMÁTICA EN DESMONTE DE POSTE DE CATENARIA TIPO d): Suministro y montaje de cimentación rectangular en desmonte d2 para terreno rocoso con postes de electrificación, desde plataforma o vía.
 
-- [ ] **soporte** _(sinónimo; agente)_ — En electrificación ferroviaria 'soporte de catenaria' se usa como sinónimo de poste; vale con 'de electrificación', 'de catenaria' y 'L o R'.
+- [ ] **soporte de catenaria** _(descripción; agente)_ — Desambiguado (César): el elemento vertical que sostiene la catenaria; distinto de la ménsula.
 - [ ] **apoyo** _(sinónimo; propuesta de revisión)_ — Término normal en electrificación para el poste.
 - [ ] **columna** _(sinónimo; propuesta de revisión)_ — Igual que la anterior.
-- [ ] **mástil** _(sinónimo; propuesta de revisión)_ — Dudosa
+- [ ] **mástil** _(sinónimo; propuesta de revisión)_ — Aceptada por César.
 
 Comentario: Se descartan 'mástil' y 'columna', poco usados en ADIF para postes de catenaria.
 

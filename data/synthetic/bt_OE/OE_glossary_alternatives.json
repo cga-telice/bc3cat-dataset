@@ -307,9 +307,9 @@
     "origen": "agente"
    },
    {
-    "texto": "soporte",
-    "tipo": "sinónimo",
-    "nota": "Término general correcto para el elemento que sostiene la bandeja; 'soportes de acero galvanizado'.",
+    "texto": "soporte en voladizo",
+    "tipo": "descripción",
+    "nota": "Desambiguado (César): pieza saliente que sostiene los tubos; distinto del poste.",
     "origen": "agente"
    },
    {
@@ -635,9 +635,9 @@
  "poste": {
   "alternativas": [
    {
-    "texto": "soporte",
-    "tipo": "sinónimo",
-    "nota": "En electrificación ferroviaria 'soporte de catenaria' se usa como sinónimo de poste; vale con 'de electrificación', 'de catenaria' y 'L o R'.",
+    "texto": "soporte de catenaria",
+    "tipo": "descripción",
+    "nota": "Desambiguado (César): el elemento vertical que sostiene la catenaria; distinto de la ménsula.",
     "origen": "agente"
    },
    {
@@ -655,7 +655,7 @@
    {
     "texto": "mástil",
     "tipo": "sinónimo",
-    "nota": "Dudosa",
+    "nota": "Aceptada por César.",
     "origen": "propuesta de revisión"
    }
   ],
