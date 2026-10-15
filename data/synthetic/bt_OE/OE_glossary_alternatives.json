@@ -35,6 +35,12 @@
     "tipo": "descripción",
     "nota": "Igual que la anterior.",
     "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "conducto portacables",
+    "tipo": "descripción",
+    "nota": "Elemento lineal que aloja cables.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "No hay equivalente válido para todos los conceptos: 'canal protectora' solo vale para las de PVC/plástico (OEA010, OEA030), no para las de hormigón o composite; 'canal', 'canalización' y 'bandeja' son otros tipos de partida."
@@ -46,6 +52,18 @@
     "tipo": "sinónimo",
     "nota": "Sinónimo de uso habitual en obra para la cimentación de postes y anclajes; vale en todos los contextos (prismática, cilíndrica, en roca, con micropilotes). Cambia el género (cimiento rectangular/cilíndrico), error menor de concordancia.",
     "origen": "agente"
+   },
+   {
+    "texto": "basamento",
+    "tipo": "sinónimo",
+    "nota": "Base de apoyo del poste.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "fundación",
+    "tipo": "sinónimo",
+    "nota": "Dudosa: calco habitual en textos técnicos, sobre todo en América.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "No se propone 'macizo' (término del glosario) ni 'zapata'/'dado' (formas concretas que no cubren las cimentaciones cilíndricas ni las de micropilotes)."
@@ -63,6 +81,12 @@
     "tipo": "descripción",
     "nota": "Describe la situación en desmonte (terreno excavado) sin acercarse a relleno/terraplén.",
     "origen": "agente"
+   },
+   {
+    "texto": "tramo en corte",
+    "tipo": "descripción",
+    "nota": "Terreno rebajado por excavación; opuesto a terraplén.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "Nunca usar alternativas neutras ('ladera', 'talud', 'zona') ni nada que pueda leerse como relleno: desmonte y terraplén son partidas distintas (tipos d/Cd frente a t/Ct)."
@@ -80,6 +104,12 @@
     "tipo": "descripción",
     "nota": "Describe la plataforma construida con tierras aportadas, que es lo que distingue la cimentación en terraplén.",
     "origen": "agente"
+   },
+   {
+    "texto": "tramo en relleno",
+    "tipo": "descripción",
+    "nota": "Terreno elevado con aportación; opuesto a desmonte.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "No cruzar con desmonte. 'relleno' aparece en otras partidas como relleno de zanja; en la frase 'cimentación ... en relleno' no hay ambigüedad, pero no usarlo fuera de este contexto."
@@ -97,6 +127,12 @@
     "tipo": "descripción",
     "nota": "Expresa el carácter puntual de la cata; válida en los tres conceptos.",
     "origen": "agente"
+   },
+   {
+    "texto": "calicata",
+    "tipo": "sinónimo",
+    "nota": "Término exacto de excavación de reconocimiento.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "Se descarta 'calicata' porque contiene el propio término, y 'sondeo' porque supone una perforación, no una excavación abierta."
@@ -108,6 +144,18 @@
     "tipo": "descripción",
     "nota": "El macizo de electrificación es el bloque de hormigón que cimienta el poste; 'excavación de bloque de hormigón de electrificación' conserva el sentido.",
     "origen": "agente"
+   },
+   {
+    "texto": "dado de hormigón",
+    "tipo": "sinónimo",
+    "nota": "Bloque de hormigón de la cimentación.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "bloque de cimentación",
+    "tipo": "descripción",
+    "nota": "Igual que la anterior.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "No se puede usar 'cimentación' (término del glosario). Se descarta 'dado', que suele designar piezas pequeñas."
@@ -119,6 +167,18 @@
     "tipo": "descripción",
     "nota": "Designa la pieza que cierra canaletas, arquetas y cámaras; vale con 'de hormigón', 'de fundición' y 'de núcleo aglomerado de madera'.",
     "origen": "agente"
+   },
+   {
+    "texto": "tapadera",
+    "tipo": "sinónimo",
+    "nota": "Pieza de cierre de la canaleta o arqueta.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "cubierta",
+    "tipo": "sinónimo",
+    "nota": "Dudosa: puede leerse como cubierta de edificio.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "En todos los ejemplos 'tapa' es la pieza de cierre de canaleta/arqueta/cámara, así que no se propone 'cubierta'. Se descarta 'tapadera' porque contiene el propio término."
@@ -130,6 +190,18 @@
     "tipo": "sinónimo",
     "nota": "'Cierre de canaleta', 'apertura y cierre de cata', 'el cierre de la canalización': uso habitual con el mismo sentido de volver a cubrir lo abierto.",
     "origen": "agente"
+   },
+   {
+    "texto": "cubrición",
+    "tipo": "sinónimo",
+    "nota": "Operación de cubrir la canaleta.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "cubrimiento",
+    "tipo": "sinónimo",
+    "nota": "Igual que la anterior.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "No se propone 'relleno', que vale para la cata pero no para el tapado de canaleta (la canaleta no se rellena, se cierra con sus tapas)."
@@ -141,6 +213,18 @@
     "tipo": "sinónimo",
     "nota": "'Apertura de canaleta existente a mano para localizar cables': mismo sentido, quitar las tapas para acceder al interior.",
     "origen": "agente"
+   },
+   {
+    "texto": "retirada de la cubierta",
+    "tipo": "descripción",
+    "nota": "Operación de abrir la canaleta.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "levantamiento de la cubierta",
+    "tipo": "descripción",
+    "nota": "Igual que la anterior.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "Se descarta 'levantamiento de tapas' porque contiene el término 'tapa' del glosario."
@@ -158,6 +242,12 @@
     "tipo": "descripción",
     "nota": "Expresión habitual en pliegos de canalizaciones con el mismo significado.",
     "origen": "agente"
+   },
+   {
+    "texto": "calibrado del conducto",
+    "tipo": "descripción",
+    "nota": "Comprobación del paso libre del tubo.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "No se propone 'prueba de los conductos', que en OEB020 es otra operación del mismo texto."
@@ -175,6 +265,12 @@
     "tipo": "descripción",
     "nota": "Término técnico habitual para la cara lateral de túneles y estructuras.",
     "origen": "agente"
+   },
+   {
+    "texto": "muro lateral del túnel",
+    "tipo": "descripción",
+    "nota": "Pared lateral del túnel o del puente.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "Se omite 'del túnel' en la alternativa porque la frase ya dice 'de túnel o puente'."
@@ -191,6 +287,12 @@
     "texto": "foso",
     "tipo": "sinónimo",
     "nota": "Dudosa: puede sonar a otra cosa.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "excavación para el tendido",
+    "tipo": "descripción",
+    "nota": "Excavación donde se tienden los tubos o cables.",
     "origen": "propuesta de revisión"
    }
   ],
@@ -209,6 +311,18 @@
     "tipo": "sinónimo",
     "nota": "Término general correcto para el elemento que sostiene la bandeja; 'soportes de acero galvanizado'.",
     "origen": "agente"
+   },
+   {
+    "texto": "brazo de soporte",
+    "tipo": "descripción",
+    "nota": "Pieza saliente que sostiene la tubería.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "repisa",
+    "tipo": "sinónimo",
+    "nota": "Dudosa: más habitual en edificación.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "Solo un concepto (OEC100, bandeja de rejilla); ambas alternativas se refieren al soporte de la bandeja."
@@ -220,6 +334,18 @@
     "tipo": "descripción",
     "nota": "Definición técnica del micropilote; vale en cimentaciones en roca, de poste C-ESP y de anclaje.",
     "origen": "agente"
+   },
+   {
+    "texto": "pilote de diámetro reducido",
+    "tipo": "descripción",
+    "nota": "Igual que «pilote de pequeño diámetro».",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "pilote perforado de pequeño diámetro",
+    "tipo": "descripción",
+    "nota": "Describe además la ejecución.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "No usar 'pilote' a secas: designa un elemento distinto, de mayor diámetro."
@@ -237,6 +363,12 @@
     "tipo": "descripción",
     "nota": "Designa la máquina (el topo) que avanza bajo las vías.",
     "origen": "agente"
+   },
+   {
+    "texto": "perforación horizontal dirigida",
+    "tipo": "descripción",
+    "nota": "Cruce bajo vía sin abrir zanja.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "No usar 'hinca' (término del glosario) ni 'perforación dirigida', que es otra técnica."
@@ -254,6 +386,18 @@
     "tipo": "sinónimo",
     "nota": "'Tubos de llegada', 'taladros necesarios para la llegada de los tubos': uso habitual en arquetas.",
     "origen": "agente"
+   },
+   {
+    "texto": "conexión",
+    "tipo": "sinónimo",
+    "nota": "Enlace del tubo con la instalación.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "enlace",
+    "tipo": "sinónimo",
+    "nota": "Igual que la anterior.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "Se descarta 'conexión' porque es el nombre de otra partida (OEB100, conexión con tubo de acero desde canaleta)."
@@ -265,6 +409,18 @@
     "tipo": "sinónimo",
     "nota": "El entronque de una canalización en una arqueta o cámara existente es la misma operación: abrir la pared y unir los tubos a ella.",
     "origen": "agente"
+   },
+   {
+    "texto": "boca",
+    "tipo": "sinónimo",
+    "nota": "Extremo abierto del tubo.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "boca de entrada",
+    "tipo": "descripción",
+    "nota": "Igual que la anterior.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "Se descartan 'conexión' (otra partida, OEB100) y 'acometida' (término del glosario)."
@@ -282,6 +438,12 @@
     "tipo": "sinónimo",
     "nota": "Señal de superficie usada para marcar trazados enterrados; 'baliza indicadora de cables'.",
     "origen": "agente"
+   },
+   {
+    "texto": "marcador de cables",
+    "tipo": "descripción",
+    "nota": "Señal que marca el trazado de los cables.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "Se descarta 'poste' porque es término del glosario y una partida de cimentación."
@@ -298,6 +460,12 @@
     "texto": "ganchos",
     "tipo": "sinónimo",
     "nota": "Dudosa: igual que la anterior.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "soportes",
+    "tipo": "sinónimo",
+    "nota": "Dudosa: puntos de sujeción de la percha.",
     "origen": "propuesta de revisión"
    }
   ],
@@ -316,6 +484,12 @@
     "tipo": "sinónimo",
     "nota": "Sinónimo técnico de firme en viales y caminos.",
     "origen": "agente"
+   },
+   {
+    "texto": "pavimentación",
+    "tipo": "sinónimo",
+    "nota": "Capas del firme de la calzada.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": ""
@@ -332,6 +506,12 @@
     "texto": "pendiente",
     "tipo": "sinónimo",
     "nota": "Vale en «taludes de excesiva inclinación»; peor en «a pie de talud».",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "desnivel",
+    "tipo": "sinónimo",
+    "nota": "Dudosa: más genérico.",
     "origen": "propuesta de revisión"
    }
   ],
@@ -367,6 +547,18 @@
     "tipo": "descripción",
     "nota": "No puede ser «zanja» ni «desmonte» (términos del glosario).",
     "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "excavación longitudinal",
+    "tipo": "descripción",
+    "nota": "Excavación alargada abierta.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "foso abierto",
+    "tipo": "descripción",
+    "nota": "Dudosa",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "'Zanja' y 'desmonte' son términos del glosario; 'trinchera de tierra' puede ser una zanja o un corte, y cualquier alternativa forzaría una de las dos lecturas."
@@ -384,6 +576,12 @@
     "tipo": "descripción",
     "nota": "El calificativo la separa de canaleta/canalización.",
     "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "canal de desagüe",
+    "tipo": "descripción",
+    "nota": "Canal lateral de evacuación de agua.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "'Canal de drenaje' acerca la consulta a las partidas de canaleta/canalización (regla 4), y 'zanja de drenaje' contiene un término del glosario. No hay sinónimo seguro."
@@ -394,6 +592,18 @@
     "texto": "piedra de vía",
     "tipo": "descripción",
     "nota": "«Grava» sería incorrecta técnicamente.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "piedra machacada de vía",
+    "tipo": "descripción",
+    "nota": "Piedra partida de la banqueta de vía.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "grava de vía",
+    "tipo": "descripción",
+    "nota": "Dudosa: técnicamente imprecisa, pero de uso real.",
     "origen": "propuesta de revisión"
    }
   ],
@@ -412,6 +622,12 @@
     "tipo": "descripción",
     "nota": "Igual que la anterior.",
     "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "bastidor de distribución",
+    "tipo": "descripción",
+    "nota": "Elemento de distribución de interfonía.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "En telecomunicaciones/interfonía puede ser un bastidor, un armario o una caja de terminales; sin más contexto, 'armario de distribución' o 'distribuidor' podrían no ser exactos."
@@ -423,6 +639,24 @@
     "tipo": "sinónimo",
     "nota": "En electrificación ferroviaria 'soporte de catenaria' se usa como sinónimo de poste; vale con 'de electrificación', 'de catenaria' y 'L o R'.",
     "origen": "agente"
+   },
+   {
+    "texto": "apoyo",
+    "tipo": "sinónimo",
+    "nota": "Término normal en electrificación para el poste.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "columna",
+    "tipo": "sinónimo",
+    "nota": "Igual que la anterior.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "mástil",
+    "tipo": "sinónimo",
+    "nota": "Dudosa",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "Se descartan 'mástil' y 'columna', poco usados en ADIF para postes de catenaria."
@@ -434,6 +668,18 @@
     "tipo": "descripción",
     "nota": "En la normativa española la barra corrugada es la barra de alta adherencia; 'barra de alta adherencia roscada'.",
     "origen": "agente"
+   },
+   {
+    "texto": "nervada",
+    "tipo": "sinónimo",
+    "nota": "Barra con nervios de adherencia.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "estriada",
+    "tipo": "sinónimo",
+    "nota": "Igual que la anterior.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "Solo vale como calificativo de 'barra(s)'."
@@ -445,6 +691,18 @@
     "tipo": "sinónimo",
     "nota": "Traducción técnica de 'composite'; 'canaleta de material compuesto-PTR', 'arqueta de material compuesto-PRFV'.",
     "origen": "agente"
+   },
+   {
+    "texto": "plástico reforzado con fibra de vidrio",
+    "tipo": "descripción",
+    "nota": "Material de la canaleta o arqueta.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "PRFV",
+    "tipo": "sinónimo",
+    "nota": "Sigla usada en el propio catálogo.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "Hay que mantener los sufijos PTR/PRFV, que distinguen las variantes."
@@ -456,6 +714,18 @@
     "tipo": "descripción",
     "nota": "La solera es la base sobre la que se asienta la canaleta o arqueta; 'nivelación de la base de apoyo', 'sobre base de apoyo de hormigón en masa'.",
     "origen": "agente"
+   },
+   {
+    "texto": "losa de base",
+    "tipo": "descripción",
+    "nota": "Capa de hormigón de apoyo.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "base de hormigón",
+    "tipo": "descripción",
+    "nota": "Igual que la anterior.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": "Se descarta 'losa' porque suele implicar armadura y espesor estructural."
@@ -467,6 +737,18 @@
     "tipo": "descripción",
     "nota": "El recibido de los tubos es su fijación y sellado con mortero en la pared de la arqueta o cámara; 'la fijación con mortero de los tubos de acometida'.",
     "origen": "agente"
+   },
+   {
+    "texto": "fijación",
+    "tipo": "sinónimo",
+    "nota": "Sujeción de los tubos a la obra.",
+    "origen": "propuesta de revisión"
+   },
+   {
+    "texto": "asentado con mortero",
+    "tipo": "descripción",
+    "nota": "Igual que «fijación con mortero».",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": ""
@@ -484,6 +766,12 @@
     "tipo": "sinónimo",
     "nota": "'El acondicionamiento del terreno': expresión habitual con el mismo sentido.",
     "origen": "agente"
+   },
+   {
+    "texto": "regularización",
+    "tipo": "sinónimo",
+    "nota": "Preparación de la superficie del terreno.",
+    "origen": "propuesta de revisión"
    }
   ],
   "comentario": ""

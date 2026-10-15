@@ -20,6 +20,7 @@ Comentario: Sin alternativa segura. 'registro'/'caja de registro' choca con OEB0
 
 - [ ] **canal portacables** _(descripción; propuesta de revisión)_ — El calificativo la distingue del «canal» genérico.
 - [ ] **canal para cables** _(descripción; propuesta de revisión)_ — Igual que la anterior.
+- [ ] **conducto portacables** _(descripción; propuesta de revisión)_ — Elemento lineal que aloja cables.
 
 Comentario: No hay equivalente válido para todos los conceptos: 'canal protectora' solo vale para las de PVC/plástico (OEA010, OEA030), no para las de hormigón o composite; 'canal', 'canalización' y 'bandeja' son otros tipos de partida.
 
@@ -29,6 +30,8 @@ Comentario: No hay equivalente válido para todos los conceptos: 'canal protecto
 > OED010$ (CIMENTACIÓN PRISMÁTICA EN DESMONTE DE POSTE DE CATENARIA TIPO d): Suministro y montaje de cimentación rectangular en desmonte d2 para terreno rocoso con postes de electrificación, desde plataforma o vía.
 
 - [ ] **cimiento** _(sinónimo; agente)_ — Sinónimo de uso habitual en obra para la cimentación de postes y anclajes; vale en todos los contextos (prismática, cilíndrica, en roca, con micropilotes). Cambia el género (cimiento rectangular/cilíndrico), error menor de concordancia.
+- [ ] **basamento** _(sinónimo; propuesta de revisión)_ — Base de apoyo del poste.
+- [ ] **fundación** _(sinónimo; propuesta de revisión)_ — Dudosa: calco habitual en textos técnicos, sobre todo en América.
 
 Comentario: No se propone 'macizo' (término del glosario) ni 'zapata'/'dado' (formas concretas que no cubren las cimentaciones cilíndricas ni las de micropilotes).
 
@@ -39,6 +42,7 @@ Comentario: No se propone 'macizo' (término del glosario) ni 'zapata'/'dado' (f
 
 - [ ] **corte** _(sinónimo; agente)_ — En explanaciones ferroviarias 'en corte' es el sinónimo habitual de 'en desmonte' (sección excavada bajo el terreno natural); mantiene la oposición con terraplén.
 - [ ] **zona de corte del terreno** _(descripción; agente)_ — Describe la situación en desmonte (terreno excavado) sin acercarse a relleno/terraplén.
+- [ ] **tramo en corte** _(descripción; propuesta de revisión)_ — Terreno rebajado por excavación; opuesto a terraplén.
 
 Comentario: Nunca usar alternativas neutras ('ladera', 'talud', 'zona') ni nada que pueda leerse como relleno: desmonte y terraplén son partidas distintas (tipos d/Cd frente a t/Ct).
 
@@ -49,6 +53,7 @@ Comentario: Nunca usar alternativas neutras ('ladera', 'talud', 'zona') ni nada 
 
 - [ ] **relleno** _(sinónimo; agente)_ — En explanaciones 'en relleno' es el opuesto habitual de 'en corte' y equivale a 'en terraplén'.
 - [ ] **zona de relleno** _(descripción; agente)_ — Describe la plataforma construida con tierras aportadas, que es lo que distingue la cimentación en terraplén.
+- [ ] **tramo en relleno** _(descripción; propuesta de revisión)_ — Terreno elevado con aportación; opuesto a desmonte.
 
 Comentario: No cruzar con desmonte. 'relleno' aparece en otras partidas como relleno de zanja; en la frase 'cimentación ... en relleno' no hay ambigüedad, pero no usarlo fuera de este contexto.
 
@@ -59,6 +64,7 @@ Comentario: No cruzar con desmonte. 'relleno' aparece en otras partidas como rel
 
 - [ ] **excavación de reconocimiento** _(descripción; agente)_ — Una cata es una excavación puntual para localizar o reconocer canalizaciones o el terreno; vale para localizar canalización, reparar subconducto y antes de excavar el macizo.
 - [ ] **excavación localizada** _(descripción; agente)_ — Expresa el carácter puntual de la cata; válida en los tres conceptos.
+- [ ] **calicata** _(sinónimo; propuesta de revisión)_ — Término exacto de excavación de reconocimiento.
 
 Comentario: Se descarta 'calicata' porque contiene el propio término, y 'sondeo' porque supone una perforación, no una excavación abierta.
 
@@ -67,6 +73,8 @@ Comentario: Se descarta 'calicata' porque contiene el propio término, y 'sondeo
 > OED180$ (CATA PREVIA DE EXCAVACIÓN DE MACIZO DE ELECTRIFICACIÓN): Cata previa de excavación de macizo de electrificación en terreno rocoso de profundidad hasta 1 m.
 
 - [ ] **bloque de hormigón** _(descripción; agente)_ — El macizo de electrificación es el bloque de hormigón que cimienta el poste; 'excavación de bloque de hormigón de electrificación' conserva el sentido.
+- [ ] **dado de hormigón** _(sinónimo; propuesta de revisión)_ — Bloque de hormigón de la cimentación.
+- [ ] **bloque de cimentación** _(descripción; propuesta de revisión)_ — Igual que la anterior.
 
 Comentario: No se puede usar 'cimentación' (término del glosario). Se descarta 'dado', que suele designar piezas pequeñas.
 
@@ -76,6 +84,8 @@ Comentario: No se puede usar 'cimentación' (término del glosario). Se descarta
 > OEA050$ (CANALETA DE HORMIGÓN): Canaleta prefabricada de hormigón armado de 25 N/mm2 de resistencia a la compresión, normalizada tipo Normal (1000x328x170) de 2 alveolos y una tapa.
 
 - [ ] **pieza de cierre** _(descripción; agente)_ — Designa la pieza que cierra canaletas, arquetas y cámaras; vale con 'de hormigón', 'de fundición' y 'de núcleo aglomerado de madera'.
+- [ ] **tapadera** _(sinónimo; propuesta de revisión)_ — Pieza de cierre de la canaleta o arqueta.
+- [ ] **cubierta** _(sinónimo; propuesta de revisión)_ — Dudosa: puede leerse como cubierta de edificio.
 
 Comentario: En todos los ejemplos 'tapa' es la pieza de cierre de canaleta/arqueta/cámara, así que no se propone 'cubierta'. Se descarta 'tapadera' porque contiene el propio término.
 
@@ -85,6 +95,8 @@ Comentario: En todos los ejemplos 'tapa' es la pieza de cierre de canaleta/arque
 > OEA160$ (LEVANTE DE TIERRAS Y BALASTO (20CM) PARA DESCUBRIR CANALETA EXISTENTE): Levante de tierras y balasto (20 cm) para descubrir canaleta existente, tapado de la misma e incluyendo nueva aportación de tierras.
 
 - [ ] **cierre** _(sinónimo; agente)_ — 'Cierre de canaleta', 'apertura y cierre de cata', 'el cierre de la canalización': uso habitual con el mismo sentido de volver a cubrir lo abierto.
+- [ ] **cubrición** _(sinónimo; propuesta de revisión)_ — Operación de cubrir la canaleta.
+- [ ] **cubrimiento** _(sinónimo; propuesta de revisión)_ — Igual que la anterior.
 
 Comentario: No se propone 'relleno', que vale para la cata pero no para el tapado de canaleta (la canaleta no se rellena, se cierra con sus tapas).
 
@@ -93,6 +105,8 @@ Comentario: No se propone 'relleno', que vale para la cata pero no para el tapad
 > OEA090$ (DESTAPADO DE CANALETA EXISTENTE): Destapado de canaleta existente a mano para localizar cables o tirar cables nuevos.
 
 - [ ] **apertura** _(sinónimo; agente)_ — 'Apertura de canaleta existente a mano para localizar cables': mismo sentido, quitar las tapas para acceder al interior.
+- [ ] **retirada de la cubierta** _(descripción; propuesta de revisión)_ — Operación de abrir la canaleta.
+- [ ] **levantamiento de la cubierta** _(descripción; propuesta de revisión)_ — Igual que la anterior.
 
 Comentario: Se descarta 'levantamiento de tapas' porque contiene el término 'tapa' del glosario.
 
@@ -103,6 +117,7 @@ Comentario: Se descarta 'levantamiento de tapas' porque contiene el término 'ta
 
 - [ ] **comprobación con mandril** _(descripción; agente)_ — El mandrilado es pasar un mandril por el tubo para comprobar que está libre y sin deformaciones; vale en 'el mandrilado de tubos' e 'incluso mandrilado'.
 - [ ] **paso de mandril** _(descripción; agente)_ — Expresión habitual en pliegos de canalizaciones con el mismo significado.
+- [ ] **calibrado del conducto** _(descripción; propuesta de revisión)_ — Comprobación del paso libre del tubo.
 
 Comentario: No se propone 'prueba de los conductos', que en OEB020 es otra operación del mismo texto.
 
@@ -112,6 +127,7 @@ Comentario: No se propone 'prueba de los conductos', que en OEB020 es otra opera
 
 - [ ] **pared lateral** _(descripción; agente)_ — El hastial es la pared lateral del túnel; 'sobre pared lateral de túnel o puente' sigue siendo gramatical.
 - [ ] **paramento lateral** _(descripción; agente)_ — Término técnico habitual para la cara lateral de túneles y estructuras.
+- [ ] **muro lateral del túnel** _(descripción; propuesta de revisión)_ — Pared lateral del túnel o del puente.
 
 Comentario: Se omite 'del túnel' en la alternativa porque la frase ya dice 'de túnel o puente'.
 
@@ -122,6 +138,7 @@ Comentario: Se omite 'del túnel' en la alternativa porque la frase ya dice 'de 
 
 - [ ] **excavación lineal** _(descripción; propuesta de revisión)_ — Excavación alargada para el tendido.
 - [ ] **foso** _(sinónimo; propuesta de revisión)_ — Dudosa: puede sonar a otra cosa.
+- [ ] **excavación para el tendido** _(descripción; propuesta de revisión)_ — Excavación donde se tienden los tubos o cables.
 
 Comentario: No hay sinónimo exacto: 'trinchera' es término del glosario y no significa lo mismo; 'excavación' es un hiperónimo que se confunde con otras partidas de excavación (p. ej. OED180) y con el fondo de la canaleta de fábrica (OEA060); 'regata' es una ranura en paramentos.
 
@@ -131,6 +148,8 @@ Comentario: No hay sinónimo exacto: 'trinchera' es término del glosario y no s
 
 - [ ] **palomilla** _(sinónimo; agente)_ — Nombre habitual del soporte en voladizo que sostiene bandejas de cables; 'palomillas de acero galvanizado'.
 - [ ] **soporte** _(sinónimo; agente)_ — Término general correcto para el elemento que sostiene la bandeja; 'soportes de acero galvanizado'.
+- [ ] **brazo de soporte** _(descripción; propuesta de revisión)_ — Pieza saliente que sostiene la tubería.
+- [ ] **repisa** _(sinónimo; propuesta de revisión)_ — Dudosa: más habitual en edificación.
 
 Comentario: Solo un concepto (OEC100, bandeja de rejilla); ambas alternativas se refieren al soporte de la bandeja.
 
@@ -140,6 +159,8 @@ Comentario: Solo un concepto (OEC100, bandeja de rejilla); ambas alternativas se
 > OEG020$ (CIMENTACIÓN EN ROCA CON MICROPILOTE): Cimentación en roca con micropilote con barra corrugada roscada de 25 mm, diámetro de 0,75 m y profundidad de 2.5 m, con acesso por vía .
 
 - [ ] **pilote de pequeño diámetro** _(descripción; agente)_ — Definición técnica del micropilote; vale en cimentaciones en roca, de poste C-ESP y de anclaje.
+- [ ] **pilote de diámetro reducido** _(descripción; propuesta de revisión)_ — Igual que «pilote de pequeño diámetro».
+- [ ] **pilote perforado de pequeño diámetro** _(descripción; propuesta de revisión)_ — Describe además la ejecución.
 
 Comentario: No usar 'pilote' a secas: designa un elemento distinto, de mayor diámetro.
 
@@ -149,6 +170,7 @@ Comentario: No usar 'pilote' a secas: designa un elemento distinto, de mayor di�
 
 - [ ] **perforación horizontal** _(descripción; agente)_ — 'Hinca de tubo de polietileno con perforación horizontal bajo vías': describe el método sin abrir zanja.
 - [ ] **perforadora horizontal** _(descripción; agente)_ — Designa la máquina (el topo) que avanza bajo las vías.
+- [ ] **perforación horizontal dirigida** _(descripción; propuesta de revisión)_ — Cruce bajo vía sin abrir zanja.
 
 Comentario: No usar 'hinca' (término del glosario) ni 'perforación dirigida', que es otra técnica.
 
@@ -159,6 +181,8 @@ Comentario: No usar 'hinca' (término del glosario) ni 'perforación dirigida', 
 
 - [ ] **entrada** _(sinónimo; agente)_ — 'Tubos de entrada', 'para la entrada de los tubos', 'para entrada a puesto de mando': mismo sentido de llegada de la canalización al elemento.
 - [ ] **llegada** _(sinónimo; agente)_ — 'Tubos de llegada', 'taladros necesarios para la llegada de los tubos': uso habitual en arquetas.
+- [ ] **conexión** _(sinónimo; propuesta de revisión)_ — Enlace del tubo con la instalación.
+- [ ] **enlace** _(sinónimo; propuesta de revisión)_ — Igual que la anterior.
 
 Comentario: Se descarta 'conexión' porque es el nombre de otra partida (OEB100, conexión con tubo de acero desde canaleta).
 
@@ -167,6 +191,8 @@ Comentario: Se descarta 'conexión' porque es el nombre de otra partida (OEB100,
 > OEB120$ (EMBOCADURA CANALIZACIÓN EN ARQUETA O CÁMARA EXISTENTE): Suministro y ejecución de embocadura canalización de 1 o 2 tubos en arqueta o cámara existente
 
 - [ ] **entronque** _(sinónimo; agente)_ — El entronque de una canalización en una arqueta o cámara existente es la misma operación: abrir la pared y unir los tubos a ella.
+- [ ] **boca** _(sinónimo; propuesta de revisión)_ — Extremo abierto del tubo.
+- [ ] **boca de entrada** _(descripción; propuesta de revisión)_ — Igual que la anterior.
 
 Comentario: Se descartan 'conexión' (otra partida, OEB100) y 'acometida' (término del glosario).
 
@@ -176,6 +202,7 @@ Comentario: Se descartan 'conexión' (otra partida, OEB100) y 'acometida' (térm
 
 - [ ] **mojón** _(sinónimo; agente)_ — Pieza fija clavada en el terreno que marca un trazado; 'mojón indicador de cables'.
 - [ ] **baliza** _(sinónimo; agente)_ — Señal de superficie usada para marcar trazados enterrados; 'baliza indicadora de cables'.
+- [ ] **marcador de cables** _(descripción; propuesta de revisión)_ — Señal que marca el trazado de los cables.
 
 Comentario: Se descarta 'poste' porque es término del glosario y una partida de cimentación.
 
@@ -185,6 +212,7 @@ Comentario: Se descarta 'poste' porque es término del glosario y una partida de
 
 - [ ] **posiciones** _(descripción; propuesta de revisión)_ — Dudosa: puntos de sujeción de la percha; solo hay un ejemplo.
 - [ ] **ganchos** _(sinónimo; propuesta de revisión)_ — Dudosa: igual que la anterior.
+- [ ] **soportes** _(sinónimo; propuesta de revisión)_ — Dudosa: puntos de sujeción de la percha.
 
 Comentario: Con un solo ejemplo ('percha para cables con 6 fichas') no se puede saber si 'ficha' es el brazo, el hueco o la pieza de sujeción; cualquier alternativa sería inventada.
 
@@ -195,6 +223,7 @@ Comentario: Con un solo ejemplo ('percha para cables con 6 fichas') no se puede 
 
 - [ ] **pavimento** _(sinónimo; agente)_ — 'A 150 mm de profundidad del pavimento existente': mismo sentido de superficie terminada.
 - [ ] **afirmado** _(sinónimo; agente)_ — Sinónimo técnico de firme en viales y caminos.
+- [ ] **pavimentación** _(sinónimo; propuesta de revisión)_ — Capas del firme de la calzada.
 
 ## talud  _(2 conceptos)_
 
@@ -203,6 +232,7 @@ Comentario: Con un solo ejemplo ('percha para cables con 6 fichas') no se puede 
 
 - [ ] **ladera** _(sinónimo; propuesta de revisión)_ — «a pie de talud» → «al pie de la ladera»; «taludes de excesiva inclinación» → «laderas…».
 - [ ] **pendiente** _(sinónimo; propuesta de revisión)_ — Vale en «taludes de excesiva inclinación»; peor en «a pie de talud».
+- [ ] **desnivel** _(sinónimo; propuesta de revisión)_ — Dudosa: más genérico.
 
 Comentario: No hay sinónimo exacto: 'ladera' es natural y no siempre es un talud; 'pendiente' no funciona en 'a pie de talud'; 'desmonte'/'terraplén' son términos del glosario y cambiarían la partida.
 
@@ -221,6 +251,8 @@ Comentario: En OEB180 'hincas con cable tensor' designa los elementos hincados q
 > OEB180$ (HINCA CON CABLE TENSOR DE ACERO): Hincas con cable tensor de acero para el tendido de cables sobre una trinchera de tierra.
 
 - [ ] **excavación a cielo abierto** _(descripción; propuesta de revisión)_ — No puede ser «zanja» ni «desmonte» (términos del glosario).
+- [ ] **excavación longitudinal** _(descripción; propuesta de revisión)_ — Excavación alargada abierta.
+- [ ] **foso abierto** _(descripción; propuesta de revisión)_ — Dudosa
 
 Comentario: 'Zanja' y 'desmonte' son términos del glosario; 'trinchera de tierra' puede ser una zanja o un corte, y cualquier alternativa forzaría una de las dos lecturas.
 
@@ -230,6 +262,7 @@ Comentario: 'Zanja' y 'desmonte' son términos del glosario; 'trinchera de tierr
 
 - [ ] **desagüe lateral** _(descripción; propuesta de revisión)_ — Evita confundirla con canaleta.
 - [ ] **canal de drenaje del camino** _(descripción; propuesta de revisión)_ — El calificativo la separa de canaleta/canalización.
+- [ ] **canal de desagüe** _(descripción; propuesta de revisión)_ — Canal lateral de evacuación de agua.
 
 Comentario: 'Canal de drenaje' acerca la consulta a las partidas de canaleta/canalización (regla 4), y 'zanja de drenaje' contiene un término del glosario. No hay sinónimo seguro.
 
@@ -238,6 +271,8 @@ Comentario: 'Canal de drenaje' acerca la consulta a las partidas de canaleta/can
 > OEA160$ (LEVANTE DE TIERRAS Y BALASTO (20CM) PARA DESCUBRIR CANALETA EXISTENTE): Levante de tierras y balasto (20 cm) para descubrir canaleta existente, tapado de la misma e incluyendo nueva aportación de tierras.
 
 - [ ] **piedra de vía** _(descripción; propuesta de revisión)_ — «Grava» sería incorrecta técnicamente.
+- [ ] **piedra machacada de vía** _(descripción; propuesta de revisión)_ — Piedra partida de la banqueta de vía.
+- [ ] **grava de vía** _(descripción; propuesta de revisión)_ — Dudosa: técnicamente imprecisa, pero de uso real.
 
 Comentario: Término específico de vía sin sinónimo de oficio: 'grava' es incorrecto (el balasto es piedra partida) y una descripción ('piedra partida de vía') no es habitual entre técnicos.
 
@@ -247,6 +282,7 @@ Comentario: Término específico de vía sin sinónimo de oficio: 'grava' es inc
 
 - [ ] **distribuidor** _(sinónimo; propuesta de revisión)_ — Contexto de interfonía en túnel.
 - [ ] **armario de distribución** _(descripción; propuesta de revisión)_ — Igual que la anterior.
+- [ ] **bastidor de distribución** _(descripción; propuesta de revisión)_ — Elemento de distribución de interfonía.
 
 Comentario: En telecomunicaciones/interfonía puede ser un bastidor, un armario o una caja de terminales; sin más contexto, 'armario de distribución' o 'distribuidor' podrían no ser exactos.
 
@@ -256,6 +292,9 @@ Comentario: En telecomunicaciones/interfonía puede ser un bastidor, un armario 
 > OED010$ (CIMENTACIÓN PRISMÁTICA EN DESMONTE DE POSTE DE CATENARIA TIPO d): Suministro y montaje de cimentación rectangular en desmonte d2 para terreno rocoso con postes de electrificación, desde plataforma o vía.
 
 - [ ] **soporte** _(sinónimo; agente)_ — En electrificación ferroviaria 'soporte de catenaria' se usa como sinónimo de poste; vale con 'de electrificación', 'de catenaria' y 'L o R'.
+- [ ] **apoyo** _(sinónimo; propuesta de revisión)_ — Término normal en electrificación para el poste.
+- [ ] **columna** _(sinónimo; propuesta de revisión)_ — Igual que la anterior.
+- [ ] **mástil** _(sinónimo; propuesta de revisión)_ — Dudosa
 
 Comentario: Se descartan 'mástil' y 'columna', poco usados en ADIF para postes de catenaria.
 
@@ -265,6 +304,8 @@ Comentario: Se descartan 'mástil' y 'columna', poco usados en ADIF para postes 
 > OEG010$ (CIMENTACIÓN CILÍNDRICA POSTES): Suministro y montaje de cimentación cilíndrica para postes de electrificación, de 0.75 de diámetro y 2 de profundidad, compuesta por 4 barras corrugadas roscadas de 20 .
 
 - [ ] **de alta adherencia** _(descripción; agente)_ — En la normativa española la barra corrugada es la barra de alta adherencia; 'barra de alta adherencia roscada'.
+- [ ] **nervada** _(sinónimo; propuesta de revisión)_ — Barra con nervios de adherencia.
+- [ ] **estriada** _(sinónimo; propuesta de revisión)_ — Igual que la anterior.
 
 Comentario: Solo vale como calificativo de 'barra(s)'.
 
@@ -274,6 +315,8 @@ Comentario: Solo vale como calificativo de 'barra(s)'.
 > OEA070$ (ACCESORIOS PARA CANALETA COMPOSITE - PTR): Suministro y montaje de módulo de empalme para canaleta composite-PTR, incluyendo piezas para el cosido entre las mismas, según ET 03.365.064.9.
 
 - [ ] **material compuesto** _(sinónimo; agente)_ — Traducción técnica de 'composite'; 'canaleta de material compuesto-PTR', 'arqueta de material compuesto-PRFV'.
+- [ ] **plástico reforzado con fibra de vidrio** _(descripción; propuesta de revisión)_ — Material de la canaleta o arqueta.
+- [ ] **PRFV** _(sinónimo; propuesta de revisión)_ — Sigla usada en el propio catálogo.
 
 Comentario: Hay que mantener los sufijos PTR/PRFV, que distinguen las variantes.
 
@@ -283,6 +326,8 @@ Comentario: Hay que mantener los sufijos PTR/PRFV, que distinguen las variantes.
 > OEA050$ (CANALETA DE HORMIGÓN): Totalmente instalada, incluso la adecuación del terreno, la compactación, la nivelación de la solera, la cama de arena de río de 10 cm, el sellado de las tapas y las juntas con mortero y los rellenos compactados.
 
 - [ ] **base de apoyo** _(descripción; agente)_ — La solera es la base sobre la que se asienta la canaleta o arqueta; 'nivelación de la base de apoyo', 'sobre base de apoyo de hormigón en masa'.
+- [ ] **losa de base** _(descripción; propuesta de revisión)_ — Capa de hormigón de apoyo.
+- [ ] **base de hormigón** _(descripción; propuesta de revisión)_ — Igual que la anterior.
 
 Comentario: Se descarta 'losa' porque suele implicar armadura y espesor estructural.
 
@@ -292,6 +337,8 @@ Comentario: Se descarta 'losa' porque suele implicar armadura y espesor estructu
 > OEC020$ (ARQUETA PREFABRICADA PARA INSTALACIONES FERROVIARIAS): Arqueta prefabricada de 600x600x600 mm de dimensiones interiores, incluso recibido de los tubos de acometida y desague profundo, tapa de hormigón y relleno posterior, así como el acabado y limpieza de la misma.
 
 - [ ] **fijación con mortero** _(descripción; agente)_ — El recibido de los tubos es su fijación y sellado con mortero en la pared de la arqueta o cámara; 'la fijación con mortero de los tubos de acometida'.
+- [ ] **fijación** _(sinónimo; propuesta de revisión)_ — Sujeción de los tubos a la obra.
+- [ ] **asentado con mortero** _(descripción; propuesta de revisión)_ — Igual que «fijación con mortero».
 
 ## adecuación  _(1 conceptos)_
 
@@ -299,6 +346,7 @@ Comentario: Se descarta 'losa' porque suele implicar armadura y espesor estructu
 
 - [ ] **preparación** _(sinónimo; agente)_ — 'La preparación del terreno': mismo sentido antes de compactar y nivelar.
 - [ ] **acondicionamiento** _(sinónimo; agente)_ — 'El acondicionamiento del terreno': expresión habitual con el mismo sentido.
+- [ ] **regularización** _(sinónimo; propuesta de revisión)_ — Preparación de la superficie del terreno.
 
 ## Reglas de contexto
 
