@@ -40,6 +40,7 @@ import calibrate_characterization as cal  # noqa: E402
 from synthetic.back_translation import reassemble, segment  # noqa: E402
 from synthetic.bt_masking import MARKER_RE, check_masks, mask_with_values, unmask_surface  # noqa: E402
 from synthetic.bt_restore import renumber, restore_terms  # noqa: E402
+from synthetic.bt_glossary import substitute_glossary  # noqa: E402
 from synthetic.bt_values import assemble_values  # noqa: E402
 from synthetic.characterization import norm_text  # noqa: E402
 
@@ -159,10 +160,12 @@ def main(argv=None) -> int:
     forbidden = audit.forbidden_texts(handoff) | {norm_text(q["text"]) for q in stacked.values()}
     variants = build_bt.approved_variants(cfg)
     label_p = cfg["bt_values"]["label_probability"]
-    recs, rejected, seen = [], [], {}
+    glossary_alts = json.loads((REPO / bs["glossary_alternatives"]).read_text(encoding="utf-8"))["aprobadas"]
+    glossary_p = bs["glossary_probability"]
+    recs, rejected, seen, side = [], [], {}, []
     bt_meta = {"pivot": "en", "engine": "marian", "unit": "sentence",
                "chains": bs["chains"], "mask_strategy": cfg["bt"]["mask_strategy"],
-               "glossary_restoration": "post"}
+               "glossary_restoration": "post", "glossary_synonym_p": bs["glossary_probability"]}
     for (_, src), sl, (m, mapping, values, pieces) in zip(jobs, slots, masked):
         out_pieces, n_bt, n_all, used = [], 0, 0, []
         for p in pieces:
@@ -181,6 +184,11 @@ def main(argv=None) -> int:
             continue
         back_masked = reassemble(pieces, out_pieces)
         check_masks(back_masked, mapping)
+        # sinónimos del glosario en la prosa (los marcadores de valor no se tocan)
+        back_masked, gsubs = substitute_glossary(back_masked, glossary_alts, seed=cfg["seed"],
+                                                 key=f"glossary|{src['item_key']}", p=glossary_p,
+                                                 context=unmask_surface(back_masked, mapping))
+        check_masks(back_masked, mapping)
         concept = src["parent_key"]
         params = stage[concept].get("parameters") or {}
         labels = {f"${ax}": " ".join(b["label"].split()) for ax, b in params.items()}
@@ -190,7 +198,8 @@ def main(argv=None) -> int:
                                      labels, seed=cfg["seed"], key=f"bt_origv|{src['item_key']}",
                                      label_p=label_p)
         r = ctx.check(text, src["item_key"], extractors=(), source_text=src["text"],
-                      query_key=src["item_key"], forbidden=forbidden, substitutions=subs)
+                      query_key=src["item_key"], forbidden=forbidden,
+                      substitutions=subs + [{"original": g["original"], "new": g["new"]} for g in gsubs])
         if r.ok and norm_text(text) in seen:
             r.ok, r.gate, r.reason = False, "G6", "duplicate_within_set"
         if not r.ok:
@@ -201,9 +210,25 @@ def main(argv=None) -> int:
         rec["bt_sentences"] = {"translated": n_bt, "total": n_all, "fraction": round(n_bt / n_all, 3),
                                "chains": dict(Counter(used))}
         rec["characterization_check"]["mode"] = "structural_masked+sentence_audit"
+        if gsubs:
+            for field in ("modification_types", "texto_modification_types",
+                          "texto_modification_types_post_bt"):
+                rec[field].append("glossary_synonym")
+            for field in ("modification_count", "texto_modification_count",
+                          "texto_modification_count_post_bt"):
+                rec[field] += 1
         recs.append(rec)
+        side.append({"item_key": rec["item_key"], "source_item_key": src["item_key"],
+                     "modifications": [
+                         {"type": "back_translation", "layer": "surface", "unit": "sentence",
+                          "sentences": {"translated": n_bt, "total": n_all}, "chains": dict(Counter(used))},
+                         *({"type": "value_back_translation", "layer": "surface", **s} for s in subs),
+                         *({"type": "glossary_synonym", "layer": "surface", **g} for g in gsubs)]})
     recs.sort(key=lambda r: r["item_key"])
+    side.sort(key=lambda r: r["item_key"])
     audit.write_atomic(REPO / bs["output"], json.dumps(recs, ensure_ascii=False, indent=1) + "\n")
+    audit.write_atomic(REPO / bs["modifications"], "".join(
+        json.dumps(s, ensure_ascii=False, sort_keys=True) + "\n" for s in side))
     audit.write_atomic(REPO / bs["rejected"], "".join(
         json.dumps(x, ensure_ascii=False, sort_keys=True) + "\n" for x in sorted(rejected, key=lambda x: x["source_item_key"])))
     frac = [r["bt_sentences"]["fraction"] for r in recs]

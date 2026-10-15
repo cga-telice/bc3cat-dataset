@@ -83,3 +83,7 @@ bt_sentences:
   verdicts: data/synthetic/bt_OE/OE_bt_origv_sentence_verdicts.jsonl
   output: data/synthetic/bt_OE/OE_bt_origv_sentences_en_texto.json
   rejected: data/synthetic/bt_OE/OE_bt_origv_sentences_rejected.jsonl
+  modifications: data/synthetic/bt_OE/OE_bt_origv_sentences_modifications.jsonl
+  # Sinónimos del glosario (idea de César): alternativas auditadas en tres rondas + decisiones de César
+  glossary_alternatives: data/synthetic/bt_OE/OE_glossary_approved.json
+  glossary_probability: 0.5
