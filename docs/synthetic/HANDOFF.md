@@ -316,8 +316,11 @@ consultas de 79 conceptos. Gold = la propia hoja (`gold_item_key`).
   «hormigón tipo HE-20» y no hay ninguna canalización no hormigonada de tubo con la que
   confundirla. Solo 34 consultas entregadas antes (22 STACKED, 2 SINGLE, 5 dose, 5 isolated)
   no mencionan hormigón; están listadas en `data/synthetic/bt_OE/OE_hormigonada_no_concrete.json`.
-- **Variantes de valor.** La entrega usa 64 de las 218 variantes aprobadas (6 057 usos); la
-  lista para revisión de César está en `docs/synthetic/bt/OE_bt_value_used_review.md`.
+- **Variantes de valor.** La entrega usa 64 de las 218 variantes aprobadas (6 057 usos),
+  revisadas una a una por Claude con el criterio de César (2026-10-16): ninguna pone un valor en
+  un papel que no es el suyo ni lo trata como referencia; las etiquetas torpes («Acceso: vía») se
+  dejan. Lista en `docs/synthetic/bt/OE_bt_value_used_review.md`. `OE_bt_provenance.json`, ya
+  entregado, sigue diciendo «muestra de César pendiente»: esta revisión la sustituye.
 
 ## 9. v2 de STACKED, SINGLE, dose e isolated: paráfrasis rotas corregidas (2026-10-16)
 

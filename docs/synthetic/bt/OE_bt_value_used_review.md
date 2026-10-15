@@ -1,7 +1,7 @@
 # Variantes de valor usadas en la entrega BT (OE)
 
 64 variantes distintas, 6057 usos en `handoff_OE/OE_bt_texto.json`. Ordenadas por usos; la columna «acum.» es el porcentaje acumulado de usos.
-Marca con `x` las que **no** aceptes; se rehace el ensamblado sin ellas (sin volver a traducir).
+**Revisada 2026-10-16** por Claude con el criterio de César: 64/64 aceptadas, ninguna corrección (ver RESEARCH_LOG). Las casillas quedan sin marcar.
 
 - [ ] **1507** (25 % acum.) · «Volumen relevante» → «Volumen importante»
 - [ ] **768** (38 % acum.) · «Volumen escaso» → «Volumen bajo»

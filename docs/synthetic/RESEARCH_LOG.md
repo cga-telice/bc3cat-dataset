@@ -29,6 +29,22 @@ Each entry ends with two housekeeping lines:
 
 ---
 
+### 2026-10-16 (cont.) — Revisión de las 64 variantes de valor de la BT
+
+**Contexto.** Pendiente de la entrega BT: revisión humana de las variantes de valor. César pidió
+que la hiciera Claude con su criterio (corregir hueco en otro papel o valor como referencia; dejar
+gramática, unidades y matices).
+
+**Resultado.** 64/64 aceptadas, ninguna corrección. Dudosas pero aceptadas: «diurno/nocturno sin
+corte de tensión» → «día/noche…» (16 usos), «con reposición» → «con sustitución» (2 usos). Las 21
+con etiqueta usan siempre la etiqueta de su propio eje; algunas quedan torpes («con acceso por
+Acceso: vía»). El desplazamiento «Profundidad: Trabajo: Nocturno» viene de la plantilla gold.
+
+**CLAUDE_SYNTHETIC.md updated:** no.
+**Next step:** el proyecto de recuperación ejecuta sobre la v2 y la BT.
+
+---
+
 ### 2026-10-16 (cont.) — v2 de STACKED, SINGLE, dose e isolated: 163 paráfrasis corregidas
 
 **Contexto.** Al revisar F-BT-1 aparecieron consultas como «con un diámetro de en plataforma de
