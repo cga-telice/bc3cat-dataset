@@ -1,0 +1,461 @@
+{
+ "arqueta": {
+  "n_conceptos": 12,
+  "conceptos": [
+   "OEA180$",
+   "OEB050$",
+   "OEB110$",
+   "OEB120$",
+   "OEB130$",
+   "OEC010$",
+   "OEC020$",
+   "OEC030$",
+   "OEC050$",
+   "OEC080$",
+   "OEC120$",
+   "OEC140$"
+  ],
+  "ejemplos": [
+   "OEA180$ (SALIDA DE CABLES DE CANALETA DE HORMIGÓN SIN ARQUETA): Salida de los cables de la canaleta de hormigón, sin arqueta, incluyendo el taladro de la canaleta, la zanja hasta la caja de terminales, la fijación y el sellado.",
+   "OEB050$ (CANALIZACIÓN DE CUATRITUBO POLIETILENO DOBLE PARED): Ejecución de canalización para línea subterránea de telecomunicaciones, en derivación a arquetas de telecomunicaciones y junto a cámaras de empalme, de cables entubados y tubos embebidos en hormigón HE-20, de dimensiones totales 450 mm de ancho por 1 m de alto, hormigonado hasta cota de 650 mm de profundidad, posterior relleno compactado al 95% P.M.",
+   "OEB110$ (TUBERÍA DE PVC DE 110 mm DE DIAMETRO PARA DRENAJE ARQUETA): Suministro y colocación de tubería de PVC de 110 mm de diámetro para drenaje de arqueta desde centro de arqueta a pie de talud incluyendo relleno y compactación de tierras."
+  ]
+ },
+ "canaleta": {
+  "n_conceptos": 19,
+  "conceptos": [
+   "OEA010$",
+   "OEA020$",
+   "OEA030$",
+   "OEA040$",
+   "OEA050$",
+   "OEA060$",
+   "OEA070$",
+   "OEA080$",
+   "OEA090$",
+   "OEA100$",
+   "OEA110$",
+   "OEA120$",
+   "OEA130$",
+   "OEA140$",
+   "OEA150$",
+   "OEA160$",
+   "OEA170$",
+   "OEA180$",
+   "OEB100$"
+  ],
+  "ejemplos": [
+   "OEA010$ (CANALETA PVC): Canaleta PVC de 30x15 mm con tapa.",
+   "OEA020$ (CANALETA METÁLICA): Colocación y suministro de canaleta metálica de 3 canales en puente.",
+   "OEA030$ (CANALETA PLÁSTICO PARA INTERIOR EDIFICIO TÉCNICO): Suministro y montaje de canaleta UNEX o equivalente de 1000x150x60 mm, para acometida a puesto de mando o a sistema videográfico de mando local."
+  ]
+ },
+ "cimentación": {
+  "n_conceptos": 23,
+  "conceptos": [
+   "OEA170$",
+   "OED010$",
+   "OED020$",
+   "OED030$",
+   "OED040$",
+   "OED050$",
+   "OED060$",
+   "OED070$",
+   "OED080$",
+   "OED090$",
+   "OED100$",
+   "OED110$",
+   "OED120$",
+   "OED130$",
+   "OED140$",
+   "OED150$",
+   "OED160$",
+   "OEE040$",
+   "OEG010$",
+   "OEG020$",
+   "OEG030$",
+   "OEG040$",
+   "OEG050$"
+  ],
+  "ejemplos": [
+   "OEA170$ (DESVÍO DE CANALETA): Desvío de canaleta de hormigón y reposición de la misma en el entorno de cimentación de poste de electrificación.",
+   "OED010$ (CIMENTACIÓN PRISMÁTICA EN DESMONTE DE POSTE DE CATENARIA TIPO d): Suministro y montaje de cimentación rectangular en desmonte d2 para terreno rocoso con postes de electrificación, desde plataforma o vía.",
+   "OED020$ (CIMENTACIÓN PRISMÁTICA EN TERRAPLÉN DE POSTE DE CATENARIA TIPO t): Suministro y montaje de cimentación rectangular en terraplén t1 para terreno rocoso con postes de electrificación, desde plataforma o vía."
+  ]
+ },
+ "desmonte": {
+  "n_conceptos": 5,
+  "conceptos": [
+   "OED010$",
+   "OED030$",
+   "OED050$",
+   "OED090$",
+   "OED160$"
+  ],
+  "ejemplos": [
+   "OED010$ (CIMENTACIÓN PRISMÁTICA EN DESMONTE DE POSTE DE CATENARIA TIPO d): Suministro y montaje de cimentación rectangular en desmonte d2 para terreno rocoso con postes de electrificación, desde plataforma o vía.",
+   "OED030$ (CIMENTACIÓN CILÍNDRICA EN DESMONTE DE POSTE DE CATENARIA TIPO Cd): Suministro y montaje de cimentación cilíndrica en desmonte Cd1 para terreno rocoso con postes de electrificación, desde plataforma o vía, incluye los elementos de fijación del poste.",
+   "OED050$ (CIMENTACIÓN PRISMÁTICA EN DESMONTE DE POSTE L O R): Suministro y montaje de cimentación rectangular de poste L o R en desmonte, tipo LR - d1 , para terreno rocoso con postes de electrificación, desde plataforma o vía."
+  ]
+ },
+ "terraplén": {
+  "n_conceptos": 5,
+  "conceptos": [
+   "OED020$",
+   "OED040$",
+   "OED060$",
+   "OED100$",
+   "OED140$"
+  ],
+  "ejemplos": [
+   "OED020$ (CIMENTACIÓN PRISMÁTICA EN TERRAPLÉN DE POSTE DE CATENARIA TIPO t): Suministro y montaje de cimentación rectangular en terraplén t1 para terreno rocoso con postes de electrificación, desde plataforma o vía.",
+   "OED040$ (CIMENTACIÓN CILÍNDRICA EN TERRAPLÉN DE POSTE DE CATENARIA TIPO Ct): Suministro y montaje de cimentación en terraplén Ct1 para terreno rocoso con postes de electrificación, desde plataforma o vía, incluye los elementos de fijación del poste.",
+   "OED060$ (CIMENTACIÓN PRISMÁTICA EN TERRAPLÉN DE POSTE L O R): Suministro y montaje de cimentación rectangular de poste L o R en terraplén, tipo LR - t1 , para terreno rocoso con postes de electrificación, desde plataforma o vía."
+  ]
+ },
+ "cata": {
+  "n_conceptos": 3,
+  "conceptos": [
+   "OEB140$",
+   "OEB310$",
+   "OED180$"
+  ],
+  "ejemplos": [
+   "OEB140$ (CATA PARA LOCALIZACIÓN Y REPARACIÓN DE CANALIZACIÓN EXISTENTE): Apertura y tapado de cata para localización de canalización existente, con reparación, en su caso, para la localización de canalización, obstrucciones, reparación, y el tapado de la canalización.",
+   "OEB310$ (CATA Y REPARACIÓN DE SUBCONDUCTO EXISTENTE): Cata y reparación de subconducto existente en canalización hormigonada.",
+   "OED180$ (CATA PREVIA DE EXCAVACIÓN DE MACIZO DE ELECTRIFICACIÓN): Cata previa de excavación de macizo de electrificación en terreno rocoso de profundidad hasta 1 m."
+  ]
+ },
+ "macizo": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OED180$"
+  ],
+  "ejemplos": [
+   "OED180$ (CATA PREVIA DE EXCAVACIÓN DE MACIZO DE ELECTRIFICACIÓN): Cata previa de excavación de macizo de electrificación en terreno rocoso de profundidad hasta 1 m."
+  ]
+ },
+ "tapa": {
+  "n_conceptos": 10,
+  "conceptos": [
+   "OEA010$",
+   "OEA050$",
+   "OEA060$",
+   "OEA080$",
+   "OEC010$",
+   "OEC020$",
+   "OEC030$",
+   "OEC040$",
+   "OEC050$",
+   "OEC070$"
+  ],
+  "ejemplos": [
+   "OEA010$ (CANALETA PVC): Canaleta PVC de 30x15 mm con tapa.",
+   "OEA050$ (CANALETA DE HORMIGÓN): Canaleta prefabricada de hormigón armado de 25 N/mm2 de resistencia a la compresión, normalizada tipo Normal (1000x328x170) de 2 alveolos y una tapa.",
+   "OEA060$ (CANALETA DE FÁBRICA DE LADRILLO RECTANGULAR): Construcción de canaleta rectangular para cables en el interior del edificio técnico de 300 mm de anchura y una profundidad de 400 mm , incluida la apertura de la zanja con los medios adecuados, construcción de la canaleta de fábrica de ladrillos sobre solera de hormigón en masa, enlucido por dentro, angular galvanizado, y tapa de núcleo aglomerado de madera con marco galvanizado."
+  ]
+ },
+ "tapado": {
+  "n_conceptos": 5,
+  "conceptos": [
+   "OEA100$",
+   "OEA160$",
+   "OEB140$",
+   "OEB310$",
+   "OED180$"
+  ],
+  "ejemplos": [
+   "OEA100$ (TAPADO DE CANALETA): Tapado de canaleta de hormigón .",
+   "OEA160$ (LEVANTE DE TIERRAS Y BALASTO (20CM) PARA DESCUBRIR CANALETA EXISTENTE): Levante de tierras y balasto (20 cm) para descubrir canaleta existente, tapado de la misma e incluyendo nueva aportación de tierras.",
+   "OEB140$ (CATA PARA LOCALIZACIÓN Y REPARACIÓN DE CANALIZACIÓN EXISTENTE): Apertura y tapado de cata para localización de canalización existente, con reparación, en su caso, para la localización de canalización, obstrucciones, reparación, y el tapado de la canalización."
+  ]
+ },
+ "destapado": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEA090$"
+  ],
+  "ejemplos": [
+   "OEA090$ (DESTAPADO DE CANALETA EXISTENTE): Destapado de canaleta existente a mano para localizar cables o tirar cables nuevos."
+  ]
+ },
+ "mandrilado": {
+  "n_conceptos": 5,
+  "conceptos": [
+   "OEB010$",
+   "OEB050$",
+   "OEB090$",
+   "OEB160$",
+   "OEB310$"
+  ],
+  "ejemplos": [
+   "OEB010$ (CANALIZACIÓN PARA LÍNEA SUBTERRANEA DOBLE CIRCUITO DE 220 Ó 400 KV): Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos.",
+   "OEB050$ (CANALIZACIÓN DE CUATRITUBO POLIETILENO DOBLE PARED): Incluido el propio suministro, el transporte, la carga y la descarga del material a pie de obra, la ejecución, los desplazamientos, pequeño material, herramientas, maquinaria y medios auxiliares y el mandrilado de tubos.",
+   "OEB090$ (TUBO DE ACERO GALVANIZADO EN CRUCE DE VÍAS): Suministro y montaje de tubo de acero galvanizado de 2\" , incluida parte proporcional de herrajes de sujeción y de caja de registro, incluso mandrilado."
+  ]
+ },
+ "hastial": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEB170$"
+  ],
+  "ejemplos": [
+   "OEB170$ (CANALIZACIÓN METÁLICA SUPERFICIAL): Canalización metálica superficial con 1 tubos de acero galvanizado de 1'' de diámetro de medida interior en taludes de excesiva inclinación o rocosos, sobre hastial de túnel o puente, incluye sellado de sus extremos, herramientas y medios auxiliares necesarios para la correcta ejecución de la unidad.."
+  ]
+ },
+ "zanja": {
+  "n_conceptos": 12,
+  "conceptos": [
+   "OEA060$",
+   "OEA180$",
+   "OEB020$",
+   "OEB030$",
+   "OEB040$",
+   "OEB190$",
+   "OEB200$",
+   "OEB230$",
+   "OEB280$",
+   "OEB290$",
+   "OEB300$",
+   "OEB310$"
+  ],
+  "ejemplos": [
+   "OEA060$ (CANALETA DE FÁBRICA DE LADRILLO RECTANGULAR): Construcción de canaleta rectangular para cables en el interior del edificio técnico de 300 mm de anchura y una profundidad de 400 mm , incluida la apertura de la zanja con los medios adecuados, construcción de la canaleta de fábrica de ladrillos sobre solera de hormigón en masa, enlucido por dentro, angular galvanizado, y tapa de núcleo aglomerado de madera con marco galvanizado.",
+   "OEA180$ (SALIDA DE CABLES DE CANALETA DE HORMIGÓN SIN ARQUETA): Salida de los cables de la canaleta de hormigón, sin arqueta, incluyendo el taladro de la canaleta, la zanja hasta la caja de terminales, la fijación y el sellado.",
+   "OEB020$ (CANALIZACIÓN HORMIGONADA DE TUBO DE PVC 110 mm): Canalización hormigonada de 2 tubos de PVC de 110 mm de diámetro en cualquier clase de terreno, excepto roca, incluso el relleno y el compactado de la zanja, el suministro y el montaje de los tubos y hormigón tipo HE-20 sin vibrar, la prueba de los conductos, el transporte y la retirada de los productos al lugar de empleo."
+  ]
+ },
+ "ménsula": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEC100$"
+  ],
+  "ejemplos": [
+   "OEC100$ (BANDEJA DE REJILLA GALVANIZADA PARA CABLES): Suministro y montaje de bandeja de rejilla galvanizada de 300x60 mm bajo falso suelo incluyendo pletinas con tornillos, ménsulas de acero galvanizado y fijaciones así como la puesta a tierra de las mismas."
+  ]
+ },
+ "micropilote": {
+  "n_conceptos": 3,
+  "conceptos": [
+   "OED110$",
+   "OEG020$",
+   "OEG030$"
+  ],
+  "ejemplos": [
+   "OED110$ (CIMENTACIÓN CILÍNDRICA EN ROCA CON MICROPILOTES PARA POSTE TIPO C-ESP): Suministro y montaje de cimentación cilíndrica en roca con micropilotes tipo C1-ESP para postes de electrificación ca, desde plataforma o vía.",
+   "OEG020$ (CIMENTACIÓN EN ROCA CON MICROPILOTE): Cimentación en roca con micropilote con barra corrugada roscada de 25 mm, diámetro de 0,75 m y profundidad de 2.5 m, con acesso por vía .",
+   "OEG030$ (CIMENTACIÓN CILÍNDRICA PARA ANCLAJE): Cimentación cilíndrica para anclaje de cable sustentador con micropilotes, con acesso por vía ."
+  ]
+ },
+ "topo": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEB070$"
+  ],
+  "ejemplos": [
+   "OEB070$ (HINCA TUBO DE POLIETILENO 110 MM): con topo bajo vías."
+  ]
+ },
+ "acometida": {
+  "n_conceptos": 4,
+  "conceptos": [
+   "OEA030$",
+   "OEC020$",
+   "OEC030$",
+   "OEC040$"
+  ],
+  "ejemplos": [
+   "OEA030$ (CANALETA PLÁSTICO PARA INTERIOR EDIFICIO TÉCNICO): Suministro y montaje de canaleta UNEX o equivalente de 1000x150x60 mm, para acometida a puesto de mando o a sistema videográfico de mando local.",
+   "OEC020$ (ARQUETA PREFABRICADA PARA INSTALACIONES FERROVIARIAS): Arqueta prefabricada de 600x600x600 mm de dimensiones interiores, incluso recibido de los tubos de acometida y desague profundo, tapa de hormigón y relleno posterior, así como el acabado y limpieza de la misma.",
+   "OEC030$ (ARQUETA DE REGISTRO DE COMPOSITE - PRFV): Arqueta de registro de composite-PRFV tipo AFC-1 de 40x40x50 cm de medidas interiores, sin fondo y cama de arena, para tomas de tierra, así como los taladros necesarios para la acometida de los tubos."
+  ]
+ },
+ "embocadura": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEB120$"
+  ],
+  "ejemplos": [
+   "OEB120$ (EMBOCADURA CANALIZACIÓN EN ARQUETA O CÁMARA EXISTENTE): Suministro y ejecución de embocadura canalización de 1 o 2 tubos en arqueta o cámara existente"
+  ]
+ },
+ "hito": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEF010$"
+  ],
+  "ejemplos": [
+   "OEF010$ (HITO INDICADOR DE CABLES): Hito indicador de cables, incluye suministro y montaje"
+  ]
+ },
+ "ficha": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEC090$"
+  ],
+  "ejemplos": [
+   "OEC090$ (PERCHA PARA CABLES): Suministro y montaje de percha para cables con 6 fichas incluyendo materiales necesarios para su instalación como tacos de acero, tornillos y topes."
+  ]
+ },
+ "firme": {
+  "n_conceptos": 2,
+  "conceptos": [
+   "OEB010$",
+   "OEB050$"
+  ],
+  "ejemplos": [
+   "OEB010$ (CANALIZACIÓN PARA LÍNEA SUBTERRANEA DOBLE CIRCUITO DE 220 Ó 400 KV): Con cintas de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente.",
+   "OEB050$ (CANALIZACIÓN DE CUATRITUBO POLIETILENO DOBLE PARED): Con cinta de señalización de riesgo eléctrico de 150 mm de ancho a 150 mm de profundidad del firme existente."
+  ]
+ },
+ "talud": {
+  "n_conceptos": 2,
+  "conceptos": [
+   "OEB110$",
+   "OEB170$"
+  ],
+  "ejemplos": [
+   "OEB110$ (TUBERÍA DE PVC DE 110 mm DE DIAMETRO PARA DRENAJE ARQUETA): Suministro y colocación de tubería de PVC de 110 mm de diámetro para drenaje de arqueta desde centro de arqueta a pie de talud incluyendo relleno y compactación de tierras.",
+   "OEB170$ (CANALIZACIÓN METÁLICA SUPERFICIAL): Canalización metálica superficial con 1 tubos de acero galvanizado de 1'' de diámetro de medida interior en taludes de excesiva inclinación o rocosos, sobre hastial de túnel o puente, incluye sellado de sus extremos, herramientas y medios auxiliares necesarios para la correcta ejecución de la unidad.."
+  ]
+ },
+ "hinca": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEB180$"
+  ],
+  "ejemplos": [
+   "OEB180$ (HINCA CON CABLE TENSOR DE ACERO): Hincas con cable tensor de acero para el tendido de cables sobre una trinchera de tierra."
+  ]
+ },
+ "trinchera": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEB180$"
+  ],
+  "ejemplos": [
+   "OEB180$ (HINCA CON CABLE TENSOR DE ACERO): Hincas con cable tensor de acero para el tendido de cables sobre una trinchera de tierra."
+  ]
+ },
+ "cuneta": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEC110$"
+  ],
+  "ejemplos": [
+   "OEC110$ (ROTURA Y REPOSICIÓN DE CUNETA): Ejecución de los trabajos de rotura y reposición de cuneta de hasta 250 cm de ancho con paredes de hasta 15 cm de espesor incluyendo limpieza, acopio y transporte de materiales de derribo"
+  ]
+ },
+ "balasto": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEA160$"
+  ],
+  "ejemplos": [
+   "OEA160$ (LEVANTE DE TIERRAS Y BALASTO (20CM) PARA DESCUBRIR CANALETA EXISTENTE): Levante de tierras y balasto (20 cm) para descubrir canaleta existente, tapado de la misma e incluyendo nueva aportación de tierras."
+  ]
+ },
+ "repartidor": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEB100$"
+  ],
+  "ejemplos": [
+   "OEB100$ (CONEXIÓN CON TUBO ACERO DESDE CANALETA, EN TÚNEL): Suministro y ejecución de canalización en túnel para acceso a interfonía desde canaleta de hormigón utilizando tubo de acero hasta el repartidor"
+  ]
+ },
+ "poste": {
+  "n_conceptos": 18,
+  "conceptos": [
+   "OEA170$",
+   "OED010$",
+   "OED020$",
+   "OED030$",
+   "OED040$",
+   "OED050$",
+   "OED060$",
+   "OED070$",
+   "OED080$",
+   "OED090$",
+   "OED100$",
+   "OED110$",
+   "OED130$",
+   "OED140$",
+   "OED150$",
+   "OED160$",
+   "OEE030$",
+   "OEG010$"
+  ],
+  "ejemplos": [
+   "OEA170$ (DESVÍO DE CANALETA): Desvío de canaleta de hormigón y reposición de la misma en el entorno de cimentación de poste de electrificación.",
+   "OED010$ (CIMENTACIÓN PRISMÁTICA EN DESMONTE DE POSTE DE CATENARIA TIPO d): Suministro y montaje de cimentación rectangular en desmonte d2 para terreno rocoso con postes de electrificación, desde plataforma o vía.",
+   "OED020$ (CIMENTACIÓN PRISMÁTICA EN TERRAPLÉN DE POSTE DE CATENARIA TIPO t): Suministro y montaje de cimentación rectangular en terraplén t1 para terreno rocoso con postes de electrificación, desde plataforma o vía."
+  ]
+ },
+ "corrugada": {
+  "n_conceptos": 5,
+  "conceptos": [
+   "OED120$",
+   "OEG010$",
+   "OEG020$",
+   "OEG040$",
+   "OEG050$"
+  ],
+  "ejemplos": [
+   "OED120$ (CIMENTACIÓN  ESPECIALES TIPO PUENTE DE POSTE DE CATENARIA TIPO PI): Cimentaciones especiales tipo puente, con barra corrugada roscada de 20 mm , desde plataforma o vía.",
+   "OEG010$ (CIMENTACIÓN CILÍNDRICA POSTES): Suministro y montaje de cimentación cilíndrica para postes de electrificación, de 0.75 de diámetro y 2 de profundidad, compuesta por 4 barras corrugadas roscadas de 20 .",
+   "OEG020$ (CIMENTACIÓN EN ROCA CON MICROPILOTE): Cimentación en roca con micropilote con barra corrugada roscada de 25 mm, diámetro de 0,75 m y profundidad de 2.5 m, con acesso por vía ."
+  ]
+ },
+ "composite": {
+  "n_conceptos": 4,
+  "conceptos": [
+   "OEA040$",
+   "OEA070$",
+   "OEC030$",
+   "OEC120$"
+  ],
+  "ejemplos": [
+   "OEA040$ (CANALETA DE COMPOSITE-PTR 1000X264X266 mm): Suministro y ejecución de canaleta enterrada con 1 alveolos de composite-PTR 1000x264x266 mm, incluyendo la nivelación de la solera, la cama de arena de río de 5 cm y el relleno del sellado de los laterales de la canaleta de hormigón pobre, según ET 03.365.064.9.",
+   "OEA070$ (ACCESORIOS PARA CANALETA COMPOSITE - PTR): Suministro y montaje de módulo de empalme para canaleta composite-PTR, incluyendo piezas para el cosido entre las mismas, según ET 03.365.064.9.",
+   "OEC030$ (ARQUETA DE REGISTRO DE COMPOSITE - PRFV): Arqueta de registro de composite-PRFV tipo AFC-1 de 40x40x50 cm de medidas interiores, sin fondo y cama de arena, para tomas de tierra, así como los taladros necesarios para la acometida de los tubos."
+  ]
+ },
+ "solera": {
+  "n_conceptos": 5,
+  "conceptos": [
+   "OEA040$",
+   "OEA050$",
+   "OEA060$",
+   "OEC010$",
+   "OEC050$"
+  ],
+  "ejemplos": [
+   "OEA040$ (CANALETA DE COMPOSITE-PTR 1000X264X266 mm): Suministro y ejecución de canaleta enterrada con 1 alveolos de composite-PTR 1000x264x266 mm, incluyendo la nivelación de la solera, la cama de arena de río de 5 cm y el relleno del sellado de los laterales de la canaleta de hormigón pobre, según ET 03.365.064.9.",
+   "OEA050$ (CANALETA DE HORMIGÓN): Totalmente instalada, incluso la adecuación del terreno, la compactación, la nivelación de la solera, la cama de arena de río de 10 cm, el sellado de las tapas y las juntas con mortero y los rellenos compactados.",
+   "OEA060$ (CANALETA DE FÁBRICA DE LADRILLO RECTANGULAR): Construcción de canaleta rectangular para cables en el interior del edificio técnico de 300 mm de anchura y una profundidad de 400 mm , incluida la apertura de la zanja con los medios adecuados, construcción de la canaleta de fábrica de ladrillos sobre solera de hormigón en masa, enlucido por dentro, angular galvanizado, y tapa de núcleo aglomerado de madera con marco galvanizado."
+  ]
+ },
+ "recibido": {
+  "n_conceptos": 3,
+  "conceptos": [
+   "OEC010$",
+   "OEC020$",
+   "OEC040$"
+  ],
+  "ejemplos": [
+   "OEC010$ (ARQUETA IN SITU PARA INSTALACIONES FERROVIARIAS): Arqueta realizada \"in situ\" de ladrillo, y 400x400x600 mm de dimensiones interiores, colocada sobre solera de hormigón en masa, limpiada y terminada, y con parte proporcional de medios auxiliares, incluso relleno y la compactación perimetral posterior, el drenaje y el recibido de los tubos, y la tapa de hormigón.",
+   "OEC020$ (ARQUETA PREFABRICADA PARA INSTALACIONES FERROVIARIAS): Arqueta prefabricada de 600x600x600 mm de dimensiones interiores, incluso recibido de los tubos de acometida y desague profundo, tapa de hormigón y relleno posterior, así como el acabado y limpieza de la misma.",
+   "OEC040$ (CÁMARA CON TAPA DE FUNDICIÓN, INCLUSO EJECUCIÓN DE ZANJA Y RELLENOS): Incluye los rellenos precisos, los encofrados, el recibido de los tubos de acometida y el desagüe del fondo según los planos, así como el acabado y la limpieza de la misma."
+  ]
+ },
+ "adecuación": {
+  "n_conceptos": 1,
+  "conceptos": [
+   "OEA050$"
+  ],
+  "ejemplos": [
+   "OEA050$ (CANALETA DE HORMIGÓN): Totalmente instalada, incluso la adecuación del terreno, la compactación, la nivelación de la solera, la cama de arena de río de 10 cm, el sellado de las tapas y las juntas con mortero y los rellenos compactados."
+  ]
+ }
+}
