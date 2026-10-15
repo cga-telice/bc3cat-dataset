@@ -25,6 +25,7 @@ from .bt_masking import (
     MaskError,
     check_masks,
     check_value_order,
+    glossary_spans,
     mask_with_values,
     unmask_surface,
 )
@@ -101,6 +102,7 @@ class BTResult:
 def back_translate_many(texts: Sequence[str], pivot: str, engine: BTEngine,
                         mask_strategy: str, src: str = "es",
                         spans: Optional[Sequence[Optional[Sequence[tuple[int, int]]]]] = None,
+                        glossary_terms: Sequence[str] = (),
                         ) -> list[BTResult]:
     """Una llamada al motor por dirección para todos los segmentos.
 
@@ -111,7 +113,8 @@ def back_translate_many(texts: Sequence[str], pivot: str, engine: BTEngine,
     prepared = []
     flat: list[str] = []
     for text, sp in zip(texts, spans):
-        masked, mapping, values = mask_with_values(text, mask_strategy, sp or ())
+        gloss = glossary_spans(text, glossary_terms, exclude=sp or ()) if glossary_terms else ()
+        masked, mapping, values = mask_with_values(text, mask_strategy, sp or (), glossary=gloss)
         pieces = segment(masked)
         segs = [p.text for p in pieces if p.translate]
         prepared.append((masked, mapping, list(values), pieces, len(flat), len(segs)))

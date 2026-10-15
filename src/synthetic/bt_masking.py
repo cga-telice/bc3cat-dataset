@@ -49,7 +49,7 @@ _ACRONYM = rf"(?<![\w$.])(?:[{_CAPS}]\.){{2,}}|(?<![\w$])[{_CAPS}]{{2,}}(?!\w)"
 _SCAN_RE = re.compile(rf"(?P<B>{_BAND})|(?P<Q>{_QTY})|(?P<S>{_ACRONYM})")
 _UNIT_PEEK_RE = re.compile(r"\s+([^\s\d\[\]$<>()«»\",;:]+)")
 
-MARKER_RE = re.compile(r"\[\[[BQSV]\d+\]\]|<x\d+/>|\[\d+\]")
+MARKER_RE = re.compile(r"\[\[[BQSVG]\d+\]\]|<x\d+/>|\[\d+\]")
 
 
 class MaskError(ValueError):
@@ -81,29 +81,33 @@ def mask_surface(text: str, strategy: str) -> tuple[str, dict[str, str]]:
     return masked, mapping
 
 
-def mask_with_values(text: str, strategy: str,
-                     spans: Sequence[tuple[int, int]]) -> tuple[str, dict[str, str], list[str]]:
+def mask_with_values(text: str, strategy: str, spans: Sequence[tuple[int, int]],
+                     glossary: Sequence[tuple[int, int]] = ()) -> tuple[str, dict[str, str], list[str]]:
     """Como :func:`mask_surface`, pero cada tramo de ``spans`` (valores de eje
     y fragmentos L2, de :mod:`bt_alignment`) se enmascara entero como ``V``;
     bandas, cantidades y siglas se buscan solo fuera de esos tramos. Devuelve
     también los marcadores ``V`` en orden de texto, para
-    :func:`check_value_order`."""
-    return _mask(text, strategy, spans)
+    :func:`check_value_order`. ``glossary`` (de :func:`glossary_spans`) son
+    términos del oficio que también salen literales, como ``G``, pero sin
+    comprobación de orden: pueden moverse dentro de la frase."""
+    return _mask(text, strategy, spans, glossary)
 
 
-def _mask(text: str, strategy: str, spans) -> tuple[str, dict[str, str], list[str]]:
+def _mask(text: str, strategy: str, spans, glossary=()) -> tuple[str, dict[str, str], list[str]]:
     if strategy not in STRATEGIES:
         raise ValueError(f"estrategia desconocida: {strategy!r}")
     if strategy == "none":
         return text, {}, []
-    spans = sorted((a, b) for a, b in spans if b > a)
+    kinds = {(a, b): "V" for a, b in spans if b > a}
+    kinds.update({(a, b): "G" for a, b in glossary if b > a and (a, b) not in kinds})
+    spans = sorted(kinds)
     for (_, b1), (a2, _) in zip(spans, spans[1:]):
         if a2 < b1:
             raise ValueError("tramos de valor solapados")
 
     mapping: dict[str, str] = {}
     values: list[str] = []
-    counters = {"B": 0, "Q": 0, "S": 0, "V": 0}
+    counters = {"B": 0, "Q": 0, "S": 0, "V": 0, "G": 0}
     out: list[str] = []
 
     def emit(kind: str, literal: str) -> None:
@@ -135,7 +139,7 @@ def _mask(text: str, strategy: str, spans) -> tuple[str, dict[str, str], list[st
     pos = 0
     for a, b in spans:
         scan(text[pos:a])
-        emit("V", text[a:b])
+        emit(kinds[(a, b)], text[a:b])
         pos = b
     scan(text[pos:])
     return "".join(out), mapping, values
@@ -169,3 +173,34 @@ def check_masks(text: str, mapping: dict[str, str]) -> None:
         raise MaskError(
             f"masks_not_preserved: missing={missing} extra_or_dup={extra}"
         )
+
+
+def _plural_forms(term: str) -> list[str]:
+    forms = [term, term + "s", term + "es"]
+    if term.endswith("ón"):
+        forms.append(term[:-2] + "ones")
+    if term.endswith("z"):
+        forms.append(term[:-1] + "ces")
+    return forms
+
+
+def glossary_spans(text: str, terms: Sequence[str],
+                   exclude: Sequence[tuple[int, int]] = ()) -> list[tuple[int, int]]:
+    """Tramos de los términos del glosario (palabra completa, sin distinguir
+    mayúsculas, singular o plural) que no caen dentro de ``exclude`` (los
+    valores, que ya van enmascarados). El glosario sale de la auditoría de las
+    prosas de ``bt_origv``: son los términos que el traductor confundía."""
+    out = []
+    for term in terms:
+        alt = "|".join(re.escape(f) for f in sorted(_plural_forms(term), key=len, reverse=True))
+        for m in re.finditer(rf"(?<!\w)(?:{alt})(?!\w)", text, re.IGNORECASE):
+            a, b = m.span()
+            if not any(a < eb and ea < b for ea, eb in exclude):
+                out.append((a, b))
+    out = sorted(set(out))
+    keep, last = [], -1
+    for a, b in out:  # sin solapes entre términos
+        if a >= last:
+            keep.append((a, b))
+            last = b
+    return keep

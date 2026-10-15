@@ -1,0 +1,81 @@
+{"id": "P01", "veredicto": "Sí", "motivo": "Prosa idéntica a la gold."}
+{"id": "P02", "veredicto": "No", "motivo": "'canaleta metálica de [·] canales en puente' pasa a 'canaleta canales metálicos [·] del puente': el hueco del número de canales queda descolgado tras 'canales metálicos' y 'en puente' pasa a 'del puente'."}
+{"id": "P03", "veredicto": "No", "motivo": "La etiqueta 'Horario' pasa a 'Calendario', que ya no identifica la franja horaria de trabajo."}
+{"id": "P04", "veredicto": "Dudoso", "motivo": "'alveolos de composite-[·]' pasa a 'alveolos compuestos-[·]': se pierde la designación del material composite y el 'de', el hueco puede leerse como composición de los alveolos."}
+{"id": "P05", "veredicto": "No", "motivo": "'la adecuación del terreno' (operación de preparación) pasa a 'la idoneidad del terreno', que no es una operación incluida."}
+{"id": "P06", "veredicto": "No", "motivo": "'la adecuación del terreno' pasa a 'la idoneidad del terreno': se pierde la operación de preparación del terreno."}
+{"id": "P07", "veredicto": "No", "motivo": "'canaleta de fábrica de ladrillos sobre solera' pasa a 'la fábrica de ladrillos canaleta sobre suelo' y 'angular galvanizado' a 'ángulo galvanizado': se pierde la solera y el perfil angular."}
+{"id": "P08", "veredicto": "Dudoso", "motivo": "'canaleta composite-[·]' pasa a 'canaleta compuestos-[·]': se pierde la designación del material composite; el resto ('partes para coser entre ellos') es equivalente."}
+{"id": "P09", "veredicto": "No", "motivo": "'tapa para canaleta de hormigón tipo [·]' pasa a 'tapa para el hormigón de tipo canaleta [·]': la tapa ya no es de la canaleta y el hueco de tipo cambia de referente."}
+{"id": "P10", "veredicto": "No", "motivo": "'tapa para canaleta de hormigón tipo [·]' pasa a 'tapa para el hormigón de tipo canaleta [·]': cambia el elemento y el referente del hueco de tipo."}
+{"id": "P11", "veredicto": "No", "motivo": "'localizar cables' (existentes) pasa a 'localizar cables nuevos': cambia el objeto de la localización."}
+{"id": "P12", "veredicto": "Sí", "motivo": "Prosa idéntica a la gold."}
+{"id": "P13", "veredicto": "Sí", "motivo": "Solo falta 'de' en 'canaleta hormigón'; el sentido es inequívoco."}
+{"id": "P14", "veredicto": "No", "motivo": "La etiqueta 'Condiciones de ejecución' pasa a 'Condiciones de aplicación'."}
+{"id": "P15", "veredicto": "Sí", "motivo": "Mismas operaciones (saneamiento, limpieza, rehabilitación); solo errores de concordancia y 'colocación' por 'tendido'."}
+{"id": "P16", "veredicto": "Dudoso", "motivo": "'Limpieza de canaleta de hormigón' pasa a 'Limpieza de hormigón canaleta', que se lee como limpieza de hormigón."}
+{"id": "P17", "veredicto": "Sí", "motivo": "Equivalente: 'colocación de cables' y 'trabajo de excavación en el suelo' por tendido y cavado de terreno."}
+{"id": "P18", "veredicto": "No", "motivo": "'Levante de tierras' (retirada) pasa a 'Elevación de la tierra' y 'aportación de tierras' a 'contribución de la tierra'."}
+{"id": "P19", "veredicto": "No", "motivo": "'reposición de la misma' (de la canaleta) pasa a 'sustitución de hormigón', y 'en el entorno de cimentación de poste' queda desordenado."}
+{"id": "P20", "veredicto": "Dudoso", "motivo": "'cables de la canaleta de hormigón' pasa a 'cables de hormigón canaleta', que puede leerse como cables de hormigón; el resto equivale."}
+{"id": "P21", "veredicto": "No", "motivo": "'cables entubados y tubos embebidos' pasa a 'cables y tubos tubulados incrustados' y 'testigo soporte' pierde 'testigo'."}
+{"id": "P22", "veredicto": "Sí", "motivo": "Mismos elementos y operaciones; 'canalización de hormigón', 'llenado', 'ensayo' y 'extracción' son variantes aceptables de hormigonada, relleno, prueba y retirada."}
+{"id": "P23", "veredicto": "Sí", "motivo": "Mismos elementos y operaciones con sinónimos aceptables (llenado, ensayos, retirada, hormigón no vibratorio)."}
+{"id": "P24", "veredicto": "Sí", "motivo": "Mismos elementos y operaciones con sinónimos aceptables."}
+{"id": "P25", "veredicto": "Sí", "motivo": "Mismos elementos y operaciones con sinónimos aceptables; el hueco final se conserva."}
+{"id": "P26", "veredicto": "Sí", "motivo": "Mismos elementos y operaciones; 'sin halógeno' por 'libre de halógenos' es equivalente."}
+{"id": "P27", "veredicto": "Sí", "motivo": "Mismos elementos y operaciones con sinónimos aceptables."}
+{"id": "P28", "veredicto": "Sí", "motivo": "Mismos elementos y operaciones con sinónimos aceptables."}
+{"id": "P29", "veredicto": "Sí", "motivo": "Mismos elementos y operaciones con sinónimos aceptables."}
+{"id": "P30", "veredicto": "Sí", "motivo": "'debajo de las vías' por 'bajo vías'; equivalente."}
+{"id": "P31", "veredicto": "No", "motivo": "'Canalización tubo corrugado' pasa a 'Tubo ondulado de canal': cambia el elemento (canal) y el término corrugado."}
+{"id": "P32", "veredicto": "Sí", "motivo": "'accesorios de fijación' por 'herrajes de sujeción' y plurales; mismo contenido."}
+{"id": "P33", "veredicto": "Sí", "motivo": "Equivalente salvo falta de 'de' en 'canaleta hormigón'."}
+{"id": "P34", "veredicto": "Sí", "motivo": "Mismos elementos; 'llenado en tierra y compactación' equivale a relleno y compactación de tierras."}
+{"id": "P35", "veredicto": "Sí", "motivo": "Prosa idéntica a la gold."}
+{"id": "P36", "veredicto": "No", "motivo": "'canalización hormigonada de tubos de [·]' pasa a 'canalización de tubos de hormigón [·]' (el hueco de diámetro queda pegado a hormigón) y 'paramentos' a 'emplazamientos'."}
+{"id": "P37", "veredicto": "Sí", "motivo": "Equivalente ('cuando proceda' por 'en su caso')."}
+{"id": "P38", "veredicto": "Sí", "motivo": "Equivalente ('colocación' por 'tendido')."}
+{"id": "P39", "veredicto": "Sí", "motivo": "Equivalente."}
+{"id": "P40", "veredicto": "Sí", "motivo": "Conserva 'sobre hastial de túnel o puente' y todos los elementos; reordenación menor."}
+{"id": "P41", "veredicto": "No", "motivo": "'cable tensor' pasa a 'cable de tensión' y 'trinchera de tierra' a 'superficie trinchera'."}
+{"id": "P42", "veredicto": "No", "motivo": "'rejilla de plástico identificadora' (elemento suministrado) pasa a 'identificando la rejilla de plástico' (operación)."}
+{"id": "P43", "veredicto": "Dudoso", "motivo": "'Relleno localizado' pasa a 'Relleno situado' y 'humectación' a 'hidratante'; el término técnico y la operación quedan desdibujados."}
+{"id": "P44", "veredicto": "No", "motivo": "'[·] de canalización de [·] tubos' pasa a '[·] para la canalización [·] tubos': el suministro/montaje pasa a ser algo para la canalización, no la canalización."}
+{"id": "P45", "veredicto": "No", "motivo": "'[·] de canalización' pasa a '[·] para la canalización': cambia el objeto de la operación."}
+{"id": "P46", "veredicto": "No", "motivo": "'sobre solera de hormigón en masa' pasa a 'sobre hormigón sólido en masa' (se pierde la solera) y 'recibido de los tubos' a 'recepción de tubos'."}
+{"id": "P47", "veredicto": "No", "motivo": "'incluso recibido de los tubos' pasa a 'recibidos o no de tubos': la inclusión pasa a ser opcional."}
+{"id": "P48", "veredicto": "No", "motivo": "'el recibido de los tubos de acometida' pasa a 'la recepción de los tubos acometida', que no es la operación de recibido."}
+{"id": "P49", "veredicto": "No", "motivo": "'cámara de empalme' pasa a 'cámara conjunta' y 'puesta a tierra' a 'moldura'; se pierde 'pates para el descenso'."}
+{"id": "P50", "veredicto": "No", "motivo": "La etiqueta 'Condiciones de ejecución' pasa a 'Condiciones de aplicación'."}
+{"id": "P51", "veredicto": "Sí", "motivo": "Equivalente ('ladrillo simple' por 'sencillo')."}
+{"id": "P52", "veredicto": "No", "motivo": "'topes' pasa a 'tapones': cambia el elemento incluido."}
+{"id": "P53", "veredicto": "Sí", "motivo": "Mismos elementos incluida la puesta a tierra; 'placa' por 'pletinas' aceptable."}
+{"id": "P54", "veredicto": "Sí", "motivo": "Equivalente ('sustitución', 'recogida', 'demolición' por reposición, acopio, derribo)."}
+{"id": "P55", "veredicto": "No", "motivo": "'suplemento de arqueta de registro de composite-[·] tipo [·] existente' pasa a 'arqueta del tipo de registro compuesto existente-[·] [·]': se desordena el material y el tipo."}
+{"id": "P56", "veredicto": "Sí", "motivo": "Conserva 'en desmonte' y todos los elementos; 'suelo' por 'terreno'."}
+{"id": "P57", "veredicto": "No", "motivo": "'elementos de fijación del poste' pasa a 'elementos de fijación posterior'."}
+{"id": "P58", "veredicto": "No", "motivo": "'elementos de fijación del poste' pasa a 'elementos de fijación posterior'."}
+{"id": "P59", "veredicto": "No", "motivo": "'cimentación rectangular de poste L o R' pasa a 'cimentación polos rectangulares L o R': poste por polos y rectangular cambia de referente."}
+{"id": "P60", "veredicto": "No", "motivo": "'cimentación rectangular de poste L o R' pasa a 'cimentación polos rectangulares L o R'."}
+{"id": "P61", "veredicto": "Sí", "motivo": "Equivalente ('para el anclaje de tipo', 'suelo')."}
+{"id": "P62", "veredicto": "Sí", "motivo": "Equivalente ('para el anclaje de tipo', 'suelo')."}
+{"id": "P63", "veredicto": "No", "motivo": "'cilíndrica para anclaje tipo' pasa a 'tipo de anclaje cilíndrico' y 'fijación del poste' a 'fijación posterior'."}
+{"id": "P64", "veredicto": "Sí", "motivo": "Conserva 'en desmonte' y 'fijación del poste'; 'de plataforma o vía' por 'desde' y concordancia, sin cambio técnico."}
+{"id": "P65", "veredicto": "Dudoso", "motivo": "'cimentación cilíndrica en roca' pasa a 'cimentación roca cilíndrica': se pierde el 'en'."}
+{"id": "P66", "veredicto": "Dudoso", "motivo": "'Cimentaciones especiales tipo puente' pasa a 'Cimentaciones Tipo de puente especial': 'especial' pasa a calificar al puente."}
+{"id": "P67", "veredicto": "No", "motivo": "'cimentación cilíndrica para anclaje' pasa a 'anclaje cimentación de tipo cilíndrico' y 'fijación del poste' a 'fijación posterior'."}
+{"id": "P68", "veredicto": "Sí", "motivo": "Equivalente ('suelo' por 'terreno')."}
+{"id": "P69", "veredicto": "No", "motivo": "'Cata previa de excavación de macizo' pasa a 'Cata Excavación anterior de macizo' y 'Dirección de Obra' a 'Dirección de Trabajo'."}
+{"id": "P70", "veredicto": "No", "motivo": "'Cata previa de excavación' pasa a 'Cata Excavación anterior' y 'Dirección de Obra' a 'Dirección de Trabajo'."}
+{"id": "P71", "veredicto": "Sí", "motivo": "Equivalente ('placa de anclaje catenaria')."}
+{"id": "P72", "veredicto": "No", "motivo": "'tirante de anclajes' pasa a 'correas de anclaje': cambia el elemento."}
+{"id": "P73", "veredicto": "Sí", "motivo": "'Reemplazo' por 'Reposición'; equivalente."}
+{"id": "P74", "veredicto": "Sí", "motivo": "Equivalente salvo falta de 'de'."}
+{"id": "P75", "veredicto": "Sí", "motivo": "Equivalente ('incluido el suministro y el montaje')."}
+{"id": "P76", "veredicto": "No", "motivo": "'barras corrugadas roscadas' pasa a 'barras onduladas roscadas' y 'cimentación cilíndrica' a 'cimentación cilindros'."}
+{"id": "P77", "veredicto": "No", "motivo": "'barras corrugadas roscadas' pasa a 'barras onduladas roscadas' y 'cimentación cilíndrica' a 'cimentación cilindros'."}
+{"id": "P78", "veredicto": "No", "motivo": "'barra corrugada roscada' pasa a 'barra ondulada roscada' y 'acesso por' a 'acesso per'."}
+{"id": "P79", "veredicto": "No", "motivo": "'con acesso por [·]' pasa a 'con un asador de [·]': se pierde el parámetro de acceso."}
+{"id": "P80", "veredicto": "Dudoso", "motivo": "'Cimentaciones especiales tipo puente' pasa a 'Cimentaciones Tipo de puente especial': 'especial' pasa a calificar al puente."}
+{"id": "P81", "veredicto": "Sí", "motivo": "Equivalente salvo la concordancia 'prismático'."}

@@ -356,7 +356,8 @@ def assemble_rows(cfg, ctx, jobs, results, slots, stage, sidecar, forbidden):
 
 def translate(cfg, jobs, engine, strategy, spans):
     texts = [src["text"] for _, src in jobs]
-    return back_translate_many(texts, cfg["bt"]["pivot"], engine, strategy, spans=spans)
+    return back_translate_many(texts, cfg["bt"]["pivot"], engine, strategy, spans=spans,
+                               glossary_terms=cfg["bt"].get("glossary", ()))
 
 
 def git_commit() -> str:

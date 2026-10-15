@@ -188,3 +188,15 @@ def test_max_new_tokens_fixed_without_ratio():
 def test_max_new_tokens_proportional_and_capped():
     assert max_new_tokens([5, 40], cap=512, ratio=2.0) == 2 * 40 + 16
     assert max_new_tokens([400], cap=512, ratio=2.0) == 512
+
+
+def test_glossary_terms_are_hidden_from_the_translator():
+    eng = Identity()
+    text = "Cimentación en desmonte. Trabajo: Diurno."
+    i = text.index("Diurno")
+    r = back_translate_many([text], "en", eng, "bracket", spans=[[(i, i + 6)]],
+                            glossary_terms=["cimentación", "desmonte"])[0]
+    assert r.ok and r.text == text
+    sent = " ".join(s for call in eng.calls for s in call[0])
+    assert "Cimentación" not in sent and "desmonte" not in sent and "Diurno" not in sent
+    assert len(r.values) == 1  # el glosario no entra en la comprobación de orden

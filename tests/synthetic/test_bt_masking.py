@@ -268,3 +268,33 @@ def test_bracket_markers_are_numbered_in_text_order():
 
 def test_marker_re_matches_bracket_but_not_sentinel_inner():
     assert MARKER_RE.findall("[12] y [[Q1]]") == ["[12]", "[[Q1]]"]
+
+
+# --- glosario de términos del oficio (vuelta tras la auditoría de prosas) ---
+
+from synthetic.bt_masking import glossary_spans  # noqa: E402
+
+_GLOSS = ["arqueta", "canaleta", "cimentación", "desmonte", "hastial", "zanja"]
+
+
+def test_glossary_spans_match_whole_words_and_plurals():
+    text = "Cimentación en desmonte con arquetas y canaleta; zanjas. Desmontes no."
+    got = [text[a:b] for a, b in glossary_spans(text, _GLOSS)]
+    assert got == ["Cimentación", "desmonte", "arquetas", "canaleta", "zanjas", "Desmontes"]
+
+
+def test_glossary_spans_skip_value_spans():
+    text = "Arqueta tipo arqueta grande"
+    value = (13, 27)  # «arqueta grande» es un valor: ya va enmascarado
+    assert [text[a:b] for a, b in glossary_spans(text, _GLOSS, exclude=[value])] == ["Arqueta"]
+
+
+def test_glossary_terms_become_g_markers_without_order_check():
+    text = "Cimentación en desmonte tipo Cd5. Trabajo: Nocturno."
+    i = text.index("Nocturno")
+    masked, mapping, values = mask_with_values(text, "bracket", [(i, i + 8)],
+                                               glossary=glossary_spans(text, _GLOSS))
+    assert masked == "[1] en [2] tipo [3]. Trabajo: [4]."
+    assert mapping["[1]"] == "Cimentación" and mapping["[2]"] == "desmonte"
+    assert values == ["[4]"]
+    assert unmask_surface(masked, mapping) == text

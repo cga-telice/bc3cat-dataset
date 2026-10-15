@@ -1,0 +1,82 @@
+{"id": "P01", "veredicto": "No", "motivo": "«Canaleta» pasa a «Canal», un elemento genérico distinto."}
+{"id": "P02", "veredicto": "No", "motivo": "«canaleta metálica de [·] canales» pasa a «canales metálicos [·]»: se pierde la canaleta y el hueco deja de leerse como número de canales."}
+{"id": "P03", "veredicto": "No", "motivo": "La etiqueta «Horario» pasa a «Calendario», que no identifica la franja horaria; además «acometida» pasa a «entrada»."}
+{"id": "P04", "veredicto": "No", "motivo": "«canaleta» pasa a «canalones», que es otro elemento."}
+{"id": "P05", "veredicto": "No", "motivo": "«Canaleta prefabricada» pasa a «Canal prefabricado»; además «adecuación del terreno» pasa a «idoneidad del terreno»."}
+{"id": "P06", "veredicto": "No", "motivo": "«Canaleta prefabricada» pasa a «Canal prefabricado»; además «adecuación del terreno» pasa a «idoneidad del terreno»."}
+{"id": "P07", "veredicto": "Sí", "motivo": "Se conservan elemento, operaciones y etiquetas; «yeso en el interior» por «enlucido por dentro» y «planos estándar» son equivalentes de oficio."}
+{"id": "P08", "veredicto": "No", "motivo": "«tapa» pasa a «parte superior»."}
+{"id": "P09", "veredicto": "Sí", "motivo": "Mismo suministro y montaje de tapa de canaleta; «remoción de terrenos sobrantes» equivale a la retirada de tierras; «Condiciones de aplicación» sigue identificando el mismo parámetro."}
+{"id": "P10", "veredicto": "No", "motivo": "«localizar cables» pasa a «localizar cables nuevos», que cambia el sentido; «Destapado» pasa a «Descubrimiento»."}
+{"id": "P11", "veredicto": "Dudoso", "motivo": "«Tapado» pasa a «Tapeado», que no es el término de la operación de tapar; podría ser errata, pero no es inequívoco."}
+{"id": "P12", "veredicto": "Sí", "motivo": "Texto idéntico."}
+{"id": "P13", "veredicto": "Sí", "motivo": "Sentido igual; «colocación de cable» por «tendido» es aceptable."}
+{"id": "P14", "veredicto": "No", "motivo": "Se pierde «Saneamiento de canaleta antigua»: queda solo «Limpieza y rehabilitación de la canaleta instalada»."}
+{"id": "P15", "veredicto": "Sí", "motivo": "Solo cambia el número gramatical (canaletas)."}
+{"id": "P16", "veredicto": "No", "motivo": "«canaleta» pasa a «canal»."}
+{"id": "P17", "veredicto": "No", "motivo": "«canaleta» pasa a «alcantarillas», «balasto» a «lastre» y «tapado» a «cubiertas de ellas»."}
+{"id": "P18", "veredicto": "No", "motivo": "«reposición» de la canaleta pasa a «sustitución» y «entorno de cimentación» pasa a «ambiente de la fundación»."}
+{"id": "P19", "veredicto": "No", "motivo": "«sin arqueta» pasa a «sin arco»."}
+{"id": "P20", "veredicto": "No", "motivo": "«del firme existente» pasa a «de la empresa existente», «mandrilado de tubos» a «manipulación de tuberías» y se pierde «testigo»."}
+{"id": "P21", "veredicto": "Sí", "motivo": "«Canalización de hormigón» de tubos conserva la canalización hormigonada; se mantienen relleno, compactado, suministro, montaje, prueba de conductos, transporte y retirada."}
+{"id": "P22", "veredicto": "Sí", "motivo": "Igual que P21: mismas operaciones y etiquetas; «hormigón no vibratorio» se entiende como sin vibrar."}
+{"id": "P23", "veredicto": "Sí", "motivo": "Mismas operaciones; «extracción de productos» por «retirada» se acepta como sinónimo."}
+{"id": "P24", "veredicto": "Sí", "motivo": "Mismas operaciones y etiquetas; solo hay cambios de redacción."}
+{"id": "P25", "veredicto": "Sí", "motivo": "Mismas operaciones; «sin halógeno» equivale a «libre de halógenos»."}
+{"id": "P26", "veredicto": "Sí", "motivo": "Mismas operaciones; «eliminación de productos» se acepta y el hueco sigue en la misma posición funcional."}
+{"id": "P27", "veredicto": "Sí", "motivo": "Mismas operaciones y etiquetas; «no vibratorios» es una concordancia torpe pero inequívoca."}
+{"id": "P28", "veredicto": "Sí", "motivo": "Igual que P27, con el hueco final conservado."}
+{"id": "P29", "veredicto": "No", "motivo": "«con topo bajo vías» pasa a «con la parte superior baja de la vía»: se pierde la ejecución con topo."}
+{"id": "P30", "veredicto": "No", "motivo": "«Canalización tubo corrugado» pasa a «Tubo ondulado de canal»."}
+{"id": "P31", "veredicto": "No", "motivo": "«incluso mandrilado» pasa a «incluso con mando»."}
+{"id": "P32", "veredicto": "No", "motivo": "«canaleta de hormigón» pasa a «tubería de hormigón» y «repartidor» a «máquina de entrega»."}
+{"id": "P33", "veredicto": "No", "motivo": "«arqueta» pasa a «arcos» y «a pie de talud» a «de pie inclinado»."}
+{"id": "P34", "veredicto": "No", "motivo": "«embocadura» pasa a «tubos de apertura» y «arqueta» a «arco»."}
+{"id": "P35", "veredicto": "No", "motivo": "«arqueta de registro» pasa a «arco de tronco», «canalización hormigonada de tubos» a «tubos de hormigón» y «paramentos» a «sitios»."}
+{"id": "P36", "veredicto": "No", "motivo": "«cata» pasa a «degustación»."}
+{"id": "P37", "veredicto": "Sí", "motivo": "Sentido igual; «colocación» por «tendido» de cables es aceptable."}
+{"id": "P38", "veredicto": "No", "motivo": "«Mandrilado» (la operación) pasa a «Mandril» (la herramienta)."}
+{"id": "P39", "veredicto": "No", "motivo": "«sobre hastial de túnel o puente» pasa a «sobre túnel o puente hestial» y se pierde «excesiva inclinación»."}
+{"id": "P40", "veredicto": "No", "motivo": "«Hincas» pasa a «Bisagras» y «trinchera» a «zanja»."}
+{"id": "P41", "veredicto": "No", "motivo": "«Zanja» pasa a «Eslinga»."}
+{"id": "P42", "veredicto": "No", "motivo": "«Relleno localizado» pasa a «Relleno situado» y «humectación» a «hidratante»."}
+{"id": "P43", "veredicto": "Dudoso", "motivo": "«[·] de canalización de [·] tubos» pasa a «[·] para la canalización [·] tubos»: «Suministro para la canalización» puede leerse como algo auxiliar a la canalización."}
+{"id": "P44", "veredicto": "Dudoso", "motivo": "Mismo cambio que P43: «[·] de canalización» pasa a «[·] para la canalización»."}
+{"id": "P45", "veredicto": "No", "motivo": "«Arqueta» pasa a «Arco»."}
+{"id": "P46", "veredicto": "No", "motivo": "«Arqueta» pasa a «Arco» e «incluso recibido» a «recibido o no»."}
+{"id": "P47", "veredicto": "No", "motivo": "«Arqueta de registro» pasa a «Estante de registro»."}
+{"id": "P48", "veredicto": "Dudoso", "motivo": "«recibido de los tubos de acometida» pasa a «recepción de los tubos de alimentación»: tanto «recibido» como «acometida» cambian de concepto."}
+{"id": "P49", "veredicto": "Sí", "motivo": "«sustitución» por «reposición» de un elemento y «eliminación de desechos» por retirada de escombros son aceptables."}
+{"id": "P50", "veredicto": "No", "motivo": "«sellado de arqueta o cámara de registro» pasa a «cámara de sellado o grabación de arcos»."}
+{"id": "P51", "veredicto": "No", "motivo": "«fichas» pasa a «hojas» y «topes» a «tapones»."}
+{"id": "P52", "veredicto": "No", "motivo": "«ménsulas» pasa a «corbatas» y «puesta a tierra de las mismas» a «puesta a tierra de tornillos»."}
+{"id": "P53", "veredicto": "No", "motivo": "«cuneta» pasa a «canaletas»."}
+{"id": "P54", "veredicto": "No", "motivo": "«en desmonte» pasa a «no montados»."}
+{"id": "P55", "veredicto": "Sí", "motivo": "«cimientos rectangulares sobre terraplén» y «suelo» por «terreno» conservan el mismo tipo de partida."}
+{"id": "P56", "veredicto": "No", "motivo": "«en desmonte» pasa a «en despeje»."}
+{"id": "P57", "veredicto": "No", "motivo": "«elementos de fijación del poste» pasa a «elementos de fijación posterior»."}
+{"id": "P58", "veredicto": "No", "motivo": "«en desmonte» pasa a «en compensación» y «cimentación» a «base»."}
+{"id": "P59", "veredicto": "Dudoso", "motivo": "«cimentación rectangular» pasa a «bases rectangulares de poste», que puede leerse como placa base y no como cimentación."}
+{"id": "P60", "veredicto": "Dudoso", "motivo": "«cimentación rectangular» pasa a «bases rectangulares de poste», que puede leerse como placa base y no como cimentación."}
+{"id": "P61", "veredicto": "Sí", "motivo": "«cimientos rectangulares para el anclaje del tipo» conserva elemento, tipo y etiquetas."}
+{"id": "P62", "veredicto": "Sí", "motivo": "Igual que P61."}
+{"id": "P63", "veredicto": "Sí", "motivo": "Se conservan la cimentación cilíndrica para anclaje y los elementos de fijación del poste."}
+{"id": "P64", "veredicto": "No", "motivo": "Se pierde «en desmonte»: queda «cimientos cilíndricos en el tipo [·]»."}
+{"id": "P65", "veredicto": "Sí", "motivo": "Se conservan la cimentación cilíndrica en terraplén y la fijación del poste; «Condiciones de aplicación» identifica el mismo parámetro."}
+{"id": "P66", "veredicto": "No", "motivo": "«micropilotes» pasa a «micropilares» y «cimentación en roca» a «cimientos de roca»."}
+{"id": "P67", "veredicto": "Dudoso", "motivo": "«Cimentaciones especiales» pasa a «Fundamentos especiales», que no es término técnico de cimentación."}
+{"id": "P68", "veredicto": "Dudoso", "motivo": "«desde plataforma o vía» pasa a «de plataforma o vía», que se lee como atributo de los postes y no como acceso de ejecución."}
+{"id": "P69", "veredicto": "No", "motivo": "«cimentación rectangular en desmonte» pasa a «molduras rectangulares en despeje»."}
+{"id": "P70", "veredicto": "No", "motivo": "«Cata previa de excavación de macizo» pasa a «Pre-gustación de la masa», «terreno» a «campo» y «Dirección de Obra» a «Dirección de Trabajo»."}
+{"id": "P71", "veredicto": "No", "motivo": "Igual que P70: «cata» pasa a «pre-gustación» y «macizo» a «masa»."}
+{"id": "P72", "veredicto": "Sí", "motivo": "«placa de anclaje catenaria» conserva el elemento y las etiquetas."}
+{"id": "P73", "veredicto": "No", "motivo": "«tirante de anclajes» pasa a «correas de anclaje»."}
+{"id": "P74", "veredicto": "Sí", "motivo": "«Reemplazo» equivale a «Reposición» de la barra de anclaje; el resto se conserva."}
+{"id": "P75", "veredicto": "Dudoso", "motivo": "«barra de anclaje de cimentación» pasa a «barra de anclaje de la base», que es ambiguo (base de poste o cimentación)."}
+{"id": "P76", "veredicto": "No", "motivo": "«Hito indicador de cables» pasa a «Indicador de cable»: se pierde el hito."}
+{"id": "P77", "veredicto": "No", "motivo": "«compuesta por [·] barras corrugadas roscadas de [·]» pasa a «barras corrugadas roscadas [·] de [·]», y el diámetro queda pegado a «postes»: los huecos ya no se leen igual."}
+{"id": "P78", "veredicto": "No", "motivo": "Igual que P77: el número de barras se reordena y el diámetro queda pegado a «postes de electrificación»."}
+{"id": "P79", "veredicto": "No", "motivo": "«Cimentación en roca con micropilote» pasa a «Fundamentos rocosos con micropiloto»; además «acesso per»."}
+{"id": "P80", "veredicto": "No", "motivo": "«Cimentación» pasa a «Fundamentos» y «acceso por [·]» a «asceso para [·]», que cambia el sentido del acceso."}
+{"id": "P81", "veredicto": "Dudoso", "motivo": "«Cimentaciones especiales» pasa a «Fundamentos especiales», que no es término técnico de cimentación."}
+{"id": "P82", "veredicto": "Dudoso", "motivo": "«Cimentaciones prismáticas» pasa a «Fundamentos prismáticos», que no es término técnico de cimentación."}

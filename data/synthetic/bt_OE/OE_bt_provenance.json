@@ -1,6 +1,6 @@
 {
- "commit": "0502b2f927959eae5562d21fdb00646d7ad0ae77",
- "run_id": "bt-full-20261015T044303Z",
+ "commit": "5ce7a172c2d26fa7cbd50b2285eaa10018bacff3",
+ "run_id": "bt-full-20261015T064545Z",
  "mode": "full",
  "seed": 42,
  "bt": {
@@ -26,28 +26,28 @@
   "OE_2026_stage.json": "2882113b9fe4b23c401de8d1059ede52a762068eb96b99d7de309733fc2a078b"
  },
  "outputs_sha256": {
-  "OE_stacked_bt_en_texto.json": "75a666c3be09363b018ec72a4799ec7ab7359567b9ae5228a908b7bfb4646d71",
-  "OE_stacked_bt_en_modifications.jsonl": "16d767da189fc0095276f68ea027d2cb325ec82e737c80f299bc4e152e690246",
-  "OE_bt_orig_en_texto.json": "4511043539861397dd01498a5eabfd280c72c319a2e879d2d7a84a3b9b3e25ce",
-  "OE_bt_orig_en_modifications.jsonl": "81558b7fd613e31b3f3ef49af4671c5b52adf2cab35f5b906b0a26a751303645",
-  "OE_stacked_btv_en_texto.json": "5568b9e8eb2449f03f98ed76ae206527664e27b11c89ec879657ffe9cd7f65d7",
-  "OE_stacked_btv_en_modifications.jsonl": "41987836bb70bf280795322ae51d2d6cc0a44818e0c25a75f2a72c7ce4d4f40d",
-  "OE_bt_origv_en_texto.json": "0cb9f6179b03852e789e4edb60810909bc9e4139edcb4fd24b60c0c85894c8db",
-  "OE_bt_origv_en_modifications.jsonl": "5a731e1a4676cd74c5bb8c90075c8a69340ddf4da0f6f6aeb5678bcdc95e269b",
-  "OE_bt_rejected.jsonl": "ce5c4e9341d15607ccaa2408e8dddcc9a2c335d3b139ff94f4f4674b69bf1c97"
+  "OE_stacked_bt_en_texto.json": "254bba7f1596809d1f39810de1cc9d63783ff4904b7b5c9afba01d87a05d446b",
+  "OE_stacked_bt_en_modifications.jsonl": "a250d3244e1a9304d0e1c56e5e8f76b0e4b374e4e0f95c49f539f1e28643847f",
+  "OE_bt_orig_en_texto.json": "1dd5bae1a44d7f42f7a5c854e5bd50eb5b444d879403831dac9b295150970e57",
+  "OE_bt_orig_en_modifications.jsonl": "ebfd0a9650263e61a09686e0eea72ae81de7c5f37fd0ea66cea56c72a62cb44b",
+  "OE_stacked_btv_en_texto.json": "d9975198c2aa42658306642010f40a6bc1f1a0a77dccbf54101a927426c02f7a",
+  "OE_stacked_btv_en_modifications.jsonl": "59fc83ad2f89db90a022c29b2df8738f2796a9b8fea2007971a1701fbe11c1d2",
+  "OE_bt_origv_en_texto.json": "853270c66792a5e73375b8580d1193feea8a7b48efd607be7a116a5eb811065a",
+  "OE_bt_origv_en_modifications.jsonl": "f24dade7aea089ca6dbb359c01af20e7c1745830a43066445865173166cad1ee",
+  "OE_bt_rejected.jsonl": "d7ec55993b4057b4a77f319e165e36f42e0af8973aad6e61f254d7c9166a4e07"
  },
  "counts": {
   "stacked_bt": {
    "n": 4674,
-   "accepted": 4566
+   "accepted": 4576
   },
   "bt_orig": {
    "n": 4674,
-   "accepted": 4611
+   "accepted": 4593
   },
   "stacked_btv": {
    "n": 4674,
-   "accepted": 4566
+   "accepted": 4577
   },
   "bt_origv": {
    "n": 4674,

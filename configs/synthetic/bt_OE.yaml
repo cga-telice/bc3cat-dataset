@@ -39,6 +39,13 @@ bt:
   stacked_p_keys: data/synthetic/bt_OE/OE_stacked_P_keys.json
   cache_dir: data/synthetic/bt_OE/cache
   out_dir: data/synthetic/bt_OE
+  # Glosario: términos del oficio que salen literales en la BT de prosa. Sale de la
+  # auditoría de las 82 prosas de bt_origv (2026-10-15): son los que el traductor
+  # confundía (arqueta → arco, canaleta → canal, desmonte → despeje, hastial → hestial…),
+  # más sus parejas que distinguen partidas (desmonte ↔ terraplén).
+  glossary: [arqueta, canaleta, cimentación, desmonte, terraplén, cata, macizo, tapa, tapado,
+             destapado, mandrilado, hastial, zanja, ménsula, micropilote, topo, acometida,
+             embocadura, hito, ficha, firme, talud, hinca, trinchera, cuneta, balasto, repartidor]
 
 # BT de valores (vuelta tras CP4): ES→EN→X→ES por valor, tabla cerrada revisada por César.
 bt_values:
