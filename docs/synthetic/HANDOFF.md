@@ -310,7 +310,11 @@ consultas de 79 conceptos. Gold = la propia hoja (`gold_item_key`).
   frase con traducción aprobada.
 - **Auditoría por agentes.** Las auditorías las hicieron agentes con contexto limpio; César
   revisó decisiones concretas, pero la muestra de las variantes de valor está pendiente.
-- **Deriva en STACKED.** Las paráfrasis de plantilla de STACKED quitan «hormigonada» en unas
-  2 650 consultas («Canalización hormigonada» → «Conducción subterránea»). Es un cambio de tipo
-  de partida que el verificador por ejes no ve. No afecta a esta BT (parte del gold), pero sí a
-  STACKED y a los conjuntos que comparten paráfrasis (F-BT-1).
+- **«hormigonada» (F-BT-1, cerrado).** La BT dice «Canalización de hormigón» donde el gold dice
+  «Canalización hormigonada» (2 713 consultas), y las paráfrasis de STACKED, SINGLE, dose e
+  isolated también quitan la palabra. No es un cambio de tipo: la plantilla vuelve a decir
+  «hormigón tipo HE-20» y no hay ninguna canalización no hormigonada de tubo con la que
+  confundirla. Solo 34 consultas entregadas antes (22 STACKED, 2 SINGLE, 5 dose, 5 isolated)
+  no mencionan hormigón; están listadas en `data/synthetic/bt_OE/OE_hormigonada_no_concrete.json`.
+- **Variantes de valor.** La entrega usa 64 de las 218 variantes aprobadas (6 057 usos); la
+  lista para revisión de César está en `docs/synthetic/bt/OE_bt_value_used_review.md`.

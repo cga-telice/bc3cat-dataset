@@ -1,0 +1,69 @@
+# Variantes de valor usadas en la entrega BT (OE)
+
+64 variantes distintas, 6057 usos en `handoff_OE/OE_bt_texto.json`. Ordenadas por usos; la columna «acum.» es el porcentaje acumulado de usos.
+Marca con `x` las que **no** aceptes; se rehace el ensamblado sin ellas (sin volver a traducir).
+
+- [ ] **1507** (25 % acum.) · «Volumen relevante» → «Volumen importante»
+- [ ] **768** (38 % acum.) · «Volumen escaso» → «Volumen bajo»
+- [ ] **760** (50 % acum.) · «Volumen escaso» → «Bajo volumen»
+- [ ] **593** (60 % acum.) · «Cualquier franja horaria excepcional» → «Cualquier intervalo de tiempo excepcional»
+- [ ] **588** (70 % acum.) · «No necesita intervalo» → «No se requiere intervalo»
+- [ ] **568** (79 % acum.) · «No necesita intervalo» → «No se requiere ningún intervalo»
+- [ ] **364** (85 % acum.) · «en terreno rocoso» → «en terrenos rocosos»
+- [ ] **182** (88 % acum.) · «la demolición de roca dura,» → «demolición de rocas duras,»
+- [ ] **182** (91 % acum.) · «la demolición de roca dura,» → «la demolición de la roca dura,»
+- [ ] **75** (92 % acum.) · «rocoso» → «Tipo de terreno: rocoso» — 75 con etiqueta
+- [ ] **69** (93 % acum.) · «normal» → «Tipo de terreno: normal» — 69 con etiqueta
+- [ ] **58** (94 % acum.) · «semi-rocoso» → «Tipo de terreno: semi-rocoso» — 58 con etiqueta
+- [ ] **29** (95 % acum.) · «y la tapa, o tapas de hormigón» → «y la tapa, o las tapas de hormigón»
+- [ ] **23** (95 % acum.) · «hormigón» → «Material: hormigón» — 23 con etiqueta
+- [ ] **16** (95 % acum.) · «más de 1,5 m» → «superior a 1,5 m»
+- [ ] **15** (96 % acum.) · «Diurno excepcional» → «Excepcionalmente durante el día»
+- [ ] **13** (96 % acum.) · «hormigón» → «Pared: hormigón» — 13 con etiqueta
+- [ ] **13** (96 % acum.) · «de dimensiones 250x150x200 cm» → «de las dimensiones 250x150x200 cm»
+- [ ] **12** (96 % acum.) · «ladrillo» → «Pared: ladrillo» — 12 con etiqueta
+- [ ] **12** (97 % acum.) · «plataforma» → «Acceso: plataforma» — 12 con etiqueta
+- [ ] **11** (97 % acum.) · «No aplica» → «No aplicable»
+- [ ] **11** (97 % acum.) · «ladrillo» → «Material: ladrillo» — 11 con etiqueta
+- [ ] **10** (97 % acum.) · «se incluye soporte de elevación» → «soporte de elevación incluido»
+- [ ] **10** (97 % acum.) · «a máquina» → «mecanizada»
+- [ ] **9** (97 % acum.) · «de dimensiones 110x110x200 cm» → «de las dimensiones 110x110x200 cm»
+- [ ] **8** (98 % acum.) · «diurno sin corte de tensión» → «día sin corte de tensión»
+- [ ] **8** (98 % acum.) · «nocturno sin corte de tensión» → «noche sin corte de tensión»
+- [ ] **8** (98 % acum.) · «Suministro y montaje» → «Entrega y montaje»
+- [ ] **8** (98 % acum.) · «Nocturno» → «Trabajo: Nocturno» — 8 con etiqueta
+- [ ] **7** (98 % acum.) · «módulo de empalme» → «Equipo: módulo de empalme» — 7 con etiqueta
+- [ ] **7** (98 % acum.) · «vía» → «Acceso: vía» — 7 con etiqueta
+- [ ] **6** (98 % acum.) · «elevada» → «Tipo: elevada» — 6 con etiqueta
+- [ ] **6** (98 % acum.) · «diurno con corte de tensión» → «día con corte de tensión»
+- [ ] **6** (98 % acum.) · «ADIF (1000x220x195) de 1 alveolo» → «ADIF (1000x220x195) 1 alveolo»
+- [ ] **5** (99 % acum.) · «Diurno» → «Trabajo: Diurno» — 5 con etiqueta
+- [ ] **5** (99 % acum.) · «diurno con corte de tensión» → «de día con corte de tensión»
+- [ ] **5** (99 % acum.) · «ADIF (1000x400x290) de 1 alveolo» → «ADIF (1000x400x290) 1 alveolo»
+- [ ] **5** (99 % acum.) · «ADIF (1000x450x290) de 2 alveolos» → «ADIF (1000x450x290) 2 alveolos»
+- [ ] **5** (99 % acum.) · «plástico» → «Material: plástico» — 5 con etiqueta
+- [ ] **5** (99 % acum.) · «60x60x75 cm en túnel» → «60x60x75 cm en el túnel»
+- [ ] **5** (99 % acum.) · «180x60x75 cm en túnel» → «180x60x75 cm en el túnel»
+- [ ] **5** (99 % acum.) · «300x60 mm en paredes o techo» → «300x60 mm en paredes o techos»
+- [ ] **4** (99 % acum.) · «enterrada» → «Tipo: enterrada» — 4 con etiqueta
+- [ ] **4** (99 % acum.) · «Suministro y montaje» → «Tipo de acción: Entrega y montaje» — 4 con etiqueta
+- [ ] **4** (99 % acum.) · «120x60x75 cm en túnel» → «120x60x75 cm en el túnel»
+- [ ] **4** (99 % acum.) · «300x60 mm bajo falso suelo» → «300x60 mm bajo suelo falso»
+- [ ] **4** (99 % acum.) · «500x60 mm en galerias» → «500x60 mm en las galerías»
+- [ ] **4** (99 % acum.) · «via» → «Acceso: via» — 4 con etiqueta
+- [ ] **3** (100 % acum.) · «ADIF (1000x180x160) de 1 alveolo» → «ADIF (1000x180x160) 1 alveolo»
+- [ ] **3** (100 % acum.) · «ADIF (1000x600x290) de 1 alveolo» → «ADIF (1000x600x290) 1 alveolo»
+- [ ] **3** (100 % acum.) · «ADIF (1000x600x290) de 2 alveolos)» → «ADIF (1000x600x290) 2 alveolos»
+- [ ] **3** (100 % acum.) · «ADIF (1000x800x340) de 2 alveolos» → «ADIF (1000x800x340) 2 alveolos»
+- [ ] **3** (100 % acum.) · «pieza cambio de cota o nivel» → «Equipo: pieza cambio de cota o nivel» — 3 con etiqueta
+- [ ] **3** (100 % acum.) · «Suministro» → «Tipo de acción: Suministro» — 3 con etiqueta
+- [ ] **3** (100 % acum.) · «tapa de hormigón en arqueta» → «Tipos: tapa de hormigón en arqueta» — 3 con etiqueta
+- [ ] **2** (100 % acum.) · «Diurno Excepcional» → «Trabajo: Diurno Excepcional» — 2 con etiqueta
+- [ ] **1** (100 % acum.) · «exterior del edificio técnico» → «Situación: exterior del edificio técnico» — 1 con etiqueta
+- [ ] **1** (100 % acum.) · «pieza cambio de dirección» → «Equipo: pieza cambio de dirección» — 1 con etiqueta
+- [ ] **1** (100 % acum.) · «con reposición» → «con sustitución»
+- [ ] **1** (100 % acum.) · «con reposición» → «con sustituciones»
+- [ ] **1** (100 % acum.) · «tapa metálica de cámara» → «Tipos: tapa metálica de cámara» — 1 con etiqueta
+- [ ] **1** (100 % acum.) · «300x60 mm bajo falso suelo» → «300x60 mm bajo un suelo falso»
+- [ ] **1** (100 % acum.) · «300x60 mm en paredes o techo» → «300x60 mm en las paredes o en el techo»
+- [ ] **1** (100 % acum.) · «Cualquier franja horaria» → «Trabajo: Cualquier franja horaria» — 1 con etiqueta

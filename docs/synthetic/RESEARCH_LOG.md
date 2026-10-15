@@ -55,8 +55,12 @@ adicional y etiqueta; partir del gold; auditoría por agentes; prosa por frases 
 posterior del glosario y respaldo a la frase original; sinónimos del glosario (≥ 3 por término).
 
 **CLAUDE_SYNTHETIC.md updated:** yes (mapa de módulos).
-**Next step:** muestra de César de las variantes de valor; decidir F-BT-1 (deriva «hormigonada»
-en las paráfrasis de STACKED); fusión de `syn/back-translation` en `synthetic` con su OK.
+**F-BT-1 cerrado** (César, 2026-10-16): «hormigonada» se pierde como palabra, no como tipo; solo
+34 consultas de los conjuntos previos se quedan sin ninguna mención a hormigón (listadas).
+**Next step:** revisión de César de las 64 variantes de valor usadas
+(`docs/synthetic/bt/OE_bt_value_used_review.md`); investigar frases rotas en las paráfrasis de
+plantilla («con un diámetro de en plataforma de estación mm»: 192 STACKED, 25 SINGLE, 56 dose,
+49 isolated con el patrón más simple).
 
 ---
 

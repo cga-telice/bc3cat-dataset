@@ -1,0 +1,47 @@
+{
+ "description": "consultas cuyo gold dice «hormigonada» y que no mencionan hormigón en ningún sitio (F-BT-1, cerrado 2026-10-16: pérdida de palabra, no cambio de tipo)",
+ "ids": {
+  "OE_stacked_texto.json": [
+   "60e27c83-8882-5d57-8c7a-b4dc16148c8d",
+   "bbb33b40-4f37-5511-b8bd-50268598b62c",
+   "f8af46f0-6cda-5406-ba35-f783999fd2fc",
+   "060b8f8c-57e2-5e5a-8442-0ea475496eb5",
+   "6f8ee81e-58c7-5a18-8efa-deedaa28b4dc",
+   "2cb42357-0dbe-5fe7-8304-bfc2855b83ac",
+   "1d169f46-9296-5e64-b7d2-5ff129b717c0",
+   "9554c306-8d81-5966-bfd9-430ff3c57033",
+   "513d52ac-af18-5056-9b40-705283887dc8",
+   "742ffc97-9ba5-59da-8211-ce201622073c",
+   "cbae8db9-83c9-556f-b16c-ad3a991bed6f",
+   "8546da11-b09b-5ac5-912b-96f3796a81e0",
+   "20e90d5c-891d-51e4-9e58-2822a29d59b8",
+   "d0de97ba-f2ec-5760-a462-b14ba7205613",
+   "41823339-5a5c-584c-a3e6-115818bfc833",
+   "79dca0dc-249a-5ea8-bfaf-3b8cdda4abb1",
+   "cba7f9d6-cf71-5c54-a6d4-9219552e7545",
+   "87227773-80f3-5a2f-a8c9-cc2690a76c10",
+   "8ebdccbf-d519-5065-81e7-faf02fa1ff54",
+   "eb5b97d2-0ea3-5066-8c01-5288bdd78dda",
+   "7cebefb1-f4e1-585f-9546-6f0ac162a7bd",
+   "53f75a02-a4f7-5ee2-9bab-b11e3d0ebb97"
+  ],
+  "OE_single_texto.json": [
+   "13ad5475-1cf7-53d6-8e7b-e5144b70180c",
+   "fa3debc6-e0ba-512a-ba8b-44420b559054"
+  ],
+  "OE_dose_texto.json": [
+   "03fad94e-5e32-5ff0-9e30-b5b2b6e3784e",
+   "3a46113b-8dd6-5d43-992d-1bf8fe5e0e5f",
+   "61350b21-a02f-58d6-a3b6-ccd640bf87b4",
+   "1df5a841-9f21-5cda-86d0-166ba85308ec",
+   "9fdf4f5e-9607-5c3a-9561-fb780c560476"
+  ],
+  "OE_isolated_texto.json": [
+   "3b11142f-d995-53ff-8eb9-74624531d59f",
+   "992716e8-7bbb-5e3f-8eba-fec990bcb885",
+   "9679c28e-d4e3-574d-b5f0-4d65de09c259",
+   "09916d07-802a-56c1-82af-1b14ecdb06f7",
+   "2954e8aa-bd65-5eb0-990f-53971c1d81ca"
+  ]
+ }
+}
