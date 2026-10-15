@@ -1,0 +1,57 @@
+{
+ "commit": "0502b2f927959eae5562d21fdb00646d7ad0ae77",
+ "run_id": "bt-full-20261015T044303Z",
+ "mode": "full",
+ "seed": 42,
+ "bt": {
+  "pivot": "en",
+  "engine": "marian",
+  "model_es_en": "Helsinki-NLP/opus-mt-es-en@c96e2c5399ebfae4fc43d9669556b9afa74bb69d",
+  "model_en_es": "Helsinki-NLP/opus-mt-en-es@5bc4493d463cf000c1f0b50f8d56886a392ed4ab",
+  "license": "apache-2.0",
+  "decoding": {
+   "num_beams": 4,
+   "do_sample": false
+  },
+  "mask_strategy": "bracket"
+ },
+ "translation_cache": "data/synthetic/bt_OE/cache",
+ "verification": "structural_masked",
+ "protocol_version": "bt-masked-1",
+ "inputs_sha256": {
+  "OE_stacked_texto.json": "c34a222ae2af05a0b5335b774cb7fb45f14064cc17234d9d885e809fb29b6f45",
+  "OE_texto.json": "54c83faadd41bd86177006c5d7dc85e2145fa35f4bf98450870598bff70f23e9",
+  "BC3CAT_Syn_modifications.jsonl": "4ece3203027b61d9fa2c61859e8bd034ac44fac27f64ea6ecfcccef9a165531c",
+  "OE_stacked_P_keys.json": "e7b894bc93881a80b1eedd9ed70faa11676e6cff790d07e4e0906ff3481a1118",
+  "OE_2026_stage.json": "2882113b9fe4b23c401de8d1059ede52a762068eb96b99d7de309733fc2a078b"
+ },
+ "outputs_sha256": {
+  "OE_stacked_bt_en_texto.json": "75a666c3be09363b018ec72a4799ec7ab7359567b9ae5228a908b7bfb4646d71",
+  "OE_stacked_bt_en_modifications.jsonl": "16d767da189fc0095276f68ea027d2cb325ec82e737c80f299bc4e152e690246",
+  "OE_bt_orig_en_texto.json": "4511043539861397dd01498a5eabfd280c72c319a2e879d2d7a84a3b9b3e25ce",
+  "OE_bt_orig_en_modifications.jsonl": "81558b7fd613e31b3f3ef49af4671c5b52adf2cab35f5b906b0a26a751303645",
+  "OE_stacked_btv_en_texto.json": "5568b9e8eb2449f03f98ed76ae206527664e27b11c89ec879657ffe9cd7f65d7",
+  "OE_stacked_btv_en_modifications.jsonl": "41987836bb70bf280795322ae51d2d6cc0a44818e0c25a75f2a72c7ce4d4f40d",
+  "OE_bt_origv_en_texto.json": "0cb9f6179b03852e789e4edb60810909bc9e4139edcb4fd24b60c0c85894c8db",
+  "OE_bt_origv_en_modifications.jsonl": "5a731e1a4676cd74c5bb8c90075c8a69340ddf4da0f6f6aeb5678bcdc95e269b",
+  "OE_bt_rejected.jsonl": "ce5c4e9341d15607ccaa2408e8dddcc9a2c335d3b139ff94f4f4674b69bf1c97"
+ },
+ "counts": {
+  "stacked_bt": {
+   "n": 4674,
+   "accepted": 4566
+  },
+  "bt_orig": {
+   "n": 4674,
+   "accepted": 4611
+  },
+  "stacked_btv": {
+   "n": 4674,
+   "accepted": 4566
+  },
+  "bt_origv": {
+   "n": 4674,
+   "accepted": 4613
+  }
+ }
+}

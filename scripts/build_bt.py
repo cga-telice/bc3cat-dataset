@@ -517,6 +517,8 @@ def main(argv=None) -> int:
     phase.add_argument("--translate", action="store_true")
     phase.add_argument("--report", action="store_true")
     phase.add_argument("--fresh-check", action="store_true")
+    ap.add_argument("--no-bm25", action="store_true",
+                    help="sin el diagnóstico BM25 (lento: horas en la corrida completa); los datos no dependen de él")
     a = ap.parse_args(argv)
 
     cfg = yaml.safe_load((REPO / a.config).read_text(encoding="utf-8"))
@@ -553,7 +555,7 @@ def main(argv=None) -> int:
     rows += assemble_rows(cfg, ctx, jobs, results, value_slots(jobs, stage, corpus, sidecar),
                           stage, sidecar, forbidden)
     groups = ctx.groups
-    m = metrics(cfg, ctx, rows, corpus, groups, p_keys, stacked)
+    m = metrics(cfg, ctx, rows, corpus, groups, p_keys, stacked, bm25=not a.no_bm25)
     out_dir = REPO / cfg["bt"]["out_dir"] / ("pilot" if mode == "pilot" else "")
     pivot = cfg["bt"]["pivot"]
     bt_meta = {"pivot": pivot, "engine": "marian",

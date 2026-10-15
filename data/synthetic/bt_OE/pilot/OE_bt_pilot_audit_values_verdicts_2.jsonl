@@ -1,0 +1,172 @@
+{"id": "A173", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción subterránea»; además «la retirada» pasa a «depósito de productos» y «Cualquier franja horaria» a «Horario Integral»."}
+{"id": "A174", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Desaparece «canalización hormigonada» («Conjunto de conductos»), el diámetro queda confuso («12 unidades de diámetro ... y 50 mm») y añade «asegurando la nivelación y alineación correcta del nuevo material»."}
+{"id": "A175", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada», y «Cualquier condición de ejecución» pasa a «Condiciones Variables»."}
+{"id": "A176", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «canalización hormigonada»; añade «con el uso de técnicas de compactación avanzadas»; «Condiciones Flexibles» en lugar de «Cualquier condición de ejecución»."}
+{"id": "A177", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «Canalización hormigonada» (son partidas distintas del catálogo)."}
+{"id": "A178", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «canalización hormigonada»; añade «para facilitar el acceso y la seguridad» y «para garantizar la continuidad del firme»."}
+{"id": "A179", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «hormigonada»; añade descripción del terreno; «demolición de roca dura» pierde «dura»; «Condiciones Variables» por «Cualquier condición de ejecución»."}
+{"id": "A180", "veredicto": "No", "problema": "omisión de operación", "motivo": "«el suministro y montaje de los tubos» queda en «montaje de tuberías»: se pierde el suministro."}
+{"id": "A181", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «Canalización hormigonada»; «Turno de Día Especial» por «Diurno Excepcional»."}
+{"id": "A182", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «Canalización hormigonada»."}
+{"id": "A183", "veredicto": "No", "problema": "omisión de operación", "motivo": "«el transporte y la retirada de los productos» pasa a «transporte y colocación de los productos en su lugar de utilización»; «Cualquier franja horaria» pasa a «Horario Integral»."}
+{"id": "A184", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «Canalización hormigonada»; «Cualquier franja horaria excepcional» pasa a «Horario especial libre»."}
+{"id": "A185", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «hormigonada»; «Condiciones Estándar» por «Cualquier condición de ejecución»."}
+{"id": "A186", "veredicto": "No", "problema": "añadido", "motivo": "Añade «incluyendo la preparación del subrasante y la compactación adecuada del nuevo material»; «relleno» pasa a «preparación» de la zanja; no dice «hormigonada»."}
+{"id": "A187", "veredicto": "Dudoso", "problema": "omisión de operación", "motivo": "«el relleno y compactado de la zanja» pasa a «preparación y compactación de la zanja»; no aparece «hormigonada» (sólo el hormigón HE-20); «Horario Completo» por «Cualquier franja horaria»."}
+{"id": "A188", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada ... adosada o superficial» en vez de canalización hormigonada; se pierde «sin vibrar»; «prueba de los conductos» pasa a «ensayos de rendimiento»; «transporte y retirada» pasa a «extracción y extracción»."}
+{"id": "A189", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «hormigonada»; añade «mediante técnicas de perforación y voladura controlada»; se pierde «sin vibrar»."}
+{"id": "A190", "veredicto": "No", "problema": "añadido", "motivo": "Añade «asegurando la nivelación y alineación correcta del nuevo pavimento»; además se pierde el «suministro» de los tubos («montaje de tuberías»)."}
+{"id": "A191", "veredicto": "No", "problema": "omisión de operación", "motivo": "«el suministro y montaje de los tubos» queda en «montaje de tuberías»: se pierde el suministro."}
+{"id": "A192", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «Canalización hormigonada»; «zanja» pasa a «zanco»; se pierde «sin vibrar»."}
+{"id": "A193", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "Banda «No necesita intervalo» pasa a «Mantenimiento Automático»; añade «garantizando la estabilidad del entorno circundante»; «retirada» pasa a «colocación de los productos»."}
+{"id": "A194", "veredicto": "No", "problema": "añadido", "motivo": "Añade «garantizando la adherencia y estabilidad del nuevo material aplicado»; se pierde el suministro de los tubos; «Horario Integral» por «Cualquier franja horaria»."}
+{"id": "A195", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «hormigonada»; añade finalidades («para estabilizar la excavación», «para garantizar la estanqueidad»); «Horario Flexible Especial»."}
+{"id": "A196", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Entierro de 16 tubos» en vez de «Canalización hormigonada»; «zanja» pasa a «piloto»; se pierde «sin vibrar»."}
+{"id": "A197", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «hormigonada»; añade «para minimizar el impacto en el tráfico ferroviario»; «retirada» pasa a «ubicación de los productos»."}
+{"id": "A198", "veredicto": "No", "problema": "añadido", "motivo": "Añade «para asegurar la estabilidad durante la operación» y «para restaurar la superficie de la vía»; «relleno» pasa a «preparación»; no dice «hormigonada»."}
+{"id": "A199", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «hormigonada»; añade «asegurando la nivelación ...»; «zanco»; se pierde «sin vibrar»; «Horario Abierto Extra»."}
+{"id": "A200", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «hormigonada»; añade «incluyendo la verificación de la integridad estructural del nuevo pavimento»."}
+{"id": "A201", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«libre de halógenos» pasa a «deficiencia de halógenos», «sin vibrar» a «hormigón inerte», «Canalización hormigonada» a «Conducción enterrada»."}
+{"id": "A202", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«deficiencia de halógenos», «hormigón inerte» y «Conducción enterrada» en vez de «libre de halógenos», «sin vibrar» y «Canalización hormigonada»."}
+{"id": "A203", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Conducción enterrada» en vez de «hormigonada»; «deficiencia de halógeno»; añade «asegurando una rápida ejecución de obra»; «zanja» pasa a «piloto»; «extracción y extracción»."}
+{"id": "A204", "veredicto": "No", "problema": "omisión de operación", "motivo": "«el transporte y la retirada de los productos» pasa a «transporte y colocación de productos en su lugar de utilización»."}
+{"id": "A205", "veredicto": "No", "problema": "añadido", "motivo": "Añade «asegurando compatibilidad con las estructuras de soporte de la vía»; «retirada» de productos pasa a «colocación»."}
+{"id": "A206", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«Arqueta ... de hormigón» pasa a «arco ... con macadán»: cambia el elemento y el material."}
+{"id": "A207", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "Material «ladrillo» pasa a «Mampostería»; «arqueta» pasa a «arquete»."}
+{"id": "A208", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«Arqueta» pasa a «Arco» y «hormigón» a «masa de cemento»; «Banda de mantenimiento» se rotula «Área de trabajo»."}
+{"id": "A209", "veredicto": "No", "problema": "omisión de operación", "motivo": "Desaparece el elemento («Arqueta»); «solera de hormigón en masa» pasa a «suelo de hormigón continuo»; se pierden «limpiada y terminada» y los medios auxiliares; «recibido de los tubos» pasa a «carcasa de los conductos»."}
+{"id": "A210", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«relleno posterior» pasa a «cubierta final», «limpieza» a «purificación», «tubos de acometida y desague profundo» a «líneas de conexión y evacuación»; «Horario especial libre»."}
+{"id": "A211", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«Arqueta prefabricada» pasa a «Arco prefabricado»."}
+{"id": "A212", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«Arqueta prefabricada» pasa a «Arco prefabricado»."}
+{"id": "A213", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«Arqueta» pasa a «Arco», «recibido de los tubos de acometida y desague» a «ajuste para tuberías de suministro y evacuación», «limpieza» a «desinfección»."}
+{"id": "A214", "veredicto": "Dudoso", "problema": "otro", "motivo": "«de 90x81x100 cm de medidas interiores» pasa a «serie 90x81x100 centímetros, subserie de medidas interiores»; «Arqueta» pasa a «caja de registro»; la banda se rotula «Área de revisión»."}
+{"id": "A215", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "Banda «No necesita intervalo» pasa a «Mantenimiento continuo»; desaparece «Arqueta»."}
+{"id": "A216", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "Material «ladrillo» pasa a «adobe»; además «recibido de los tubos de acometida» queda en «recepción de los conductos»."}
+{"id": "A217", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«Cámara de registro» pasa a «Elemento de registro», «rellenos» a «empastes», «encofrados» a «soportes de hormigón», «tubos de acometida» a «conductos de distribución»."}
+{"id": "A218", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«Cámara de registro de hormigón» pasa a «cámara de grabación macizo»: se pierde el material."}
+{"id": "A219", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«reposición de tapa de hormigón en arqueta» pasa a «reposición de Tipos: Cubierta de hormigón en arqueta»; «Suministro y ejecución» pasa a «implementación y provisión»."}
+{"id": "A220", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«Volumen relevante» pasa a «Volumen Adecuado»; «6 fichas» pasa a «seis unidades hojas»; «topes» a «tapones»."}
+{"id": "A221", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«ménsulas» pasa a «cajas de acero galvanizado», «puesta a tierra» a «conexión al suelo», «pletinas» a «placas»."}
+{"id": "A222", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«suplemento de arqueta de registro ... existente» pasa a «caja de registro»; «montaje» a «puesta en marcha»."}
+{"id": "A223", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Se pierde «en desmonte» («en suelo de tipo d4»); «postes de electrificación» pasa a «Puestos eléctricos»."}
+{"id": "A224", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Se pierde «en desmonte» («del tipo d5»)."}
+{"id": "A225", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Se pierden «rectangular» y «en desmonte» («fundaciones en el tipo d11»); «terreno rocoso» pasa a «Terreno Áspero»."}
+{"id": "A226", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«cimentación rectangular en desmonte» pasa a «estructura de compensación rectangular»; «rocoso» a «Terreno Áspero»."}
+{"id": "A227", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «en despeje»; «terreno rocoso» pasa a «Suelo Pedregoso»."}
+{"id": "A228", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«terreno semi-rocoso» pasa a «Semisólido»; se pierde «en desmonte»."}
+{"id": "A229", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «no montados», lo que contradice el montaje."}
+{"id": "A230", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Se pierde «en desmonte» («en el tipo d6»); «vía» pasa a «pista»."}
+{"id": "A231", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «para la limpieza»; «postes de electrificación» a «poste de transmisión eléctrico»."}
+{"id": "A232", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Se pierde «en desmonte» («del tipo d19»)."}
+{"id": "A233", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «t1» pasa a «tipo S cimentación tipo B»."}
+{"id": "A234", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «t10» pasa a «1500 mA»; se pierden «desde plataforma o vía» y «Totalmente terminada»."}
+{"id": "A235", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «t12» pasa a «500 g/m^3»; «rocoso» a «Terreno Áspero»."}
+{"id": "A236", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «t15» pasa a «0.0981 N»; «desde plataforma o vía» pasa a «los desmontajes de plataformas o la pista»."}
+{"id": "A237", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «t20» pasa a «30 mL/s»; «rocoso» a «Suelo Pedregoso»."}
+{"id": "A238", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «t7» pasa a «dos kilojulios»; se pierden «desde plataforma o vía» y «Totalmente terminada»."}
+{"id": "A239", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «t15» pasa a «0.01 kgf a 0.0981 N»; «semi-rocoso» a «Semicompacto»."}
+{"id": "A240", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «t20» pasa a «30 mL/s»; «semi-rocoso» a «Semi-Firme»."}
+{"id": "A241", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «t4» pasa a «Tipo: M (%)»."}
+{"id": "A242", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «t10» pasa a «1.5 A a 1500 mA»."}
+{"id": "A243", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«cimentación cilíndrica en desmonte» pasa a «soporte cilíndrico en excavación»; «postes de electrificación» a «postes eléctricos»."}
+{"id": "A244", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Se pierde «en desmonte»; «postes de electrificación» pasa a «postes de potencia» y «poste» a «polo»."}
+{"id": "A245", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «en despeje»; se pierde «con postes de electrificación»."}
+{"id": "A246", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Se pierde «en desmonte» («base cilíndrica Cd8»)."}
+{"id": "A247", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«cimentación en terraplén Ct3» pasa a «sótano cilíndrico Ct3»; se pierde «Suministro»."}
+{"id": "A248", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«terreno semi-rocoso» pasa a «Semi-Firme»; se pierde «Suministro»; los elementos de fijación pasan a «los apéndices»."}
+{"id": "A249", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«semi-rocoso» pasa a «Semi-Duro»; añade «cilíndricos», que el gold Ct5 no indica."}
+{"id": "A250", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«semi-rocoso» pasa a «Semicompacto»; se pierde «Suministro» («Se facilitará el montaje»)."}
+{"id": "A251", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«cimentación en terraplén» pasa a «La base del terraplén»; «elementos de fijación del poste» a «elementos de fijación posterior»."}
+{"id": "A252", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «en el terreno de despeje»; «rocoso» a «Suelo de Piedra»."}
+{"id": "A253", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«Suministro y montaje» pasa a «Mobiliario y colocación», «rectangular» a «rectas»; se pierde «en desmonte»."}
+{"id": "A254", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «en la zona de limpieza»."}
+{"id": "A255", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «LR - t5» pasa a «categoría 100000 µs»; «semi-rocoso» a «Semi-Firme»."}
+{"id": "A256", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «LR - t3» pasa a «tipo 200 cm»."}
+{"id": "A257", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «LR - t4» pasa a «categoría de terraplén 3 kg»."}
+{"id": "A258", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«Suministro y montaje» pasa a «Fábrica y base ... colocada», «para anclaje» a «para la fijación»."}
+{"id": "A259", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«cimentación rectangular para anclaje tipo An8» pasa a «del tipo An8 para el anclaje del suelo»: el anclaje se atribuye al suelo."}
+{"id": "A260", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A261", "veredicto": "Dudoso", "problema": "valor de parámetro cambiado", "motivo": "«terreno rocoso» pasa a «Suelo Pedregoso», que no equivale de forma inequívoca a rocoso."}
+{"id": "A262", "veredicto": "No", "problema": "omisión de operación", "motivo": "«Suministro y montaje» pasa a «se suministra y se encuentra»: se pierde el montaje; «postes» a «polos»."}
+{"id": "A263", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«para anclaje» pasa a «para modelo de sujeción», «postes de electrificación» a «varillas de potencia», «Totalmente terminada» a «Se cierra por completo»."}
+{"id": "A264", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A265", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«terreno semi-rocoso» pasa a «superficie Semi-Firme»; «en desmonte» a «cortado»; «postes» a «columnas»."}
+{"id": "A266", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«cimentación cilíndrica en desmonte» pasa a «cemento cilíndrico»; se pierde «desde plataforma o vía»."}
+{"id": "A267", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «zanja»; «postes de electrificación» a «aislantes catenarias»."}
+{"id": "A268", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «zanja»; «postes de electrificación» a «aislantes catenarias»."}
+{"id": "A269", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «C1T» pasa a «1er Tipo de cilindro»; «semi-rocoso» a «Semisólido»; «Suministro» a «Forja»; «plataforma» a «lecho»."}
+{"id": "A270", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «C5T» pasa a «Cilindro de tipo cinco»; «semi-rocoso» a «Semicompacto»."}
+{"id": "A271", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «C4T» pasa a «Cilindro Tipo Cuatro»."}
+{"id": "A272", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "El tipo «C5T» pasa a «5to Tipo de cilindro»; se pierde el montaje («se suministra»)."}
+{"id": "A273", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«micropilotes» pasa a «micropilares»; «Totalmente terminada» a «Incluye todas las obras»."}
+{"id": "A274", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "Banda «No necesita intervalo» pasa a «Mantenimiento sin interrupción»."}
+{"id": "A275", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«desde plataforma o vía» pasa a «a partir de infraestructura o ferrocarril»; «postes de electrificación» a «pilares catenarias»."}
+{"id": "A276", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«terreno semi-rocoso» pasa a «suelo Semicompacto»."}
+{"id": "A277", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«cimentación cilíndrica» pasa a «cemento cilíndrico»; se pierden «desde plataforma o vía» y «Totalmente terminada»."}
+{"id": "A278", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A279", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Suministro y montaje» pasa a «Montaje y montaje»; se pierden «rectangular» y «en desmonte»; «esperas roscadas» pasa a «postes roscados»."}
+{"id": "A280", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «en compensación»."}
+{"id": "A281", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «en laderas»; «esperas roscadas» a «expectativas roscadas»."}
+{"id": "A282", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «en pendientes»; «esperas roscadas» a «soportes roscados para torres eléctricas»."}
+{"id": "A283", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Se pierde «en desmonte»; «esperas roscadas» pasa a «soportes roscados»; «desde plataforma o vía» queda en «desde la plataforma como a través»."}
+{"id": "A284", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«semi-rocoso» pasa a «Semi-Firme»; se pierde «en desmonte»."}
+{"id": "A285", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«semi-rocoso» pasa a «Semi-Duro»; se pierde «en desmonte»."}
+{"id": "A286", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Se pierde «en desmonte»; «Suministro» pasa a «Construcción»."}
+{"id": "A287", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «en pendientes»; «Suministro y montaje» a «Forjado y armado»; «postes de electrificación» a «instalaciones eléctricas»."}
+{"id": "A288", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Se pierde «en desmonte» («tipo de cimentación rectangular d16»)."}
+{"id": "A289", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«incluye el tapado de la misma» pasa a «La cubierta de la plataforma o vía se incluye»; «terreno normal» a «Regular»; «macizo» a «masa»."}
+{"id": "A290", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«terreno normal» pasa a «Tierra»; «tapado de la misma» a «cobertura de la plataforma o vía»."}
+{"id": "A291", "veredicto": "Dudoso", "problema": "valor de parámetro cambiado", "motivo": "«Cualquier franja horaria excepcional» pasa a «Horario especial libre»; no está claro que conserve el carácter excepcional."}
+{"id": "A292", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«barras corrugadas roscadas» pasa a «varillas encofradas y roscadas», «postes de electrificación» a «polo para línea eléctrica», «ejecutada desde vía» a «Terminado en carril»."}
+{"id": "A293", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«acceso por vía» pasa a «Acceso: Sendero»; «micropilote» a «micropilares»."}
+{"id": "A294", "veredicto": "Dudoso", "problema": "otro", "motivo": "Redacción incoherente («Se destaca la presencia de cimientos...», «El Con corte de corriente. se ejecutará...»): los valores se mantienen, pero no queda claro que describa la misma partida."}
+{"id": "A295", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«sobre hastial de túnel o puente» pasa a «sobre túnel o puente hestial»; «taludes de excesiva inclinación» a «pendientes inclinadas»."}
+{"id": "A296", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «en compensación»."}
+{"id": "A297", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A298", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A299", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A300", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A301", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A302", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A303", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«cimentación rectangular en desmonte» pasa a «molduras rectangulares en despeje»."}
+{"id": "A304", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A305", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A306", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A307", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A308", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A309", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«Cata previa de excavación de macizo» pasa a «Pre-gustación de la masa de electrificación de campo»; «tapado» a «cobertura»."}
+{"id": "A310", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «no montados»."}
+{"id": "A311", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A312", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«ménsulas» pasa a «corbatas»; «la puesta a tierra de las mismas» a «puesta a tierra de tornillos»."}
+{"id": "A313", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A314", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A315", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Se pierde «en desmonte» («en el tipo C9»)."}
+{"id": "A316", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A317", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A318", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A319", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A320", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A321", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A322", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«en desmonte» pasa a «en despeje»."}
+{"id": "A323", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«sobre hastial de túnel o puente» pasa a «sobre túnel o puente hestial»; «taludes de excesiva inclinación» a «pendientes inclinadas»."}
+{"id": "A324", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A325", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A326", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A327", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A328", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A329", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A330", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A331", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A332", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A333", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«tapa para canaleta» pasa a «la parte superior para canaleta»."}
+{"id": "A334", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A335", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A336", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A337", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A338", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A339", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "Se pierde «en desmonte» («en el tipo C5»)."}
+{"id": "A340", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A341", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A342", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A343", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A344", "veredicto": "Sí", "problema": "", "motivo": ""}

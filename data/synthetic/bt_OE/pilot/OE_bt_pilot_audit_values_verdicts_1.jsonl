@@ -1,0 +1,172 @@
+{"id": "A001", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "Pierde el material de los alveolos («composite-PTR» pasa a «alveolos-PTR») y «canaleta elevada» pasa a «canaleta Aérea»."}
+{"id": "A002", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«Canaleta prefabricada de hormigón armado» pasa a «Guía de hormigón prefabricado»; se pierden «armado», «una tapa» y la «nivelación de la solera»."}
+{"id": "A003", "veredicto": "Dudoso", "problema": "valor de parámetro cambiado", "motivo": "Desaparece «armado» (hormigón armado pasa a hormigón prefabricado); el resto de valores coincide."}
+{"id": "A004", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«No necesita intervalo» pasa a «Mantenimiento Continuo»; además «canaleta» pasa a «Canal» y se pierde «prefabricada»."}
+{"id": "A005", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«tapa para canaleta de hormigón» pasa a «cubierta para la conducción de tipo de hormigón enterrado»; «montaje» pasa a «ajuste» y la retirada de tierras sobrantes a «colocar y retirar terrenos inútiles»."}
+{"id": "A006", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A007", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A008", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«canaleta» pasa a «canalización de hormigón» y la «retirada de las tierras sobrantes» pasa a «eliminación de los residuos generados»."}
+{"id": "A009", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«localizar cables o tirar cables nuevos» pasa a «identificar o instalar nuevos controladores»; «canaleta» pasa a «canal»."}
+{"id": "A010", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A011", "veredicto": "Dudoso", "problema": "valor de parámetro cambiado", "motivo": "«Cualquier franja horaria» pasa a «Todo el Día», que puede leerse como diurno; además no dice explícitamente «hormigonada» y añade una descripción del andén."}
+{"id": "A012", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «transporte y retirada» pasa a «extracción y extracción»."}
+{"id": "A013", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción subterránea»; se pierde «dura» en la demolición de roca."}
+{"id": "A014", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; además «Cualquier condición de ejecución» pasa a «Condiciones Flexibles»."}
+{"id": "A015", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción subterránea»."}
+{"id": "A016", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «canalización subterránea»; se pierde el montaje de los tubos (solo «entrega»)."}
+{"id": "A017", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «canalización enterrada»."}
+{"id": "A018", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Instalación de tuberías subterráneas»."}
+{"id": "A019", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción subterránea»."}
+{"id": "A020", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción subterránea»; «Cualquier condición de ejecución» pasa a «Condiciones estándar»."}
+{"id": "A021", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «canalizaciones enterradas»; «No necesita intervalo» pasa a «Mantenimiento Permanente»."}
+{"id": "A022", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «Cualquier condición de ejecución» pasa a «Condiciones Estándar»."}
+{"id": "A023", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «canalización enterrada», lo que contradice «adosada o superficial»."}
+{"id": "A024", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»."}
+{"id": "A025", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «relleno y compactado» pasa a «rejilla y densificación»."}
+{"id": "A026", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «i >= 5 horas» pasa a «Mantenimiento cada cinco horas o más»."}
+{"id": "A027", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada», lo que contradice «adosada»."}
+{"id": "A028", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «canalización enterrada»; «tubos y hormigón» pasa a «conductos de hormigón»."}
+{"id": "A029", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «No necesita intervalo» pasa a «Mantenimiento Continuo»."}
+{"id": "A030", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»."}
+{"id": "A031", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción subterránea»."}
+{"id": "A032", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; se pierde «polietileno» (solo «tuberías libres de halógenos»)."}
+{"id": "A033", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; añade «y cubiertas»."}
+{"id": "A034", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»."}
+{"id": "A035", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «demolición y reposición» pasa a «destrucción y reubicación»."}
+{"id": "A036", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada», lo que contradice «adosada o superficial»."}
+{"id": "A037", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «relleno de la zanja» pasa a «acondicionamiento del hueco»."}
+{"id": "A038", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «No necesita intervalo» pasa a «Mantenimiento Permanente»."}
+{"id": "A039", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; añade «y cubiertas»."}
+{"id": "A040", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «No necesita intervalo» pasa a «Mantenimiento continuo»."}
+{"id": "A041", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «No necesita intervalo» pasa a «Mantenimiento Continuo»."}
+{"id": "A042", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «canalización enterrada»; «tubos y hormigón» pasa a «conductos de hormigón»."}
+{"id": "A043", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción subterránea»."}
+{"id": "A044", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción integrada»; las operaciones de relleno quedan desordenadas («zanjas y rellenos ... y compactación»)."}
+{"id": "A045", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción integrada»; «demolición y reposición» pasa a «destrucción y reubicación»."}
+{"id": "A046", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción subterránea»."}
+{"id": "A047", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «canalización enterrada»; «tubos y hormigón» pasa a «conductos de hormigón»."}
+{"id": "A048", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; añade «y cubiertas»."}
+{"id": "A049", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción subterránea»; «Cualquier condición de ejecución» pasa a «Condiciones Flexibles»."}
+{"id": "A050", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»."}
+{"id": "A051", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «Cualquier franja horaria excepcional» pasa a «Horario especial libre»."}
+{"id": "A052", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada» (contradice «adosada»); «No necesita intervalo» pasa a «Mantenimiento Continuo»."}
+{"id": "A053", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; se pierde «polietileno» («conductos de diámetro sin halógenos»)."}
+{"id": "A054", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «No necesita intervalo» pasa a «Mantenimiento Continuo»."}
+{"id": "A055", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «Cualquier condición de ejecución» pasa a «Condiciones Variables»."}
+{"id": "A056", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "No nombra la canalización hormigonada («Instalación de ... tuberías») y pierde «polietileno»."}
+{"id": "A057", "veredicto": "Dudoso", "problema": "omisión de operación", "motivo": "No nombra el tipo de partida («Instalación de 2 conductos») y «relleno y compactado» pasa a «llenado y aplanado»."}
+{"id": "A058", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A059", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«No necesita intervalo» pasa a «Mantenimiento Permanente»."}
+{"id": "A060", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»."}
+{"id": "A061", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A062", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «sistema de conducción enterrado»; «montaje» pasa a «ajuste»."}
+{"id": "A063", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A064", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«cruce bajo vías» pasa a «crucero subvial» y «Canalización hormigonada» pasa a «conducción subterránea»."}
+{"id": "A065", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «relleno y compactado» pasa a «llenado y aplanamiento»."}
+{"id": "A066", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «canalización enterrada»."}
+{"id": "A067", "veredicto": "Dudoso", "problema": "omisión de operación", "motivo": "No nombra el tipo de partida («Instalación de 8 conductos») y «relleno y compactado» pasa a «llenado y aplanado»."}
+{"id": "A068", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «sistema de conducción enterrado»; «Cualquier franja horaria» pasa a «Horario Integral»."}
+{"id": "A069", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrado»; «No necesita intervalo» pasa a «Mantenimiento continuo»."}
+{"id": "A070", "veredicto": "Dudoso", "problema": "cambio de tipo de partida", "motivo": "No nombra la canalización hormigonada («Instalación de 8 conductos ... adosada o superficial»); los valores coinciden."}
+{"id": "A071", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «cruce bajo vías» pasa a «crucero subvial»."}
+{"id": "A072", "veredicto": "Dudoso", "problema": "omisión de operación", "motivo": "No nombra el tipo de partida; «roca dura» pasa a «roca» y «relleno y compactado» pasa a «llenado y aplanado»."}
+{"id": "A073", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«No necesita intervalo» pasa a «Mantenimiento Automático»; además no nombra la canalización hormigonada."}
+{"id": "A074", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción subterránea» (contradice «adosada»); «Cualquier condición de ejecución» pasa a «Varias condiciones»."}
+{"id": "A075", "veredicto": "Dudoso", "problema": "cambio de tipo de partida", "motivo": "No nombra la canalización hormigonada («Instalación de 16 conductos»); los valores de los parámetros coinciden."}
+{"id": "A076", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»."}
+{"id": "A077", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«cruce bajo vías» pasa a «crucero subvial»; no nombra la canalización hormigonada; «compactado» pasa a «aplanado»."}
+{"id": "A078", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «Cualquier franja horaria» pasa a «Horario Integral»."}
+{"id": "A079", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción subterránea»."}
+{"id": "A080", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «No necesita intervalo» pasa a «Mantenimiento Continuo»."}
+{"id": "A081", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«canalización ... con topo bajo vías» pasa a «tubos ... con una posición baja en la vía 1»; se pierden el topo y la canalización."}
+{"id": "A082", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«parte proporcional ... incluso mandrilado» pasa a «en la proporción adecuada, incluida la reja»; se pierde «Suministro»."}
+{"id": "A083", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«embocadura canalización» pasa a «suministro de llenado para la canalización» y «arqueta» pasa a «arco»."}
+{"id": "A084", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«sobre hastial de túnel o puente» pasa a «en la cara externa de túneles o puentes»; se pierde «medida interior»."}
+{"id": "A085", "veredicto": "Dudoso", "problema": "valor de parámetro cambiado", "motivo": "«Diurno» pasa a «Día Laboral», que no es la misma franja."}
+{"id": "A086", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«No necesita intervalo» pasa a «Mantenimiento Automático»; «hastial» pasa a «parte exterior»."}
+{"id": "A087", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«sobre hastial de túnel o puente» pasa a «colocados en ejes de túnel o puente»."}
+{"id": "A088", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«taludes de excesiva inclinación o rocosos» pasa a «pendientes orográficas o de pendiente extrema» (se pierde rocoso); «hastial» pasa a «ejes»."}
+{"id": "A089", "veredicto": "No", "problema": "término técnico mal traducido", "motivo": "«Canalización metálica» pasa a «Instalación de metal»; «medida interior» pasa a «diámetro nominal»; «hastial» pasa a «ejes»."}
+{"id": "A090", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«No necesita intervalo» pasa a «Mantenimiento Permanente»."}
+{"id": "A091", "veredicto": "Dudoso", "problema": "valor de parámetro cambiado", "motivo": "«Cualquier condición de ejecución» pasa a «Condiciones estándar»; «hastial» pasa a «parte exterior de túneles»."}
+{"id": "A092", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A093", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«sobre hastial de túnel o puente» pasa a «para la construcción de túneles y puentes»."}
+{"id": "A094", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«hastial» pasa a «parte superior de túneles» y «Cualquier condición de ejecución» pasa a «Condiciones Generales»."}
+{"id": "A095", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«hastial» pasa a «para la construcción de túneles» y «Cualquier condición de ejecución» pasa a «Condiciones estándar»."}
+{"id": "A096", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«material seleccionado procedente de la excavación» pasa a «material reciclado de la excavación»; se pierde «para tendido de cables»."}
+{"id": "A097", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Zanja para tendido de cables» pasa a «Agujero»; «rejilla de plástico» pasa a «placa de identificación»."}
+{"id": "A098", "veredicto": "Dudoso", "problema": "término técnico mal traducido", "motivo": "«material seleccionado» pasa a «material reciclado de la excavación»."}
+{"id": "A099", "veredicto": "Sí", "problema": "", "motivo": ""}
+{"id": "A100", "veredicto": "Dudoso", "problema": "valor de parámetro cambiado", "motivo": "«i < 3 horas» pasa a «Mantenimiento cada menos de tres horas»; se pierde «seleccionado» en el material de relleno."}
+{"id": "A101", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «tubos y hormigón» pasa a «conductos de hormigón»."}
+{"id": "A102", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «retirada» pasa a «devolución»."}
+{"id": "A103", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conjunto de conducción enterrado»."}
+{"id": "A104", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada» (contradice «adosada»); «conductos de hormigón»."}
+{"id": "A105", "veredicto": "Dudoso", "problema": "valor de parámetro cambiado", "motivo": "No nombra la canalización hormigonada y «Cualquier condición de ejecución» pasa a «Condiciones Flexibles»."}
+{"id": "A106", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «Condiciones Flexibles»."}
+{"id": "A107", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «Cualquier franja horaria» pasa a «Todo el Día»."}
+{"id": "A108", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «conductos de hormigón»."}
+{"id": "A109", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«cruce bajo vías» pasa a «bajo pasos a nivel», que es otra ubicación."}
+{"id": "A110", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «relleno y compactado» pasa a «preparación de la zanja»; «Mantenimiento no interrumpido»."}
+{"id": "A111", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «Cualquier condición de ejecución» pasa a «Condiciones Estándar»."}
+{"id": "A112", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conductos subterráneos»."}
+{"id": "A113", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «tuberías enterradas»; «relleno y compactado» pasa a «excavación y preparación»; «retirada de productos» pasa a «limpieza de la zona»."}
+{"id": "A114", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; «Cualquier franja horaria» pasa a «Horario Completo»."}
+{"id": "A115", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conductos subterráneos»."}
+{"id": "A116", "veredicto": "No", "problema": "omisión de operación", "motivo": "«relleno y compactado» pasa a «cavar y compactar» y «suministro y montaje» pasa a «colocar y sellar»; no nombra la canalización hormigonada."}
+{"id": "A117", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada» (contradice «adosada»)."}
+{"id": "A118", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«polietileno libre de halógenos» pasa a «polietileno sin diámetro» (se pierden los halógenos); «canalización integrada»."}
+{"id": "A119", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Sistema de conducción enterrado»."}
+{"id": "A120", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«libre de halógenos» se pierde («polietileno sin diámetro»); «Canalización integrada»."}
+{"id": "A121", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«No necesita intervalo» pasa a «Mantenimiento Automático»; además «conducción enterrada»."}
+{"id": "A122", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Instalación subterránea»; «relleno y compactado» pasa a «llenado y apilamiento»."}
+{"id": "A123", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «tuberías enterradas»; se pierde el relleno («excavación y preparación»)."}
+{"id": "A124", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «tuberías enterradas»; «cruce bajo vías» pasa a «cruce subvial»."}
+{"id": "A125", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conductos subterráneos»; «Cualquier franja horaria» pasa a «Todo el Día»."}
+{"id": "A126", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«No necesita intervalo» pasa a «Mantenimiento Permanente»; además «conducción enterrado»."}
+{"id": "A127", "veredicto": "Dudoso", "problema": "añadido", "motivo": "El gold es solo «Suministro» y la consulta dice «Instalación Provisión», con lo que añade la instalación."}
+{"id": "A128", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«No necesita intervalo» pasa a «Mantenimiento Automático»."}
+{"id": "A129", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «Cualquier franja horaria» pasa a «Horario Completo»."}
+{"id": "A130", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «red subterránea»; «diámetro» pasa a «espesor»; «Todo el Día»."}
+{"id": "A131", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «red subterránea»; «diámetro» pasa a «espesor»; «crucero subvial»."}
+{"id": "A132", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción subterránea»; «suministro» pasa a «beneficio»; «diámetro subvial»."}
+{"id": "A133", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «red de tubos en cajas»; «relleno y compactado» pasa a «revestimiento y prensado del canal»."}
+{"id": "A134", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»."}
+{"id": "A135", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «red subterránea»; «diámetro» pasa a «espesor»."}
+{"id": "A136", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»."}
+{"id": "A137", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»."}
+{"id": "A138", "veredicto": "Dudoso", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Posición de conducción encapsulada»: no queda claro que sea la partida hormigonada."}
+{"id": "A139", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción subterránea»; «Cualquier condición de ejecución» pasa a «Condiciones Generales»."}
+{"id": "A140", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «red de tubos en cajas»; «Condiciones Estándar»."}
+{"id": "A141", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»."}
+{"id": "A142", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción encapsulada»; «Cualquier franja horaria» pasa a «Horario Total»."}
+{"id": "A143", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción está enterrada»; «Diurno» pasa a «Día Laboral»."}
+{"id": "A144", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»."}
+{"id": "A145", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «red subterránea»; «Condiciones Variables»."}
+{"id": "A146", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «red subterránea»; «Cualquier condición de ejecución» pasa a «Diferentes condiciones»."}
+{"id": "A147", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; se pierde «dura»."}
+{"id": "A148", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «red de tubos en cajas»; «relleno y compactado» pasa a «revestimiento y prensado»."}
+{"id": "A149", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«cruce bajo vías» pasa a «bajo pasos a nivel»; «transporte y retirada» pasa a «transferencia y almacenamiento»."}
+{"id": "A150", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción subterránea»."}
+{"id": "A151", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»."}
+{"id": "A152", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»."}
+{"id": "A153", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «red de tubos en cajas»; «relleno y compactado» pasa a «revestimiento y prensado»."}
+{"id": "A154", "veredicto": "Dudoso", "problema": "valor de parámetro cambiado", "motivo": "No nombra la canalización hormigonada y «Cualquier condición de ejecución» pasa a «Condiciones Generales»."}
+{"id": "A155", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«No necesita intervalo» pasa a «Mantenimiento Continuo»."}
+{"id": "A156", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; se pierden «libre de halógenos» y «sin vibrar»."}
+{"id": "A157", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «zanjeado con conducción enterrada»; se pierden «libre de halógenos» y «sin vibrar»."}
+{"id": "A158", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada» (contradice «adosada»)."}
+{"id": "A159", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; se pierde «polietileno»."}
+{"id": "A160", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; se pierden «polietileno» y «dura»."}
+{"id": "A161", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «Suministro» pasa a «Origen»."}
+{"id": "A162", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «zanjeado con conducción enterrada»; «Volumen relevante» pasa a «Volumen Adecuado»."}
+{"id": "A163", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada»; se pierde «polietileno»; «Condiciones Generales»."}
+{"id": "A164", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «suministro» pasa a «Origen»."}
+{"id": "A165", "veredicto": "Dudoso", "problema": "valor de parámetro cambiado", "motivo": "No nombra la canalización hormigonada; «Cualquier condición de ejecución» pasa a «Condiciones Estándar»."}
+{"id": "A166", "veredicto": "No", "problema": "valor de parámetro cambiado", "motivo": "«No necesita intervalo» pasa a «Mantenimiento sin interrupción»; «Conjunto de conductos»."}
+{"id": "A167", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; añade «capas intermedias de refuerzo si es necesario»."}
+{"id": "A168", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Enterramiento con conducción»."}
+{"id": "A169", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción subterránea»; «Cualquier franja horaria» pasa a «Horario Integral»."}
+{"id": "A170", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Enterramiento con conducción»."}
+{"id": "A171", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «conducción enterrada» (contradice «adosada»)."}
+{"id": "A172", "veredicto": "No", "problema": "cambio de tipo de partida", "motivo": "«Canalización hormigonada» pasa a «Conducción enterrada»; «Condiciones estándar»; «suministro» pasa a «Origen»."}
